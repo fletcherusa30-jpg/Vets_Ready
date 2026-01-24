@@ -1,0 +1,12 @@
+[
+    {
+        "name":  "Veterans of Foreign Wars",
+        "type":  "Nonprofit",
+        "address":  "123 Main St"
+    },
+    {
+        "name":  "American Legion",
+        "type":  "Nonprofit",
+        "address":  "456 Elm St"
+    }
+]

@@ -1,0 +1,1 @@
+Manual: Open Home.tsx and verify 'Welcome to VeteranApp Home' appears.

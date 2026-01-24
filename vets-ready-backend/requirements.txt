@@ -1,0 +1,6 @@
+i
+uvicorn
+sqlalchemy
+pydantic
+requests
+pytest

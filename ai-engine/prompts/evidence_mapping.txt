@@ -1,0 +1,8 @@
+e the Evidence Mapping Engine.
+Map each condition to:
+- Required evidence
+- Optional evidence
+- DBQs
+- Nexus requirements
+- Lay statements
+- Medical records

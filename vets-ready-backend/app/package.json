@@ -1,0 +1,8 @@
+devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@capacitor/cli": "^8.0.1",
+    "@capacitor/core": "^8.0.1"
+  }
+}

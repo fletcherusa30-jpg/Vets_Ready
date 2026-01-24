@@ -1,0 +1,287 @@
+am(
+    [string]$ProjectRoot = "C:\Dev\VetLinkNetwork",
+    [switch]$VerboseLog
+)
+
+# =========================
+# 0. Setup & logging
+# =========================
+
+$ErrorActionPreference = "Stop"
+
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$logDir    = Join-Path $ProjectRoot "diagnostics"
+$backupDir = Join-Path $ProjectRoot "backups\$timestamp"
+
+New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+
+$logFile = Join-Path $logDir "diagnostics_$timestamp.log"
+
+function Write-Log {
+    param(
+        [string]$Message,
+        [string]$Level = "INFO"
+    )
+    $line = "[{0}] [{1}] {2}" -f (Get-Date -Format "u"), $Level, $Message
+    $line | Tee-Object -FilePath $logFile -Append | Out-Null
+    if ($VerboseLog) { Write-Host $line }
+}
+
+Write-Log "=== VetLinkNetwork Diagnostics & Auto-Repair (B1) ==="
+Write-Log "Project root: $ProjectRoot"
+Write-Log "Backup dir:   $backupDir"
+Write-Log "Log file:     $logFile"
+
+# =========================
+# 1. Basic structure checks
+# =========================
+
+$desktopDir = Join-Path $ProjectRoot "desktop"
+$backendDir = Join-Path $ProjectRoot "backend"
+$venvDir    = Join-Path $ProjectRoot ".venv"
+
+if (-not (Test-Path $desktopDir)) { Write-Log "Missing desktop directory: $desktopDir" "ERROR" }
+if (-not (Test-Path $backendDir)) { Write-Log "Missing backend directory: $backendDir" "ERROR" }
+if (-not (Test-Path $venvDir))    { Write-Log "Missing .venv directory: $venvDir" "WARN" }
+
+# =========================
+# 2. Backup key files
+# =========================
+
+$filesToBackup = @(
+    Join-Path $desktopDir "start-backend.js",
+    Join-Path $desktopDir "renderer.js",
+    Join-Path $desktopDir "preload.js",
+    Join-Path $desktopDir "main.js",
+    Join-Path $backendDir "app.py"
+)
+
+foreach ($file in $filesToBackup) {
+    if (Test-Path $file) {
+        $dest = Join-Path $backupDir (Split-Path $file -Leaf)
+        Copy-Item $file $dest -Force
+        Write-Log "Backed up: $file -> $dest"
+    } else {
+        Write-Log "File not found (skip backup): $file" "WARN"
+    }
+}
+
+# =========================
+# 3. Fix start-backend.js
+# =========================
+
+$startBackend = Join-Path $desktopDir "start-backend.js"
+Write-Log "Checking: $startBackend"
+
+$startBackendClean = @"
+const { spawn } = require('child_process');
+const path = require('path');
+
+const python = path.join(__dirname, '..', '.venv', 'Scripts', 'python.exe');
+const app = path.join(__dirname, '..', 'backend', 'app.py');
+
+console.log('Starting backend...');
+
+const backend = spawn(python, [app], { shell: true });
+
+backend.stdout.on('data', data => {
+    console.log(`[Backend] ${data}`);
+});
+
+backend.stderr.on('data', data => {
+    console.error(`[Backend ERROR] ${data}`);
+});
+
+backend.on('close', code => {
+    console.log(`Backend exited with code ${code}`);
+});
+"@
+
+$rewriteStartBackend = $false
+if (-not (Test-Path $startBackend)) {
+    Write-Log "start-backend.js missing, will create clean version" "WARN"
+    $rewriteStartBackend = $true
+} else {
+    $content = Get-Content $startBackend -Raw
+    if ($content -notmatch '\[Backend\] \$\{data\}' -or
+        $content -match 'Backend exited with code \)' -or
+        $content -match '\[Backend ERROR\] \s*\)' -or
+        $content -match '__dirname__' ) {
+        Write-Log "start-backend.js appears corrupted, will rewrite" "WARN"
+        $rewriteStartBackend = $true
+    } else {
+        Write-Log "start-backend.js looks valid"
+    }
+}
+
+if ($rewriteStartBackend) {
+    $startBackendClean | Out-File -FilePath $startBackend -Encoding utf8 -Force
+    Write-Log "start-backend.js rewritten with clean template"
+}
+
+# =========================
+# 4. Fix renderer.js
+# =========================
+
+$renderer = Join-Path $desktopDir "renderer.js"
+Write-Log "Checking: $renderer"
+
+$rendererClean = @"
+async function checkBackend() {
+    const el = document.getElementById('status');
+    try {
+        const res = await fetch('http://127.0.0.1:5000/api/health');
+        const data = await res.json();
+        el.textContent = `Backend: ${data.status}`;
+    } catch (e) {
+        el.textContent = 'Backend not reachable';
+        console.error(e);
+    }
+}
+
+console.log('Renderer loaded');
+checkBackend();
+setInterval(checkBackend, 5000);
+"@
+
+$rewriteRenderer = $false
+if (-not (Test-Path $renderer)) {
+    Write-Log "renderer.js missing, will create clean version" "WARN"
+    $rewriteRenderer = $true
+} else {
+    $content = Get-Content $renderer -Raw
+    if ($content -match 'Backend:  \(\)' -or
+        $content -notmatch 'api/health' -or
+        $content -notmatch 'fetch\(''http://127\.0\.0\.1:5000/api/health''\)' ) {
+        Write-Log "renderer.js appears corrupted or misconfigured, will rewrite" "WARN"
+        $rewriteRenderer = $true
+    } else {
+        Write-Log "renderer.js looks structurally valid"
+    }
+}
+
+if ($rewriteRenderer) {
+    $rendererClean | Out-File -FilePath $renderer -Encoding utf8 -Force
+    Write-Log "renderer.js rewritten with clean health-check implementation"
+}
+
+# =========================
+# 5. Validate backend app.py & health route
+# =========================
+
+$appPy = Join-Path $backendDir "app.py"
+Write-Log "Checking: $appPy"
+
+if (-not (Test-Path $appPy)) {
+    Write-Log "backend/app.py missing — cannot auto-repair backend entrypoint" "ERROR"
+} else {
+    $appContent = Get-Content $appPy -Raw
+
+    if ($appContent -notmatch 'from fastapi import FastAPI') {
+        Write-Log "FastAPI import missing in app.py" "WARN"
+    }
+
+    if ($appContent -notmatch '@app\.get\(\"/api/health\"' -and
+        $appContent -notmatch "@app.get\('/api/health'") {
+
+        Write-Log "Missing /api/health route in app.py — injecting minimal health endpoint" "WARN"
+
+        $healthBlock = @"
+
+@app.get("/api/health")
+def health():
+    return {"status": "ok"}
+"@
+
+        if ($appContent -match 'app\s*=\s*FastAPI') {
+            $idx = $appContent.IndexOf('app = FastAPI')
+            if ($idx -ge 0) {
+                $before = $appContent.Substring(0, $appContent.Length)
+                $appContent = $appContent + "`r`n" + $healthBlock + "`r`n"
+                $appContent | Out-File -FilePath $appPy -Encoding utf8 -Force
+                Write-Log "/api/health route appended to app.py"
+            }
+        } else {
+            Write-Log "Could not safely inject /api/health (no app = FastAPI found)" "ERROR"
+        }
+    } else {
+        Write-Log "/api/health route already present in app.py"
+    }
+}
+
+# =========================
+# 6. Validate Python venv & backend launch
+# =========================
+
+$pythonExe = Join-Path $venvDir "Scripts\python.exe"
+if (-not (Test-Path $pythonExe)) {
+    Write-Log "Python venv python.exe not found at $pythonExe" "ERROR"
+} else {
+    Write-Log "Found venv python: $pythonExe"
+}
+
+# Quick backend import check
+try {
+    if (Test-Path $pythonExe -and (Test-Path $backendDir)) {
+        Write-Log "Running backend import smoke test (python -m backend.app --help)"
+        $psi = New-Object System.Diagnostics.ProcessStartInfo
+        $psi.FileName = $pythonExe
+        $psi.Arguments = "-m backend.app --help"
+        $psi.WorkingDirectory = $ProjectRoot
+        $psi.RedirectStandardOutput = $true
+        $psi.RedirectStandardError  = $true
+        $psi.UseShellExecute = $false
+        $proc = [System.Diagnostics.Process]::Start($psi)
+        $stdout = $proc.StandardOutput.ReadToEnd()
+        $stderr = $proc.StandardError.ReadToEnd()
+        $proc.WaitForExit()
+
+        if ($proc.ExitCode -ne 0) {
+            Write-Log "Backend import test failed: $stderr" "WARN"
+        } else {
+            Write-Log "Backend import test succeeded"
+        }
+    }
+} catch {
+    Write-Log "Exception during backend import test: $_" "ERROR"
+}
+
+# =========================
+# 7. Validate Node/Electron entry
+# =========================
+
+$packageJson = Join-Path $desktopDir "package.json"
+if (-not (Test-Path $packageJson)) {
+    Write-Log "desktop/package.json missing" "ERROR"
+} else {
+    Write-Log "Found desktop/package.json"
+}
+
+# =========================
+# 8. Port check (5000)
+# =========================
+
+Write-Log "Checking if port 5000 is in use"
+
+try {
+    $net = netstat -ano | Select-String ":5000"
+    if ($net) {
+        Write-Log "Port 5000 is in use (expected if backend is running)" "INFO"
+    } else {
+        Write-Log "Port 5000 not in use — backend likely not running" "WARN"
+    }
+} catch {
+    Write-Log "Failed to run netstat: $_" "WARN"
+}
+
+# =========================
+# 9. Summary
+# =========================
+
+Write-Log "Diagnostics & auto-repair complete."
+Write-Log "Backups stored in: $backupDir"
+Write-Log "Log file:          $logFile"
+Write-Log "You can now:"
+Write-Log "  1) Start backend:  .\.venv\Scripts\python.exe -m backend.app (from $ProjectRoot)"
+Write-Log "  2) Start desktop:  cd .\desktop ; npm start"

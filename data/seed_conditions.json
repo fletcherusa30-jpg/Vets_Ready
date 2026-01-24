@@ -1,0 +1,14 @@
+[
+    {
+        "condition":  "PTSD",
+        "description":  "Post-Traumatic Stress Disorder"
+    },
+    {
+        "condition":  "Sleep Apnea",
+        "description":  "Sleep disorder"
+    },
+    {
+        "condition":  "Hypertension",
+        "description":  "High blood pressure"
+    }
+]

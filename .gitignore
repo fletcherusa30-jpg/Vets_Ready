@@ -1,0 +1,145 @@
+# ============================================
+# VETS READY - COMPREHENSIVE .GITIGNORE
+# ============================================
+
+# Python Virtual Environments (CRITICAL - NEVER COMMIT)
+.venv/
+venv/
+env/
+ENV/
+virtualenv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Node.js Dependencies
+node_modules/
+.pnp/
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build Outputs
+dist/
+build/
+out/
+*.egg-info/
+.gradle/
+target/
+*.class
+*.jar
+*.war
+
+# Desktop & Mobile Builds (LARGE FOLDERS)
+desktop/
+android/
+ios/
+*.apk
+*.aab
+*.ipa
+*.exe
+*.dmg
+*.app
+
+# Backend Artifacts
+vets-ready-backend/dist/
+vets-ready-backend/build/
+vets-ready-backend/__pycache__/
+vets-ready-backend/.pytest_cache/
+vets-ready-backend/htmlcov/
+vets-ready-backend/.coverage
+vets-ready-backend/.venv/
+
+# Frontend Artifacts
+vets-ready-frontend/dist/
+vets-ready-frontend/build/
+vets-ready-frontend/node_modules/
+vets-ready-frontend/.vite/
+
+# Mobile Artifacts
+vets-ready-mobile/dist/
+vets-ready-mobile/build/
+vets-ready-mobile/node_modules/
+vets-ready-mobile/android/
+vets-ready-mobile/ios/
+
+# Logs (NEVER COMMIT)
+logs/
+*.log
+
+# Archives & Backups (CRITICAL - CAN BE HUGE)
+_archive/
+_preRestructureBackup_*/
+_frontendMergeBackup_*/
+_git_backup_*/
+*.zip
+*.tar.gz
+*.7z
+*.rar
+*.bak
+*_dup*
+*.bak_*
+*.orig
+.tmp/
+Backups/
+
+# Environment Files (SECRETS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example
+
+# IDE & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.tern-port
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+htmlcov/
+jest.config.js.cache
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Credentials (NEVER COMMIT)
+*.pem
+*.key
+*.cert
+credentials.json
+service-account.json
+
+# Large Media (Use Git LFS if needed)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.iso

@@ -1,0 +1,8 @@
+e the Financial Modeling Engine.
+Calculate:
+- VA compensation
+- CRSC/CRDP
+- Retirement income
+- COLA
+- Long-term projections
+Return structured financial output.
