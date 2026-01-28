@@ -70,7 +70,9 @@ export const DocumentScanner: React.FC<DocumentScannerProps> = ({ onUploadComple
 
     try {
       // For PDF files, we need to convert to image first
-      // For MVP, we'll handle images directly
+      // PRODUCTION TODO: Use pdf.js to convert PDF pages to images for OCR
+      // For MVP, PDFs require manual field entry since client-side PDF OCR
+      // would require additional libraries (pdf.js + canvas rendering)
       if (file.type === 'application/pdf') {
         // In a full implementation, use pdf.js to convert PDF to images
         // For MVP, we'll skip OCR on PDFs and let user enter fields manually
@@ -148,10 +150,17 @@ export const DocumentScanner: React.FC<DocumentScannerProps> = ({ onUploadComple
     }
 
     // Character of service
-    if (text.includes('Honorable')) {
-      fields.characterOfService = 'Honorable'
-    } else if (text.includes('General')) {
-      fields.characterOfService = 'General (Under Honorable Conditions)'
+    const characterPatterns = [
+      { value: 'Honorable', pattern: /\b(honorable discharge|hon discharge)\b/i },
+      { value: 'General (Under Honorable Conditions)', pattern: /\b(general under honorable|general discharge)\b/i },
+      { value: 'Other Than Honorable', pattern: /\b(other than honorable|oth discharge)\b/i }
+    ]
+    
+    for (const { value, pattern } of characterPatterns) {
+      if (pattern.test(text)) {
+        fields.characterOfService = value
+        break
+      }
     }
 
     return fields
@@ -178,7 +187,7 @@ export const DocumentScanner: React.FC<DocumentScannerProps> = ({ onUploadComple
       formData.append('consent', consent.toString())
 
       // PRODUCTION TODO: Replace with actual API endpoint URL from config
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+      const apiUrl = (import.meta as any).env?.VITE_API_URL || 'http://localhost:8000'
       const response = await fetch(`${apiUrl}/api/documents/upload`, {
         method: 'POST',
         body: formData,

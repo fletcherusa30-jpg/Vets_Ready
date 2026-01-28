@@ -109,6 +109,24 @@ async def upload_document(
         DocumentUploadResponse with document_id and status
     """
     try:
+        # Validate file size (max 10MB)
+        # PRODUCTION TODO: Make this configurable
+        MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
+        file_content = await file.read()
+        file_size = len(file_content)
+        
+        if file_size > MAX_FILE_SIZE:
+            raise HTTPException(
+                status_code=400,
+                detail=f"File size ({file_size} bytes) exceeds maximum allowed size (10MB)"
+            )
+        
+        if file_size == 0:
+            raise HTTPException(
+                status_code=400,
+                detail="File is empty"
+            )
+        
         # Validate inputs
         if not consent:
             raise HTTPException(
@@ -161,10 +179,7 @@ async def upload_document(
         # Save file to disk
         # PRODUCTION TODO: Upload to S3 with encryption
         with open(file_path, "wb") as f:
-            content = await file.read()
-            f.write(content)
-        
-        file_size = len(content)
+            f.write(file_content)
         
         # Create metadata record
         metadata = {
@@ -183,6 +198,8 @@ async def upload_document(
         
         # Load existing metadata
         # PRODUCTION TODO: Replace with database insert
+        # NOTE: Race condition exists - concurrent uploads may lose data
+        # For production, use database with proper transactions or implement file locking
         try:
             with open(METADATA_FILE, 'r') as f:
                 all_metadata = json.load(f)
@@ -207,8 +224,8 @@ async def upload_document(
         return DocumentUploadResponse(
             success=True,
             document_id=document_id,
-            message="Document uploaded successfully",
-            file_path=str(file_path)
+            message="Document uploaded successfully"
+            # Note: file_path intentionally not returned for security
         )
         
     except HTTPException:
@@ -228,6 +245,6 @@ async def health_check():
         "status": "healthy",
         "service": "document-upload-mvp",
         "storage": "local",  # PRODUCTION TODO: Update when migrated to S3
-        "upload_dir": str(UPLOAD_DIR),
         "timestamp": datetime.utcnow().isoformat()
+        # Note: upload_dir path not exposed for security
     }
