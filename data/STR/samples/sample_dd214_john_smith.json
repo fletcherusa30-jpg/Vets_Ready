@@ -1,0 +1,76 @@
+{
+  "veteran_id": "VET_001",
+  "name": "John Smith",
+  "service_number": "12345678",
+  "ssn_last_four": "6789",
+  "date_of_birth": "1985-03-15",
+  "service_branch": "Army",
+  "rank": "Captain (CPT)",
+  "mos_codes": [
+    {
+      "code": "11B",
+      "title": "Infantry Squad Leader",
+      "start_date": "2012-06-01",
+      "end_date": "2014-05-31"
+    },
+    {
+      "code": "12A",
+      "title": "Infantry Officer",
+      "start_date": "2014-06-01",
+      "end_date": "2024-01-15"
+    }
+  ],
+  "service_dates": {
+    "entry_active_duty": "2012-06-01",
+    "separation": "2024-01-15",
+    "total_years": 11.66
+  },
+  "awards": [
+    {
+      "name": "Bronze Star",
+      "date_awarded": "2018-11-20"
+    },
+    {
+      "name": "Army Commendation Medal",
+      "date_awarded": "2017-09-15"
+    },
+    {
+      "name": "Army Achievement Medal",
+      "date_awarded": "2016-05-10"
+    }
+  ],
+  "deployments": [
+    {
+      "location": "Afghanistan",
+      "start_date": "2013-03-01",
+      "end_date": "2014-03-01",
+      "duration_months": 12
+    },
+    {
+      "location": "Iraq",
+      "start_date": "2016-06-15",
+      "end_date": "2017-06-15",
+      "duration_months": 12
+    }
+  ],
+  "separation_reason": "Expiration of Service Commitment (ETS)",
+  "discharge_status": "Honorable",
+  "education_benefits": {
+    "gi_bill_eligible": true,
+    "post_9_11_gi_bill": "Remaining": 36
+  },
+  "medical_disability": {
+    "rated": true,
+    "rating_percent": 20,
+    "disabilities": [
+      {
+        "code": "5099-5003",
+        "description": "Arthritis, Degenerative, left knee",
+        "percent": 20
+      }
+    ]
+  },
+  "processed_timestamp": "2024-01-15T14:30:00Z",
+  "source": "uploaded_dd214",
+  "confidence_score": 0.98
+}

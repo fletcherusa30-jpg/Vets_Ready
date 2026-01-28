@@ -1,0 +1,47 @@
+{
+  "service_branches": [
+    {
+      "code": "USA",
+      "full_name": "United States Army",
+      "abbreviation": "Army",
+      "color": "#0A3161",
+      "founded": 1775
+    },
+    {
+      "code": "USN",
+      "full_name": "United States Navy",
+      "abbreviation": "Navy",
+      "color": "#00205B",
+      "founded": 1775
+    },
+    {
+      "code": "USAF",
+      "full_name": "United States Air Force",
+      "abbreviation": "Air Force",
+      "color": "#00308D",
+      "founded": 1947
+    },
+    {
+      "code": "USMC",
+      "full_name": "United States Marine Corps",
+      "abbreviation": "Marines",
+      "color": "#8B0000",
+      "founded": 1775
+    },
+    {
+      "code": "USCG",
+      "full_name": "United States Coast Guard",
+      "abbreviation": "Coast Guard",
+      "color": "#B22234",
+      "founded": 1790
+    },
+    {
+      "code": "USSF",
+      "full_name": "United States Space Force",
+      "abbreviation": "Space Force",
+      "color": "#0033A0",
+      "founded": 2019
+    }
+  ],
+  "last_updated": "2024-01-15"
+}

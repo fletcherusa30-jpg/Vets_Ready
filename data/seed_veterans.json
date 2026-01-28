@@ -1,0 +1,53 @@
+{
+  "veterans": [
+    {
+      "id": "VET_001",
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "john.smith@veterans.com",
+      "phone": "555-0001",
+      "date_of_birth": "1985-03-15",
+      "service_branch": "Army",
+      "separation_rank": "Captain",
+      "years_service": 11.66,
+      "separation_date": "2024-01-15",
+      "disability_rating": 20,
+      "profile_complete": true,
+      "created_at": "2024-01-15T14:30:00Z"
+    },
+    {
+      "id": "VET_002",
+      "first_name": "Sarah",
+      "last_name": "Johnson",
+      "email": "sarah.johnson@veterans.com",
+      "phone": "555-0002",
+      "date_of_birth": "1990-07-22",
+      "service_branch": "Navy",
+      "separation_rank": "Lieutenant Commander",
+      "years_service": 8.42,
+      "separation_date": "2023-12-31",
+      "disability_rating": 0,
+      "profile_complete": true,
+      "created_at": "2024-01-10T09:15:00Z"
+    }
+  ],
+  "service_records": [
+    {
+      "id": "SR_001",
+      "veteran_id": "VET_001",
+      "dd214_file_path": "data/STR/samples/sample_dd214_john_smith.json",
+      "processed": true,
+      "confidence_score": 0.98,
+      "extraction_timestamp": "2024-01-15T14:35:00Z"
+    },
+    {
+      "id": "SR_002",
+      "veteran_id": "VET_002",
+      "dd214_file_path": "data/STR/samples/sample_dd214_sarah_johnson.json",
+      "processed": true,
+      "confidence_score": 0.99,
+      "extraction_timestamp": "2024-01-10T09:20:00Z"
+    }
+  ],
+  "created_at": "2024-01-15T00:00:00Z"
+}

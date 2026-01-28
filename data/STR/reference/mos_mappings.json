@@ -1,0 +1,131 @@
+{
+  "mos_mappings": {
+    "11B": {
+      "code": "11B",
+      "military_title": "Infantry Squad Leader",
+      "civilian_titles": [
+        "Operations Manager",
+        "Team Lead",
+        "Operations Coordinator"
+      ],
+      "skill_translation": {
+        "military_skills": [
+          "Squad leadership",
+          "Tactical operations",
+          "Mission planning",
+          "Team coordination",
+          "Resource management"
+        ],
+        "civilian_skills": [
+          "Team leadership",
+          "Process management",
+          "Strategic planning",
+          "Project coordination",
+          "Budget management"
+        ]
+      }
+    },
+    "12A": {
+      "code": "12A",
+      "military_title": "Infantry Officer",
+      "civilian_titles": [
+        "Operations Manager",
+        "Director of Operations",
+        "Strategic Manager"
+      ],
+      "skill_translation": {
+        "military_skills": [
+          "Company command",
+          "Strategic planning",
+          "Operations management",
+          "Leadership development",
+          "Decision making"
+        ],
+        "civilian_skills": [
+          "Operations management",
+          "Strategic planning",
+          "Executive management",
+          "Staff development",
+          "Executive decision making"
+        ]
+      }
+    },
+    "1140": {
+      "code": "1140",
+      "military_title": "Surface Warfare Officer",
+      "civilian_titles": [
+        "Operations Manager",
+        "Project Manager",
+        "Engineering Manager"
+      ],
+      "skill_translation": {
+        "military_skills": [
+          "Ship operations",
+          "Naval command",
+          "Tactical operations",
+          "Mission planning",
+          "Engineering oversight"
+        ],
+        "civilian_skills": [
+          "Operational management",
+          "Project management",
+          "Engineering management",
+          "Strategic planning",
+          "Technical oversight"
+        ]
+      }
+    },
+    "25B": {
+      "code": "25B",
+      "military_title": "Information Technology Specialist",
+      "civilian_titles": [
+        "Network Administrator",
+        "Systems Administrator",
+        "IT Manager"
+      ],
+      "skill_translation": {
+        "military_skills": [
+          "Network administration",
+          "System security",
+          "IT troubleshooting",
+          "Infrastructure management",
+          "Technical support"
+        ],
+        "civilian_skills": [
+          "Network administration",
+          "Security management",
+          "IT support",
+          "Infrastructure engineering",
+          "Help desk management"
+        ]
+      }
+    },
+    "68W": {
+      "code": "68W",
+      "military_title": "Combat Medic",
+      "civilian_titles": [
+        "Emergency Medical Technician",
+        "Paramedic",
+        "Healthcare Provider"
+      ],
+      "skill_translation": {
+        "military_skills": [
+          "Combat casualty care",
+          "Emergency medicine",
+          "Triage",
+          "Medical procedures",
+          "Team coordination"
+        ],
+        "civilian_skills": [
+          "Emergency medical care",
+          "Paramedic services",
+          "Patient triage",
+          "Clinical procedures",
+          "Team collaboration"
+        ]
+      }
+    }
+  },
+  "last_updated": "2024-01-15",
+  "version": "1.0"
+}

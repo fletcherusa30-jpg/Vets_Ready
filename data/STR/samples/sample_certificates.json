@@ -1,0 +1,46 @@
+{
+  "certificates": [
+    {
+      "certificate_id": "CERT_001",
+      "veteran_id": "VET_001",
+      "certificate_name": "Six Sigma Green Belt",
+      "issuing_organization": "American Society for Quality",
+      "issue_date": "2020-03-10",
+      "expiration_date": "2025-03-10",
+      "credential_number": "ASQ-GSB-2020-145",
+      "status": "active"
+    },
+    {
+      "certificate_id": "CERT_002",
+      "veteran_id": "VET_001",
+      "certificate_name": "Project Management Professional (PMP)",
+      "issuing_organization": "Project Management Institute",
+      "issue_date": "2019-11-20",
+      "expiration_date": "2024-11-20",
+      "credential_number": "PMP-2019-456789",
+      "status": "expired"
+    },
+    {
+      "certificate_id": "CERT_003",
+      "veteran_id": "VET_002",
+      "certificate_name": "AWS Certified Solutions Architect - Professional",
+      "issuing_organization": "Amazon Web Services",
+      "issue_date": "2022-05-15",
+      "expiration_date": "2025-05-15",
+      "credential_number": "AWS-SAP-2022-987654",
+      "status": "active"
+    },
+    {
+      "certificate_id": "CERT_004",
+      "veteran_id": "VET_002",
+      "certificate_name": "Certified Information Systems Security Professional (CISSP)",
+      "issuing_organization": "International Information System Security Certification Consortium",
+      "issue_date": "2021-08-30",
+      "expiration_date": "2024-08-30",
+      "credential_number": "CISSP-2021-234567",
+      "status": "expired"
+    }
+  ],
+  "processed_timestamp": "2024-01-15T17:00:00Z",
+  "total_records": 4
+}

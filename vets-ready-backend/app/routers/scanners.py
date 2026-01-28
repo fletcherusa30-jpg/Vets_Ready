@@ -86,7 +86,8 @@ async def upload_str(
     try:
         # Validate file type
         allowed_extensions = ['.pdf', '.tiff', '.tif', '.jpg', '.jpeg', '.png', '.heic']
-        file_ext = Path(file.filename).suffix.lower()
+        filename = file.filename or "uploaded_document"
+        file_ext = Path(filename).suffix.lower()
 
         if file_ext not in allowed_extensions:
             raise HTTPException(
@@ -98,9 +99,9 @@ async def upload_str(
         job_id = str(uuid.uuid4())
 
         # Save uploaded file
-        file_path = UPLOAD_DIR / f"{job_id}_{file.filename}"
+        file_path = UPLOAD_DIR / f"{job_id}_{filename}"
 
-        logger.info(f"📥 Uploading STR file: {file.filename} → {file_path}")
+        logger.info(f"📥 Uploading STR file: {filename} → {file_path}")
 
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
@@ -114,7 +115,7 @@ async def upload_str(
             type="str",
             status="pending",
             progress=0,
-            message=f"Uploaded {file.filename} ({file_size} bytes)",
+            message=f"Uploaded {filename} ({file_size} bytes)",
             created_at=datetime.now().isoformat()
         )
 
@@ -126,7 +127,7 @@ async def upload_str(
 
         return {
             "job_id": job_id,
-            "filename": file.filename,
+            "filename": filename,
             "file_size": file_size,
             "status": "pending",
             "message": "Upload successful. Processing started."

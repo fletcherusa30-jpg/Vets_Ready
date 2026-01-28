@@ -1,0 +1,61 @@
+{
+  "job_listings": [
+    {
+      "id": "JOB_001",
+      "title": "Operations Manager",
+      "company": "Fortune 500 Tech Company",
+      "location": "New York, NY",
+      "salary_min": 85000,
+      "salary_max": 125000,
+      "description": "Lead operations team for dynamic tech company",
+      "required_skills": [
+        "Leadership",
+        "Operations Management",
+        "Strategic Planning",
+        "Team Development"
+      ],
+      "ideal_mos": ["11B", "12A"],
+      "remote": false,
+      "posted_date": "2024-01-10",
+      "active": true
+    },
+    {
+      "id": "JOB_002",
+      "title": "Network Administrator",
+      "company": "Government Contractor",
+      "location": "Arlington, VA",
+      "salary_min": 70000,
+      "salary_max": 95000,
+      "description": "Manage enterprise network infrastructure",
+      "required_skills": [
+        "Network Administration",
+        "System Security",
+        "Infrastructure Management"
+      ],
+      "ideal_mos": ["25B"],
+      "remote": false,
+      "posted_date": "2024-01-12",
+      "active": true
+    },
+    {
+      "id": "JOB_003",
+      "title": "Project Manager",
+      "company": "Tech Consulting Firm",
+      "location": "San Francisco, CA",
+      "salary_min": 95000,
+      "salary_max": 140000,
+      "description": "Manage strategic technology projects",
+      "required_skills": [
+        "Project Management",
+        "Strategic Planning",
+        "Client Relations",
+        "Risk Management"
+      ],
+      "ideal_mos": ["1140"],
+      "remote": true,
+      "posted_date": "2024-01-13",
+      "active": true
+    }
+  ],
+  "created_at": "2024-01-15T00:00:00Z"
+}

@@ -8,6 +8,7 @@ const links = [
   { to: '/jobs', label: 'Jobs', icon: '💼' },
   { to: '/budget', label: 'Budget', icon: '💰' },
   { to: '/retirement', label: 'Retirement', icon: '🏖️' },
+  { to: '/disability-wizard', label: 'Disability Wizard', icon: '🛡️' },
   { to: '/profile', label: 'Profile', icon: '👤' },
   { to: '/settings', label: 'Settings', icon: '⚙️' },
 ];

@@ -1,0 +1,54 @@
+{
+  "veteran_id": "VET_002",
+  "name": "Sarah Johnson",
+  "service_number": "87654321",
+  "ssn_last_four": "4321",
+  "date_of_birth": "1990-07-22",
+  "service_branch": "Navy",
+  "rank": "Lieutenant Commander (LCDR)",
+  "mos_codes": [
+    {
+      "code": "1140",
+      "title": "Surface Warfare Officer",
+      "start_date": "2015-07-01",
+      "end_date": "2023-12-31"
+    }
+  ],
+  "service_dates": {
+    "entry_active_duty": "2015-07-01",
+    "separation": "2023-12-31",
+    "total_years": 8.42
+  },
+  "awards": [
+    {
+      "name": "Navy and Marine Corps Medal",
+      "date_awarded": "2020-06-15"
+    },
+    {
+      "name": "Meritorious Service Medal",
+      "date_awarded": "2019-03-22"
+    }
+  ],
+  "deployments": [
+    {
+      "location": "Western Pacific",
+      "start_date": "2018-02-01",
+      "end_date": "2018-09-30",
+      "duration_months": 8
+    }
+  ],
+  "separation_reason": "Voluntary Separation Incentive (VSI)",
+  "discharge_status": "Honorable",
+  "education_benefits": {
+    "gi_bill_eligible": true,
+    "post_9_11_gi_bill": "Remaining": 30
+  },
+  "medical_disability": {
+    "rated": false,
+    "rating_percent": 0,
+    "disabilities": []
+  },
+  "processed_timestamp": "2024-01-10T09:15:00Z",
+  "source": "uploaded_dd214",
+  "confidence_score": 0.99
+}

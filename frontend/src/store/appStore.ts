@@ -1,6 +1,11 @@
 import create from 'zustand';
 
-type User = { email: string } | null;
+type User = {
+  id?: string;
+  email: string;
+  name?: string;
+  service_branch?: string;
+} | null;
 
 type AppState = {
   user: User;

@@ -45,13 +45,14 @@ async def upload_dd214(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         # Read file content
         content = await file.read()
 
         # Save file
         result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.DD214,
             veteran_id=veteran_id
         )
@@ -93,11 +94,12 @@ async def upload_str(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         content = await file.read()
 
         result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.STR,
             veteran_id=veteran_id
         )
@@ -139,11 +141,12 @@ async def upload_rating_decision(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         content = await file.read()
 
         result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.RATING,
             veteran_id=veteran_id
         )
@@ -444,11 +447,12 @@ async def upload_and_scan_dd214(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         # Upload file
         content = await file.read()
         upload_result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.DD214,
             veteran_id=veteran_id
         )
@@ -491,10 +495,11 @@ async def upload_and_scan_str(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         content = await file.read()
         upload_result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.STR,
             veteran_id=veteran_id
         )
@@ -536,10 +541,11 @@ async def upload_and_scan_rating(
     orchestrator = get_orchestrator()
 
     try:
+        filename = file.filename or "uploaded_document"
         content = await file.read()
         upload_result = await orchestrator.save_uploaded_file(
             file_content=content,
-            filename=file.filename,
+            filename=filename,
             scanner_type=ScannerType.RATING,
             veteran_id=veteran_id
         )

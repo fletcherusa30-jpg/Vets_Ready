@@ -1,0 +1,54 @@
+{
+  "training_records": [
+    {
+      "veteran_id": "VET_001",
+      "training_id": "TRAIN_001",
+      "course_name": "Leadership Development Course",
+      "course_code": "LDC-2020",
+      "provider": "U.S. Army Infantry School",
+      "completion_date": "2019-03-15",
+      "duration_hours": 120,
+      "grade": "A",
+      "certification_awarded": "Infantry Leader Course (ILC)",
+      "certification_number": "ILC-2019-0045"
+    },
+    {
+      "veteran_id": "VET_001",
+      "training_id": "TRAIN_002",
+      "course_name": "Advanced Military Operations",
+      "course_code": "AMO-2021",
+      "provider": "Joint Base Charlestown",
+      "completion_date": "2021-06-20",
+      "duration_hours": 80,
+      "grade": "A-",
+      "certification_awarded": "Operations Management Certification",
+      "certification_number": "OMC-2021-0156"
+    },
+    {
+      "veteran_id": "VET_002",
+      "training_id": "TRAIN_003",
+      "course_name": "Naval Surface Warfare Advanced Course",
+      "course_code": "NSWAC-2018",
+      "provider": "Naval Weapons Station Yorktown",
+      "completion_date": "2018-11-10",
+      "duration_hours": 240,
+      "grade": "A+",
+      "certification_awarded": "Surface Warfare Officer Certification",
+      "certification_number": "SWO-2018-0234"
+    },
+    {
+      "veteran_id": "VET_002",
+      "training_id": "TRAIN_004",
+      "course_name": "Project Management Professional (PMP) Prep",
+      "course_code": "PMP-2022",
+      "provider": "Project Management Institute",
+      "completion_date": "2022-08-15",
+      "duration_hours": 60,
+      "grade": "A",
+      "certification_awarded": "Project Management Professional",
+      "certification_number": "PMP-2022-891234"
+    }
+  ],
+  "processed_timestamp": "2024-01-15T16:45:00Z",
+  "total_records": 4
+}

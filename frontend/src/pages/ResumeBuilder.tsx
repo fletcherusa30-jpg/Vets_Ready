@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Page from '../components/layout/Page';
 import { useAppStore } from '../store/appStore';
 import { api } from '../services/api';
-import ResumeSkills from '../components/ResumeSkills';
+import ResumeSkills, { MOS_SKILLS } from '../components/ResumeSkills';
 import styles from './ResumeBuilder.module.css';
 
 const ResumeBuilder = () => {
@@ -12,10 +12,17 @@ const ResumeBuilder = () => {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [mosCode, setMosCode] = useState('');
   const setResumeData = useAppStore((s) => s.setResumeData);
-  // Dynamically import MOS_SKILLS from ResumeSkills
-  // @ts-ignore
-  const MOS_SKILLS = ResumeSkills?.__MOS_SKILLS || {};
-  const mosSkills = mosCode && MOS_SKILLS[mosCode] ? MOS_SKILLS[mosCode] : [];
+
+  // Strip prefixes and try to match MOS codes (e.g. "AFSC 1N0X1" -> "1N0X1")
+  const normalizeCode = (code: string): string => {
+    return code
+      .replace(/^(AFSC|AFM|USN|USMC|USCG|USAF)\s*/i, '') // Remove service prefixes
+      .trim()
+      .toUpperCase();
+  };
+
+  const normalizedCode = normalizeCode(mosCode);
+  const mosSkills = normalizedCode && MOS_SKILLS[normalizedCode] ? MOS_SKILLS[normalizedCode] : [];
 
   const handleGenerate = async () => {
     const res = await api.post('/resume/generate', {
@@ -33,10 +40,15 @@ const ResumeBuilder = () => {
         <input
           type="text"
           value={mosCode}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMosCode(e.target.value.toUpperCase())}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setMosCode(e.target.value)}
           placeholder="e.g. 11B, 68W, 3D1X2, 0311, AFSC 1N0X1, BM"
           className={styles.mosInput}
         />
+        {normalizedCode && !mosSkills.length && (
+          <div style={{ color: '#f44336', marginTop: '8px', fontSize: '14px' }}>
+            No skills found for "{normalizedCode}". Try other codes from your military branch.
+          </div>
+        )}
         {mosSkills.length > 0 && (
           <div className={styles.mosSkillsList}>
             {mosSkills.map((skill: string) => (

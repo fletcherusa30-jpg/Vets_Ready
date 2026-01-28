@@ -1,0 +1,65 @@
+{
+  "military_awards": [
+    {
+      "code": "MSM",
+      "name": "Meritorious Service Medal",
+      "category": "Service Medal",
+      "precedence": 12
+    },
+    {
+      "code": "AMM",
+      "name": "Army Meritorious Unit Commendation",
+      "category": "Unit Award",
+      "precedence": 11
+    },
+    {
+      "code": "ACM",
+      "name": "Army Commendation Medal",
+      "category": "Valor Medal",
+      "precedence": 13
+    },
+    {
+      "code": "AAM",
+      "name": "Army Achievement Medal",
+      "category": "Achievement Medal",
+      "precedence": 14
+    },
+    {
+      "code": "BS",
+      "name": "Bronze Star",
+      "category": "Valor Medal",
+      "precedence": 3
+    },
+    {
+      "code": "SS",
+      "name": "Silver Star",
+      "category": "Valor Medal",
+      "precedence": 2
+    },
+    {
+      "code": "MOH",
+      "name": "Medal of Honor",
+      "category": "Valor Medal",
+      "precedence": 1
+    },
+    {
+      "code": "PH",
+      "name": "Purple Heart",
+      "category": "Sacrifice Medal",
+      "precedence": 4
+    },
+    {
+      "code": "NDSM",
+      "name": "National Defense Service Medal",
+      "category": "Service Medal",
+      "precedence": 20
+    },
+    {
+      "code": "GSM",
+      "name": "Global War on Terrorism Service Medal",
+      "category": "Campaign Medal",
+      "precedence": 16
+    }
+  ],
+  "last_updated": "2024-01-15"
+}

@@ -913,6 +913,7 @@ async def upload_dd214(
 
         # Create job ID
         job_id = str(uuid.uuid4())
+        filename = file.filename or "uploaded_document"
 
         # Create storage path: /Data/Documents/{veteran_id or 'anonymous'}/{timestamp}/
         veteran_folder = veteran_id if veteran_id else "anonymous"
@@ -921,7 +922,7 @@ async def upload_dd214(
         storage_path.mkdir(parents=True, exist_ok=True)
 
         # Save file
-        file_path = storage_path / file.filename
+        file_path = storage_path / filename
 
         with open(file_path, "wb") as f:
             content = await file.read()
@@ -943,7 +944,7 @@ async def upload_dd214(
             )
 
         # Log upload success
-        logger.info(f"DD-214 uploaded: {file.filename} ({file_size} bytes) -> {file_path}")
+        logger.info(f"DD-214 uploaded: {filename} ({file_size} bytes) -> {file_path}")
 
         # Create job entry
         extraction_jobs[job_id] = {
@@ -960,7 +961,7 @@ async def upload_dd214(
 
         # Start background extraction
         file_metadata = {
-            "name": file.filename,
+            "name": filename,
             "size": file_size,
             "mime_type": file.content_type,
             "timestamp": timestamp

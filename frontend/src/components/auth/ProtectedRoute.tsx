@@ -3,7 +3,10 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { auth } from '../../services/auth';
 
 const ProtectedRoute: React.FC = () => {
-  if (!auth.isAuthenticated()) {
+  // DEV MODE: Skip authentication during development
+  const DEV_MODE = import.meta.env.DEV;
+
+  if (!DEV_MODE && !auth.isAuthenticated()) {
     return <Navigate to="/login" replace />;
   }
   return <Outlet />;

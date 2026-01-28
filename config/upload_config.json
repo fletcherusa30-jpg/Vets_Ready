@@ -1,0 +1,346 @@
+# Upload Configuration
+
+Configuration for upload handling, file type validation, size limits, retention policies, and processing rules.
+
+## File Type Restrictions
+
+```json
+{
+  "allowed_mimetypes": {
+    "str": [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+      "image/tiff"
+    ],
+    "resumes": [
+      "application/pdf",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/msword",
+      "text/plain"
+    ],
+    "certificates": [
+      "application/pdf",
+      "image/jpeg",
+      "image/png",
+      "image/tiff"
+    ]
+  },
+  "blocked_extensions": [
+    ".exe",
+    ".bat",
+    ".cmd",
+    ".com",
+    ".scr",
+    ".vbs",
+    ".jar",
+    ".app",
+    ".dll"
+  ],
+  "safe_extensions": [
+    ".pdf",
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".tiff",
+    ".doc",
+    ".docx",
+    ".txt",
+    ".json"
+  ]
+}
+```
+
+## Size Limits
+
+```json
+{
+  "max_file_size_mb": {
+    "str": 50,
+    "resumes": 10,
+    "certificates": 25,
+    "temp": 100
+  },
+  "max_batch_size_mb": 500,
+  "max_total_quota_gb": {
+    "str": 500,
+    "resumes": 100,
+    "certificates": 200,
+    "temp": 50,
+    "archive": 1000
+  }
+}
+```
+
+## Retention Policies
+
+```json
+{
+  "retention_days": {
+    "temp": 1,
+    "str": 2555,
+    "resumes": 1825,
+    "certificates": 1825,
+    "archive": 2555
+  },
+  "cleanup_schedule": {
+    "temp": "daily",
+    "archive_old": "monthly",
+    "quarantine": "weekly"
+  },
+  "archive_organization": {
+    "method": "by_date",
+    "format": "YYYY-Q#",
+    "compression": true,
+    "encryption": true
+  }
+}
+```
+
+## Virus Scanning
+
+```json
+{
+  "enabled": true,
+  "engine": "ClamAV",
+  "scan_on_upload": true,
+  "quarantine_infected": true,
+  "quarantine_location": "uploads/quarantine",
+  "alert_on_threat": true,
+  "alert_recipients": [
+    "security@vetsready.com"
+  ]
+}
+```
+
+## Access Control
+
+```json
+{
+  "authentication_required": true,
+  "authorization_level": "veteran_own_files",
+  "allow_admin_access": true,
+  "access_logging": true,
+  "audit_retention_days": 2555,
+  "ip_whitelist_enabled": false,
+  "rate_limiting": {
+    "enabled": true,
+    "max_uploads_per_hour": 50,
+    "max_uploads_per_day": 500
+  }
+}
+```
+
+## Encryption & Security
+
+```json
+{
+  "encryption_at_rest": {
+    "enabled": true,
+    "algorithm": "AES-256",
+    "key_rotation_days": 90
+  },
+  "encryption_in_transit": {
+    "enabled": true,
+    "protocol": "TLS1.3",
+    "certificate_validation": true
+  },
+  "pii_detection": {
+    "enabled": true,
+    "redact_on_detection": true,
+    "alert_on_detection": true
+  }
+}
+```
+
+## Processing Rules
+
+```json
+{
+  "ocr_settings": {
+    "engine": "Tesseract",
+    "languages": ["English"],
+    "confidence_threshold": 0.85,
+    "quality_improvement": true,
+    "timeout_seconds": 300
+  },
+  "document_classification": {
+    "enabled": true,
+    "auto_categorize": true,
+    "confidence_threshold": 0.90,
+    "fallback_to_manual": true
+  },
+  "field_extraction": {
+    "enabled": true,
+    "normalize_fields": true,
+    "validate_fields": true,
+    "flag_anomalies": true
+  },
+  "concurrent_processing": {
+    "enabled": true,
+    "max_workers": 4,
+    "queue_size": 100,
+    "timeout_seconds": 600
+  }
+}
+```
+
+## Notification Settings
+
+```json
+{
+  "email_notifications": {
+    "on_upload_complete": true,
+    "on_processing_error": true,
+    "on_quota_exceeded": true,
+    "on_file_expiration": true,
+    "recipients": ["veteran@email.com"]
+  },
+  "webhooks": {
+    "enabled": true,
+    "endpoints": [
+      "https://api.vetsready.com/webhooks/upload-complete"
+    ],
+    "retry_policy": {
+      "max_retries": 3,
+      "backoff_seconds": 60
+    }
+  }
+}
+```
+
+## Usage Monitoring
+
+```json
+{
+  "tracking": {
+    "enabled": true,
+    "log_all_uploads": true,
+    "log_all_downloads": true,
+    "log_all_deletions": true,
+    "storage_location": "logs/uploads"
+  },
+  "metrics": {
+    "track_upload_speed": true,
+    "track_processing_time": true,
+    "track_storage_usage": true,
+    "export_interval_hours": 24
+  },
+  "alerts": {
+    "quota_threshold_percent": 80,
+    "error_rate_threshold_percent": 5,
+    "slow_processing_seconds": 300
+  }
+}
+```
+
+## Using This Configuration
+
+### In Python Code
+
+```python
+import json
+
+# Load configuration
+with open('config/upload_config.json') as f:
+    upload_config = json.load(f)
+
+# Apply size limit
+max_size = upload_config['max_file_size_mb']['str']
+
+# Check file type
+allowed_types = upload_config['allowed_mimetypes']['str']
+if file_mimetype in allowed_types:
+    process_file()
+
+# Set retention
+retention_days = upload_config['retention_days']['str']
+```
+
+### Environment Variables
+
+Set for production:
+
+```bash
+UPLOAD_MAX_FILE_SIZE=52428800  # 50 MB in bytes
+UPLOAD_MAX_QUOTA=536870912000  # 500 GB in bytes
+UPLOAD_RETENTION_DAYS=2555
+UPLOAD_SCAN_ON_UPLOAD=true
+UPLOAD_ENCRYPTION_ENABLED=true
+```
+
+---
+
+## Configuration Overrides
+
+For different environments:
+
+### Development
+```json
+{
+  "max_file_size_mb": {"str": 200},
+  "retention_days": {"temp": 7},
+  "virus_scanning": {"enabled": false}
+}
+```
+
+### Testing
+```json
+{
+  "max_file_size_mb": {"str": 500},
+  "concurrent_processing": {"max_workers": 1},
+  "email_notifications": {"enabled": false}
+}
+```
+
+### Production
+```json
+{
+  "encryption_at_rest": {"enabled": true},
+  "access_logging": true,
+  "virus_scanning": {"enabled": true},
+  "rate_limiting": {"enabled": true}
+}
+```
+
+---
+
+## Integration with Scanner Engine
+
+Scanner uses this configuration:
+
+```python
+from backend.app.scanner import ScannerPipeline
+import json
+
+with open('config/upload_config.json') as f:
+    config = json.load(f)
+
+scanner = ScannerPipeline(config=config)
+result = scanner.process_document(
+    file_path="uploads/str/dd214.pdf",
+    config_override=None  # Uses default config
+)
+```
+
+---
+
+## Security Checklist
+
+- ✓ All uploads scanned for malware
+- ✓ File types validated against whitelist
+- ✓ File sizes validated
+- ✓ Encryption enabled at rest and in transit
+- ✓ Access logging enabled
+- ✓ Rate limiting enabled
+- ✓ PII detection enabled
+- ✓ Audit retention set to 7 years
+- ✓ Quarantine location configured
+
+---
+
+## Related Files
+
+- `uploads/README.md` - Folder structure documentation
+- `data/STR/README.md` - Data structure documentation
+- `backend/app/scanner/README.md` - Processing pipeline

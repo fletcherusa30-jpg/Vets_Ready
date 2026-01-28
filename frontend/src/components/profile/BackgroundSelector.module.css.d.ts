@@ -1,0 +1,20 @@
+declare const styles: {
+  readonly selector: string;
+  readonly summary: string;
+  readonly label: string;
+  readonly value: string;
+  readonly preview: string;
+  readonly previewImage: string;
+  readonly previewPlaceholder: string;
+  readonly sectionHeader: string;
+  readonly grid: string;
+  readonly card: string;
+  readonly cardSelected: string;
+  readonly cardLabel: string;
+  readonly uploadButton: string;
+  readonly emptyState: string;
+  readonly error: string;
+  readonly status: string;
+  readonly notice: string;
+};
+export default styles;

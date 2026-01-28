@@ -1,16 +1,48 @@
-# tools/
+# Tools Folder - Development Resources
 
-This folder is for custom project-specific tools, utilities, and helper binaries that are not general-purpose scripts.
+## Overview
+Reference folder for development tools and utilities. The primary scripts location is `C:\Dev\Vets Ready\scripts\`.
 
-## Usage Guidelines
-- Place CLI utilities, code generators, or automation tools unique to this repo here.
-- Do not store general build/deploy scripts (use scripts/ for those).
-- Each tool should have a README or usage instructions in comments.
+## Primary Scripts Location
+**`../scripts/`** - All development scripts (100+ files)
+- Build scripts (Build-Frontend.ps1, Build-Android.ps1, etc.)
+- Deployment scripts (Deploy-VetsReady.ps1, Deploy-Docker.ps1)
+- Utilities (Cleanup-Workspace.ps1, Integrity-Scanner.ps1)
+- Database management (Seed-Database.ps1)
+- Service management (Start-All-Services.ps1, Run-Backend.ps1)
 
-## Example Contents
-- Python/Node.js/Go utilities for code generation, migration, or automation.
-- Project-specific CLI wrappers.
+## Custom Project Tools (To Create As Needed)
 
----
+For VetsReady-specific utilities, create in the main project:
+- **Backend Scripts:** `backend/bin/` directory
+  - `init_database.py` ✅ Already created
+  - Add more Python utilities here
 
-**Policy:** All tools must be documented and reviewed before inclusion.
+- **Database Tools:** `SQL/` directory
+  - Migration scripts
+  - Backup utilities
+  - Query helpers
+
+## Quick Commands
+
+### Database Management
+```bash
+cd backend/
+python bin/init_database.py init        # Initialize database
+python bin/init_database.py verify      # Verify setup
+python bin/init_database.py health      # Check health
+```
+
+### Backend Services
+```bash
+# From scripts/ folder:
+.\Run-Backend.ps1                       # Start backend API
+.\Start-All-Services.ps1                # Start all services
+```
+
+### Setup
+Prerequisites: `pip install python-dotenv pydantic sqlalchemy pandas`
+
+## See Also
+- [Backend Documentation](../docs/ARCHITECTURE.md)
+- [Database Guide](../docs/DATABASE_INTEGRATION_SETUP.md)

@@ -1,0 +1,45 @@
+{
+  "military_ranks_army": [
+    {"code": "E1", "abbreviation": "PVT", "title": "Private", "pay_grade": "E1"},
+    {"code": "E2", "abbreviation": "PVT", "title": "Private", "pay_grade": "E2"},
+    {"code": "E3", "abbreviation": "PFC", "title": "Private First Class", "pay_grade": "E3"},
+    {"code": "E4", "abbreviation": "CPL", "title": "Corporal", "pay_grade": "E4"},
+    {"code": "E5", "abbreviation": "SGT", "title": "Sergeant", "pay_grade": "E5"},
+    {"code": "E6", "abbreviation": "SSG", "title": "Staff Sergeant", "pay_grade": "E6"},
+    {"code": "E7", "abbreviation": "SFC", "title": "Sergeant First Class", "pay_grade": "E7"},
+    {"code": "E8", "abbreviation": "MSG", "title": "Master Sergeant", "pay_grade": "E8"},
+    {"code": "O1", "abbreviation": "2LT", "title": "Second Lieutenant", "pay_grade": "O1"},
+    {"code": "O2", "abbreviation": "1LT", "title": "First Lieutenant", "pay_grade": "O2"},
+    {"code": "O3", "abbreviation": "CPT", "title": "Captain", "pay_grade": "O3"},
+    {"code": "O4", "abbreviation": "MAJ", "title": "Major", "pay_grade": "O4"},
+    {"code": "O5", "abbreviation": "LTC", "title": "Lieutenant Colonel", "pay_grade": "O5"},
+    {"code": "O6", "abbreviation": "COL", "title": "Colonel", "pay_grade": "O6"}
+  ],
+  "military_ranks_navy": [
+    {"code": "E1", "abbreviation": "SR", "title": "Seaman Recruit", "pay_grade": "E1"},
+    {"code": "E3", "abbreviation": "SN", "title": "Seaman", "pay_grade": "E3"},
+    {"code": "E4", "abbreviation": "PO3", "title": "Petty Officer Third Class", "pay_grade": "E4"},
+    {"code": "E5", "abbreviation": "PO2", "title": "Petty Officer Second Class", "pay_grade": "E5"},
+    {"code": "E6", "abbreviation": "PO1", "title": "Petty Officer First Class", "pay_grade": "E6"},
+    {"code": "O1", "abbreviation": "ENS", "title": "Ensign", "pay_grade": "O1"},
+    {"code": "O2", "abbreviation": "LTJG", "title": "Lieutenant Junior Grade", "pay_grade": "O2"},
+    {"code": "O3", "abbreviation": "LT", "title": "Lieutenant", "pay_grade": "O3"},
+    {"code": "O4", "abbreviation": "LCDR", "title": "Lieutenant Commander", "pay_grade": "O4"},
+    {"code": "O5", "abbreviation": "CDR", "title": "Commander", "pay_grade": "O5"},
+    {"code": "O6", "abbreviation": "CAPT", "title": "Captain", "pay_grade": "O6"}
+  ],
+  "military_ranks_airforce": [
+    {"code": "E1", "abbreviation": "AB", "title": "Airman Basic", "pay_grade": "E1"},
+    {"code": "E3", "abbreviation": "AMN", "title": "Airman", "pay_grade": "E3"},
+    {"code": "E4", "abbreviation": "SrA", "title": "Senior Airman", "pay_grade": "E4"},
+    {"code": "E5", "abbreviation": "SSgt", "title": "Staff Sergeant", "pay_grade": "E5"},
+    {"code": "E6", "abbreviation": "TSgt", "title": "Technical Sergeant", "pay_grade": "E6"},
+    {"code": "O1", "abbreviation": "2d Lt", "title": "Second Lieutenant", "pay_grade": "O1"},
+    {"code": "O2", "abbreviation": "1st Lt", "title": "First Lieutenant", "pay_grade": "O2"},
+    {"code": "O3", "abbreviation": "Capt", "title": "Captain", "pay_grade": "O3"},
+    {"code": "O4", "abbreviation": "Maj", "title": "Major", "pay_grade": "O4"},
+    {"code": "O5", "abbreviation": "Lt Col", "title": "Lieutenant Colonel", "pay_grade": "O5"},
+    {"code": "O6", "abbreviation": "Col", "title": "Colonel", "pay_grade": "O6"}
+  ],
+  "last_updated": "2024-01-15"
+}
