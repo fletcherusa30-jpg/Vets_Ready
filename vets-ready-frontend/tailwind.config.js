@@ -38,6 +38,19 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Montserrat', 'sans-serif'],
       },
+      textColor: {
+        'accessible-primary': '#111827',     // High contrast dark text for light backgrounds (9:1)
+        'accessible-secondary': '#4b5563',   // Secondary text for light backgrounds (7:1)
+        'accessible-tertiary': '#6b7280',    // Tertiary text for light backgrounds (4.5:1 minimum)
+        'accessible-light': '#ffffff',       // Light text for dark backgrounds (8:1+)
+        'accessible-light-secondary': '#f3f4f6', // Light secondary for dark backgrounds
+      },
+      backgroundColor: {
+        'accessible-success-light': '#f0fdf4',
+        'accessible-warning-light': '#fffbeb',
+        'accessible-danger-light': '#fef2f2',
+        'accessible-info-light': '#eff6ff',
+      },
     },
   },
   plugins: [],

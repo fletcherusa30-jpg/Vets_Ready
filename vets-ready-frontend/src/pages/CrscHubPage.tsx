@@ -73,7 +73,7 @@ function CrscStatusHeader({
 }) {
   const isEligible = eligibilityStatus === "ELIGIBLE";
   const earningSatusColor = isEligible ? "bg-green-100" : "bg-yellow-100";
-  const earningSatusTextColor = isEligible ? "text-green-800" : "text-yellow-800";
+  const earningSatusTextColor = isEligible ? "text-green-900" : "text-yellow-900";
 
   return (
     <Card className="border-2 border-blue-200 bg-blue-50">
@@ -119,10 +119,10 @@ function CrscStatusHeader({
             <Badge
               className={
                 evidenceStrength === "HIGH"
-                  ? "bg-green-100 text-green-800"
+                  ? "bg-green-100 text-green-900"
                   : evidenceStrength === "MEDIUM"
-                    ? "bg-yellow-100 text-yellow-800"
-                    : "bg-red-100 text-red-800"
+                    ? "bg-yellow-100 text-yellow-900"
+                    : "bg-red-100 text-red-900"
               }
             >
               {evidenceStrength}
@@ -132,7 +132,7 @@ function CrscStatusHeader({
             <p className="text-xs text-gray-600 uppercase font-semibold">
               Status
             </p>
-            <Badge className="bg-blue-100 text-blue-800">In Progress</Badge>
+            <Badge className="bg-blue-100 text-blue-900">In Progress</Badge>
           </div>
         </div>
 
@@ -250,17 +250,17 @@ export function CrscHubPage({
               <CardContent className="space-y-3 text-sm">
                 <div className="flex justify-between items-center">
                   <span>Profile:</span>
-                  <Badge className="bg-green-100 text-green-800">Complete</Badge>
+                  <Badge className="bg-green-100 text-green-900">Complete</Badge>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Combat Tags:</span>
-                  <Badge className="bg-blue-100 text-blue-800">
+                  <Badge className="bg-blue-100 text-blue-900">
                     {mockCrscData.combatRelatedPercentage}%
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Evidence Mapped:</span>
-                  <Badge className="bg-green-100 text-green-800">
+                  <Badge className="bg-green-100 text-green-900">
                     {mockCrscData.evidenceStrength}
                   </Badge>
                 </div>

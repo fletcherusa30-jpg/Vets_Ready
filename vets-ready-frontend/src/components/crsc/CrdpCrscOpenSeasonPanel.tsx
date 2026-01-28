@@ -310,7 +310,7 @@ export function CrdpCrscOpenSeasonPanel({
                   setSelectedExportFormat("pdf");
                   onExport();
                 }}
-                className="flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 hover:bg-red-200 rounded-md text-sm font-medium transition"
+                className="flex items-center gap-2 px-4 py-2 bg-red-100 text-red-900 hover:bg-red-200 rounded-md text-sm font-medium transition"
               >
                 <Download className="w-4 h-4" />
                 Export as PDF
@@ -320,7 +320,7 @@ export function CrdpCrscOpenSeasonPanel({
                   setSelectedExportFormat("csv");
                   onExport();
                 }}
-                className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 hover:bg-green-200 rounded-md text-sm font-medium transition"
+                className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-900 hover:bg-green-200 rounded-md text-sm font-medium transition"
               >
                 <Download className="w-4 h-4" />
                 Export as CSV
