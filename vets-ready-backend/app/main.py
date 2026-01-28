@@ -40,6 +40,7 @@ from app.routers import (
     dd214,  # DD-214 extraction service
     revenue,  # ARDE revenue engine
     documents,  # Document upload MVP
+    crsc_enterprise,  # CRSC Enterprise API Gateway
 )
 from app.routes import entitlement
 from app.config import settings
@@ -105,6 +106,7 @@ app.include_router(scanners.router)  # Scanner service
 app.include_router(dd214.router)  # DD-214 extraction
 app.include_router(revenue.router)  # ARDE revenue engine
 app.include_router(documents.router)  # Document upload MVP
+app.include_router(crsc_enterprise.router)  # CRSC Enterprise API Gateway
 
 @app.on_event("startup")
 async def startup_event():

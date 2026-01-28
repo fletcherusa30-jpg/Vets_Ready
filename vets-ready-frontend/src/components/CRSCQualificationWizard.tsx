@@ -416,8 +416,17 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
             <div className="space-y-6">
               <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
                 <h3 className="font-bold text-red-900 mb-2">⚔️ Combat & Deployment History</h3>
-                <p className="text-sm text-red-800">
-                  CRSC requires that your disability be combat-related. This means it resulted from armed conflict, hazardous duty, simulated war exercises, or an instrumentality of war.
+                <p className="text-sm text-red-800 mb-3">
+                  CRSC requires that your disability be combat-related. This means it resulted from:
+                </p>
+                <ul className="text-xs text-red-800 space-y-1 ml-4 list-disc">
+                  <li><strong>Armed Conflict:</strong> Direct combat operations, enemy fire, IED attacks</li>
+                  <li><strong>Hazardous Duty:</strong> Parachuting, airborne operations, flight operations, diving, demolition, EOD (Explosive Ordnance Disposal), special operations assignments</li>
+                  <li><strong>Simulated War Exercises:</strong> Combat training, field exercises, war games, live-fire drills</li>
+                  <li><strong>Instrumentality of War:</strong> Injuries from weapons, vehicles, or military equipment during wartime</li>
+                </ul>
+                <p className="text-xs text-red-800 mt-3 italic">
+                  ℹ️ Many veterans don't realize their disabilities qualify as "combat-related" even if they never saw direct combat. Parachuting injuries, training accidents, and field exercises ALL count!
                 </p>
               </div>
 

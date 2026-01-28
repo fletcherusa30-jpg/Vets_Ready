@@ -10,6 +10,11 @@
 import type { VeteranProfile } from '../contexts/VeteranProfileContext';
 import { evaluateBenefits } from './BenefitsEvaluator';
 import { findDiagnosticCode, generateEvidenceChecklist, suggestSecondaryConditions } from './ClaimPreparationEngine';
+import { calculateCRSC } from './crsc/CRSCRatingCalculator';
+import { applyCombatFlags } from './crsc/CRSCQuestionnaire';
+import { mapEvidenceToConditions } from './crsc/CRSCEvidenceMapper';
+import { generateCRSCPacket } from './crsc/CRSCPacketGenerator';
+import { CRSCComputationResult, CRSCPacket, CRSCEvidenceMappingResult } from '../types/crscTypes';
 
 export interface MatrixOutput {
   // Benefits Matrix
@@ -43,6 +48,13 @@ export interface MatrixOutput {
   // Profile Completeness
   profileScore: number;
   missingFields: string[];
+
+  // CRSC (Combat-Related Special Compensation)
+  crsc?: {
+    calculation: CRSCComputationResult | null;
+    evidenceMap: CRSCEvidenceMappingResult | null;
+    packet: CRSCPacket | null;
+  };
 }
 
 export interface Theory {
@@ -123,6 +135,9 @@ export function evaluateMatrix(profile: VeteranProfile): MatrixOutput {
   // 7. Calculate Profile Completeness
   const { score, missing } = calculateProfileScore(profile);
 
+  // 8. CRSC Calculation & artifacts (non-destructive to other benefits logic)
+  const crsc = buildCRSCView(profile);
+
   return {
     benefits,
     theories,
@@ -131,7 +146,8 @@ export function evaluateMatrix(profile: VeteranProfile): MatrixOutput {
     secondaryConditions,
     strategy,
     profileScore: score,
-    missingFields: missing
+    missingFields: missing,
+    crsc
   };
 }
 
@@ -613,4 +629,48 @@ function calculateProfileScore(profile: VeteranProfile): { score: number; missin
   const score = Math.round((completed / requiredFields.length) * 100);
 
   return { score, missing };
+}
+
+// --- CRSC Helpers ---------------------------------------------------------
+function buildCRSCView(profile: VeteranProfile): MatrixOutput['crsc'] {
+  const crscData = profile.crscData;
+
+  if (!crscData || !crscData.retirementType) {
+    return { calculation: null, evidenceMap: null, packet: null };
+  }
+
+  // Map service-connected conditions into combat-aware structure
+  const baseConditions = (profile.serviceConnectedConditions || []).map((condition, idx) => ({
+    id: condition.name || `condition-${idx}`,
+    name: condition.name,
+    rating: condition.rating,
+    diagnosticCode: findDiagnosticCode(condition.name)?.code,
+    combatFlags: {},
+  }));
+
+  const enrichedConditions = applyCombatFlags(baseConditions, crscData.combatFlagsPerCondition);
+
+  // Compute CRSC using combat-only ratings
+  const calculation: CRSCComputationResult = calculateCRSC({
+    conditions: enrichedConditions,
+    retirementType: crscData.retirementType,
+    retiredPayAmount: crscData.retiredPay || profile.retirementPayAmount || 0,
+    vaCompensationAmount: crscData.vaCompensation || 0,
+    vaWaiverAmount: crscData.vaWaiver || 0
+  });
+
+  // Evidence mapping placeholder (can be enriched when evidence vault data available)
+  const evidenceMap: CRSCEvidenceMappingResult = mapEvidenceToConditions({
+    conditions: enrichedConditions,
+    evidence: crscData.evidenceInventory || profile.crscEvidenceInventory || {}
+  });
+
+  const packet: CRSCPacket = generateCRSCPacket({
+    veteranProfile: profile as any,
+    crscProfile: crscData,
+    computation: calculation,
+    evidenceMap
+  });
+
+  return { calculation, evidenceMap, packet };
 }

@@ -1843,7 +1843,7 @@ const OnboardingWizard: React.FC = () => {
                               Did your condition occur during combat training, field exercises, or simulated combat environments?
                             </span>
                             <span className="text-sm text-gray-600">
-                              This includes injuries sustained during realistic combat training scenarios.
+                              Includes injuries from training exercises, war games, combat drills, live-fire exercises, and field training operations. These are considered "combat-related" under CRSC guidance.
                             </span>
                           </div>
                         </label>
@@ -1869,10 +1869,10 @@ const OnboardingWizard: React.FC = () => {
                           />
                           <div>
                             <span className="font-semibold text-gray-900 block mb-1">
-                              Was your condition caused by hazardous duty such as airborne operations, diving, demolition, or similar roles?
+                              Was your condition caused by hazardous duty such as parachuting, airborne operations, diving, flight operations, or demolition?
                             </span>
                             <span className="text-sm text-gray-600">
-                              This includes special operations and high-risk military assignments.
+                              This includes special operations, flight crew duties, EOD (Explosive Ordnance Disposal), and other high-risk military assignments. Injuries from training jumps, flight operations, diving exercises, and field deployments ALL qualify.
                             </span>
                           </div>
                         </label>

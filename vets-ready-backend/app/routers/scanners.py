@@ -11,7 +11,7 @@ This module provides endpoints for:
 All scanners run on the backend server (not in browser).
 """
 
-from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks
+from fastapi import APIRouter, UploadFile, File, HTTPException, BackgroundTasks, Query
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
@@ -34,6 +34,7 @@ UPLOAD_DIR = PROJECT_ROOT / "uploads" / "str"
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 LOGS_DIR = PROJECT_ROOT / "logs" / "scanners"
 REPORTS_DIR = PROJECT_ROOT / "reports" / "scanners"
+APP_DOCS_DIR = PROJECT_ROOT / "App"
 
 # Ensure directories exist
 for directory in [UPLOAD_DIR, LOGS_DIR, REPORTS_DIR]:
@@ -136,6 +137,70 @@ async def upload_str(
     except Exception as e:
         logger.error(f"❌ STR upload failed: {e}", exc_info=True)
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
+
+
+@router.post("/str/upload-from-app")
+async def upload_str_from_app(
+    filename: str = Query(..., description="Filename located in C:/Dev/Vets Ready/App"),
+    volume: Optional[str] = None,
+    background_tasks: BackgroundTasks = None
+):
+    """
+    Copy a file from the local App directory and process it as an STR upload.
+
+    This is handy for testing when sample documents live in `C:/Dev/Vets Ready/App`.
+    """
+    try:
+        allowed_extensions = ['.pdf', '.tiff', '.tif', '.jpg', '.jpeg', '.png', '.heic']
+        source_path = APP_DOCS_DIR / filename
+
+        if not source_path.exists():
+            raise HTTPException(status_code=404, detail=f"File not found in App directory: {source_path}")
+
+        file_ext = source_path.suffix.lower()
+        if file_ext not in allowed_extensions:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid file type '{file_ext}'. Allowed: {', '.join(allowed_extensions)}"
+            )
+
+        job_id = str(uuid.uuid4())
+        dest_path = UPLOAD_DIR / f"{job_id}_{source_path.name}"
+
+        logger.info(f"📥 Copying STR file from App: {source_path} → {dest_path}")
+        dest_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source_path, dest_path)
+
+        file_size = dest_path.stat().st_size
+        logger.info(f"✅ Copied {file_size} bytes to {dest_path}")
+
+        job = ScannerJob(
+            id=job_id,
+            type="str",
+            status="pending",
+            progress=0,
+            message=f"Copied {source_path.name} ({file_size} bytes)",
+            created_at=datetime.now().isoformat()
+        )
+
+        scanner_status[job_id] = job.dict()
+
+        if background_tasks:
+            background_tasks.add_task(process_str_file, job_id, dest_path, volume)
+
+        return {
+            "job_id": job_id,
+            "filename": source_path.name,
+            "file_size": file_size,
+            "status": "pending",
+            "message": "Copied from App folder. Processing started."
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"❌ STR upload-from-app failed: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Upload-from-app failed: {str(e)}")
 
 
 async def process_str_file(job_id: str, file_path: Path, volume: Optional[str]):

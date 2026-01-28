@@ -29,6 +29,8 @@ class Settings(BaseSettings):
         "http://localhost:3001",  # Desktop dev
         "http://127.0.0.1:5173",
         "http://127.0.0.1:3000",
+        "http://localhost:5174",  # Vite fallback port
+        "http://127.0.0.1:5174",
     ]
 
     # Stripe Payment Integration
@@ -50,6 +52,13 @@ class Settings(BaseSettings):
     stripe_price_business_featured: str = "price_placeholder"
     stripe_price_business_premium: str = "price_placeholder"
     stripe_price_business_advertising: str = "price_placeholder"
+
+    # Enterprise API Gateway
+    enterprise_api_keys: List[str] = []
+    enterprise_allowed_roles: List[str] = ["ORG_ADMIN", "ANALYST", "SYSTEM"]
+    enterprise_oauth_tokens: List[str] = []
+    enterprise_rate_limit_per_minute: int = 120
+    enterprise_rate_limit_per_hour: int = 3600
 
     # Logging
     log_level: str = "INFO"

@@ -92,13 +92,13 @@ export const StepRetirementCrsc: React.FC = () => {
 
                 <div className="indicator-list">
                   {[
-                    { key: 'combatInjury', label: 'Combat injury or wound', description: 'Injury sustained during direct combat operations' },
-                    { key: 'combatTrainingAccident', label: 'Combat training accident', description: 'Injury during combat skills training or field exercises' },
-                    { key: 'hazardousDuty', label: 'Hazardous duty', description: 'Injury during hazardous duty assignments (jump, diving, flight, etc.)' },
-                    { key: 'combatMentalHealth', label: 'PTSD or mental health from combat', description: 'PTSD, anxiety, depression from combat exposure' },
-                    { key: 'combatHazards', label: 'Combat-related hazards', description: 'Exposure to burn pits, Agent Orange, Gulf War hazards in combat zones' },
-                    { key: 'instrumentalityOfWar', label: 'Instrumentality of war', description: 'Injury from weapons, vehicles, or equipment during wartime' },
-                    { key: 'otherCombatRelated', label: 'Other combat-related circumstances', description: 'Other circumstances related to combat operations' }
+                    { key: 'combatInjury', label: 'Combat injury or wound', description: 'Injury sustained during direct combat operations, enemy fire, or IED attacks' },
+                    { key: 'combatTrainingAccident', label: 'Combat training accident', description: 'Injury during combat skills training, field exercises, war games, or live-fire drills' },
+                    { key: 'hazardousDuty', label: 'Hazardous duty', description: 'Parachuting, airborne operations, flight operations, diving, EOD (demolition), or special operations assignments' },
+                    { key: 'combatMentalHealth', label: 'PTSD or mental health from combat', description: 'PTSD, anxiety, depression from combat exposure or combat-related traumatic events' },
+                    { key: 'combatHazards', label: 'Combat-related hazards', description: 'Exposure to burn pits, Agent Orange, depleted uranium, radiation, or Gulf War hazards in combat zones' },
+                    { key: 'instrumentalityOfWar', label: 'Instrumentality of war', description: 'Injury from military weapons, vehicles, or equipment during armed conflict' },
+                    { key: 'otherCombatRelated', label: 'Other combat-related circumstances', description: 'Other military service-related injuries or conditions with combat connection' }
                   ].map((indicator) => (
                     <div key={indicator.key} className="indicator-item">
                       <input

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { CRSCProfileData, EvidenceInventory } from '../types/crscTypes';
 
 export interface VeteranProfile {
   // Personal Information
@@ -42,6 +43,7 @@ export interface VeteranProfile {
   receivesDoDRetirementPay: boolean;
   crscEligible: boolean;
   crscIndicators: string[];
+  crscData?: CRSCProfileData;
 
   // CRSC Eligibility Screening
   crscSelfIdentified?: boolean; // Veteran believes disability is combat-related
@@ -109,6 +111,11 @@ export interface VeteranProfile {
   // Profile Completion
   profileCompleted: boolean;
   lastUpdated: string;
+  // Contact / identifiers (for packet generation)
+  contactEmail?: string;
+  contactPhone?: string;
+  ssnLast4?: string;
+  crscEvidenceInventory?: EvidenceInventory;
 }
 
 interface VeteranProfileContextType {
@@ -137,6 +144,7 @@ const defaultProfile: VeteranProfile = {
   receivesDoDRetirementPay: false,
   crscEligible: false,
   crscIndicators: [],
+  crscData: {},
   crscCombatInjury: false,
   crscCombatTraining: false,
   crscHazardousDuty: false,
@@ -171,6 +179,10 @@ const defaultProfile: VeteranProfile = {
   isPost911: false,
   qualifyingDisabilities: [],
   annualIncome: 0,
+  contactEmail: '',
+  contactPhone: '',
+  ssnLast4: '',
+  crscEvidenceInventory: {},
   profileCompleted: false,
   lastUpdated: new Date().toISOString()
 };

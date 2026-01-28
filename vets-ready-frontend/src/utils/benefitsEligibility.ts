@@ -288,11 +288,11 @@ export const checkCRSCEligibility = (profile: VeteranProfile): BenefitEligibilit
     requirements: eligible ? [
       'Military retirement pay (20+ years or medical retirement)',
       'VA disability rating of 10% or higher',
-      'Disability is combat-related (armed conflict, hazardous duty, instrumentality of war, simulated war)'
+      'Disability is combat-related: armed conflict, hazardous duty (parachuting, airborne, diving, flight ops, EOD), training exercises/field operations, or instrumentality of war'
     ] : [
       'Must receive military retirement pay',
       'Must have VA disability rating of 10%+',
-      'Disability must be combat-related'
+      'Disability must be combat-related (includes hazardous duty, training accidents, and field exercises)'
     ],
     nextSteps: eligible ? [
       'Complete DD Form 2860',

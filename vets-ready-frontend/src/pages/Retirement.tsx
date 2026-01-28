@@ -631,7 +631,7 @@ export const Retirement: React.FC = () => {
                     />
                     <div>
                       <span className="font-semibold text-gray-900">My disability is combat-related</span>
-                      <p className="text-sm text-gray-600 mt-1">Must be a direct result of armed conflict, hazardous duty, simulated war, or instrumentality of war</p>
+                      <p className="text-sm text-gray-600 mt-1">Includes: armed conflict, hazardous duty (parachuting, airborne, diving, flight ops, EOD), simulated war exercises/field training, or instrumentality of war</p>
                     </div>
                   </label>
 
