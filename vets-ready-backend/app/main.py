@@ -39,6 +39,7 @@ from app.routers import (
     scanners,  # Scanner service
     dd214,  # DD-214 extraction service
     revenue,  # ARDE revenue engine
+    documents,  # Document upload MVP
 )
 from app.routes import entitlement
 from app.config import settings
@@ -103,6 +104,7 @@ app.include_router(ai.router)  # AI engine
 app.include_router(scanners.router)  # Scanner service
 app.include_router(dd214.router)  # DD-214 extraction
 app.include_router(revenue.router)  # ARDE revenue engine
+app.include_router(documents.router)  # Document upload MVP
 
 @app.on_event("startup")
 async def startup_event():

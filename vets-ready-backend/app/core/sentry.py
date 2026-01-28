@@ -40,7 +40,11 @@ def before_send(event, hint):
     if 'request' in event and 'data' in event['request']:
         data = event['request']['data']
         if isinstance(data, dict):
-            sensitive_fields = ['password', 'token', 'secret', 'ssn', 'dd214']
+            sensitive_fields = [
+                'password', 'token', 'secret', 'ssn', 'dd214',
+                'social_security', 'date_of_birth', 'dob', 'full_name',
+                'address', 'phone', 'email', 'parsed_fields', 'document'
+            ]
             for field in sensitive_fields:
                 if field in data:
                     data[field] = '[Filtered]'
