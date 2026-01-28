@@ -11,6 +11,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSettings } from '../contexts/SettingsContext';
+import { DocumentScanner } from '../components/DocumentScanner';
 
 export const TransitionPage: React.FC = () => {
   const { currentTheme } = useSettings();
@@ -379,28 +380,20 @@ export const TransitionPage: React.FC = () => {
               padding: '2rem',
               borderRadius: '12px',
               boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-              textAlign: 'center'
+              gridColumn: 'span 2'
             }}
           >
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🗂️</div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem' }}>Document Organizer</h3>
-            <p style={{ color: '#4a5568', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Organize DD-214, training certificates, and transition documents
+            <div style={{ fontSize: '4rem', marginBottom: '1rem', textAlign: 'center' }}>🗂️</div>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', textAlign: 'center' }}>DD-214 Document Scanner</h3>
+            <p style={{ color: '#4a5568', lineHeight: 1.6, marginBottom: '1.5rem', textAlign: 'center' }}>
+              Scan and organize your DD-214 with automated field extraction
             </p>
-            <button
-              style={{
-                padding: '0.75rem 1.5rem',
-                fontSize: '1rem',
-                fontWeight: 'bold',
-                borderRadius: '6px',
-                border: 'none',
-                background: currentTheme.colors.primary,
-                color: currentTheme.colors.text,
-                cursor: 'pointer'
+            <DocumentScanner 
+              onUploadComplete={(docId) => {
+                // PRODUCTION TODO: Add proper success handling (e.g., redirect, show notification)
+                // Document uploaded successfully with ID: docId
               }}
-            >
-              Coming Soon
-            </button>
+            />
           </div>
         </div>
       </section>

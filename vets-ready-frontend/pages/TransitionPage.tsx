@@ -1,4 +1,5 @@
 import React from 'react'
+import { DocumentScanner } from '../src/components/DocumentScanner'
 
 export const TransitionPage: React.FC = () => {
   return (
@@ -38,10 +39,12 @@ export const TransitionPage: React.FC = () => {
 
           <div className="bg-white rounded-lg shadow p-8 border-l-4 border-purple-900">
             <h2 className="text-2xl font-bold mb-4">🗂️ Document Vault</h2>
-            <p className="text-gray-600 mb-6">Organize DD214, STRs, medical records, and transition documents.</p>
-            <a href="#" className="bg-purple-900 text-white px-6 py-2 rounded font-bold hover:bg-purple-800">
-              Organize Documents
-            </a>
+            <p className="text-gray-600 mb-6">Scan and organize DD214, STRs, medical records, and transition documents.</p>
+            <div className="mt-4">
+              <DocumentScanner 
+                onUploadComplete={(docId) => console.log('Document uploaded:', docId)}
+              />
+            </div>
           </div>
         </div>
 
