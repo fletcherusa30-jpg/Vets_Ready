@@ -45,10 +45,10 @@ function ResourceCard({
 }) {
   const partnerBadgeColor =
     resource.partnerLevel === "FEATURED"
-      ? "bg-purple-100 text-purple-800"
+      ? "bg-purple-100 text-purple-900"
       : resource.partnerLevel === "VERIFIED"
-        ? "bg-blue-100 text-blue-800"
-        : "bg-gray-100 text-gray-800";
+        ? "bg-blue-100 text-blue-900"
+        : "bg-gray-100 text-gray-900";
 
   return (
     <Card className="hover:shadow-lg transition-shadow">
@@ -58,7 +58,7 @@ function ResourceCard({
             <CardTitle className="flex items-center gap-2">
               {resource.name}
               {resource.isFeatured && (
-                <Badge className="bg-purple-100 text-purple-800 text-xs">
+                <Badge className="bg-purple-100 text-purple-900 text-xs">
                   Featured
                 </Badge>
               )}

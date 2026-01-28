@@ -193,7 +193,7 @@ export function PartnerPortalPage() {
                 <label className="block text-sm font-semibold mb-2">Categories</label>
                 <div className="flex flex-wrap gap-2">
                   {profile.categories.map((cat) => (
-                    <Badge key={cat} className="bg-blue-100 text-blue-800">
+                    <Badge key={cat} className="bg-blue-100 text-blue-900">
                       {cat}
                     </Badge>
                   ))}
