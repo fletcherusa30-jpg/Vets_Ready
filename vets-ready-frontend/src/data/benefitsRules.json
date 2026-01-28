@@ -1,0 +1,454 @@
+{
+  "federalBenefits": [
+    {
+      "benefitId": "federal_healthcare_free",
+      "name": "Free VA Healthcare (Priority Group 1-3)",
+      "category": "Federal Healthcare",
+      "description": "Veterans with a combined rating of 50% or higher qualify for free VA healthcare with no copays.",
+      "criteria": {
+        "rating_min": 50
+      },
+      "priorityGroup": "1-3",
+      "benefits": [
+        "No enrollment fees",
+        "No copays for medical care",
+        "No copays for medications",
+        "Priority scheduling",
+        "Travel reimbursement eligible"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/health-care/eligibility/priority-groups/",
+        "apply": "https://www.va.gov/health-care/how-to-apply/"
+      }
+    },
+    {
+      "benefitId": "federal_commissary_exchange",
+      "name": "Commissary & Exchange Privileges",
+      "category": "Federal Shopping",
+      "description": "Veterans with service-connected disabilities can shop at military commissaries and exchanges.",
+      "criteria": {
+        "rating_min": 0,
+        "service_connected": true
+      },
+      "benefits": [
+        "Access to commissary (grocery)",
+        "Access to exchange (retail)",
+        "Tax-free shopping on base",
+        "Significant savings on groceries"
+      ],
+      "links": {
+        "learnMore": "https://www.commissaries.com/",
+        "exchange": "https://www.shopmyexchange.com/"
+      }
+    },
+    {
+      "benefitId": "federal_travel_pay",
+      "name": "Beneficiary Travel Reimbursement",
+      "category": "Federal Healthcare",
+      "description": "Veterans with a 30% or higher rating can receive mileage reimbursement for VA medical appointments.",
+      "criteria": {
+        "rating_min": 30
+      },
+      "benefits": [
+        "Mileage reimbursement",
+        "Covers travel to VA facilities",
+        "Covers approved travel expenses",
+        "Some lodging reimbursement available"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/health-care/get-reimbursed-for-travel-pay/",
+        "apply": "https://www.va.gov/HEALTHBENEFITS/vtp/beneficiary_travel.asp"
+      }
+    },
+    {
+      "benefitId": "federal_champva",
+      "name": "CHAMPVA for Spouse & Dependents",
+      "category": "Federal Healthcare",
+      "description": "Spouses and children of veterans rated Permanent and Total (P&T) qualify for CHAMPVA health insurance.",
+      "criteria": {
+        "permanent_and_total": true
+      },
+      "benefits": [
+        "Health insurance for family",
+        "Low-cost healthcare coverage",
+        "Covers dependents not eligible for TRICARE",
+        "Prescription coverage included"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/health-care/family-caregiver-benefits/champva/",
+        "apply": "https://www.va.gov/family-member-benefits/champva/"
+      }
+    },
+    {
+      "benefitId": "federal_chapter35",
+      "name": "Chapter 35 Education Benefits (DEA)",
+      "category": "Federal Education",
+      "description": "Dependents of veterans rated Permanent and Total qualify for Dependents' Educational Assistance (Chapter 35).",
+      "criteria": {
+        "permanent_and_total": true,
+        "has_dependents": true
+      },
+      "benefits": [
+        "Education assistance for spouse",
+        "Education assistance for children",
+        "Up to 45 months of benefits",
+        "Covers tuition, books, housing"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/education/survivor-dependent-benefits/dependents-education-assistance/",
+        "apply": "https://www.va.gov/education/how-to-apply/"
+      }
+    },
+    {
+      "benefitId": "federal_smc",
+      "name": "Special Monthly Compensation (SMC)",
+      "category": "Federal Compensation",
+      "description": "Additional compensation for veterans with severe disabilities requiring aid and attendance or specific loss of use.",
+      "criteria": {
+        "rating_min": 100,
+        "requires_aid_attendance": true
+      },
+      "benefits": [
+        "Additional monthly payment",
+        "For loss of use of limbs",
+        "For aid and attendance",
+        "For housebound status",
+        "Multiple levels (SMC-K through SMC-R)"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/disability/compensation-rates/special-monthly-compensation-rates/",
+        "criteria": "https://www.law.cornell.edu/cfr/text/38/3.350"
+      }
+    },
+    {
+      "benefitId": "federal_clothing_allowance",
+      "name": "Annual Clothing Allowance",
+      "category": "Federal Compensation",
+      "description": "Annual payment for veterans whose prosthetic devices or medications damage clothing.",
+      "criteria": {
+        "has_prosthetic_device": true,
+        "rating_min": 0
+      },
+      "benefits": [
+        "Annual tax-free payment",
+        "For damaged clothing due to prosthetics",
+        "For medication that stains clothing",
+        "Auto-renews annually"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/disability/compensation-rates/clothing-allowance-rates/",
+        "apply": "https://www.va.gov/find-forms/about-form-10-8678/"
+      }
+    },
+    {
+      "benefitId": "federal_adaptive_housing",
+      "name": "Specially Adapted Housing (SAH) Grant",
+      "category": "Federal Housing",
+      "description": "Grant to help veterans with certain service-connected disabilities adapt their home or purchase an adapted home.",
+      "criteria": {
+        "rating_min": 0,
+        "qualifying_disability": ["loss_of_limbs", "severe_burn", "blindness"]
+      },
+      "maxGrant": "$109,986 (2024)",
+      "benefits": [
+        "Up to $109,986 for home adaptations",
+        "Wheelchair accessibility",
+        "Bathroom modifications",
+        "Kitchen adaptations",
+        "Entrance ramps"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/housing-assistance/disability-housing-grants/",
+        "apply": "https://www.va.gov/housing-assistance/disability-housing-grants/how-to-apply/"
+      }
+    },
+    {
+      "benefitId": "federal_auto_grant",
+      "name": "Automobile Allowance & Adaptive Equipment",
+      "category": "Federal Transportation",
+      "description": "One-time payment toward purchase of vehicle and ongoing adaptive equipment reimbursement.",
+      "criteria": {
+        "rating_min": 0,
+        "qualifying_disability": ["loss_of_limbs", "vision_loss", "loss_of_use"]
+      },
+      "maxGrant": "$27,787 (2024)",
+      "benefits": [
+        "One-time $27,787 toward vehicle",
+        "Adaptive equipment reimbursement",
+        "Hand controls, wheelchair lifts, etc.",
+        "Repair and replacement coverage"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/disability/eligibility/special-claims/automobile-allowance/",
+        "apply": "https://www.va.gov/find-forms/about-form-21-4502/"
+      }
+    },
+    {
+      "benefitId": "federal_caregiver_program",
+      "name": "Program of Comprehensive Assistance for Family Caregivers",
+      "category": "Federal Caregiver",
+      "description": "Stipend and benefits for family caregivers of veterans with serious service-connected disabilities.",
+      "criteria": {
+        "rating_min": 70,
+        "requires_caregiver": true,
+        "post_911": true
+      },
+      "benefits": [
+        "Monthly stipend for caregiver",
+        "Healthcare coverage for caregiver",
+        "Respite care",
+        "Caregiver training",
+        "Mental health services"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/family-member-benefits/comprehensive-assistance-for-family-caregivers/",
+        "apply": "https://www.va.gov/family-member-benefits/apply-for-caregiver-assistance-form-10-10cg/"
+      }
+    },
+    {
+      "benefitId": "federal_vgli",
+      "name": "Veterans' Group Life Insurance (VGLI)",
+      "category": "Federal Insurance",
+      "description": "Convertible term life insurance for veterans who had SGLI while in service.",
+      "criteria": {
+        "had_sgli": true,
+        "separated_within": "1 year"
+      },
+      "benefits": [
+        "Up to $500,000 coverage",
+        "No medical exam if within 1 year",
+        "Convertible to permanent insurance",
+        "Renewable every 5 years"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/life-insurance/options-eligibility/vgli/",
+        "apply": "https://www.benefits.va.gov/insurance/vgli.asp"
+      }
+    },
+    {
+      "benefitId": "federal_vmli",
+      "name": "Veterans' Mortgage Life Insurance (VMLI)",
+      "category": "Federal Insurance",
+      "description": "Mortgage protection for veterans with severe service-connected disabilities who receive SAH grants.",
+      "criteria": {
+        "has_sah_grant": true,
+        "rating_min": 0
+      },
+      "benefits": [
+        "Pays off mortgage if veteran dies",
+        "Up to $200,000 coverage",
+        "Low monthly premiums",
+        "Protects family home"
+      ],
+      "links": {
+        "learnMore": "https://www.va.gov/life-insurance/options-eligibility/vmli/",
+        "apply": "https://www.benefits.va.gov/insurance/vmli.asp"
+      }
+    }
+  ],
+  "stateBenefits": {
+    "idaho": [
+      {
+        "benefitId": "idaho_property_tax_reduction",
+        "name": "Idaho Property Tax Reduction",
+        "category": "Idaho Tax Benefits",
+        "state": "Idaho",
+        "description": "Veterans with service-connected disabilities qualify for property tax reductions based on their rating percentage.",
+        "criteria": {
+          "rating_min": 10,
+          "state": "Idaho",
+          "homeowner": true
+        },
+        "reductionTable": {
+          "10-20%": "$1,500 reduction",
+          "30-40%": "$2,250 reduction",
+          "50-60%": "$3,000 reduction",
+          "70-90%": "$3,750 reduction",
+          "100%": "Full exemption"
+        },
+        "benefits": [
+          "Annual property tax reduction",
+          "Based on VA rating percentage",
+          "Applies to primary residence",
+          "Automatic renewal"
+        ],
+        "links": {
+          "learnMore": "https://tax.idaho.gov/property/veterans.html",
+          "apply": "https://tax.idaho.gov/forms/EFO00128_11-28-2022.pdf"
+        }
+      },
+      {
+        "benefitId": "idaho_hunting_fishing_license",
+        "name": "Free Idaho Hunting & Fishing License",
+        "category": "Idaho Recreation",
+        "state": "Idaho",
+        "description": "Disabled veterans qualify for free or discounted hunting and fishing licenses in Idaho.",
+        "criteria": {
+          "rating_min": 40,
+          "state": "Idaho"
+        },
+        "benefits": [
+          "Free hunting license",
+          "Free fishing license",
+          "Free combination license",
+          "Lifetime validity for 100% P&T"
+        ],
+        "links": {
+          "learnMore": "https://idfg.idaho.gov/licenses/disabilities",
+          "apply": "https://idfg.idaho.gov/licenses"
+        }
+      },
+      {
+        "benefitId": "idaho_state_parks_pass",
+        "name": "Free Idaho State Parks Pass",
+        "category": "Idaho Recreation",
+        "state": "Idaho",
+        "description": "100% service-connected disabled veterans receive free Idaho State Parks annual pass.",
+        "criteria": {
+          "rating_min": 100,
+          "state": "Idaho"
+        },
+        "benefits": [
+          "Free annual state parks pass",
+          "Access to all Idaho state parks",
+          "Waived day-use fees",
+          "Valid for one vehicle"
+        ],
+        "links": {
+          "learnMore": "https://parksandrecreation.idaho.gov/passes/",
+          "apply": "https://parksandrecreation.idaho.gov/"
+        }
+      },
+      {
+        "benefitId": "idaho_tuition_waiver",
+        "name": "Idaho Public College Tuition Waiver",
+        "category": "Idaho Education",
+        "state": "Idaho",
+        "description": "Disabled veterans and their dependents may qualify for tuition waivers at Idaho public colleges.",
+        "criteria": {
+          "rating_min": 10,
+          "state": "Idaho"
+        },
+        "benefits": [
+          "Full or partial tuition waiver",
+          "Applies to Idaho public colleges",
+          "May cover dependents",
+          "Based on disability rating"
+        ],
+        "links": {
+          "learnMore": "https://boardofed.idaho.gov/scholarships/idaho-national-guard-educational-assistance/",
+          "apply": "Contact individual institution"
+        }
+      },
+      {
+        "benefitId": "idaho_veteran_hiring_preference",
+        "name": "Idaho State Job Hiring Preference",
+        "category": "Idaho Employment",
+        "state": "Idaho",
+        "description": "Veterans receive preference in Idaho state government hiring.",
+        "criteria": {
+          "state": "Idaho",
+          "veteran": true
+        },
+        "benefits": [
+          "Hiring preference for state jobs",
+          "Additional points in hiring process",
+          "Disabled veteran priority",
+          "Protections against layoffs"
+        ],
+        "links": {
+          "learnMore": "https://dhr.idaho.gov/StateEmployees/VeteransPreference.html",
+          "apply": "https://www.idaho.gov/jobs/"
+        }
+      },
+      {
+        "benefitId": "idaho_disabled_veteran_plates",
+        "name": "Idaho Disabled Veteran License Plates",
+        "category": "Idaho Transportation",
+        "state": "Idaho",
+        "description": "Special license plates for disabled veterans with parking privileges.",
+        "criteria": {
+          "rating_min": 10,
+          "state": "Idaho"
+        },
+        "benefits": [
+          "Special DV license plates",
+          "Disabled parking privileges",
+          "No additional registration fees",
+          "Purple Heart plates also available"
+        ],
+        "links": {
+          "learnMore": "https://itd.idaho.gov/dmv/",
+          "apply": "https://itd.idaho.gov/dmv/plates/"
+        }
+      }
+    ]
+  },
+  "claimPreparationTools": [
+    {
+      "toolId": "evidence_checklist",
+      "name": "Evidence Checklist",
+      "description": "Comprehensive checklist of evidence needed for each type of service connection claim.",
+      "category": "Claim Preparation",
+      "includes": [
+        "Service medical records",
+        "VA medical records",
+        "Private medical records",
+        "Lay statements",
+        "Buddy statements",
+        "Nexus letters",
+        "DBQ forms",
+        "Service connection evidence"
+      ]
+    },
+    {
+      "toolId": "cfr_rating_criteria",
+      "name": "CFR Part 4 Rating Criteria",
+      "description": "Official VA rating criteria from 38 CFR Part 4 for each diagnostic code.",
+      "category": "Rating Education",
+      "includes": [
+        "Rating percentages by condition",
+        "Functional assessment criteria",
+        "Combined ratings calculator",
+        "Bilateral factor explanation",
+        "Pyramiding rules"
+      ]
+    },
+    {
+      "toolId": "secondary_conditions",
+      "name": "Secondary Conditions Analyzer",
+      "description": "Identify potential secondary conditions connected to existing service-connected disabilities.",
+      "category": "Claim Strategy",
+      "includes": [
+        "Common secondary connections",
+        "Medical research references",
+        "Nexus requirements",
+        "Filing strategies"
+      ]
+    },
+    {
+      "toolId": "lay_statement_templates",
+      "name": "Lay Statement Templates",
+      "description": "Templates for writing effective lay statements and buddy statements.",
+      "category": "Evidence",
+      "includes": [
+        "Personal statement templates",
+        "Buddy statement templates",
+        "Timeline creation",
+        "Symptom documentation"
+      ]
+    },
+    {
+      "toolId": "dbq_guidance",
+      "name": "DBQ (Disability Benefits Questionnaire) Guidance",
+      "description": "Guidance on using DBQ forms for medical evidence.",
+      "category": "Medical Evidence",
+      "includes": [
+        "DBQ form finder",
+        "Completion instructions",
+        "Provider requirements",
+        "Submission guidance"
+      ]
+    }
+  ]
+}

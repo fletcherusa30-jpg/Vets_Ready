@@ -5,7 +5,7 @@ from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from typing import Optional, Dict
 from fastapi import Depends, HTTPException, status
-from fastapi.security import HTTPBearer, HTTPAuthCredentials
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 from app.config import settings
 
@@ -55,7 +55,7 @@ def verify_token(token: str) -> Dict:
         )
 
 
-def get_current_user_id(credentials: HTTPAuthCredentials = Depends(security)) -> str:
+def get_current_user_id(credentials: HTTPAuthorizationCredentials = Depends(security)) -> str:
     """Extract user ID from JWT token"""
     token = credentials.credentials
     payload = verify_token(token)

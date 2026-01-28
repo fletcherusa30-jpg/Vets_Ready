@@ -1,4 +1,4 @@
-"""Cookie consent banner component"""
+// Cookie consent banner component
 import React, { useState, useEffect } from 'react';
 
 export const CookieConsent: React.FC = () => {

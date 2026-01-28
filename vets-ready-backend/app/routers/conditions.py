@@ -8,7 +8,7 @@ from app.database import get_db
 from app.schemas.condition import ConditionCreate, ConditionResponse
 from app.services.condition_service import ConditionService
 
-router = APIRouter()
+router = APIRouter(prefix="/api/conditions", tags=["conditions"])
 
 
 @router.get("", response_model=List[ConditionResponse])

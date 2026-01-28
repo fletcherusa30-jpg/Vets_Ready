@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          pip install fastapi uvicorn
+      - name: Build backend (dummy step)
+        run: echo "Backend build complete"
+      - name: Package artifacts
+        run: |
+          mkdir -p dist
+          cp -r frontend/dist dist/frontend
+          cp -r backend/app dist/backend
+      # - name: Deploy to production
+      #   run: |
+      #     echo "Add deployment steps here"

@@ -5,9 +5,9 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 
-from app.db import get_db
+from app.database import get_db
 from app.services.legal_reference_service import LegalReferenceService
-from app.auth import get_current_user_id
+from app.utils.security import get_current_user_id
 
 
 # ===== REQUEST/RESPONSE MODELS =====
@@ -38,11 +38,21 @@ class ClaimGuidanceResponse(BaseModel):
     appeal_basis: dict
 
 
+class ClaimGuidanceRequest(BaseModel):
+    """Request for claim guidance"""
+    condition_codes: List[str] = Field(..., description="Condition codes to include in claim")
+
+
 class CombinedRatingResponse(BaseModel):
     """Combined disability rating calculation"""
     individual_ratings: List[int]
     combined_rating: int
     calculation_steps: List[str]
+
+
+class CombinedRatingRequest(BaseModel):
+    """Request for combined rating calculation"""
+    individual_ratings: List[int] = Field(..., description="Individual disability ratings (10-100)")
 
 
 # ===== API ROUTER =====
@@ -382,7 +392,7 @@ async def get_special_ratings(
 
 @router.post("/claim-guidance")
 async def get_claim_guidance(
-    condition_codes: List[str] = Field(..., description="Condition codes to include in claim"),
+    request: ClaimGuidanceRequest,
     db: Session = Depends(get_db),
     user_id: str = Depends(get_current_user_id),
 ):
@@ -398,7 +408,7 @@ async def get_claim_guidance(
     """
     try:
         service = LegalReferenceService(db)
-        guidance = service.get_claim_guidance(condition_codes)
+        guidance = service.get_claim_guidance(request.condition_codes)
         return guidance
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to retrieve claim guidance: {str(e)}")
@@ -408,7 +418,7 @@ async def get_claim_guidance(
 
 @router.post("/calculator/combined-rating")
 async def calculate_combined_rating(
-    individual_ratings: List[int] = Field(..., description="Individual disability ratings (10-100)"),
+    request: CombinedRatingRequest,
     db: Session = Depends(get_db),
     user_id: str = Depends(get_current_user_id),
 ):
@@ -425,7 +435,7 @@ async def calculate_combined_rating(
     """
     try:
         service = LegalReferenceService(db)
-        result = service.combined_rating_calculator(individual_ratings)
+        result = service.combined_rating_calculator(request.individual_ratings)
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Rating calculation failed: {str(e)}")

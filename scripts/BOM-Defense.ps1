@@ -1,57 +1,152 @@
 <#
 .SYNOPSIS
-    Ultimate BOM Defense System for Android Studio projects.
+    Ultimate BOM Defense System for VetsReady project.
 .DESCRIPTION
     - Deep BOM scanner and cleaner
     - Real-time BOM watchdog
     - Process correlation engine
-    - Android Studio configuration validator
     - Environment hardening validator
     - Reporting engine
 #>
 
-# Global Configuration
-$ProjectRoot = "C:\Dev\PhoneApp"
+# =====================================================================
+# CONFIGURATION - MUST BE CORRECT FOR SCANNER TO WORK
+# =====================================================================
+
+# Determine project root dynamically
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ProjectRoot = Split-Path -Parent $ScriptDir
+
+Write-Host "=== BOM DEFENSE SYSTEM ===" -ForegroundColor Cyan
+Write-Host "Script Directory: $ScriptDir" -ForegroundColor Yellow
+Write-Host "Project Root: $ProjectRoot" -ForegroundColor Yellow
+Write-Host "Current Location: $(Get-Location)" -ForegroundColor Yellow
+Write-Host ""
+
+# Verify project root exists
+if (-not (Test-Path $ProjectRoot)) {
+    Write-Host "ERROR: Project root does not exist: $ProjectRoot" -ForegroundColor Red
+    Write-Host "Please verify the path and try again." -ForegroundColor Red
+    exit 1
+}
+
 $BackupRoot = Join-Path $ProjectRoot "BOM_Backups"
 $Timestamp = (Get-Date).ToString("yyyyMMdd_HHmmss")
-$LogFile = Join-Path $ProjectRoot "BOM_Defense_Log_$Timestamp.txt"
-$TargetExtensions = @("*.gradle","*.groovy","*.xml","*.kt","*.java","*.properties","*.json","*.js","*.ts","*.cfg","*.ini")
+$LogsDir = Join-Path $ProjectRoot "logs"
+if (-not (Test-Path $LogsDir)) {
+    New-Item -ItemType Directory -Path $LogsDir -Force | Out-Null
+    Write-Host "Created logs directory: $LogsDir" -ForegroundColor Green
+}
+$LogFile = Join-Path $LogsDir "BOM_Defense_Log_$Timestamp.txt"
+$TargetExtensions = @("*.gradle","*.groovy","*.xml","*.kt","*.java","*.properties","*.json","*.js","*.ts","*.tsx","*.cfg","*.ini")
 $BOM = 0xEF,0xBB,0xBF
 $BOMEvents = @()
 
-if (-not (Test-Path $BackupRoot)) { New-Item -ItemType Directory -Path $BackupRoot | Out-Null }
-
-function Write-Log { param([string]$Message)
-    $entry = "[$(Get-Date)] $Message"
-    Add-Content -Path $LogFile -Value $entry
-    Write-Host $entry
+if (-not (Test-Path $BackupRoot)) {
+    New-Item -ItemType Directory -Path $BackupRoot -Force | Out-Null
+    Write-Host "Created backup directory: $BackupRoot" -ForegroundColor Green
 }
 
-function Remove-BOMFromFile { param([string]$FilePath)
+Write-Host "Log file: $LogFile" -ForegroundColor Cyan
+Write-Host ""
+
+function Write-Log {
+    param([string]$Message)
+    $entry = "[$(Get-Date)] $Message"
     try {
+        Add-Content -Path $LogFile -Value $entry -ErrorAction Stop
+        Write-Host $entry
+    } catch {
+        Write-Host "[LOG ERROR] Could not write to log file: $_" -ForegroundColor Red
+        Write-Host $entry
+    }
+}
+
+function Remove-BOMFromFile {
+    param([string]$FilePath)
+    try {
+        if (-not (Test-Path $FilePath)) {
+            Write-Log "WARNING: File does not exist: $FilePath"
+            return $false
+        }
+
         $bytes = [System.IO.File]::ReadAllBytes($FilePath)
+
         if ($bytes.Length -ge 3 -and $bytes[0..2] -eq $BOM) {
+            Write-Log "BOM detected in: $FilePath"
+
             $relPath = $FilePath.Substring($ProjectRoot.Length).TrimStart('\')
             $backupPath = Join-Path $BackupRoot $relPath
             $backupDir = Split-Path $backupPath
-            if (-not (Test-Path $backupDir)) { New-Item -ItemType Directory -Path $backupDir -Force | Out-Null }
+
+            if (-not (Test-Path $backupDir)) {
+                New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
+            }
+
             Copy-Item $FilePath "$backupPath.bak_$Timestamp" -Force
+
             $cleanBytes = $bytes[3..($bytes.Length - 1)]
             $content = [System.Text.Encoding]::UTF8.GetString($cleanBytes)
             [System.IO.File]::WriteAllText($FilePath, $content, [System.Text.Encoding]::UTF8)
+
             Write-Log "BOM removed from: $FilePath (Backup: $backupPath.bak_$Timestamp)"
             return $true
         }
-    } catch { Write-Log ('ERROR removing BOM from ' + $FilePath + ': ' + $_) }
+    } catch {
+        Write-Log "ERROR removing BOM from $FilePath : $($_.Exception.Message)"
+        Write-Host "Stack Trace: $($_.ScriptStackTrace)" -ForegroundColor Red
+        return $false
+    }
     return $false
 }
 
 function Start-BOMScan {
-    Write-Log "Starting deep BOM scan in $ProjectRoot"
-    $files = Get-ChildItem -Path $ProjectRoot -Recurse -Include $TargetExtensions -File
-    $total = 0; $removed = 0
-    foreach ($file in $files) { $total++; if (Remove-BOMFromFile -FilePath $file.FullName) { $removed++ } }
-    Write-Log "Scan completed. Total files: $total, BOMs removed: $removed"
+    Write-Log "=== STARTING DEEP BOM SCAN ==="
+    Write-Log "Project Root: $ProjectRoot"
+    Write-Log "Target Extensions: $($TargetExtensions -join ', ')"
+
+    if (-not (Test-Path $ProjectRoot)) {
+        Write-Log "ERROR: Project root does not exist: $ProjectRoot"
+        return
+    }
+
+    Write-Host "Scanning for files..." -ForegroundColor Cyan
+    $files = Get-ChildItem -Path $ProjectRoot -Recurse -Include $TargetExtensions -File -ErrorAction SilentlyContinue
+
+    $total = 0
+    $removed = 0
+    $fileCount = ($files | Measure-Object).Count
+
+    Write-Log "Found $fileCount files to scan"
+    Write-Host "Processing $fileCount files..." -ForegroundColor Cyan
+
+    if ($fileCount -eq 0) {
+        Write-Log "WARNING: No files found matching target extensions"
+        Write-Host "This may indicate an incorrect project root or file filter" -ForegroundColor Yellow
+        return
+    }
+
+    foreach ($file in $files) {
+        $total++
+
+        if ($total % 100 -eq 0) {
+            Write-Host "Processed $total files..." -ForegroundColor Gray
+        }
+
+        if (Remove-BOMFromFile -FilePath $file.FullName) {
+            $removed++
+        }
+    }
+
+    Write-Log "=== SCAN COMPLETED ==="
+    Write-Log "Total files scanned: $total"
+    Write-Log "BOMs removed: $removed"
+    Write-Host ""
+    Write-Host "✅ Scan Complete" -ForegroundColor Green
+    Write-Host "Files Scanned: $total" -ForegroundColor White
+    Write-Host "BOMs Removed: $removed" -ForegroundColor White
+    Write-Host "Log File: $LogFile" -ForegroundColor Cyan
+    Write-Host ""
 }
 
 function Start-BOMWatchdog {

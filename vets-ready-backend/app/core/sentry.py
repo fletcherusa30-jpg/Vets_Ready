@@ -2,7 +2,7 @@
 import sentry_sdk
 from sentry_sdk.integrations.fastapi import FastApiIntegration
 from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
-from app.core.config import settings
+from app.config import settings
 
 
 def init_sentry():

@@ -1,0 +1,460 @@
+{
+  "conditions": [
+    {
+      "diagnosticCode": "5003",
+      "conditionName": "Degenerative Arthritis",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "With X-ray evidence of involvement of 2 or more major joints or 2 or more minor joint groups, with occasional incapacitating exacerbations",
+        "20": "With X-ray evidence of involvement of 2 or more major joints or 2 or more minor joint groups, with frequent incapacitating exacerbations"
+      },
+      "minimumRating": 10,
+      "maximumRating": 20,
+      "specialRules": ["Rated based on limitation of motion and/or X-ray evidence", "For pre-arthritic changes, rate on limitation of motion"],
+      "crossReferences": ["Rate individual joints separately if not covered by 5003"],
+      "isPresumptive": false,
+      "synonyms": ["osteoarthritis", "DJD", "degenerative joint disease"]
+    },
+    {
+      "diagnosticCode": "5010",
+      "conditionName": "Traumatic Arthritis",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "With X-ray evidence of involvement of 2 or more major joints or 2 or more minor joint groups, with occasional incapacitating exacerbations",
+        "20": "With X-ray evidence of involvement of 2 or more major joints or 2 or more minor joint groups, with frequent incapacitating exacerbations"
+      },
+      "minimumRating": 10,
+      "maximumRating": 20,
+      "specialRules": ["Must show evidence of trauma", "Rate based on limitation of motion if more advantageous"],
+      "crossReferences": ["See individual joint codes for single joint involvement"],
+      "isPresumptive": false,
+      "synonyms": ["post-traumatic arthritis"]
+    },
+    {
+      "diagnosticCode": "5257",
+      "conditionName": "Knee Replacement (Prosthesis)",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "30": "Following total knee replacement, minimum rating"
+      },
+      "minimumRating": 30,
+      "maximumRating": 100,
+      "specialRules": ["Rate based on limitation of motion after replacement", "Minimum 30% during the first year following implantation"],
+      "crossReferences": ["May rate higher based on limitation of motion or instability"],
+      "isPresumptive": false,
+      "synonyms": ["total knee replacement", "TKR", "knee arthroplasty"]
+    },
+    {
+      "diagnosticCode": "5260",
+      "conditionName": "Limitation of Flexion of the Knee",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "0": "Flexion limited to 45 degrees",
+        "10": "Flexion limited to 30 degrees",
+        "20": "Flexion limited to 15 degrees",
+        "30": "Flexion limited to 0 degrees"
+      },
+      "minimumRating": 0,
+      "maximumRating": 30,
+      "specialRules": ["Measure with goniometer", "Rate bilateral separately"],
+      "crossReferences": ["Combine with 5261 if extension also limited"],
+      "isPresumptive": false,
+      "synonyms": ["knee flexion", "limited knee motion", "knee ROM"]
+    },
+    {
+      "diagnosticCode": "6100",
+      "conditionName": "Hearing Loss",
+      "bodySystem": "Ear",
+      "ratingCriteria": {
+        "0": "Hearing threshold in better ear 26-40 dB",
+        "10": "Hearing threshold in better ear 41-55 dB AND worse ear 55-70 dB",
+        "20": "Hearing threshold in better ear 41-55 dB AND worse ear 71-85 dB"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Use pure tone audiometry", "Rate using Table VI", "Consider speech discrimination"],
+      "crossReferences": ["May combine with tinnitus (6260)"],
+      "isPresumptive": false,
+      "synonyms": ["hearing impairment", "deafness", "auditory loss"]
+    },
+    {
+      "diagnosticCode": "6260",
+      "conditionName": "Tinnitus",
+      "bodySystem": "Ear",
+      "ratingCriteria": {
+        "10": "Recurrent tinnitus"
+      },
+      "minimumRating": 10,
+      "maximumRating": 10,
+      "specialRules": ["Not rated higher than 10%", "Bilateral tinnitus rated as single condition at 10%"],
+      "crossReferences": ["May combine with hearing loss (6100)"],
+      "isPresumptive": false,
+      "synonyms": ["ringing in ears", "ear ringing", "buzzing in ears"]
+    },
+    {
+      "diagnosticCode": "7101",
+      "conditionName": "Hypertension (High Blood Pressure)",
+      "bodySystem": "Cardiovascular",
+      "ratingCriteria": {
+        "10": "Diastolic pressure predominantly 90 or more, or systolic pressure predominantly 160 or more",
+        "20": "Diastolic pressure predominantly 100 or more, or systolic pressure predominantly 200 or more, or minimum evaluation for a veteran who requires continuous medication for control",
+        "40": "Diastolic pressure predominantly 110 or more with episodes of acute congestive heart failure or subjective symptoms such as severe headaches or evidence of hypertensive heart disease",
+        "60": "Diastolic pressure predominantly 130 or more, or systolic pressure predominantly 230 or more, with history of diastolic pressure predominantly 130 or more requiring two or more drugs for adequate control"
+      },
+      "minimumRating": 10,
+      "maximumRating": 60,
+      "specialRules": ["Must show continuous medication requirement for 20% or higher", "Rate based on sustained readings"],
+      "crossReferences": ["May be secondary to kidney disease or sleep apnea"],
+      "isPresumptive": true,
+      "presumptiveNotes": "Presumptive for Vietnam veterans with Agent Orange exposure (added 2021)",
+      "synonyms": ["HTN", "high blood pressure", "elevated BP"]
+    },
+    {
+      "diagnosticCode": "7203",
+      "conditionName": "Gastroesophageal Reflux Disease (GERD)",
+      "bodySystem": "Digestive",
+      "ratingCriteria": {
+        "10": "Two or more of the symptoms of pyrosis, regurgitation, or dysphagia. Symptoms must be substantiated by endoscopic findings",
+        "30": "Persistently recurrent epigastric distress with dysphagia, pyrosis, and regurgitation, accompanied by substernal or arm or shoulder pain, productive of considerable impairment of health",
+        "60": "Symptoms of pain, vomiting, material weight loss and hematemesis or melena with moderate anemia; or other symptom combinations productive of severe impairment of health"
+      },
+      "minimumRating": 10,
+      "maximumRating": 60,
+      "specialRules": ["Requires endoscopic findings for 10% or higher", "Must show objective evidence"],
+      "crossReferences": ["Often secondary to PTSD or medications"],
+      "isPresumptive": false,
+      "synonyms": ["GERD", "acid reflux", "heartburn", "reflux disease"]
+    },
+    {
+      "diagnosticCode": "7304",
+      "conditionName": "Irritable Bowel Syndrome (IBS)",
+      "bodySystem": "Digestive",
+      "ratingCriteria": {
+        "0": "Mild; disturbances of bowel function with occasional episodes of abdominal distress",
+        "10": "Moderate; frequent episodes of bowel disturbance with abdominal distress",
+        "30": "Severe; diarrhea, or alternating diarrhea and constipation, with more or less constant abdominal distress"
+      },
+      "minimumRating": 0,
+      "maximumRating": 30,
+      "specialRules": ["Diagnosis must be confirmed", "Rate based on severity and frequency"],
+      "crossReferences": ["Often secondary to PTSD or anxiety"],
+      "isPresumptive": false,
+      "synonyms": ["IBS", "spastic colon", "functional bowel disorder"]
+    },
+    {
+      "diagnosticCode": "7522",
+      "conditionName": "Diabetes Mellitus",
+      "bodySystem": "Endocrine",
+      "ratingCriteria": {
+        "10": "Requiring insulin, restricted diet, or oral hypoglycemic agent",
+        "20": "Requiring insulin, restricted diet, or oral hypoglycemic agent; and regulation of activities",
+        "40": "Requiring insulin and restricted diet, or oral hypoglycemic agent and restricted diet; and one or more complications (e.g., neuropathy, retinopathy)",
+        "60": "Requiring insulin, restricted diet, and regulation of activities with episodes of ketoacidosis or hypoglycemic reactions requiring at least three hospitalizations per year or weekly visits to a diabetic care provider",
+        "100": "Requires more than one daily injection of insulin, restricted diet, and regulation of activities with episodes of ketoacidosis or hypoglycemic reactions requiring hospitalization more than twice a year"
+      },
+      "minimumRating": 10,
+      "maximumRating": 100,
+      "specialRules": ["Rate on level of control required", "Complications rated separately and combined"],
+      "crossReferences": ["Neuropathy (8520)", "Retinopathy (6066)"],
+      "isPresumptive": true,
+      "presumptiveNotes": "Presumptive for Vietnam veterans with Agent Orange exposure",
+      "synonyms": ["diabetes", "Type 1 diabetes", "Type 2 diabetes", "DM"]
+    },
+    {
+      "diagnosticCode": "8045",
+      "conditionName": "Residuals of Traumatic Brain Injury (TBI)",
+      "bodySystem": "Neurological",
+      "ratingCriteria": {
+        "0": "Subjective symptoms only",
+        "10": "Mild: One or two symptoms (e.g., headaches, memory loss)",
+        "40": "Moderate: Three or more symptoms with mild impairment",
+        "70": "Severe: Near-continuous symptoms with moderate impairment of work and social functioning",
+        "100": "Total: Complete impairment of work and social functioning"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Rate based on three main areas: cognitive, emotional/behavioral, physical", "Use §4.124a criteria"],
+      "crossReferences": ["May also rate specific residuals (headaches, memory loss) separately"],
+      "isPresumptive": false,
+      "synonyms": ["TBI", "concussion", "closed head injury", "brain injury"]
+    },
+    {
+      "diagnosticCode": "8520",
+      "conditionName": "Paralysis of the Sciatic Nerve (Sciatica)",
+      "bodySystem": "Neurological",
+      "ratingCriteria": {
+        "10": "Mild incomplete; less than 50% loss of function",
+        "20": "Moderate incomplete; 50-75% loss of function",
+        "40": "Severe incomplete; 75-95% loss of function",
+        "60": "Complete; foot drop and sensory loss",
+        "80": "Complete paralysis with severe pain"
+      },
+      "minimumRating": 10,
+      "maximumRating": 80,
+      "specialRules": ["Rate based on EMG/NCS findings", "Consider pain component"],
+      "crossReferences": ["May be secondary to back injury (5243)"],
+      "isPresumptive": false,
+      "synonyms": ["sciatica", "sciatic nerve pain", "nerve damage leg"]
+    },
+    {
+      "diagnosticCode": "9411",
+      "conditionName": "Post-Traumatic Stress Disorder (PTSD)",
+      "bodySystem": "Mental Health",
+      "ratingCriteria": {
+        "0": "A mental condition has been formally diagnosed, but symptoms are not severe enough either to interfere with occupational and social functioning or to require continuous medication",
+        "10": "Occupational and social impairment due to mild or transient symptoms which decrease work efficiency and ability to perform occupational tasks only during periods of significant stress",
+        "30": "Occupational and social impairment with occasional decrease in work efficiency and intermittent periods of inability to perform occupational tasks",
+        "50": "Occupational and social impairment with reduced reliability and productivity",
+        "70": "Occupational and social impairment with deficiencies in most areas, such as work, school, family relations, judgment, thinking, or mood",
+        "100": "Total occupational and social impairment"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Must establish stressor event", "Use Global Assessment of Functioning (GAF) or equivalent", "Rate based on occupational and social impairment"],
+      "crossReferences": ["Often causes secondary conditions: sleep apnea (6847), IBS (7304), GERD (7203)"],
+      "isPresumptive": true,
+      "presumptiveNotes": "Presumptive for combat veterans or MST survivors with qualifying stressor",
+      "synonyms": ["PTSD", "post traumatic stress", "combat stress", "trauma"]
+    },
+    {
+      "diagnosticCode": "9434",
+      "conditionName": "Major Depressive Disorder",
+      "bodySystem": "Mental Health",
+      "ratingCriteria": {
+        "0": "A mental condition has been formally diagnosed, but symptoms are not severe enough either to interfere with occupational and social functioning or to require continuous medication",
+        "10": "Occupational and social impairment due to mild or transient symptoms",
+        "30": "Occupational and social impairment with occasional decrease in work efficiency",
+        "50": "Occupational and social impairment with reduced reliability and productivity",
+        "70": "Occupational and social impairment with deficiencies in most areas",
+        "100": "Total occupational and social impairment"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Must show occupational/social impairment", "Rate based on symptom severity and functional impact"],
+      "crossReferences": ["Cannot combine with other mental health conditions; rate under highest diagnosis"],
+      "isPresumptive": false,
+      "synonyms": ["depression", "MDD", "clinical depression"]
+    },
+    {
+      "diagnosticCode": "9440",
+      "conditionName": "Generalized Anxiety Disorder",
+      "bodySystem": "Mental Health",
+      "ratingCriteria": {
+        "0": "A mental condition has been formally diagnosed, but symptoms are not severe enough either to interfere with occupational and social functioning or to require continuous medication",
+        "10": "Occupational and social impairment due to mild or transient symptoms",
+        "30": "Occupational and social impairment with occasional decrease in work efficiency",
+        "50": "Occupational and social impairment with reduced reliability and productivity",
+        "70": "Occupational and social impairment with deficiencies in most areas",
+        "100": "Total occupational and social impairment"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Rate based on occupational/social impairment", "Cannot combine with other mental health diagnoses"],
+      "crossReferences": ["Rate under single mental health diagnosis at highest level"],
+      "isPresumptive": false,
+      "synonyms": ["anxiety", "GAD", "anxiety disorder"]
+    },
+    {
+      "diagnosticCode": "6847",
+      "conditionName": "Sleep Apnea Syndrome",
+      "bodySystem": "Respiratory",
+      "ratingCriteria": {
+        "0": "Asymptomatic but with documented sleep disorder breathing",
+        "30": "Chronic respiratory failure with carbon dioxide retention or cor pulmonale, or; requires use of breathing assistance device such as continuous positive airway pressure (CPAP) machine",
+        "50": "Requires use of breathing assistance device such as CPAP machine and chronic respiratory failure with carbon dioxide retention or cor pulmonale, or; respiratory insufficiency with daytime hypersomnolence",
+        "100": "Chronic respiratory failure with carbon dioxide retention or cor pulmonale and requires tracheostomy"
+      },
+      "minimumRating": 0,
+      "maximumRating": 100,
+      "specialRules": ["Requires sleep study documentation", "CPAP use = minimum 30%", "Often secondary to PTSD, obesity, or nasal conditions"],
+      "crossReferences": ["May be secondary to mental health conditions (9411) or nasal/sinus issues"],
+      "isPresumptive": false,
+      "synonyms": ["sleep apnea", "OSA", "obstructive sleep apnea", "apnea"]
+    },
+    {
+      "diagnosticCode": "5243",
+      "conditionName": "Intervertebral Disc Syndrome (IVDS)",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "With incapacitating episodes having a total duration of at least 1 week but less than 2 weeks during the past 12 months",
+        "20": "With incapacitating episodes having a total duration of at least 2 weeks but less than 4 weeks during the past 12 months",
+        "40": "With incapacitating episodes having a total duration of at least 4 weeks but less than 6 weeks during the past 12 months",
+        "60": "With incapacitating episodes having a total duration of at least 6 weeks during the past 12 months"
+      },
+      "minimumRating": 10,
+      "maximumRating": 60,
+      "specialRules": ["Incapacitating episodes = bed rest prescribed by physician", "Rate on limitation of motion if higher"],
+      "crossReferences": ["Compare with 5237 (lumbosacral strain)", "May cause radiculopathy rated separately"],
+      "isPresumptive": false,
+      "synonyms": ["herniated disc", "bulging disc", "ruptured disc", "slipped disc", "back pain"]
+    },
+    {
+      "diagnosticCode": "5237",
+      "conditionName": "Lumbosacral or Cervical Strain",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "Forward flexion of the thoracolumbar spine greater than 60 degrees but not greater than 85 degrees; or, forward flexion of the cervical spine greater than 30 degrees but not greater than 40 degrees",
+        "20": "Forward flexion of the thoracolumbar spine greater than 30 degrees but not greater than 60 degrees; or, forward flexion of the cervical spine greater than 15 degrees but not greater than 30 degrees; or, favorable ankylosis of the entire thoracolumbar spine",
+        "30": "Forward flexion of the thoracolumbar spine 30 degrees or less; or, forward flexion of the cervical spine 15 degrees or less",
+        "40": "Forward flexion of the thoracolumbar spine 30 degrees or less AND favorable ankylosis of the entire cervical spine",
+        "50": "Unfavorable ankylosis of the entire thoracolumbar spine",
+        "100": "Unfavorable ankylosis of the entire spine"
+      },
+      "minimumRating": 10,
+      "maximumRating": 100,
+      "specialRules": ["Measure with inclinometer", "Compare with 5243 (IVDS) and rate under higher", "Bilateral factor applies if both cervical and lumbar are rated"],
+      "crossReferences": ["May also rate radiculopathy separately if present"],
+      "isPresumptive": false,
+      "synonyms": ["back strain", "neck strain", "cervical strain", "lumbar strain", "spine injury"]
+    },
+    {
+      "diagnosticCode": "5284",
+      "conditionName": "Foot Injuries",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "Mild",
+        "20": "Moderate",
+        "30": "Moderately severe",
+        "40": "Severe"
+      },
+      "minimumRating": 10,
+      "maximumRating": 40,
+      "specialRules": ["Rate based on pain, weakness, or limitation of motion", "Bilateral factor applies"],
+      "crossReferences": ["See specific codes for plantar fasciitis (5276) or pes planus (5276)"],
+      "isPresumptive": false,
+      "synonyms": ["foot pain", "foot injury", "metatarsal pain"]
+    },
+    {
+      "diagnosticCode": "5276",
+      "conditionName": "Flatfoot (Pes Planus)",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "0": "Asymptomatic",
+        "10": "Mild, weight-bearing line over or medial to great toe, inward bowing of tendo achillis, pain on manipulation and use accentuated",
+        "20": "Moderate, objective evidence of moderate flatfoot with pain on use",
+        "30": "Severe, objective evidence of pronounced deformity with persistent pain",
+        "50": "Pronounced; bilateral or unilateral, equivalent to loss of use of foot"
+      },
+      "minimumRating": 0,
+      "maximumRating": 50,
+      "specialRules": ["Requires objective findings", "Rate bilaterally separately", "Must show pain and functional impairment"],
+      "crossReferences": ["Compare with general foot injuries (5284)"],
+      "isPresumptive": false,
+      "synonyms": ["flat feet", "pes planus", "fallen arches"]
+    },
+    {
+      "diagnosticCode": "5285",
+      "conditionName": "Plantar Fasciitis",
+      "bodySystem": "Musculoskeletal",
+      "ratingCriteria": {
+        "10": "Unilateral or bilateral",
+        "20": "Severe, with marked deformity"
+      },
+      "minimumRating": 10,
+      "maximumRating": 20,
+      "specialRules": ["Rate based on pain and functional limitation", "Often bilateral"],
+      "crossReferences": ["May rate as foot injury (5284) if analogous"],
+      "isPresumptive": false,
+      "synonyms": ["heel pain", "heel spur", "fasciitis"]
+    },
+    {
+      "diagnosticCode": "6602",
+      "conditionName": "Bronchial Asthma",
+      "bodySystem": "Respiratory",
+      "ratingCriteria": {
+        "10": "FEV-1 of 71 to 80 percent predicted, or; FEV-1/FVC of 71 to 80 percent, or; intermittent inhalational or oral bronchodilator therapy",
+        "30": "FEV-1 of 56 to 70 percent predicted, or; FEV-1/FVC of 56 to 70 percent, or; daily inhalational or oral bronchodilator therapy or; inhalational anti-inflammatory medication",
+        "60": "FEV-1 of 40 to 55 percent predicted, or; FEV-1/FVC of 40 to 55 percent, or; at least monthly visits to a physician for required care of exacerbations, or; intermittent (at least three per year) courses of systemic corticosteroids",
+        "100": "FEV-1 less than 40 percent predicted, or; FEV-1/FVC less than 40 percent, or; more than one attack per week with episodes of respiratory failure, or; requires daily use of systemic corticosteroids or immuno-suppressive medications"
+      },
+      "minimumRating": 10,
+      "maximumRating": 100,
+      "specialRules": ["Requires pulmonary function tests", "Rate based on medication requirements or PFT results"],
+      "crossReferences": ["May be secondary to allergic rhinitis (6522) or GERD (7203)"],
+      "isPresumptive": false,
+      "synonyms": ["asthma", "reactive airway", "bronchospasm"]
+    },
+    {
+      "diagnosticCode": "6522",
+      "conditionName": "Allergic or Vasomotor Rhinitis",
+      "bodySystem": "Respiratory",
+      "ratingCriteria": {
+        "10": "With polyps",
+        "30": "With permanent hypertrophy of turbinates and with 50 percent or more obstruction of nasal passage on both sides or complete obstruction on one side"
+      },
+      "minimumRating": 10,
+      "maximumRating": 30,
+      "specialRules": ["Must show objective findings", "Seasonal allergies alone do not qualify"],
+      "crossReferences": ["May cause secondary sleep apnea (6847) or sinusitis (6510)"],
+      "isPresumptive": false,
+      "synonyms": ["rhinitis", "nasal allergies", "sinus allergies"]
+    },
+    {
+      "diagnosticCode": "6510",
+      "conditionName": "Sinusitis, Pansinusitis, or Chronic Rhinosinusitis",
+      "bodySystem": "Respiratory",
+      "ratingCriteria": {
+        "0": "Detected by X-ray only",
+        "10": "One or two incapacitating episodes per year of sinusitis requiring prolonged antibiotic treatment, or; three to six non-incapacitating episodes per year of sinusitis characterized by headaches, pain, and purulent discharge or crusting",
+        "30": "Three or more incapacitating episodes per year of sinusitis requiring prolonged antibiotic treatment, or; more than six non-incapacitating episodes per year of sinusitis characterized by headaches, pain, and purulent discharge or crusting",
+        "50": "Following radical surgery with chronic osteomyelitis, or; near constant sinusitis characterized by headaches, pain and discharge or crusting after repeated surgeries"
+      },
+      "minimumRating": 0,
+      "maximumRating": 50,
+      "specialRules": ["Requires CT scan or endoscopy evidence", "Incapacitating = bed rest or treatment by physician"],
+      "crossReferences": ["May be secondary to nasal conditions or allergies"],
+      "isPresumptive": false,
+      "synonyms": ["sinus infection", "chronic sinusitis", "sinus disease"]
+    },
+    {
+      "diagnosticCode": "8100",
+      "conditionName": "Migraine",
+      "bodySystem": "Neurological",
+      "ratingCriteria": {
+        "0": "With less frequent attacks",
+        "10": "With prostrating attacks averaging one in 2 months over the last several months",
+        "30": "With very frequent completely prostrating and prolonged attacks productive of severe economic inadaptability",
+        "50": "With very frequent completely prostrating and prolonged attacks productive of severe economic inadaptability"
+      },
+      "minimumRating": 0,
+      "maximumRating": 50,
+      "specialRules": ["Must be prostrating (bed rest required)", "Rate based on frequency", "Often secondary to TBI, neck injury, or PTSD"],
+      "crossReferences": ["May be secondary to cervical strain (5237) or TBI (8045)"],
+      "isPresumptive": false,
+      "synonyms": ["migraine headache", "severe headaches", "chronic headaches"]
+    },
+    {
+      "diagnosticCode": "7913",
+      "conditionName": "Bacterial Infections of the Skin",
+      "bodySystem": "Skin",
+      "ratingCriteria": {
+        "10": "Recurrent infections with at least 2-4 exacerbations per year",
+        "30": "Recurrent infections with 5-7 exacerbations per year, or; near-continuous lesions that respond to treatment",
+        "60": "Recurrent infections with 8 or more exacerbations per year, or; near-continuous lesions that do not respond adequately to treatment",
+        "100": "Near-continuous debilitating lesions that do not respond to treatment"
+      },
+      "minimumRating": 10,
+      "maximumRating": 100,
+      "specialRules": ["Rate based on frequency and treatment response"],
+      "crossReferences": ["See 7806 for dermatitis"],
+      "isPresumptive": false,
+      "synonyms": ["skin infection", "cellulitis", "MRSA"]
+    },
+    {
+      "diagnosticCode": "7806",
+      "conditionName": "Dermatitis or Eczema",
+      "bodySystem": "Skin",
+      "ratingCriteria": {
+        "10": "At least 5 percent but less than 20 percent of the entire body or exposed areas affected, or; intermittent systemic therapy required for a total duration of less than six weeks during the past 12-month period",
+        "30": "At least 20 percent but less than 40 percent of the entire body or exposed areas affected, or; systemic therapy required for a total duration of six weeks or more, but not constantly, during the past 12-month period",
+        "60": "At least 40 percent of the entire body or exposed areas affected, or; constant or near-constant systemic therapy required during the past 12-month period"
+      },
+      "minimumRating": 10,
+      "maximumRating": 60,
+      "specialRules": ["Rate based on percent body surface area or treatment requirements"],
+      "crossReferences": ["See 7913 for bacterial infections"],
+      "isPresumptive": false,
+      "synonyms": ["eczema", "dermatitis", "skin rash", "psoriasis"]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-"""Monitoring and analytics configuration"""
+// Monitoring and analytics configuration
 import * as Sentry from "@sentry/react";
 import posthog from 'posthog-js';
 
@@ -106,7 +106,7 @@ export const trackEvent = (eventName: string, properties?: Record<string, any>) 
 export const identifyUser = (userId: string, traits?: Record<string, any>) => {
   if (hasAnalyticsConsent()) {
     // Never send PII - only tier, account type, etc.
-    const safeTra its = traits ? {
+    const safeTraits = traits ? {
       tier: traits.tier,
       user_type: traits.user_type,
       created_at: traits.created_at,

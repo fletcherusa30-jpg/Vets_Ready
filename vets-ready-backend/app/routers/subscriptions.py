@@ -27,37 +27,41 @@ router = APIRouter(prefix="/api/subscriptions", tags=["Subscriptions"])
 async def get_veteran_pricing():
     """
     Get veteran subscription pricing information
-    Based on PRICING_STRATEGY.md
+    Based on Vets Ready Pricing Guide (App/Vets Ready Pricing Guide.md)
+    - Free: $0 (Federal/state benefits, basic tools, basic directory)
+    - Pro: $4.99/month or $39/year
     """
     return VeteranPricingResponse(
         free=PricingTier(
-            name="Free Tier",
+            name="Vets Ready Basic - FREE",
             price_monthly=None,
             price_yearly=Decimal("0.00"),
             features=[
-                "Basic benefits search (10/month)",
-                "Claims calculator (basic)",
-                "Job board browsing",
-                "Community discovery (view only)",
-                "Budget calculator (1 scenario)",
-                "Retirement overview",
+                "Federal VBA benefits guide",
+                "State benefits navigator",
+                "Basic claim education",
+                "Basic transition checklist",
+                "Basic job search",
+                "Basic business directory",
+                "Resource hub",
             ],
-            limits={"benefits_searches": 10, "budget_scenarios": 1},
+            limits={},
         ),
         pro=PricingTier(
-            name="Pro Tier",
-            price_monthly=Decimal("1.67"),
-            price_yearly=Decimal("20.00"),
+            name="Vets Ready Pro",
+            price_monthly=Decimal("4.99"),
+            price_yearly=Decimal("39.00"),
             features=[
-                "✅ Unlimited everything",
-                "✅ Full claims analysis with AI recommendations",
-                "✅ Unlimited retirement scenarios & projections",
-                "✅ Complete MOS translator & resume builder",
-                "✅ Job application tracking",
-                "✅ Save/export all reports",
-                "✅ Business directory bookmarking",
-                "✅ Email support",
-                "✅ No ads",
+                "Claim readiness engine",
+                "Rating estimator",
+                "Evidence mapping",
+                "C&P exam education",
+                "Resume builder",
+                "MOS translator",
+                "Transition automation",
+                "Financial tools (budget, retirement, TSP)",
+                "Document vault",
+                "Unlimited saved profiles",
             ],
             limits={},
         ),
@@ -112,10 +116,10 @@ async def create_subscription(
             detail="User already has an active subscription",
         )
 
-    # Set pricing based on tier
+    # Set pricing based on tier (aligned with Pricing Guide)
     pricing_map = {
         SubscriptionTier.FREE: Decimal("0.00"),
-        SubscriptionTier.PRO: Decimal("20.00"),
+        SubscriptionTier.PRO: Decimal("39.00"),  # Annual price
         SubscriptionTier.FAMILY: Decimal("35.00"),
         SubscriptionTier.LIFETIME: Decimal("200.00"),
     }

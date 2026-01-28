@@ -71,8 +71,8 @@ class TwoFactorService:
         backup_codes = TwoFactorService.generate_backup_codes()
 
         # Hash backup codes before storing
-        from app.core.security import get_password_hash
-        hashed_codes = [get_password_hash(code) for code in backup_codes]
+        from app.utils.security import hash_password
+        hashed_codes = [hash_password(code) for code in backup_codes]
 
         # Enable 2FA
         user.totp_enabled = True
@@ -96,7 +96,7 @@ class TwoFactorService:
 
         # Try backup codes
         if user.totp_backup_codes:
-            from app.core.security import verify_password
+            from app.utils.security import verify_password
             for i, hashed_code in enumerate(user.totp_backup_codes):
                 if verify_password(token.upper(), hashed_code):
                     # Remove used backup code

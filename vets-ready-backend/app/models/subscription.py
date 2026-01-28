@@ -3,7 +3,8 @@ Subscription and Pricing Models
 Implements tier system from PRICING_STRATEGY.md
 """
 
-from sqlalchemy import Column, String, Integer, Decimal, Boolean, DateTime, ForeignKey, Enum, Text
+from sqlalchemy import Column, String, Integer, Boolean, DateTime, ForeignKey, Enum, Text
+from sqlalchemy.types import Numeric  # Decimal is now Numeric in SQLAlchemy 2.x
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from datetime import datetime
@@ -54,7 +55,7 @@ class VeteranSubscription(Base):
     tier = Column(Enum(SubscriptionTier), nullable=False, default=SubscriptionTier.FREE)
 
     # Pricing
-    amount_paid = Column(Decimal(10, 2), default=0.00)
+    amount_paid = Column(Numeric(10, 2), default=0.00)
 
     # Dates
     started_at = Column(DateTime, default=datetime.utcnow)
@@ -95,7 +96,7 @@ class EmployerAccount(Base):
 
     # Account details
     tier = Column(Enum(EmployerTier), nullable=False)
-    monthly_rate = Column(Decimal(10, 2), nullable=False)
+    monthly_rate = Column(Numeric(10, 2), nullable=False)
 
     # Limits and usage
     job_posts_limit = Column(Integer, default=1)  # -1 for unlimited
@@ -156,7 +157,7 @@ class BusinessListing(Base):
 
     # Subscription
     tier = Column(Enum(BusinessListingTier), nullable=False, default=BusinessListingTier.BASIC)
-    monthly_rate = Column(Decimal(10, 2), nullable=False)
+    monthly_rate = Column(Numeric(10, 2), nullable=False)
 
     # Features
     has_featured_placement = Column(Boolean, default=False)
@@ -198,8 +199,8 @@ class JobPost(Base):
     title = Column(String(255), nullable=False)
     description = Column(Text, nullable=False)
     location = Column(String(255))
-    salary_min = Column(Decimal(12, 2))
-    salary_max = Column(Decimal(12, 2))
+    salary_min = Column(Numeric(12, 2))
+    salary_max = Column(Numeric(12, 2))
     job_type = Column(String(50))  # full-time, part-time, contract
 
     # Targeting
@@ -208,7 +209,7 @@ class JobPost(Base):
 
     # Pricing
     post_type = Column(String(50))  # basic, premium
-    price_paid = Column(Decimal(10, 2), nullable=False)
+    price_paid = Column(Numeric(10, 2), nullable=False)
     duration_days = Column(Integer, default=30)
 
     # Features
@@ -245,7 +246,7 @@ class Lead(Base):
 
     # Lead details
     lead_source = Column(String(100))  # claims_analyzer, retirement_calculator, etc.
-    lead_value = Column(Decimal(10, 2))  # Amount paid for this lead
+    lead_value = Column(Numeric(10, 2))  # Amount paid for this lead
 
     # Status
     status = Column(String(50), default="pending")  # pending, contacted, converted, lost
@@ -271,7 +272,7 @@ class Invoice(Base):
 
     # Invoice details
     invoice_number = Column(String(50), unique=True, nullable=False)
-    amount = Column(Decimal(10, 2), nullable=False)
+    amount = Column(Numeric(10, 2), nullable=False)
     description = Column(Text)
 
     # Payment
@@ -314,7 +315,7 @@ class VSOPartner(Base):
     has_premium_analytics = Column(Boolean, default=False)  # $79/month
 
     # Pricing
-    monthly_rate = Column(Decimal(10, 2), default=0.00)
+    monthly_rate = Column(Numeric(10, 2), default=0.00)
 
     # Branding
     custom_logo_url = Column(String(500))
@@ -334,3 +335,4 @@ class VSOPartner(Base):
 
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+

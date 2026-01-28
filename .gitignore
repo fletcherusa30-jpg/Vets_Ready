@@ -143,3 +143,27 @@ service-account.json
 *.avi
 *.mkv
 *.iso
+
+# Uploads and extracted data
+uploads/
+data/extracted/
+data/Documents/
+
+# Diagnostics and reports
+diagnostics/*.json
+CodeHealth-Report-*.txt
+
+# Temporary marker files
+.vetsready_root
+
+# Employment system build artifacts
+employment-system/dist/
+employment-system/coverage/
+employment-system/node_modules/
+
+# MOS Engine
+mos-engine/dist/
+mos-engine/node_modules/
+
+# Mock backend
+mock-backend/node_modules/

@@ -1,41 +1,41 @@
 """
-Pytest configuration and fixtures for backend tests
+Test configuration and fixtures
 """
-import os
+
 import pytest
-from typing import Generator
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from fastapi.testclient import TestClient
 
-# Import your app
 from app.main import app
 from app.database import Base, get_db
+from app.models.user import User
+from app.utils.security import hash_password
 
-# Test database setup
+# Test database
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,
-    connect_args={"check_same_thread": False}
+    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 @pytest.fixture(scope="function")
 def db():
-    """Create test database for each test"""
+    """Create test database and tables"""
     Base.metadata.create_all(bind=engine)
     db = TestingSessionLocal()
     try:
         yield db
     finally:
         db.close()
-        Base.metadata.drop_all(bind=engine)
+    Base.metadata.drop_all(bind=engine)
 
 
 @pytest.fixture(scope="function")
-def client(db) -> Generator:
-    """Create test client with dependency override"""
+def client(db):
+    """Create test client with database override"""
     def override_get_db():
         try:
             yield db
@@ -43,55 +43,18 @@ def client(db) -> Generator:
             db.close()
 
     app.dependency_overrides[get_db] = override_get_db
-    with TestClient(app) as test_client:
-        yield test_client
+    yield TestClient(app)
     app.dependency_overrides.clear()
 
 
 @pytest.fixture
-def sample_conditions(db):
-    """Sample test conditions"""
-    from app.models.condition import Condition
-
-    conditions = [
-        Condition(
-            name="PTSD",
-            code="F4310",
-            description="Post-Traumatic Stress Disorder",
-            disability_rating=30
-        ),
-        Condition(
-            name="TBI",
-            code="S06",
-            description="Traumatic Brain Injury",
-            disability_rating=20
-        ),
-        Condition(
-            name="Tinnitus",
-            code="H9311",
-            description="Ringing in ears",
-            disability_rating=10
-        ),
-    ]
-
-    for condition in conditions:
-        db.add(condition)
-
-    db.commit()
-    return conditions
-
-
-@pytest.fixture
-def sample_user(db):
-    """Sample test user"""
-    from app.models.user import User
-    from app.utils.security import hash_password
-
+def test_user(db):
+    """Create a test user"""
     user = User(
-        email="veteran@example.com",
-        full_name="John Doe",
-        hashed_password=hash_password("password123"),
-        is_active=True
+        email="test@example.com",
+        name="Test Veteran",
+        hashed_password=hash_password("testpassword123"),
+        branch="Army"
     )
     db.add(user)
     db.commit()
@@ -100,19 +63,11 @@ def sample_user(db):
 
 
 @pytest.fixture
-def auth_token(client, sample_user):
-    """Get JWT token for authenticated requests"""
+def auth_headers(client, test_user):
+    """Get authentication headers for test user"""
     response = client.post(
-        "/api/auth/login",
-        data={
-            "username": "veteran@example.com",
-            "password": "password123"
-        }
+        "/auth/login",
+        json={"email": "test@example.com", "password": "testpassword123"}
     )
-    return response.json()["access_token"]
-
-
-@pytest.fixture
-def auth_headers(auth_token):
-    """Get authorization headers with token"""
-    return {"Authorization": f"Bearer {auth_token}"}
+    token = response.json()["access_token"]
+    return {"Authorization": f"Bearer {token}"}

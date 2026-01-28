@@ -1,0 +1,1594 @@
+{
+  "Army": {
+    "DEFAULT": {
+      "title": "Army Professional",
+      "skills": ["Leadership", "Operational Planning", "Safety Management", "Technical Aptitude", "Team Coordination"],
+      "civilianEquivalents": ["Operations Manager", "Project Coordinator", "Security Supervisor", "Logistics Specialist"],
+      "recommendedCertifications": ["Security+", "PMP", "OSHA Safety"]
+    },
+    "11B": {
+      "title": "Infantryman",
+      "skills": ["Team Leadership", "Security Operations", "Radio Communications", "Weapons Systems", "Tactical Planning"],
+      "civilianEquivalents": ["Security Manager", "Law Enforcement Officer", "Emergency Response Coordinator", "Security Consultant"],
+      "recommendedCertifications": ["CPR/First Aid", "Security+", "PMP"]
+    },
+    "11C": {
+      "title": "Indirect Fire Infantryman",
+      "skills": ["Fire Support", "Targeting", "Radio Communications", "Field Operations", "Team Coordination"],
+      "civilianEquivalents": ["Security Specialist", "Operations Coordinator", "Field Technician", "Defense Analyst"],
+      "recommendedCertifications": ["Security+", "GIS", "CPR/First Aid"]
+    },
+    "12B": {
+      "title": "Combat Engineer",
+      "skills": ["Construction", "Demolition", "Project Management", "Heavy Equipment Operation", "Safety Management"],
+      "civilianEquivalents": ["Construction Manager", "Civil Engineer", "Project Manager", "Heavy Equipment Operator"],
+      "recommendedCertifications": ["PMP", "OSHA Safety", "Heavy Equipment Operator License"]
+    },
+    "12C": {
+      "title": "Bridge Crewmember",
+      "skills": ["Bridge Construction", "Heavy Equipment", "Logistics", "Safety", "Teamwork"],
+      "civilianEquivalents": ["Construction Technician", "Logistics Specialist", "Heavy Equipment Operator", "Field Engineer"],
+      "recommendedCertifications": ["OSHA Safety", "Heavy Equipment Operator License", "Logistics Management"]
+    },
+    "12N": {
+      "title": "Horizontal Construction Engineer",
+      "skills": ["Earthmoving", "Heavy Equipment", "Site Prep", "Safety", "Maintenance"],
+      "civilianEquivalents": ["Heavy Equipment Operator", "Construction Foreman", "Equipment Technician", "Site Supervisor"],
+      "recommendedCertifications": ["Heavy Equipment Operator License", "OSHA Safety", "PMP"]
+    },
+    "12W": {
+      "title": "Carpentry and Masonry Specialist",
+      "skills": ["Carpentry", "Masonry", "Framing", "Concrete", "Blueprint Reading"],
+      "civilianEquivalents": ["Carpenter", "Construction Technician", "Facilities Technician", "Mason"],
+      "recommendedCertifications": ["OSHA Safety", "Construction Trades", "PMP"]
+    },
+    "12Y": {
+      "title": "Geospatial Engineer",
+      "skills": ["GIS", "Mapping", "Surveying", "Data Analysis", "Imagery"],
+      "civilianEquivalents": ["GIS Analyst", "Survey Technician", "Cartographer", "Remote Sensing Analyst"],
+      "recommendedCertifications": ["GIS Certification", "Remote Sensing", "Data Analytics"]
+    },
+    "13B": {
+      "title": "Cannon Crewmember",
+      "skills": ["Fire Support", "Weapons Operations", "Safety", "Maintenance", "Team Coordination"],
+      "civilianEquivalents": ["Operations Technician", "Safety Specialist", "Field Technician", "Team Lead"],
+      "recommendedCertifications": ["OSHA Safety", "Security+", "PMP"]
+    },
+    "13F": {
+      "title": "Fire Support Specialist",
+      "skills": ["Communications", "Target Analysis", "Technical Operations", "Data Management", "Team Leadership"],
+      "civilianEquivalents": ["Operations Coordinator", "Data Analyst", "Communications Specialist", "Emergency Dispatcher"],
+      "recommendedCertifications": ["GIS Certification", "Data Analytics", "Communications"]
+    },
+    "13J": {
+      "title": "Fire Control Specialist",
+      "skills": ["Fire Direction", "Computing", "Targeting", "Systems Operation", "Data Entry"],
+      "civilianEquivalents": ["Operations Analyst", "Control Room Operator", "Data Technician", "Systems Operator"],
+      "recommendedCertifications": ["Data Analytics", "Security+", "Systems Operations"]
+    },
+    "13M": {
+      "title": "MLRS/HIMARS Crewmember",
+      "skills": ["Launcher Operations", "Maintenance", "Navigation", "Communications", "Safety"],
+      "civilianEquivalents": ["Equipment Operator", "Logistics Technician", "Field Operator", "Safety Coordinator"],
+      "recommendedCertifications": ["OSHA Safety", "Logistics", "Equipment Maintenance"]
+    },
+    "13R": {
+      "title": "Field Artillery Firefinder Radar Operator",
+      "skills": ["Radar Operations", "Data Analysis", "Target Acquisition", "Electronics", "Reporting"],
+      "civilianEquivalents": ["Radar Technician", "Electronics Technician", "Surveillance Operator", "Data Analyst"],
+      "recommendedCertifications": ["Electronics Certification", "Data Analytics", "Security+"]
+    },
+    "14E": {
+      "title": "Patriot Fire Control Enhanced Operator/Maintainer",
+      "skills": ["Air Defense", "Systems Maintenance", "Radar", "Networking", "Safety"],
+      "civilianEquivalents": ["Systems Technician", "Radar Operator", "Network Technician", "Defense Analyst"],
+      "recommendedCertifications": ["Security+", "Network+", "Electronics Certification"]
+    },
+    "14G": {
+      "title": "Air Defense Battle Management System Operator",
+      "skills": ["Command and Control", "Radar", "Communications", "Operations Management", "Safety"],
+      "civilianEquivalents": ["Operations Specialist", "Control Room Operator", "Network Operator", "Systems Analyst"],
+      "recommendedCertifications": ["Security+", "Network+", "Operations Management"]
+    },
+    "14S": {
+      "title": "Avenger Crew Member",
+      "skills": ["Air Defense", "Weapons Systems", "Maintenance", "Communications", "Safety"],
+      "civilianEquivalents": ["Security Specialist", "Weapons Technician", "Operations Technician", "Field Technician"],
+      "recommendedCertifications": ["Security+", "OSHA Safety", "Equipment Maintenance"]
+    },
+    "15B": {
+      "title": "Aircraft Powerplant Repairer",
+      "skills": ["Engine Maintenance", "Diagnostics", "Hydraulics", "Safety", "Technical Documentation"],
+      "civilianEquivalents": ["Aircraft Engine Mechanic", "Aviation Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Engine Certification", "Safety"]
+    },
+    "15D": {
+      "title": "Aircraft Powertrain Repairer",
+      "skills": ["Powertrain", "Transmission", "Diagnostics", "Safety", "Technical Documentation"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Powertrain Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Aviation Maintenance", "Quality Control"]
+    },
+    "15F": {
+      "title": "Aircraft Electrician",
+      "skills": ["Electrical Systems", "Troubleshooting", "Avionics", "Safety", "Documentation"],
+      "civilianEquivalents": ["Avionics Technician", "Electrical Technician", "Aircraft Maintenance", "Quality Technician"],
+      "recommendedCertifications": ["A&P License", "Avionics Certification", "Electrical License"]
+    },
+    "15G": {
+      "title": "Aircraft Structural Repairer",
+      "skills": ["Structural Repair", "Composite Work", "Fabrication", "Corrosion Control", "Safety"],
+      "civilianEquivalents": ["Aircraft Structures Technician", "Sheet Metal Mechanic", "Fabrication Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["A&P License", "Structural Repair", "OSHA Safety"]
+    },
+    "15H": {
+      "title": "Aircraft Pneudraulics Repairer",
+      "skills": ["Hydraulics", "Pneumatics", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Hydraulics Technician", "Aircraft Maintenance", "Maintenance Mechanic", "Quality Technician"],
+      "recommendedCertifications": ["Hydraulics Certification", "A&P License", "Safety"]
+    },
+    "15N": {
+      "title": "Avionic Mechanic",
+      "skills": ["Avionics", "Electronics", "Diagnostics", "Maintenance", "Documentation"],
+      "civilianEquivalents": ["Avionics Technician", "Electronics Technician", "Maintenance Technician", "Systems Technician"],
+      "recommendedCertifications": ["Avionics Certification", "Electronics Certification", "A&P License"]
+    },
+    "15P": {
+      "title": "Aviation Operations Specialist",
+      "skills": ["Flight Operations", "Scheduling", "Records", "Airspace Management", "Communications"],
+      "civilianEquivalents": ["Flight Operations Coordinator", "Dispatcher", "Operations Specialist", "Scheduler"],
+      "recommendedCertifications": ["Aviation Operations", "Project Management", "Communications"]
+    },
+    "15Q": {
+      "title": "Air Traffic Control Operator",
+      "skills": ["Air Traffic Control", "Radar Operations", "Communication", "Safety", "Coordination"],
+      "civilianEquivalents": ["Air Traffic Controller", "Flight Operations Specialist", "Dispatcher", "Operations Coordinator"],
+      "recommendedCertifications": ["FAA ATC", "Safety", "Communications"]
+    },
+    "15R": {
+      "title": "AH-64 Attack Helicopter Repairer",
+      "skills": ["Aircraft Maintenance", "Diagnostics", "Avionics", "Hydraulics", "Safety"],
+      "civilianEquivalents": ["Helicopter Mechanic", "Avionics Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Avionics Certification", "Hydraulics Certification"]
+    },
+    "15T": {
+      "title": "UH-60 Helicopter Repairer",
+      "skills": ["Aircraft Maintenance", "Mechanical Systems", "Hydraulics", "Electrical Systems", "Quality Assurance"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Aviation Maintenance Technician", "Helicopter Mechanic", "Maintenance Engineer"],
+      "recommendedCertifications": ["A&P License", "FAA Certifications", "Aviation Maintenance"]
+    },
+    "15U": {
+      "title": "CH-47 Helicopter Repairer",
+      "skills": ["Rotor Systems", "Hydraulics", "Avionics", "Diagnostics", "Safety"],
+      "civilianEquivalents": ["Helicopter Mechanic", "Aircraft Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Avionics Certification", "Hydraulics Certification"]
+    },
+    "15W": {
+      "title": "RQ-7 Shadow Operator",
+      "skills": ["UAS Operations", "Sensors", "Communications", "Mission Planning", "Maintenance"],
+      "civilianEquivalents": ["UAS Operator", "Sensor Operator", "Mission Specialist", "Field Technician"],
+      "recommendedCertifications": ["UAS Certification", "Security+", "Communications"]
+    },
+    "15X": {
+      "title": "AH-64 Armament/Electrical/Avionics Systems Repairer",
+      "skills": ["Avionics", "Weapons Systems", "Diagnostics", "Safety", "Electrical Systems"],
+      "civilianEquivalents": ["Avionics Technician", "Weapons Technician", "Maintenance Technician", "Systems Technician"],
+      "recommendedCertifications": ["Avionics Certification", "A&P License", "Electronics"]
+    },
+    "17C": {
+      "title": "Cyber Operations Specialist",
+      "skills": ["Cybersecurity", "Network Defense", "Threat Hunting", "Incident Response", "Malware Analysis"],
+      "civilianEquivalents": ["Cybersecurity Analyst", "SOC Analyst", "Threat Hunter", "Incident Responder"],
+      "recommendedCertifications": ["Security+", "CEH", "CISSP", "GCIH"]
+    },
+    "17E": {
+      "title": "Electronic Warfare Specialist",
+      "skills": ["Electronic Warfare", "Signals Analysis", "Spectrum Management", "Communications", "Data Analysis"],
+      "civilianEquivalents": ["Electronic Warfare Analyst", "Signals Analyst", "Spectrum Manager", "Systems Analyst"],
+      "recommendedCertifications": ["Security+", "Electronics Certification", "Spectrum Management"]
+    },
+    "18B": {
+      "title": "Special Forces Weapons Sergeant",
+      "skills": ["Weapons", "Tactics", "Leadership", "Instruction", "Maintenance"],
+      "civilianEquivalents": ["Tactical Trainer", "Security Consultant", "Operations Supervisor", "Law Enforcement"],
+      "recommendedCertifications": ["Security+", "Instructor Certification", "CPR/First Aid"]
+    },
+    "18C": {
+      "title": "Special Forces Engineer Sergeant",
+      "skills": ["Demolitions", "Construction", "Logistics", "Project Management", "Survival"],
+      "civilianEquivalents": ["Construction Manager", "Explosives Technician", "Logistics Specialist", "Project Supervisor"],
+      "recommendedCertifications": ["PMP", "OSHA Safety", "Explosives Handler"]
+    },
+    "18D": {
+      "title": "Special Forces Medical Sergeant",
+      "skills": ["Emergency Medicine", "Trauma Care", "Clinical Procedures", "Leadership", "Training"],
+      "civilianEquivalents": ["Paramedic", "Physician Assistant", "EMS Instructor", "Medical Team Lead"],
+      "recommendedCertifications": ["NREMT", "Paramedic", "Advanced Trauma Life Support"]
+    },
+    "18E": {
+      "title": "Special Forces Communications Sergeant",
+      "skills": ["Communications", "Networking", "Encryption", "Radio Systems", "Training"],
+      "civilianEquivalents": ["Communications Specialist", "Network Technician", "Field Service Engineer", "Instructor"],
+      "recommendedCertifications": ["Network+", "Security+", "Radio Communications"]
+    },
+    "18F": {
+      "title": "Special Forces Intelligence Sergeant",
+      "skills": ["Intelligence", "Analysis", "Collection", "Briefing", "Targeting"],
+      "civilianEquivalents": ["Intelligence Analyst", "Security Consultant", "Operations Analyst", "Instructor"],
+      "recommendedCertifications": ["Security+", "Intelligence Certification", "Data Analytics"]
+    },
+    "18X": {
+      "title": "Special Forces Candidate",
+      "skills": ["Physical Readiness", "Teamwork", "Fieldcraft", "Communication", "Leadership"],
+      "civilianEquivalents": ["Security Specialist", "Operations Trainee", "Team Member", "Outdoor Guide"],
+      "recommendedCertifications": ["CPR/First Aid", "Leadership Training", "Security+"]
+    },
+    "19D": {
+      "title": "Cavalry Scout",
+      "skills": ["Reconnaissance", "Tactical Analysis", "Navigation", "Intelligence Gathering", "Leadership"],
+      "civilianEquivalents": ["Intelligence Analyst", "Security Consultant", "Operations Specialist", "Field Investigator"],
+      "recommendedCertifications": ["Security+", "Intelligence Analysis", "GIS"]
+    },
+    "19K": {
+      "title": "M1 Armor Crewman",
+      "skills": ["Armor Operations", "Maintenance", "Communications", "Gunnery", "Safety"],
+      "civilianEquivalents": ["Heavy Equipment Operator", "Security Specialist", "Operations Technician", "Trainer"],
+      "recommendedCertifications": ["OSHA Safety", "Heavy Equipment", "Security+"]
+    },
+    "25B": {
+      "title": "Information Technology Specialist",
+      "skills": ["Network Administration", "Systems Troubleshooting", "Cybersecurity", "Technical Documentation", "Help Desk Support"],
+      "civilianEquivalents": ["Network Administrator", "IT Support Specialist", "Systems Administrator", "Help Desk Manager"],
+      "recommendedCertifications": ["CompTIA A+", "Network+", "Security+", "CCNA"]
+    },
+    "25C": {
+      "title": "Radio Operator-Maintainer",
+      "skills": ["Radio Communications", "Maintenance", "Networking", "Encryption", "Troubleshooting"],
+      "civilianEquivalents": ["Radio Technician", "Communications Specialist", "Network Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Network+", "Security+", "FCC License"]
+    },
+    "25L": {
+      "title": "Cable Systems Installer-Maintainer",
+      "skills": ["Cabling", "Fiber", "Network Installation", "Testing", "Troubleshooting"],
+      "civilianEquivalents": ["Cable Technician", "Fiber Technician", "Network Installer", "Field Technician"],
+      "recommendedCertifications": ["Fiber Optic Certification", "Network+", "OSHA Safety"]
+    },
+    "25N": {
+      "title": "Nodal Network Systems Operator-Maintainer",
+      "skills": ["Networking", "Routing", "Switching", "Troubleshooting", "Security"],
+      "civilianEquivalents": ["Network Technician", "Network Administrator", "NOC Technician", "Systems Operator"],
+      "recommendedCertifications": ["Network+", "CCNA", "Security+"]
+    },
+    "25Q": {
+      "title": "Multichannel Transmission Systems Operator",
+      "skills": ["Microwave", "Satellite", "Transmission", "Networking", "Security"],
+      "civilianEquivalents": ["Transmission Technician", "Microwave Technician", "Satellite Technician", "Network Specialist"],
+      "recommendedCertifications": ["Satellite Communications", "Network+", "Security+"]
+    },
+    "25S": {
+      "title": "Satellite Communication Systems Operator-Maintainer",
+      "skills": ["SATCOM", "Networking", "RF", "Maintenance", "Security"],
+      "civilianEquivalents": ["Satellite Technician", "Network Technician", "RF Technician", "Field Engineer"],
+      "recommendedCertifications": ["Satellite Communications", "Network+", "Security+"]
+    },
+    "25U": {
+      "title": "Signal Support Systems Specialist",
+      "skills": ["Radio Communications", "Network Setup", "Technical Support", "Troubleshooting", "Systems Configuration"],
+      "civilianEquivalents": ["Network Technician", "IT Support Specialist", "Telecommunications Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Network+", "CompTIA A+", "CCNA"]
+    },
+    "25Z": {
+      "title": "Chief Signal NCO",
+      "skills": ["Leadership", "Network Planning", "Project Management", "Security", "Operations"],
+      "civilianEquivalents": ["IT Manager", "Network Operations Manager", "Project Manager", "Security Lead"],
+      "recommendedCertifications": ["PMP", "Security+", "CCNP"]
+    },
+    "27D": {
+      "title": "Paralegal Specialist",
+      "skills": ["Legal Research", "Document Preparation", "Case Management", "Client Support", "Records"],
+      "civilianEquivalents": ["Paralegal", "Legal Assistant", "Case Manager", "Compliance Specialist"],
+      "recommendedCertifications": ["Paralegal Certificate", "Legal Studies", "Compliance"]
+    },
+    "31B": {
+      "title": "Military Police",
+      "skills": ["Law Enforcement", "Security Operations", "Investigation", "Traffic Control", "Emergency Response"],
+      "civilianEquivalents": ["Police Officer", "Security Manager", "Loss Prevention Specialist", "Corrections Officer"],
+      "recommendedCertifications": ["Police Academy Certification", "Security+", "Criminal Justice Degree"]
+    },
+    "31E": {
+      "title": "Internment/Resettlement Specialist",
+      "skills": ["Corrections", "Security", "Counseling", "Administration", "Safety"],
+      "civilianEquivalents": ["Corrections Officer", "Case Manager", "Security Specialist", "Program Coordinator"],
+      "recommendedCertifications": ["Criminal Justice", "Security+", "Counseling"]
+    },
+    "35F": {
+      "title": "Intelligence Analyst",
+      "skills": ["Intelligence Analysis", "Data Analysis", "Report Writing", "Briefing", "Critical Thinking"],
+      "civilianEquivalents": ["Intelligence Analyst", "Data Analyst", "Business Analyst", "Research Analyst"],
+      "recommendedCertifications": ["Security+", "Intelligence Certification", "Data Analytics"]
+    },
+    "35G": {
+      "title": "Geospatial Intelligence Imagery Analyst",
+      "skills": ["Imagery Analysis", "GIS", "Reporting", "Targeting", "Data Management"],
+      "civilianEquivalents": ["Imagery Analyst", "GIS Analyst", "Remote Sensing Specialist", "Intelligence Analyst"],
+      "recommendedCertifications": ["GIS Certification", "Remote Sensing", "Security+"]
+    },
+    "35M": {
+      "title": "Human Intelligence Collector",
+      "skills": ["Interviewing", "Source Operations", "Reporting", "Cultural Awareness", "Security"],
+      "civilianEquivalents": ["Investigator", "Intelligence Analyst", "Security Specialist", "Interviewer"],
+      "recommendedCertifications": ["Security+", "Interviewing", "Language Proficiency"]
+    },
+    "35N": {
+      "title": "Signals Intelligence Analyst",
+      "skills": ["Signals Analysis", "Reporting", "Targeting", "Security", "Data Analysis"],
+      "civilianEquivalents": ["Signals Analyst", "Intelligence Analyst", "Cyber Analyst", "Data Analyst"],
+      "recommendedCertifications": ["Security+", "SIGINT", "Data Analytics"]
+    },
+    "35P": {
+      "title": "Cryptologic Linguist",
+      "skills": ["Language Translation", "Signals Analysis", "Reporting", "Cultural Analysis", "Security"],
+      "civilianEquivalents": ["Linguist", "Translator", "Intelligence Analyst", "Language Analyst"],
+      "recommendedCertifications": ["Language Proficiency", "Security+", "Intelligence Certification"]
+    },
+    "35S": {
+      "title": "Signals Collector/Analyst",
+      "skills": ["Signals Collection", "Direction Finding", "Reporting", "Security", "Technical Operations"],
+      "civilianEquivalents": ["Signals Analyst", "Field Technician", "Radio Technician", "Data Analyst"],
+      "recommendedCertifications": ["Security+", "Radio Communications", "Electronics Certification"]
+    },
+    "35T": {
+      "title": "Military Intelligence Systems Maintainer/Integrator",
+      "skills": ["Systems Maintenance", "Networking", "Diagnostics", "Security", "Integration"],
+      "civilianEquivalents": ["Systems Technician", "Field Service Engineer", "Network Technician", "Security Technician"],
+      "recommendedCertifications": ["Security+", "Network+", "A+ Certification"]
+    },
+    "35Z": {
+      "title": "Senior Intelligence Sergeant",
+      "skills": ["Leadership", "Analysis", "Operations", "Training", "Security"],
+      "civilianEquivalents": ["Intelligence Manager", "Operations Manager", "Training Lead", "Security Manager"],
+      "recommendedCertifications": ["Security+", "Project Management", "Intelligence Certification"]
+    },
+    "36B": {
+      "title": "Financial Management Technician",
+      "skills": ["Accounting", "Budgeting", "Payroll", "Auditing", "Reporting"],
+      "civilianEquivalents": ["Accountant", "Financial Analyst", "Payroll Specialist", "Budget Analyst"],
+      "recommendedCertifications": ["CPA (preferred)", "Financial Management", "Excel Certification"]
+    },
+    "37F": {
+      "title": "Psychological Operations Specialist",
+      "skills": ["Messaging", "Influence", "Cultural Analysis", "Planning", "Communications"],
+      "civilianEquivalents": ["Communications Specialist", "Marketing Specialist", "Community Outreach", "Analyst"],
+      "recommendedCertifications": ["Marketing", "Communications", "Security+"]
+    },
+    "38B": {
+      "title": "Civil Affairs Specialist",
+      "skills": ["Civil-Military Operations", "Negotiation", "Planning", "Cultural Awareness", "Project Management"],
+      "civilianEquivalents": ["Program Coordinator", "Community Liaison", "Project Manager", "Humanitarian Response Specialist"],
+      "recommendedCertifications": ["PMP", "Security+", "Community Development"]
+    },
+    "42A": {
+      "title": "Human Resources Specialist",
+      "skills": ["Personnel Management", "Administrative Support", "Records Management", "Customer Service", "Data Analysis"],
+      "civilianEquivalents": ["HR Specialist", "Personnel Coordinator", "Administrative Manager", "Recruiting Coordinator"],
+      "recommendedCertifications": ["PHR", "SHRM-CP", "Microsoft Office Specialist"]
+    },
+    "42R": {
+      "title": "Musician",
+      "skills": ["Music Performance", "Ensemble", "Discipline", "Training", "Logistics"],
+      "civilianEquivalents": ["Musician", "Band Member", "Music Instructor", "Event Performer"],
+      "recommendedCertifications": ["Music Degree", "Performance Certification", "Teaching Credential"]
+    },
+    "46S": {
+      "title": "Public Affairs Mass Communication Specialist",
+      "skills": ["Writing", "Photography", "Video Production", "Editing", "Storytelling"],
+      "civilianEquivalents": ["Journalist", "Content Creator", "Communications Specialist", "Videographer"],
+      "recommendedCertifications": ["Journalism", "Adobe Suite", "Communications"]
+    },
+    "56M": {
+      "title": "Religious Affairs Specialist",
+      "skills": ["Counseling Support", "Administration", "Event Coordination", "Logistics", "Confidentiality"],
+      "civilianEquivalents": ["Administrative Assistant", "Program Coordinator", "Counseling Support", "Community Outreach"],
+      "recommendedCertifications": ["Counseling Support", "Administrative Certification", "Project Management"]
+    },
+    "68A": {
+      "title": "Biomedical Equipment Specialist",
+      "skills": ["Medical Equipment Maintenance", "Diagnostics", "Electronics", "Safety", "Documentation"],
+      "civilianEquivalents": ["Biomedical Technician", "Field Service Engineer", "Electronics Technician", "Maintenance Specialist"],
+      "recommendedCertifications": ["CBET", "Electronics Certification", "Safety"]
+    },
+    "68C": {
+      "title": "Practical Nursing Specialist",
+      "skills": ["Patient Care", "Clinical Procedures", "Medication Administration", "Documentation", "Teamwork"],
+      "civilianEquivalents": ["Licensed Practical Nurse", "Clinical Technician", "Medical Assistant", "Patient Care Technician"],
+      "recommendedCertifications": ["LPN", "BLS", "CPR/First Aid"]
+    },
+    "68D": {
+      "title": "Operating Room Specialist",
+      "skills": ["Surgical Support", "Sterilization", "Patient Prep", "Inventory", "Documentation"],
+      "civilianEquivalents": ["Surgical Technologist", "OR Technician", "Sterile Processing Technician", "Clinical Support"],
+      "recommendedCertifications": ["CST", "BLS", "Sterile Processing"]
+    },
+    "68E": {
+      "title": "Dental Specialist",
+      "skills": ["Dental Assisting", "Patient Care", "Sterilization", "Records", "Chairside Support"],
+      "civilianEquivalents": ["Dental Assistant", "Orthodontic Assistant", "Dental Technician", "Clinical Assistant"],
+      "recommendedCertifications": ["Dental Assistant Certification", "Radiology Certification", "BLS"]
+    },
+    "68G": {
+      "title": "Patient Administration Specialist",
+      "skills": ["Medical Records", "Patient Intake", "Billing", "Data Entry", "Customer Service"],
+      "civilianEquivalents": ["Patient Administrator", "Medical Records Clerk", "Healthcare Admin", "Front Desk Specialist"],
+      "recommendedCertifications": ["Medical Billing", "Coding", "Office Specialist"]
+    },
+    "68J": {
+      "title": "Medical Logistics Specialist",
+      "skills": ["Inventory", "Supply Chain", "Shipping/Receiving", "Ordering", "Warehouse Operations"],
+      "civilianEquivalents": ["Medical Supply Technician", "Inventory Specialist", "Logistics Coordinator", "Warehouse Specialist"],
+      "recommendedCertifications": ["APICS CPIM", "Logistics", "Supply Chain"]
+    },
+    "68K": {
+      "title": "Medical Laboratory Specialist",
+      "skills": ["Lab Testing", "Specimen Handling", "Quality Control", "Documentation", "Instrumentation"],
+      "civilianEquivalents": ["Lab Technician", "Clinical Lab Assistant", "Laboratory Technologist", "Quality Technician"],
+      "recommendedCertifications": ["MLT", "ASCP", "BLS"]
+    },
+    "68P": {
+      "title": "Radiology Specialist",
+      "skills": ["Imaging", "Patient Care", "Equipment Operation", "Safety", "Documentation"],
+      "civilianEquivalents": ["Radiologic Technologist", "X-Ray Technician", "Imaging Specialist", "Medical Imaging Technologist"],
+      "recommendedCertifications": ["ARRT", "BLS", "Radiology Certification"]
+    },
+    "68Q": {
+      "title": "Pharmacy Specialist",
+      "skills": ["Medication Handling", "Inventory", "Patient Interaction", "Dosage Calculation", "Records"],
+      "civilianEquivalents": ["Pharmacy Technician", "Pharmacy Assistant", "Medication Technician", "Inventory Technician"],
+      "recommendedCertifications": ["CPhT", "Pharmacy Technician Certification", "BLS"]
+    },
+    "68S": {
+      "title": "Preventive Medicine Specialist",
+      "skills": ["Environmental Health", "Inspections", "Sampling", "Safety", "Education"],
+      "civilianEquivalents": ["Environmental Health Specialist", "Safety Technician", "Health Inspector", "Public Health Technician"],
+      "recommendedCertifications": ["Environmental Health", "OSHA Safety", "Public Health"]
+    },
+    "68W": {
+      "title": "Combat Medic Specialist",
+      "skills": ["Emergency Medical Care", "Trauma Response", "Patient Assessment", "Medical Documentation", "Crisis Management"],
+      "civilianEquivalents": ["Paramedic", "Emergency Medical Technician", "Registered Nurse", "ER Technician"],
+      "recommendedCertifications": ["EMT-B", "EMT-P", "NREMT", "State RN License"]
+    },
+    "68X": {
+      "title": "Behavioral Health Specialist",
+      "skills": ["Counseling Support", "Patient Intake", "Documentation", "Crisis Response", "Education"],
+      "civilianEquivalents": ["Behavioral Health Technician", "Counseling Assistant", "Case Manager", "Support Specialist"],
+      "recommendedCertifications": ["Mental Health First Aid", "Counseling Support", "BLS"]
+    },
+    "68Z": {
+      "title": "Senior Medical NCO",
+      "skills": ["Leadership", "Clinical Oversight", "Training", "Operations", "Quality"],
+      "civilianEquivalents": ["Nurse Manager", "Clinical Supervisor", "Healthcare Administrator", "Training Lead"],
+      "recommendedCertifications": ["RN (preferred)", "PMP", "Healthcare Administration"]
+    },
+    "74D": {
+      "title": "CBRN Specialist",
+      "skills": ["Hazardous Materials", "Decontamination", "Detection", "Safety", "Training"],
+      "civilianEquivalents": ["Hazmat Technician", "Safety Specialist", "CBRN Technician", "Emergency Response"],
+      "recommendedCertifications": ["Hazmat", "OSHA Safety", "Decontamination"]
+    },
+    "79R": {
+      "title": "Recruiter",
+      "skills": ["Recruiting", "Sales", "Interviewing", "Communication", "Relationship Management"],
+      "civilianEquivalents": ["Recruiter", "Talent Acquisition Specialist", "Sales Representative", "Account Manager"],
+      "recommendedCertifications": ["Recruiting", "Sales", "Communication"]
+    },
+    "79S": {
+      "title": "Career Counselor",
+      "skills": ["Counseling", "Career Planning", "Training", "Administration", "Communication"],
+      "civilianEquivalents": ["Career Counselor", "HR Specialist", "Trainer", "Advisor"],
+      "recommendedCertifications": ["Counseling", "HR", "Coaching"]
+    },
+    "88M": {
+      "title": "Motor Transport Operator",
+      "skills": ["Commercial Driving", "Vehicle Maintenance", "Route Planning", "Safety Compliance", "Cargo Management"],
+      "civilianEquivalents": ["Commercial Truck Driver", "Transportation Manager", "Fleet Manager", "Logistics Driver"],
+      "recommendedCertifications": ["CDL Class A", "Hazmat Endorsement", "Defensive Driving"]
+    },
+    "88N": {
+      "title": "Transportation Management Coordinator",
+      "skills": ["Movement Control", "Scheduling", "Tracking", "Customer Service", "Data Entry"],
+      "civilianEquivalents": ["Logistics Coordinator", "Transportation Planner", "Dispatch", "Operations Coordinator"],
+      "recommendedCertifications": ["Logistics", "Supply Chain", "Transportation"]
+    },
+    "89B": {
+      "title": "Ammunition Specialist",
+      "skills": ["Ammunition Handling", "Storage", "Safety", "Inventory", "Transportation"],
+      "civilianEquivalents": ["Ammunition Technician", "Warehouse Specialist", "Safety Technician", "Logistics"],
+      "recommendedCertifications": ["OSHA Safety", "Hazmat", "Inventory Management"]
+    },
+    "89D": {
+      "title": "Explosive Ordnance Disposal Specialist",
+      "skills": ["Bomb Disposal", "Technical Analysis", "Safety Management", "Problem Solving", "Crisis Management"],
+      "civilianEquivalents": ["Bomb Technician", "Safety Manager", "Security Consultant", "Hazmat Specialist"],
+      "recommendedCertifications": ["Hazmat Certification", "Safety Management", "Security+"]
+    },
+    "91B": {
+      "title": "Wheeled Vehicle Mechanic",
+      "skills": ["Automotive Repair", "Diagnostics", "Preventive Maintenance", "Technical Documentation", "Quality Control"],
+      "civilianEquivalents": ["Automotive Technician", "Diesel Mechanic", "Fleet Mechanic", "Service Manager"],
+      "recommendedCertifications": ["ASE Certification", "Automotive Technology", "Diesel Mechanic"]
+    },
+    "91C": {
+      "title": "Utilities Equipment Repairer",
+      "skills": ["HVAC", "Power Generation", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["HVAC Technician", "Generator Technician", "Maintenance Mechanic", "Facilities Technician"],
+      "recommendedCertifications": ["HVAC Certification", "EPA 608", "OSHA Safety"]
+    },
+    "91D": {
+      "title": "Power Generation Equipment Repairer",
+      "skills": ["Generators", "Electrical", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Generator Technician", "Electrician", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Electrical License", "Generator Certification", "Safety"]
+    },
+    "91E": {
+      "title": "Allied Trades Specialist",
+      "skills": ["Machining", "Welding", "Fabrication", "Blueprint Reading", "Maintenance"],
+      "civilianEquivalents": ["Machinist", "Welder", "Fabricator", "Maintenance Technician"],
+      "recommendedCertifications": ["Welding Certification", "Machining", "Safety"]
+    },
+    "91F": {
+      "title": "Small Arms/Towed Artillery Repairer",
+      "skills": ["Weapons Maintenance", "Diagnostics", "Safety", "Documentation", "Quality"],
+      "civilianEquivalents": ["Gunsmith", "Armorer", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["Armorer Certification", "Safety", "Quality Control"]
+    },
+    "91H": {
+      "title": "Track Vehicle Repairer",
+      "skills": ["Heavy Vehicle Maintenance", "Diagnostics", "Hydraulics", "Safety", "Documentation"],
+      "civilianEquivalents": ["Heavy Equipment Mechanic", "Diesel Mechanic", "Fleet Mechanic", "Maintenance Technician"],
+      "recommendedCertifications": ["Diesel Mechanic", "Hydraulics", "Safety"]
+    },
+    "91L": {
+      "title": "Construction Equipment Repairer",
+      "skills": ["Construction Equipment", "Diagnostics", "Maintenance", "Hydraulics", "Safety"],
+      "civilianEquivalents": ["Heavy Equipment Mechanic", "Construction Mechanic", "Maintenance Technician", "Fleet Mechanic"],
+      "recommendedCertifications": ["Diesel Mechanic", "Hydraulics", "Safety"]
+    },
+    "91M": {
+      "title": "Bradley Fighting Vehicle System Maintainer",
+      "skills": ["Vehicle Systems", "Diagnostics", "Electronics", "Hydraulics", "Safety"],
+      "civilianEquivalents": ["Vehicle Technician", "Electronics Technician", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Electronics Certification", "Hydraulics", "Safety"]
+    },
+    "91P": {
+      "title": "Self-Propelled Artillery Systems Maintainer",
+      "skills": ["Artillery Systems", "Diagnostics", "Hydraulics", "Electronics", "Safety"],
+      "civilianEquivalents": ["Maintenance Technician", "Heavy Equipment Mechanic", "Electronics Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Electronics", "Hydraulics", "Safety"]
+    },
+    "91S": {
+      "title": "Stryker Systems Maintainer",
+      "skills": ["Vehicle Systems", "Diagnostics", "Electronics", "Hydraulics", "Safety"],
+      "civilianEquivalents": ["Fleet Mechanic", "Electronics Technician", "Maintenance Technician", "Field Technician"],
+      "recommendedCertifications": ["Electronics Certification", "Hydraulics", "Safety"]
+    },
+    "91X": {
+      "title": "Maintenance Supervisor",
+      "skills": ["Leadership", "Maintenance Management", "Scheduling", "Quality", "Safety"],
+      "civilianEquivalents": ["Maintenance Manager", "Shop Supervisor", "Fleet Manager", "Operations Supervisor"],
+      "recommendedCertifications": ["PMP", "Maintenance Management", "Safety"]
+    },
+    "91Z": {
+      "title": "Senior Maintenance Supervisor",
+      "skills": ["Leadership", "Program Management", "Quality", "Safety", "Training"],
+      "civilianEquivalents": ["Maintenance Director", "Operations Manager", "Training Lead", "Quality Manager"],
+      "recommendedCertifications": ["PMP", "Lean Six Sigma", "Safety"]
+    },
+    "92A": {
+      "title": "Automated Logistical Specialist",
+      "skills": ["Inventory Management", "Supply Chain", "Data Entry", "Warehouse Operations", "Customer Service"],
+      "civilianEquivalents": ["Inventory Specialist", "Warehouse Associate", "Logistics Coordinator", "Supply Technician"],
+      "recommendedCertifications": ["APICS CPIM", "Supply Chain", "Forklift"]
+    },
+    "92F": {
+      "title": "Petroleum Supply Specialist",
+      "skills": ["Fuel Handling", "Safety", "Inventory", "Equipment Maintenance", "Logistics"],
+      "civilianEquivalents": ["Fuel Technician", "Logistics Technician", "Equipment Operator", "Safety Specialist"],
+      "recommendedCertifications": ["Hazmat", "OSHA Safety", "Logistics"]
+    },
+    "92G": {
+      "title": "Culinary Specialist",
+      "skills": ["Food Service", "Menu Planning", "Sanitation", "Inventory", "Customer Service"],
+      "civilianEquivalents": ["Cook", "Food Service Manager", "Catering Specialist", "Kitchen Supervisor"],
+      "recommendedCertifications": ["ServSafe", "Food Safety", "Culinary Arts"]
+    },
+    "92L": {
+      "title": "Petroleum Laboratory Specialist",
+      "skills": ["Testing", "Quality Control", "Lab Procedures", "Safety", "Documentation"],
+      "civilianEquivalents": ["Lab Technician", "Quality Technician", "Testing Technician", "Fuel Lab Technician"],
+      "recommendedCertifications": ["Laboratory Technician", "Safety", "Quality"]
+    },
+    "92M": {
+      "title": "Mortuary Affairs Specialist",
+      "skills": ["Logistics", "Records", "Identification", "Coordination", "Sensitivity"],
+      "civilianEquivalents": ["Mortuary Technician", "Logistics Specialist", "Records Technician", "Program Coordinator"],
+      "recommendedCertifications": ["Funeral Services", "Logistics", "Records Management"]
+    },
+    "92R": {
+      "title": "Parachute Rigger",
+      "skills": ["Quality Control", "Equipment Inspection", "Technical Documentation", "Precision Assembly", "Safety Management"],
+      "civilianEquivalents": ["Quality Control Inspector", "Aviation Safety Technician", "Manufacturing Specialist", "Safety Coordinator"],
+      "recommendedCertifications": ["FAA Parachute Rigger", "Quality Control Certification", "Six Sigma"]
+    },
+    "92W": {
+      "title": "Water Treatment Specialist",
+      "skills": ["Water Purification", "Testing", "Maintenance", "Safety", "Distribution"],
+      "civilianEquivalents": ["Water Treatment Operator", "Plant Operator", "Laboratory Technician", "Environmental Technician"],
+      "recommendedCertifications": ["Water Treatment", "Environmental", "Safety"]
+    },
+    "92Y": {
+      "title": "Unit Supply Specialist",
+      "skills": ["Inventory Management", "Supply Chain Management", "Records Management", "Logistics Coordination", "Data Entry"],
+      "civilianEquivalents": ["Supply Chain Manager", "Inventory Specialist", "Warehouse Manager", "Logistics Coordinator"],
+      "recommendedCertifications": ["APICS CPIM", "Six Sigma", "Logistics Management"]
+    },
+    "92Z": {
+      "title": "Senior Noncommissioned Logistician",
+      "skills": ["Leadership", "Logistics Planning", "Supply Chain", "Project Management", "Training"],
+      "civilianEquivalents": ["Logistics Manager", "Supply Chain Manager", "Operations Manager", "Program Manager"],
+      "recommendedCertifications": ["PMP", "APICS CSCP", "Lean Six Sigma"]
+    },
+    "94E": {
+      "title": "Radio & Communications Security Equipment Repairer",
+      "skills": ["COMSEC", "Electronics", "Repair", "Testing", "Security"],
+      "civilianEquivalents": ["Electronics Technician", "Communications Technician", "COMSEC Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Electronics Certification", "Security+", "Network+"]
+    },
+    "94F": {
+      "title": "Computer/Detection Systems Repairer",
+      "skills": ["Electronics", "Computers", "Diagnostics", "Repair", "Testing"],
+      "civilianEquivalents": ["Electronics Technician", "Computer Repair Technician", "Field Service Technician", "Systems Technician"],
+      "recommendedCertifications": ["A+ Certification", "Electronics Certification", "Network+"]
+    },
+    "94H": {
+      "title": "Test Measurement and Diagnostic Equipment Maintenance Support Specialist",
+      "skills": ["Calibration", "Precision Measurement", "Diagnostics", "Electronics", "Quality"],
+      "civilianEquivalents": ["Calibration Technician", "Metrology Technician", "Quality Technician", "Electronics Technician"],
+      "recommendedCertifications": ["Calibration", "Electronics", "Quality"]
+    },
+    "94M": {
+      "title": "Radar Repairer",
+      "skills": ["Radar", "Electronics", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Radar Technician", "Electronics Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Electronics Certification", "Radar", "Safety"]
+    },
+    "94P": {
+      "title": "Multiple Launch Rocket System Repairer",
+      "skills": ["Electronics", "Hydraulics", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Electronics Technician", "Maintenance Technician", "Field Service Technician", "Hydraulics Technician"],
+      "recommendedCertifications": ["Electronics", "Hydraulics", "Safety"]
+    },
+    "94R": {
+      "title": "Avionic and Survivability Equipment Repairer",
+      "skills": ["Avionics", "Diagnostics", "Electrical", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Avionics Technician", "Electronics Technician", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Avionics Certification", "A&P License", "Electronics"]
+    },
+    "94S": {
+      "title": "PATRIOT System Repairer",
+      "skills": ["Air Defense Systems", "Electronics", "Diagnostics", "Networking", "Safety"],
+      "civilianEquivalents": ["Electronics Technician", "Systems Technician", "Field Service Engineer", "Network Technician"],
+      "recommendedCertifications": ["Electronics", "Network+", "Security+"]
+    },
+    "94T": {
+      "title": "AVENGER System Repairer",
+      "skills": ["Air Defense", "Electronics", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Electronics Technician", "Systems Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Electronics Certification", "Safety", "Network+"]
+    },
+    "94Y": {
+      "title": "Integrated Family of Test Equipment Operator/Maintainer",
+      "skills": ["Testing", "Diagnostics", "Electronics", "Calibration", "Safety"],
+      "civilianEquivalents": ["Test Technician", "Electronics Technician", "Calibration Technician", "Field Technician"],
+      "recommendedCertifications": ["Electronics", "Calibration", "Safety"]
+    }
+  },
+  "Navy": {
+    "DEFAULT": {
+      "title": "Navy Professional",
+      "skills": ["Maritime Operations", "Safety Management", "Team Leadership", "Technical Aptitude", "Navigation/Communications"],
+      "civilianEquivalents": ["Operations Specialist", "Technician", "Supervisor", "Safety Coordinator"],
+      "recommendedCertifications": ["OSHA Safety", "Security+", "Project Management"]
+    },
+    "ABF": {
+      "title": "Aviation Boatswain's Mate (Fuels)",
+      "skills": ["Fuel Systems", "Flight Deck Operations", "Safety", "Equipment Maintenance", "Communications"],
+      "civilianEquivalents": ["Fuel Technician", "Ramp Operations", "Safety Specialist", "Equipment Operator"],
+      "recommendedCertifications": ["Hazmat", "OSHA Safety", "Ground Handling"]
+    },
+    "ABE": {
+      "title": "Aviation Boatswain's Mate (Launching & Recovery)",
+      "skills": ["Catapult/Arresting Gear", "Flight Deck", "Safety", "Equipment Maintenance", "Coordination"],
+      "civilianEquivalents": ["Flight Operations Technician", "Equipment Operator", "Safety Coordinator", "Ramp Supervisor"],
+      "recommendedCertifications": ["OSHA Safety", "Ground Handling", "Maintenance"]
+    },
+    "ABH": {
+      "title": "Aviation Boatswain's Mate (Aircraft Handling)",
+      "skills": ["Flight Deck Handling", "Towing", "Safety", "Firefighting", "Coordination"],
+      "civilianEquivalents": ["Ramp Agent", "Safety Technician", "Operations Specialist", "Equipment Operator"],
+      "recommendedCertifications": ["OSHA Safety", "Firefighting", "Ground Handling"]
+    },
+    "AC": {
+      "title": "Air Traffic Controller",
+      "skills": ["ATC", "Radar", "Communication", "Safety", "Coordination"],
+      "civilianEquivalents": ["Air Traffic Controller", "Dispatcher", "Operations Specialist", "Flight Service"],
+      "recommendedCertifications": ["FAA ATC", "Safety", "Communications"]
+    },
+    "AE": {
+      "title": "Aviation Electrician's Mate",
+      "skills": ["Aircraft Electrical Systems", "Troubleshooting", "Technical Documentation", "Quality Control", "Safety Compliance"],
+      "civilianEquivalents": ["Aviation Electrician", "Aircraft Maintenance Technician", "Electrical Technician", "Avionics Technician"],
+      "recommendedCertifications": ["A&P License", "Avionics Certification", "Electrical Systems"]
+    },
+    "AD": {
+      "title": "Aviation Machinist's Mate",
+      "skills": ["Aircraft Engine Maintenance", "Mechanical Systems", "Troubleshooting", "Quality Control", "Safety Management"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Aviation Maintenance Technician", "Engine Mechanic", "Maintenance Engineer"],
+      "recommendedCertifications": ["A&P License", "Engine Certification", "Aviation Maintenance"]
+    },
+    "AE": {
+      "title": "Aviation Electrician's Mate",
+      "skills": ["Aircraft Electrical Systems", "Troubleshooting", "Technical Documentation", "Quality Control", "Safety Compliance"],
+      "civilianEquivalents": ["Aviation Electrician", "Aircraft Maintenance Technician", "Electrical Technician", "Avionics Technician"],
+      "recommendedCertifications": ["A&P License", "Avionics Certification", "Electrical Systems"]
+    },
+    "AG": {
+      "title": "Aerographer's Mate",
+      "skills": ["Meteorology", "Data Collection", "Analysis", "Forecasting", "Briefing"],
+      "civilianEquivalents": ["Weather Technician", "Meteorology Assistant", "Environmental Technician", "Data Analyst"],
+      "recommendedCertifications": ["Meteorology", "Data Analytics", "GIS"]
+    },
+    "AO": {
+      "title": "Aviation Ordnanceman",
+      "skills": ["Ordnance Handling", "Safety", "Assembly", "Maintenance", "Inventory"],
+      "civilianEquivalents": ["Ammunition Technician", "Safety Specialist", "Logistics Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Hazmat", "OSHA Safety", "Quality"]
+    },
+    "AS": {
+      "title": "Aviation Support Equipment Technician",
+      "skills": ["Support Equipment", "Maintenance", "Power Systems", "Safety", "Diagnostics"],
+      "civilianEquivalents": ["Equipment Technician", "Ground Support Technician", "Maintenance Technician", "Fleet Mechanic"],
+      "recommendedCertifications": ["A&P License", "Maintenance", "Safety"]
+    },
+    "AT": {
+      "title": "Aviation Electronics Technician",
+      "skills": ["Avionics", "Diagnostics", "Electronics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Avionics Technician", "Electronics Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Avionics Certification", "Electronics", "A&P License"]
+    },
+    "AW": {
+      "title": "Naval Aircrewman",
+      "skills": ["Aircrew Operations", "Sensors", "Communications", "Rescue", "Mission Execution"],
+      "civilianEquivalents": ["Aircrew", "Mission Specialist", "Sensor Operator", "Rescue Technician"],
+      "recommendedCertifications": ["Aircrew", "Rescue", "Communications"]
+    },
+    "AZ": {
+      "title": "Aviation Maintenance Administrationman",
+      "skills": ["Maintenance Records", "Scheduling", "Documentation", "Data Entry", "Logistics"],
+      "civilianEquivalents": ["Maintenance Planner", "Administrator", "Scheduler", "Logistics Coordinator"],
+      "recommendedCertifications": ["Office Specialist", "Project Management", "Logistics"]
+    },
+    "PR": {
+      "title": "Aircrew Survival Equipmentman",
+      "skills": ["Parachute Packing", "Survival Gear", "Inspection", "Repair", "Safety"],
+      "civilianEquivalents": ["Parachute Rigger", "Safety Technician", "Equipment Technician", "Quality Inspector"],
+      "recommendedCertifications": ["Parachute Rigger", "Safety", "Quality"]
+    },
+    "BU": {
+      "title": "Builder",
+      "skills": ["Construction", "Carpentry", "Concrete", "Framing", "Safety"],
+      "civilianEquivalents": ["Builder", "Carpenter", "Construction Technician", "Facilities Technician"],
+      "recommendedCertifications": ["OSHA Safety", "Construction Trades", "PMP"]
+    },
+    "CE": {
+      "title": "Construction Electrician",
+      "skills": ["Electrical", "Power Distribution", "Maintenance", "Safety", "Construction"],
+      "civilianEquivalents": ["Electrician", "Power Technician", "Construction Electrician", "Facilities Electrician"],
+      "recommendedCertifications": ["Electrician License", "OSHA Safety", "Construction"]
+    },
+    "CM": {
+      "title": "Construction Mechanic",
+      "skills": ["Diesel Maintenance", "Heavy Equipment", "Hydraulics", "Safety", "Diagnostics"],
+      "civilianEquivalents": ["Diesel Mechanic", "Fleet Mechanic", "Heavy Equipment Mechanic", "Maintenance Technician"],
+      "recommendedCertifications": ["Diesel Mechanic", "Heavy Equipment", "Safety"]
+    },
+    "EA": {
+      "title": "Engineering Aide",
+      "skills": ["Surveying", "Drafting", "Testing", "Mapping", "Data Collection"],
+      "civilianEquivalents": ["Survey Technician", "Engineering Technician", "Drafter", "GIS Technician"],
+      "recommendedCertifications": ["Surveying", "GIS", "Drafting"]
+    },
+    "EO": {
+      "title": "Equipment Operator",
+      "skills": ["Heavy Equipment", "Earthmoving", "Construction", "Safety", "Maintenance"],
+      "civilianEquivalents": ["Equipment Operator", "Construction Operator", "Heavy Equipment Technician", "Site Operator"],
+      "recommendedCertifications": ["Heavy Equipment", "OSHA Safety", "Maintenance"]
+    },
+    "SW": {
+      "title": "Steelworker",
+      "skills": ["Steel Construction", "Rigging", "Welding", "Fabrication", "Safety"],
+      "civilianEquivalents": ["Ironworker", "Welder", "Fabricator", "Construction Technician"],
+      "recommendedCertifications": ["Welding", "Rigging", "OSHA Safety"]
+    },
+    "UT": {
+      "title": "Utilitiesman",
+      "skills": ["Plumbing", "HVAC", "Water Systems", "Construction", "Safety"],
+      "civilianEquivalents": ["Plumber", "HVAC Technician", "Facilities Technician", "Utilities Technician"],
+      "recommendedCertifications": ["Plumbing License", "HVAC", "OSHA Safety"]
+    },
+    "HM": {
+      "title": "Hospital Corpsman",
+      "skills": ["Patient Care", "Medical Procedures", "Emergency Medicine", "Health Records", "Laboratory Procedures"],
+      "civilianEquivalents": ["Licensed Practical Nurse", "Medical Assistant", "Emergency Medical Technician", "Surgical Technician"],
+      "recommendedCertifications": ["LPN License", "Medical Assistant Certification", "EMT-B", "Phlebotomy Certification"]
+    },
+    "BM": {
+      "title": "Boatswain's Mate",
+      "skills": ["Deck Operations", "Equipment Maintenance", "Safety Management", "Leadership", "Navigation"],
+      "civilianEquivalents": ["Operations Manager", "Equipment Manager", "Safety Coordinator", "Facilities Manager"],
+      "recommendedCertifications": ["OSHA Safety", "Project Management", "Leadership Training"]
+    },
+    "CS": {
+      "title": "Culinary Specialist",
+      "skills": ["Food Service", "Menu Planning", "Sanitation", "Inventory", "Customer Service"],
+      "civilianEquivalents": ["Cook", "Food Service Manager", "Catering Specialist", "Kitchen Supervisor"],
+      "recommendedCertifications": ["ServSafe", "Food Safety", "Culinary Arts"]
+    },
+    "CTI": {
+      "title": "Cryptologic Technician Interpretive",
+      "skills": ["Language", "Signals", "Translation", "Reporting", "Security"],
+      "civilianEquivalents": ["Linguist", "Translator", "Intelligence Analyst", "Language Analyst"],
+      "recommendedCertifications": ["Language Proficiency", "Security+", "Intelligence"]
+    },
+    "CTM": {
+      "title": "Cryptologic Technician Maintenance",
+      "skills": ["Electronics", "Maintenance", "COMSEC", "Diagnostics", "Security"],
+      "civilianEquivalents": ["Electronics Technician", "COMSEC Technician", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Electronics", "Security+", "Network+"]
+    },
+    "CTR": {
+      "title": "Cryptologic Technician Collection",
+      "skills": ["Signals Collection", "Analysis", "Reporting", "Security", "Communications"],
+      "civilianEquivalents": ["Signals Analyst", "Intelligence Analyst", "Data Analyst", "Security Analyst"],
+      "recommendedCertifications": ["Security+", "SIGINT", "Data Analytics"]
+    },
+    "CTT": {
+      "title": "Cryptologic Technician Technical",
+      "skills": ["Electronic Warfare", "Signals", "Maintenance", "Security", "Analysis"],
+      "civilianEquivalents": ["Electronic Warfare Analyst", "Signals Technician", "Security Specialist", "Data Analyst"],
+      "recommendedCertifications": ["Security+", "Electronics", "EW"]
+    },
+    "CWT": {
+      "title": "Cyber Warfare Technician",
+      "skills": ["Cyber Operations", "Network Defense", "Threat Hunting", "Forensics", "Security"],
+      "civilianEquivalents": ["SOC Analyst", "Cybersecurity Analyst", "Threat Hunter", "Incident Responder"],
+      "recommendedCertifications": ["Security+", "CEH", "CISSP", "GCIH"]
+    },
+    "EOD": {
+      "title": "Explosive Ordnance Disposal",
+      "skills": ["EOD", "Safety", "Robotics", "Detection", "Crisis Response"],
+      "civilianEquivalents": ["Bomb Technician", "Safety Specialist", "Hazmat Technician", "Security Consultant"],
+      "recommendedCertifications": ["Hazmat", "Safety", "Bomb Disposal"]
+    },
+    "ET": {
+      "title": "Electronics Technician",
+      "skills": ["Electronics Repair", "Systems Troubleshooting", "Radar Systems", "Technical Documentation", "Quality Control"],
+      "civilianEquivalents": ["Electronics Technician", "Radar Technician", "Field Service Engineer", "Systems Engineer"],
+      "recommendedCertifications": ["Electronics Certification", "Radar Technology", "Systems Engineering"]
+    },
+    "FC": {
+      "title": "Fire Controlman",
+      "skills": ["Fire Control Systems", "Technical Maintenance", "Electronics", "Systems Testing", "Quality Assurance"],
+      "civilianEquivalents": ["Electronics Technician", "Systems Engineer", "Fire Control Specialist", "Technical Specialist"],
+      "recommendedCertifications": ["Electronics Certification", "Systems Engineering", "Quality Control"]
+    },
+    "FT": {
+      "title": "Fire Control Technician",
+      "skills": ["Submarine Fire Control", "Electronics", "Maintenance", "Testing", "Safety"],
+      "civilianEquivalents": ["Electronics Technician", "Systems Technician", "Field Service Technician", "Quality Technician"],
+      "recommendedCertifications": ["Electronics", "Safety", "Systems"]
+    },
+    "GM": {
+      "title": "Gunner's Mate",
+      "skills": ["Weapons", "Maintenance", "Safety", "Fire Control", "Training"],
+      "civilianEquivalents": ["Armorer", "Weapons Technician", "Security Specialist", "Trainer"],
+      "recommendedCertifications": ["Armorer", "Safety", "Firearms Instructor"]
+    },
+    "IS": {
+      "title": "Intelligence Specialist",
+      "skills": ["Analysis", "Reporting", "Imagery", "Briefing", "Research"],
+      "civilianEquivalents": ["Intelligence Analyst", "Data Analyst", "Research Analyst", "Security Analyst"],
+      "recommendedCertifications": ["Security+", "Intelligence", "Data Analytics"]
+    },
+    "IT": {
+      "title": "Information Systems Technician",
+      "skills": ["Systems Administration", "Network Configuration", "Telecommunications", "Technical Support", "IT Project Management"],
+      "civilianEquivalents": ["Systems Administrator", "Network Engineer", "IT Manager", "Technical Support Specialist"],
+      "recommendedCertifications": ["CompTIA A+", "Network+", "CCNA", "MCSA"]
+    },
+    "LN": {
+      "title": "Legalman",
+      "skills": ["Legal Research", "Documentation", "Client Support", "Case Management", "Records"],
+      "civilianEquivalents": ["Paralegal", "Legal Assistant", "Case Manager", "Compliance Specialist"],
+      "recommendedCertifications": ["Paralegal", "Legal Studies", "Compliance"]
+    },
+    "LS": {
+      "title": "Logistics Specialist",
+      "skills": ["Supply Chain Operations", "Inventory Control", "Procurement", "Warehouse Management", "Shipping Coordination"],
+      "civilianEquivalents": ["Supply Chain Analyst", "Procurement Specialist", "Warehouse Operations Manager", "Logistics Coordinator"],
+      "recommendedCertifications": ["APICS CPIM", "CSCP", "Six Sigma Green Belt"]
+    },
+    "MA": {
+      "title": "Master-at-Arms",
+      "skills": ["Law Enforcement", "Security Operations", "Investigation", "Access Control", "Emergency Response"],
+      "civilianEquivalents": ["Police Officer", "Security Manager", "Law Enforcement Officer", "Security Consultant"],
+      "recommendedCertifications": ["Security+", "Law Enforcement Certification", "Criminal Justice"]
+    },
+    "MC": {
+      "title": "Mass Communication Specialist",
+      "skills": ["Writing", "Photography", "Video", "Editing", "Storytelling"],
+      "civilianEquivalents": ["Journalist", "Content Creator", "Videographer", "Photographer"],
+      "recommendedCertifications": ["Adobe", "Journalism", "Communications"]
+    },
+    "MN": {
+      "title": "Mineman",
+      "skills": ["Mine Warfare", "Maintenance", "Sonar", "Safety", "Operations"],
+      "civilianEquivalents": ["Explosives Technician", "Electronics Technician", "Operations Technician", "Safety Specialist"],
+      "recommendedCertifications": ["Hazmat", "Electronics", "Safety"]
+    },
+    "MT": {
+      "title": "Missile Technician",
+      "skills": ["Strategic Weapons", "Electronics", "Maintenance", "Safety", "Security"],
+      "civilianEquivalents": ["Electronics Technician", "Missile Technician", "Field Service Technician", "Security Specialist"],
+      "recommendedCertifications": ["Security+", "Electronics", "Nuclear Safety"]
+    },
+    "MU": {
+      "title": "Musician",
+      "skills": ["Performance", "Ensemble", "Discipline", "Training", "Event Support"],
+      "civilianEquivalents": ["Musician", "Performer", "Music Instructor", "Event Musician"],
+      "recommendedCertifications": ["Music Degree", "Performance", "Teaching"]
+    },
+    "NC": {
+      "title": "Navy Counselor",
+      "skills": ["Counseling", "Recruiting", "Career Planning", "Administration", "Communication"],
+      "civilianEquivalents": ["Career Counselor", "Recruiter", "HR Specialist", "Advisor"],
+      "recommendedCertifications": ["Counseling", "HR", "Coaching"]
+    },
+    "OS": {
+      "title": "Operations Specialist",
+      "skills": ["Radar", "Navigation", "Communications", "Operations", "Tracking"],
+      "civilianEquivalents": ["Operations Coordinator", "Radar Operator", "Dispatcher", "Control Room Operator"],
+      "recommendedCertifications": ["Operations", "Radar", "Communications"]
+    },
+    "PS": {
+      "title": "Personnel Specialist",
+      "skills": ["Admin", "Personnel", "Records", "Customer Service", "Processing"],
+      "civilianEquivalents": ["HR Assistant", "Personnel Clerk", "Office Specialist", "Admin Assistant"],
+      "recommendedCertifications": ["Office", "HR", "Customer Service"]
+    },
+    "QM": {
+      "title": "Quartermaster",
+      "skills": ["Navigation", "Bridge Operations", "Charts", "Steering", "Communications"],
+      "civilianEquivalents": ["Navigator", "Helmsman", "Operations Specialist", "Logistics Coordinator"],
+      "recommendedCertifications": ["Navigation", "Maritime", "Communications"]
+    },
+    "RP": {
+      "title": "Religious Program Specialist",
+      "skills": ["Administration", "Event Support", "Counseling Support", "Records", "Logistics"],
+      "civilianEquivalents": ["Program Coordinator", "Administrative Assistant", "Counseling Support", "Event Coordinator"],
+      "recommendedCertifications": ["Administrative", "Counseling Support", "Project Management"]
+    },
+    "RS": {
+      "title": "Retail Services Specialist",
+      "skills": ["Retail Operations", "Customer Service", "Inventory", "Cash Handling", "Facilities"],
+      "civilianEquivalents": ["Retail Associate", "Store Manager", "Inventory Specialist", "Customer Service Lead"],
+      "recommendedCertifications": ["Retail Management", "Customer Service", "Inventory"]
+    },
+    "RW": {
+      "title": "Robotics Warfare Specialist",
+      "skills": ["RAS Operations", "AI/ML", "Navigation Autonomy", "Data Systems", "Maintenance"],
+      "civilianEquivalents": ["Robotics Technician", "Autonomy Specialist", "Data Systems Technician", "AI/ML Technician"],
+      "recommendedCertifications": ["Robotics", "AI/ML", "Data Analytics"]
+    },
+    "SB": {
+      "title": "Special Warfare Boat Operator",
+      "skills": ["Boat Operations", "Special Warfare", "Navigation", "Tactics", "Safety"],
+      "civilianEquivalents": ["Boat Captain", "Maritime Security", "Operations Specialist", "Instructor"],
+      "recommendedCertifications": ["Maritime", "Safety", "Security+"]
+    },
+    "SO": {
+      "title": "Special Warfare Operator (SEAL)",
+      "skills": ["Special Operations", "Diving", "Parachuting", "Tactics", "Leadership"],
+      "civilianEquivalents": ["Security Consultant", "Diver", "Instructor", "Operations Specialist"],
+      "recommendedCertifications": ["Diving", "Security", "Leadership"]
+    },
+    "STG": {
+      "title": "Sonar Technician (Surface)",
+      "skills": ["Sonar Operations", "Technical Analysis", "Systems Maintenance", "Data Analysis", "Electronics"],
+      "civilianEquivalents": ["Sonar Technician", "Electronics Technician", "Systems Analyst", "Technical Specialist"],
+      "recommendedCertifications": ["Electronics Certification", "Sonar Technology", "Data Analytics"]
+    },
+    "STS": {
+      "title": "Sonar Technician (Submarine)",
+      "skills": ["Submarine Sonar", "Maintenance", "Analysis", "Data", "Safety"],
+      "civilianEquivalents": ["Sonar Technician", "Electronics Technician", "Systems Technician", "Data Analyst"],
+      "recommendedCertifications": ["Electronics", "Sonar", "Safety"]
+    },
+    "YN": {
+      "title": "Yeoman",
+      "skills": ["Administrative Management", "Document Control", "Office Management", "Personnel Records", "Communication"],
+      "civilianEquivalents": ["Administrative Manager", "Office Manager", "Executive Assistant", "Records Manager"],
+      "recommendedCertifications": ["Microsoft Office Specialist", "CAP", "Project Management"]
+    }
+  },
+  "Air Force": {
+    "DEFAULT": {
+      "title": "Air Force Professional",
+      "skills": ["Mission Support", "Technical Aptitude", "Safety", "Team Leadership", "Communications"],
+      "civilianEquivalents": ["Operations Specialist", "Technician", "Analyst", "Supervisor"],
+      "recommendedCertifications": ["Security+", "Project Management", "Safety"]
+    },
+    "3D0X2": {
+      "title": "Cyber Systems Operations",
+      "skills": ["Systems Administration", "Network Operations", "Server Management", "Cybersecurity", "IT Service Management"],
+      "civilianEquivalents": ["Systems Administrator", "Network Operations Specialist", "IT Operations Manager", "Cloud Administrator"],
+      "recommendedCertifications": ["Security+", "Network+", "CCNA", "AWS Solutions Architect"]
+    },
+    "3D1X2": {
+      "title": "Cyber Transport Systems",
+      "skills": ["Network Infrastructure", "Telecommunications", "Network Security", "Systems Integration", "Technical Support"],
+      "civilianEquivalents": ["Network Engineer", "Telecommunications Specialist", "Network Architect", "IT Infrastructure Manager"],
+      "recommendedCertifications": ["CCNA", "CCNP", "Network+", "Cisco Security"]
+    },
+    "3D0X3": {
+      "title": "Cyber Surety",
+      "skills": ["Cybersecurity", "Information Assurance", "Security Compliance", "Risk Management", "Auditing"],
+      "civilianEquivalents": ["Cybersecurity Analyst", "Information Security Specialist", "Compliance Analyst", "Security Auditor"],
+      "recommendedCertifications": ["Security+", "CISSP", "CISM", "CEH"]
+    },
+    "3D1X1": {
+      "title": "Client Systems",
+      "skills": ["Help Desk", "Endpoint Support", "Networking", "Troubleshooting", "Customer Service"],
+      "civilianEquivalents": ["IT Support Specialist", "Desktop Support", "Help Desk Technician", "Field Technician"],
+      "recommendedCertifications": ["A+", "Network+", "Security+", "MCSA"]
+    },
+    "1N0X1": {
+      "title": "All Source Intelligence Analyst",
+      "skills": ["Intelligence Analysis", "Reporting", "Briefing", "Targeting", "Data"],
+      "civilianEquivalents": ["Intelligence Analyst", "Research Analyst", "Data Analyst", "Security Analyst"],
+      "recommendedCertifications": ["Security+", "Intelligence", "Data Analytics"]
+    },
+    "1N1X1": {
+      "title": "Geospatial Intelligence Analyst",
+      "skills": ["Imagery Analysis", "GIS", "Reporting", "Targeting", "Data"],
+      "civilianEquivalents": ["Imagery Analyst", "GIS Analyst", "Remote Sensing Analyst", "Intelligence Analyst"],
+      "recommendedCertifications": ["GIS", "Remote Sensing", "Security+"]
+    },
+    "1N4X1": {
+      "title": "Fusion Analyst",
+      "skills": ["Intelligence Analysis", "Data Fusion", "Reporting", "Critical Thinking", "Multi-source Analysis"],
+      "civilianEquivalents": ["Intelligence Analyst", "Data Analyst", "Fusion Analyst", "Research Analyst"],
+      "recommendedCertifications": ["Security+", "Intelligence Analysis", "Data Analytics"]
+    },
+    "1P0X1": {
+      "title": "Aircrew Flight Equipment",
+      "skills": ["Survival Gear", "Inspection", "Maintenance", "Safety", "Training"],
+      "civilianEquivalents": ["Life Support Technician", "Safety Technician", "Equipment Technician", "Trainer"],
+      "recommendedCertifications": ["Safety", "Equipment Maintenance", "Training"]
+    },
+    "1S0X1": {
+      "title": "Safety",
+      "skills": ["Safety Programs", "Inspections", "Risk Management", "Training", "Compliance"],
+      "civilianEquivalents": ["Safety Specialist", "EHS Coordinator", "Compliance Specialist", "Trainer"],
+      "recommendedCertifications": ["OSHA", "Safety", "Risk Management"]
+    },
+    "2A3X3": {
+      "title": "Tactical Aircraft Maintenance",
+      "skills": ["Aircraft Maintenance", "Mechanical Systems", "Quality Control", "Technical Documentation", "Safety Compliance"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Aviation Maintenance Technician", "Quality Control Inspector", "Maintenance Manager"],
+      "recommendedCertifications": ["A&P License", "FAA Certifications", "Quality Control"]
+    },
+    "2A5X1": {
+      "title": "Airlift/Special Mission Aircraft Maintenance",
+      "skills": ["Aircraft Systems", "Hydraulics", "Avionics", "Safety", "Maintenance"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Avionics Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Avionics", "Safety"]
+    },
+    "2A6X1": {
+      "title": "Aerospace Propulsion",
+      "skills": ["Engine Maintenance", "Mechanical Systems", "Troubleshooting", "Quality Assurance", "Technical Documentation"],
+      "civilianEquivalents": ["Aircraft Engine Mechanic", "Propulsion Technician", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Engine Certification", "Quality Control"]
+    },
+    "2A7X2": {
+      "title": "Nondestructive Inspection",
+      "skills": ["NDI", "Testing", "Quality", "Safety", "Documentation"],
+      "civilianEquivalents": ["NDI Technician", "Quality Technician", "Inspector", "Safety Technician"],
+      "recommendedCertifications": ["NDI", "ASNT", "Safety"]
+    },
+    "2A8X1": {
+      "title": "Aircraft Loadmaster",
+      "skills": ["Weight and Balance", "Cargo Handling", "Safety", "Flight Operations", "Documentation"],
+      "civilianEquivalents": ["Loadmaster", "Cargo Specialist", "Operations Coordinator", "Safety Technician"],
+      "recommendedCertifications": ["Load Planning", "Safety", "Logistics"]
+    },
+    "2S0X1": {
+      "title": "Supply Management",
+      "skills": ["Inventory Control", "Supply Chain Management", "Procurement", "Warehouse Operations", "Data Management"],
+      "civilianEquivalents": ["Supply Chain Manager", "Procurement Specialist", "Inventory Manager", "Warehouse Manager"],
+      "recommendedCertifications": ["APICS CPIM", "Supply Chain Management", "Six Sigma"]
+    },
+    "2T2X1": {
+      "title": "Air Transportation",
+      "skills": ["Cargo Operations", "Transportation Management", "Load Planning", "Safety Compliance", "Logistics"],
+      "civilianEquivalents": ["Transportation Manager", "Logistics Coordinator", "Cargo Specialist", "Operations Manager"],
+      "recommendedCertifications": ["Transportation Management", "Logistics", "Supply Chain"]
+    },
+    "2T3X1": {
+      "title": "Vehicle Maintenance",
+      "skills": ["Automotive", "Diesel", "Diagnostics", "Maintenance", "Safety"],
+      "civilianEquivalents": ["Automotive Technician", "Diesel Mechanic", "Fleet Mechanic", "Maintenance Technician"],
+      "recommendedCertifications": ["ASE", "Diesel", "Safety"]
+    },
+    "3E0X1": {
+      "title": "Electrical Systems",
+      "skills": ["Electrical Maintenance", "Power Systems", "Troubleshooting", "Safety Compliance", "Technical Documentation"],
+      "civilianEquivalents": ["Electrician", "Electrical Technician", "Power Systems Technician", "Facilities Electrician"],
+      "recommendedCertifications": ["Electrician License", "Electrical Systems", "OSHA Safety"]
+    },
+    "3E4X1": {
+      "title": "Water and Fuel Systems Maintenance",
+      "skills": ["Systems Maintenance", "Plumbing", "Fuel Systems", "Quality Control", "Safety Management"],
+      "civilianEquivalents": ["Utilities Technician", "Plumber", "Facilities Maintenance", "Systems Technician"],
+      "recommendedCertifications": ["Plumbing License", "Utilities Certification", "OSHA Safety"]
+    },
+    "3E9X1": {
+      "title": "Emergency Management",
+      "skills": ["EM Planning", "CBRN", "Training", "Response", "Safety"],
+      "civilianEquivalents": ["Emergency Manager", "Safety Specialist", "CBRN Technician", "Trainer"],
+      "recommendedCertifications": ["Emergency Management", "Hazmat", "Safety"]
+    },
+    "3F0X1": {
+      "title": "Personnel",
+      "skills": ["HR Management", "Personnel Administration", "Data Management", "Customer Service", "Records Management"],
+      "civilianEquivalents": ["HR Specialist", "Personnel Manager", "Talent Acquisition Specialist", "Benefits Administrator"],
+      "recommendedCertifications": ["PHR", "SHRM-CP", "HRIS Certification"]
+    },
+    "3P0X1": {
+      "title": "Security Forces",
+      "skills": ["Law Enforcement", "Security", "Weapons", "Patrol", "Emergency Response"],
+      "civilianEquivalents": ["Police Officer", "Security Officer", "Security Supervisor", "Law Enforcement"],
+      "recommendedCertifications": ["Security+", "Law Enforcement", "Firearms Instructor"]
+    },
+    "4A0X1": {
+      "title": "Health Services Management",
+      "skills": ["Medical Administration", "Records", "Billing", "Patient Support", "Scheduling"],
+      "civilianEquivalents": ["Healthcare Admin", "Patient Services", "Medical Office Manager", "Scheduling Coordinator"],
+      "recommendedCertifications": ["Medical Office", "Billing", "Coding"]
+    },
+    "4N0X1": {
+      "title": "Aerospace Medical Service",
+      "skills": ["Patient Care", "Emergency Medical Services", "Medical Records", "Laboratory Procedures", "Clinical Support"],
+      "civilianEquivalents": ["Emergency Medical Technician", "Medical Assistant", "Clinical Technician", "Healthcare Coordinator"],
+      "recommendedCertifications": ["EMT-B", "Medical Assistant", "Phlebotomy", "NREMT"]
+    },
+    "4R0X1": {
+      "title": "Diagnostic Imaging",
+      "skills": ["Radiology", "Imaging", "Patient Care", "Safety", "Documentation"],
+      "civilianEquivalents": ["Radiology Technologist", "Imaging Specialist", "X-Ray Technician", "Medical Imaging"],
+      "recommendedCertifications": ["ARRT", "BLS", "Radiology"]
+    },
+    "6F0X1": {
+      "title": "Financial Management and Comptroller",
+      "skills": ["Budgeting", "Accounting", "Pay", "Audit", "Customer Service"],
+      "civilianEquivalents": ["Financial Analyst", "Accountant", "Budget Analyst", "Payroll Specialist"],
+      "recommendedCertifications": ["Financial", "Accounting", "Excel"]
+    },
+    "9S100": {
+      "title": "Scientific Applications Specialist",
+      "skills": ["Research", "Data Analysis", "Instrumentation", "Safety", "Reporting"],
+      "civilianEquivalents": ["Research Technician", "Lab Technician", "Data Analyst", "Instrumentation Technician"],
+      "recommendedCertifications": ["Science", "Data Analytics", "Safety"]
+    }
+  },
+  "Marine Corps": {
+    "DEFAULT": {
+      "title": "Marine Corps Professional",
+      "skills": ["Leadership", "Field Operations", "Physical Fitness", "Safety", "Team Coordination"],
+      "civilianEquivalents": ["Security Specialist", "Operations Technician", "Supervisor", "Trainer"],
+      "recommendedCertifications": ["Security+", "CPR/First Aid", "Leadership Training"]
+    },
+    "0111": {
+      "title": "Administrative Specialist",
+      "skills": ["Office Administration", "Records Management", "Data Entry", "Customer Service", "Personnel Support"],
+      "civilianEquivalents": ["Administrative Assistant", "Office Manager", "Data Entry Specialist", "HR Coordinator"],
+      "recommendedCertifications": ["Microsoft Office Specialist", "CAP", "Administrative Professional"]
+    },
+    "0231": {
+      "title": "Intelligence Specialist",
+      "skills": ["Intelligence Analysis", "Reconnaissance", "Data Collection", "Report Writing", "Briefing"],
+      "civilianEquivalents": ["Intelligence Analyst", "Research Analyst", "Data Analyst", "Intelligence Officer"],
+      "recommendedCertifications": ["Security+", "Intelligence Analysis", "Data Analytics"]
+    },
+    "0311": {
+      "title": "Rifleman",
+      "skills": ["Leadership", "Tactical Operations", "Security", "Team Coordination", "Physical Fitness"],
+      "civilianEquivalents": ["Security Manager", "Law Enforcement Officer", "Emergency Response Coordinator", "Security Consultant"],
+      "recommendedCertifications": ["Security+", "CPR/First Aid", "Leadership Training"]
+    },
+    "0313": {
+      "title": "LAV Crewman",
+      "skills": ["Vehicle Operations", "Weapons", "Maintenance", "Navigation", "Safety"],
+      "civilianEquivalents": ["Heavy Equipment Operator", "Security Specialist", "Vehicle Operator", "Operations Technician"],
+      "recommendedCertifications": ["Heavy Equipment", "Safety", "Security+"]
+    },
+    "0331": {
+      "title": "Machine Gunner",
+      "skills": ["Weapons Systems", "Team Leadership", "Tactical Operations", "Equipment Maintenance", "Security"],
+      "civilianEquivalents": ["Security Specialist", "Law Enforcement", "Training Instructor", "Security Manager"],
+      "recommendedCertifications": ["Security+", "Firearms Instructor", "Law Enforcement"]
+    },
+    "0341": {
+      "title": "Mortarman",
+      "skills": ["Indirect Fire", "Targeting", "Communications", "Teamwork", "Safety"],
+      "civilianEquivalents": ["Security Specialist", "Operations Technician", "Field Technician", "Safety Technician"],
+      "recommendedCertifications": ["Security+", "Safety", "GIS"]
+    },
+    "0351": {
+      "title": "Infantry Assault Marine",
+      "skills": ["Assault", "Breaching", "Demolitions", "Weapons", "Tactics"],
+      "civilianEquivalents": ["Security Specialist", "Demolition Technician", "Trainer", "Operations"],
+      "recommendedCertifications": ["Security+", "Explosives", "Safety"]
+    },
+    "0369": {
+      "title": "Infantry Unit Leader",
+      "skills": ["Leadership", "Training", "Operations", "Logistics", "Safety"],
+      "civilianEquivalents": ["Operations Manager", "Training Lead", "Supervisor", "Logistics Coordinator"],
+      "recommendedCertifications": ["PMP", "Leadership", "Safety"]
+    },
+    "0621": {
+      "title": "Field Radio Operator",
+      "skills": ["Communications Systems", "Radio Operations", "Technical Troubleshooting", "Message Handling", "Network Setup"],
+      "civilianEquivalents": ["Communications Technician", "Telecommunications Specialist", "IT Support", "Network Technician"],
+      "recommendedCertifications": ["Network+", "FCC License", "Communications Certification"]
+    },
+    "0627": {
+      "title": "Satellite Communications Operator",
+      "skills": ["SATCOM", "Networking", "Maintenance", "Security", "Troubleshooting"],
+      "civilianEquivalents": ["Satellite Technician", "Network Technician", "Field Technician", "Communications Specialist"],
+      "recommendedCertifications": ["Satellite Communications", "Network+", "Security+"]
+    },
+    "0651": {
+      "title": "Cyber Network Operator",
+      "skills": ["Networking", "Security", "Systems", "Troubleshooting", "Support"],
+      "civilianEquivalents": ["Network Administrator", "Systems Administrator", "Cybersecurity Technician", "IT Support"],
+      "recommendedCertifications": ["Network+", "Security+", "CCNA"]
+    },
+    "0671": {
+      "title": "Data Systems Administrator",
+      "skills": ["Servers", "Databases", "Networking", "Security", "Troubleshooting"],
+      "civilianEquivalents": ["Systems Administrator", "Database Administrator", "Network Administrator", "IT Specialist"],
+      "recommendedCertifications": ["Security+", "Database", "Network+"]
+    },
+    "1371": {
+      "title": "Combat Engineer",
+      "skills": ["Construction", "Demolition", "Heavy Equipment", "Safety", "Project Management"],
+      "civilianEquivalents": ["Construction Technician", "Project Supervisor", "Equipment Operator", "Safety Specialist"],
+      "recommendedCertifications": ["OSHA Safety", "Heavy Equipment", "PMP"]
+    },
+    "1391": {
+      "title": "Bulk Fuel Specialist",
+      "skills": ["Fuel Handling", "Safety", "Testing", "Distribution", "Maintenance"],
+      "civilianEquivalents": ["Fuel Technician", "Logistics Technician", "Safety Technician", "Plant Operator"],
+      "recommendedCertifications": ["Hazmat", "Safety", "Logistics"]
+    },
+    "2111": {
+      "title": "Small Arms Repairer/Technician",
+      "skills": ["Weapons Maintenance", "Diagnostics", "Safety", "Documentation", "Quality"],
+      "civilianEquivalents": ["Armorer", "Gunsmith", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["Armorer", "Safety", "Quality"]
+    },
+    "2141": {
+      "title": "Assault Amphibious Vehicle Repairer",
+      "skills": ["Vehicle Maintenance", "Diagnostics", "Hydraulics", "Safety", "Documentation"],
+      "civilianEquivalents": ["Heavy Equipment Mechanic", "Fleet Mechanic", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["Diesel", "Hydraulics", "Safety"]
+    },
+    "2846": {
+      "title": "Ground Electronics Maintenance",
+      "skills": ["Electronics Repair", "Systems Troubleshooting", "Technical Documentation", "Quality Assurance", "Communications"],
+      "civilianEquivalents": ["Electronics Technician", "Communications Technician", "Field Service Engineer", "Technical Support"],
+      "recommendedCertifications": ["Electronics Certification", "Communications", "A+ Certification"]
+    },
+    "3043": {
+      "title": "Supply Administration and Operations",
+      "skills": ["Supply Chain Management", "Inventory Control", "Logistics Coordination", "Procurement", "Data Management"],
+      "civilianEquivalents": ["Supply Chain Coordinator", "Warehouse Manager", "Procurement Specialist", "Inventory Manager"],
+      "recommendedCertifications": ["APICS CPIM", "Supply Chain Management", "Six Sigma"]
+    },
+    "3521": {
+      "title": "Automotive Maintenance Technician",
+      "skills": ["Automotive Repair", "Diagnostics", "Maintenance", "Safety", "Documentation"],
+      "civilianEquivalents": ["Automotive Technician", "Diesel Mechanic", "Fleet Mechanic", "Maintenance Technician"],
+      "recommendedCertifications": ["ASE", "Diesel", "Safety"]
+    },
+    "3531": {
+      "title": "Motor Vehicle Operator",
+      "skills": ["Driving", "Logistics", "Safety", "Maintenance", "Navigation"],
+      "civilianEquivalents": ["Truck Driver", "Logistics Driver", "Transportation Specialist", "Fleet Operator"],
+      "recommendedCertifications": ["CDL", "Defensive Driving", "Hazmat"]
+    },
+    "5711": {
+      "title": "CBRN Defense Specialist",
+      "skills": ["CBRN", "Decontamination", "Detection", "Safety", "Training"],
+      "civilianEquivalents": ["Hazmat Technician", "Safety Specialist", "CBRN Technician", "Trainer"],
+      "recommendedCertifications": ["Hazmat", "Safety", "Emergency Management"]
+    },
+    "5811": {
+      "title": "Military Police",
+      "skills": ["Law Enforcement", "Security", "Patrol", "Investigation", "Emergency Response"],
+      "civilianEquivalents": ["Police Officer", "Security Officer", "Corrections", "Security Supervisor"],
+      "recommendedCertifications": ["Law Enforcement", "Security+", "Criminal Justice"]
+    },
+    "5948": {
+      "title": "Aviation Radar Repairer",
+      "skills": ["Radar", "Electronics", "Maintenance", "Diagnostics", "Safety"],
+      "civilianEquivalents": ["Radar Technician", "Electronics Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Electronics", "Radar", "Safety"]
+    },
+    "6042": {
+      "title": "Aviation Maintenance Data Specialist",
+      "skills": ["Data Entry", "Maintenance Records", "Scheduling", "Documentation", "Logistics"],
+      "civilianEquivalents": ["Maintenance Planner", "Data Specialist", "Scheduler", "Records Clerk"],
+      "recommendedCertifications": ["Office", "Data Management", "Logistics"]
+    },
+    "6072": {
+      "title": "Aircraft Maintenance Technician",
+      "skills": ["Aircraft Maintenance", "Mechanical Systems", "Quality Control", "Technical Documentation", "Safety Management"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Aviation Maintenance Technician", "Quality Control Inspector", "Maintenance Manager"],
+      "recommendedCertifications": ["A&P License", "Aviation Maintenance", "Quality Control"]
+    },
+    "6112": {
+      "title": "Helicopter Mechanic",
+      "skills": ["Helicopter Maintenance", "Diagnostics", "Hydraulics", "Avionics", "Safety"],
+      "civilianEquivalents": ["Helicopter Mechanic", "Avionics Technician", "Maintenance Technician", "Field Service Technician"],
+      "recommendedCertifications": ["A&P License", "Avionics", "Safety"]
+    },
+    "6153": {
+      "title": "Helicopter Crew Chief",
+      "skills": ["Crew Chief", "Maintenance", "Flight Operations", "Safety", "Training"],
+      "civilianEquivalents": ["Crew Chief", "Maintenance Supervisor", "Flightline Supervisor", "Operations Coordinator"],
+      "recommendedCertifications": ["A&P License", "Safety", "Leadership"]
+    },
+    "6174": {
+      "title": "Helicopter Airframe Mechanic",
+      "skills": ["Airframe", "Structures", "Maintenance", "Hydraulics", "Safety"],
+      "civilianEquivalents": ["Aircraft Structures Technician", "Airframe Mechanic", "Maintenance Technician", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Structures", "Safety"]
+    },
+    "MOS_Leadership": {
+      "title": "Leadership Placeholder",
+      "skills": ["Leadership", "Training", "Safety", "Operations", "Communication"],
+      "civilianEquivalents": ["Supervisor", "Manager", "Trainer", "Operations Lead"],
+      "recommendedCertifications": ["Leadership", "PMP", "Safety"]
+    }
+  },
+  "Coast Guard": {
+    "DEFAULT": {
+      "title": "Coast Guard Professional",
+      "skills": ["Maritime Operations", "Safety", "Navigation", "Communications", "Teamwork"],
+      "civilianEquivalents": ["Operations Specialist", "Technician", "Supervisor", "Safety Coordinator"],
+      "recommendedCertifications": ["OSHA Safety", "Maritime", "Security+"]
+    },
+    "AMT": {
+      "title": "Aviation Maintenance Technician",
+      "skills": ["Aircraft Maintenance", "Powerplant", "Structures", "Corrosion Control", "Safety"],
+      "civilianEquivalents": ["Aircraft Mechanic", "Aviation Technician", "Helicopter Mechanic", "Quality Inspector"],
+      "recommendedCertifications": ["A&P License", "Avionics", "Safety"]
+    },
+    "AST": {
+      "title": "Aviation Survival Technician",
+      "skills": ["Rescue Swimmer", "Survival Gear", "Maintenance", "Training", "Safety"],
+      "civilianEquivalents": ["Rescue Swimmer", "Safety Technician", "Equipment Technician", "Trainer"],
+      "recommendedCertifications": ["Rescue", "Safety", "First Aid"]
+    },
+    "AET": {
+      "title": "Avionics Electrical Technician",
+      "skills": ["Avionics", "Electrical", "Maintenance", "Diagnostics", "Safety"],
+      "civilianEquivalents": ["Avionics Technician", "Electrical Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Avionics", "A&P License", "Safety"]
+    },
+    "HS": {
+      "title": "Health Services Technician",
+      "skills": ["Patient Care", "Medical Procedures", "Emergency Response", "Health Records", "Laboratory Work"],
+      "civilianEquivalents": ["Medical Assistant", "Emergency Medical Technician", "Clinical Technician", "Healthcare Coordinator"],
+      "recommendedCertifications": ["Medical Assistant", "EMT-B", "Phlebotomy", "NREMT"]
+    },
+    "MST": {
+      "title": "Marine Science Technician",
+      "skills": ["Pollution Response", "Inspections", "Sampling", "Safety", "Environmental"],
+      "civilianEquivalents": ["Environmental Technician", "Inspector", "Marine Safety Specialist", "Lab Technician"],
+      "recommendedCertifications": ["Environmental", "Safety", "Hazmat"]
+    },
+    "MU": {
+      "title": "Musician",
+      "skills": ["Performance", "Ensemble", "Discipline", "Training", "Event Support"],
+      "civilianEquivalents": ["Musician", "Performer", "Music Instructor", "Event Musician"],
+      "recommendedCertifications": ["Music", "Performance", "Teaching"]
+    },
+    "PA": {
+      "title": "Public Affairs Specialist",
+      "skills": ["Writing", "Editing", "Media", "Photography", "Communications"],
+      "civilianEquivalents": ["Communications Specialist", "Journalist", "Photographer", "Content Creator"],
+      "recommendedCertifications": ["Communications", "Adobe", "Journalism"]
+    },
+    "SK": {
+      "title": "Storekeeper",
+      "skills": ["Inventory", "Supply", "Procurement", "Warehouse", "Customer Service"],
+      "civilianEquivalents": ["Inventory Specialist", "Supply Technician", "Procurement Specialist", "Warehouse Associate"],
+      "recommendedCertifications": ["APICS", "Logistics", "Inventory"]
+    },
+    "CS": {
+      "title": "Culinary Specialist",
+      "skills": ["Food Service", "Sanitation", "Menu Planning", "Inventory", "Customer Service"],
+      "civilianEquivalents": ["Cook", "Chef", "Food Service Manager", "Catering Specialist"],
+      "recommendedCertifications": ["ServSafe", "Food Safety", "Culinary Arts"]
+    },
+    "YN": {
+      "title": "Yeoman",
+      "skills": ["Administrative Support", "Office Management", "Records Management", "Personnel Administration", "Communication"],
+      "civilianEquivalents": ["Administrative Manager", "Office Manager", "Executive Assistant", "HR Coordinator"],
+      "recommendedCertifications": ["Microsoft Office Specialist", "CAP", "Project Management"]
+    },
+    "BM": {
+      "title": "Boatswain's Mate",
+      "skills": ["Equipment Maintenance", "Safety Management", "Leadership", "Navigation", "Operations Coordination"],
+      "civilianEquivalents": ["Operations Manager", "Safety Coordinator", "Equipment Manager", "Facilities Manager"],
+      "recommendedCertifications": ["OSHA Safety", "Project Management", "Leadership"]
+    },
+    "ME": {
+      "title": "Maritime Enforcement Specialist",
+      "skills": ["Law Enforcement", "Security Operations", "Investigation", "Tactical Operations", "Emergency Response"],
+      "civilianEquivalents": ["Law Enforcement Officer", "Security Specialist", "Border Patrol Agent", "Investigator"],
+      "recommendedCertifications": ["Law Enforcement Certification", "Security+", "Criminal Justice"]
+    },
+    "GM": {
+      "title": "Gunner's Mate",
+      "skills": ["Weapons", "Maintenance", "Safety", "Training", "Operations"],
+      "civilianEquivalents": ["Armorer", "Weapons Technician", "Security Specialist", "Trainer"],
+      "recommendedCertifications": ["Armorer", "Safety", "Firearms Instructor"]
+    },
+    "OS": {
+      "title": "Operations Specialist",
+      "skills": ["Operations Coordination", "Communications", "Radar Operations", "Data Management", "Navigation"],
+      "civilianEquivalents": ["Operations Coordinator", "Communications Specialist", "Dispatcher", "Operations Manager"],
+      "recommendedCertifications": ["Operations Management", "Communications", "Data Management"]
+    },
+    "IS": {
+      "title": "Intelligence Specialist",
+      "skills": ["Analysis", "Reporting", "Imagery", "Briefing", "Security"],
+      "civilianEquivalents": ["Intelligence Analyst", "Data Analyst", "Research Analyst", "Security Analyst"],
+      "recommendedCertifications": ["Security+", "Intelligence", "Data Analytics"]
+    },
+    "DC": {
+      "title": "Damage Controlman",
+      "skills": ["Emergency Response", "Fire Fighting", "Damage Control", "Safety Management", "Equipment Maintenance"],
+      "civilianEquivalents": ["Firefighter", "Emergency Response Coordinator", "Safety Manager", "Fire Protection Specialist"],
+      "recommendedCertifications": ["Firefighter Certification", "Emergency Response", "OSHA Safety"]
+    },
+    "EM": {
+      "title": "Electrician's Mate",
+      "skills": ["Electrical Systems", "Maintenance", "Safety", "Diagnostics", "Training"],
+      "civilianEquivalents": ["Electrician", "Electrical Technician", "Power Technician", "Facilities Electrician"],
+      "recommendedCertifications": ["Electrician License", "Safety", "Electrical"]
+    },
+    "ET": {
+      "title": "Electronics Technician",
+      "skills": ["Electronics", "Maintenance", "Communications", "Navigation", "Safety"],
+      "civilianEquivalents": ["Electronics Technician", "Communications Technician", "Field Service Technician", "Maintenance Technician"],
+      "recommendedCertifications": ["Electronics", "Safety", "Network+"]
+    },
+    "MK": {
+      "title": "Machinery Technician",
+      "skills": ["Mechanical Maintenance", "Engine Repair", "Systems Troubleshooting", "Preventive Maintenance", "Technical Documentation"],
+      "civilianEquivalents": ["Mechanical Technician", "Engine Mechanic", "Maintenance Technician", "Facilities Engineer"],
+      "recommendedCertifications": ["Mechanical Certification", "HVAC", "Engine Repair"]
+    },
+    "IT": {
+      "title": "Information Systems Technician",
+      "skills": ["Network Administration", "Systems Support", "Cybersecurity", "Technical Documentation", "IT Project Management"],
+      "civilianEquivalents": ["Network Administrator", "IT Support Specialist", "Systems Engineer", "IT Manager"],
+      "recommendedCertifications": ["CompTIA A+", "Network+", "Security+", "CCNA"]
+    },
+    "DV": {
+      "title": "Diver",
+      "skills": ["Diving", "Inspection", "Recovery", "Safety", "Maintenance"],
+      "civilianEquivalents": ["Diver", "Inspector", "Marine Technician", "Search and Recovery"],
+      "recommendedCertifications": ["Diving", "Safety", "Hazmat"]
+    },
+    "IV": {
+      "title": "Investigator (Reserve)",
+      "skills": ["Investigations", "Background Checks", "Security", "Interviewing", "Reporting"],
+      "civilianEquivalents": ["Investigator", "Background Analyst", "Security Specialist", "Compliance Analyst"],
+      "recommendedCertifications": ["Security+", "Investigations", "Compliance"]
+    },
+    "CMC": {
+      "title": "Command Master Chief Petty Officer",
+      "skills": ["Leadership", "Command Advising", "Mentorship", "Policy", "Communication"],
+      "civilianEquivalents": ["Senior Manager", "Director", "Advisor", "Program Manager"],
+      "recommendedCertifications": ["Leadership", "PMP", "Executive Communication"]
+    },
+    "AMCPO": {
+      "title": "Area Master Chief Petty Officer",
+      "skills": ["Leadership", "Policy", "Oversight", "Mentorship", "Operations"],
+      "civilianEquivalents": ["Senior Manager", "Director", "Operations Manager", "Advisor"],
+      "recommendedCertifications": ["Leadership", "PMP", "Operations"]
+    },
+    "RFMC": {
+      "title": "Rating Force Master Chief",
+      "skills": ["Leadership", "Force Management", "Policy", "Training", "Communication"],
+      "civilianEquivalents": ["Senior Manager", "Program Director", "Training Lead", "Advisor"],
+      "recommendedCertifications": ["Leadership", "PMP", "Training"]
+    },
+    "MCPOCG": {
+      "title": "Master Chief Petty Officer of the Coast Guard",
+      "skills": ["Executive Leadership", "Policy", "Force Development", "Strategic Communication", "Mentorship"],
+      "civilianEquivalents": ["Executive Advisor", "Chief of Staff", "Director", "Senior Leader"],
+      "recommendedCertifications": ["Executive Leadership", "Communication", "Strategy"]
+    }
+  },
+  "Space Force": {
+    "DEFAULT": {
+      "title": "Space Force Professional",
+      "skills": ["Space Operations", "Cyber", "Data Analysis", "Command and Control", "Safety"],
+      "civilianEquivalents": ["Satellite Operator", "Cyber Technician", "Data Analyst", "Operations Specialist"],
+      "recommendedCertifications": ["Security+", "Satellite Communications", "Data Analytics"]
+    },
+    "5C0X1": {
+      "title": "Space Operations",
+      "skills": ["Satellite Operations", "Command and Control", "Technical Analysis", "Data Management", "Systems Monitoring"],
+      "civilianEquivalents": ["Satellite Operations Specialist", "Aerospace Technician", "Data Analyst", "Systems Operator"],
+      "recommendedCertifications": ["Satellite Communications", "Data Analytics", "Systems Engineering"]
+    },
+    "3D0X2": {
+      "title": "Cyber Systems Operations",
+      "skills": ["Systems Administration", "Network Operations", "Cybersecurity", "Cloud Computing", "IT Service Management"],
+      "civilianEquivalents": ["Systems Administrator", "Cloud Engineer", "Cybersecurity Analyst", "IT Operations Manager"],
+      "recommendedCertifications": ["Security+", "AWS Solutions Architect", "Azure Administrator", "CISSP"]
+    },
+    "1C6X1": {
+      "title": "Space Systems Operations",
+      "skills": ["Space Surveillance", "Command Operations", "Technical Systems", "Data Analysis", "Mission Planning"],
+      "civilianEquivalents": ["Aerospace Systems Engineer", "Mission Operations Specialist", "Data Analyst", "Systems Coordinator"],
+      "recommendedCertifications": ["Systems Engineering", "Data Analytics", "Project Management"]
+    },
+    "5I0X1": {
+      "title": "Intelligence, Surveillance, and Reconnaissance Operations",
+      "skills": ["ISR", "Analysis", "Sensors", "Reporting", "Mission Planning"],
+      "civilianEquivalents": ["Intelligence Analyst", "ISR Operator", "Data Analyst", "Mission Planner"],
+      "recommendedCertifications": ["Security+", "Intelligence", "Data Analytics"]
+    },
+    "5S0X1": {
+      "title": "Cyber Defense Operations",
+      "skills": ["Cyber Defense", "Threat Hunting", "Incident Response", "Forensics", "Security"],
+      "civilianEquivalents": ["SOC Analyst", "Cybersecurity Analyst", "Incident Responder", "Threat Hunter"],
+      "recommendedCertifications": ["Security+", "CEH", "GCIH", "CISSP"]
+    }
+  },
+  "Unknown": {
+    "GENERIC": {
+      "title": "Military Professional",
+      "skills": ["Leadership", "Teamwork", "Discipline", "Problem Solving", "Communication", "Time Management"],
+      "civilianEquivalents": ["Team Lead", "Project Coordinator", "Operations Specialist", "Management Trainee"],
+      "recommendedCertifications": ["Leadership Training", "Project Management", "Professional Development"]
+    }
+  }
+}

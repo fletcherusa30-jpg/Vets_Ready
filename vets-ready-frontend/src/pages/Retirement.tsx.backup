@@ -1,0 +1,775 @@
+/**
+ * Enhanced Retirement Planning Page
+ * Features: BRS/High-3, Multiple Investment Accounts, Pre-Retirement Income, Budget Planning, COLA, SBP, Tax calculations, Charts
+ */
+
+import React, { useState, useEffect } from 'react';
+import { LineChart, Line, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { retirementService } from '../services/api/retirement.service';
+import {
+  PAY_GRADES,
+  DISABILITY_RATES,
+  RETIREMENT_SYSTEMS,
+  STATE_TAX_RATES,
+  TRICARE_PREMIUMS,
+  getPayByGrade,
+  getDisabilityPay,
+  calculateCOLA,
+  calculateFederalTax,
+  BRANCHES
+} from '../data/payTables';
+
+interface InvestmentAccount {
+  id: string;
+  name: string;
+  provider: string; // TSP, Edward Jones, Fidelity, Vanguard, etc.
+  balance: number;
+  monthlyContribution: number;
+  annualReturn: number;
+}
+
+interface BudgetCategory {
+  id: string;
+  name: string;
+  amount: number;
+  isEssential: boolean;
+}
+
+interface RetirementFormData {
+  // Personal Info
+  branch: string;
+  payGrade: string;
+  yearsOfService: number;
+  retirementSystem: 'HIGH_3' | 'BRS';
+
+  // Pre-Retirement Income
+  currentWorkIncome: number;
+  spouseIncome: number;
+  otherIncome: number;
+  yearsUntilRetirement: number;
+
+  // Disability
+  disabilityRating: number;
+  hasSpouse: boolean;
+  numChildren: number;
+
+  // Investment Accounts (multiple)
+  investmentAccounts: InvestmentAccount[];
+
+  // SBP
+  enrollInSBP: boolean;
+
+  // Location
+  stateOfResidence: string;
+
+  // Healthcare
+  tricareType: 'select' | 'prime' | 'forLife';
+  isFamilyCoverage: boolean;
+
+  // Budget
+  budgetCategories: BudgetCategory[];
+}
+
+interface CalculationResult {
+  // Monthly
+  monthlyPension: number;
+  monthlyDisability: number;
+  monthlySBPCost: number;
+  monthlyTricareCost: number;
+  monthlyTSPWithdrawal: number;
+  totalMonthlyGross: number;
+  totalMonthlyNet: number;
+
+  // Annual
+  annualPension: number;
+  annualDisability: number;
+  annualTSP: number;
+  annualGross: number;
+  annualNet: number;
+
+  // Taxes
+  federalTax: number;
+  stateTax: number;
+  totalTax: number;
+
+  // CRDP
+  crdpEligible: boolean;
+  crdpAmount: number;
+
+  // Projections
+  colaProjections: Array<{year: number; amount: number}>;
+  tspGrowth: Array<{year: number; balance: number}>;
+}
+
+type ScenarioType = 'current' | '20years' | '25years' | '30years' | 'medicalRetirement';
+
+export const Retirement: React.FC = () => {
+  const [formData, setFormData] = useState<RetirementFormData>({
+    branch: 'Army',
+    payGrade: 'E-7',
+    yearsOfService: 20,
+    retirementSystem: 'BRS',
+    disabilityRating: 0,
+    hasSpouse: false,
+    numChildren: 0,
+    tspBalance: 50000,
+    tspMonthlyContribution: 500,
+    tspAnnualReturn: 7.0,
+    enrollInSBP: false,
+    stateOfResidence: 'Texas',
+    tricareType: 'select',
+    isFamilyCoverage: false,
+  });
+
+  const [result, setResult] = useState<CalculationResult | null>(null);
+  const [activeScenario, setActiveScenario] = useState<ScenarioType>('current');
+  const [comparisonMode, setComparisonMode] = useState(false);
+  const [savedScenarios, setSavedScenarios] = useState<Record<string, CalculationResult>>({});
+
+  // Real-time calculation
+  useEffect(() => {
+    calculateRetirement();
+  }, [formData]);
+
+  const calculateRetirement = () => {
+    // Base pension calculation
+    const basePay = getPayByGrade(formData.payGrade, formData.branch);
+    const multiplier = RETIREMENT_SYSTEMS[formData.retirementSystem].multiplier;
+    const monthlyPension = basePay * (multiplier / 100) * formData.yearsOfService;
+
+    // Disability compensation
+    const monthlyDisability = getDisabilityPay(
+      formData.disabilityRating,
+      formData.hasSpouse,
+      formData.numChildren
+    );
+
+    // CRDP (Concurrent Retirement and Disability Pay)
+    const crdpEligible = formData.yearsOfService >= 20 && formData.disabilityRating >= 50;
+    const crdpAmount = crdpEligible ? monthlyDisability : 0;
+
+    // SBP cost (6.5% of gross pension)
+    const monthlySBPCost = formData.enrollInSBP ? monthlyPension * 0.065 : 0;
+
+    // TRICARE cost
+    const monthlyTricareCost = TRICARE_PREMIUMS[formData.tricareType][
+      formData.isFamilyCoverage ? 'family' : 'individual'
+    ];
+
+    // TSP withdrawal (4% rule)
+    const monthlyTSPWithdrawal = (formData.tspBalance * 0.04) / 12;
+
+    // Total monthly gross
+    const totalMonthlyGross = monthlyPension + monthlyDisability + monthlyTSPWithdrawal;
+
+    // Tax calculation (pension and TSP are taxable, disability is not)
+    const annualTaxableIncome = (monthlyPension + monthlyTSPWithdrawal) * 12;
+    const federalTax = calculateFederalTax(annualTaxableIncome);
+    const stateTaxRate = STATE_TAX_RATES[formData.stateOfResidence] || 0;
+    const stateTax = annualTaxableIncome * (stateTaxRate / 100);
+    const totalTax = federalTax + stateTax;
+
+    const totalMonthlyNet = totalMonthlyGross - (totalTax / 12) - monthlySBPCost - monthlyTricareCost;
+
+    // COLA projections (next 30 years)
+    const colaProjections = [];
+    for (let year = 0; year <= 30; year += 5) {
+      colaProjections.push({
+        year,
+        amount: Math.round(calculateCOLA(totalMonthlyGross, year))
+      });
+    }
+
+    // TSP growth projections
+    const tspGrowth = [];
+    let balance = formData.tspBalance;
+    for (let year = 0; year <= 30; year += 5) {
+      tspGrowth.push({ year, balance: Math.round(balance) });
+      // Calculate growth for next 5 years
+      for (let i = 0; i < 5; i++) {
+        balance = balance * (1 + formData.tspAnnualReturn / 100) + (formData.tspMonthlyContribution * 12);
+      }
+    }
+
+    setResult({
+      monthlyPension,
+      monthlyDisability,
+      monthlySBPCost,
+      monthlyTricareCost,
+      monthlyTSPWithdrawal,
+      totalMonthlyGross,
+      totalMonthlyNet,
+      annualPension: monthlyPension * 12,
+      annualDisability: monthlyDisability * 12,
+      annualTSP: monthlyTSPWithdrawal * 12,
+      annualGross: totalMonthlyGross * 12,
+      annualNet: totalMonthlyNet * 12,
+      federalTax,
+      stateTax,
+      totalTax,
+      crdpEligible,
+      crdpAmount,
+      colaProjections,
+      tspGrowth,
+    });
+  };
+
+  const loadScenario = (scenario: ScenarioType) => {
+    setActiveScenario(scenario);
+    const scenarios: Record<ScenarioType, Partial<RetirementFormData>> = {
+      current: {}, // Keep current values
+      '20years': { yearsOfService: 20 },
+      '25years': { yearsOfService: 25 },
+      '30years': { yearsOfService: 30 },
+      medicalRetirement: { yearsOfService: 15, disabilityRating: 50 },
+    };
+
+    if (scenario !== 'current') {
+      setFormData(prev => ({ ...prev, ...scenarios[scenario] }));
+    }
+  };
+
+  const saveCurrentScenario = () => {
+    if (result) {
+      const scenarioName = `Scenario ${Object.keys(savedScenarios).length + 1}`;
+      setSavedScenarios(prev => ({ ...prev, [scenarioName]: result }));
+    }
+  };
+
+  const yearsUntilEligible = Math.max(0, 20 - formData.yearsOfService);
+  const progressPercent = Math.min(100, (formData.yearsOfService / 20) * 100);
+
+  // Chart colors
+  const COLORS = ['#1e40af', '#16a34a', '#ca8a04', '#dc2626', '#7c3aed'];
+
+  return (
+    <div className="space-y-8 pb-12">
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-900 to-green-800 rounded-lg shadow-2xl p-8 text-white border-4 border-yellow-500">
+        <h1 className="text-4xl font-bold mb-4">🎖️ Enhanced Retirement Planning</h1>
+        <p className="text-xl text-gray-200">
+          Complete retirement calculator with BRS, TSP, tax planning, and 30-year projections
+        </p>
+      </div>
+
+      {/* Progress to Retirement */}
+      {formData.yearsOfService < 20 && (
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-3">Years Until Retirement Eligibility</h3>
+          <div className="relative">
+            <div className="w-full bg-gray-200 rounded-full h-8">
+              <div
+                className="bg-gradient-to-r from-blue-600 to-green-600 h-8 rounded-full transition-all duration-500 flex items-center justify-center text-white font-bold"
+                style={{ width: `${progressPercent}%` }}
+              >
+                {formData.yearsOfService} / 20 years
+              </div>
+            </div>
+            <p className="text-center mt-2 text-gray-600">
+              {yearsUntilEligible} years remaining
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Scenario Selector */}
+      <div className="bg-white rounded-lg shadow-lg p-6">
+        <h3 className="text-lg font-bold text-gray-900 mb-4">What-If Scenarios</h3>
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          {[
+            { id: 'current' as ScenarioType, label: '📊 Current', desc: 'Your inputs' },
+            { id: '20years' as ScenarioType, label: '🎖️ 20 Years', desc: 'Minimum' },
+            { id: '25years' as ScenarioType, label: '⭐ 25 Years', desc: 'Mid-career' },
+            { id: '30years' as ScenarioType, label: '🏅 30 Years', desc: 'Full career' },
+            { id: 'medicalRetirement' as ScenarioType, label: '🏥 Medical', desc: '15yr + 50%' },
+          ].map(scenario => (
+            <button
+              key={scenario.id}
+              onClick={() => loadScenario(scenario.id)}
+              className={`p-3 rounded-lg border-2 transition ${
+                activeScenario === scenario.id
+                  ? 'bg-blue-100 border-blue-600 text-blue-900'
+                  : 'bg-white border-gray-300 hover:border-blue-400'
+              }`}
+            >
+              <div className="font-bold text-sm">{scenario.label}</div>
+              <div className="text-xs text-gray-600">{scenario.desc}</div>
+            </button>
+          ))}
+        </div>
+        <button
+          onClick={saveCurrentScenario}
+          className="mt-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+        >
+          💾 Save Current Scenario
+        </button>
+      </div>
+
+      {/* Main Calculator */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column - Inputs */}
+        <div className="lg:col-span-1 space-y-6">
+          {/* Basic Info */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-bold text-blue-900 mb-4">Service Information</h2>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Branch</label>
+                <select
+                  value={formData.branch}
+                  onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                >
+                  {BRANCHES.map(branch => (
+                    <option key={branch} value={branch}>{branch}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Pay Grade</label>
+                <select
+                  value={formData.payGrade}
+                  onChange={(e) => setFormData({ ...formData, payGrade: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                >
+                  {Array.from(new Set(PAY_GRADES.map(p => p.grade))).map(grade => {
+                    const payData = PAY_GRADES.find(p => p.grade === grade);
+                    return (
+                      <option key={grade} value={grade}>
+                        {grade} - {payData?.rank.split('/')[0]} (${getPayByGrade(grade).toLocaleString()}/mo)
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Years of Service: {formData.yearsOfService}
+                </label>
+                <input
+                  type="range"
+                  min="0"
+                  max="40"
+                  value={formData.yearsOfService}
+                  onChange={(e) => setFormData({ ...formData, yearsOfService: Number(e.target.value) })}
+                  className="w-full"
+                />
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  <span>0</span>
+                  <span>20 (Min)</span>
+                  <span>40</span>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Retirement System</label>
+                <select
+                  value={formData.retirementSystem}
+                  onChange={(e) => setFormData({ ...formData, retirementSystem: e.target.value as 'HIGH_3' | 'BRS' })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="BRS">BRS - 2.0% per year + TSP</option>
+                  <option value="HIGH_3">High-3 - 2.5% per year</option>
+                </select>
+                <p className="text-xs text-gray-500 mt-1">
+                  {RETIREMENT_SYSTEMS[formData.retirementSystem].description}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Disability */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-bold text-orange-900 mb-4">VA Disability</h2>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Disability Rating</label>
+                <select
+                  value={formData.disabilityRating}
+                  onChange={(e) => setFormData({ ...formData, disabilityRating: Number(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
+                >
+                  {DISABILITY_RATES.map(rate => (
+                    <option key={rate.rating} value={rate.rating}>
+                      {rate.rating}% (${rate.monthlyRate.toLocaleString()}/mo)
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={formData.hasSpouse}
+                    onChange={(e) => setFormData({ ...formData, hasSpouse: e.target.checked })}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">Have Spouse</span>
+                </label>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Number of Children
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  max="10"
+                  value={formData.numChildren}
+                  onChange={(e) => setFormData({ ...formData, numChildren: Number(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* TSP */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-bold text-green-900 mb-4">Thrift Savings Plan (TSP)</h2>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Current TSP Balance</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="1000"
+                  value={formData.tspBalance}
+                  onChange={(e) => setFormData({ ...formData, tspBalance: Number(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Monthly Contribution</label>
+                <input
+                  type="number"
+                  min="0"
+                  step="50"
+                  value={formData.tspMonthlyContribution}
+                  onChange={(e) => setFormData({ ...formData, tspMonthlyContribution: Number(e.target.value) })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Expected Annual Return: {formData.tspAnnualReturn}%
+                </label>
+                <input
+                  type="range"
+                  min="3"
+                  max="12"
+                  step="0.5"
+                  value={formData.tspAnnualReturn}
+                  onChange={(e) => setFormData({ ...formData, tspAnnualReturn: Number(e.target.value) })}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h2 className="text-xl font-bold text-purple-900 mb-4">Benefits & Deductions</h2>
+
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={formData.enrollInSBP}
+                  onChange={(e) => setFormData({ ...formData, enrollInSBP: e.target.checked })}
+                  className="mr-2"
+                />
+                <label className="text-sm">
+                  Enroll in SBP (Survivor Benefit Plan)
+                  <span className="block text-xs text-gray-500">6.5% of pension, protects spouse</span>
+                </label>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">TRICARE Plan</label>
+                <select
+                  value={formData.tricareType}
+                  onChange={(e) => setFormData({ ...formData, tricareType: e.target.value as any })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                >
+                  <option value="select">TRICARE Select</option>
+                  <option value="prime">TRICARE Prime</option>
+                  <option value="forLife">TRICARE For Life (65+)</option>
+                </select>
+              </div>
+
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  checked={formData.isFamilyCoverage}
+                  onChange={(e) => setFormData({ ...formData, isFamilyCoverage: e.target.checked })}
+                  className="mr-2"
+                />
+                <label className="text-sm">Family Coverage</label>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">State of Residence</label>
+                <select
+                  value={formData.stateOfResidence}
+                  onChange={(e) => setFormData({ ...formData, stateOfResidence: e.target.value })}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
+                >
+                  {Object.keys(STATE_TAX_RATES).map(state => (
+                    <option key={state} value={state}>
+                      {state} ({STATE_TAX_RATES[state]}% tax)
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Results */}
+        <div className="lg:col-span-2 space-y-6">
+          {/* Total Income */}
+          {result && (
+            <>
+              <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-lg shadow-lg p-8 text-white">
+                <p className="text-sm uppercase tracking-wide mb-2">Total Monthly Income (After Taxes)</p>
+                <p className="text-5xl font-bold">${result.totalMonthlyNet.toLocaleString(undefined, { maximumFractionDigits: 0 })}</p>
+                <p className="text-lg mt-2">${result.annualNet.toLocaleString(undefined, { maximumFractionDigits: 0 })}/year</p>
+
+                {result.crdpEligible && (
+                  <div className="mt-4 bg-white/20 rounded p-3">
+                    <p className="text-sm">✅ <strong>CRDP Eligible!</strong> You receive both full pension and disability.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Income Breakdown Pie Chart */}
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Income Breakdown</h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: 'Military Pension', value: result.monthlyPension },
+                        { name: 'VA Disability', value: result.monthlyDisability },
+                        { name: 'TSP Withdrawal', value: result.monthlyTSPWithdrawal },
+                      ].filter(item => item.value > 0)}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                      outerRadius={80}
+                      fill="#8884d8"
+                      dataKey="value"
+                    >
+                      {[0, 1, 2].map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Detailed Breakdown */}
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Detailed Breakdown (Monthly)</h3>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center p-3 bg-blue-50 rounded">
+                    <span>Military Pension</span>
+                    <span className="font-bold text-blue-900">${result.monthlyPension.toLocaleString()}</span>
+                  </div>
+
+                  {result.monthlyDisability > 0 && (
+                    <div className="flex justify-between items-center p-3 bg-orange-50 rounded">
+                      <span>VA Disability (Tax-Free)</span>
+                      <span className="font-bold text-orange-900">${result.monthlyDisability.toLocaleString()}</span>
+                    </div>
+                  )}
+
+                  {result.monthlyTSPWithdrawal > 0 && (
+                    <div className="flex justify-between items-center p-3 bg-green-50 rounded">
+                      <span>TSP Withdrawal (4% rule)</span>
+                      <span className="font-bold text-green-900">${result.monthlyTSPWithdrawal.toLocaleString()}</span>
+                    </div>
+                  )}
+
+                  <div className="border-t-2 border-gray-300 my-2"></div>
+
+                  <div className="flex justify-between items-center p-3 bg-gray-100 rounded">
+                    <span className="font-bold">Gross Monthly</span>
+                    <span className="font-bold">${result.totalMonthlyGross.toLocaleString()}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 bg-red-50 rounded text-red-900">
+                    <span>Federal Tax</span>
+                    <span>-${(result.federalTax / 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                  </div>
+
+                  {result.stateTax > 0 && (
+                    <div className="flex justify-between items-center p-3 bg-red-50 rounded text-red-900">
+                      <span>State Tax ({formData.stateOfResidence})</span>
+                      <span>-${(result.stateTax / 12).toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                    </div>
+                  )}
+
+                  {result.monthlySBPCost > 0 && (
+                    <div className="flex justify-between items-center p-3 bg-yellow-50 rounded text-yellow-900">
+                      <span>SBP Premium</span>
+                      <span>-${result.monthlySBPCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                    </div>
+                  )}
+
+                  {result.monthlyTricareCost > 0 && (
+                    <div className="flex justify-between items-center p-3 bg-purple-50 rounded text-purple-900">
+                      <span>TRICARE {formData.tricareType}</span>
+                      <span>-${result.monthlyTricareCost.toLocaleString()}</span>
+                    </div>
+                  )}
+
+                  <div className="border-t-2 border-gray-300 my-2"></div>
+
+                  <div className="flex justify-between items-center p-4 bg-green-100 rounded">
+                    <span className="font-bold text-lg">Net Monthly Income</span>
+                    <span className="font-bold text-xl text-green-900">${result.totalMonthlyNet.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* COLA Projections */}
+              <div className="bg-white rounded-lg shadow-lg p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">
+                  30-Year COLA Projection (2.8% annual)
+                </h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={result.colaProjections}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="year" label={{ value: 'Years from Retirement', position: 'insideBottom', offset: -5 }} />
+                    <YAxis label={{ value: 'Monthly Income ($)', angle: -90, position: 'insideLeft' }} />
+                    <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
+                    <Legend />
+                    <Line type="monotone" dataKey="amount" stroke="#16a34a" strokeWidth={2} name="Projected Income" />
+                  </LineChart>
+                </ResponsiveContainer>
+
+                <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {result.colaProjections.filter((_, i) => i % 2 === 0).map(proj => (
+                    <div key={proj.year} className="text-center p-3 bg-gray-50 rounded">
+                      <p className="text-sm text-gray-600">Year {proj.year}</p>
+                      <p className="font-bold text-green-900">${proj.amount.toLocaleString()}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* TSP Growth */}
+              {formData.tspBalance > 0 && (
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">
+                    TSP Growth Projection ({formData.tspAnnualReturn}% annual return)
+                  </h3>
+                  <ResponsiveContainer width="100%" height={300}>
+                    <LineChart data={result.tspGrowth}>
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis dataKey="year" label={{ value: 'Years from Now', position: 'insideBottom', offset: -5 }} />
+                      <YAxis label={{ value: 'TSP Balance ($)', angle: -90, position: 'insideLeft' }} />
+                      <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
+                      <Legend />
+                      <Line type="monotone" dataKey="balance" stroke="#1e40af" strokeWidth={2} name="TSP Balance" />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              )}
+
+              {/* Tax Optimization Tips */}
+              <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
+                <h3 className="font-bold text-yellow-900 mb-2">💡 Tax Optimization Tips</h3>
+                <ul className="space-y-2 text-sm text-yellow-800">
+                  <li>✅ VA disability compensation is 100% tax-free</li>
+                  <li>💰 Consider retiring in a no-income-tax state like Texas, Florida, or Nevada</li>
+                  {result.stateTax > 0 && (
+                    <li>📍 Moving to a no-tax state could save ${(result.stateTax / 12).toLocaleString()}/month!</li>
+                  )}
+                  <li>🏦 Roth TSP withdrawals are tax-free in retirement</li>
+                  {formData.yearsOfService >= 20 && formData.disabilityRating >= 50 && (
+                    <li>🎖️ You're CRDP eligible - you keep both full pension AND disability!</li>
+                  )}
+                </ul>
+              </div>
+
+              {/* Saved Scenarios Comparison */}
+              {Object.keys(savedScenarios).length > 0 && (
+                <div className="bg-white rounded-lg shadow-lg p-6">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">Saved Scenarios Comparison</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="bg-gray-100">
+                          <th className="p-2 text-left">Scenario</th>
+                          <th className="p-2 text-right">Monthly Net</th>
+                          <th className="p-2 text-right">Annual Net</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Object.entries(savedScenarios).map(([name, data]) => (
+                          <tr key={name} className="border-t">
+                            <td className="p-2">{name}</td>
+                            <td className="p-2 text-right font-bold">${data.totalMonthlyNet.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+                            <td className="p-2 text-right">${data.annualNet.toLocaleString(undefined, { maximumFractionDigits: 0 })}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Educational Info */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-blue-50 rounded-lg p-6">
+          <h3 className="font-bold text-blue-900 mb-3">📋 Retirement Eligibility</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>• <strong>20+ years:</strong> Regular retirement</li>
+            <li>• <strong>15+ years + disability:</strong> Medical retirement</li>
+            <li>• <strong>Reserve:</strong> 20 qualifying years</li>
+          </ul>
+        </div>
+
+        <div className="bg-green-50 rounded-lg p-6">
+          <h3 className="font-bold text-green-900 mb-3">🎯 CRDP Eligibility</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>• <strong>20+ years service</strong></li>
+            <li>• <strong>50%+ VA rating</strong></li>
+            <li>• Receive both full pension AND disability</li>
+            <li>• No offset applied</li>
+          </ul>
+        </div>
+
+        <div className="bg-purple-50 rounded-lg p-6">
+          <h3 className="font-bold text-purple-900 mb-3">💰 SBP Overview</h3>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li>• Costs 6.5% of pension</li>
+            <li>• Spouse gets 55% of pension if you pass</li>
+            <li>• Inflation-protected</li>
+            <li>• Can't be replaced after retirement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Retirement;

@@ -9,7 +9,7 @@ from app.services.user_service import UserService
 from app.utils.security import create_access_token, get_current_user_id
 from datetime import timedelta
 
-router = APIRouter()
+router = APIRouter(prefix="/api/auth", tags=["authentication"])
 
 
 @router.post("/register", response_model=TokenResponse, status_code=status.HTTP_201_CREATED)

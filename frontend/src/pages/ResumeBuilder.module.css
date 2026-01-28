@@ -1,0 +1,43 @@
+.resumeOutput {
+  margin-top: 16px;
+}
+.resumeBuilderContainer {
+  margin-bottom: 16px;
+}
+.mosLabel {
+  font-weight: 600;
+}
+.mosInput {
+  width: 100%;
+  margin: 8px 0;
+  padding: 4px;
+}
+.mosSkillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fafbfc;
+  margin-bottom: 8px;
+}
+.mosSkill {
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: #e3f2fd;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+.mosSkill.selected {
+  background: #1976d2;
+  color: #fff;
+}
+.textarea {
+  width: 100%;
+  margin-bottom: 16px;
+}

@@ -7,7 +7,7 @@ import logging
 from app.config import settings
 from app.services.stripe_service import StripeService
 
-router = APIRouter()
+router = APIRouter(prefix="/api/webhooks", tags=["webhooks"])
 logger = logging.getLogger(__name__)
 
 

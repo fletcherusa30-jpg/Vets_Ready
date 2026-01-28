@@ -8,7 +8,8 @@ import zipfile
 from io import BytesIO
 from datetime import datetime
 
-from app.core.deps import get_db, get_current_user
+from app.database import get_db
+from app.utils.security import get_current_user_id as get_current_user
 from app.models.user import User
 
 router = APIRouter(prefix="/api/user-data", tags=["user-data"])

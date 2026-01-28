@@ -1,4 +1,4 @@
-# VeteranApp Architecture
+# Vets Ready Architecture
 
 **Version:** 2.0 | **Date:** January 23, 2026
 **Status:** Production Ready

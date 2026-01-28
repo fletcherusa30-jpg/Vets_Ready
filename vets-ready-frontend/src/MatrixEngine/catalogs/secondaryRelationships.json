@@ -1,0 +1,256 @@
+{
+  "relationships": [
+    {
+      "primaryCode": "9411",
+      "primaryName": "Post-Traumatic Stress Disorder (PTSD)",
+      "secondaryConditions": [
+        {
+          "code": "6847",
+          "name": "Sleep Apnea",
+          "confidence": "high",
+          "explanation": "PTSD commonly causes sleep disturbances, nightmares, and hypervigilance, which can lead to or aggravate sleep apnea. Many veterans with PTSD develop sleep apnea as a secondary condition.",
+          "evidenceTypes": ["Sleep study showing apnea", "CPAP records", "Lay statement about nightmares and sleep disruption", "Nexus letter from sleep specialist"],
+          "medicalLiterature": "Multiple studies show correlation between PTSD and sleep apnea, including increased risk of obstructive sleep apnea in veterans with PTSD."
+        },
+        {
+          "code": "7304",
+          "name": "Irritable Bowel Syndrome (IBS)",
+          "confidence": "high",
+          "explanation": "PTSD and chronic stress can affect the gut-brain connection, leading to IBS symptoms including diarrhea, constipation, and abdominal pain.",
+          "evidenceTypes": ["Gastroenterologist diagnosis", "Colonoscopy results", "Lay statement describing symptoms", "Evidence of PTSD treatment timeline"],
+          "medicalLiterature": "Research demonstrates strong connection between PTSD/anxiety and IBS through gut-brain axis dysfunction."
+        },
+        {
+          "code": "7203",
+          "name": "Gastroesophageal Reflux Disease (GERD)",
+          "confidence": "medium",
+          "explanation": "PTSD medications (SSRIs) and chronic stress can cause or worsen GERD. Many veterans report GERD symptoms starting after PTSD diagnosis or treatment.",
+          "evidenceTypes": ["Endoscopy showing GERD", "Medication records", "Lay statement", "Timeline showing PTSD preceded GERD"],
+          "medicalLiterature": "Studies show increased prevalence of GERD in PTSD patients, partially due to medication side effects."
+        },
+        {
+          "code": "8100",
+          "name": "Migraine Headaches",
+          "confidence": "medium",
+          "explanation": "PTSD-related stress, tension, and hypervigilance can trigger chronic migraines. Sleep disturbances from PTSD also contribute to headache frequency.",
+          "evidenceTypes": ["Neurology diagnosis", "Headache diary", "Lay statement", "Evidence of PTSD triggers causing headaches"],
+          "medicalLiterature": "Migraine prevalence is significantly higher in PTSD patients compared to general population."
+        },
+        {
+          "code": "9434",
+          "name": "Major Depressive Disorder",
+          "confidence": "high",
+          "explanation": "PTSD and depression often co-occur. Chronic PTSD symptoms can lead to development of clinical depression over time.",
+          "evidenceTypes": ["Mental health treatment records", "Medication records", "C&P exam", "Lay statement"],
+          "medicalLiterature": "High comorbidity rates between PTSD and major depression well-documented in veteran populations."
+        }
+      ]
+    },
+    {
+      "primaryCode": "5243",
+      "primaryName": "Intervertebral Disc Syndrome (Back)",
+      "secondaryConditions": [
+        {
+          "code": "8520",
+          "name": "Sciatica (Sciatic Nerve)",
+          "confidence": "high",
+          "explanation": "Herniated or bulging discs in the lower back commonly compress the sciatic nerve, causing radiating pain down the leg, numbness, and weakness.",
+          "evidenceTypes": ["MRI showing nerve compression", "EMG/NCS results", "Lay statement describing radiating pain", "Neurology exam"],
+          "medicalLiterature": "Sciatica is a direct complication of disc herniation in 90% of cases."
+        },
+        {
+          "code": "5260",
+          "name": "Knee Limitation",
+          "confidence": "medium",
+          "explanation": "Chronic back pain causes altered gait and compensatory movement patterns, leading to increased stress on the knees and eventual knee degeneration.",
+          "evidenceTypes": ["Gait analysis", "X-rays showing knee degeneration", "Lay statement about limp/altered walking", "Timeline showing back pain preceded knee pain"],
+          "medicalLiterature": "Biomechanical studies show altered gait from back pain increases knee joint loading by 20-40%."
+        },
+        {
+          "code": "5252",
+          "name": "Hip Limitation",
+          "confidence": "medium",
+          "explanation": "Back pain compensation causes hip overuse and degeneration. Veterans with back injuries often develop hip arthritis from altered movement patterns.",
+          "evidenceTypes": ["X-rays showing hip arthritis", "Physical therapy records", "Lay statement", "Orthopedic evaluation"],
+          "medicalLiterature": "Hip and back pain frequently co-occur due to shared biomechanical stressors."
+        }
+      ]
+    },
+    {
+      "primaryCode": "5237",
+      "primaryName": "Lumbosacral Strain",
+      "secondaryConditions": [
+        {
+          "code": "8520",
+          "name": "Sciatica",
+          "confidence": "high",
+          "explanation": "Lower back strain and muscle spasms can compress the sciatic nerve, causing radiating leg pain.",
+          "evidenceTypes": ["EMG/NCS", "MRI", "Lay statement", "Physical exam showing positive straight leg raise"],
+          "medicalLiterature": "Lumbar strain commonly causes sciatic nerve irritation."
+        },
+        {
+          "code": "5260",
+          "name": "Knee Limitation",
+          "confidence": "medium",
+          "explanation": "Compensatory gait from back pain leads to knee stress and degeneration over time.",
+          "evidenceTypes": ["Gait analysis", "X-rays", "Physical therapy notes", "Timeline evidence"],
+          "medicalLiterature": "Altered gait mechanics increase knee joint stress."
+        }
+      ]
+    },
+    {
+      "primaryCode": "5260",
+      "primaryName": "Knee Limitation",
+      "secondaryConditions": [
+        {
+          "code": "5243",
+          "name": "Back (IVDS)",
+          "confidence": "medium",
+          "explanation": "Knee pain causes compensatory posture and gait changes, increasing stress on the lower back and causing disc degeneration.",
+          "evidenceTypes": ["MRI of spine", "Gait analysis", "Physical therapy notes", "Timeline showing knee pain preceded back pain"],
+          "medicalLiterature": "Knee pathology alters spinal loading patterns."
+        },
+        {
+          "code": "5284",
+          "name": "Ankle/Foot Issues",
+          "confidence": "medium",
+          "explanation": "Knee instability causes altered ankle mechanics and increased foot/ankle stress.",
+          "evidenceTypes": ["X-rays of ankle/foot", "Physical therapy records", "Lay statement"],
+          "medicalLiterature": "Kinetic chain dysfunction links knee and ankle pathology."
+        }
+      ]
+    },
+    {
+      "primaryCode": "8045",
+      "primaryName": "Traumatic Brain Injury (TBI)",
+      "secondaryConditions": [
+        {
+          "code": "9411",
+          "name": "PTSD",
+          "confidence": "high",
+          "explanation": "TBI and PTSD often co-occur from blast exposure or combat trauma. TBI can increase vulnerability to PTSD development.",
+          "evidenceTypes": ["Mental health records", "Stressor statement", "Medical records showing concurrent trauma", "C&P exam"],
+          "medicalLiterature": "High comorbidity rates in blast-exposed veterans."
+        },
+        {
+          "code": "8100",
+          "name": "Migraine Headaches",
+          "confidence": "high",
+          "explanation": "Post-concussion syndrome commonly includes chronic migraines as a persistent symptom of TBI.",
+          "evidenceTypes": ["Neurology records", "Headache diary", "Imaging studies", "Lay statement"],
+          "medicalLiterature": "Migraines are one of the most common post-TBI symptoms."
+        },
+        {
+          "code": "6260",
+          "name": "Tinnitus",
+          "confidence": "medium",
+          "explanation": "Blast-related TBI often damages auditory pathways, causing chronic tinnitus.",
+          "evidenceTypes": ["Audiogram", "ENT evaluation", "Blast exposure documentation", "Lay statement"],
+          "medicalLiterature": "Blast TBI frequently damages auditory processing."
+        }
+      ]
+    },
+    {
+      "primaryCode": "6522",
+      "primaryName": "Allergic Rhinitis",
+      "secondaryConditions": [
+        {
+          "code": "6847",
+          "name": "Sleep Apnea",
+          "confidence": "medium",
+          "explanation": "Chronic nasal congestion and obstruction from rhinitis can lead to or worsen sleep apnea.",
+          "evidenceTypes": ["Sleep study", "ENT records", "CPAP compliance data", "Lay statement"],
+          "medicalLiterature": "Nasal obstruction is a known risk factor for obstructive sleep apnea."
+        },
+        {
+          "code": "6510",
+          "name": "Chronic Sinusitis",
+          "confidence": "high",
+          "explanation": "Chronic rhinitis inflammation can progress to recurrent or chronic sinusitis.",
+          "evidenceTypes": ["CT scan of sinuses", "ENT treatment records", "Antibiotic history", "Lay statement"],
+          "medicalLiterature": "Rhinitis frequently progresses to chronic sinusitis."
+        }
+      ]
+    },
+    {
+      "primaryCode": "6510",
+      "primaryName": "Chronic Sinusitis",
+      "secondaryConditions": [
+        {
+          "code": "6847",
+          "name": "Sleep Apnea",
+          "confidence": "medium",
+          "explanation": "Sinus inflammation and nasal obstruction can contribute to sleep-disordered breathing.",
+          "evidenceTypes": ["Sleep study", "Sinus CT", "Treatment records", "Lay statement"],
+          "medicalLiterature": "Chronic sinusitis is associated with increased sleep apnea risk."
+        },
+        {
+          "code": "8100",
+          "name": "Migraine Headaches",
+          "confidence": "medium",
+          "explanation": "Chronic sinus pressure and inflammation can trigger or worsen migraines.",
+          "evidenceTypes": ["Neurology evaluation", "Headache diary", "Sinus imaging", "Timeline evidence"],
+          "medicalLiterature": "Sinus headaches can trigger migraine episodes."
+        }
+      ]
+    },
+    {
+      "primaryCode": "7522",
+      "primaryName": "Diabetes Mellitus",
+      "secondaryConditions": [
+        {
+          "code": "8520",
+          "name": "Peripheral Neuropathy",
+          "confidence": "high",
+          "explanation": "Diabetes commonly causes nerve damage (diabetic neuropathy) in the feet and legs, leading to numbness, tingling, and pain.",
+          "evidenceTypes": ["EMG/NCS showing neuropathy", "Endocrinology records", "Medication records", "Lay statement about numbness/tingling"],
+          "medicalLiterature": "Diabetic neuropathy affects up to 50% of diabetes patients."
+        },
+        {
+          "code": "6066",
+          "name": "Diabetic Retinopathy",
+          "confidence": "high",
+          "explanation": "Diabetes damages blood vessels in the retina, causing vision problems and potential blindness.",
+          "evidenceTypes": ["Ophthalmology records", "Retinal imaging", "Vision testing", "Diabetes treatment timeline"],
+          "medicalLiterature": "Diabetic retinopathy is a leading cause of blindness in diabetics."
+        },
+        {
+          "code": "7101",
+          "name": "Hypertension",
+          "confidence": "medium",
+          "explanation": "Diabetes and hypertension often co-occur and share metabolic risk factors.",
+          "evidenceTypes": ["Blood pressure readings", "Medication records", "Cardiology evaluation"],
+          "medicalLiterature": "Diabetes significantly increases hypertension risk."
+        }
+      ]
+    },
+    {
+      "primaryCode": "7101",
+      "primaryName": "Hypertension",
+      "secondaryConditions": [
+        {
+          "code": "7005",
+          "name": "Kidney Disease",
+          "confidence": "medium",
+          "explanation": "Chronic hypertension damages kidney blood vessels, leading to chronic kidney disease.",
+          "evidenceTypes": ["Lab work showing declining kidney function", "Nephrology records", "Blood pressure history"],
+          "medicalLiterature": "Hypertension is the second leading cause of kidney disease."
+        }
+      ]
+    },
+    {
+      "primaryCode": "6100",
+      "primaryName": "Hearing Loss",
+      "secondaryConditions": [
+        {
+          "code": "6260",
+          "name": "Tinnitus",
+          "confidence": "high",
+          "explanation": "Hearing loss and tinnitus often occur together from noise exposure or auditory damage.",
+          "evidenceTypes": ["Audiogram", "ENT evaluation", "Noise exposure documentation", "Lay statement"],
+          "medicalLiterature": "Tinnitus accompanies hearing loss in majority of cases."
+        }
+      ]
+    }
+  ]
+}

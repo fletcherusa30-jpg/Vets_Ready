@@ -1,0 +1,43 @@
+.resumeSkillsContainer {
+  margin-bottom: 24px;
+}
+.label {
+  font-weight: 600;
+}
+.input {
+  width: 100%;
+  margin: 8px 0;
+  padding: 4px;
+}
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 160px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fafbfc;
+}
+.skill {
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: #e3f2fd;
+  color: #1976d2;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+.skill.selected {
+  background: #1976d2;
+  color: #fff;
+}
+.addButton {
+  margin-top: 12px;
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+}

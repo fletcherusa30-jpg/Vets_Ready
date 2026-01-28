@@ -5,9 +5,9 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 
-from app.db import get_db
+from app.database import get_db
 from app.services.veteran_business_service import VeteranBusinessService
-from app.auth import get_current_user_id
+from app.utils.security import get_current_user_id
 
 
 # ===== REQUEST/RESPONSE MODELS =====

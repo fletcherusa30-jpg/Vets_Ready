@@ -167,10 +167,10 @@ class JobPostCreate(BaseModel):
     location: Optional[str] = None
     salary_min: Optional[Decimal] = None
     salary_max: Optional[Decimal] = None
-    job_type: Optional[str] = Field(None, regex="^(full-time|part-time|contract)$")
+    job_type: Optional[str] = Field(None, pattern="^(full-time|part-time|contract)$")
     mos_codes: Optional[str] = None
     required_clearance: Optional[str] = None
-    post_type: str = Field("basic", regex="^(basic|premium)$")
+    post_type: str = Field("basic", pattern="^(basic|premium)$")
     duration_days: int = Field(30, ge=1, le=90)
 
 
@@ -209,7 +209,7 @@ class JobPostResponse(BaseModel):
 # Lead Schemas
 class LeadCreate(BaseModel):
     veteran_user_id: str
-    partner_type: str = Field(..., regex="^(va_claims_rep|financial_advisor|mortgage_broker|education|franchise|insurance)$")
+    partner_type: str = Field(..., pattern="^(va_claims_rep|financial_advisor|mortgage_broker|education|franchise|insurance)$")
     partner_name: Optional[str] = None
     partner_email: Optional[EmailStr] = None
     lead_source: str
@@ -217,7 +217,7 @@ class LeadCreate(BaseModel):
 
 
 class LeadUpdate(BaseModel):
-    status: Optional[str] = Field(None, regex="^(pending|contacted|converted|lost)$")
+    status: Optional[str] = Field(None, pattern="^(pending|contacted|converted|lost)$")
     notes: Optional[str] = None
 
 

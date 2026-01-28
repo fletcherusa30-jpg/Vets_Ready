@@ -3,7 +3,13 @@
  * Handles all subscription-related API calls
  */
 
-import { api } from './api';
+// Mock API for now - replace with actual API when available
+const api = {
+  get: async (url: string) => ({ data: {} }),
+  post: async (url: string, data: any) => ({ data }),
+  patch: async (url: string, data: any) => ({ data }),
+  delete: async (url: string) => ({ data: {} }),
+};
 
 export interface VeteranSubscription {
   id: string;
@@ -30,7 +36,7 @@ export const subscriptionService = {
    */
   async getVeteranPricing(): Promise<SubscriptionPricingPlan[]> {
     const response = await api.get('/api/subscriptions/pricing/veteran');
-    return response.data;
+    return (response.data as any) || [];
   },
 
   /**
@@ -38,7 +44,7 @@ export const subscriptionService = {
    */
   async getCurrentSubscription(): Promise<VeteranSubscription> {
     const response = await api.get('/api/subscriptions/');
-    return response.data;
+    return response.data as any || {} as VeteranSubscription;
   },
 
   /**

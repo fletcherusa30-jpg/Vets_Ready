@@ -33,9 +33,14 @@ from app.routers import (
     employers,
     business_directory,
     payments,
-    referrals,
+    # referrals,  # Temporarily disabled due to import errors
     user_data,
+    ai,  # New AI router
+    scanners,  # Scanner service
+    dd214,  # DD-214 extraction service
+    revenue,  # ARDE revenue engine
 )
+from app.routes import entitlement
 from app.config import settings
 from app.core.sentry import init_sentry
 from app.middleware.rate_limit import rate_limit_middleware, cleanup_rate_limiter
@@ -47,8 +52,8 @@ logger = logging.getLogger(__name__)
 # Initialize Sentry
 init_sentry()
 
-# Initialize database tables
-Base.metadata.create_all(bind=engine)
+# Initialize database tables (disabled for now - run migrations manually if needed)
+# Base.metadata.create_all(bind=engine)
 
 # Create FastAPI app
 app = FastAPI(
@@ -73,6 +78,9 @@ app.middleware("http")(rate_limit_middleware)
 
 # Include routers - veteran features
 app.include_router(auth.router)
+app.include_router(ai.router)  # AI-powered claim assistance
+app.include_router(scanners.router)  # Scanner service (STR, BOM, forensic, project)
+app.include_router(dd214.router)  # DD-214 document extraction
 app.include_router(conditions.router)
 app.include_router(claims.router)
 app.include_router(badges.router)
@@ -88,21 +96,25 @@ app.include_router(business_directory.router)
 app.include_router(payments.router)
 
 # Include routers - new features
-app.include_router(referrals.router)
+# app.include_router(referrals.router)  # Temporarily disabled
 app.include_router(user_data.router)
-Vets Ready backend v1.0.0")
-    init_db()
+app.include_router(entitlement.router)  # Entitlement theory generator
+app.include_router(ai.router)  # AI engine
+app.include_router(scanners.router)  # Scanner service
+app.include_router(dd214.router)  # DD-214 extraction
+app.include_router(revenue.router)  # ARDE revenue engine
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize on startup"""
+    logger.info("Starting Vets Ready backend v1.0.0")
+    # init_db()  # Temporarily disabled - DB not required for DD-214 scanner testing
 
 
 @app.on_event("shutdown")
 async def shutdown_event():
     """Cleanup on shutdown"""
-    logger.info("Shutting down Vets Ready
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Cleanup on shutdown"""
-    logger.info("Shutting down PhoneApp backend")
+    logger.info("Shutting down Vets Ready backend")
 
 
 @app.get("/health", tags=["Health"])

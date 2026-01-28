@@ -1,4 +1,4 @@
-# Builds the React frontend for VeteranApp
+# Builds the React frontend for Vets Ready
 Write-Host 'Building frontend...'
 npm install
 npm run build

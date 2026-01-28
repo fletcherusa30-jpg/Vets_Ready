@@ -88,7 +88,7 @@ async def rate_limit_middleware(request: Request, call_next: Callable):
     if auth_header and auth_header.startswith("Bearer "):
         try:
             # Import here to avoid circular dependency
-            from app.core.security import decode_access_token
+            from app.utils.security import verify_token as decode_access_token
             token = auth_header.split("Bearer ")[1]
             payload = decode_access_token(token)
             user_id = payload.get("sub")

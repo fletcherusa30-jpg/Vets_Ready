@@ -1,0 +1,446 @@
+{
+  "musculoskeletal": [
+    {
+      "code": "5003",
+      "condition": "Degenerative Arthritis",
+      "bodySystem": "Musculoskeletal",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "X-ray evidence of involvement of 2 or more major joints or 2 or more minor joint groups, with occasional incapacitating exacerbations"
+        },
+        {
+          "rating": 20,
+          "criteria": "X-ray evidence with symptom combination of 2 or more major joints or 2 or more minor joint groups, with occasional incapacitating exacerbations and some limitation of motion"
+        }
+      ],
+      "notes": "Major joints: shoulder, elbow, wrist, hip, knee, ankle. Minor joints: fingers, toes.",
+      "secondaryConditions": ["Sleep apnea", "Depression", "GERD"],
+      "evidenceRequired": ["X-rays", "MRI", "Range of motion measurements", "Pain documentation"]
+    },
+    {
+      "code": "5010",
+      "condition": "Arthritis due to trauma",
+      "bodySystem": "Musculoskeletal",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Satisfactory evidence of pain with use"
+        },
+        {
+          "rating": 20,
+          "criteria": "X-ray evidence of involvement, with occasional incapacitating exacerbations"
+        }
+      ],
+      "notes": "Must establish service connection through injury or trauma",
+      "secondaryConditions": ["Chronic pain", "Limited mobility"],
+      "evidenceRequired": ["Service medical records", "X-rays", "Nexus letter"]
+    },
+    {
+      "code": "5260",
+      "condition": "Limitation of ankle motion",
+      "bodySystem": "Musculoskeletal",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Moderate limitation of motion"
+        },
+        {
+          "rating": 20,
+          "criteria": "Marked limitation of motion"
+        },
+        {
+          "rating": 30,
+          "criteria": "Ankylosis of the ankle in plantar flexion or in extreme dorsiflexion"
+        },
+        {
+          "rating": 40,
+          "criteria": "Ankylosis of the ankle in dorsiflexion at more than right angle"
+        }
+      ],
+      "notes": "Flexion beyond 20°, or ankylosis in neutral position (0°) warrants 20% rating",
+      "secondaryConditions": ["Knee pain", "Hip pain", "Back pain"],
+      "evidenceRequired": ["Goniometer measurements", "X-rays", "VA C&P exam"]
+    },
+    {
+      "code": "5284",
+      "condition": "Foot injuries",
+      "bodySystem": "Musculoskeletal",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Mild"
+        },
+        {
+          "rating": 20,
+          "criteria": "Moderate, weight-bearing line over or medial to great toe, inward bowing of tendo achillis, pain on use accentuated"
+        },
+        {
+          "rating": 30,
+          "criteria": "Severe, weight-bearing line over or medial to great toe, inward bowing of tendo achillis, marked external rotation of os calcis"
+        },
+        {
+          "rating": 40,
+          "criteria": "Pronounced; weight-bearing line over or medial to great toe, inward bowing of tendo achillis, marked external rotation of os calcis, severe on standing or walking"
+        }
+      ],
+      "notes": "Includes pes planus (flat feet)",
+      "secondaryConditions": ["Knee pain", "Hip pain", "Lower back pain", "Plantar fasciitis"],
+      "evidenceRequired": ["Weight-bearing X-rays", "Podiatrist evaluation", "Orthotic documentation"]
+    },
+    {
+      "code": "5293",
+      "condition": "Toes, claw foot (pes cavus)",
+      "bodySystem": "Musculoskeletal",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Bilateral or unilateral"
+        },
+        {
+          "rating": 20,
+          "criteria": "Severe, bilateral"
+        },
+        {
+          "rating": 30,
+          "criteria": "Unilateral, severe, with marked deformity, limitation of motion, and pain on manipulation and use"
+        }
+      ],
+      "notes": "High arch condition",
+      "secondaryConditions": ["Plantar fasciitis", "Ankle instability", "Knee pain"],
+      "evidenceRequired": ["X-rays", "Gait analysis", "Podiatry records"]
+    }
+  ],
+  "mental": [
+    {
+      "code": "9411",
+      "condition": "PTSD (Post-Traumatic Stress Disorder)",
+      "bodySystem": "Mental Health",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "A mental condition has been formally diagnosed, but symptoms are not severe enough either to interfere with occupational and social functioning or to require continuous medication"
+        },
+        {
+          "rating": 10,
+          "criteria": "Occupational and social impairment due to mild or transient symptoms which decrease work efficiency and ability to perform occupational tasks only during periods of significant stress"
+        },
+        {
+          "rating": 30,
+          "criteria": "Occupational and social impairment with occasional decrease in work efficiency and intermittent periods of inability to perform occupational tasks"
+        },
+        {
+          "rating": 50,
+          "criteria": "Occupational and social impairment with reduced reliability and productivity"
+        },
+        {
+          "rating": 70,
+          "criteria": "Occupational and social impairment with deficiencies in most areas"
+        },
+        {
+          "rating": 100,
+          "criteria": "Total occupational and social impairment"
+        }
+      ],
+      "notes": "Must establish stressor occurred during service. Combat veterans have lower burden of proof.",
+      "secondaryConditions": ["Sleep apnea", "Erectile dysfunction", "IBS", "Migraines", "Hypertension", "Depression", "Anxiety"],
+      "evidenceRequired": ["Stressor statement", "Service records", "Mental health treatment records", "DBQ for PTSD", "Lay statements", "Buddy statements"]
+    },
+    {
+      "code": "9434",
+      "condition": "Major Depressive Disorder",
+      "bodySystem": "Mental Health",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "Diagnosed condition with no occupational or social impairment"
+        },
+        {
+          "rating": 10,
+          "criteria": "Mild or transient symptoms during stress"
+        },
+        {
+          "rating": 30,
+          "criteria": "Occasional decrease in work efficiency"
+        },
+        {
+          "rating": 50,
+          "criteria": "Reduced reliability and productivity"
+        },
+        {
+          "rating": 70,
+          "criteria": "Deficiencies in most areas"
+        },
+        {
+          "rating": 100,
+          "criteria": "Total occupational and social impairment"
+        }
+      ],
+      "notes": "Often rated under General Rating Formula for Mental Disorders",
+      "secondaryConditions": ["Insomnia", "Weight gain/loss", "Substance abuse", "Chronic pain"],
+      "evidenceRequired": ["Mental health treatment records", "Medication records", "DBQ", "Lay statements"]
+    },
+    {
+      "code": "9440",
+      "condition": "Generalized Anxiety Disorder",
+      "bodySystem": "Mental Health",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "Diagnosed condition with no occupational or social impairment"
+        },
+        {
+          "rating": 10,
+          "criteria": "Mild or transient symptoms during stress"
+        },
+        {
+          "rating": 30,
+          "criteria": "Occasional decrease in work efficiency"
+        },
+        {
+          "rating": 50,
+          "criteria": "Reduced reliability and productivity"
+        },
+        {
+          "rating": 70,
+          "criteria": "Deficiencies in most areas"
+        },
+        {
+          "rating": 100,
+          "criteria": "Total occupational and social impairment"
+        }
+      ],
+      "notes": "Same rating formula as other mental health conditions",
+      "secondaryConditions": ["IBS", "Insomnia", "Migraines", "Hypertension"],
+      "evidenceRequired": ["Mental health treatment records", "Medication records", "DBQ"]
+    }
+  ],
+  "respiratory": [
+    {
+      "code": "6847",
+      "condition": "Sleep Apnea",
+      "bodySystem": "Respiratory",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "Asymptomatic but with documented sleep disorder breathing"
+        },
+        {
+          "rating": 30,
+          "criteria": "Chronic daytime hypersomnolence"
+        },
+        {
+          "rating": 50,
+          "criteria": "Requires use of breathing assistance device such as CPAP"
+        },
+        {
+          "rating": 100,
+          "criteria": "Chronic respiratory failure with carbon dioxide retention, cor pulmonale, or requires tracheostomy"
+        }
+      ],
+      "notes": "Most veterans with CPAP qualify for 50%. Must have sleep study.",
+      "secondaryConditions": ["Erectile dysfunction", "Depression", "Hypertension", "GERD"],
+      "evidenceRequired": ["Sleep study results", "CPAP compliance data", "Medical nexus opinion"]
+    },
+    {
+      "code": "6600",
+      "condition": "Asthma",
+      "bodySystem": "Respiratory",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "FEV-1 of 71- to 80-percent predicted, or; FEV-1/FVC of 71 to 80 percent, or; intermittent inhalational or oral bronchodilator therapy"
+        },
+        {
+          "rating": 30,
+          "criteria": "FEV-1 of 56- to 70-percent predicted, or; FEV-1/FVC of 56 to 70 percent, or; daily inhalational or oral bronchodilator therapy or; inhalational anti-inflammatory medication"
+        },
+        {
+          "rating": 60,
+          "criteria": "FEV-1 of 40- to 55-percent predicted, or; FEV-1/FVC of 40 to 55 percent, or; at least monthly visits to a physician for required care of exacerbations, or; intermittent (at least three per year) courses of systemic corticosteroids"
+        },
+        {
+          "rating": 100,
+          "criteria": "FEV-1 less than 40-percent predicted, or; FEV-1/FVC less than 40 percent, or; more than one attack per week with episodes of respiratory failure, or; requires daily use of systemic (oral or parenteral) corticosteroid or immuno-suppressive medication"
+        }
+      ],
+      "notes": "Pulmonary function tests required",
+      "secondaryConditions": ["GERD", "Rhinitis", "Sinusitis"],
+      "evidenceRequired": ["Pulmonary function test", "Medication records", "ER visit records"]
+    }
+  ],
+  "digestive": [
+    {
+      "code": "7319",
+      "condition": "Irritable Bowel Syndrome (IBS)",
+      "bodySystem": "Digestive",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "Diagnosed condition with no symptoms or mild symptoms"
+        },
+        {
+          "rating": 10,
+          "criteria": "Mild symptoms with disturbances of bowel function with occasional episodes of abdominal distress"
+        },
+        {
+          "rating": 30,
+          "criteria": "Severe; diarrhea, or alternating diarrhea and constipation, with more or less constant abdominal distress"
+        }
+      ],
+      "notes": "Often secondary to PTSD or anxiety",
+      "secondaryConditions": ["Hemorrhoids", "GERD"],
+      "evidenceRequired": ["GI specialist records", "Colonoscopy results", "Medication records", "Nexus to mental health"]
+    },
+    {
+      "code": "7346",
+      "condition": "GERD (Gastroesophageal Reflux Disease)",
+      "bodySystem": "Digestive",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Two of the following: epigastric distress, pyrosis, dysphagia, nausea, regurgitation, arm or shoulder pain, substernal or arm or shoulder pain, chronic cough, hoarseness, or nocturnal asthma"
+        },
+        {
+          "rating": 30,
+          "criteria": "Persistently recurrent epigastric distress with dysphagia, pyrosis, and regurgitation"
+        },
+        {
+          "rating": 60,
+          "criteria": "Severe; symptoms not controlled by continuous medication, with documented lifestyle impairment"
+        }
+      ],
+      "notes": "Often secondary to medications or sleep apnea",
+      "secondaryConditions": ["Barrett's esophagus", "Dental problems"],
+      "evidenceRequired": ["Endoscopy results", "Medication records", "GI specialist opinion"]
+    }
+  ],
+  "neurological": [
+    {
+      "code": "8045",
+      "condition": "Residuals of TBI (Traumatic Brain Injury)",
+      "bodySystem": "Neurological",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "No residual symptoms"
+        },
+        {
+          "rating": 10,
+          "criteria": "Mild; subjective symptoms only"
+        },
+        {
+          "rating": 40,
+          "criteria": "Moderate; neurobehavioral effects with mild cognitive or emotional dysfunction"
+        },
+        {
+          "rating": 70,
+          "criteria": "Severe; neurobehavioral effects with significant cognitive or emotional dysfunction"
+        },
+        {
+          "rating": 100,
+          "criteria": "Total; complete inability to function socially or occupationally"
+        }
+      ],
+      "notes": "Rate separately from mental health conditions under pyramiding exception",
+      "secondaryConditions": ["Migraines", "Sleep disorders", "PTSD", "Depression", "Tinnitus"],
+      "evidenceRequired": ["Neuropsychological testing", "MRI/CT scans", "Service injury documentation", "DBQ for TBI"]
+    },
+    {
+      "code": "8100",
+      "condition": "Migraine Headaches",
+      "bodySystem": "Neurological",
+      "ratingLevels": [
+        {
+          "rating": 0,
+          "criteria": "Less frequent than once every 2 months on average"
+        },
+        {
+          "rating": 10,
+          "criteria": "With very frequent completely prostrating and prolonged attacks productive of severe economic inadaptability"
+        },
+        {
+          "rating": 30,
+          "criteria": "With characteristic prostrating attacks occurring on an average once a month over last several months"
+        },
+        {
+          "rating": 50,
+          "criteria": "With very frequent completely prostrating and prolonged attacks productive of severe economic inadaptability"
+        }
+      ],
+      "notes": "Keep headache diary for evidence. Most common rating is 30% or 50%.",
+      "secondaryConditions": ["Tinnitus", "TMJ", "Neck pain"],
+      "evidenceRequired": ["Headache diary", "Neurologist records", "Medication records", "DBQ"]
+    },
+    {
+      "code": "6260",
+      "condition": "Tinnitus",
+      "bodySystem": "Neurological/Auditory",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Recurrent tinnitus"
+        }
+      ],
+      "notes": "Only one rating level (10%). Cannot be rated bilaterally.",
+      "secondaryConditions": ["Sleep disorders", "Anxiety", "Depression"],
+      "evidenceRequired": ["Audiogram", "C&P exam", "Lay statement"]
+    }
+  ],
+  "cardiovascular": [
+    {
+      "code": "7101",
+      "condition": "Hypertension (High Blood Pressure)",
+      "bodySystem": "Cardiovascular",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Diastolic pressure predominantly 100 or more"
+        },
+        {
+          "rating": 20,
+          "criteria": "Diastolic pressure predominantly 110 or more, or; systolic pressure predominantly 200 or more"
+        },
+        {
+          "rating": 40,
+          "criteria": "Diastolic pressure predominantly 120 or more with organic complications"
+        },
+        {
+          "rating": 60,
+          "criteria": "Diastolic pressure predominantly 130 or more with severe organic complications"
+        }
+      ],
+      "notes": "Can be secondary to PTSD, sleep apnea, medications",
+      "secondaryConditions": ["Heart disease", "Stroke", "Kidney disease"],
+      "evidenceRequired": ["Blood pressure readings over time", "Medication records", "Nexus opinion"]
+    }
+  ],
+  "skin": [
+    {
+      "code": "7800",
+      "condition": "Scars (all causes)",
+      "bodySystem": "Skin",
+      "ratingLevels": [
+        {
+          "rating": 10,
+          "criteria": "Painful or unstable scars; multiple disfiguring scars"
+        },
+        {
+          "rating": 20,
+          "criteria": "Deep scars, extensive scars that are painful, unstable, or attached to underlying tissue"
+        },
+        {
+          "rating": 30,
+          "criteria": "Very extensive, deep scars covering large area"
+        },
+        {
+          "rating": 40,
+          "criteria": "Massive scarring covering major portion of face or body"
+        }
+      ],
+      "notes": "Rate based on pain, instability, size, and disfigurement",
+      "secondaryConditions": ["Depression", "Anxiety", "Chronic pain"],
+      "evidenceRequired": ["Photos", "Dermatology records", "Pain documentation"]
+    }
+  ]
+}

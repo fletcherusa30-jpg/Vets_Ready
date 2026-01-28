@@ -1,4 +1,4 @@
-"""Crisis support button component"""
+// Crisis support button component
 import React, { useState } from 'react';
 import { ExclamationTriangleIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/solid';
 

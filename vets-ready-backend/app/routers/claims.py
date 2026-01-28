@@ -10,7 +10,7 @@ from app.services.claims_service import ClaimsService
 from app.services.badge_service import BadgeService
 from app.utils.security import get_current_user_id
 
-router = APIRouter()
+router = APIRouter(prefix="/api/claims", tags=["claims"])
 
 
 @router.post("/analyze", response_model=ClaimAnalysisResponse, status_code=status.HTTP_201_CREATED)

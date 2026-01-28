@@ -54,6 +54,10 @@ class Settings(BaseSettings):
     # Logging
     log_level: str = "INFO"
 
+    # Monitoring
+    SENTRY_DSN: str = ""
+    ENVIRONMENT: str = "development"
+
     # Features
     enable_ai_engine: bool = True
 

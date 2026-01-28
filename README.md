@@ -1,34 +1,488 @@
-# Vets Ready - Documentation Index & Quick Reference
+# 🇺🇸 VetsReady - Ultimate Veteran Assistance Platform
 
-**Version:** 1.0.0 | **Last Updated:** January 24, 2026 | **The Ultimate Veteran-First Platform**
-
----
-
-## 🎯 What is Vets Ready?
-
-Vets Ready is a comprehensive veteran-first platform featuring:
-- **Benefits Discovery** - Federal & state veteran benefits
-- **Claims Readiness** - VA disability claims preparation
-- **Transition Support** - Military-to-civilian career planning
-- **Financial Planning** - Retirement, budgeting, and investment tools
-- **Jobs & Business** - Veteran job matching and business directory
-- **Resource Hub** - Centralized veteran resources
-- **Partnership Engine** - Connect with veteran-focused businesses and nonprofits
-
-### 🔍 **Outreach Scout System**
-The platform includes a powerful **Outreach & Discovery Engine** that automatically finds and catalogs veteran-related content across social media and the web, including:
-- Facebook groups for veterans
-- Instagram pages and communities
-- LinkedIn veteran networks
-- Veteran-owned businesses
-- Nonprofit organizations serving veterans
-- 30+ keyword detection system with confidence scoring
-
-This "scout" helps veterans discover communities, resources, and businesses while enabling organizations to connect with the veteran community for advertising and outreach.
+**Version:** 1.0.0 | **Last Updated:** January 24, 2026
+**Project Root:** `C:\Dev\Vets Ready` ✅ **STRICTLY ENFORCED**
+**Status:** Active Development | Phase 1 Core Tools Complete
 
 ---
 
-## 📚 All Documentation Files
+## 🎯 Mission
+
+**Empower every veteran to understand, prepare, and optimize their VA disability claims with confidence, clarity, and dignity.**
+
+VetsReady combines AI-powered legal theory generation, evidence organization, financial planning tools, and community resources—all while maintaining strict compliance with VA policies and veteran privacy.
+
+---
+
+## ✨ What is VetsReady?
+
+VetsReady is a comprehensive veteran assistance platform featuring:
+
+### ✅ **Implemented (Phase 1 - Ready to Use)**
+
+- **🧙 Disability Wizard** - 5-step guided claim strategy builder
+  - Service-connected disabilities tracking
+  - New/denied condition entry with secondary linking
+  - AI-powered secondary condition discovery
+  - Theory of entitlement generator (38 CFR + M21-1)
+  - Export to Markdown/PDF
+
+- **🤖 AI Theory Engine** - Legal framework generation
+  - Direct service connection (38 CFR § 3.303)
+  - Secondary connection (38 CFR § 3.310(a))
+  - Aggravation theories
+  - Presumptive service connection
+  - Evidence recommendations with priorities
+
+- **📊 Claim Tracker** - Status tracking through 12 VA claim phases
+  - Progress visualization
+  - Timeline history
+  - Educational status explanations
+
+- **📁 Evidence Organizer** - Document management with categorization
+  - 5 evidence types (medical, service records, lay statements, nexus opinions, other)
+  - Tag and note system
+  - OCR text extraction (integration ready)
+
+- **💾 Export Engine** - Multi-format claim strategy export
+  - ✅ Markdown (fully functional)
+  - ⏳ PDF (infrastructure ready)
+  - ✅ JSON (structured data)
+
+### ⏳ **In Progress (Phase 1 Completion)**
+
+- Backend API endpoints (AI, disabilities, evidence)
+- OpenAI integration (theory generation, secondary suggestions)
+- OCR service (Tesseract.js + AWS Textract)
+
+### 📋 **Coming Soon (Phase 2-5)**
+
+- Financial Tools (comp estimator, COLA, retirement planner)
+- Effective Date Calculator (AMA-compliant)
+- AI Battle Buddy (chat assistant)
+- VSO Locator (with maps)
+- Mobile App (iOS/Android via Capacitor)
+- [See full roadmap in docs/VETSREADY_MASTER_SPEC.md]
+
+---
+
+## ⚡ Quick Start
+
+### Prerequisites
+
+- **Node.js** 20+ ([Download](https://nodejs.org/))
+- **Python** 3.11+ ([Download](https://www.python.org/))
+- **PostgreSQL** 15+ ([Download](https://www.postgresql.org/))
+- **Redis** 7+ (Optional, for caching)
+- **Git** ([Download](https://git-scm.com/))
+
+### 1. Clone Repository
+
+```powershell
+git clone https://github.com/your-org/vets-ready.git
+cd "C:\Dev\Vets Ready"
+```
+
+### 2. Set Up Environment
+
+Create `.env` file:
+```bash
+# Backend
+DATABASE_URL=postgresql://postgres:password@localhost:5432/vetsready
+REDIS_URL=redis://localhost:6379
+OPENAI_API_KEY=sk-your-key-here
+USE_MOCK_AI=true  # Set false to use real OpenAI
+
+# Frontend
+VITE_API_URL=http://localhost:8000
+VITE_USE_MOCK_AI=true
+```
+
+### 3. Start Development
+
+```powershell
+# One-click startup (recommended)
+.\scripts\Start-VetsReady.ps1
+
+# OR manual startup:
+
+# Terminal 1 - Backend
+cd vets-ready-backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+alembic upgrade head
+uvicorn app.main:app --reload --port 8000
+
+# Terminal 2 - Frontend
+cd vets-ready-frontend
+npm install
+npm run dev
+```
+
+### 4. Access Application
+
+- **Frontend**: http://localhost:5173
+- **Backend API**: http://localhost:8000
+- **API Docs**: http://localhost:8000/docs (Swagger/OpenAPI)
+- **Alternative Docs**: http://localhost:8000/redoc
+
+---
+
+## 📚 Documentation
+
+### 🎯 Start Here
+
+- **[DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** ⭐ **ORGANIZED DOCS** - Complete documentation index
+- **[VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md)** - Complete platform specification
+- **[DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)** - Setup guide for new developers
+
+### 📁 Documentation by Category
+
+- **[Implementation Guides](docs/implementation/)** - Feature implementations, integrations, system builds
+- **[Quick Start Guides](docs/guides/)** - Setup guides, quick references, API documentation
+- **[Status Reports](docs/status-reports/)** - Completion reports, status updates, progress tracking
+- **[Testing](docs/testing/)** - Test guides, scripts, results
+- **[Scanners](docs/scanners/)** - DD214, VBMS, document scanner documentation
+- **[Architecture](docs/architecture/)** - System design, code patterns, UI/UX blueprints
+- **[Deployment](docs/deployment/)** - Production setup, deployment guides, checklists
+
+### 📖 Core Documentation
+
+- **[COMPLIANCE_AND_PRIVACY.md](docs/COMPLIANCE_AND_PRIVACY.md)** - Legal boundaries, data handling, privacy
+- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System design and data flows
+- **[API.md](docs/API.md)** - API endpoint documentation
+- **[WIZARD_README.md](vets-ready-frontend/WIZARD_README.md)** - Disability Wizard implementation guide
+
+### 🔧 Additional Resources
+
+- **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Deployment procedures
+- **[TESTING.md](docs/TESTING.md)** - Testing strategy and examples
+- **[DEVELOPMENT-STANDARDS.md](docs/DEVELOPMENT-STANDARDS.md)** - Code style and git workflow
+
+---
+
+## 🏗️ Project Structure
+
+```
+C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
+│
+├── docs/                              # All documentation
+│   ├── VETSREADY_MASTER_SPEC.md      # Master specification (source of truth)
+│   ├── IMPLEMENTATION_TASKS.md       # Task list & progress
+│   ├── DEVELOPER_ONBOARDING.md       # Developer setup guide
+│   ├── COMPLIANCE_AND_PRIVACY.md     # Legal & privacy
+│   └── ...
+│
+├── scripts/                           # Automation scripts
+│   ├── Start-VetsReady.ps1           # One-click dev startup
+│   ├── Build-VetsReady.ps1           # Build all services
+│   └── Test-VetsReady.ps1            # Run all tests
+│
+├── vets-ready-frontend/              # React + TypeScript frontend
+│   ├── src/
+│   │   ├── components/wizard/        # Disability Wizard (5 steps)
+│   │   ├── components/               # EvidenceOrganizer, ClaimTracker
+│   │   ├── services/                 # aiService, exportService
+│   │   ├── types/wizard.types.ts     # Core data models
+│   │   └── App.tsx                   # Root component
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── vets-ready-backend/               # FastAPI Python backend
+│   ├── app/
+│   │   ├── routers/                  # API endpoints
+│   │   │   ├── ai.py                 # AI theory generation ✅ NEW
+│   │   │   ├── claims.py             # Claim tracking
+│   │   │   └── ...
+│   │   ├── services/                 # Business logic
+│   │   │   ├── ai_service.py         # OpenAI integration ✅ NEW
+│   │   │   └── ...
+│   │   ├── schemas/                  # Pydantic models
+│   │   │   ├── ai_schemas.py         # AI request/response ✅ NEW
+│   │   │   └── ...
+│   │   ├── models/                   # Database models
+│   │   └── main.py                   # FastAPI app
+│   ├── requirements.txt
+│   └── alembic/                      # Database migrations
+│
+├── vets-ready-mobile/                # Capacitor mobile app (stub)
+│
+├── docker-compose.yml                # Development environment
+└── .env.example                      # Environment variables template
+```
+
+---
+
+## 🚀 Key Features
+
+### Disability Wizard (5-Step Flow)
+
+1. **Service-Connected Disabilities** - Confirm existing SC conditions
+2. **Add Conditions** - Add new/denied conditions with secondary linking
+3. **AI Suggestions** - Discover plausible secondary conditions
+4. **Theory Builder** - Generate legal theories with CFR citations
+5. **Review & Export** - Export strategy to Markdown/PDF
+
+**Files**:
+- `vets-ready-frontend/src/components/wizard/DisabilityWizard.tsx`
+- `vets-ready-frontend/src/components/wizard/Step*.tsx` (5 steps)
+
+### AI Theory Engine
+
+**Generates**:
+- Legal framework (38 CFR § 3.303, § 3.310, etc.)
+- Medical nexus rationale
+- Evidence recommendations (critical/important/helpful)
+- Strength assessment (strong/moderate/weak)
+- Challenges and opportunities
+
+**Mock Data Coverage**:
+- PTSD → Sleep Apnea, MDD, GERD, ED
+- Knee → Lower back, hip pain
+- Back → Radiculopathy, sleep disturbance
+- Tinnitus → Migraines
+- Diabetes → Neuropathy, ED
+
+**Files**:
+- `vets-ready-frontend/src/services/aiService.ts` (frontend)
+- `vets-ready-backend/app/services/ai_service.py` (backend) ✅ NEW
+- `vets-ready-backend/app/routers/ai.py` (API endpoints) ✅ NEW
+
+### Evidence Organizer
+
+**Features**:
+- 5 evidence types with icons (🏥📋✍️⚖️📄)
+- Upload modal with categorization
+- Tag and note system
+- OCR text extraction (integration ready)
+- AI summary generation (integration ready)
+
+**File**: `vets-ready-frontend/src/components/EvidenceOrganizer.tsx`
+
+### Claim Tracker
+
+**Features**:
+- 12 claim statuses (not-filed → completed/denied/appealed)
+- Progress visualization (0-100%)
+- Timeline history with dates and notes
+- Educational explanations for each status
+- Claim type tracking (original, supplemental, increase, appeal)
+
+**File**: `vets-ready-frontend/src/components/ClaimTracker.tsx`
+
+---
+
+## 🤖 AI Integration
+
+### OpenAI Configuration
+
+**Model**: GPT-4 Turbo (fallback: GPT-3.5)
+**Temperature**: 0.3 (factual accuracy)
+**Max Tokens**: 2000
+
+### Environment Variables
+
+```bash
+OPENAI_API_KEY=sk-your-key-here  # Required for real AI
+USE_MOCK_AI=true                 # Toggle mock/real mode
+```
+
+### Mock Mode (Development)
+
+- Comprehensive mock data for 6+ condition types
+- Medical literature references
+- CFR citations (§ 3.303, § 3.310)
+- VA approval patterns
+- Confidence scores
+
+**Toggle**: `VITE_USE_MOCK_AI=true` (frontend) or `USE_MOCK_AI=true` (backend)
+
+---
+
+## 🔒 Compliance & Legal Boundaries
+
+### ✅ What VetsReady DOES
+
+- Provides **educational guidance** on VA disability claims
+- Generates **AI theories** labeled "educational only"
+- Offers **tools** for evidence organization and tracking
+- Calculates **effective dates** using public AMA regulations
+- Connects veterans with **accredited VSOs**
+
+### ❌ What VetsReady DOES NOT DO
+
+- **NO VA.gov/eBenefits scraping** - Manual data entry only
+- **NO credential storage** - Never store VA passwords
+- **NO automated VA interactions** - No bots or auto-filing
+- **NO legal advice** - Educational content only
+- **NO medical diagnoses** - Only licensed physicians can diagnose
+- **NO guarantees** - Success depends on evidence and VA evaluation
+
+### Disclaimers (Every Page)
+
+> **VetsReady is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA).**
+> All AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. Consult with an accredited VSO or VA-accredited attorney for personalized assistance.
+
+See [docs/COMPLIANCE_AND_PRIVACY.md](docs/COMPLIANCE_AND_PRIVACY.md) for full guidelines.
+
+---
+
+## 🧪 Testing
+
+### Frontend Tests
+
+```powershell
+cd vets-ready-frontend
+npm run test              # Run all tests
+npm run test:watch        # Watch mode
+npm run test:coverage     # With coverage
+```
+
+### Backend Tests
+
+```powershell
+cd vets-ready-backend
+pytest                    # Run all tests
+pytest --cov=app          # With coverage
+pytest app/tests/test_ai_service.py  # Specific file
+```
+
+---
+
+## 📦 Deployment
+
+### Development (Docker Compose)
+
+```powershell
+docker-compose up -d      # Start all services
+docker-compose logs -f    # View logs
+docker-compose down       # Stop services
+```
+
+### Production (AWS)
+
+**Services**:
+- ECS/Fargate (containers)
+- RDS PostgreSQL (database)
+- ElastiCache Redis (caching)
+- S3 (evidence storage)
+- CloudFront (CDN)
+
+**Deployment**:
+```powershell
+.\scripts\Deploy-VetsReady.ps1 -Environment production
+```
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for details.
+
+---
+
+## 🛠️ Development Scripts
+
+All scripts in `scripts/` directory (PowerShell):
+
+- **Start-VetsReady.ps1** - One-click dev startup
+- **Build-VetsReady.ps1** - Build all services
+- **Test-VetsReady.ps1** - Run all tests
+- **Deploy-VetsReady.ps1** - Deploy to AWS
+
+---
+
+## 📊 Progress Tracking
+
+### Phase 1: Core Claims Tools (60% Complete) ✅
+
+| Feature | Status | Files |
+|---------|--------|-------|
+| Disability Wizard (5 steps) | ✅ Complete | DisabilityWizard.tsx, Step*.tsx |
+| AI Theory Engine (mock) | ✅ Complete | aiService.ts, ai_service.py ✅ NEW |
+| Secondary Discovery (mock) | ✅ Complete | aiService.ts, ai_service.py ✅ NEW |
+| Evidence Organizer (UI) | ✅ Complete | EvidenceOrganizer.tsx |
+| Claim Tracker | ✅ Complete | ClaimTracker.tsx |
+| Export to Markdown | ✅ Complete | exportService.ts |
+| Backend AI API | ✅ Complete | routers/ai.py ✅ NEW |
+| OpenAI Integration | ⏳ In Progress | ai_service.py (mock ready) |
+| OCR Service | ⏳ Not Started | - |
+| PDF Export | ⏳ Infrastructure Ready | exportService.ts (needs jsPDF) |
+
+See [docs/IMPLEMENTATION_TASKS.md](docs/IMPLEMENTATION_TASKS.md) for full task list.
+
+---
+
+## 🗺️ Roadmap
+
+- **Phase 1** (Weeks 1-4): Core Claims Tools ← **Current Focus**
+- **Phase 2** (Weeks 5-8): Financial & Effective Date Tools
+- **Phase 3** (Weeks 9-12): Ecosystem & Community (VSO Locator, etc.)
+- **Phase 4** (Weeks 13-16): Mobile App & Advanced Features
+- **Phase 5** (Weeks 17+): Advanced Suites (Employment, Health, etc.)
+
+See [docs/VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md) for full roadmap.
+
+---
+
+## 🤝 Contributing
+
+1. **Read Documentation**:
+   - [VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md)
+   - [DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)
+   - [DEVELOPMENT-STANDARDS.md](docs/DEVELOPMENT-STANDARDS.md)
+
+2. **Create Feature Branch**:
+   ```powershell
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Follow Coding Standards**:
+   - TypeScript: Functional components, type safety
+   - Python: Type hints, Pydantic schemas, async/await
+   - Commits: Conventional commits (`feat:`, `fix:`, `docs:`)
+
+4. **Test Your Changes**:
+   ```powershell
+   npm run test      # Frontend
+   pytest            # Backend
+   ```
+
+5. **Create Pull Request** with description and screenshots (if UI)
+
+---
+
+## 📞 Support
+
+- **Documentation**: [docs/](docs/)
+- **Issues**: GitHub Issues
+- **Email**: dev@vetsready.com
+
+---
+
+## 📜 License
+
+Copyright © 2026 VetsReady Development Team. All rights reserved.
+
+---
+
+## 🇺🇸 Dedication
+
+**Built with honor for those who served.**
+
+This platform is dedicated to every veteran who served our country. Quality, privacy, and respect are paramount in everything we build.
+
+---
+
+**Last Updated**: January 24, 2026
+**Maintained By**: VetsReady Development Team
+
+### **🚀 Deployment & Production**
+- **[PROJECT_CONFIRMATION.md](PROJECT_CONFIRMATION.md)** ✅ **START HERE** - Project structure verification (97.44% pass rate)
+- **[PRODUCTION_ARCHITECTURE.md](PRODUCTION_ARCHITECTURE.md)** - Complete system architecture, scaling strategy, security (600+ lines)
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Comprehensive deployment procedures (400+ lines)
+- **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Pre/post-deployment validation
+- **[QUICK_DEPLOY.md](QUICK_DEPLOY.md)** - 30-minute deployment guide
+- **[PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md)** - Official project structure reference
+
+### **📋 All Documentation Files
 
 ### Getting Started
 - **[GETTING-STARTED.md](docs/GETTING-STARTED.md)** - Quick start guide (5-min setup, common tasks)
@@ -45,6 +499,16 @@ This "scout" helps veterans discover communities, resources, and businesses whil
 
 ### Operations
 - **[DEPLOYMENT.md](docs/DEPLOYMENT.md)** - Deployment procedures, rollback, disaster recovery, IaC
+
+### **🔧 Build & Automation Scripts**
+All scripts in `scripts/` directory:
+- **[Deploy-Docker.ps1](scripts/Deploy-Docker.ps1)** - Build and push Docker images to Docker Hub
+- **[Build-Android.ps1](scripts/Build-Android.ps1)** - Build Android APK/AAB for Google Play
+- **[Build-iOS.sh](scripts/Build-iOS.sh)** - Build iOS IPA for App Store (macOS only)
+- **[Build-Desktop.ps1](scripts/Build-Desktop.ps1)** - Build Electron desktop apps (Windows/macOS/Linux)
+- **[Validate-Deployment.ps1](scripts/Validate-Deployment.ps1)** - Comprehensive deployment validation
+- **[Verify-ProjectStructure.ps1](scripts/Verify-ProjectStructure.ps1)** ✅ - Verify project paths and structure
+- **[Rebuild-CleanRepo.ps1](scripts/Rebuild-CleanRepo.ps1)** - Clean repository rebuild
 
 ### Cleanup Note
 - Root docs are being consolidated under [docs/root](docs/root/). See [docs/ROOT_DOCS_INDEX.md](docs/ROOT_DOCS_INDEX.md) for updated paths.
@@ -367,6 +831,23 @@ For questions about:
 
 ---
 
+
 **🎉 Welcome to PhoneApp 2.0 Development!**
 
 Start with [GETTING-STARTED.md](docs/GETTING-STARTED.md) and happy coding! 🚀
+
+---
+
+## Key VA Public Resources
+
+<div style="color: white; background: #1a1a1a; padding: 1em; border-radius: 8px;">
+
+<ul>
+  <li><b>38 CFR (Code of Federal Regulations):</b> <a href="https://www.ecfr.gov/current/title-38" style="color: white; text-decoration: underline;">https://www.ecfr.gov/current/title-38</a></li>
+  <li><b>VA Forms Directory:</b> <a href="https://www.va.gov/find-forms/" style="color: white; text-decoration: underline;">https://www.va.gov/find-forms/</a></li>
+  <li><b>VA Main Site:</b> <a href="https://www.va.gov/" style="color: white; text-decoration: underline;">https://www.va.gov/</a></li>
+</ul>
+
+<p><b>Note:</b> The M21-1 Adjudication Procedures Manual (https://www.knowva.ebenefits.va.gov/) is not reliably accessible to the public as of January 2026. For regulatory guidance, use the 38 CFR link above.</p>
+
+</div>

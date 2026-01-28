@@ -14,26 +14,30 @@ import { useSubscription } from '../hooks/useSubscription';
 import { Lock, Crown, Star } from 'lucide-react';
 
 interface SubscriptionGateProps {
-  requiredTier: 'FREE' | 'PRO' | 'FAMILY' | 'LIFETIME';
+  requiredTier: SubscriptionTier;
   children: ReactNode;
   fallback?: ReactNode;
   showUpgradePrompt?: boolean;
 }
 
-const TIER_HIERARCHY = {
+type SubscriptionTier = 'FREE' | 'PRO' | 'FAMILY' | 'LIFETIME';
+
+const TIER_HIERARCHY: Record<SubscriptionTier, number> = {
   FREE: 0,
   PRO: 1,
   FAMILY: 2,
   LIFETIME: 3,
 };
 
-const TIER_NAMES = {
+const TIER_NAMES: Record<SubscriptionTier, string> = {
+  FREE: 'Free',
   PRO: 'Pro',
   FAMILY: 'Family',
   LIFETIME: 'Lifetime',
 };
 
-const TIER_ICONS = {
+const TIER_ICONS: Record<SubscriptionTier, typeof Lock | typeof Crown | typeof Star> = {
+  FREE: Lock,
   PRO: Crown,
   FAMILY: Star,
   LIFETIME: Lock,
@@ -117,17 +121,17 @@ export const SubscriptionGate: React.FC<SubscriptionGateProps> = ({
 /**
  * Hook to check feature access programmatically
  */
-export const useFeatureAccess = (requiredTier: string): boolean => {
+export const useFeatureAccess = (requiredTier: SubscriptionTier): boolean => {
   const { subscription } = useSubscription();
-  const userTier = subscription?.tier || 'FREE';
+  const userTier = (subscription?.tier || 'FREE') as SubscriptionTier;
   return TIER_HIERARCHY[userTier] >= TIER_HIERARCHY[requiredTier];
 };
 
 /**
  * Inline badge component to show tier requirements
  */
-export const TierBadge: React.FC<{ tier: string }> = ({ tier }) => {
-  const Icon = TIER_ICONS[tier] || Lock;
+export const TierBadge: React.FC<{ tier: SubscriptionTier }> = ({ tier }) => {
+  const Icon = TIER_ICONS[tier];
 
   return (
     <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-semibold rounded-full">
