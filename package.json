@@ -1,14 +1,16 @@
 {
-  "name": "vets-ready-platform",
+  "name": "vetsready",
   "version": "1.0.0",
-  "description": "Vets Ready - Veteran-first benefits guide, claims readiness, and life planning ecosystem",
+  "description": "VetsReady - Comprehensive Veteran Support Platform | Benefits, Disabilities, Employment, Education & More",
   "type": "module",
   "scripts": {
     "dev": "cd vets-ready-frontend && npm run dev",
     "dev:backend": "cd vets-ready-backend && python -m uvicorn app.main:app --reload",
     "dev:all": "concurrently \"npm run dev\" \"npm run dev:backend\"",
+    "start": "npm run dev:all",
     "build": "cd vets-ready-frontend && npm run build",
     "build:frontend": "cd vets-ready-frontend && tsc && vite build",
+    "build:backend": "cd vets-ready-backend && pip install -r requirements.txt",
     "preview": "cd vets-ready-frontend && vite preview",
     "type-check": "cd vets-ready-frontend && tsc --noEmit",
     "lint": "cd vets-ready-frontend && eslint src --ext ts,tsx --report-unused-disable-directives",

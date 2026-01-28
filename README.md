@@ -1,8 +1,8 @@
-# 🇺🇸 VetsReady - Ultimate Veteran Assistance Platform
+# 🇺🇸 VetsReady - Comprehensive Veteran Support Platform
 
-**Version:** 1.0.0 | **Last Updated:** January 24, 2026
+**Version:** 1.0.0 | **Last Updated:** January 28, 2026
 **Project Root:** `C:\Dev\Vets Ready` ✅ **STRICTLY ENFORCED**
-**Status:** Active Development | Phase 1 Core Tools Complete
+**Status:** Active Development | **Unified Application Structure**
 
 ---
 
@@ -14,11 +14,16 @@ VetsReady combines AI-powered legal theory generation, evidence organization, fi
 
 ---
 
-## ✨ What is VetsReady?
+## 📁 Project Structure
 
-VetsReady is a comprehensive veteran assistance platform featuring:
+**VetsReady now uses a unified, single-application structure.** See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for complete details.
 
-### ✅ **Implemented (Phase 1 - Ready to Use)**
+### Primary Applications
+
+- **`vets-ready-frontend/`** - React + TypeScript frontend application
+- **`vets-ready-backend/`** - Python FastAPI backend application
+
+### Quick Navigation
 
 - **🧙 Disability Wizard** - 5-step guided claim strategy builder
   - Service-connected disabilities tracking
