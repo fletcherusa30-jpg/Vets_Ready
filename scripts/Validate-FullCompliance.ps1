@@ -18,7 +18,7 @@
     Based on 8 authoritative documents:
     1. ARCHITECTURE.md (Master System Blueprint)
     2. MODULE_PURPOSES.md (Technical Specification)
-    3. VETERANS1ST_ECOSYSTEM.md (Operational Guidance)
+    3. CRSC_RESOURCE_ECOSYSTEM_COMPLETE.md (Operational Guidance)
     4. Bootstrap scripts (Automation Specification)
     5. Control-Panel.ps1 (Instruction Manual)
     6. IMPLEMENTATION_SUMMARY.md (Project Status)

@@ -127,7 +127,7 @@ function New-TableOfContents {
 25. Diagnostics & Repair Engines
 
 ## Part VII: Compliance & Roadmap
-26. Veterans1st Ecosystem
+26. VetsReady Platform (CRSC + Resource Ecosystem)
 27. Implementation Summary
 28. Phase 1 Completion
 29. Compliance Audit Report
@@ -267,7 +267,7 @@ Write-Host "  ✓ Adding Part VII: Compliance & Roadmap" -ForegroundColor Green
 # Part VII: Compliance & Roadmap
 [void]$masterContent.Append("<div style='page-break-after: always;'></div>`n`n")
 [void]$masterContent.Append("# PART VII: COMPLIANCE & ROADMAP`n`n")
-[void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $DocsPath 'VETERANS1ST_ECOSYSTEM.md') '26. Veterans1st Ecosystem'))
+[void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $RootPath 'CRSC_RESOURCE_ECOSYSTEM_COMPLETE.md') '26. VetsReady Platform Architecture'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $DocsPath 'IMPLEMENTATION_SUMMARY.md') '27. Implementation Summary'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $DocsPath 'PHASE_1_COMPLETION.md') '28. Phase 1 Completion'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $RootPath 'COMPLIANCE_AUDIT.md') '29. Compliance Audit Report'))

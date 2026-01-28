@@ -194,13 +194,13 @@ GRANT ALL PRIVILEGES ON DATABASE vetsready_dev TO vetsready_user;
 
 ```bash
 # From backend directory
-psql -U veterans1st_user -d veterans1st_dev -f ../data/schema.sql
+psql -U vetsready_user -d vetsready_dev -f ../data/schema.sql
 ```
 
 ### 3. Verify Database
 
 ```bash
-psql -U veterans1st_user -d veterans1st_dev
+psql -U vetsready_user -d vetsready_dev
 
 # In psql console:
 \dt  # List tables
@@ -237,7 +237,7 @@ npm run dev
 #### Terminal 3 - Database (Optional)
 ```bash
 # Monitor database connections
-psql -U veterans1st_user -d veterans1st_dev
+psql -U vetsready_user -d vetsready_dev
 # SELECT * FROM pg_stat_activity;
 ```
 
@@ -368,11 +368,11 @@ Error: relation "users" does not exist
 **Solution:**
 ```bash
 # Recreate database
-dropdb veterans1st_dev
-createdb veterans1st_dev
+dropdb vetsready_dev
+createdb vetsready_dev
 
 # Re-run migration
-psql -U veterans1st_user -d veterans1st_dev -f ../data/schema.sql
+psql -U vetsready_user -d vetsready_dev -f ../data/schema.sql
 ```
 
 #### 4. Frontend Can't Connect to Backend
@@ -482,13 +482,13 @@ clinic doctor -- node backend/server.ts
 
 ## Support & Contributing
 
-- **Issues**: Report bugs on [GitHub Issues](https://github.com/yourusername/Veterans1st/issues)
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/fletcherusa30-jpg/Vets_Ready/issues)
 - **Contributing**: See [CONTRIBUTING.md](./CONTRIBUTING.md)
 - **Code of Conduct**: See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
 
 ## License
 
-Veterans1st is licensed under the [MIT License](./LICENSE)
+VetsReady is licensed under the [MIT License](./LICENSE)
 
 ## Acknowledgments
 

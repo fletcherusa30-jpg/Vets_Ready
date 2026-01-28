@@ -1,9 +1,9 @@
-# Veterans1st API Quick Reference
+# VetsReady API Quick Reference
 
 ## Base URL
 ```
 Development: http://localhost:8000
-Production: https://api.veterans1st.app
+Production: https://api.vetsready.app
 ```
 
 ## Authentication
