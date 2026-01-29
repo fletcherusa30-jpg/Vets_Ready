@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Claims } from './Claims';
 import { useVeteranProfile } from '../contexts/VeteranProfileContext';
+import VAJobsWidget from '../components/VAJobsWidget';
 
 type TabType =
   | 'overview'
@@ -210,6 +211,11 @@ export const Benefits: React.FC = () => {
                   <h3 className="text-xl font-bold mb-2">Special Programs</h3>
                   <p className="text-yellow-100 text-sm">PACT Act, Burn Pits & Toxic Exposure</p>
                 </button>
+              </div>
+
+              {/* VA Jobs & Resources Widget */}
+              <div className="mt-8">
+                <VAJobsWidget />
               </div>
 
               {/* Advisory Notice */}

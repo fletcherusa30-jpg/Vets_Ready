@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useVeteranProfile } from '../contexts/VeteranProfileContext';
 import { extractDD214Data, DD214ExtractedData } from '../services/DD214Scanner';
+import { BenefitsCounter } from '../components/BenefitsCounter';
 
 export const VeteranProfileSetup: React.FC = () => {
   const { profile, updateProfile } = useVeteranProfile();
@@ -314,12 +315,53 @@ export const VeteranProfileSetup: React.FC = () => {
     error: (msg: string) => alert(msg)
   };
 
+  // Smart navigation that skips unnecessary steps
   const handleSaveAndContinue = () => {
     if (step < 6) {
-      setStep(step + 1);
+      let nextStep = step + 1;
+
+      // Skip CRSC step (4) if veteran doesn't meet basic eligibility
+      if (step === 3 && nextStep === 4) {
+        const crscEligible = (profile.isMedicallyRetired || (profile.isRetired && profile.yearsOfService >= 20)) &&
+                            profile.vaDisabilityRating >= 10 &&
+                            profile.hasCombatService;
+
+        if (!crscEligible) {
+          nextStep = 5; // Skip to Dependents
+        }
+      }
+
+      // Skip Dependents step (5) if veteran has no dependents
+      if (step === 4 && nextStep === 5) {
+        if (!profile.hasSpouse && (!profile.numberOfChildren || profile.numberOfChildren === 0)) {
+          nextStep = 6; // Skip to Review
+        }
+      }
+
+      setStep(nextStep);
     } else {
       updateProfile({ profileCompleted: true });
       navigate('/benefits');
+    }
+  };
+
+  // Smart back navigation
+  const handleBack = () => {
+    if (step > 1) {
+      let prevStep = step - 1;
+
+      // Skip CRSC step when going back if not eligible
+      if (step === 5 && prevStep === 4) {
+        const crscEligible = (profile.isMedicallyRetired || (profile.isRetired && profile.yearsOfService >= 20)) &&
+                            profile.vaDisabilityRating >= 10 &&
+                            profile.hasCombatService;
+
+        if (!crscEligible) {
+          prevStep = 3; // Go back to Retirement
+        }
+      }
+
+      setStep(prevStep);
     }
   };
 
@@ -340,6 +382,9 @@ export const VeteranProfileSetup: React.FC = () => {
           <span className="text-sm font-semibold text-gray-600">Step {step} of 6</span>
         </div>
       </div>
+
+      {/* Real-Time Benefits Counter */}
+      <BenefitsCounter profile={profile} step={step} />
 
       {/* Step 1: Personal & Service Information */}
       {step === 1 && (
@@ -1733,7 +1778,7 @@ export const VeteranProfileSetup: React.FC = () => {
       <div className="flex justify-between mt-6">
         {step > 1 && (
           <button
-            onClick={() => setStep(step - 1)}
+            onClick={handleBack}
             className="px-8 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
           >
             ← Previous
