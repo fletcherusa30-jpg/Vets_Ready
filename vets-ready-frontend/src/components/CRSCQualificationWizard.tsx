@@ -82,10 +82,13 @@ const DISABILITY_TYPES = [
   'Combat-related PTSD',
   'Traumatic brain injury (TBI) from combat',
   'Hearing loss from combat operations',
+  'Vision/eye injury from combat operations',
   'Back/spine injury from combat operations',
   'Amputation from combat',
+  'Multiple amputations from combat',
+  'Loss of extremity function/mobility from combat',
   'Burns from combat',
-  'Other combat-related condition'
+  'Other combat-related service-connected condition'
 ];
 
 const DOCUMENTATION_TYPES = [
@@ -143,10 +146,14 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
     let qualifies = true;
 
     // Check basic eligibility
-    if (!data.receivesRetirementPay) {
+    // CRSC requires: Military/Medical retirement + VA rating 10%+ + Combat-related disability
+    const isMilitaryRetired = data.retirementType === '20-year' || data.retirementType === 'reserve';
+    const isMedicallyRetired = data.retirementType === 'chapter-61' || data.retirementType === 'chapter-61-tera';
+
+    if (!isMilitaryRetired && !isMedicallyRetired) {
       qualifies = false;
-      reasons.push('❌ Must receive military retirement pay to qualify for CRSC');
-      nextSteps.push('If medically retired with less than 20 years, you may still qualify. Verify your retirement type.');
+      reasons.push('❌ Must be military retired (20+ years) OR medically retired to qualify for CRSC');
+      nextSteps.push('CRSC is for military retirees whose VA disability compensation causes retirement pay offset.');
     }
 
     if (!data.hasVADisability || data.disabilityRating < 10) {
@@ -430,9 +437,15 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
                 </p>
               </div>
 
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
+                <p className="text-sm text-blue-900">
+                  <strong>Important:</strong> You do NOT need to have deployed to a combat zone to qualify for CRSC. Combat-related disabilities include hazardous duty assignments, training accidents, and service-connected injuries even without deployment.
+                </p>
+              </div>
+
               <div>
                 <label className="block font-semibold mb-3 text-gray-800">
-                  Have you deployed to a combat zone or hostile fire area?
+                  How did you incur your combat-related disability?
                 </label>
                 <div className="space-y-3">
                   <label className="flex items-start gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
@@ -444,21 +457,34 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
                       className="mt-1 w-5 h-5 text-red-600"
                     />
                     <div>
-                      <span className="font-semibold">Yes, I deployed to combat zone(s)</span>
-                      <p className="text-sm text-gray-600">Served in designated combat or hostile fire zone</p>
+                      <span className="font-semibold">Combat zone deployment or hostile fire</span>
+                      <p className="text-sm text-gray-600">Injured during deployment to a designated combat or hostile fire zone</p>
                     </div>
                   </label>
                   <label className="flex items-start gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
                     <input
                       type="radio"
                       name="combat-deployment"
-                      checked={data.hasCombatDeployment === false}
-                      onChange={() => updateData({ hasCombatDeployment: false, combatZones: [] })}
+                      checked={data.hasCombatDeployment === false && data.combatDeploymentType === 'hazardous'}
+                      onChange={() => updateData({ hasCombatDeployment: false, combatZones: [], combatDeploymentType: 'hazardous' })}
                       className="mt-1 w-5 h-5 text-red-600"
                     />
                     <div>
-                      <span className="font-semibold">No combat deployments</span>
-                      <p className="text-sm text-gray-600">Served only in peacetime or non-combat areas</p>
+                      <span className="font-semibold">Hazardous duty or training injury</span>
+                      <p className="text-sm text-gray-600">Parachuting, EOD, flight training, airborne operations, or combat training accidents</p>
+                    </div>
+                  </label>
+                  <label className="flex items-start gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+                    <input
+                      type="radio"
+                      name="combat-deployment"
+                      checked={data.hasCombatDeployment === false && data.combatDeploymentType === 'other'}
+                      onChange={() => updateData({ hasCombatDeployment: false, combatZones: [], combatDeploymentType: 'other' })}
+                      className="mt-1 w-5 h-5 text-red-600"
+                    />
+                    <div>
+                      <span className="font-semibold">Other service-connected combat injury</span>
+                      <p className="text-sm text-gray-600">Service-connected injury from combat-related circumstances (simulated exercises, instrumentality of war, or other)</p>
                     </div>
                   </label>
                 </div>
@@ -568,6 +594,9 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
                 <label className="block font-semibold mb-3 text-gray-800">
                   Select all that apply to your disability:
                 </label>
+                <p className="text-xs text-gray-600 mb-3 italic">
+                  Check all conditions that resulted from your combat service. You can select multiple conditions.
+                </p>
                 <div className="space-y-2">
                   {DISABILITY_TYPES.map(type => (
                     <label key={type} className="flex items-start gap-2 p-3 border border-gray-300 rounded cursor-pointer hover:bg-gray-50">
@@ -603,76 +632,77 @@ export const CRSCQualificationWizard: React.FC<CRSCWizardProps> = ({
 
               <div>
                 <label className="block font-semibold mb-3 text-gray-800">
-                  Do you have documentation supporting your combat-related disability?
+                  Select all documentation you currently have:
                 </label>
-                <div className="space-y-3">
-                  <label className="flex items-start gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
-                    <input
-                      type="radio"
-                      name="has-docs"
-                      checked={data.hasDocumentation === true}
-                      onChange={() => updateData({ hasDocumentation: true })}
-                      className="mt-1 w-5 h-5 text-green-600"
-                    />
-                    <div>
-                      <span className="font-semibold">Yes, I have documentation</span>
-                      <p className="text-sm text-gray-600">Medical records, awards, deployment orders, etc.</p>
-                    </div>
-                  </label>
-                  <label className="flex items-start gap-3 p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
-                    <input
-                      type="radio"
-                      name="has-docs"
-                      checked={data.hasDocumentation === false}
-                      onChange={() => updateData({ hasDocumentation: false, documentationTypes: [] })}
-                      className="mt-1 w-5 h-5 text-green-600"
-                    />
-                    <div>
-                      <span className="font-semibold">No, I need to gather documentation</span>
-                      <p className="text-sm text-gray-600">Don't have records yet</p>
-                    </div>
-                  </label>
+                <p className="text-xs text-gray-600 mb-3 italic">
+                  Check all that apply. Even partial documentation strengthens your CRSC application.
+                </p>
+                <div className="space-y-2">
+                  {DOCUMENTATION_TYPES.map(doc => (
+                    <label key={doc} className="flex items-start gap-2 p-3 border border-gray-300 rounded cursor-pointer hover:bg-gray-50">
+                      <input
+                        type="checkbox"
+                        checked={data.documentationTypes.includes(doc)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            updateData({ documentationTypes: [...data.documentationTypes, doc] });
+                          } else {
+                            updateData({ documentationTypes: data.documentationTypes.filter(d => d !== doc) });
+                          }
+                        }}
+                        className="mt-1 w-4 h-4 text-green-600"
+                      />
+                      <span className="text-sm">{doc}</span>
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              {data.hasDocumentation && (
-                <div>
-                  <label className="block font-semibold mb-3 text-gray-800">
-                    Select all documentation you currently have:
-                  </label>
-                  <div className="space-y-2">
-                    {DOCUMENTATION_TYPES.map(doc => (
-                      <label key={doc} className="flex items-start gap-2 p-3 border border-gray-300 rounded cursor-pointer hover:bg-gray-50">
-                        <input
-                          type="checkbox"
-                          checked={data.documentationTypes.includes(doc)}
-                          onChange={(e) => {
-                            if (e.target.checked) {
-                              updateData({ documentationTypes: [...data.documentationTypes, doc] });
-                            } else {
-                              updateData({ documentationTypes: data.documentationTypes.filter(d => d !== doc) });
-                            }
-                          }}
-                          className="mt-1 w-4 h-4 text-green-600"
-                        />
-                        <span className="text-sm">{doc}</span>
-                      </label>
-                    ))}
+              <div className="space-y-4">
+                  <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-4">
+                    <p className="text-sm text-yellow-800 font-semibold mb-3">💡 Resources to Find Your CRSC Documents:</p>
+
+                    <div className="space-y-3 text-sm text-yellow-800">
+                      <div className="border-b border-yellow-200 pb-2">
+                        <p className="font-semibold text-yellow-900">Military Service Records (Deployment, Orders, Awards)</p>
+                        <ul className="list-disc ml-5 mt-1 space-y-1">
+                          <li><strong>DPRIS (Defense Personnel Records Information Retrieval System)</strong>: <a href="https://www.dpris.dod.mil" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">dpris.dod.mil</a> - Search for deployment orders, service records, awards</li>
+                          <li><strong>NPRC (National Personnel Records Center)</strong>: Call 1-314-801-0800 or submit SF Form 180 at <a href="https://www.archives.gov/veterans/military-service-records" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">archives.gov/veterans</a></li>
+                          <li><strong>Service Branch Records</strong>: Contact your service branch's awards/records office directly</li>
+                        </ul>
+                      </div>
+
+                      <div className="border-b border-yellow-200 pb-2">
+                        <p className="font-semibold text-yellow-900">Combat Medical Records & VA Ratings</p>
+                        <ul className="list-disc ml-5 mt-1 space-y-1">
+                          <li><strong>VA eBenefits</strong>: <a href="https://www.va.gov/ebenefits" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">va.gov/ebenefits</a> - View your VA rating, medical records, and claim status</li>
+                          <li><strong>VA Form 21-0995</strong>: Decision Review Request (appeal if initially denied CRSC)</li>
+                          <li><strong>Combat Medical Records</strong>: Available through VA or NPRC - show combat-related injury treatment</li>
+                          <li><strong>VA Rating Decision Letter</strong>: Your official service-connection documentation</li>
+                        </ul>
+                      </div>
+
+                      <div className="border-b border-yellow-200 pb-2">
+                        <p className="font-semibold text-yellow-900">CRSC-Specific Documents</p>
+                        <ul className="list-disc ml-5 mt-1 space-y-1">
+                          <li><strong>Purple Heart Award Citation</strong>: Request from National Personnel Records Center or service branch</li>
+                          <li><strong>Combat Action Badge/Medal Documentation</strong>: Awarded for direct enemy contact</li>
+                          <li><strong>After-Action Reports (AAR)</strong>: Unit records showing combat operations where injured</li>
+                          <li><strong>Buddy Statements</strong>: Written testimony from fellow service members confirming combat-related injury</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <p className="font-semibold text-yellow-900">Direct Contact</p>
+                        <ul className="list-disc ml-5 mt-1 space-y-1">
+                          <li><strong>VA Benefits Hotline</strong>: 1-800-827-1000</li>
+                          <li><strong>CRSC Program Office</strong>: Ask for Combat-Related Special Compensation benefits</li>
+                          <li><strong>VA Regional Office</strong>: Visit <a href="https://www.va.gov/find-locations" target="_blank" rel="noopener noreferrer" className="underline text-blue-700">va.gov/find-locations</a> to find your nearest office</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              )}
-
-              {!data.hasDocumentation && (
-                <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-4">
-                  <p className="text-sm text-yellow-800 font-semibold mb-2">💡 Where to Get Documentation:</p>
-                  <ul className="text-sm text-yellow-800 space-y-1 ml-5 list-disc">
-                    <li>Service records: National Personnel Records Center (NPRC)</li>
-                    <li>Medical records: Request from VA or NPRC</li>
-                    <li>Deployment orders: Unit administrative office or NPRC</li>
-                    <li>Awards: Request from service branch's awards office</li>
-                  </ul>
-                </div>
-              )}
             </div>
           )}
 

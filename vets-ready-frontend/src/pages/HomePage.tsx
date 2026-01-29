@@ -267,6 +267,7 @@ export const HomePage: React.FC = () => {
           font-weight: bold;
           margin-bottom: 1rem;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          color: white;
         }
 
         .hero-subtitle {
@@ -274,6 +275,7 @@ export const HomePage: React.FC = () => {
           opacity: 0.95;
           margin-bottom: 2rem;
           line-height: 1.6;
+          color: white;
         }
 
         .hero-ctas {

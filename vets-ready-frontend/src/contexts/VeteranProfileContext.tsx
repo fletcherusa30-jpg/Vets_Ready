@@ -15,6 +15,16 @@ export interface VeteranProfile {
   rank: string;
   mos: string;
 
+  // Multiple Service Periods (for veterans who separated and rejoined)
+  servicePeriods?: Array<{
+    branch: string;
+    startDate: string;
+    endDate: string;
+    rank: string;
+    characterOfDischarge?: string;
+    isPrimaryPeriod?: boolean; // Mark the main period for DD-214
+  }>;
+
   // Discharge Information
   characterOfDischarge?: 'Honorable' | 'General Under Honorable Conditions' | 'Other Than Honorable' | 'Bad Conduct' | 'Dishonorable' | '';
   separationCode?: string;

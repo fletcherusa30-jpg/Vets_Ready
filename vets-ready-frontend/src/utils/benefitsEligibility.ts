@@ -273,8 +273,10 @@ export const checkHouseboundEligibility = (profile: VeteranProfile): BenefitElig
 };
 
 export const checkCRSCEligibility = (profile: VeteranProfile): BenefitEligibility => {
+  // CRSC is primarily for medically retired veterans with <20 years
+  // OR military retirees (20+ years) with combat-related disabilities
   const eligible =
-    (profile.hasRetirementPay || profile.isMedicallyRetired) &&
+    (profile.isMedicallyRetired || (profile.isRetired && profile.yearsOfService >= 20)) &&
     profile.vaDisabilityRating >= 10 &&
     profile.hasCombatService;
 
@@ -283,25 +285,27 @@ export const checkCRSCEligibility = (profile: VeteranProfile): BenefitEligibilit
   return {
     name: 'Combat-Related Special Compensation (CRSC)',
     eligible,
-    description: 'Tax-free DOD benefit for military retirees with combat-related disabilities',
+    description: 'Tax-free DOD benefit for military retirees with combat-related disabilities that offsets the VA waiver',
     estimatedMonthlyAmount: estimatedAmount,
     requirements: eligible ? [
-      'Military retirement pay (20+ years or medical retirement)',
-      'VA disability rating of 10% or higher',
-      'Disability is combat-related: armed conflict, hazardous duty (parachuting, airborne, diving, flight ops, EOD), training exercises/field operations, or instrumentality of war'
+      'Military retired or medically retired status',
+      'VA service-connected disability rating of 10% or higher',
+      'Disability is combat-related: armed conflict, hostile fire zone, hazardous duty (parachuting, diving, flight ops, EOD), training exercises/field operations, or instrumentality of war'
     ] : [
-      'Must receive military retirement pay',
-      'Must have VA disability rating of 10%+',
-      'Disability must be combat-related (includes hazardous duty, training accidents, and field exercises)'
+      'Must be military retired (20+ years) OR medically retired (any years)',
+      'Must have VA service-connected disability rating of 10%+',
+      'Disability must be combat-related (includes hazardous duty, training accidents, hostile fire zones)'
     ],
     nextSteps: eligible ? [
-      'Complete DD Form 2860',
-      'Gather deployment/combat documentation',
+      'Complete DD Form 2860 (CRSC Application)',
+      'Gather combat/deployment documentation (DD-214, orders, after-action reports)',
       'Obtain VA rating decision letter',
-      'Submit to your military branch CRSC office',
+      'Gather medical evidence linking disability to combat',
+      'Submit to your military branch CRSC office (Air Force, Army, Navy/MC, or CG)',
       'See Benefits > CRSC tab for full application guide'
     ] : [
-      'Check retirement status',
+      'If medically retired with <20 years, you may still qualify - check combat service',
+      'Obtain VA disability rating if not yet rated',
       'Determine if disabilities are combat-related'
     ],
     category: 'compensation'
