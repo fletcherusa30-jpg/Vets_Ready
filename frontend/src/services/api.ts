@@ -1,5 +1,5 @@
 /**
- * API Client Service for VetsReady Platform
+ * API Client Service for rallyforge Platform
  * Centralized HTTP client with TypeScript types
  * Phase 3 - Frontend Development
  */
@@ -311,3 +311,4 @@ export const healthAPI = {
 export const api = apiClient;
 
 export default apiClient;
+

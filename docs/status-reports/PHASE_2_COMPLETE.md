@@ -7,7 +7,7 @@
 
 ## Summary
 
-Successfully implemented **Phase 2 — Wallet, Life Map, Opportunity Radar** of the VetsReady platform. All three next-generation features are now functional and accessible via the application.
+Successfully implemented **Phase 2 — Wallet, Life Map, Opportunity Radar** of the rallyforge platform. All three next-generation features are now functional and accessible via the application.
 
 ---
 
@@ -139,7 +139,7 @@ All pages follow global design system:
 ## Code Organization
 
 ```
-vets-ready-frontend/
+rally-forge-frontend/
 ├─ src/
 │   ├─ MatrixEngine/
 │   │   ├─ wallet/
@@ -186,7 +186,7 @@ Phase 2 is complete. Ready to proceed to **Phase 3 — Employment, Education, Lo
 
 All Phase 2 pages include disclaimers:
 
-- **Digital Wallet:** "This Digital Wallet is for organizing your documents only. Always keep original copies of important documents. VetsReady does not store documents on servers (all data is local to your device for privacy)."
+- **Digital Wallet:** "This Digital Wallet is for organizing your documents only. Always keep original copies of important documents. rallyforge does not store documents on servers (all data is local to your device for privacy)."
 
 - **Life Map:** "Your Life Map visualizes key events from your profile. Click events to see more details. You can add custom events in future updates."
 
@@ -195,3 +195,5 @@ All Phase 2 pages include disclaimers:
 ---
 
 **Phase 2 Status:** ✅ **COMPLETE & FUNCTIONAL**
+
+

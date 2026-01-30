@@ -290,11 +290,11 @@ curl http://localhost:8000/api/revenue/opportunities?category=affiliate
 3. **Start Services**:
    ```bash
    # Backend
-   cd vets-ready-backend
+   cd rally-forge-backend
    uvicorn app.main:app --reload
 
    # Frontend
-   cd vets-ready-frontend
+   cd rally-forge-frontend
    npm run dev
    ```
 
@@ -434,3 +434,4 @@ For questions or issues:
 **Implementation Completed**: January 25, 2026
 **Status**: ✅ Production Ready
 **Estimated Revenue**: $25,000 - $83,500/month (10K users)
+

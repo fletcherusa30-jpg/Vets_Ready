@@ -2,7 +2,7 @@
 
 ## 🎯 Objective Achieved
 
-You asked: **"This scanner needs to be fixed and extremely accurate. Please review all new pdf files that I moved into C:\Dev\Vets Ready\App."**
+You asked: **"This scanner needs to be fixed and extremely accurate. Please review all new pdf files that I moved into C:\Dev\Rally Forge\App."**
 
 ## ✅ Delivered
 
@@ -227,7 +227,7 @@ python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
 # 2. Start frontend
 cd frontend && npm run dev
 
-# 3. Upload DD214 98-03.pdf from C:\Dev\Vets Ready\App
+# 3. Upload DD214 98-03.pdf from C:\Dev\Rally Forge\App
 # → Should show "Document uploaded successfully"
 # → NO "api.post is not a function" error ✓
 
@@ -488,3 +488,4 @@ Created for you:
 **Status:** ✅ PRODUCTION READY
 
 🎊 **Your scanner is now fixed, extremely accurate, and ready for production use!**
+

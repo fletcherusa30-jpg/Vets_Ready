@@ -1,6 +1,6 @@
-# 🚀 VETS READY - QUICK START DEPLOYMENT GUIDE
+# 🚀 Rally Forge - QUICK START DEPLOYMENT GUIDE
 
-**Everything you need to launch Vets Ready in production**
+**Everything you need to launch Rally Forge in production**
 
 ---
 
@@ -108,7 +108,7 @@ open http://localhost:3000
 
 ```bash
 # Start development server
-cd vets-ready-backend
+cd rally-forge-backend
 uvicorn app.main:app --reload
 
 # Run migrations
@@ -125,7 +125,7 @@ pytest tests/ -v
 
 ```bash
 # Start development server
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 
 # Build for production
@@ -203,7 +203,7 @@ docker-compose ps postgres
 docker-compose logs postgres
 
 # Connect to PostgreSQL
-docker-compose exec postgres psql -U vetsready -d vetsready_db
+docker-compose exec postgres psql -U rallyforge -d rallyforge_db
 ```
 
 ### Stripe Webhook Not Working
@@ -224,10 +224,10 @@ docker-compose exec postgres psql -U vetsready -d vetsready_db
 ## 📞 SUPPORT & RESOURCES
 
 ### Documentation
-- **Master Design Book**: `docs/generated/VetsReady_MasterDesignBook_*.docx`
+- **Master Design Book**: `docs/generated/rallyforge_MasterDesignBook_*.docx`
 - **API Docs**: http://localhost:8000/docs
 - **Compliance Report**: `FULL_COMPLIANCE_VALIDATION_COMPLETE.md`
-- **Completion Guide**: `VETS_READY_APPLICATION_COMPLETE.md`
+- **Completion Guide**: `rally_forge_APPLICATION_COMPLETE.md`
 
 ### Scripts
 - **Control Panel**: `.\scripts\Control-Panel.ps1`
@@ -235,7 +235,7 @@ docker-compose exec postgres psql -U vetsready -d vetsready_db
 - **Validation**: `.\scripts\Validate-FullCompliance.ps1`
 
 ### Key Files
-- **Backend**: `vets-ready-backend/app/main.py`
+- **Backend**: `rally-forge-backend/app/main.py`
 - **Database Schema**: `data/schema.sql`
 - **Environment Config**: `.env.example`
 - **Docker Compose**: `docker-compose.prod.yml`
@@ -244,7 +244,7 @@ docker-compose exec postgres psql -U vetsready -d vetsready_db
 
 ## 🎉 YOU'RE READY!
 
-Your Vets Ready application is **100% complete** and ready for production.
+Your Rally Forge application is **100% complete** and ready for production.
 
 ### What's Included ✅
 
@@ -270,3 +270,5 @@ Your Vets Ready application is **100% complete** and ready for production.
 **Questions?** Check the Master Design Book or run `.\scripts\Control-Panel.ps1`
 
 **Ready to Launch?** Everything you need is here. Let's serve those who served! 🇺🇸
+
+

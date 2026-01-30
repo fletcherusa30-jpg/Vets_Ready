@@ -354,4 +354,5 @@ If you find any bugs, note:
 
 **Testing Status**: Ready for comprehensive testing
 **Documentation**: See MILITARY_PENSION_CRSC_IMPLEMENTATION.md
-**Code Location**: vets-ready-frontend/src/pages/Retirement.tsx
+**Code Location**: rally-forge-frontend/src/pages/Retirement.tsx
+

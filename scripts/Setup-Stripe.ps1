@@ -31,7 +31,7 @@ $ErrorActionPreference = 'Stop'
 $RootPath = Split-Path -Parent $PSScriptRoot
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║           VETS READY - STRIPE SETUP HELPER                ║" -ForegroundColor Cyan
+Write-Host "║           Rally Forge - STRIPE SETUP HELPER                ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
@@ -65,9 +65,9 @@ Write-Host ""
 # Product Definitions
 $products = @{
     veteran = @(
-        @{name="Vets Ready - Pro (Yearly)"; price=2000; interval="year"; tier="PRO"}
-        @{name="Vets Ready - Family (Yearly)"; price=3500; interval="year"; tier="FAMILY"}
-        @{name="Vets Ready - Lifetime"; price=20000; interval="one_time"; tier="LIFETIME"}
+        @{name="Rally Forge - Pro (Yearly)"; price=2000; interval="year"; tier="PRO"}
+        @{name="Rally Forge - Family (Yearly)"; price=3500; interval="year"; tier="FAMILY"}
+        @{name="Rally Forge - Lifetime"; price=20000; interval="one_time"; tier="LIFETIME"}
     )
     employer = @(
         @{name="Employer - Basic"; price=29900; interval="month"; tier="BASIC"}
@@ -134,7 +134,7 @@ if ($stripeCLI -and $CreateProducts) {
         foreach ($product in $products[$category]) {
             try {
                 # Create product
-                $productCmd = "stripe products create --name='$($product.name)' --description='Vets Ready - $($product.tier)'"
+                $productCmd = "stripe products create --name='$($product.name)' --description='Rally Forge - $($product.tier)'"
                 $productResult = Invoke-Expression $productCmd | ConvertFrom-Json
 
                 # Create price
@@ -251,7 +251,7 @@ Write-Host "══════════════════════�
 Write-Host ""
 
 Write-Host "📝 Next Steps:" -ForegroundColor Cyan
-Write-Host "   1. Run deployment: .\scripts\Deploy-VetsReady.ps1" -ForegroundColor White
+Write-Host "   1. Run deployment: .\scripts\Deploy-RallyForge.ps1" -ForegroundColor White
 Write-Host "   2. Test payment flow at http://localhost:3000" -ForegroundColor White
 Write-Host "   3. Monitor webhooks in Stripe Dashboard" -ForegroundColor White
 Write-Host ""
@@ -262,3 +262,5 @@ Write-Host "   • Any future expiry date" -ForegroundColor White
 Write-Host "   • Any 3-digit CVC" -ForegroundColor White
 Write-Host "   • Trigger events: stripe trigger payment_intent.succeeded" -ForegroundColor White
 Write-Host ""
+
+

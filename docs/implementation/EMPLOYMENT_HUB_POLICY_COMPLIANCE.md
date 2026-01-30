@@ -1,8 +1,8 @@
-# Employment Hub - VetsReady Policy Compliance
+# Employment Hub - rallyforge Policy Compliance
 
 ## ✅ Policy Compliance Summary
 
-The Employment Hub (MOS Translator) has been updated to be **100% compliant** with the VetsReady No-Doc & Multi-Service Policy.
+The Employment Hub (MOS Translator) has been updated to be **100% compliant** with the rallyforge No-Doc & Multi-Service Policy.
 
 ---
 
@@ -386,7 +386,7 @@ Keywords automatically assign levels:
 
 ## ✅ CONCLUSION
 
-The Employment Hub is now **fully compliant** with the VetsReady No-Doc & Multi-Service Policy.
+The Employment Hub is now **fully compliant** with the rallyforge No-Doc & Multi-Service Policy.
 
 **Veterans can:**
 - ✅ Use the tool without knowing their MOS
@@ -408,3 +408,4 @@ The Employment Hub is now **fully compliant** with the VetsReady No-Doc & Multi-
 3. Add backend skill storage
 4. Expand MOS catalog (currently 28 codes, target 200+)
 5. Connect to real job matching APIs
+

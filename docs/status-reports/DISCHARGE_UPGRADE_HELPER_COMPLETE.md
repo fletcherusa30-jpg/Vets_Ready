@@ -224,21 +224,21 @@ It does **NOT**:
 
 ## Files Modified
 
-1. **c:\Dev\Vets Ready\vets-ready-frontend\src\contexts\VeteranProfileContext.tsx**
+1. **c:\Dev\Rally Forge\rally-forge-frontend\src\contexts\VeteranProfileContext.tsx**
    - Added 15+ discharge-related fields
 
-2. **c:\Dev\Vets Ready\vets-ready-frontend\src\services\DischargeUpgradeEngine.ts** ✨ NEW
+2. **c:\Dev\Rally Forge\rally-forge-frontend\src\services\DischargeUpgradeEngine.ts** ✨ NEW
    - Complete service layer (~450 lines)
 
-3. **c:\Dev\Vets Ready\vets-ready-frontend\src\components\DischargeUpgradeHelper.tsx** ✨ NEW
+3. **c:\Dev\Rally Forge\rally-forge-frontend\src\components\DischargeUpgradeHelper.tsx** ✨ NEW
    - Full UI component (~600 lines)
 
-4. **c:\Dev\Vets Ready\vets-ready-frontend\src\components\UnifiedDashboard.tsx**
+4. **c:\Dev\Rally Forge\rally-forge-frontend\src\components\UnifiedDashboard.tsx**
    - Import DischargeUpgradeHelper
    - Add discharge-upgrade tab to sections
    - Render component in Section 11
 
-5. **c:\Dev\Vets Ready\vets-ready-frontend\src\pages\VeteranProfile.tsx**
+5. **c:\Dev\Rally Forge\rally-forge-frontend\src\pages\VeteranProfile.tsx**
    - Add Character of Discharge dropdown in Step 1
    - Add conditional CTA for discharge != Honorable
 
@@ -279,3 +279,4 @@ All core features implemented:
 - ✅ Legal compliance
 
 The Discharge Upgrade Helper is ready for veteran use!
+

@@ -1,5 +1,5 @@
 # ================================================
-# VETS READY - PRODUCTION SETUP GUIDE
+# Rally Forge - PRODUCTION SETUP GUIDE
 # ================================================
 
 ## QUICK START
@@ -13,7 +13,7 @@
 
 ```powershell
 # Navigate to backend
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 
 # Create Python virtual environment
 python -m venv .venv
@@ -41,7 +41,7 @@ API documentation: **http://localhost:8000/docs**
 
 ```powershell
 # Navigate to frontend (new terminal)
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 
 # Install dependencies (if not already installed)
 npm install
@@ -187,7 +187,7 @@ Response: {
 ### Backend `.env`
 ```env
 DATABASE_URL=sqlite:///./instance/dev.db
-JWT_SECRET=vets-ready-super-secret-jwt-key-change-in-production-minimum-32-characters
+JWT_SECRET=rally-forge-super-secret-jwt-key-change-in-production-minimum-32-characters
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000
 ```
 
@@ -316,3 +316,4 @@ For questions or issues:
 
 **Built with ❤️ for Veterans**
 🇺🇸 Serving Those Who Served 🇺🇸
+

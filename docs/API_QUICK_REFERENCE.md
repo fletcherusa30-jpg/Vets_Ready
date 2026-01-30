@@ -1,9 +1,9 @@
-# VetsReady API Quick Reference
+# rallyforge API Quick Reference
 
 ## Base URL
 ```
 Development: http://localhost:8000
-Production: https://api.vetsready.app
+Production: https://api.rallyforge.app
 ```
 
 ## Authentication
@@ -773,3 +773,4 @@ Content-Type: application/json
 **Last Updated**: January 2025
 **API Version**: 2.1
 **Status**: Production Ready
+

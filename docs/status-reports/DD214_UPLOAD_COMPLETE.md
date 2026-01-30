@@ -13,7 +13,7 @@ Both paths are always available — veterans are never forced into one option.
 
 ### Files Modified
 
-1. **VeteranProfile.tsx** (`c:\Dev\Vets Ready\vets-ready-frontend\src\pages\VeteranProfile.tsx`)
+1. **VeteranProfile.tsx** (`c:\Dev\Rally Forge\rally-forge-frontend\src\pages\VeteranProfile.tsx`)
    - Added DD-214 upload UI in Step 1
    - Drag-and-drop upload box
    - File selection button
@@ -21,12 +21,12 @@ Both paths are always available — veterans are never forced into one option.
    - Extracted data display
    - Manual entry fields (always available)
 
-2. **DD214Scanner.ts** (`c:\Dev\Vets Ready\vets-ready-frontend\src\services\DD214Scanner.ts`)
+2. **DD214Scanner.ts** (`c:\Dev\Rally Forge\rally-forge-frontend\src\services\DD214Scanner.ts`)
    - Already exists with full extraction logic
    - Extracts: branch, dates, discharge info, rank, awards, combat indicators
    - Returns confidence levels and extraction logs
 
-3. **VeteranProfileContext.tsx** (`c:\Dev\Vets Ready\vets-ready-frontend\src\contexts\VeteranProfileContext.tsx`)
+3. **VeteranProfileContext.tsx** (`c:\Dev\Rally Forge\rally-forge-frontend\src\contexts\VeteranProfileContext.tsx`)
    - Already includes all necessary fields
    - serviceStartDate, serviceEndDate, branch, rank, etc.
 
@@ -371,3 +371,4 @@ All requirements implemented:
 - ✅ Privacy restrictions enforced
 
 The DD-214 upload feature is ready for veteran use!
+

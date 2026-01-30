@@ -1,7 +1,7 @@
--- Vets Ready Schema
--- All tables prefixed with vetsready_
+-- Rally Forge Schema
+-- All tables prefixed with RallyForge_
 
-CREATE TABLE IF NOT EXISTS vetsready_users (
+CREATE TABLE IF NOT EXISTS RallyForge_users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email VARCHAR(255) UNIQUE NOT NULL,
   name VARCHAR(255),
@@ -11,9 +11,9 @@ CREATE TABLE IF NOT EXISTS vetsready_users (
 );
 
 -- Investment accounts
-CREATE TABLE IF NOT EXISTS vetsready_investment_accounts (
+CREATE TABLE IF NOT EXISTS RallyForge_investment_accounts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   account_type VARCHAR(50) NOT NULL,
   name VARCHAR(255),
   balance DECIMAL(15,2),
@@ -21,9 +21,9 @@ CREATE TABLE IF NOT EXISTS vetsready_investment_accounts (
 );
 
 -- Budget scenarios
-CREATE TABLE IF NOT EXISTS vetsready_budget_scenarios (
+CREATE TABLE IF NOT EXISTS RallyForge_budget_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   name VARCHAR(255),
   monthly_income DECIMAL(15,2),
   total_expenses DECIMAL(15,2),
@@ -32,9 +32,9 @@ CREATE TABLE IF NOT EXISTS vetsready_budget_scenarios (
 );
 
 -- Retirement scenarios
-CREATE TABLE IF NOT EXISTS vetsready_retirement_scenarios (
+CREATE TABLE IF NOT EXISTS RallyForge_retirement_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   name VARCHAR(255),
   retirement_age INT,
   life_expectancy INT,
@@ -45,9 +45,9 @@ CREATE TABLE IF NOT EXISTS vetsready_retirement_scenarios (
 );
 
 -- Transition checklists
-CREATE TABLE IF NOT EXISTS vetsready_transition_checklists (
+CREATE TABLE IF NOT EXISTS RallyForge_transition_checklists (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   separation_date DATE,
   items_completed INT,
   total_items INT,
@@ -55,24 +55,24 @@ CREATE TABLE IF NOT EXISTS vetsready_transition_checklists (
 );
 
 -- Documents
-CREATE TABLE IF NOT EXISTS vetsready_documents (
+CREATE TABLE IF NOT EXISTS RallyForge_documents (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   document_type VARCHAR(100),
   file_path VARCHAR(500),
   uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Resume builds
-CREATE TABLE IF NOT EXISTS vetsready_resume_builds (
+CREATE TABLE IF NOT EXISTS RallyForge_resume_builds (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   content TEXT,
   last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Employer profiles
-CREATE TABLE IF NOT EXISTS vetsready_employer_profiles (
+CREATE TABLE IF NOT EXISTS RallyForge_employer_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(255),
   industry VARCHAR(100),
@@ -82,9 +82,9 @@ CREATE TABLE IF NOT EXISTS vetsready_employer_profiles (
 );
 
 -- Job postings
-CREATE TABLE IF NOT EXISTS vetsready_job_postings (
+CREATE TABLE IF NOT EXISTS RallyForge_job_postings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  employer_id UUID NOT NULL REFERENCES vetsready_employer_profiles(id),
+  employer_id UUID NOT NULL REFERENCES RallyForge_employer_profiles(id),
   title VARCHAR(255),
   description TEXT,
   required_mos VARCHAR(100),
@@ -93,9 +93,9 @@ CREATE TABLE IF NOT EXISTS vetsready_job_postings (
 );
 
 -- Veteran job profiles
-CREATE TABLE IF NOT EXISTS vetsready_veteran_job_profiles (
+CREATE TABLE IF NOT EXISTS RallyForge_veteran_job_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   mos VARCHAR(100),
   rank VARCHAR(50),
   years_experience INT,
@@ -105,17 +105,17 @@ CREATE TABLE IF NOT EXISTS vetsready_veteran_job_profiles (
 );
 
 -- Job applications
-CREATE TABLE IF NOT EXISTS vetsready_job_applications (
+CREATE TABLE IF NOT EXISTS RallyForge_job_applications (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  veteran_profile_id UUID NOT NULL REFERENCES vetsready_veteran_job_profiles(id),
-  job_posting_id UUID NOT NULL REFERENCES vetsready_job_postings(id),
+  veteran_profile_id UUID NOT NULL REFERENCES RallyForge_veteran_job_profiles(id),
+  job_posting_id UUID NOT NULL REFERENCES RallyForge_job_postings(id),
   match_score DECIMAL(3,2),
   applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ========== FEDERAL BENEFITS REFERENCE DATA ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_federal_benefits (
+CREATE TABLE IF NOT EXISTS RallyForge_federal_benefits (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   benefit_type VARCHAR(100) NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS vetsready_federal_benefits (
 
 -- ========== STATE BENEFITS REFERENCE DATA ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_state_benefits (
+CREATE TABLE IF NOT EXISTS RallyForge_state_benefits (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   state_code VARCHAR(2) NOT NULL,
   benefit_type VARCHAR(100) NOT NULL,
@@ -143,9 +143,9 @@ CREATE TABLE IF NOT EXISTS vetsready_state_benefits (
 
 -- ========== CLAIM READINESS PROFILES ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_claim_profiles (
+CREATE TABLE IF NOT EXISTS RallyForge_claim_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   conditions TEXT[],
   service_connection_notes TEXT,
   evidence_collected TEXT[],
@@ -156,9 +156,9 @@ CREATE TABLE IF NOT EXISTS vetsready_claim_profiles (
 
 -- ========== TRANSITION PROFILES ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_transition_profiles (
+CREATE TABLE IF NOT EXISTS RallyForge_transition_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   separation_date DATE,
   mos VARCHAR(100),
   desired_role VARCHAR(255),
@@ -170,9 +170,9 @@ CREATE TABLE IF NOT EXISTS vetsready_transition_profiles (
 
 -- ========== FINANCIAL SCENARIOS ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_financial_scenarios (
+CREATE TABLE IF NOT EXISTS RallyForge_financial_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id),
   scenario_name VARCHAR(255),
   retirement_age INT,
   expected_return_rate DECIMAL(5,2),
@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS vetsready_financial_scenarios (
 
 -- ========== RESOURCES HUB ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_resources (
+CREATE TABLE IF NOT EXISTS RallyForge_resources (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title VARCHAR(255) NOT NULL,
   description TEXT,
@@ -199,7 +199,7 @@ CREATE TABLE IF NOT EXISTS vetsready_resources (
 
 -- ========== PARTNERSHIPS (EMPLOYMENT & BUSINESS) ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_partners (
+CREATE TABLE IF NOT EXISTS RallyForge_partners (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(255) NOT NULL,
   category VARCHAR(50) NOT NULL,
@@ -218,9 +218,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partners (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_jobs (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_jobs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   title VARCHAR(255) NOT NULL,
   location VARCHAR(255),
   remote_flag BOOLEAN,
@@ -230,9 +230,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_jobs (
   expires_at TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_offers (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_offers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   offer_type VARCHAR(100),
   description TEXT,
   eligibility_notes TEXT,
@@ -242,9 +242,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_offers (
   redemption_code VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_sponsorships (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_sponsorships (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   package VARCHAR(50),
   amount DECIMAL(10,2),
   term VARCHAR(50),
@@ -253,9 +253,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_sponsorships (
   end_at TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_affiliate_links (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_affiliate_links (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   program_name VARCHAR(255),
   tracking_url VARCHAR(500),
   payout_terms TEXT,
@@ -263,17 +263,17 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_affiliate_links (
   cookie_window_days INT
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_engagement (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_engagement (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   event_type VARCHAR(100),
   metadata JSONB,
   occurred_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_billing (
+CREATE TABLE IF NOT EXISTS RallyForge_partner_billing (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES RallyForge_partners(id),
   billing_provider_id VARCHAR(255),
   plan_code VARCHAR(100),
   status VARCHAR(50),
@@ -287,26 +287,26 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_billing (
 
 -- ========== INDEXES ==========
 
-CREATE INDEX idx_vetsready_users_email ON vetsready_users(email);
-CREATE INDEX idx_vetsready_budget_user ON vetsready_budget_scenarios(user_id);
-CREATE INDEX idx_vetsready_retirement_user ON vetsready_retirement_scenarios(user_id);
-CREATE INDEX idx_vetsready_transition_user ON vetsready_transition_checklists(user_id);
-CREATE INDEX idx_vetsready_documents_user ON vetsready_documents(user_id);
-CREATE INDEX idx_vetsready_job_postings_employer ON vetsready_job_postings(employer_id);
-CREATE INDEX idx_vetsready_job_applications_match ON vetsready_job_applications(match_score);
-CREATE INDEX idx_vetsready_state_benefits_state ON vetsready_state_benefits(state_code);
-CREATE INDEX idx_vetsready_state_benefits_type ON vetsready_state_benefits(benefit_type);
-CREATE INDEX idx_vetsready_federal_benefits_type ON vetsready_federal_benefits(benefit_type);
-CREATE INDEX idx_vetsready_partners_category ON vetsready_partners(category);
-CREATE INDEX idx_vetsready_partners_tier ON vetsready_partners(tier);
-CREATE INDEX idx_vetsready_partners_status ON vetsready_partners(status);
-CREATE INDEX idx_vetsready_partners_tags ON vetsready_partners USING GIN(tags);
-CREATE INDEX idx_vetsready_partners_industries ON vetsready_partners USING GIN(industries);
-CREATE INDEX idx_vetsready_partner_engagement_type_date ON vetsready_partner_engagement(event_type, occurred_at);
-CREATE INDEX idx_vetsready_partner_billing_status ON vetsready_partner_billing(status);
-CREATE INDEX idx_vetsready_claim_profiles_user ON vetsready_claim_profiles(user_id);
-CREATE INDEX idx_vetsready_transition_profiles_user ON vetsready_transition_profiles(user_id);
-CREATE INDEX idx_vetsready_financial_scenarios_user ON vetsready_financial_scenarios(user_id);
+CREATE INDEX idx_RallyForge_users_email ON RallyForge_users(email);
+CREATE INDEX idx_RallyForge_budget_user ON RallyForge_budget_scenarios(user_id);
+CREATE INDEX idx_RallyForge_retirement_user ON RallyForge_retirement_scenarios(user_id);
+CREATE INDEX idx_RallyForge_transition_user ON RallyForge_transition_checklists(user_id);
+CREATE INDEX idx_RallyForge_documents_user ON RallyForge_documents(user_id);
+CREATE INDEX idx_RallyForge_job_postings_employer ON RallyForge_job_postings(employer_id);
+CREATE INDEX idx_RallyForge_job_applications_match ON RallyForge_job_applications(match_score);
+CREATE INDEX idx_RallyForge_state_benefits_state ON RallyForge_state_benefits(state_code);
+CREATE INDEX idx_RallyForge_state_benefits_type ON RallyForge_state_benefits(benefit_type);
+CREATE INDEX idx_RallyForge_federal_benefits_type ON RallyForge_federal_benefits(benefit_type);
+CREATE INDEX idx_RallyForge_partners_category ON RallyForge_partners(category);
+CREATE INDEX idx_RallyForge_partners_tier ON RallyForge_partners(tier);
+CREATE INDEX idx_RallyForge_partners_status ON RallyForge_partners(status);
+CREATE INDEX idx_RallyForge_partners_tags ON RallyForge_partners USING GIN(tags);
+CREATE INDEX idx_RallyForge_partners_industries ON RallyForge_partners USING GIN(industries);
+CREATE INDEX idx_RallyForge_partner_engagement_type_date ON RallyForge_partner_engagement(event_type, occurred_at);
+CREATE INDEX idx_RallyForge_partner_billing_status ON RallyForge_partner_billing(status);
+CREATE INDEX idx_RallyForge_claim_profiles_user ON RallyForge_claim_profiles(user_id);
+CREATE INDEX idx_RallyForge_transition_profiles_user ON RallyForge_transition_profiles(user_id);
+CREATE INDEX idx_RallyForge_financial_scenarios_user ON RallyForge_financial_scenarios(user_id);
 
 -- Veteran-owned businesses directory
 CREATE TABLE IF NOT EXISTS veteran_businesses (
@@ -425,9 +425,9 @@ CREATE INDEX IF NOT EXISTS idx_investment_accounts_user ON investment_accounts(u
 -- ============================================================================
 
 -- Veteran Subscriptions (Free, Pro, Family, Lifetime)
-CREATE TABLE IF NOT EXISTS vetsready_veteran_subscriptions (
+CREATE TABLE IF NOT EXISTS RallyForge_veteran_subscriptions (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES RallyForge_users(id) ON DELETE CASCADE,
   tier VARCHAR(20) NOT NULL CHECK (tier IN ('FREE', 'PRO', 'FAMILY', 'LIFETIME')),
   status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE' CHECK (status IN ('ACTIVE', 'EXPIRED', 'CANCELLED', 'SUSPENDED')),
   start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -441,7 +441,7 @@ CREATE TABLE IF NOT EXISTS vetsready_veteran_subscriptions (
 );
 
 -- Employer Accounts (Basic, Premium, Recruiting, Enterprise)
-CREATE TABLE IF NOT EXISTS vetsready_employer_accounts (
+CREATE TABLE IF NOT EXISTS RallyForge_employer_accounts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   company_name VARCHAR(255) NOT NULL,
   contact_name VARCHAR(255) NOT NULL,
@@ -461,9 +461,9 @@ CREATE TABLE IF NOT EXISTS vetsready_employer_accounts (
 );
 
 -- Job Posts (linked to employer accounts)
-CREATE TABLE IF NOT EXISTS vetsready_job_posts (
+CREATE TABLE IF NOT EXISTS RallyForge_job_posts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  employer_id UUID NOT NULL REFERENCES vetsready_employer_accounts(id) ON DELETE CASCADE,
+  employer_id UUID NOT NULL REFERENCES RallyForge_employer_accounts(id) ON DELETE CASCADE,
   title VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   location VARCHAR(255),
@@ -482,7 +482,7 @@ CREATE TABLE IF NOT EXISTS vetsready_job_posts (
 );
 
 -- Business Directory Listings (Basic, Featured, Premium, Advertising)
-CREATE TABLE IF NOT EXISTS vetsready_business_listings (
+CREATE TABLE IF NOT EXISTS RallyForge_business_listings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   business_name VARCHAR(255) NOT NULL,
   contact_name VARCHAR(255) NOT NULL,
@@ -508,13 +508,13 @@ CREATE TABLE IF NOT EXISTS vetsready_business_listings (
 );
 
 -- Lead Generation Tracking
-CREATE TABLE IF NOT EXISTS vetsready_leads (
+CREATE TABLE IF NOT EXISTS RallyForge_leads (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   source_type VARCHAR(50) NOT NULL CHECK (source_type IN ('JOB_APPLICATION', 'BUSINESS_CONTACT', 'EMPLOYER_INQUIRY', 'OTHER')),
   source_id UUID,
-  veteran_id UUID REFERENCES vetsready_users(id),
-  business_id UUID REFERENCES vetsready_business_listings(id),
-  employer_id UUID REFERENCES vetsready_employer_accounts(id),
+  veteran_id UUID REFERENCES RallyForge_users(id),
+  business_id UUID REFERENCES RallyForge_business_listings(id),
+  employer_id UUID REFERENCES RallyForge_employer_accounts(id),
   lead_type VARCHAR(50) NOT NULL,
   status VARCHAR(20) DEFAULT 'NEW' CHECK (status IN ('NEW', 'CONTACTED', 'QUALIFIED', 'CONVERTED', 'LOST')),
   value DECIMAL(10,2),
@@ -524,7 +524,7 @@ CREATE TABLE IF NOT EXISTS vetsready_leads (
 );
 
 -- VSO Partnership Tracking
-CREATE TABLE IF NOT EXISTS vetsready_vso_partners (
+CREATE TABLE IF NOT EXISTS RallyForge_vso_partners (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   organization_name VARCHAR(255) NOT NULL,
   contact_name VARCHAR(255) NOT NULL,
@@ -543,7 +543,7 @@ CREATE TABLE IF NOT EXISTS vetsready_vso_partners (
 );
 
 -- Invoices & Billing
-CREATE TABLE IF NOT EXISTS vetsready_invoices (
+CREATE TABLE IF NOT EXISTS RallyForge_invoices (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   customer_type VARCHAR(20) NOT NULL CHECK (customer_type IN ('VETERAN', 'EMPLOYER', 'BUSINESS', 'VSO')),
   customer_id UUID NOT NULL,
@@ -562,9 +562,9 @@ CREATE TABLE IF NOT EXISTS vetsready_invoices (
 );
 
 -- Payment History
-CREATE TABLE IF NOT EXISTS vetsready_payments (
+CREATE TABLE IF NOT EXISTS RallyForge_payments (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  invoice_id UUID REFERENCES vetsready_invoices(id) ON DELETE SET NULL,
+  invoice_id UUID REFERENCES RallyForge_invoices(id) ON DELETE SET NULL,
   customer_type VARCHAR(20) NOT NULL,
   customer_id UUID NOT NULL,
   amount DECIMAL(10,2) NOT NULL,
@@ -576,34 +576,36 @@ CREATE TABLE IF NOT EXISTS vetsready_payments (
 );
 
 -- Indexes for Pricing Tables
-CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_user ON vetsready_veteran_subscriptions(user_id);
-CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_tier ON vetsready_veteran_subscriptions(tier);
-CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_status ON vetsready_veteran_subscriptions(status);
+CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_user ON RallyForge_veteran_subscriptions(user_id);
+CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_tier ON RallyForge_veteran_subscriptions(tier);
+CREATE INDEX IF NOT EXISTS idx_veteran_subscriptions_status ON RallyForge_veteran_subscriptions(status);
 
-CREATE INDEX IF NOT EXISTS idx_employer_accounts_tier ON vetsready_employer_accounts(tier);
-CREATE INDEX IF NOT EXISTS idx_employer_accounts_status ON vetsready_employer_accounts(status);
-CREATE INDEX IF NOT EXISTS idx_employer_accounts_email ON vetsready_employer_accounts(contact_email);
+CREATE INDEX IF NOT EXISTS idx_employer_accounts_tier ON RallyForge_employer_accounts(tier);
+CREATE INDEX IF NOT EXISTS idx_employer_accounts_status ON RallyForge_employer_accounts(status);
+CREATE INDEX IF NOT EXISTS idx_employer_accounts_email ON RallyForge_employer_accounts(contact_email);
 
-CREATE INDEX IF NOT EXISTS idx_job_posts_employer ON vetsready_job_posts(employer_id);
-CREATE INDEX IF NOT EXISTS idx_job_posts_status ON vetsready_job_posts(status);
-CREATE INDEX IF NOT EXISTS idx_job_posts_featured ON vetsready_job_posts(featured);
+CREATE INDEX IF NOT EXISTS idx_job_posts_employer ON RallyForge_job_posts(employer_id);
+CREATE INDEX IF NOT EXISTS idx_job_posts_status ON RallyForge_job_posts(status);
+CREATE INDEX IF NOT EXISTS idx_job_posts_featured ON RallyForge_job_posts(featured);
 
-CREATE INDEX IF NOT EXISTS idx_business_listings_tier ON vetsready_business_listings(tier);
-CREATE INDEX IF NOT EXISTS idx_business_listings_status ON vetsready_business_listings(status);
-CREATE INDEX IF NOT EXISTS idx_business_listings_category ON vetsready_business_listings(category);
+CREATE INDEX IF NOT EXISTS idx_business_listings_tier ON RallyForge_business_listings(tier);
+CREATE INDEX IF NOT EXISTS idx_business_listings_status ON RallyForge_business_listings(status);
+CREATE INDEX IF NOT EXISTS idx_business_listings_category ON RallyForge_business_listings(category);
 
-CREATE INDEX IF NOT EXISTS idx_leads_veteran ON vetsready_leads(veteran_id);
-CREATE INDEX IF NOT EXISTS idx_leads_business ON vetsready_leads(business_id);
-CREATE INDEX IF NOT EXISTS idx_leads_employer ON vetsready_leads(employer_id);
-CREATE INDEX IF NOT EXISTS idx_leads_status ON vetsready_leads(status);
+CREATE INDEX IF NOT EXISTS idx_leads_veteran ON RallyForge_leads(veteran_id);
+CREATE INDEX IF NOT EXISTS idx_leads_business ON RallyForge_leads(business_id);
+CREATE INDEX IF NOT EXISTS idx_leads_employer ON RallyForge_leads(employer_id);
+CREATE INDEX IF NOT EXISTS idx_leads_status ON RallyForge_leads(status);
 
-CREATE INDEX IF NOT EXISTS idx_vso_partners_status ON vetsready_vso_partners(status);
-CREATE INDEX IF NOT EXISTS idx_vso_partners_email ON vetsready_vso_partners(contact_email);
+CREATE INDEX IF NOT EXISTS idx_vso_partners_status ON RallyForge_vso_partners(status);
+CREATE INDEX IF NOT EXISTS idx_vso_partners_email ON RallyForge_vso_partners(contact_email);
 
-CREATE INDEX IF NOT EXISTS idx_invoices_customer ON vetsready_invoices(customer_type, customer_id);
-CREATE INDEX IF NOT EXISTS idx_invoices_status ON vetsready_invoices(status);
-CREATE INDEX IF NOT EXISTS idx_invoices_number ON vetsready_invoices(invoice_number);
+CREATE INDEX IF NOT EXISTS idx_invoices_customer ON RallyForge_invoices(customer_type, customer_id);
+CREATE INDEX IF NOT EXISTS idx_invoices_status ON RallyForge_invoices(status);
+CREATE INDEX IF NOT EXISTS idx_invoices_number ON RallyForge_invoices(invoice_number);
 
-CREATE INDEX IF NOT EXISTS idx_payments_invoice ON vetsready_payments(invoice_id);
-CREATE INDEX IF NOT EXISTS idx_payments_customer ON vetsready_payments(customer_type, customer_id);
-CREATE INDEX IF NOT EXISTS idx_payments_status ON vetsready_payments(status);
+CREATE INDEX IF NOT EXISTS idx_payments_invoice ON RallyForge_payments(invoice_id);
+CREATE INDEX IF NOT EXISTS idx_payments_customer ON RallyForge_payments(customer_type, customer_id);
+CREATE INDEX IF NOT EXISTS idx_payments_status ON RallyForge_payments(status);
+
+

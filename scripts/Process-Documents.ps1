@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Process Word documents and PDFs in the Vets Ready workspace
+    Process Word documents and PDFs in the Rally Forge workspace
 
 .DESCRIPTION
     Scans for Word (.docx), PDF, and other document files, extracts their content,
@@ -18,7 +18,7 @@
     Scans all documents in workspace
 
 .EXAMPLE
-    .\Process-Documents.ps1 -DocumentPath "C:\Dev\Vets Ready\Transition_Readiness_Guide_All_Branches.docx"
+    .\Process-Documents.ps1 -DocumentPath "C:\Dev\Rally Forge\Transition_Readiness_Guide_All_Branches.docx"
     Processes specific document
 #>
 
@@ -44,7 +44,7 @@ Write-Host "`n🔍 DOCUMENT PROCESSING SYSTEM" -ForegroundColor Magenta
 Write-Host "=" * 60 -ForegroundColor Magenta
 
 # Base directory
-$baseDir = "C:\Dev\Vets Ready"
+$baseDir = "C:\Dev\Rally Forge"
 Set-Location $baseDir
 
 # Check if backend is running
@@ -53,7 +53,7 @@ try {
     $response = Invoke-RestMethod -Uri "http://localhost:8000/health" -Method Get -TimeoutSec 5
     Write-Success "Backend is running"
 } catch {
-    Write-Error "Backend is not running. Start it first with: .\Start-VetsReady.ps1"
+    Write-Error "Backend is not running. Start it first with: .\Start-RallyForge.ps1"
     exit 1
 }
 
@@ -117,7 +117,7 @@ foreach ($doc in $documents) {
             Write-Info "  Converting Word document..."
 
             # Check if python-docx is available
-            $pythonExe = "C:\Dev\Vets Ready\.venv\Scripts\python.exe"
+            $pythonExe = "C:\Dev\Rally Forge\.venv\Scripts\python.exe"
 
             # Create temp extraction script
             $extractScript = @"
@@ -280,3 +280,5 @@ $results | ConvertTo-Json -Depth 10 | Out-File -FilePath $resultsFile -Encoding 
 Write-Info "`nResults saved to: $resultsFile"
 
 Write-Host "`n✅ Document processing complete!`n" -ForegroundColor Green
+
+

@@ -1,4 +1,4 @@
-# 📚 VetsReady Platform - Complete Documentation Index
+# 📚 rallyforge Platform - Complete Documentation Index
 
 **Last Updated:** 2026-01-26
 **Project Status:** Phase 2 Complete (Database Integration Ready)
@@ -270,7 +270,7 @@ docker-compose up -d
 ## 📁 FOLDER STRUCTURE GUIDE
 
 ```
-VetsReady/
+rallyforge/
 ├── backend/                        # Backend API
 │   ├── app/
 │   │   ├── api/
@@ -493,3 +493,4 @@ NEXT_STEPS_AND_OPTIONS.md
 **Last Updated:** 2026-01-26
 **Status:** Ready for Phase 3
 **Recommendation:** Pick a path and start building!
+

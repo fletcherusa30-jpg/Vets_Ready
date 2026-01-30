@@ -313,7 +313,7 @@ if (criteria.new_criterion === true) {
 ## File Structure
 
 ```
-vets-ready-frontend/
+rally-forge-frontend/
 ├── src/
 │   ├── components/
 │   │   └── BenefitsDashboard.tsx        # React component
@@ -499,7 +499,7 @@ vets-ready-frontend/
 
 **Documentation**: [docs/BENEFITS_MATRIX.md](docs/BENEFITS_MATRIX.md)
 **Issues**: GitHub Issues
-**Contact**: VetsReady Support Team
+**Contact**: rallyforge Support Team
 
 **Update Frequency**:
 - **Benefits Rules**: Quarterly (Jan, Apr, Jul, Oct)
@@ -526,7 +526,7 @@ vets-ready-frontend/
 
 ## Credits
 
-**Developed by**: VetsReady Team
+**Developed by**: rallyforge Team
 **Legal Research**: VA.gov, 38 CFR, State Statutes
 **Accessibility**: WCAG 2.1 AA Standards
 **Data Sources**:
@@ -536,3 +536,5 @@ vets-ready-frontend/
 - Veterans Benefits Administration
 
 **Disclaimer**: This tool is for educational purposes only. Always verify eligibility with official VA sources.
+
+

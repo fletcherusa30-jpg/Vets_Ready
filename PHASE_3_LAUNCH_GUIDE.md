@@ -162,7 +162,7 @@ python backend/bin/init_database.py init
 ## 🗂️ Current Project Structure (Clean)
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
 ├── 📦 BACKEND (Database-backed, ready for endpoint updates)
 ├── 📦 FRONTEND (Ready for component development)
@@ -380,3 +380,4 @@ docker-compose build
 **Status:** 100% Ready for Phase 3
 **Generated:** 2026-01-28
 **Next:** Pick your implementation path and begin
+

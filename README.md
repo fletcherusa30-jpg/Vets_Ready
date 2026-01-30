@@ -1,7 +1,7 @@
-# 🇺🇸 VetsReady - Comprehensive Veteran Support Platform
+# 🇺🇸 Rally Forge - Comprehensive Veteran Support Platform
 
 **Version:** 1.0.0 | **Last Updated:** January 28, 2026
-**Project Root:** `C:\Dev\Vets Ready` ✅ **STRICTLY ENFORCED**
+**Project Root:** `C:\Dev\Rally Forge` ✅ **STRICTLY ENFORCED**
 **Status:** Active Development | **Unified Application Structure**
 
 ---
@@ -10,18 +10,18 @@
 
 **Empower every veteran to understand, prepare, and optimize their VA disability claims with confidence, clarity, and dignity.**
 
-VetsReady combines AI-powered legal theory generation, evidence organization, financial planning tools, and community resources—all while maintaining strict compliance with VA policies and veteran privacy.
+Rally Forge combines AI-powered legal theory generation, evidence organization, financial planning tools, and community resources—all while maintaining strict compliance with VA policies and veteran privacy.
 
 ---
 
 ## 📁 Project Structure
 
-**VetsReady now uses a unified, single-application structure.** See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for complete details.
+**Rally Forge now uses a unified, single-application structure.** See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for complete details.
 
 ### Primary Applications
 
-- **`vets-ready-frontend/`** - React + TypeScript frontend application
-- **`vets-ready-backend/`** - Python FastAPI backend application
+- **`rally-forge-frontend/`** - React + TypeScript frontend application
+- **`rally-forge-backend/`** - Python FastAPI backend application
 
 ### Quick Navigation
 
@@ -67,7 +67,7 @@ VetsReady combines AI-powered legal theory generation, evidence organization, fi
 - AI Battle Buddy (chat assistant)
 - VSO Locator (with maps)
 - Mobile App (iOS/Android via Capacitor)
-- [See full roadmap in docs/VETSREADY_MASTER_SPEC.md]
+- [See full roadmap in docs/rallyforge_MASTER_SPEC.md]
 
 ---
 
@@ -84,8 +84,8 @@ VetsReady combines AI-powered legal theory generation, evidence organization, fi
 ### 1. Clone Repository
 
 ```powershell
-git clone https://github.com/your-org/vets-ready.git
-cd "C:\Dev\Vets Ready"
+git clone https://github.com/your-org/rally-forge.git
+cd "C:\Dev\Rally Forge"
 ```
 
 ### 2. Set Up Environment
@@ -93,7 +93,7 @@ cd "C:\Dev\Vets Ready"
 Create `.env` file:
 ```bash
 # Backend
-DATABASE_URL=postgresql://postgres:password@localhost:5432/vetsready
+DATABASE_URL=postgresql://postgres:password@localhost:5432/rallyforge
 REDIS_URL=redis://localhost:6379
 OPENAI_API_KEY=sk-your-key-here
 USE_MOCK_AI=true  # Set false to use real OpenAI
@@ -107,12 +107,12 @@ VITE_USE_MOCK_AI=true
 
 ```powershell
 # One-click startup (recommended)
-.\scripts\Start-VetsReady.ps1
+.\scripts\Start-rallyforge.ps1
 
 # OR manual startup:
 
 # Terminal 1 - Backend
-cd vets-ready-backend
+cd rally-forge-backend
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -120,7 +120,7 @@ alembic upgrade head
 uvicorn app.main:app --reload --port 8000
 
 # Terminal 2 - Frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm install
 npm run dev
 ```
@@ -139,7 +139,7 @@ npm run dev
 ### 🎯 Start Here
 
 - **[DOCUMENTATION_INDEX.md](docs/DOCUMENTATION_INDEX.md)** ⭐ **ORGANIZED DOCS** - Complete documentation index
-- **[VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md)** - Complete platform specification
+- **[rallyforge_MASTER_SPEC.md](docs/rallyforge_MASTER_SPEC.md)** - Complete platform specification
 - **[DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)** - Setup guide for new developers
 
 ### 📁 Documentation by Category
@@ -157,7 +157,7 @@ npm run dev
 - **[COMPLIANCE_AND_PRIVACY.md](docs/COMPLIANCE_AND_PRIVACY.md)** - Legal boundaries, data handling, privacy
 - **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System design and data flows
 - **[API.md](docs/API.md)** - API endpoint documentation
-- **[WIZARD_README.md](vets-ready-frontend/WIZARD_README.md)** - Disability Wizard implementation guide
+- **[WIZARD_README.md](rally-forge-frontend/WIZARD_README.md)** - Disability Wizard implementation guide
 
 ### 🔧 Additional Resources
 
@@ -170,21 +170,21 @@ npm run dev
 ## 🏗️ Project Structure
 
 ```
-C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
+C:\Dev\Rally Forge\               # ⚠️ ONLY VALID PROJECT ROOT
 │
 ├── docs/                              # All documentation
-│   ├── VETSREADY_MASTER_SPEC.md      # Master specification (source of truth)
+│   ├── rallyforge_MASTER_SPEC.md      # Master specification (source of truth)
 │   ├── IMPLEMENTATION_TASKS.md       # Task list & progress
 │   ├── DEVELOPER_ONBOARDING.md       # Developer setup guide
 │   ├── COMPLIANCE_AND_PRIVACY.md     # Legal & privacy
 │   └── ...
 │
 ├── scripts/                           # Automation scripts
-│   ├── Start-VetsReady.ps1           # One-click dev startup
-│   ├── Build-VetsReady.ps1           # Build all services
-│   └── Test-VetsReady.ps1            # Run all tests
+│   ├── Start-rallyforge.ps1           # One-click dev startup
+│   ├── Build-rallyforge.ps1           # Build all services
+│   └── Test-rallyforge.ps1            # Run all tests
 │
-├── vets-ready-frontend/              # React + TypeScript frontend
+├── rally-forge-frontend/              # React + TypeScript frontend
 │   ├── src/
 │   │   ├── components/wizard/        # Disability Wizard (5 steps)
 │   │   ├── components/               # EvidenceOrganizer, ClaimTracker
@@ -194,7 +194,7 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 │   ├── package.json
 │   └── vite.config.ts
 │
-├── vets-ready-backend/               # FastAPI Python backend
+├── rally-forge-backend/               # FastAPI Python backend
 │   ├── app/
 │   │   ├── routers/                  # API endpoints
 │   │   │   ├── ai.py                 # AI theory generation ✅ NEW
@@ -211,7 +211,7 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 │   ├── requirements.txt
 │   └── alembic/                      # Database migrations
 │
-├── vets-ready-mobile/                # Capacitor mobile app (stub)
+├── rally-forge-mobile/                # Capacitor mobile app (stub)
 │
 ├── docker-compose.yml                # Development environment
 └── .env.example                      # Environment variables template
@@ -230,8 +230,8 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 5. **Review & Export** - Export strategy to Markdown/PDF
 
 **Files**:
-- `vets-ready-frontend/src/components/wizard/DisabilityWizard.tsx`
-- `vets-ready-frontend/src/components/wizard/Step*.tsx` (5 steps)
+- `rally-forge-frontend/src/components/wizard/DisabilityWizard.tsx`
+- `rally-forge-frontend/src/components/wizard/Step*.tsx` (5 steps)
 
 ### AI Theory Engine
 
@@ -250,9 +250,9 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 - Diabetes → Neuropathy, ED
 
 **Files**:
-- `vets-ready-frontend/src/services/aiService.ts` (frontend)
-- `vets-ready-backend/app/services/ai_service.py` (backend) ✅ NEW
-- `vets-ready-backend/app/routers/ai.py` (API endpoints) ✅ NEW
+- `rally-forge-frontend/src/services/aiService.ts` (frontend)
+- `rally-forge-backend/app/services/ai_service.py` (backend) ✅ NEW
+- `rally-forge-backend/app/routers/ai.py` (API endpoints) ✅ NEW
 
 ### Evidence Organizer
 
@@ -263,7 +263,7 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 - OCR text extraction (integration ready)
 - AI summary generation (integration ready)
 
-**File**: `vets-ready-frontend/src/components/EvidenceOrganizer.tsx`
+**File**: `rally-forge-frontend/src/components/EvidenceOrganizer.tsx`
 
 ### Claim Tracker
 
@@ -274,7 +274,7 @@ C:\Dev\Vets Ready\               # ⚠️ ONLY VALID PROJECT ROOT
 - Educational explanations for each status
 - Claim type tracking (original, supplemental, increase, appeal)
 
-**File**: `vets-ready-frontend/src/components/ClaimTracker.tsx`
+**File**: `rally-forge-frontend/src/components/ClaimTracker.tsx`
 
 ---
 
@@ -307,7 +307,7 @@ USE_MOCK_AI=true                 # Toggle mock/real mode
 
 ## 🔒 Compliance & Legal Boundaries
 
-### ✅ What VetsReady DOES
+### ✅ What rallyforge DOES
 
 - Provides **educational guidance** on VA disability claims
 - Generates **AI theories** labeled "educational only"
@@ -315,7 +315,7 @@ USE_MOCK_AI=true                 # Toggle mock/real mode
 - Calculates **effective dates** using public AMA regulations
 - Connects veterans with **accredited VSOs**
 
-### ❌ What VetsReady DOES NOT DO
+### ❌ What rallyforge DOES NOT DO
 
 - **NO VA.gov/eBenefits scraping** - Manual data entry only
 - **NO credential storage** - Never store VA passwords
@@ -326,7 +326,7 @@ USE_MOCK_AI=true                 # Toggle mock/real mode
 
 ### Disclaimers (Every Page)
 
-> **VetsReady is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA).**
+> **rallyforge is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA).**
 > All AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. Consult with an accredited VSO or VA-accredited attorney for personalized assistance.
 
 See [docs/COMPLIANCE_AND_PRIVACY.md](docs/COMPLIANCE_AND_PRIVACY.md) for full guidelines.
@@ -338,7 +338,7 @@ See [docs/COMPLIANCE_AND_PRIVACY.md](docs/COMPLIANCE_AND_PRIVACY.md) for full gu
 ### Frontend Tests
 
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test              # Run all tests
 npm run test:watch        # Watch mode
 npm run test:coverage     # With coverage
@@ -347,7 +347,7 @@ npm run test:coverage     # With coverage
 ### Backend Tests
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 pytest                    # Run all tests
 pytest --cov=app          # With coverage
 pytest app/tests/test_ai_service.py  # Specific file
@@ -376,7 +376,7 @@ docker-compose down       # Stop services
 
 **Deployment**:
 ```powershell
-.\scripts\Deploy-VetsReady.ps1 -Environment production
+.\scripts\Deploy-rallyforge.ps1 -Environment production
 ```
 
 See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for details.
@@ -387,10 +387,10 @@ See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for details.
 
 All scripts in `scripts/` directory (PowerShell):
 
-- **Start-VetsReady.ps1** - One-click dev startup
-- **Build-VetsReady.ps1** - Build all services
-- **Test-VetsReady.ps1** - Run all tests
-- **Deploy-VetsReady.ps1** - Deploy to AWS
+- **Start-rallyforge.ps1** - One-click dev startup
+- **Build-rallyforge.ps1** - Build all services
+- **Test-rallyforge.ps1** - Run all tests
+- **Deploy-rallyforge.ps1** - Deploy to AWS
 
 ---
 
@@ -423,14 +423,14 @@ See [docs/IMPLEMENTATION_TASKS.md](docs/IMPLEMENTATION_TASKS.md) for full task l
 - **Phase 4** (Weeks 13-16): Mobile App & Advanced Features
 - **Phase 5** (Weeks 17+): Advanced Suites (Employment, Health, etc.)
 
-See [docs/VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md) for full roadmap.
+See [docs/rallyforge_MASTER_SPEC.md](docs/rallyforge_MASTER_SPEC.md) for full roadmap.
 
 ---
 
 ## 🤝 Contributing
 
 1. **Read Documentation**:
-   - [VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md)
+   - [rallyforge_MASTER_SPEC.md](docs/rallyforge_MASTER_SPEC.md)
    - [DEVELOPER_ONBOARDING.md](docs/DEVELOPER_ONBOARDING.md)
    - [DEVELOPMENT-STANDARDS.md](docs/DEVELOPMENT-STANDARDS.md)
 
@@ -458,13 +458,13 @@ See [docs/VETSREADY_MASTER_SPEC.md](docs/VETSREADY_MASTER_SPEC.md) for full road
 
 - **Documentation**: [docs/](docs/)
 - **Issues**: GitHub Issues
-- **Email**: dev@vetsready.com
+- **Email**: dev@rallyforge.com
 
 ---
 
 ## 📜 License
 
-Copyright © 2026 VetsReady Development Team. All rights reserved.
+Copyright © 2026 rallyforge Development Team. All rights reserved.
 
 ---
 
@@ -477,7 +477,7 @@ This platform is dedicated to every veteran who served our country. Quality, pri
 ---
 
 **Last Updated**: January 24, 2026
-**Maintained By**: VetsReady Development Team
+**Maintained By**: rallyforge Development Team
 
 ### **🚀 Deployment & Production**
 - **[PROJECT_CONFIRMATION.md](PROJECT_CONFIRMATION.md)** ✅ **START HERE** - Project structure verification (97.44% pass rate)
@@ -571,9 +571,9 @@ All scripts in `scripts/` directory:
 ## 📂 File Structure
 
 ```
-vetsready/
+rallyforge/
 │
-├── � vets-ready-frontend/       ← React + TypeScript web application
+├── � rally-forge-frontend/       ← React + TypeScript web application
 │   ├── src/
 │   │   ├── budget/              ← Budget planning module
 │   │   ├── retirement/          ← Retirement calculator module
@@ -585,7 +585,7 @@ vetsready/
 │   │   └── types/               ← TypeScript types
 │   └── package.json
 │
-├── 📁 vets-ready-backend/        ← FastAPI Python backend
+├── 📁 rally-forge-backend/        ← FastAPI Python backend
 │   ├── app/
 │   │   ├── routers/             ← API route handlers
 │   │   ├── services/            ← Business logic
@@ -594,12 +594,12 @@ vetsready/
 │   ├── requirements.txt
 │   └── package.json
 │
-├── 📁 vets-ready-mobile/         ← Mobile app (Capacitor/React Native)
+├── 📁 rally-forge-mobile/         ← Mobile app (Capacitor/React Native)
 │   ├── android/                 ← Android platform
 │   ├── ios/                     ← iOS platform
 │   └── capacitor.config.ts
 │
-├── 📁 vets-ready-shared/         ← Shared types, utils, constants
+├── 📁 rally-forge-shared/         ← Shared types, utils, constants
 │   ├── types/                   ← Common type definitions
 │   └── schemas/                 ← Validation schemas
 │
@@ -856,3 +856,5 @@ Start with [GETTING-STARTED.md](docs/GETTING-STARTED.md) and happy coding! 🚀
 <p><b>Note:</b> The M21-1 Adjudication Procedures Manual (https://www.knowva.ebenefits.va.gov/) is not reliably accessible to the public as of January 2026. For regulatory guidance, use the 38 CFR link above.</p>
 
 </div>
+
+

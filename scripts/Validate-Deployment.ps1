@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Complete Deployment Validation for Vets Ready
+    Complete Deployment Validation for Rally Forge
 .DESCRIPTION
     Validates all aspects of the deployment including Docker, environment variables, connectivity, and health checks
 .PARAMETER Environment
@@ -35,7 +35,7 @@ $validationResults = @{
 }
 
 Write-Host "`n=====================================================" -ForegroundColor $InfoColor
-Write-Host "     Vets Ready Deployment Validation" -ForegroundColor $InfoColor
+Write-Host "     Rally Forge Deployment Validation" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
 Write-Host "Environment: $Environment" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
@@ -44,8 +44,8 @@ Write-Host "=====================================================" -ForegroundCo
 if (-not $ApiUrl) {
     $ApiUrl = switch ($Environment) {
         "local" { "http://localhost:8000" }
-        "staging" { "https://api-staging.vetsready.com" }
-        "production" { "https://api.vetsready.com" }
+        "staging" { "https://api-staging.RallyForge.com" }
+        "production" { "https://api.RallyForge.com" }
     }
 }
 
@@ -112,7 +112,7 @@ if (Test-Path $envFile) {
 if ($Environment -eq "local") {
     Write-Step "Validating Docker images..."
 
-    $backendImage = docker images vetsready/vets-ready-backend:latest -q
+    $backendImage = docker images RallyForge/rally-forge-backend:latest -q
     if ($backendImage) {
         Write-Success "Backend Docker image found"
         $validationResults.passed++
@@ -121,7 +121,7 @@ if ($Environment -eq "local") {
         $validationResults.warnings++
     }
 
-    $frontendImage = docker images vetsready/vets-ready-frontend:latest -q
+    $frontendImage = docker images RallyForge/rally-forge-frontend:latest -q
     if ($frontendImage) {
         Write-Success "Frontend Docker image found"
         $validationResults.passed++
@@ -135,15 +135,15 @@ if ($Environment -eq "local") {
 Write-Step "Checking running containers..."
 $runningContainers = docker ps --format "{{.Names}}" 2>$null
 if ($runningContainers) {
-    $vetsReadyContainers = $runningContainers | Where-Object { $_ -match "vets|ready" }
-    if ($vetsReadyContainers) {
-        Write-Success "Found $($vetsReadyContainers.Count) running Vets Ready containers"
-        foreach ($container in $vetsReadyContainers) {
+    $RallyForgeContainers = $runningContainers | Where-Object { $_ -match "vets|ready" }
+    if ($RallyForgeContainers) {
+        Write-Success "Found $($RallyForgeContainers.Count) running Rally Forge containers"
+        foreach ($container in $RallyForgeContainers) {
             Write-Host "  - $container" -ForegroundColor $InfoColor
         }
         $validationResults.passed++
     } else {
-        Write-Warning "No Vets Ready containers running"
+        Write-Warning "No Rally Forge containers running"
         $validationResults.warnings++
     }
 } else {
@@ -194,26 +194,26 @@ if ($runningContainers -match "postgres") {
 # 8. Network Connectivity
 Write-Step "Validating Docker networks..."
 $networks = docker network ls --format "{{.Name}}"
-if ($networks -match "vetsready") {
-    Write-Success "Vets Ready Docker network exists"
+if ($networks -match "RallyForge") {
+    Write-Success "Rally Forge Docker network exists"
     $validationResults.passed++
 } else {
-    Write-Warning "Vets Ready Docker network not found"
+    Write-Warning "Rally Forge Docker network not found"
     $validationResults.warnings++
 }
 
 # 9. Volume Validation
 Write-Step "Checking Docker volumes..."
 $volumes = docker volume ls --format "{{.Name}}"
-$vetsReadyVolumes = $volumes | Where-Object { $_ -match "vets|ready|postgres" }
-if ($vetsReadyVolumes) {
-    Write-Success "Found $($vetsReadyVolumes.Count) Vets Ready volumes"
-    foreach ($vol in $vetsReadyVolumes) {
+$RallyForgeVolumes = $volumes | Where-Object { $_ -match "vets|ready|postgres" }
+if ($RallyForgeVolumes) {
+    Write-Success "Found $($RallyForgeVolumes.Count) Rally Forge volumes"
+    foreach ($vol in $RallyForgeVolumes) {
         Write-Host "  - $vol" -ForegroundColor $InfoColor
     }
     $validationResults.passed++
 } else {
-    Write-Warning "No Vets Ready volumes found"
+    Write-Warning "No Rally Forge volumes found"
     $validationResults.warnings++
 }
 
@@ -246,7 +246,7 @@ Write-Host "`nPass Rate: $passRate%" -ForegroundColor $InfoColor
 
 if ($validationResults.failed -eq 0 -and $validationResults.warnings -le 3) {
     Write-Host "`n✓ Deployment validation PASSED" -ForegroundColor $SuccessColor
-    Write-Host "Your Vets Ready deployment is ready!" -ForegroundColor $SuccessColor
+    Write-Host "Your Rally Forge deployment is ready!" -ForegroundColor $SuccessColor
     exit 0
 } elseif ($validationResults.failed -eq 0) {
     Write-Host "`n⚠ Deployment validation passed with warnings" -ForegroundColor $WarningColor
@@ -257,3 +257,5 @@ if ($validationResults.failed -eq 0 -and $validationResults.warnings -le 3) {
     Write-Host "Fix the errors above before deploying" -ForegroundColor $ErrorColor
     exit 1
 }
+
+

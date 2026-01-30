@@ -19,7 +19,7 @@ function Write-Info { param([string]$Message) Write-Host "ℹ️  $Message" -For
 Write-Header "📁 DOCUMENTATION ORGANIZATION"
 Write-Header "=" * 80
 
-$baseDir = "C:\Dev\Vets Ready"
+$baseDir = "C:\Dev\Rally Forge"
 Set-Location $baseDir
 
 # Create organized folder structure
@@ -105,7 +105,7 @@ $fileMapping = @{
 
     # Misc/Strategy
     "STRATEGIC_COMPETITIVE_ANALYSIS.md" = "docs"
-    "VETS_READY_COMPREHENSIVE_SIMULATION.md" = "docs"
+    "rally_forge_COMPREHENSIVE_SIMULATION.md" = "docs"
     "WEEK_1_ACTION_PLAN.md" = "docs"
     "CRSC_BEFORE_AFTER_COMPARISON.md" = "docs"
     "EFFECTIVE_DATE_CALCULATOR_FIX.md" = "docs"
@@ -269,3 +269,4 @@ Write-Header "`n✅ DOCUMENTATION ORGANIZED"
 Write-Info "See docs/DOCUMENTATION_INDEX.md for the new structure"
 
 Write-Host ""
+

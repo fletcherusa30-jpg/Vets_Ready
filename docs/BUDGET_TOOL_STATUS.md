@@ -325,4 +325,5 @@ I'll:
 *Budget Tool Information*
 *Created: January 28, 2026*
 *Status: Production Ready*
-*For: VetsReady Platform*
+*For: rallyforge Platform*
+

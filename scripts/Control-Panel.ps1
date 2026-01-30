@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Vets Ready - Master Control Panel
+    Rally Forge - Master Control Panel
     Central automation framework for diagnostics, repair, backup, and deployment
 
 .DESCRIPTION
@@ -34,7 +34,7 @@ $ProgressPreference = 'SilentlyContinue'
 
 # Configuration
 $Config = @{
-    ProjectName = 'Vets Ready'
+    ProjectName = 'Rally Forge'
     Version = '1.0.0'
     RootPath = Split-Path -Parent $PSScriptRoot
     LogPath = Join-Path (Split-Path -Parent $PSScriptRoot) 'logs'
@@ -67,7 +67,7 @@ function Write-Log {
 function Show-Menu {
     Clear-Host
     Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-    Write-Host "║       VETS READY - MASTER CONTROL PANEL v$($Config.Version)       ║" -ForegroundColor Cyan
+    Write-Host "║       Rally Forge - MASTER CONTROL PANEL v$($Config.Version)       ║" -ForegroundColor Cyan
     Write-Host "║          The Ultimate Veteran-First Platform              ║" -ForegroundColor Cyan
     Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
     Write-Host ""
@@ -128,7 +128,7 @@ function Invoke-Diagnostics {
 
     # Check 3: Frontend folder
     Write-Log "Checking frontend structure..." "INFO"
-    $frontendPath = Join-Path $Config.RootPath 'vets-ready-frontend'
+    $frontendPath = Join-Path $Config.RootPath 'rally-forge-frontend'
     if (Test-Path $frontendPath) {
         Write-Log "✓ Frontend folder exists" "SUCCESS"
         $results.Passed++
@@ -141,7 +141,7 @@ function Invoke-Diagnostics {
 
     # Check 4: Backend folder
     Write-Log "Checking backend structure..." "INFO"
-    $backendPath = Join-Path $Config.RootPath 'vets-ready-backend'
+    $backendPath = Join-Path $Config.RootPath 'rally-forge-backend'
     if (Test-Path $backendPath) {
         Write-Log "✓ Backend folder exists" "SUCCESS"
         $results.Passed++
@@ -199,7 +199,7 @@ function Invoke-Repair {
     Write-Log "`nAttempting repairs..." "INFO"
 
     # Repair: Install missing Node modules
-    $frontendPath = Join-Path $Config.RootPath 'vets-ready-frontend'
+    $frontendPath = Join-Path $Config.RootPath 'rally-forge-frontend'
     $nodeModulesPath = Join-Path $frontendPath 'node_modules'
     if (-not (Test-Path $nodeModulesPath)) {
         Write-Log "Installing frontend dependencies..." "INFO"
@@ -215,7 +215,7 @@ function Invoke-Repair {
     }
 
     # Repair: Install Python requirements
-    $backendPath = Join-Path $Config.RootPath 'vets-ready-backend'
+    $backendPath = Join-Path $Config.RootPath 'rally-forge-backend'
     $requirementsPath = Join-Path $backendPath 'requirements.txt'
     if (Test-Path $requirementsPath) {
         Write-Log "Installing Python dependencies..." "INFO"
@@ -291,7 +291,7 @@ function Show-NextSteps {
     Write-Host "   See: docs\ARCHITECTURE.md" -ForegroundColor White
     Write-Host ""
     Write-Host "5. 🔐 Configure Environment:" -ForegroundColor Green
-    Write-Host "   Edit: vets-ready-backend\.env" -ForegroundColor White
+    Write-Host "   Edit: rally-forge-backend\.env" -ForegroundColor White
     Write-Host ""
 }
 
@@ -314,8 +314,8 @@ function Show-SystemStatus {
     Write-Host ""
 
     # Quick checks
-    $frontendExists = Test-Path (Join-Path $Config.RootPath 'vets-ready-frontend')
-    $backendExists = Test-Path (Join-Path $Config.RootPath 'vets-ready-backend')
+    $frontendExists = Test-Path (Join-Path $Config.RootPath 'rally-forge-frontend')
+    $backendExists = Test-Path (Join-Path $Config.RootPath 'rally-forge-backend')
 
     Write-Host "Frontend: " -NoNewline
     Write-Host $(if ($frontendExists) { "✓ Present" } else { "✗ Missing" }) -ForegroundColor $(if ($frontendExists) { "Green" } else { "Red" })
@@ -328,7 +328,7 @@ function Show-SystemStatus {
 
 # Main execution
 try {
-    Write-Log "Vets Ready Control Panel started" "INFO"
+    Write-Log "Rally Forge Control Panel started" "INFO"
     Write-Log "Action: $Action" "INFO"
 
     switch ($Action) {
@@ -368,3 +368,4 @@ function Pause {
     Write-Host "`nPress any key to continue..." -ForegroundColor Gray
     $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
 }
+

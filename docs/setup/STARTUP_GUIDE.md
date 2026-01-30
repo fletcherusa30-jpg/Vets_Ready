@@ -1,10 +1,10 @@
-# Vets Ready - Application Startup Guide
+# Rally Forge - Application Startup Guide
 
 ## Quick Start (One Command)
 
 ### Development Mode (Recommended for Development)
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 This will:
@@ -17,17 +17,17 @@ This will:
 
 ### Docker Mode (Production-like Environment)
 ```powershell
-.\Start-VetsReady.ps1 -Mode docker
+.\Start-rallyforge.ps1 -Mode docker
 ```
 
 ### Fresh Installation
 ```powershell
-.\Start-VetsReady.ps1 -Fresh
+.\Start-rallyforge.ps1 -Fresh
 ```
 
 ### Skip Dependency Installation (Faster Restarts)
 ```powershell
-.\Start-VetsReady.ps1 -SkipDeps
+.\Start-rallyforge.ps1 -SkipDeps
 ```
 
 ---
@@ -72,7 +72,7 @@ Download from: https://github.com/microsoftarchive/redis/releases
 ### 1. Frontend Setup
 
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 
 # Install dependencies
 npm install
@@ -86,7 +86,7 @@ Frontend will be available at: http://localhost:5173
 ### 2. Backend Setup
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 
 # Create virtual environment
 python -m venv .venv
@@ -117,9 +117,9 @@ API Documentation: http://localhost:8000/docs
 psql -U postgres
 
 # Create database and user
-CREATE DATABASE vetsready_db;
-CREATE USER vetsready WITH PASSWORD 'vetsready123';
-GRANT ALL PRIVILEGES ON DATABASE vetsready_db TO vetsready;
+CREATE DATABASE rallyforge_db;
+CREATE USER rallyforge WITH PASSWORD 'rallyforge123';
+GRANT ALL PRIVILEGES ON DATABASE rallyforge_db TO rallyforge;
 \q
 ```
 
@@ -151,19 +151,19 @@ docker-compose -f docker-compose.prod.yml down
 
 ## Environment Configuration
 
-### Frontend (.env in vets-ready-frontend/)
+### Frontend (.env in rally-forge-frontend/)
 ```env
 VITE_API_URL=http://localhost:8000
-VITE_APP_NAME="Vets Ready"
+VITE_APP_NAME="Rally Forge"
 VITE_APP_VERSION="1.0.0"
 VITE_ENVIRONMENT=development
 ```
 
-### Backend (.env in vets-ready-backend/)
+### Backend (.env in rally-forge-backend/)
 ```env
 ENVIRONMENT=development
 DEBUG=true
-DATABASE_URL=postgresql://vetsready:vetsready123@localhost:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:rallyforge123@localhost:5432/rallyforge_db
 JWT_SECRET=your-super-secret-key-change-in-production
 REDIS_URL=redis://localhost:6379/0
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000
@@ -260,7 +260,7 @@ docker-compose -f docker-compose.prod.yml up -d
 
 1. **Start the application:**
    ```powershell
-   .\Start-VetsReady.ps1 -SkipDeps
+   .\Start-rallyforge.ps1 -SkipDeps
    ```
 
 2. **Make changes to code**
@@ -277,14 +277,14 @@ docker-compose -f docker-compose.prod.yml up -d
 
 **Frontend Tests:**
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test
 npm run test:coverage
 ```
 
 **Backend Tests:**
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pytest
 pytest --cov=app tests/
@@ -294,7 +294,7 @@ pytest --cov=app tests/
 
 **Create a new migration:**
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 alembic revision --autogenerate -m "Description of changes"
 ```
@@ -314,8 +314,8 @@ alembic downgrade -1
 ## Project Structure
 
 ```
-C:\Dev\Vets Ready\
-├── vets-ready-frontend/          # React + Vite frontend
+C:\Dev\Rally Forge\
+├── rally-forge-frontend/          # React + Vite frontend
 │   ├── src/
 │   │   ├── components/           # React components
 │   │   ├── pages/                # Page components
@@ -327,7 +327,7 @@ C:\Dev\Vets Ready\
 │   ├── tsconfig.json             # TypeScript config
 │   └── .env                      # Frontend environment
 │
-├── vets-ready-backend/           # FastAPI Python backend
+├── rally-forge-backend/           # FastAPI Python backend
 │   ├── app/
 │   │   ├── main.py               # FastAPI application
 │   │   ├── routers/              # API endpoints
@@ -339,7 +339,7 @@ C:\Dev\Vets Ready\
 │   └── .env                      # Backend environment
 │
 ├── docker-compose.prod.yml       # Docker orchestration
-├── Start-VetsReady.ps1           # One-click startup script
+├── Start-rallyforge.ps1           # One-click startup script
 └── README.md                     # This file
 ```
 
@@ -369,8 +369,8 @@ C:\Dev\Vets Ready\
 
 ### Documentation
 - **API Documentation**: http://localhost:8000/docs (when running)
-- **Frontend Components**: See `vets-ready-frontend/src/components/`
-- **Database Schema**: See `vets-ready-backend/alembic/versions/`
+- **Frontend Components**: See `rally-forge-frontend/src/components/`
+- **Database Schema**: See `rally-forge-backend/alembic/versions/`
 
 ### Logs
 - **Startup logs**: `logs/startup-YYYYMMDD-HHmmss.log`
@@ -387,7 +387,7 @@ C:\Dev\Vets Ready\
 
 ## Next Steps
 
-1. ✅ **Get the application running** with `.\Start-VetsReady.ps1`
+1. ✅ **Get the application running** with `.\Start-rallyforge.ps1`
 2. 📖 **Explore the API docs** at http://localhost:8000/docs
 3. 🎨 **Check out the frontend** at http://localhost:5173
 4. 🔧 **Configure environment variables** in `.env` files
@@ -408,3 +408,5 @@ For production deployment instructions, see:
 **Happy Coding! 🎉**
 
 For issues or questions, review the logs at `logs/startup-*.log`
+
+

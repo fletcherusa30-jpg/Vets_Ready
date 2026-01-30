@@ -1,4 +1,4 @@
-# Vets Ready - Production Architecture & Strategy
+# Rally Forge - Production Architecture & Strategy
 
 **Enterprise-Grade Platform Architecture for Veteran Services**
 
@@ -83,7 +83,7 @@ Audience: Engineers, Technical Partners, Investors
 │                             │  │                          │
 │ ┌─────────────────────────┐ │  │ ┌──────────────────────┐ │
 │ │ Backend API (FastAPI)   │ │  │ │ Frontend (React SPA) │ │
-│ │ Container: vetsready-   │ │  │ │ Container: vetsready-│ │
+│ │ Container: rallyforge-   │ │  │ │ Container: rallyforge-│ │
 │ │            backend      │ │  │ │            frontend  │ │
 │ │ Port: 8000              │ │  │ │ Served by: Nginx     │ │
 │ │                         │ │  │ │ Port: 80 (internal)  │ │
@@ -115,7 +115,7 @@ Audience: Engineers, Technical Partners, Investors
 │ │ Port: 5432           │ │    │ │ Port: 6379            │ │
 │ │                      │ │    │ │                       │ │
 │ │ Databases:           │ │    │ │ Use Cases:            │ │
-│ │ - vetsready_db       │ │    │ │ - Session storage     │ │
+│ │ - rallyforge_db       │ │    │ │ - Session storage     │ │
 │ │                      │ │    │ │ - API response cache  │ │
 │ │ Tables:              │ │    │ │ - Rate limiting       │ │
 │ │ - users              │ │    │ │ - Celery broker       │ │
@@ -150,7 +150,7 @@ Audience: Engineers, Technical Partners, Investors
 │  │  (Storage)  │  │  (AI Engine) │                                  │
 │  │             │  │              │                                  │
 │  │ Bucket:     │  │ Model: GPT-4 │                                  │
-│  │ vetsready-  │  │ Use: CFR     │                                  │
+│  │ rallyforge-  │  │ Use: CFR     │                                  │
 │  │  uploads    │  │  interpretation│                                 │
 │  └─────────────┘  └──────────────┘                                  │
 │                                                                       │
@@ -186,13 +186,13 @@ Audience: Engineers, Technical Partners, Investors
 │                            ▼                                          │
 │  ┌───────────────────────────────────────────────────────┐          │
 │  │ Docker Hub (Image Registry)                           │          │
-│  │ Repository: vetsready/vets-ready                      │          │
+│  │ Repository: rallyforge/rally-forge                      │          │
 │  │                                                       │          │
 │  │ Images:                                               │          │
-│  │  - vetsready/vets-ready-backend:latest               │          │
-│  │  - vetsready/vets-ready-backend:v1.0.0               │          │
-│  │  - vetsready/vets-ready-frontend:latest              │          │
-│  │  - vetsready/vets-ready-frontend:v1.0.0              │          │
+│  │  - rallyforge/rally-forge-backend:latest               │          │
+│  │  - rallyforge/rally-forge-backend:v1.0.0               │          │
+│  │  - rallyforge/rally-forge-frontend:latest              │          │
+│  │  - rallyforge/rally-forge-frontend:v1.0.0              │          │
 │  │                                                       │          │
 │  │ Security: Automated vulnerability scanning           │          │
 │  └───────────────────────────────────────────────────────┘          │
@@ -203,7 +203,7 @@ Audience: Engineers, Technical Partners, Investors
 ### 1.2 Network Architecture
 
 **Docker Network (Local/Single Server)**
-- Network Name: `vetsready_network`
+- Network Name: `rallyforge_network`
 - Type: Bridge network
 - Containers:
   - `postgres` (5432)
@@ -274,7 +274,7 @@ User uploads file (PDF/image)
   → Frontend: Multipart form POST /api/evidence/upload
   → Backend validates: file type, size (<10MB)
   → Generate unique filename (UUID + extension)
-  → Upload to AWS S3 bucket (vetsready-uploads)
+  → Upload to AWS S3 bucket (rallyforge-uploads)
   → S3 returns public/signed URL
   → Store metadata in PostgreSQL:
       - evidence_id, user_id, s3_key, file_name, uploaded_at
@@ -289,7 +289,7 @@ User uploads file (PDF/image)
 **Backend (.env.production)**
 ```bash
 # Database
-DATABASE_URL=postgresql://user:pass@postgres:5432/vetsready_db
+DATABASE_URL=postgresql://user:pass@postgres:5432/rallyforge_db
 DB_PASSWORD=<32-char-secret>
 
 # Security
@@ -307,13 +307,13 @@ OPENAI_API_KEY=sk-***
 # Email
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=notifications@vetsready.com
+SMTP_USER=notifications@rallyforge.com
 SMTP_PASSWORD=<app-specific-password>
 
 # Storage
 AWS_ACCESS_KEY_ID=***
 AWS_SECRET_ACCESS_KEY=***
-AWS_S3_BUCKET=vetsready-uploads
+AWS_S3_BUCKET=rallyforge-uploads
 AWS_REGION=us-east-1
 
 # Feature Flags
@@ -323,7 +323,7 @@ ENABLE_EMAIL_VERIFICATION=true
 
 **Frontend (Build-time environment)**
 ```bash
-VITE_API_URL=https://api.vetsready.com
+VITE_API_URL=https://api.rallyforge.com
 VITE_STRIPE_PUBLISHABLE_KEY=pk_live_***
 VITE_POSTHOG_API_KEY=phc_***
 VITE_SENTRY_DSN=https://***@sentry.io/***
@@ -357,7 +357,7 @@ environment:
 ```
 1. USER ACTION (Browser)
    ↓
-   User visits https://vetsready.com
+   User visits https://rallyforge.com
    DNS resolves to: Load Balancer IP (or CDN)
 
 2. CDN/EDGE (Optional - Phase 3+)
@@ -424,7 +424,7 @@ Mobile App (iOS/Android Capacitor)
   Loads bundled React application (offline-capable)
   ↓
   API calls identical to web:
-    - HTTPS requests to https://api.vetsready.com
+    - HTTPS requests to https://api.rallyforge.com
     - JWT authentication
     - Same endpoints as web app
   ↓
@@ -495,7 +495,7 @@ Asynchronous Tasks (Celery)
 ```
 WebSocket Connection (Chat, Live Updates)
   ↓
-  Client initiates: ws://api.vetsready.com/ws/chat
+  Client initiates: ws://api.rallyforge.com/ws/chat
   ↓
   Nginx upgrade to WebSocket protocol
   ↓
@@ -560,7 +560,7 @@ WebSocket Connection (Chat, Live Updates)
 **Goals**
 - Deploy to single cloud VPS (DigitalOcean Droplet / Linode / AWS EC2 t3.small)
 - SSL/TLS certificates (Let's Encrypt)
-- Domain configuration (vetsready.com)
+- Domain configuration (rallyforge.com)
 - Automated backups
 - Basic monitoring
 
@@ -584,8 +584,8 @@ WebSocket Connection (Chat, Live Updates)
 3. **Deploy Application**
    ```bash
    # Clone repository
-   git clone https://github.com/fletcherusa30-jpg/Vets_Ready.git
-   cd Vets_Ready
+   git clone https://github.com/fletcherusa30-jpg/rally_forge.git
+   cd rally_forge
 
    # Configure environment
    cp .env.production.example .env.production
@@ -601,7 +601,7 @@ WebSocket Connection (Chat, Live Updates)
 4. **SSL Certificate**
    ```bash
    # Obtain certificate
-   sudo certbot --nginx -d vetsready.com -d www.vetsready.com
+   sudo certbot --nginx -d rallyforge.com -d www.rallyforge.com
 
    # Auto-renewal (crontab)
    0 0 * * * certbot renew --quiet
@@ -610,7 +610,7 @@ WebSocket Connection (Chat, Live Updates)
 5. **Backups**
    ```bash
    # Daily database backup script
-   0 2 * * * docker exec postgres pg_dump -U vetsready vetsready_db | gzip > /backups/db_$(date +\%Y\%m\%d).sql.gz
+   0 2 * * * docker exec postgres pg_dump -U rallyforge rallyforge_db | gzip > /backups/db_$(date +\%Y\%m\%d).sql.gz
 
    # Rotate backups (keep 30 days)
    find /backups -name "db_*.sql.gz" -mtime +30 -delete
@@ -622,7 +622,7 @@ WebSocket Connection (Chat, Live Updates)
    - Set up email alerts for downtime
 
 **Success Criteria**
-- [ ] Application accessible at https://vetsready.com
+- [ ] Application accessible at https://rallyforge.com
 - [ ] SSL certificate valid (A+ rating on SSL Labs)
 - [ ] Database backups running daily
 - [ ] Uptime monitoring sends alerts
@@ -685,12 +685,12 @@ WebSocket Connection (Chat, Live Updates)
 1. **Infrastructure as Code (Terraform/Bicep)**
    ```hcl
    # terraform/main.tf
-   resource "aws_ecs_cluster" "vetsready" {
-     name = "vetsready-cluster"
+   resource "aws_ecs_cluster" "rallyforge" {
+     name = "rallyforge-cluster"
    }
 
    resource "aws_db_instance" "postgres" {
-     identifier        = "vetsready-db"
+     identifier        = "rallyforge-db"
      engine            = "postgres"
      engine_version    = "15.5"
      instance_class    = "db.t3.small"
@@ -1035,7 +1035,7 @@ add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" alway
 
 **Detection**
 1. Automated alerts (Sentry, CloudWatch, Datadog)
-2. User reports (security@vetsready.com)
+2. User reports (security@rallyforge.com)
 3. Monitoring dashboard review (daily)
 
 **Response Workflow**
@@ -1459,7 +1459,7 @@ Recommended instance: cache.r5.large (6.38 GB RAM)
 # Response:
 1. Stop application (prevent further writes)
 2. Restore from latest backup:
-   pg_restore -d vetsready_db /backups/db_20260124.sql.gz
+   pg_restore -d rallyforge_db /backups/db_20260124.sql.gz
 3. Verify data integrity
 4. Restart application
 5. RTO: 1-2 hours
@@ -1514,11 +1514,11 @@ Testing:
 
 ## 6. Investor-Ready Summary
 
-### Executive Overview: Vets Ready Platform Architecture
+### Executive Overview: Rally Forge Platform Architecture
 
-**What is Vets Ready?**
+**What is Rally Forge?**
 
-Vets Ready is an enterprise-grade digital platform designed to streamline veteran benefits navigation. Built with modern, scalable cloud-native technologies, the platform delivers a seamless experience across web, mobile (iOS/Android), and desktop applications.
+Rally Forge is an enterprise-grade digital platform designed to streamline veteran benefits navigation. Built with modern, scalable cloud-native technologies, the platform delivers a seamless experience across web, mobile (iOS/Android), and desktop applications.
 
 **Technical Strengths**
 
@@ -1569,7 +1569,7 @@ Enterprise-grade observability and error tracking:
 
 **Competitive Advantages**
 
-| Feature | Vets Ready | Legacy Systems |
+| Feature | Rally Forge | Legacy Systems |
 |---------|------------|----------------|
 | **Deployment Speed** | Days | Months |
 | **Infrastructure Cost** | $12-500/month | $5,000+/month |
@@ -1637,7 +1637,7 @@ Enterprise-grade observability and error tracking:
 
 **Bottom Line for Investors**
 
-Vets Ready is built on a **proven, secure, scalable architecture** that:
+Rally Forge is built on a **proven, secure, scalable architecture** that:
 1. Minimizes technical risk (industry-standard technologies)
 2. Scales cost-efficiently (infrastructure costs grow slower than revenue)
 3. Protects your investment (no vendor lock-in, future-proof design)
@@ -1650,8 +1650,8 @@ Vets Ready is built on a **proven, secure, scalable architecture** that:
 
 **Contact**
 For technical due diligence inquiries:
-📧 tech@vetsready.com
-🔗 GitHub: github.com/fletcherusa30-jpg/Vets_Ready
+📧 tech@rallyforge.com
+🔗 GitHub: github.com/fletcherusa30-jpg/rally_forge
 🌐 Live Demo: [Coming Soon]
 
 ---
@@ -1669,4 +1669,6 @@ For technical investors or CTOs evaluating the platform, full documentation avai
 - [SCALING_STRATEGY.md](SCALING_STRATEGY.md) - Capacity planning and growth roadmap
 
 Architecture reviewed and approved: January 24, 2026
+
+
 

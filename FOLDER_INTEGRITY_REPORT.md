@@ -47,10 +47,10 @@
 - `shared/` - Shared utilities
 - `SQL/` - Database scripts
 - `tools/` - Development tools
-- `vets-ready-backend/` - Backend services
-- `vets-ready-frontend/` - Frontend services
-- `vets-ready-mobile/` - Mobile app
-- `vetsready-platform/` - Platform core
+- `rally-forge-backend/` - Backend services
+- `rally-forge-frontend/` - Frontend services
+- `rally-forge-mobile/` - Mobile app
+- `rallyforge-platform/` - Platform core
 
 ---
 
@@ -390,4 +390,6 @@ docs/
 ---
 
 *Scanned: January 28, 2026*
-*VetsReady Platform - Folder Integrity Report*
+*rallyforge Platform - Folder Integrity Report*
+
+

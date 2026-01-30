@@ -116,7 +116,7 @@ def print_quick_start():
 ================
 
    # Environment variables (.env)
-   PROJECT_ROOT=/path/to/vets-ready
+   PROJECT_ROOT=/path/to/rally-forge
    UPLOADS_DIR=uploads/raw
    MAX_UPLOAD_SIZE=10485760  # 10MB
 
@@ -281,3 +281,4 @@ if __name__ == "__main__":
         print("\n✓ Setup complete! Ready to use Upload-Only Scanner.")
     else:
         print("\n⚠ Setup incomplete. Please install missing dependencies.")
+

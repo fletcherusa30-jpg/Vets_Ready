@@ -1,9 +1,9 @@
-# 🎖️ VETS READY - SYSTEM ARCHITECTURE
+# 🎖️ Rally Forge - SYSTEM ARCHITECTURE
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                 │
-│                         🇺🇸 VETS READY ARCHITECTURE 🇺🇸                         │
+│                         🇺🇸 Rally Forge ARCHITECTURE 🇺🇸                         │
 │                                                                                 │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
@@ -230,3 +230,4 @@
 
 🇺🇸 Serving Those Who Served - Full Stack Architecture 🇺🇸
 ```
+

@@ -52,10 +52,10 @@
 **Configuration**:
 ```python
 # SQLite (development)
-DATABASE_URL = "sqlite:///./vetsready.db"
+DATABASE_URL = "sqlite:///./rallyforge.db"
 
 # PostgreSQL (production)
-DATABASE_URL = "postgresql://user:password@localhost:5432/vetsready"
+DATABASE_URL = "postgresql://user:password@localhost:5432/rallyforge"
 ```
 
 ---
@@ -403,10 +403,10 @@ db.close()
 
 ```bash
 # Development (SQLite)
-DATABASE_URL=sqlite:///./vetsready.db
+DATABASE_URL=sqlite:///./rallyforge.db
 
 # Production (PostgreSQL)
-DATABASE_URL=postgresql://user:password@localhost:5432/vetsready
+DATABASE_URL=postgresql://user:password@localhost:5432/rallyforge
 POOL_SIZE=10
 POOL_MAX_OVERFLOW=20
 POOL_RECYCLE=3600
@@ -416,17 +416,17 @@ POOL_RECYCLE=3600
 
 **SQLite**:
 ```
-sqlite:///./vetsready.db
+sqlite:///./rallyforge.db
 ```
 
 **PostgreSQL**:
 ```
-postgresql://vetsready_user:secure_password@db.vetsready.com:5432/vetsready
+postgresql://rallyforge_user:secure_password@db.rallyforge.com:5432/rallyforge
 ```
 
 **MySQL**:
 ```
-mysql+pymysql://user:password@localhost:3306/vetsready
+mysql+pymysql://user:password@localhost:3306/rallyforge
 ```
 
 ---
@@ -534,4 +534,5 @@ def get_veteran(veteran_id: str, db: Session = Depends(get_db)):
 **Ready for**: Backend endpoint updates, frontend development, testing
 
 *Generated: January 28, 2026*
-*VetsReady Database Integration Phase 2*
+*rallyforge Database Integration Phase 2*
+

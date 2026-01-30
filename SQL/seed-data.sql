@@ -1,14 +1,14 @@
--- Vets Ready Platform - Seed Data Script
+-- Rally Forge Platform - Seed Data Script
 -- This script was moved from the repository root to SQL/ to better reflect purpose.
 
--- Vets Ready Platform - Seed Data Script
+-- Rally Forge Platform - Seed Data Script
 -- This script populates the database with initial data for testing and demonstration
 
 -- ============================================================================
 -- FEDERAL BENEFITS (VA Benefits)
 -- ============================================================================
 
-INSERT INTO vetsready_federal_benefits (id, name, description, category, eligibility_summary, link, status)
+INSERT INTO RallyForge_federal_benefits (id, name, description, category, eligibility_summary, link, status)
 VALUES
   -- Disability Benefits
   (gen_random_uuid(), 'VA Disability Compensation', 'Monthly payments for service-connected disabilities', 'Disability', 'Service-connected disability rated 10% or higher', 'https://www.va.gov/disability', 'active'),
@@ -48,7 +48,7 @@ VALUES
 -- ============================================================================
 
 -- California
-INSERT INTO vetsready_state_benefits (id, state, benefit_type, title, description, link, status)
+INSERT INTO RallyForge_state_benefits (id, state, benefit_type, title, description, link, status)
 VALUES
   (gen_random_uuid(), 'CA', 'Property Tax', 'CA Property Tax Exemption', '100% exemption for service-connected disabled (100% P&T)', 'https://www.taxes.ca.gov', 'active'),
   (gen_random_uuid(), 'CA', 'Education', 'CA Vet Fee Waiver', 'Fee waiver for California Community Colleges', 'https://www.cccapply.org', 'active'),
@@ -56,28 +56,28 @@ VALUES
   (gen_random_uuid(), 'CA', 'Bonus', 'CA Vietnam Veteran Bonus', 'Bonus payment for Vietnam-era service', 'https://calvet.ca.gov', 'active');
 
 -- Texas
-INSERT INTO vetsready_state_benefits (id, state, benefit_type, title, description, link, status)
+INSERT INTO RallyForge_state_benefits (id, state, benefit_type, title, description, link, status)
 VALUES
   (gen_random_uuid(), 'TX', 'Property Tax', 'TX Homestead Exemption', 'Property tax exemption up to 100% for disabled veterans', 'https://comptroller.texas.gov', 'active'),
   (gen_random_uuid(), 'TX', 'Education', 'TX Hazlewood Act', 'Free tuition at TX public universities and colleges', 'https://www.tvc.texas.gov', 'active'),
   (gen_random_uuid(), 'TX', 'Occupational License', 'TX Professional License Waiver', 'License fee waiver for various professions', 'https://www.tvc.texas.gov', 'active');
 
 -- Florida
-INSERT INTO vetsready_state_benefits (id, state, benefit_type, title, description, link, status)
+INSERT INTO RallyForge_state_benefits (id, state, benefit_type, title, description, link, status)
 VALUES
   (gen_random_uuid(), 'FL', 'Property Tax', 'FL Property Tax Exemption', 'Up to $50,000 exemption for disabled veterans (100% P&T)', 'https://dor.myflorida.com', 'active'),
   (gen_random_uuid(), 'FL', 'Education', 'FL Bright Futures for Veterans', 'Educational scholarship for eligible Florida veterans', 'https://www.floridastudentfinancialaid.org', 'active'),
   (gen_random_uuid(), 'FL', 'License Plate', 'FL Veteran License Plate', 'Special license plate honoring veteran service', 'https://www.flhsmv.gov', 'active');
 
 -- New York
-INSERT INTO vetsready_state_benefits (id, state, benefit_type, title, description, link, status)
+INSERT INTO RallyForge_state_benefits (id, state, benefit_type, title, description, link, status)
 VALUES
   (gen_random_uuid(), 'NY', 'Tax', 'NY Veterans Tax Credit', 'Tax credit for military service', 'https://www.tax.ny.gov', 'active'),
   (gen_random_uuid(), 'NY', 'Education', 'NY Military Enhanced Recognition Incentive and Tribute (MERIT)', 'Scholarship for eligible veterans', 'https://www.hesc.ny.gov', 'active'),
   (gen_random_uuid(), 'NY', 'Housing', 'NY Housing for Veterans Program', 'Affordable housing program for veterans', 'https://veterans.ny.gov', 'active');
 
 -- Pennsylvania
-INSERT INTO vetsready_state_benefits (id, state, benefit_type, title, description, link, status)
+INSERT INTO RallyForge_state_benefits (id, state, benefit_type, title, description, link, status)
 VALUES
   (gen_random_uuid(), 'PA', 'Property Tax', 'PA Property Tax/Rent Rebate', 'Rebate for low-income seniors and disabled', 'https://www.revenue.pa.gov', 'active'),
   (gen_random_uuid(), 'PA', 'Education', 'PA Veterans Education Grant', 'Grant for PA veterans attending PA schools', 'https://veterans.pa.gov', 'active'),
@@ -90,7 +90,7 @@ VALUES
 -- SAMPLE PARTNERS
 -- ============================================================================
 
-INSERT INTO vetsready_partners (id, name, description, category, tier, link, status)
+INSERT INTO RallyForge_partners (id, name, description, category, tier, link, status)
 VALUES
   -- Employers
   (gen_random_uuid(), 'Google Veterans Program', 'Tech jobs for veterans with career development', 'employer', 'featured', 'https://careers.google.com/veterans', 'active'),
@@ -102,7 +102,7 @@ VALUES
   (gen_random_uuid(), 'Hire Heroes USA', 'Non-profit helping veterans with job placement', 'business', 'featured', 'https://hireheroesusa.org', 'active'),
 
   -- Sponsors
-  (gen_random_uuid(), 'Mission VetsReady Foundation', 'Supporting veteran financial education', 'sponsor', 'premium', 'https://missionvetsready.org', 'active'),
+  (gen_random_uuid(), 'Mission RallyForge Foundation', 'Supporting veteran financial education', 'sponsor', 'premium', 'https://missionRallyForge.org', 'active'),
   (gen_random_uuid(), 'Warriors2Wellness', 'Mental health and wellness program for vets', 'sponsor', 'featured', 'https://warriors2wellness.org', 'active'),
 
   -- Affiliates
@@ -113,7 +113,7 @@ VALUES
 -- SAMPLE RESOURCES
 -- ============================================================================
 
-INSERT INTO vetsready_resources (id, title, description, category, link, resource_type, status)
+INSERT INTO RallyForge_resources (id, title, description, category, link, resource_type, status)
 VALUES
   -- Guides
   (gen_random_uuid(), 'Understanding VA Disability Ratings', 'Complete guide to how VA rates service-connected disabilities', 'Benefits', 'https://www.va.gov/disability', 'guide', 'active'),
@@ -144,7 +144,7 @@ VALUES
 -- - 10 Resources (guides, forms, external links, tools)
 
 -- To run this script:
--- psql vetsready_platform -a -f SQL/seed-data.sql
+-- psql RallyForge_platform -a -f SQL/seed-data.sql
 
 -- To expand:
 -- 1. Duplicate state benefits section for remaining 45 states
@@ -155,3 +155,5 @@ VALUES
 -- Change status to 'inactive' to hide without deleting
 
 COMMIT;
+
+

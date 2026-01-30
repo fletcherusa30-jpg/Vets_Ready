@@ -8,9 +8,9 @@
 
 ## 🎯 EXECUTIVE SUMMARY
 
-Successfully implemented the **STR (Service Treatment Records) Intelligence Engine** - the most powerful claims intelligence system in VetsReady and potentially the first of its kind in the country.
+Successfully implemented the **STR (Service Treatment Records) Intelligence Engine** - the most powerful claims intelligence system in rallyforge and potentially the first of its kind in the country.
 
-This system allows veterans to upload their complete Service Treatment Records (hundreds or thousands of pages of medical records from their military service), and VetsReady will automatically:
+This system allows veterans to upload their complete Service Treatment Records (hundreds or thousands of pages of medical records from their military service), and rallyforge will automatically:
 
 ✅ **Read every page** using OCR
 ✅ **Extract every medical entry**
@@ -78,7 +78,7 @@ STRs typically come in:
 ### File Structure
 
 ```
-vets-ready-frontend/src/
+rally-forge-frontend/src/
 ├── MatrixEngine/
 │   └── strIntelligenceEngine.ts (~1,400 lines)
 │       ├── STRDocument interface
@@ -463,13 +463,13 @@ AI Navigator can:
 
 Veteran requests STRs from NARA → receives 300-page PDF after 8 months
 
-### Step 2: Upload to VetsReady
+### Step 2: Upload to rallyforge
 
 Veteran goes to **Veteran Basics** or **Document Vault** → clicks **"Upload STRs"** → selects PDF file → uploads
 
 ### Step 3: Automated Processing
 
-VetsReady processes the 300 pages:
+rallyforge processes the 300 pages:
 - **OCR**: Extracts text from all 300 pages
 - **Extraction**: Identifies 45 medical entries
 - **Analysis**: Finds patterns and opportunities
@@ -510,7 +510,7 @@ Veteran sees **STR Analysis Results**:
 ### Step 5: Take Action
 
 Veteran clicks **"Start Claim for Lumbosacral Strain"**:
-- VetsReady auto-fills timeline with STR dates
+- rallyforge auto-fills timeline with STR dates
 - Generates lay statement prompts
 - Pre-populates evidence checklist
 - Launches relevant Mission Pack
@@ -636,7 +636,7 @@ Veteran clicks **"Start Claim for Lumbosacral Strain"**:
 - Complete explanation
 - Why they matter
 - How to get them
-- What VetsReady does with them
+- What rallyforge does with them
 
 **Guide: Uploading STRs**
 - Step-by-step instructions
@@ -672,14 +672,14 @@ The **STR Intelligence Engine** is now fully implemented and represents a **grou
 
 ### What Makes This Revolutionary
 
-**Before VetsReady's STR Engine:**
+**Before rallyforge's STR Engine:**
 - Veterans had to manually read hundreds/thousands of pages
 - VSOs spent hours analyzing STRs during appointments
 - Many conditions went unclaimed because they were buried in records
 - Evidence was scattered and hard to organize
 - Timeline building was manual and error-prone
 
-**With VetsReady's STR Engine:**
+**With rallyforge's STR Engine:**
 - ✅ **Every page read** automatically in minutes
 - ✅ **Every condition identified** and mapped to claims
 - ✅ **Evidence organized** and timeline built
@@ -689,7 +689,7 @@ The **STR Intelligence Engine** is now fully implemented and represents a **grou
 
 ### Impact
 
-This system transforms VetsReady into **the first platform in the country** that can:
+This system transforms rallyforge into **the first platform in the country** that can:
 1. Read an entire STR
 2. Understand it
 3. Extract medical patterns
@@ -710,3 +710,5 @@ This system transforms VetsReady into **the first platform in the country** that
 **🇺🇸 Serving those who served.**
 
 **Note**: Background color issues fixed throughout BillingPage for better readability (changed from white/light gray text to darker text with better contrast).
+
+

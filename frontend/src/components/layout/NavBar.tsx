@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
       background: theme === 'dark' ? '#222' : '#f5f5f5',
       borderBottom: '1px solid #e0e0e0',
     }}>
-      <span style={{ fontWeight: 700, fontSize: 20 }}>VetsReady</span>
+      <span style={{ fontWeight: 700, fontSize: 20 }}>rallyforge</span>
       <button onClick={toggleTheme} style={{ fontSize: 18 }}>
         {theme === 'light' ? '🌙' : '☀️'}
       </button>
@@ -22,3 +22,4 @@ const NavBar: React.FC = () => {
 };
 
 export default NavBar;
+

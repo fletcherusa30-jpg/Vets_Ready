@@ -54,7 +54,7 @@
 ### 4. ✅ User Profile Creation & Management Guide (VETERAN_PROFILE_CREATION_GUIDE.md)
 **File**: `docs/VETERAN_PROFILE_CREATION_GUIDE.md`
 **Content**: 1,000+ lines explaining:
-- Current user authentication system (`vets-ready-backend`)
+- Current user authentication system (`rally-forge-backend`)
 - Current veteran profile system (`backend`)
 - How veterans create profiles (signup flow)
 - 5-step profile wizard:
@@ -93,10 +93,10 @@
 
 ### Step 1: Signup/Login
 ```
-User visits VetsReady
+User visits rallyforge
 → Clicks "Create Account" or "Login"
 → Enters email, name, password
-→ Account created in vets-ready-backend
+→ Account created in rally-forge-backend
 → Logged in and redirected to onboarding
 ```
 
@@ -373,7 +373,7 @@ Mobile: Touch-friendly, stacked (640px and below)
 ### With Existing Systems
 - ✓ Budget Tool (same architecture pattern)
 - ✓ Disability Calculator (proven approach)
-- ✓ User authentication (vets-ready-backend)
+- ✓ User authentication (rally-forge-backend)
 - ✓ Veteran profiles (backend database)
 - ✓ Navigation/sidebar (existing nav structure)
 
@@ -508,5 +508,7 @@ All following the **proven Disability Calculator architecture** that has been th
 ---
 
 *Documents created: Jan 28, 2026*
-*For: VetsReady Platform*
+*For: rallyforge Platform*
 *By: GitHub Copilot*
+
+

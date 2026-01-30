@@ -1,5 +1,5 @@
 """
-VetsReady Project Organization Summary
+rallyforge Project Organization Summary
 Generated: January 28, 2026
 """
 
@@ -9,7 +9,7 @@ Generated: January 28, 2026
 
 ## BEFORE
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 ├── App/                    (Staging folder - 30 mixed items)
 │   ├── Python scripts
 │   ├── Document files (.docx)
@@ -23,7 +23,7 @@ C:\Dev\Vets Ready\
 
 ## AFTER
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 ├── backend/app/            (MAIN IMPLEMENTATION)
 │   ├── scanner/            (Document processing pipeline)
 │   ├── resume_builder/     (Resume generation)
@@ -88,9 +88,9 @@ C:\Dev\Vets Ready\
   - scan_new_docx.py
 
 - Technical Documents:
-  - Ensuring Pipeline Completeness — VetsReady Technical Framework.docx
-  - VetsReady Scanner Engine — Full Rebuild Specification.docx
-  - VetsReady_Engineering_Addendum.docx
+  - Ensuring Pipeline Completeness — rallyforge Technical Framework.docx
+  - rallyforge Scanner Engine — Full Rebuild Specification.docx
+  - rallyforge_Engineering_Addendum.docx
 
 - Installers:
   - ghostscript-10.06.0.tar.gz
@@ -251,3 +251,5 @@ All original App folder contents preserved in `_archive/App_Original/`
 
 Generated: January 28, 2026
 Status: Ready for Next Phase ✓
+
+

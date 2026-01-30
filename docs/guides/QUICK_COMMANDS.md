@@ -1,10 +1,10 @@
-# 🎖️ VETS READY - QUICK COMMAND REFERENCE
+# 🎖️ Rally Forge - QUICK COMMAND REFERENCE
 
 ## 🚀 QUICK START
 
 ### First Time Setup
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\Setup-Complete.ps1
 ```
 
@@ -30,7 +30,7 @@ cd "C:\Dev\Vets Ready"
 
 ```powershell
 # Navigate to backend
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 
 # Activate virtual environment
 .\.venv\Scripts\Activate.ps1
@@ -58,7 +58,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ```powershell
 # Navigate to frontend
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 
 # Install dependencies
 npm install
@@ -85,7 +85,7 @@ npm run type-check
 
 ### Initialize Database
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 python scripts/init_db.py
 ```
@@ -106,7 +106,7 @@ python scripts/seed_data.py
 ```
 
 ### Database Location
-- Development: `vets-ready-backend/instance/dev.db`
+- Development: `rally-forge-backend/instance/dev.db`
 - Production: Use PostgreSQL (configure in `.env`)
 
 ---
@@ -120,7 +120,7 @@ python scripts/seed_data.py
 python --version
 
 # Recreate virtual environment
-cd vets-ready-backend
+cd rally-forge-backend
 Remove-Item -Recurse -Force .venv
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -131,7 +131,7 @@ pip install -r requirements.txt
 
 ```powershell
 # Clear cache and reinstall
-cd vets-ready-frontend
+cd rally-forge-frontend
 Remove-Item -Recurse -Force node_modules
 Remove-Item package-lock.json
 npm install
@@ -159,7 +159,7 @@ Stop-Process -Id <PID>
 
 ```powershell
 # Reset database completely
-cd vets-ready-backend
+cd rally-forge-backend
 Remove-Item -Force instance/dev.db
 python scripts/init_db.py
 python scripts/seed_data.py
@@ -182,7 +182,7 @@ python scripts/seed_data.py
 
 ### Update Python Dependencies
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pip install --upgrade pip
 pip install --upgrade -r requirements.txt
@@ -190,7 +190,7 @@ pip install --upgrade -r requirements.txt
 
 ### Update Node Dependencies
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm update
 ```
 
@@ -210,7 +210,7 @@ npm outdated
 ### Test Backend API
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 
 # Run tests
@@ -226,7 +226,7 @@ pytest tests/test_backend.py
 ### Test Frontend
 
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 
 # Run tests
 npm test
@@ -261,14 +261,14 @@ curl -X POST "http://localhost:8000/api/auth/login" `
 
 ### Build Frontend for Production
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run build
 # Output in: dist/
 ```
 
 ### Build Backend for Production
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 # Already production-ready, just deploy with:
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
@@ -313,7 +313,7 @@ Get-NetTCPConnection -LocalPort 8000,5173 -ErrorAction SilentlyContinue
 
 ### Change JWT Secret (IMPORTANT for production!)
 
-Edit `vets-ready-backend/.env`:
+Edit `rally-forge-backend/.env`:
 ```
 JWT_SECRET=your-super-secret-key-minimum-32-characters-change-this-now!
 ```
@@ -345,7 +345,7 @@ $bytes = New-Object byte[] 32
 
 1. Create page component:
    ```powershell
-   cd vets-ready-frontend/src/pages
+   cd rally-forge-frontend/src/pages
    New-Item MyPage.tsx
    ```
 
@@ -363,7 +363,7 @@ $bytes = New-Object byte[] 32
 
 ### Adding a New API Endpoint
 
-1. Create router in `vets-ready-backend/app/routers/`:
+1. Create router in `rally-forge-backend/app/routers/`:
    ```python
    from fastapi import APIRouter
    router = APIRouter(prefix="/api/myfeature", tags=["My Feature"])
@@ -375,7 +375,7 @@ $bytes = New-Object byte[] 32
    app.include_router(myfeature.router)
    ```
 
-3. Create service layer in `vets-ready-frontend/src/services/api/`:
+3. Create service layer in `rally-forge-frontend/src/services/api/`:
    ```typescript
    import api from '../../lib/api';
    export class MyFeatureService { ... }
@@ -405,7 +405,7 @@ $bytes = New-Object byte[] 32
 - Use DB Browser for SQLite
 - Or use `sqlite3` command:
   ```powershell
-  sqlite3 vets-ready-backend/instance/dev.db
+  sqlite3 rally-forge-backend/instance/dev.db
   .tables
   SELECT * FROM users;
   ```
@@ -421,7 +421,7 @@ $bytes = New-Object byte[] 32
 Get-Process python,node | Stop-Process -Force
 
 # Reset backend
-cd vets-ready-backend
+cd rally-forge-backend
 Remove-Item -Recurse -Force .venv, instance
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -430,7 +430,7 @@ python scripts/init_db.py
 python scripts/seed_data.py
 
 # Reset frontend
-cd ../vets-ready-frontend
+cd ../rally-forge-frontend
 Remove-Item -Recurse -Force node_modules, dist
 npm install
 
@@ -442,3 +442,4 @@ cd ..
 ---
 
 **🇺🇸 Quick Reference - Keep This Handy! 🇺🇸**
+

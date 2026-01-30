@@ -1,6 +1,6 @@
 /**
  * Benefits Engine Integration
- * Connects employment system to VetsReady benefits calculations
+ * Connects employment system to rallyforge benefits calculations
  */
 
 export interface BenefitsData {
@@ -26,7 +26,7 @@ export interface EducationBenefits {
  */
 export async function fetchBenefitsData(veteranId: string): Promise<BenefitsData | null> {
   try {
-    // In production, call VetsReady benefits API
+    // In production, call rallyforge benefits API
     // For now, return mock data
     return {
       vaDisabilityRating: 70,
@@ -141,3 +141,4 @@ export async function getFinancialAssistanceRecommendations(
 
   return recommendations;
 }
+

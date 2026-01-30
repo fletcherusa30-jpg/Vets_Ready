@@ -1,6 +1,6 @@
-# VetsReady Developer Onboarding Guide
+# rallyforge Developer Onboarding Guide
 
-Welcome to the VetsReady development team! This guide will help you get up and running quickly.
+Welcome to the rallyforge development team! This guide will help you get up and running quickly.
 
 ---
 
@@ -21,7 +21,7 @@ Welcome to the VetsReady development team! This guide will help you get up and r
 
 ## Project Overview
 
-**VetsReady** is a comprehensive veteran assistance platform that helps veterans navigate the VA disability claims process. The platform combines AI-powered theory generation, evidence organization, financial planning tools, and community resources.
+**rallyforge** is a comprehensive veteran assistance platform that helps veterans navigate the VA disability claims process. The platform combines AI-powered theory generation, evidence organization, financial planning tools, and community resources.
 
 ### Tech Stack
 
@@ -65,8 +65,8 @@ Welcome to the VetsReady development team! This guide will help you get up and r
 ### 1. Clone the Repository
 
 ```powershell
-git clone https://github.com/your-org/vets-ready.git
-cd vets-ready
+git clone https://github.com/your-org/rally-forge.git
+cd rally-forge
 ```
 
 ### 2. Set Up Environment Variables
@@ -75,7 +75,7 @@ Create `.env` file in the root directory:
 
 ```bash
 # Backend
-DATABASE_URL=postgresql://postgres:password@localhost:5432/vetsready
+DATABASE_URL=postgresql://postgres:password@localhost:5432/rallyforge
 REDIS_URL=redis://localhost:6379
 OPENAI_API_KEY=sk-your-api-key-here
 SECRET_KEY=your-secret-key-here
@@ -101,7 +101,7 @@ Create PostgreSQL database:
 psql -U postgres
 
 # Create database
-CREATE DATABASE vetsready;
+CREATE DATABASE rallyforge;
 
 # Exit psql
 \q
@@ -112,7 +112,7 @@ CREATE DATABASE vetsready;
 #### Option A: Using the Start Script (Recommended)
 
 ```powershell
-.\scripts\Start-VetsReady.ps1
+.\scripts\Start-rallyforge.ps1
 ```
 
 This script will:
@@ -125,7 +125,7 @@ This script will:
 
 **Terminal 1 - Backend:**
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 
 # Create virtual environment
 python -m venv venv
@@ -143,7 +143,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 **Terminal 2 - Frontend:**
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 
 # Install dependencies
 npm install
@@ -164,21 +164,21 @@ npm run dev
 ## Project Structure
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
 ├── docs/                              # All documentation
-│   ├── VETSREADY_MASTER_SPEC.md      # Master specification (source of truth)
+│   ├── rallyforge_MASTER_SPEC.md      # Master specification (source of truth)
 │   ├── IMPLEMENTATION_TASKS.md       # Task list & progress tracking
 │   ├── DEVELOPER_ONBOARDING.md       # This file
 │   ├── COMPLIANCE_AND_PRIVACY.md     # Legal & privacy guidelines
 │   └── TECHNICAL_GUIDE.md            # API docs, data models
 │
 ├── scripts/                           # Automation scripts
-│   ├── Start-VetsReady.ps1           # One-click dev startup
-│   ├── Build-VetsReady.ps1           # Build all services
-│   └── Test-VetsReady.ps1            # Run all tests
+│   ├── Start-rallyforge.ps1           # One-click dev startup
+│   ├── Build-rallyforge.ps1           # Build all services
+│   └── Test-rallyforge.ps1            # Run all tests
 │
-├── vets-ready-frontend/              # React frontend
+├── rally-forge-frontend/              # React frontend
 │   ├── src/
 │   │   ├── main.tsx                  # App entry point
 │   │   ├── App.tsx                   # Root component with routing
@@ -197,7 +197,7 @@ C:\Dev\Vets Ready\
 │   ├── package.json                  # Frontend dependencies
 │   └── vite.config.ts                # Vite configuration
 │
-├── vets-ready-backend/               # FastAPI backend
+├── rally-forge-backend/               # FastAPI backend
 │   ├── app/
 │   │   ├── main.py                   # FastAPI app entry
 │   │   ├── config.py                 # Configuration & env vars
@@ -239,22 +239,22 @@ C:\Dev\Vets Ready\
 
 3. **Start dev environment**
    ```powershell
-   .\scripts\Start-VetsReady.ps1
+   .\scripts\Start-rallyforge.ps1
    ```
 
 4. **Make changes**
-   - Frontend: Edit files in `vets-ready-frontend/src/`
-   - Backend: Edit files in `vets-ready-backend/app/`
+   - Frontend: Edit files in `rally-forge-frontend/src/`
+   - Backend: Edit files in `rally-forge-backend/app/`
    - Hot reload enabled (changes reflect immediately)
 
 5. **Test changes**
    ```powershell
    # Frontend tests
-   cd vets-ready-frontend
+   cd rally-forge-frontend
    npm run test
 
    # Backend tests
-   cd vets-ready-backend
+   cd rally-forge-backend
    pytest
    ```
 
@@ -272,7 +272,7 @@ C:\Dev\Vets Ready\
 #### Running the Frontend
 
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev  # Start dev server
 npm run build  # Production build
 npm run preview  # Preview production build
@@ -335,7 +335,7 @@ export async function fetchData(id: string): Promise<MyData> {
 #### Running the Backend
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 
 # Activate virtual environment
 .\venv\Scripts\Activate.ps1
@@ -384,7 +384,7 @@ async def create_item(request: MyRequest) -> MyResponse:
 
 **Create a new migration:**
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 alembic revision --autogenerate -m "Add new table"
 ```
 
@@ -486,7 +486,7 @@ def get_user(id):
 ### Frontend Tests (Jest + React Testing Library)
 
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 
 # Run all tests
 npm run test
@@ -522,7 +522,7 @@ describe('MyComponent', () => {
 ### Backend Tests (pytest)
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 
 # Run all tests
 pytest
@@ -608,7 +608,7 @@ Closes #123
 
 Use PowerShell script:
 ```powershell
-.\scripts\Start-VetsReady.ps1
+.\scripts\Start-rallyforge.ps1
 ```
 
 ### Production Deployment (AWS)
@@ -620,7 +620,7 @@ Use PowerShell script:
 
 **Deploy with script:**
 ```powershell
-.\scripts\Deploy-VetsReady.ps1 -Environment production
+.\scripts\Deploy-rallyforge.ps1 -Environment production
 ```
 
 **Manual deployment steps:**
@@ -664,7 +664,7 @@ npm run dev
 Get-Service -Name postgresql*
 
 # Test connection
-psql -U postgres -d vetsready -c "SELECT 1;"
+psql -U postgres -d rallyforge -c "SELECT 1;"
 ```
 
 **Issue: Migration errors**
@@ -701,7 +701,7 @@ docker-compose up --build
 
 ### Documentation
 
-- **Master Spec**: `docs/VETSREADY_MASTER_SPEC.md`
+- **Master Spec**: `docs/rallyforge_MASTER_SPEC.md`
 - **Implementation Tasks**: `docs/IMPLEMENTATION_TASKS.md`
 - **API Reference**: http://localhost:8000/docs
 - **Compliance Guidelines**: `docs/COMPLIANCE_AND_PRIVACY.md`
@@ -725,9 +725,9 @@ docker-compose up --build
 
 ### Support
 
-- **Slack**: #vetsready-dev (if applicable)
-- **Email**: dev@vetsready.com
-- **GitHub Issues**: https://github.com/your-org/vets-ready/issues
+- **Slack**: #rallyforge-dev (if applicable)
+- **Email**: dev@rallyforge.com
+- **GitHub Issues**: https://github.com/your-org/rally-forge/issues
 
 ---
 
@@ -740,4 +740,6 @@ You're now part of a mission to empower veterans through technology. If you have
 ---
 
 **Last Updated**: January 24, 2026
-**Maintained By**: VetsReady Development Team
+**Maintained By**: rallyforge Development Team
+
+

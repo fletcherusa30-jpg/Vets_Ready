@@ -1,4 +1,4 @@
-# VETSREADY REVENUE ENGINE & SCANNER REBUILD - IMPLEMENTATION STATUS
+# rallyforge REVENUE ENGINE & SCANNER REBUILD - IMPLEMENTATION STATUS
 
 **Implementation Date:** January 25, 2025
 **Status:** In Progress - Major Components Complete
@@ -9,7 +9,7 @@
 
 ### 1. Enhanced Admin Revenue Dashboard ✅
 
-**File:** `vets-ready-frontend/src/pages/AdminRevenueDashboardEnhanced.tsx`
+**File:** `rally-forge-frontend/src/pages/AdminRevenueDashboardEnhanced.tsx`
 **Lines:** ~1,850 lines
 **Status:** Complete
 
@@ -65,7 +65,7 @@
 
 ### 2. Backend Revenue Engine ✅
 
-**File:** `vets-ready-backend/app/models/revenue.py`
+**File:** `rally-forge-backend/app/models/revenue.py`
 **Lines:** ~550 lines
 **Status:** Complete
 
@@ -91,7 +91,7 @@
 
 ### 3. Revenue API Endpoints ✅
 
-**File:** `vets-ready-backend/app/routers/revenue_enhanced.py`
+**File:** `rally-forge-backend/app/routers/revenue_enhanced.py`
 **Lines:** ~650 lines
 **Status:** Complete
 
@@ -133,7 +133,7 @@
 
 ### 4. Scanner Orchestration System ✅
 
-**File:** `vets-ready-backend/app/services/scanner_orchestrator.py`
+**File:** `rally-forge-backend/app/services/scanner_orchestrator.py`
 **Lines:** ~600 lines
 **Status:** Complete
 
@@ -165,7 +165,7 @@
 
 ### 5. Unified OCR/PDF Extraction Engine ✅
 
-**File:** `vets-ready-backend/app/services/ocr_extraction.py`
+**File:** `rally-forge-backend/app/services/ocr_extraction.py`
 **Lines:** ~500 lines
 **Status:** Complete
 
@@ -203,7 +203,7 @@
 
 ### 6. VA Rating Decision Parser (Not Started)
 
-**File:** `vets-ready-backend/app/services/parsers/rating_decision_parser.py`
+**File:** `rally-forge-backend/app/services/parsers/rating_decision_parser.py`
 **Estimated Lines:** ~500 lines
 **Status:** Not Started
 
@@ -217,7 +217,7 @@
 
 ### 7. STR (Service Treatment Records) Parser (Not Started)
 
-**File:** `vets-ready-backend/app/services/parsers/str_parser.py`
+**File:** `rally-forge-backend/app/services/parsers/str_parser.py`
 **Estimated Lines:** ~500 lines
 **Status:** Not Started
 
@@ -232,7 +232,7 @@
 
 ### 8. DD-214 Parser (Not Started)
 
-**File:** `vets-ready-backend/app/services/parsers/dd214_parser.py`
+**File:** `rally-forge-backend/app/services/parsers/dd214_parser.py`
 **Estimated Lines:** ~300 lines
 **Status:** Not Started
 
@@ -247,7 +247,7 @@
 
 ### 9. Scanner API Router (Partial - Needs Rewrite)
 
-**File:** `vets-ready-backend/app/routers/scanner.py`
+**File:** `rally-forge-backend/app/routers/scanner.py`
 **Estimated Lines:** ~600 lines (rewrite)
 **Status:** Needs Major Update
 
@@ -264,7 +264,7 @@
 
 ### 10. Scanner Health Dashboard UI (Not Started)
 
-**File:** `vets-ready-frontend/src/pages/ScannerHealthDashboard.tsx`
+**File:** `rally-forge-frontend/src/pages/ScannerHealthDashboard.tsx`
 **Estimated Lines:** ~400 lines
 **Status:** Not Started
 
@@ -281,21 +281,21 @@
 ### 11. Partner Onboarding System (Not Started)
 
 **Files Needed:**
-- `vets-ready-frontend/src/pages/PartnerOnboarding.tsx` (~300 lines)
-- `vets-ready-frontend/src/pages/PartnerManagement.tsx` (~300 lines)
-- `vets-ready-backend/app/routers/partners.py` (~400 lines)
+- `rally-forge-frontend/src/pages/PartnerOnboarding.tsx` (~300 lines)
+- `rally-forge-frontend/src/pages/PartnerManagement.tsx` (~300 lines)
+- `rally-forge-backend/app/routers/partners.py` (~400 lines)
 
 **Status:** Not Started
 
 ### 12. Enterprise Lead Management UI (Not Started)
 
-**File:** `vets-ready-frontend/src/pages/EnterpriseLeads.tsx`
+**File:** `rally-forge-frontend/src/pages/EnterpriseLeads.tsx`
 **Estimated Lines:** ~300 lines
 **Status:** Not Started
 
 ### 13. Self-Healing Engine (Not Started)
 
-**File:** `vets-ready-backend/app/services/self_healing.py`
+**File:** `rally-forge-backend/app/services/self_healing.py`
 **Estimated Lines:** ~200 lines
 **Status:** Not Started
 
@@ -418,7 +418,7 @@ npm install date-fns                   # Date utilities
 ## 📁 FILE STRUCTURE
 
 ```
-vets-ready-backend/
+rally-forge-backend/
 ├── app/
 │   ├── models/
 │   │   └── revenue.py ✅ NEW
@@ -435,7 +435,7 @@ vets-ready-backend/
 │           ├── str_parser.py ⏳ NEEDED
 │           └── dd214_parser.py ⏳ NEEDED
 
-vets-ready-frontend/
+rally-forge-frontend/
 └── src/
     └── pages/
         ├── AdminRevenueDashboard.tsx (original)
@@ -522,3 +522,5 @@ vets-ready-frontend/
 - Enterprise lead management UI
 
 **Overall Status:** 52% Complete - Solid foundation established, need to finish parsers and UI components.
+
+

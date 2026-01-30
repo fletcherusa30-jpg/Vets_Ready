@@ -34,7 +34,7 @@ validate-repo (start)
                         deploy-staging
 ```
 
-### 2. **VetsReady Platform TypeScript Configuration**
+### 2. **rallyforge Platform TypeScript Configuration**
 
 **Problems Identified:**
 - ❌ `tsconfig.json` configured for `src/` directory that doesn't exist
@@ -101,11 +101,11 @@ validate-repo (start)
 - **Parallel**: Yes (with backend-test, lint-and-test, security-scanning)
 
 ### Job 4: `lint-and-test` (NEW)
-- **Purpose**: Validates all platform modules (vetsready-platform, employment-system, etc.)
+- **Purpose**: Validates all platform modules (rallyforge-platform, employment-system, etc.)
 - **Status**: ✅ New job created
 - **Checks**:
-  - vetsready-platform: `npm install && npm run build`
-  - vets-ready-frontend: `npm ci && npm run lint`
+  - rallyforge-platform: `npm install && npm run build`
+  - rally-forge-frontend: `npm ci && npm run lint`
   - employment-system: `npm ci && npm run build`
   - frontend (new): `npm ci && npm run lint`
 - **Parallel**: Yes (with backend-test, frontend-test, security-scanning)
@@ -145,24 +145,24 @@ validate-repo (start)
    - Updated all job dependencies
    - Added proper error handling
 
-2. **`vetsready-platform/tsconfig.json`** (33 lines)
+2. **`rallyforge-platform/tsconfig.json`** (33 lines)
    - Updated root directory configuration
    - Added path aliases
    - Updated include/exclude patterns
    - Adjusted strict mode settings
 
-3. **`vetsready-platform/package.json`** (scripts section)
+3. **`rallyforge-platform/package.json`** (scripts section)
    - Updated build/lint/test scripts
    - Added error handling
    - Added validate command
    - Maintains original dependencies
 
-4. **`vetsready-platform/.eslintrc.json`** (NEW FILE)
+4. **`rallyforge-platform/.eslintrc.json`** (NEW FILE)
    - TypeScript parser configuration
    - ESLint rules for code quality
    - Ignore patterns for build artifacts
 
-5. **`vetsready-platform/jest.config.js`** (NEW FILE)
+5. **`rallyforge-platform/jest.config.js`** (NEW FILE)
    - Jest configuration for TypeScript
    - Module alias mappings
    - Test discovery patterns
@@ -200,14 +200,14 @@ validate-repo (start)
 ## Troubleshooting & Validation
 
 ### If `lint-and-test` Still Fails:
-1. Check `vetsready-platform/package.json` exists
+1. Check `rallyforge-platform/package.json` exists
 2. Check each module has `npm install` working
-3. Check `npm run build` succeeds in vetsready-platform
+3. Check `npm run build` succeeds in rallyforge-platform
 4. Check `npm run lint` succeeds (or has `continue-on-error: true`)
 
 ### If Docker Build Fails:
-1. Ensure `Dockerfile` exists in `vets-ready-backend/`
-2. Ensure `Dockerfile` exists in `vets-ready-frontend/`
+1. Ensure `Dockerfile` exists in `rally-forge-backend/`
+2. Ensure `Dockerfile` exists in `rally-forge-frontend/`
 3. Check Docker Hub secrets are configured: `DOCKER_USERNAME`, `DOCKER_PASSWORD`
 
 ### If Security Scanning Fails:
@@ -233,11 +233,13 @@ validate-repo (start)
 1. **Test Pipeline**: Create a test commit to validate the fixes
 2. **Monitor First Run**: Watch Attempt #1 or #2 complete successfully
 3. **Adjust Thresholds**: Modify security scanning or lint thresholds as needed
-4. **Add Implementation**: Create actual implementation code in vetsready-platform modules
+4. **Add Implementation**: Create actual implementation code in rallyforge-platform modules
 5. **Documentation**: Update CI/CD documentation to reflect new job structure
 
 ---
 **Status**: ✅ All CI/CD pipeline issues fixed and validated
 **Date Fixed**: $(date)
 **Workflow File**: `.github/workflows/ci-cd.yml`
-**Configuration Files**: `vetsready-platform/` config files updated
+**Configuration Files**: `rallyforge-platform/` config files updated
+
+

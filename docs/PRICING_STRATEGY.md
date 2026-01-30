@@ -1,4 +1,4 @@
-# Vets Ready - Veteran-First Pricing Strategy
+# Rally Forge - Veteran-First Pricing Strategy
 
 ## Mission Statement
 **"Serve those who served - profit from helping them succeed, not from charging them."**
@@ -412,3 +412,4 @@
 ---
 
 **Bottom line:** Veterans pay $20/year. Businesses pay $1,000-$10,000/month. Everybody wins.
+

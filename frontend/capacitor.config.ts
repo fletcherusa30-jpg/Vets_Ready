@@ -1,6 +1,7 @@
 export default {
-  appId: 'com.vetsready.app',
-  appName: 'VetsReady',
+  appId: 'com.rallyforge.app',
+  appName: 'rallyforge',
   webDir: 'dist',
   bundledWebRuntime: false,
 };
+

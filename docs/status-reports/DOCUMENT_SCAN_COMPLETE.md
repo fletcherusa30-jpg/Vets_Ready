@@ -1,7 +1,7 @@
 # 📄 DOCUMENT SCANNING COMPLETE
 
 **Date**: January 27, 2026
-**Scanner**: Vets Ready Document Processing System
+**Scanner**: Rally Forge Document Processing System
 **Status**: ✅ **100% Success Rate**
 
 ---
@@ -48,12 +48,12 @@
 
 #### Design & Marketing
 - VetLink_Network_Web_Page_Design_Expanded - 3,630 chars
-- Vets Ready LLC — Full Founder Playbook - 5,351 chars
-- Vets Ready Pricing Guide - 1,394 chars
-- VetsReady Job Recruiting Platform - 6,431 chars
-- **VetsReady Master Unified Copilot Instruction Manual** - **35,409 chars** (LARGEST)
-- VetsReady Resume Builder — Full AI‑Powered Design - 2,315 chars
-- VetsReady – Master Design - 7,894 chars
+- Rally Forge LLC — Full Founder Playbook - 5,351 chars
+- Rally Forge Pricing Guide - 1,394 chars
+- rallyforge Job Recruiting Platform - 6,431 chars
+- **rallyforge Master Unified Copilot Instruction Manual** - **35,409 chars** (LARGEST)
+- rallyforge Resume Builder — Full AI‑Powered Design - 2,315 chars
+- rallyforge – Master Design - 7,894 chars
 - VeteranApp Project Status and PowerShell Capability Summary - 2,839 chars
 - VeteranApp – Complete PowerShell Automation - 3,081 chars
 
@@ -65,16 +65,16 @@
 - VeteranApp Project Status and PowerShell Capability Summary - 2,839 chars
 - VeteranApp – Complete PowerShell Automation - 3,081 chars
 - VeteranApp — Full Technical Specification - 7,162 chars
-- Vets Ready LLC — Full Founder Playbook - 5,351 chars
-- Vets Ready Pricing Guide - 1,394 chars
-- **VetsReady_MasterDesignBook_20260124_100823** - **308,835 chars** (MASTER DOCUMENT)
+- Rally Forge LLC — Full Founder Playbook - 5,351 chars
+- Rally Forge Pricing Guide - 1,394 chars
+- **rallyforge_MasterDesignBook_20260124_100823** - **308,835 chars** (MASTER DOCUMENT)
 
 ### 📂 docs/Master Directory (6 documents)
-- VetsReady_Copilot_Instruction_Manual - 2,865 chars
-- VetsReady_Founder_Playbook_Executive_Edition - 2,562 chars
-- VetsReady_Pitch_Deck_Executive_Edition - 2,757 chars
-- VetsReady_Roadmap_Corporate_Executive_Style - 5,921 chars
-- VetsReady_Roadmap_Military_Executive_Style - 5,751 chars
+- rallyforge_Copilot_Instruction_Manual - 2,865 chars
+- rallyforge_Founder_Playbook_Executive_Edition - 2,562 chars
+- rallyforge_Pitch_Deck_Executive_Edition - 2,757 chars
+- rallyforge_Roadmap_Corporate_Executive_Style - 5,921 chars
+- rallyforge_Roadmap_Military_Executive_Style - 5,751 chars
 
 ### 📂 App/Seperation Directory (7 documents)
 Branch-specific transition guides:
@@ -90,7 +90,7 @@ Branch-specific transition guides:
 
 ## 📁 OUTPUT FILES
 
-All extracted content saved to: **`C:\Dev\Vets Ready\data\extracted\`**
+All extracted content saved to: **`C:\Dev\Rally Forge\data\extracted\`**
 
 ### File Format
 Each document produced **TWO** output files:
@@ -115,11 +115,11 @@ Each document produced **TWO** output files:
 ## 🔍 KEY FINDINGS
 
 ### Largest Documents
-1. **VetsReady_MasterDesignBook_20260124_100823** - 308,835 characters (9,087 paragraphs)
-2. **VetsReady Master Unified Copilot Instruction Manual** - 35,409 characters (1,055 paragraphs)
+1. **rallyforge_MasterDesignBook_20260124_100823** - 308,835 characters (9,087 paragraphs)
+2. **rallyforge Master Unified Copilot Instruction Manual** - 35,409 characters (1,055 paragraphs)
 3. **Professional Master Blueprint** - 9,036 characters (228 paragraphs)
 4. **The VeteranApp Operational Guidance Manual** - 8,768 characters (294 paragraphs)
-5. **VetsReady – Master Design** - 7,894 characters (318 paragraphs)
+5. **rallyforge – Master Design** - 7,894 characters (318 paragraphs)
 
 ### Document Categories
 - **Transition Guides**: 14 documents (branch-specific + general)
@@ -136,20 +136,20 @@ Each document produced **TWO** output files:
 ## 🛠️ TOOLS CREATED
 
 ### 1. **Process-Documents.ps1**
-Location: `C:\Dev\Vets Ready\scripts\Process-Documents.ps1`
+Location: `C:\Dev\Rally Forge\scripts\Process-Documents.ps1`
 - PowerShell script for batch document processing
 - Uploads to scanner API
 - Supports PDF and DOCX formats
 
 ### 2. **process_word_docs.py**
-Location: `C:\Dev\Vets Ready\vets-ready-backend\scripts\process_word_docs.py`
+Location: `C:\Dev\Rally Forge\rally-forge-backend\scripts\process_word_docs.py`
 - Python script for Word document extraction
 - Full metadata extraction
 - Table and paragraph parsing
 - Command-line interface
 
 ### 3. **Scan-Documents.ps1**
-Location: `C:\Dev\Vets Ready\scripts\Scan-Documents.ps1`
+Location: `C:\Dev\Rally Forge\scripts\Scan-Documents.ps1`
 - Quick-start scanner script
 - Dependency checking
 - Automatic processing
@@ -172,12 +172,12 @@ Location: `C:\Dev\Vets Ready\scripts\Scan-Documents.ps1`
 
 ### Scan All Documents
 ```powershell
-.\.venv\Scripts\python.exe .\vets-ready-backend\scripts\process_word_docs.py --scan-all
+.\.venv\Scripts\python.exe .\rally-forge-backend\scripts\process_word_docs.py --scan-all
 ```
 
 ### Scan Specific Document
 ```powershell
-.\.venv\Scripts\python.exe .\vets-ready-backend\scripts\process_word_docs.py --file "path\to\document.docx"
+.\.venv\Scripts\python.exe .\rally-forge-backend\scripts\process_word_docs.py --file "path\to\document.docx"
 ```
 
 ### Custom Output Directory
@@ -215,3 +215,5 @@ The extracted content can now be:
 **Processing Time**: ~2 seconds
 **Success Rate**: 100%
 **Status**: ✅ **COMPLETE**
+
+

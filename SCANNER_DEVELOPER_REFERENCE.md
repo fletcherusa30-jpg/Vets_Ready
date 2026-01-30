@@ -305,7 +305,7 @@ pytest backend/tests/test_scanner_upload.py --cov=app.scanner --cov-report=html
 
 ### Environment Variables
 ```bash
-PROJECT_ROOT=/path/to/vets-ready
+PROJECT_ROOT=/path/to/rally-forge
 UPLOADS_DIR=uploads/raw
 MAX_UPLOAD_SIZE=10485760  # 10MB in bytes
 ```
@@ -462,3 +462,4 @@ For questions:
 **Status:** ✅ Production Ready
 **Test Coverage:** 50+ tests
 **Maintained By:** Development Team
+

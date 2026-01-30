@@ -143,7 +143,7 @@ python backend/bin/init_database.py init
 ## 📁 Current Folder Structure (Cleaned)
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 ├── backend/                    ✅ Database layer complete
 │   ├── app/
 │   │   ├── api/
@@ -211,3 +211,4 @@ C:\Dev\Vets Ready\
 **Generated:** 2026-01-28
 **Status:** ✅ Ready for Phase 3
 **Cleanup:** ✅ Complete
+

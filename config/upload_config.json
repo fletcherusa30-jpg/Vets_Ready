@@ -108,7 +108,7 @@ Configuration for upload handling, file type validation, size limits, retention 
   "quarantine_location": "uploads/quarantine",
   "alert_on_threat": true,
   "alert_recipients": [
-    "security@vetsready.com"
+    "security@rallyforge.com"
   ]
 }
 ```
@@ -199,7 +199,7 @@ Configuration for upload handling, file type validation, size limits, retention 
   "webhooks": {
     "enabled": true,
     "endpoints": [
-      "https://api.vetsready.com/webhooks/upload-complete"
+      "https://api.rallyforge.com/webhooks/upload-complete"
     ],
     "retry_policy": {
       "max_retries": 3,
@@ -344,3 +344,4 @@ result = scanner.process_document(
 - `uploads/README.md` - Folder structure documentation
 - `data/STR/README.md` - Data structure documentation
 - `backend/app/scanner/README.md` - Processing pipeline
+

@@ -1,5 +1,5 @@
 <div style="text-align: center; margin-top: 200px;">
-<h1 style="font-size: 48px; color: #1E3A8A;">VETS READY</h1>
+<h1 style="font-size: 48px; color: #1E3A8A;">Rally Forge</h1>
 <h2 style="font-size: 32px; color: #3B82F6;">Master Design Book</h2>
 <h3 style="font-size: 24px; color: #60A5FA;">The Ultimate Veteran-First Platform</h3>
 
@@ -78,15 +78,15 @@ Complete Technical Documentation, Architecture, and Strategic Planning
 
 # 1. Project Overview & Mission
 
-# Vets Ready - Documentation Index & Quick Reference
+# Rally Forge - Documentation Index & Quick Reference
 
 **Version:** 1.0.0 | **Last Updated:** January 24, 2026 | **The Ultimate Veteran-First Platform**
 
 ---
 
-## 🎯 What is Vets Ready?
+## 🎯 What is Rally Forge?
 
-Vets Ready is a comprehensive veteran-first platform featuring:
+Rally Forge is a comprehensive veteran-first platform featuring:
 - **Benefits Discovery** - Federal & state veteran benefits
 - **Claims Readiness** - VA disability claims preparation
 - **Transition Support** - Military-to-civilian career planning
@@ -178,9 +178,9 @@ This "scout" helps veterans discover communities, resources, and businesses whil
 ## 📂 File Structure
 
 ```
-vetsready/
+rallyforge/
 │
-├── � vets-ready-frontend/       ← React + TypeScript web application
+├── � rally-forge-frontend/       ← React + TypeScript web application
 │   ├── src/
 │   │   ├── budget/              ← Budget planning module
 │   │   ├── retirement/          ← Retirement calculator module
@@ -192,7 +192,7 @@ vetsready/
 │   │   └── types/               ← TypeScript types
 │   └── package.json
 │
-├── 📁 vets-ready-backend/        ← FastAPI Python backend
+├── 📁 rally-forge-backend/        ← FastAPI Python backend
 │   ├── app/
 │   │   ├── routers/             ← API route handlers
 │   │   ├── services/            ← Business logic
@@ -201,12 +201,12 @@ vetsready/
 │   ├── requirements.txt
 │   └── package.json
 │
-├── 📁 vets-ready-mobile/         ← Mobile app (Capacitor/React Native)
+├── 📁 rally-forge-mobile/         ← Mobile app (Capacitor/React Native)
 │   ├── android/                 ← Android platform
 │   ├── ios/                     ← iOS platform
 │   └── capacitor.config.ts
 │
-├── 📁 vets-ready-shared/         ← Shared types, utils, constants
+├── 📁 rally-forge-shared/         ← Shared types, utils, constants
 │   ├── types/                   ← Common type definitions
 │   └── schemas/                 ← Validation schemas
 │
@@ -454,7 +454,7 @@ Start with [GETTING-STARTED.md](docs/GETTING-STARTED.md) and happy coding! 🚀
 
 # 2. Quick Start Guide
 
-# Vets Ready Platform - Quick Start Guide
+# Rally Forge Platform - Quick Start Guide
 
 ## 🚀 Getting Started
 
@@ -481,12 +481,12 @@ npm install
 
 **Create PostgreSQL database:**
 ```bash
-createdb vetsready_platform
+createdb rallyforge_platform
 ```
 
 **Run schema:**
 ```bash
-psql vetsready_platform < "c:/Dev/Vets Ready/data/schema.sql"
+psql rallyforge_platform < "c:/Dev/Rally Forge/data/schema.sql"
 ```
 
 ### 3. Configure Environment
@@ -497,7 +497,7 @@ cd c:/Dev/PhoneApp/backend
 cat > .env << EOF
 PORT=4000
 HOST=0.0.0.0
-DATABASE_URL=postgresql://user:password@localhost:5432/vetsready_platform
+DATABASE_URL=postgresql://user:password@localhost:5432/rallyforge_platform
 NODE_ENV=development
 EOF
 ```
@@ -558,7 +558,7 @@ Database (PostgreSQL)
 
 ## 🔌 API Endpoints
 
-All endpoints prefixed with `/api/vetsready/`
+All endpoints prefixed with `/api/rallyforge/`
 
 ### Benefits
 - `GET /benefits/federal` - Federal VA benefits
@@ -594,7 +594,7 @@ All endpoints prefixed with `/api/vetsready/`
 
 ### Test Benefits Endpoint
 ```bash
-curl http://localhost:4000/api/vetsready/benefits/federal
+curl http://localhost:4000/api/rallyforge/benefits/federal
 ```
 
 ### Test Frontend Integration
@@ -680,7 +680,7 @@ Set in production hosting:
 
 ## 📖 Documentation
 
-See [VETS_READY_COMPLETE.md](VETS_READY_COMPLETE.md) for full project status.
+See [rally_forge_COMPLETE.md](rally_forge_COMPLETE.md) for full project status.
 
 ---
 
@@ -736,13 +736,13 @@ Built with ❤️ for veterans.
 
 # 3. System Architecture
 
-# Vets Ready - Developer Quick Reference
+# Rally Forge - Developer Quick Reference
 
 ## 🚀 Quick Start (30 seconds)
 
 ```bash
 # 1. Clone & install
-git clone <repo> && cd "Vets Ready"
+git clone <repo> && cd "Rally Forge"
 npm install && cd backend && npm install && cd ..
 
 # 2. Setup database
@@ -966,7 +966,7 @@ VITE_DEBUG=1 npm run dev
 curl -X GET http://localhost:4000/api/outreach/stats
 
 # Query database
-psql -d vetsready_dev -c "SELECT COUNT(*) FROM vetsready_users;"
+psql -d rallyforge_dev -c "SELECT COUNT(*) FROM rallyforge_users;"
 ```
 
 ### React Debugging
@@ -1053,9 +1053,9 @@ cd backend && npm run dev
 
 **Database corrupted?**
 ```bash
-dropdb vetsready_dev
-createdb vetsready_dev
-psql -U postgres -d vetsready_dev -f data/schema.sql
+dropdb rallyforge_dev
+createdb rallyforge_dev
+psql -U postgres -d rallyforge_dev -f data/schema.sql
 ```
 
 **Port conflict?**
@@ -1647,7 +1647,7 @@ PhoneApp/
 
 # 6. API Reference
 
-# Vets Ready API Documentation
+# Rally Forge API Documentation
 
 ## Base URL
 `http://localhost:4000/api` (Development)
@@ -2475,10 +2475,10 @@ Future versions will be available at `/api/v2`, `/api/v3`, etc.
 
 # 7. Database Schema
 
--- Vets Ready Schema
--- All tables prefixed with vetsready_
+-- Rally Forge Schema
+-- All tables prefixed with rallyforge_
 
-CREATE TABLE IF NOT EXISTS vetsready_users (
+CREATE TABLE IF NOT EXISTS rallyforge_users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email VARCHAR(255) UNIQUE NOT NULL,
   name VARCHAR(255),
@@ -2488,9 +2488,9 @@ CREATE TABLE IF NOT EXISTS vetsready_users (
 );
 
 -- Investment accounts
-CREATE TABLE IF NOT EXISTS vetsready_investment_accounts (
+CREATE TABLE IF NOT EXISTS rallyforge_investment_accounts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   account_type VARCHAR(50) NOT NULL,
   name VARCHAR(255),
   balance DECIMAL(15,2),
@@ -2498,9 +2498,9 @@ CREATE TABLE IF NOT EXISTS vetsready_investment_accounts (
 );
 
 -- Budget scenarios
-CREATE TABLE IF NOT EXISTS vetsready_budget_scenarios (
+CREATE TABLE IF NOT EXISTS rallyforge_budget_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   name VARCHAR(255),
   monthly_income DECIMAL(15,2),
   total_expenses DECIMAL(15,2),
@@ -2509,9 +2509,9 @@ CREATE TABLE IF NOT EXISTS vetsready_budget_scenarios (
 );
 
 -- Retirement scenarios
-CREATE TABLE IF NOT EXISTS vetsready_retirement_scenarios (
+CREATE TABLE IF NOT EXISTS rallyforge_retirement_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   name VARCHAR(255),
   retirement_age INT,
   life_expectancy INT,
@@ -2522,9 +2522,9 @@ CREATE TABLE IF NOT EXISTS vetsready_retirement_scenarios (
 );
 
 -- Transition checklists
-CREATE TABLE IF NOT EXISTS vetsready_transition_checklists (
+CREATE TABLE IF NOT EXISTS rallyforge_transition_checklists (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   separation_date DATE,
   items_completed INT,
   total_items INT,
@@ -2532,24 +2532,24 @@ CREATE TABLE IF NOT EXISTS vetsready_transition_checklists (
 );
 
 -- Documents
-CREATE TABLE IF NOT EXISTS vetsready_documents (
+CREATE TABLE IF NOT EXISTS rallyforge_documents (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   document_type VARCHAR(100),
   file_path VARCHAR(500),
   uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Resume builds
-CREATE TABLE IF NOT EXISTS vetsready_resume_builds (
+CREATE TABLE IF NOT EXISTS rallyforge_resume_builds (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   content TEXT,
   last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Employer profiles
-CREATE TABLE IF NOT EXISTS vetsready_employer_profiles (
+CREATE TABLE IF NOT EXISTS rallyforge_employer_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(255),
   industry VARCHAR(100),
@@ -2559,9 +2559,9 @@ CREATE TABLE IF NOT EXISTS vetsready_employer_profiles (
 );
 
 -- Job postings
-CREATE TABLE IF NOT EXISTS vetsready_job_postings (
+CREATE TABLE IF NOT EXISTS rallyforge_job_postings (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  employer_id UUID NOT NULL REFERENCES vetsready_employer_profiles(id),
+  employer_id UUID NOT NULL REFERENCES rallyforge_employer_profiles(id),
   title VARCHAR(255),
   description TEXT,
   required_mos VARCHAR(100),
@@ -2570,9 +2570,9 @@ CREATE TABLE IF NOT EXISTS vetsready_job_postings (
 );
 
 -- Veteran job profiles
-CREATE TABLE IF NOT EXISTS vetsready_veteran_job_profiles (
+CREATE TABLE IF NOT EXISTS rallyforge_veteran_job_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   mos VARCHAR(100),
   rank VARCHAR(50),
   years_experience INT,
@@ -2582,17 +2582,17 @@ CREATE TABLE IF NOT EXISTS vetsready_veteran_job_profiles (
 );
 
 -- Job applications
-CREATE TABLE IF NOT EXISTS vetsready_job_applications (
+CREATE TABLE IF NOT EXISTS rallyforge_job_applications (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  veteran_profile_id UUID NOT NULL REFERENCES vetsready_veteran_job_profiles(id),
-  job_posting_id UUID NOT NULL REFERENCES vetsready_job_postings(id),
+  veteran_profile_id UUID NOT NULL REFERENCES rallyforge_veteran_job_profiles(id),
+  job_posting_id UUID NOT NULL REFERENCES rallyforge_job_postings(id),
   match_score DECIMAL(3,2),
   applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ========== FEDERAL BENEFITS REFERENCE DATA ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_federal_benefits (
+CREATE TABLE IF NOT EXISTS rallyforge_federal_benefits (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   benefit_type VARCHAR(100) NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -2605,7 +2605,7 @@ CREATE TABLE IF NOT EXISTS vetsready_federal_benefits (
 
 -- ========== STATE BENEFITS REFERENCE DATA ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_state_benefits (
+CREATE TABLE IF NOT EXISTS rallyforge_state_benefits (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   state_code VARCHAR(2) NOT NULL,
   benefit_type VARCHAR(100) NOT NULL,
@@ -2620,9 +2620,9 @@ CREATE TABLE IF NOT EXISTS vetsready_state_benefits (
 
 -- ========== CLAIM READINESS PROFILES ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_claim_profiles (
+CREATE TABLE IF NOT EXISTS rallyforge_claim_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   conditions TEXT[],
   service_connection_notes TEXT,
   evidence_collected TEXT[],
@@ -2633,9 +2633,9 @@ CREATE TABLE IF NOT EXISTS vetsready_claim_profiles (
 
 -- ========== TRANSITION PROFILES ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_transition_profiles (
+CREATE TABLE IF NOT EXISTS rallyforge_transition_profiles (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   separation_date DATE,
   mos VARCHAR(100),
   desired_role VARCHAR(255),
@@ -2647,9 +2647,9 @@ CREATE TABLE IF NOT EXISTS vetsready_transition_profiles (
 
 -- ========== FINANCIAL SCENARIOS ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_financial_scenarios (
+CREATE TABLE IF NOT EXISTS rallyforge_financial_scenarios (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL REFERENCES vetsready_users(id),
+  user_id UUID NOT NULL REFERENCES rallyforge_users(id),
   scenario_name VARCHAR(255),
   retirement_age INT,
   expected_return_rate DECIMAL(5,2),
@@ -2662,7 +2662,7 @@ CREATE TABLE IF NOT EXISTS vetsready_financial_scenarios (
 
 -- ========== RESOURCES HUB ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_resources (
+CREATE TABLE IF NOT EXISTS rallyforge_resources (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title VARCHAR(255) NOT NULL,
   description TEXT,
@@ -2676,7 +2676,7 @@ CREATE TABLE IF NOT EXISTS vetsready_resources (
 
 -- ========== PARTNERSHIPS (EMPLOYMENT & BUSINESS) ==========
 
-CREATE TABLE IF NOT EXISTS vetsready_partners (
+CREATE TABLE IF NOT EXISTS rallyforge_partners (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name VARCHAR(255) NOT NULL,
   category VARCHAR(50) NOT NULL,
@@ -2695,9 +2695,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partners (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_jobs (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_jobs (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   title VARCHAR(255) NOT NULL,
   location VARCHAR(255),
   remote_flag BOOLEAN,
@@ -2707,9 +2707,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_jobs (
   expires_at TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_offers (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_offers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   offer_type VARCHAR(100),
   description TEXT,
   eligibility_notes TEXT,
@@ -2719,9 +2719,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_offers (
   redemption_code VARCHAR(100)
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_sponsorships (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_sponsorships (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   package VARCHAR(50),
   amount DECIMAL(10,2),
   term VARCHAR(50),
@@ -2730,9 +2730,9 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_sponsorships (
   end_at TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_affiliate_links (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_affiliate_links (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   program_name VARCHAR(255),
   tracking_url VARCHAR(500),
   payout_terms TEXT,
@@ -2740,17 +2740,17 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_affiliate_links (
   cookie_window_days INT
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_engagement (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_engagement (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   event_type VARCHAR(100),
   metadata JSONB,
   occurred_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS vetsready_partner_billing (
+CREATE TABLE IF NOT EXISTS rallyforge_partner_billing (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  partner_id UUID NOT NULL REFERENCES vetsready_partners(id),
+  partner_id UUID NOT NULL REFERENCES rallyforge_partners(id),
   billing_provider_id VARCHAR(255),
   plan_code VARCHAR(100),
   status VARCHAR(50),
@@ -2764,26 +2764,26 @@ CREATE TABLE IF NOT EXISTS vetsready_partner_billing (
 
 -- ========== INDEXES ==========
 
-CREATE INDEX idx_vetsready_users_email ON vetsready_users(email);
-CREATE INDEX idx_vetsready_budget_user ON vetsready_budget_scenarios(user_id);
-CREATE INDEX idx_vetsready_retirement_user ON vetsready_retirement_scenarios(user_id);
-CREATE INDEX idx_vetsready_transition_user ON vetsready_transition_checklists(user_id);
-CREATE INDEX idx_vetsready_documents_user ON vetsready_documents(user_id);
-CREATE INDEX idx_vetsready_job_postings_employer ON vetsready_job_postings(employer_id);
-CREATE INDEX idx_vetsready_job_applications_match ON vetsready_job_applications(match_score);
-CREATE INDEX idx_vetsready_state_benefits_state ON vetsready_state_benefits(state_code);
-CREATE INDEX idx_vetsready_state_benefits_type ON vetsready_state_benefits(benefit_type);
-CREATE INDEX idx_vetsready_federal_benefits_type ON vetsready_federal_benefits(benefit_type);
-CREATE INDEX idx_vetsready_partners_category ON vetsready_partners(category);
-CREATE INDEX idx_vetsready_partners_tier ON vetsready_partners(tier);
-CREATE INDEX idx_vetsready_partners_status ON vetsready_partners(status);
-CREATE INDEX idx_vetsready_partners_tags ON vetsready_partners USING GIN(tags);
-CREATE INDEX idx_vetsready_partners_industries ON vetsready_partners USING GIN(industries);
-CREATE INDEX idx_vetsready_partner_engagement_type_date ON vetsready_partner_engagement(event_type, occurred_at);
-CREATE INDEX idx_vetsready_partner_billing_status ON vetsready_partner_billing(status);
-CREATE INDEX idx_vetsready_claim_profiles_user ON vetsready_claim_profiles(user_id);
-CREATE INDEX idx_vetsready_transition_profiles_user ON vetsready_transition_profiles(user_id);
-CREATE INDEX idx_vetsready_financial_scenarios_user ON vetsready_financial_scenarios(user_id);
+CREATE INDEX idx_rallyforge_users_email ON rallyforge_users(email);
+CREATE INDEX idx_rallyforge_budget_user ON rallyforge_budget_scenarios(user_id);
+CREATE INDEX idx_rallyforge_retirement_user ON rallyforge_retirement_scenarios(user_id);
+CREATE INDEX idx_rallyforge_transition_user ON rallyforge_transition_checklists(user_id);
+CREATE INDEX idx_rallyforge_documents_user ON rallyforge_documents(user_id);
+CREATE INDEX idx_rallyforge_job_postings_employer ON rallyforge_job_postings(employer_id);
+CREATE INDEX idx_rallyforge_job_applications_match ON rallyforge_job_applications(match_score);
+CREATE INDEX idx_rallyforge_state_benefits_state ON rallyforge_state_benefits(state_code);
+CREATE INDEX idx_rallyforge_state_benefits_type ON rallyforge_state_benefits(benefit_type);
+CREATE INDEX idx_rallyforge_federal_benefits_type ON rallyforge_federal_benefits(benefit_type);
+CREATE INDEX idx_rallyforge_partners_category ON rallyforge_partners(category);
+CREATE INDEX idx_rallyforge_partners_tier ON rallyforge_partners(tier);
+CREATE INDEX idx_rallyforge_partners_status ON rallyforge_partners(status);
+CREATE INDEX idx_rallyforge_partners_tags ON rallyforge_partners USING GIN(tags);
+CREATE INDEX idx_rallyforge_partners_industries ON rallyforge_partners USING GIN(industries);
+CREATE INDEX idx_rallyforge_partner_engagement_type_date ON rallyforge_partner_engagement(event_type, occurred_at);
+CREATE INDEX idx_rallyforge_partner_billing_status ON rallyforge_partner_billing(status);
+CREATE INDEX idx_rallyforge_claim_profiles_user ON rallyforge_claim_profiles(user_id);
+CREATE INDEX idx_rallyforge_transition_profiles_user ON rallyforge_transition_profiles(user_id);
+CREATE INDEX idx_rallyforge_financial_scenarios_user ON rallyforge_financial_scenarios(user_id);
 
 -- Veteran-owned businesses directory
 CREATE TABLE IF NOT EXISTS veteran_businesses (
@@ -2908,7 +2908,7 @@ CREATE INDEX IF NOT EXISTS idx_investment_accounts_user ON investment_accounts(u
 
 # 9. Pricing Strategy & Monetization
 
-# Vets Ready - Veteran-First Pricing Strategy
+# Rally Forge - Veteran-First Pricing Strategy
 
 ## Mission Statement
 **"Serve those who served - profit from helping them succeed, not from charging them."**
@@ -3330,7 +3330,7 @@ CREATE INDEX IF NOT EXISTS idx_investment_accounts_user ON investment_accounts(u
 
 # 11. VSO Partnerships
 
-# Vets Ready - VSO Partnership Proposal
+# Rally Forge - VSO Partnership Proposal
 
 **Partnership Program for Veteran Service Organizations**
 
@@ -3338,7 +3338,7 @@ CREATE INDEX IF NOT EXISTS idx_investment_accounts_user ON investment_accounts(u
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **free claims and benefits tools** that empower your organization to serve more veterans more effectively.
+Rally Forge is partnering with Veteran Service Organizations (VSOs) to provide **free claims and benefits tools** that empower your organization to serve more veterans more effectively.
 
 **What You Get:**
 - ✅ **FREE access** to VA claims analyzer and benefits navigation tools
@@ -3371,7 +3371,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 ---
 
-## ✅ THE VETS READY SOLUTION
+## ✅ THE Rally Forge SOLUTION
 
 ### FREE TIER - Core Claims & Benefits Platform
 
@@ -3417,7 +3417,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 - Quarterly webinars
 - User documentation
 
-**Branding:** Co-branded with VSO logo and Vets Ready
+**Branding:** Co-branded with VSO logo and Rally Forge
 
 **Access:** Web app + mobile apps (iOS & Android)
 
@@ -3457,7 +3457,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 ### **Full White-Label Platform** - $699/month
 **Complete branded solution:**
-- Custom domain (yourvso.vetsready.com)
+- Custom domain (yourvso.rallyforge.com)
 - Full UI customization (colors, logos, branding)
 - All modules included (claims, retirement, jobs, resources)
 - Advanced member management
@@ -3532,7 +3532,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 5. **More resources** - All-in-one platform
 6. **Privacy** - Secure, encrypted data storage
 
-### **For Vets Ready:**
+### **For Rally Forge:**
 1. **Mission alignment** - Help VSOs help more veterans
 2. **Network growth** - Access to VSO membership base
 3. **Credibility** - Association with trusted organizations
@@ -3574,14 +3574,14 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 **Scenario: Free Tier Only**
 
-**Before Vets Ready:**
+**Before Rally Forge:**
 - Manual claims tracking (Excel/paper)
 - Limited member engagement data
 - 200 claims assisted per year
 - Average 6 months per claim
 - 2 full-time VSO reps
 
-**After Vets Ready (Year 1):**
+**After Rally Forge (Year 1):**
 - Digital claims platform
 - Real-time member analytics
 - 500 claims assisted per year (+150%)
@@ -3671,14 +3671,14 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 5. Launch to members
 
 **Option 2: Schedule a Demo**
-1. Request demo (calendly.com/vetsready/demo)
+1. Request demo (calendly.com/rallyforge/demo)
 2. 30-minute live walkthrough
 3. Q&A with our team
 4. Customized proposal
 5. Decision within your timeline
 
 **Option 3: Talk to Existing Partners**
-We'll connect you with VSOs already using Vets Ready:
+We'll connect you with VSOs already using Rally Forge:
 - Success stories
 - Lessons learned
 - Real-world feedback
@@ -3689,10 +3689,10 @@ We'll connect you with VSOs already using Vets Ready:
 ## 📧 CONTACT INFORMATION
 
 **Partnership Team:**
-- Email: partnerships@vetsready.com
+- Email: partnerships@rallyforge.com
 - Phone: 1-800-VETS-RDY
-- Website: vetsready.com/vso-partners
-- Schedule Demo: calendly.com/vetsready/vso-demo
+- Website: rallyforge.com/vso-partners
+- Schedule Demo: calendly.com/rallyforge/vso-demo
 
 **Your Dedicated Account Manager:**
 - Assigned upon partnership approval
@@ -3736,7 +3736,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Mission-Driven Company:**
 - Veteran-founded and veteran-led
@@ -3768,7 +3768,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 **Ready to partner with us?**
 
-**Apply online:** vetsready.com/apply/vso
+**Apply online:** rallyforge.com/apply/vso
 
 **Or email us with:**
 1. VSO name and location
@@ -3783,7 +3783,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 **Together, we can serve more veterans, more effectively.**
 
-*Vets Ready - Technology that serves those who served.*
+*Rally Forge - Technology that serves those who served.*
 
 
 
@@ -3792,7 +3792,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 # 12. Military Installation Partnerships
 
-# Vets Ready - Military Installation Partnership Program
+# Rally Forge - Military Installation Partnership Program
 
 **Partnership Program for SFL-TAP, Transition Assistance Programs, and Military Base Services**
 
@@ -3800,7 +3800,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready provides **FREE transition and career tools** to military installations, helping service members successfully transition from military to civilian life.
+Rally Forge provides **FREE transition and career tools** to military installations, helping service members successfully transition from military to civilian life.
 
 **What You Get:**
 - ✅ **100% FREE** transition platform for your installation
@@ -3833,7 +3833,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 5. **Personalization** - One-size-fits-all doesn't work
 6. **Engagement** - Service members need ongoing support, not one workshop
 
-### What Vets Ready Solves:
+### What Rally Forge Solves:
 - Modern, mobile-first platform service members actually use
 - MOS-specific job matching and career pathways
 - Ongoing support beyond TAP graduation
@@ -3971,7 +3971,7 @@ Every year, **200,000+ service members** transition from military to civilian li
    - Service members get jobs
    - Installations improve transition outcomes
    - Employers find qualified veteran talent
-   - Vets Ready sustains platform
+   - Rally Forge sustains platform
 
 **Employer Revenue Streams:**
 - Job posting fees: $299-$999 per post
@@ -4164,7 +4164,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 
 ## 🎯 INSTALLATION ROLES & RESPONSIBILITIES
 
-### **Vets Ready Provides:**
+### **Rally Forge Provides:**
 - Platform development and maintenance
 - Employer recruitment and vetting
 - Customer support (service members and staff)
@@ -4188,7 +4188,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 ## 🚀 SPECIAL PROGRAMS
 
 ### **1. On-Base Employer Hiring Events**
-- Vets Ready coordinates with employers
+- Rally Forge coordinates with employers
 - On-base or virtual career fairs
 - Pre-screened candidates matched to employers
 - Free for installations and service members
@@ -4236,7 +4236,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 ## ❓ FREQUENTLY ASKED QUESTIONS
 
 **Q: Does this replace our existing TAP program?**
-A: No, it enhances it. Vets Ready provides tools service members use independently, freeing TAP staff to focus on counseling and workshops.
+A: No, it enhances it. Rally Forge provides tools service members use independently, freeing TAP staff to focus on counseling and workshops.
 
 **Q: Is this really free for our installation?**
 A: Yes, 100% free. Employers fund the platform to access veteran talent.
@@ -4272,31 +4272,31 @@ A: No problem. Service members can use multiple resources. We integrate where po
 ### **Ready to Partner?**
 
 **Option 1: Schedule Installation Demo**
-- Calendar: calendly.com/vetsready/installation-demo
+- Calendar: calendly.com/rallyforge/installation-demo
 - 45-minute platform walkthrough
 - Q&A with partnership team
 - Custom proposal for your installation
 
 **Option 2: Request Information Packet**
-- Email: installations@vetsready.com
+- Email: installations@rallyforge.com
 - Detailed PDF sent within 24 hours
 - Case studies and success metrics
 - Sample partnership agreement
 
 **Option 3: Pilot Program Application**
-- Website: vetsready.com/installations/apply
+- Website: rallyforge.com/installations/apply
 - Simple online form (10 minutes)
 - Priority review for first 10 installations
 - Response within 48 hours
 
 **Contact Us:**
-- **Installation Partnerships:** installations@vetsready.com
-- **General Inquiries:** support@vetsready.com
+- **Installation Partnerships:** installations@rallyforge.com
+- **General Inquiries:** support@rallyforge.com
 - **Phone:** 1-800-VETS-RDY (1-800-838-7739)
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Mission-Driven:**
 - Veteran-founded company
@@ -4332,7 +4332,7 @@ A: No problem. Service members can use multiple resources. We integrate where po
 
 **Together, we can ensure every service member transitions to a fulfilling civilian career.**
 
-*Vets Ready - Honoring Service Through Successful Transitions*
+*Rally Forge - Honoring Service Through Successful Transitions*
 
 ---
 
@@ -4376,7 +4376,7 @@ A: No problem. Service members can use multiple resources. We integrate where po
 
 # 13. Attorney Partnerships
 
-# Vets Ready - Attorney Partnership Program
+# Rally Forge - Attorney Partnership Program
 
 **Partnership Program for VA-Accredited Attorneys & Law Firms**
 
@@ -4384,7 +4384,7 @@ A: No problem. Service members can use multiple resources. We integrate where po
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready connects veterans with qualified legal representation while providing attorneys with a streamlined client acquisition and case management platform.
+Rally Forge connects veterans with qualified legal representation while providing attorneys with a streamlined client acquisition and case management platform.
 
 **What You Get:**
 - ✅ Qualified veteran client leads
@@ -4414,7 +4414,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 5. **Competition** - Difficult to stand out in crowded market
 6. **Trust building** - Veterans skeptical of attorneys
 
-### What Vets Ready Solves:
+### What Rally Forge Solves:
 - Pre-qualified leads (veterans ready for legal help)
 - Organized case information (claims already analyzed)
 - Trusted platform (veteran-first company)
@@ -4428,7 +4428,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 1: Lead Generation (Performance-Based)**
 
 **How It Works:**
-1. Veteran uses Vets Ready to analyze their claim
+1. Veteran uses Rally Forge to analyze their claim
 2. Platform identifies cases needing legal representation
 3. Veteran opts in to attorney matching
 4. We send qualified lead to partner attorneys
@@ -4460,7 +4460,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 2: Attorney Directory Listing (Subscription)**
 
 **How It Works:**
-1. Attorney profile in Vets Ready directory
+1. Attorney profile in Rally Forge directory
 2. Veterans search and contact you directly
 3. You control your profile, practice areas, availability
 4. Unlimited veteran inquiries
@@ -4497,7 +4497,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 3: Case Management Platform (SaaS)**
 
 **How It Works:**
-1. Access to Vets Ready case management system
+1. Access to Rally Forge case management system
 2. Track all your VA cases in one platform
 3. Integrated with veteran-facing tools
 4. Client portal included
@@ -4804,7 +4804,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 - Timely service delivery
 - Professional conduct
 
-### **Vets Ready Protections:**
+### **Rally Forge Protections:**
 - Attorney vetting process
 - Veteran feedback system
 - Complaint resolution
@@ -4897,29 +4897,29 @@ A: Yes. 30-day trial with discounted leads or free directory trial.
 ### **Ready to Partner?**
 
 **Option 1: Apply Now**
-- Website: vetsready.com/attorneys/apply
+- Website: rallyforge.com/attorneys/apply
 - Online application (10 minutes)
 - Response within 48 hours
 
 **Option 2: Schedule a Demo**
-- Calendar: calendly.com/vetsready/attorney-demo
+- Calendar: calendly.com/rallyforge/attorney-demo
 - 30-minute platform walkthrough
 - Q&A with partnership team
 - Custom proposal
 
 **Option 3: Request Information**
-- Email: attorneys@vetsready.com
+- Email: attorneys@rallyforge.com
 - Phone: 1-800-VETS-LAW
 - Detailed information packet sent
 
 **Contact Us:**
-- Partnership Team: partnerships@vetsready.com
-- Support: support@vetsready.com
+- Partnership Team: partnerships@rallyforge.com
+- Support: support@rallyforge.com
 - Phone: 1-800-VETS-RDY
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Trusted Platform:**
 - Veteran-founded company
@@ -4955,7 +4955,7 @@ A: Yes. 30-day trial with discounted leads or free directory trial.
 
 **Together, we can help veterans get the legal representation they deserve.**
 
-*Vets Ready - Connecting veterans with qualified legal advocates.*
+*Rally Forge - Connecting veterans with qualified legal advocates.*
 
 
 <div style='page-break-after: always;'></div>
@@ -8442,7 +8442,7 @@ Example: 40% + 30%
 
 # 22. Veteran Assistance Programs
 
-# Vets Ready - Comprehensive Veteran Assistance Programs
+# Rally Forge - Comprehensive Veteran Assistance Programs
 
 ## Mission: **"Every veteran gets the help they've earned, regardless of ability to pay."**
 
@@ -8491,7 +8491,7 @@ For veterans who can't afford the $20/year Pro tier:
 #### **What We Provide VSOs at Zero Cost:**
 
 **Technology Suite:**
-- Branded platform (yourVSO.vetsready.com)
+- Branded platform (yourVSO.rallyforge.com)
 - Member management system
 - Claims tracking for their clients
 - Appointment scheduling
@@ -8830,7 +8830,7 @@ For veterans who can't afford the $20/year Pro tier:
 ## 🤝 PARTNERSHIP PROGRAMS (How We Fund This)
 
 ### **Corporate Sponsors Get:**
-- Logo on platform ("Proud Sponsor of Vets Ready")
+- Logo on platform ("Proud Sponsor of Rally Forge")
 - Recognition in veteran communications
 - Access to hire veteran talent
 - CSR (Corporate Social Responsibility) metrics
@@ -8914,7 +8914,7 @@ For veterans who can't afford the $20/year Pro tier:
 
 ## 🎯 OUR COMMITMENT
 
-### **The Vets Ready Promise:**
+### **The Rally Forge Promise:**
 
 ✅ **Veterans always come first** - profit is secondary to mission
 ✅ **No veteran turned away** - if you can't afford it, you get it free
@@ -10485,7 +10485,7 @@ This implementation demonstrates:
 
 # 29. Compliance Audit Report
 
-# Vets Ready - Comprehensive Compliance Audit Report
+# Rally Forge - Comprehensive Compliance Audit Report
 **Date:** January 24, 2026
 **Auditor:** AI Compliance System
 **Status:** IN PROGRESS
@@ -10494,9 +10494,9 @@ This implementation demonstrates:
 
 ## EXECUTIVE SUMMARY
 
-This audit ensures the Vets Ready codebase fully complies with:
+This audit ensures the Rally Forge codebase fully complies with:
 1. **ARCHITECTURE.md** - Master System Blueprint
-2. **PRICING_STRATEGY.md** - Vets Ready Pricing Guide
+2. **PRICING_STRATEGY.md** - Rally Forge Pricing Guide
 
 ---
 
@@ -10505,8 +10505,8 @@ This audit ensures the Vets Ready codebase fully complies with:
 ### ✅ COMPLIANT ITEMS
 
 #### 1. Architecture Components
-- ✅ React frontend (vets-ready-frontend/)
-- ✅ FastAPI backend (vets-ready-backend/app/)
+- ✅ React frontend (rally-forge-frontend/)
+- ✅ FastAPI backend (rally-forge-backend/app/)
 - ✅ Capacitor mobile app structure (android/)
 - ✅ Electron desktop (desktop/)
 - ✅ AI engine (ai-engine/)
@@ -10542,28 +10542,28 @@ This audit ensures the Vets Ready codebase fully complies with:
 
 #### 1. BACKEND STRUCTURE DUPLICATION ❌
 **Issue:** Multiple redundant backend files at root level
-- `vets-ready-backend/main.py` (old, imports from backend/ incorrectly)
-- `vets-ready-backend/app/main.py` (correct, active)
-- `vets-ready-backend/api.py` (duplicate)
-- `vets-ready-backend/app.py` (duplicate)
-- `vets-ready-backend/database.py` (duplicate)
-- `vets-ready-backend/models.py` (duplicate)
-- `vets-ready-backend/config.py` (duplicate)
+- `rally-forge-backend/main.py` (old, imports from backend/ incorrectly)
+- `rally-forge-backend/app/main.py` (correct, active)
+- `rally-forge-backend/api.py` (duplicate)
+- `rally-forge-backend/app.py` (duplicate)
+- `rally-forge-backend/database.py` (duplicate)
+- `rally-forge-backend/models.py` (duplicate)
+- `rally-forge-backend/config.py` (duplicate)
 
 **Correct Structure:** All code should be in `app/` folder
 **Fix Required:** Remove duplicates, keep only app/ versions
 
 #### 2. BACKEND ROUTING INCONSISTENCY ❌
 **Issue:** Multiple router folders
-- `vets-ready-backend/routers/` (old location)
-- `vets-ready-backend/routes/` (duplicate)
-- `vets-ready-backend/app/routers/` (correct location)
+- `rally-forge-backend/routers/` (old location)
+- `rally-forge-backend/routes/` (duplicate)
+- `rally-forge-backend/app/routers/` (correct location)
 
 **Fix Required:** Remove `routers/` and `routes/` at backend root level
 
 #### 3. MISSING PRICING INTEGRATION ❌
 **Issue:** Pricing tiers not fully implemented
-- Found: `vets-ready-backend/tiers.py` (isolated file)
+- Found: `rally-forge-backend/tiers.py` (isolated file)
 - Missing: Subscription API endpoints
 - Missing: Employer tier management
 - Missing: Business directory tier management
@@ -10624,9 +10624,9 @@ This audit ensures the Vets Ready codebase fully complies with:
 ### MINOR ISSUES
 
 #### 11. DOCUMENTATION REFERENCES
-**Issue:** Old references to "PhoneApp" instead of "Vets Ready"
+**Issue:** Old references to "PhoneApp" instead of "Rally Forge"
 - Found in: backend/app/main.py, multiple comments
-**Fix Required:** Replace all "PhoneApp" with "Vets Ready"
+**Fix Required:** Replace all "PhoneApp" with "Rally Forge"
 
 #### 12. API VERSION INCONSISTENCY
 **Issue:** Version numbers don't match
@@ -10718,7 +10718,7 @@ This audit ensures the Vets Ready codebase fully complies with:
 
 ### 2. Pricing System Implementation ✅
 **Files Created:**
-- `vets-ready-backend/app/models/subscription.py` - All subscription and pricing models
+- `rally-forge-backend/app/models/subscription.py` - All subscription and pricing models
   - VeteranSubscription (Free, Pro, Family, Lifetime tiers)
   - EmployerAccount (Job board tiers)
   - BusinessListing (Directory listing tiers)
@@ -10727,21 +10727,21 @@ This audit ensures the Vets Ready codebase fully complies with:
   - Invoice (Payment tracking)
   - VSOPartner (White-label VSO partnerships)
 
-- `vets-ready-backend/app/schemas/subscription.py` - Pydantic validation schemas
+- `rally-forge-backend/app/schemas/subscription.py` - Pydantic validation schemas
   - All create/update/response schemas
   - Pricing tier enums
   - Validation rules per PRICING_STRATEGY.md
 
 ### 3. B2B Monetization APIs ✅
 **Files Created:**
-- `vets-ready-backend/app/routers/subscriptions.py`
+- `rally-forge-backend/app/routers/subscriptions.py`
   - GET /api/subscriptions/pricing/veteran - Display pricing
   - POST /api/subscriptions/ - Create subscription
   - GET /api/subscriptions/my-subscription - Get user subscription
   - PATCH /api/subscriptions/{id} - Upgrade/downgrade
   - DELETE /api/subscriptions/{id} - Cancel subscription
 
-- `vets-ready-backend/app/routers/employers.py`
+- `rally-forge-backend/app/routers/employers.py`
   - GET /api/employers/pricing - Employer pricing tiers
   - POST /api/employers/accounts - Create employer account
   - GET/PATCH /api/employers/accounts/{id} - Manage account
@@ -10750,7 +10750,7 @@ This audit ensures the Vets Ready codebase fully complies with:
   - GET /api/employers/jobs/{id} - View job details
   - POST /api/employers/jobs/{id}/apply - Apply to job
 
-- `vets-ready-backend/app/routers/business_directory.py`
+- `rally-forge-backend/app/routers/business_directory.py`
   - GET /api/business-directory/pricing - Business listing pricing
   - POST /api/business-directory/listings - Create listing
   - GET /api/business-directory/listings - Search directory (FREE for veterans)
@@ -10771,17 +10771,17 @@ This audit ensures the Vets Ready codebase fully complies with:
 
 ### 5. Backend Integration Updates ✅
 **Files Updated:**
-- `vets-ready-backend/app/main.py`
+- `rally-forge-backend/app/main.py`
   - Added new router imports (subscriptions, employers, business_directory)
   - Updated version to 1.0.0 (standardized)
   - Updated service list in health check
-  - Fixed "PhoneApp" references to "Vets Ready"
+  - Fixed "PhoneApp" references to "Rally Forge"
   - Updated API description
 
-- `vets-ready-backend/app/models/__init__.py`
+- `rally-forge-backend/app/models/__init__.py`
   - Exported all new subscription models
 
-- `vets-ready-backend/app/models/user.py`
+- `rally-forge-backend/app/models/user.py`
   - Added subscription relationship
 
 ### 6. Root Folder Organization ✅
@@ -10804,7 +10804,7 @@ Awaiting approval to execute automated fixes...
 
 # 30. Compliance Implementation Summary
 
-# 🎯 Vets Ready - Compliance Implementation Summary
+# 🎯 Rally Forge - Compliance Implementation Summary
 
 **Date:** January 24, 2026
 **Status:** ✅ MAJOR COMPLIANCE FIXES COMPLETE
@@ -10814,9 +10814,9 @@ Awaiting approval to execute automated fixes...
 
 ## 🎉 EXECUTIVE SUMMARY
 
-The Vets Ready codebase has been comprehensively audited and updated to fully comply with:
+The Rally Forge codebase has been comprehensively audited and updated to fully comply with:
 1. **ARCHITECTURE.md** - Master System Blueprint
-2. **PRICING_STRATEGY.md** - Vets Ready Pricing Guide
+2. **PRICING_STRATEGY.md** - Rally Forge Pricing Guide
 
 **Major Achievements:**
 - ✅ Complete backend restructuring and cleanup
@@ -10969,8 +10969,8 @@ The Vets Ready codebase has been comprehensively audited and updated to fully co
 ## 🏗️ ARCHITECTURE COMPLIANCE
 
 ### ✅ Implemented Components
-- React frontend (vets-ready-frontend/)
-- FastAPI backend (vets-ready-backend/app/)
+- React frontend (rally-forge-frontend/)
+- FastAPI backend (rally-forge-backend/app/)
 - Capacitor mobile app (android/)
 - Electron desktop (desktop/)
 - AI engine (ai-engine/)
@@ -11065,11 +11065,11 @@ The Vets Ready codebase has been comprehensively audited and updated to fully co
 ### Start Development
 ```bash
 # Terminal 1: Backend
-cd vets-ready-backend
+cd rally-forge-backend
 python -m uvicorn app.main:app --reload
 
 # Terminal 2: Frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 ```
 
@@ -11121,7 +11121,7 @@ GET http://localhost:8000/api/business-directory/pricing
 
 ## ✅ COMPLIANCE STATEMENT
 
-The Vets Ready codebase now FULLY COMPLIES with:
+The Rally Forge codebase now FULLY COMPLIES with:
 
 ### ARCHITECTURE.md Compliance ✅
 - ✅ Multi-platform architecture (React, FastAPI, Capacitor, Electron)
@@ -11157,6 +11157,8 @@ The platform is now architected to:
 ---
 
 **Next Step:** Review compliance audit, test new APIs, and proceed with frontend tier gating implementation.
+
+
 
 
 

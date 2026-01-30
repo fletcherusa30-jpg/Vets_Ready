@@ -1,5 +1,5 @@
 # Validate-Structure.ps1
-# Validates the complete Vets Ready project structure
+# Validates the complete Rally Forge project structure
 # Checks for required folders, files, and configurations
 # Provides integrity report and remediation suggestions
 
@@ -10,29 +10,29 @@ param(
 )
 
 $ErrorActionPreference = "Continue"
-$ProjectRoot = "c:\Dev\Vets Ready"
+$ProjectRoot = "c:\Dev\Rally Forge"
 
 # Expected structure based on guidance documents
 $ExpectedStructure = @{
     Folders = @(
-        "vets-ready-frontend",
-        "vets-ready-frontend\src",
-        "vets-ready-frontend\src\pages",
-        "vets-ready-frontend\src\components",
-        "vets-ready-frontend\src\components\layout",
-        "vets-ready-frontend\budget",
-        "vets-ready-frontend\retirement",
-        "vets-ready-frontend\transition",
-        "vets-ready-frontend\jobboard",
-        "vets-ready-frontend\outreach",
-        "vets-ready-backend",
-        "vets-ready-backend\app",
-        "vets-ready-backend\app\routers",
-        "vets-ready-backend\app\services",
-        "vets-ready-backend\app\models",
-        "vets-ready-backend\app\schemas",
-        "vets-ready-backend\ai-engine",
-        "vets-ready-mobile",
+        "rally-forge-frontend",
+        "rally-forge-frontend\src",
+        "rally-forge-frontend\src\pages",
+        "rally-forge-frontend\src\components",
+        "rally-forge-frontend\src\components\layout",
+        "rally-forge-frontend\budget",
+        "rally-forge-frontend\retirement",
+        "rally-forge-frontend\transition",
+        "rally-forge-frontend\jobboard",
+        "rally-forge-frontend\outreach",
+        "rally-forge-backend",
+        "rally-forge-backend\app",
+        "rally-forge-backend\app\routers",
+        "rally-forge-backend\app\services",
+        "rally-forge-backend\app\models",
+        "rally-forge-backend\app\schemas",
+        "rally-forge-backend\ai-engine",
+        "rally-forge-mobile",
         "scripts",
         "docs",
         "config",
@@ -42,33 +42,33 @@ $ExpectedStructure = @{
     )
 
     CriticalFiles = @(
-        "vets-ready-frontend\package.json",
-        "vets-ready-frontend\vite.config.ts",
-        "vets-ready-frontend\App.tsx",
-        "vets-ready-backend\app\main.py",
-        "vets-ready-backend\app\database.py",
-        "vets-ready-backend\requirements.txt",
+        "rally-forge-frontend\package.json",
+        "rally-forge-frontend\vite.config.ts",
+        "rally-forge-frontend\App.tsx",
+        "rally-forge-backend\app\main.py",
+        "rally-forge-backend\app\database.py",
+        "rally-forge-backend\requirements.txt",
         "README.md",
         "package.json"
     )
 
     RouterFiles = @(
-        "vets-ready-backend\app\routers\auth.py",
-        "vets-ready-backend\app\routers\claims.py",
-        "vets-ready-backend\app\routers\retirement.py",
-        "vets-ready-backend\app\routers\business.py",
-        "vets-ready-backend\app\routers\legal.py",
-        "vets-ready-backend\app\routers\subscriptions.py",
-        "vets-ready-backend\app\routers\employers.py"
+        "rally-forge-backend\app\routers\auth.py",
+        "rally-forge-backend\app\routers\claims.py",
+        "rally-forge-backend\app\routers\retirement.py",
+        "rally-forge-backend\app\routers\business.py",
+        "rally-forge-backend\app\routers\legal.py",
+        "rally-forge-backend\app\routers\subscriptions.py",
+        "rally-forge-backend\app\routers\employers.py"
     )
 
     PageFiles = @(
-        "vets-ready-frontend\pages\HomePage.tsx",
-        "vets-ready-frontend\pages\BenefitsPage.tsx",
-        "vets-ready-frontend\pages\ClaimsPage.tsx",
-        "vets-ready-frontend\pages\TransitionPage.tsx",
-        "vets-ready-frontend\pages\FinancePage.tsx",
-        "vets-ready-frontend\pages\JobsBusinessPage.tsx"
+        "rally-forge-frontend\pages\HomePage.tsx",
+        "rally-forge-frontend\pages\BenefitsPage.tsx",
+        "rally-forge-frontend\pages\ClaimsPage.tsx",
+        "rally-forge-frontend\pages\TransitionPage.tsx",
+        "rally-forge-frontend\pages\FinancePage.tsx",
+        "rally-forge-frontend\pages\JobsBusinessPage.tsx"
     )
 
     ScriptFiles = @(
@@ -76,7 +76,7 @@ $ExpectedStructure = @{
         "scripts\Build-Frontend.ps1",
         "scripts\Run-Backend.ps1",
         "scripts\Bootstrap-All.ps1",
-        "Start-VetsReady.ps1",
+        "Start-RallyForge.ps1",
         "Start-All-Services.ps1"
     )
 }
@@ -151,8 +151,8 @@ function Test-ConfigurationFiles {
     Write-StatusMessage "Checking configuration files..." "Info"
 
     $configs = @(
-        "vets-ready-frontend\.env",
-        "vets-ready-backend\.env",
+        "rally-forge-frontend\.env",
+        "rally-forge-backend\.env",
         "config\appsettings.json"
     )
 
@@ -181,15 +181,15 @@ function Get-ProjectStatistics {
     Write-StatusMessage "Gathering project statistics..." "Info"
 
     # Count TypeScript files
-    $tsFiles = Get-ChildItem -Path (Join-Path $ProjectRoot "vets-ready-frontend") -Filter "*.tsx" -Recurse -ErrorAction SilentlyContinue
+    $tsFiles = Get-ChildItem -Path (Join-Path $ProjectRoot "rally-forge-frontend") -Filter "*.tsx" -Recurse -ErrorAction SilentlyContinue
     $tsxCount = ($tsFiles | Measure-Object).Count
 
     # Count Python files
-    $pyFiles = Get-ChildItem -Path (Join-Path $ProjectRoot "vets-ready-backend") -Filter "*.py" -Recurse -ErrorAction SilentlyContinue
+    $pyFiles = Get-ChildItem -Path (Join-Path $ProjectRoot "rally-forge-backend") -Filter "*.py" -Recurse -ErrorAction SilentlyContinue
     $pyCount = ($pyFiles | Measure-Object).Count
 
     # Count routers
-    $routerPath = Join-Path $ProjectRoot "vets-ready-backend\app\routers"
+    $routerPath = Join-Path $ProjectRoot "rally-forge-backend\app\routers"
     if (Test-Path $routerPath) {
         $routers = Get-ChildItem -Path $routerPath -Filter "*.py" -File | Where-Object { $_.Name -ne "__init__.py" }
         $routerCount = ($routers | Measure-Object).Count
@@ -263,7 +263,7 @@ function Write-IntegrityReport {
 
 # Main execution
 Write-Host "`n╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║       Vets Ready - Project Structure Validator            ║" -ForegroundColor Cyan
+Write-Host "║       Rally Forge - Project Structure Validator            ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝`n" -ForegroundColor Cyan
 
 Write-StatusMessage "Project Root: $ProjectRoot" "Info"
@@ -288,3 +288,5 @@ if ($script:MissingItems -eq 0) {
 else {
     exit 1
 }
+
+

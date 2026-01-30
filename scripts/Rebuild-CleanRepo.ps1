@@ -14,7 +14,7 @@
 .PARAMETER SkipBackup
     Skip backing up the old .git folder (not recommended)
 .EXAMPLE
-    .\Rebuild-CleanRepo.ps1 -RemoteUrl "git@github.com:fletcherusa30-jpg/Vets_Ready.git"
+    .\Rebuild-CleanRepo.ps1 -RemoteUrl "git@github.com:fletcherusa30-jpg/rally_forge.git"
 #>
 
 param(
@@ -42,7 +42,7 @@ Write-Host "=====================================================" -ForegroundCo
 
 # Verify we're in repo root
 if (-not (Test-Path ".git")) {
-    Write-Error "Not in repository root. Please run from c:\Dev\Vets Ready\"
+    Write-Error "Not in repository root. Please run from c:\Dev\Rally Forge\"
     exit 1
 }
 
@@ -66,7 +66,7 @@ if (-not $SkipBackup) {
 Write-Step "Creating comprehensive .gitignore..."
 $gitignoreContent = @'
 # ============================================
-# VETS READY - COMPREHENSIVE .GITIGNORE
+# Rally Forge - COMPREHENSIVE .GITIGNORE
 # ============================================
 
 # Python Virtual Environments (CRITICAL - NEVER COMMIT)
@@ -114,26 +114,26 @@ ios/
 *.app
 
 # Backend Artifacts
-vets-ready-backend/dist/
-vets-ready-backend/build/
-vets-ready-backend/__pycache__/
-vets-ready-backend/.pytest_cache/
-vets-ready-backend/htmlcov/
-vets-ready-backend/.coverage
-vets-ready-backend/.venv/
+rally-forge-backend/dist/
+rally-forge-backend/build/
+rally-forge-backend/__pycache__/
+rally-forge-backend/.pytest_cache/
+rally-forge-backend/htmlcov/
+rally-forge-backend/.coverage
+rally-forge-backend/.venv/
 
 # Frontend Artifacts
-vets-ready-frontend/dist/
-vets-ready-frontend/build/
-vets-ready-frontend/node_modules/
-vets-ready-frontend/.vite/
+rally-forge-frontend/dist/
+rally-forge-frontend/build/
+rally-forge-frontend/node_modules/
+rally-forge-frontend/.vite/
 
 # Mobile Artifacts
-vets-ready-mobile/dist/
-vets-ready-mobile/build/
-vets-ready-mobile/node_modules/
-vets-ready-mobile/android/
-vets-ready-mobile/ios/
+rally-forge-mobile/dist/
+rally-forge-mobile/build/
+rally-forge-mobile/node_modules/
+rally-forge-mobile/android/
+rally-forge-mobile/ios/
 
 # Logs (NEVER COMMIT)
 logs/
@@ -256,7 +256,7 @@ Write-Success "No files over 50MB detected"
 # Step 7: Create initial commit
 Write-Step "Creating initial commit..."
 $commitMessage = @"
-Initial clean commit - Vets Ready Platform
+Initial clean commit - Rally Forge Platform
 
 - Complete veteran-first platform codebase
 - Frontend: React 18 + TypeScript + Vite + Tailwind + PWA
@@ -304,4 +304,6 @@ Write-Host "✓ Repository size: ~$(($repoStats | Select-String 'size-pack').ToS
 Write-Host "`nNext steps:" -ForegroundColor $InfoColor
 Write-Host "  1. Verify repository on GitHub" -ForegroundColor $WarningColor
 Write-Host "  2. Delete backup folder after confirmation: $backupPath" -ForegroundColor $WarningColor
-Write-Host "  3. Connect Docker Hub: https://app.docker.com/accounts/vetsready" -ForegroundColor $WarningColor
+Write-Host "  3. Connect Docker Hub: https://app.docker.com/accounts/RallyForge" -ForegroundColor $WarningColor
+
+

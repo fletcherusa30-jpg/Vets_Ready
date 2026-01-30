@@ -70,7 +70,7 @@ function Test-Check {
 }
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║        VETS READY - PRE-LAUNCH VALIDATION                 ║" -ForegroundColor Cyan
+Write-Host "║        Rally Forge - PRE-LAUNCH VALIDATION                 ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
@@ -119,17 +119,17 @@ Test-Check "Docker daemon running" {
 
 Test-Check "Backend container running" {
     $containers = docker ps --format "{{.Names}}" 2>$null
-    $containers -contains "vetsready_backend"
+    $containers -contains "RallyForge_backend"
 }
 
 Test-Check "Frontend container running" {
     $containers = docker ps --format "{{.Names}}" 2>$null
-    $containers -contains "vetsready_frontend"
+    $containers -contains "RallyForge_frontend"
 }
 
 Test-Check "PostgreSQL container running" {
     $containers = docker ps --format "{{.Names}}" 2>$null
-    $containers -contains "vetsready_postgres"
+    $containers -contains "RallyForge_postgres"
 }
 
 Write-Host ""
@@ -206,16 +206,16 @@ Write-Host ""
 Write-Host "🗄️  Database Checks" -ForegroundColor Cyan
 
 Test-Check "Database container healthy" {
-    $health = docker inspect vetsready_postgres --format='{{.State.Health.Status}}' 2>$null
+    $health = docker inspect RallyForge_postgres --format='{{.State.Health.Status}}' 2>$null
     $health -eq "healthy"
 } -Critical
 
 Test-Check "Required tables exist" {
     try {
-        $tables = docker exec vetsready_postgres psql -U vetsready -d vetsready_db -c "\dt" 2>$null
-        ($tables -match "vetsready_users") -and
-        ($tables -match "vetsready_veteran_subscriptions") -and
-        ($tables -match "vetsready_employer_accounts")
+        $tables = docker exec RallyForge_postgres psql -U RallyForge -d RallyForge_db -c "\dt" 2>$null
+        ($tables -match "RallyForge_users") -and
+        ($tables -match "RallyForge_veteran_subscriptions") -and
+        ($tables -match "RallyForge_employer_accounts")
     } catch { $false }
 } -Critical
 
@@ -255,10 +255,10 @@ Write-Host ""
 # Category 7: File Structure
 Write-Host "📁 File Structure" -ForegroundColor Cyan
 
-Test-Check "Backend app directory exists" { Test-Path (Join-Path $RootPath "vets-ready-backend\app") } -Critical
-Test-Check "Frontend src directory exists" { Test-Path (Join-Path $RootPath "vets-ready-frontend\src") } -Critical
+Test-Check "Backend app directory exists" { Test-Path (Join-Path $RootPath "rally-forge-backend\app") } -Critical
+Test-Check "Frontend src directory exists" { Test-Path (Join-Path $RootPath "rally-forge-frontend\src") } -Critical
 Test-Check "Database schema file exists" { Test-Path (Join-Path $RootPath "data\schema.sql") } -Critical
-Test-Check "Alembic migrations exist" { Test-Path (Join-Path $RootPath "vets-ready-backend\alembic\versions") } -Critical
+Test-Check "Alembic migrations exist" { Test-Path (Join-Path $RootPath "rally-forge-backend\alembic\versions") } -Critical
 Test-Check "Docker compose file exists" { Test-Path (Join-Path $RootPath "docker-compose.prod.yml") } -Critical
 
 Write-Host ""
@@ -315,3 +315,5 @@ if ($failedChecks -eq 0 -and $successRate -ge 90) {
 
 # Return exit code
 exit $failedChecks
+
+

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 /**
- * Core data models for the VetsReady Employment System
+ * Core data models for the rallyforge Employment System
  */
 
 // ==================== VETERAN PROFILE ====================
@@ -264,3 +264,4 @@ export const CareerPathSchema = z.object({
 });
 
 export type CareerPath = z.infer<typeof CareerPathSchema>;
+

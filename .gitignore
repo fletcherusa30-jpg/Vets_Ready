@@ -1,5 +1,5 @@
 # ============================================
-# VETS READY - COMPREHENSIVE .GITIGNORE
+# Rally Forge - COMPREHENSIVE .GITIGNORE
 # ============================================
 
 # Python Virtual Environments (CRITICAL - NEVER COMMIT)
@@ -47,26 +47,26 @@ ios/
 *.app
 
 # Backend Artifacts
-vets-ready-backend/dist/
-vets-ready-backend/build/
-vets-ready-backend/__pycache__/
-vets-ready-backend/.pytest_cache/
-vets-ready-backend/htmlcov/
-vets-ready-backend/.coverage
-vets-ready-backend/.venv/
+rally-forge-backend/dist/
+rally-forge-backend/build/
+rally-forge-backend/__pycache__/
+rally-forge-backend/.pytest_cache/
+rally-forge-backend/htmlcov/
+rally-forge-backend/.coverage
+rally-forge-backend/.venv/
 
 # Frontend Artifacts
-vets-ready-frontend/dist/
-vets-ready-frontend/build/
-vets-ready-frontend/node_modules/
-vets-ready-frontend/.vite/
+rally-forge-frontend/dist/
+rally-forge-frontend/build/
+rally-forge-frontend/node_modules/
+rally-forge-frontend/.vite/
 
 # Mobile Artifacts
-vets-ready-mobile/dist/
-vets-ready-mobile/build/
-vets-ready-mobile/node_modules/
-vets-ready-mobile/android/
-vets-ready-mobile/ios/
+rally-forge-mobile/dist/
+rally-forge-mobile/build/
+rally-forge-mobile/node_modules/
+rally-forge-mobile/android/
+rally-forge-mobile/ios/
 
 # Logs (NEVER COMMIT)
 logs/
@@ -154,7 +154,7 @@ diagnostics/*.json
 CodeHealth-Report-*.txt
 
 # Temporary marker files
-.vetsready_root
+.rallyforge_root
 
 # Employment system build artifacts
 employment-system/dist/
@@ -167,3 +167,5 @@ mos-engine/node_modules/
 
 # Mock backend
 mock-backend/node_modules/
+
+

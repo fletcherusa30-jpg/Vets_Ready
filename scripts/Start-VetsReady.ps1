@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-    Vets Ready - One-Click Application Startup Script
+    Rally Forge - One-Click Application Startup Script
 
 .DESCRIPTION
-    This PowerShell script handles the complete setup and startup of the Vets Ready application.
+    This PowerShell script handles the complete setup and startup of the Rally Forge application.
     It manages dependencies, database initialization, and starts all services in the correct order.
 
 .PARAMETER Mode
@@ -19,20 +19,20 @@
     Perform a fresh installation (clean node_modules, venv, and database)
 
 .EXAMPLE
-    .\Start-VetsReady.ps1
+    .\Start-RallyForge.ps1
     Starts the application in development mode
 
 .EXAMPLE
-    .\Start-VetsReady.ps1 -Mode docker
+    .\Start-RallyForge.ps1 -Mode docker
     Starts the application using Docker Compose
 
 .EXAMPLE
-    .\Start-VetsReady.ps1 -Fresh
+    .\Start-RallyForge.ps1 -Fresh
     Performs a fresh installation and starts in dev mode
 
 .NOTES
-    File Name      : Start-VetsReady.ps1
-    Author         : Vets Ready Team
+    File Name      : Start-RallyForge.ps1
+    Author         : Rally Forge Team
     Prerequisite   : PowerShell 5.1+, Node.js 20+, Python 3.11+, PostgreSQL 15+, Redis 7+
     Version        : 1.0.0
 #>
@@ -56,8 +56,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProjectRoot = $PSScriptRoot
-$FrontendPath = Join-Path $ProjectRoot "vets-ready-frontend"
-$BackendPath = Join-Path $ProjectRoot "vets-ready-backend"
+$FrontendPath = Join-Path $ProjectRoot "rally-forge-frontend"
+$BackendPath = Join-Path $ProjectRoot "rally-forge-backend"
 $LogFile = Join-Path $ProjectRoot "logs\startup-$(Get-Date -Format 'yyyyMMdd-HHmmss').log"
 
 # Colors for output
@@ -283,7 +283,7 @@ function Initialize-Database {
         $seedScript = Join-Path $ProjectRoot "seed-data.sql"
         if (Test-Path $seedScript) {
             Write-Log "Loading seed data..." "Info"
-            # psql -U vetsready -d vetsready_db -f $seedScript
+            # psql -U RallyForge -d RallyForge_db -f $seedScript
             Write-Log "Seed data loaded" "Success"
         }
     }
@@ -396,7 +396,7 @@ function Start-Docker {
 function Show-Summary {
     Write-Header "Startup Summary"
 
-    Write-Log "Vets Ready Application started successfully!" "Success"
+    Write-Log "Rally Forge Application started successfully!" "Success"
     Write-Log "" "Info"
     Write-Log "Mode: $Mode" "Info"
     Write-Log "Logs: $LogFile" "Info"
@@ -424,7 +424,7 @@ function Show-Summary {
 try {
     Clear-Host
 
-    Write-Header "Vets Ready - Application Startup"
+    Write-Header "Rally Forge - Application Startup"
     Write-Log "Starting in $Mode mode..." "Info"
     Write-Log "Project Root: $ProjectRoot" "Info"
 
@@ -463,3 +463,5 @@ catch {
     Write-Log $_.ScriptStackTrace "Error"
     exit 1
 }
+
+

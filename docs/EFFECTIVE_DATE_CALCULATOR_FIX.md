@@ -86,7 +86,7 @@ The Effective Date Calculator had **incorrect logic** for Supplemental Claims un
 ## 🔧 Technical Implementation
 
 ### File Modified
-- `vets-ready-frontend/src/components/EffectiveDateCalculator.tsx`
+- `rally-forge-frontend/src/components/EffectiveDateCalculator.tsx`
 
 ### Key Changes
 
@@ -331,7 +331,7 @@ Extends this principle to supplemental claims under AMA framework, properly anal
 ### Manual Test Procedure
 
 1. **Navigate to Calculator:**
-   - Go to Vets Ready app
+   - Go to Rally Forge app
    - Click Claims → Effective Date tab
 
 2. **Select Supplemental Claim:**
@@ -513,3 +513,4 @@ The fixed calculator now works seamlessly with the Entitlement Helper:
 **Status: ✅ COMPLETE AND VALIDATED**
 
 The Effective Date Calculator now provides accurate, policy-compliant effective date calculations for Supplemental Claims under AMA, with comprehensive explanations and real back pay impact analysis.
+

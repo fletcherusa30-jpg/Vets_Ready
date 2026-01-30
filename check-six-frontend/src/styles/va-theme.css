@@ -1,0 +1,21 @@
+/* Define default theme CSS variables */
+:root {
+  --va-theme-text: #ffffff;
+  --va-theme-bg: linear-gradient(135deg, #5D8AA8 0%, #4A6D82 100%);
+  --va-theme-border: #C0C0C0;
+  --va-theme-accent: #FFD700;
+  --va-theme-card: #f7fafc;
+  --va-theme-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme utility classes for VAKnowledgeCenter */
+.va-theme-text { color: var(--va-theme-text); }
+.va-theme-bg { background: var(--va-theme-bg); }
+.va-theme-border { border-color: var(--va-theme-border); }
+.va-theme-accent-bg { background: var(--va-theme-accent); }
+.va-theme-accent-text { color: var(--va-theme-accent); }
+.va-theme-card { background: var(--va-theme-card); }
+.va-theme-shadow { text-shadow: var(--va-theme-shadow); }
+
+/* Success background for info callouts */
+.va-theme-success-bg { background: rgba(34,139,34,0.2); }

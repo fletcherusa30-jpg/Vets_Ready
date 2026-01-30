@@ -1,4 +1,4 @@
-# Vets Ready - Complete Setup Guide
+# Rally Forge - Complete Setup Guide
 
 ## Table of Contents
 
@@ -88,7 +88,7 @@ PhoneApp/
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/vets-ready.git
+git clone https://github.com/yourusername/rally-forge.git
 cd PhoneApp
 ```
 
@@ -141,12 +141,12 @@ REACT_APP_ENVIRONMENT=development
 #### Backend (.env)
 ```bash
 # Database
-DATABASE_URL=postgres://user:password@localhost:5432/vetsready_dev
+DATABASE_URL=postgres://user:password@localhost:5432/rallyforge_dev
 DB_HOST=localhost
 DB_PORT=5432
 DB_USER=postgres
 DB_PASSWORD=yourpassword
-DB_NAME=vetsready_dev
+DB_NAME=rallyforge_dev
 
 # Server
 PORT=4000
@@ -181,12 +181,12 @@ cp .env.example .env
 psql -U postgres
 
 # In psql console:
-CREATE DATABASE vetsready_dev;
-CREATE USER vetsready_user WITH PASSWORD 'secure_password';
-ALTER ROLE vetsready_user SET client_encoding TO 'utf8';
-ALTER ROLE vetsready_user SET default_transaction_isolation TO 'read committed';
-ALTER ROLE vetsready_user SET default_transaction_deferrable TO on;
-GRANT ALL PRIVILEGES ON DATABASE vetsready_dev TO vetsready_user;
+CREATE DATABASE rallyforge_dev;
+CREATE USER rallyforge_user WITH PASSWORD 'secure_password';
+ALTER ROLE rallyforge_user SET client_encoding TO 'utf8';
+ALTER ROLE rallyforge_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE rallyforge_user SET default_transaction_deferrable TO on;
+GRANT ALL PRIVILEGES ON DATABASE rallyforge_dev TO rallyforge_user;
 \q
 ```
 
@@ -194,13 +194,13 @@ GRANT ALL PRIVILEGES ON DATABASE vetsready_dev TO vetsready_user;
 
 ```bash
 # From backend directory
-psql -U vetsready_user -d vetsready_dev -f ../data/schema.sql
+psql -U rallyforge_user -d rallyforge_dev -f ../data/schema.sql
 ```
 
 ### 3. Verify Database
 
 ```bash
-psql -U vetsready_user -d vetsready_dev
+psql -U rallyforge_user -d rallyforge_dev
 
 # In psql console:
 \dt  # List tables
@@ -237,7 +237,7 @@ npm run dev
 #### Terminal 3 - Database (Optional)
 ```bash
 # Monitor database connections
-psql -U vetsready_user -d vetsready_dev
+psql -U rallyforge_user -d rallyforge_dev
 # SELECT * FROM pg_stat_activity;
 ```
 
@@ -258,7 +258,7 @@ npm run build
 ```bash
 # Set environment
 export NODE_ENV=production
-export DATABASE_URL=postgres://user:pass@prod-db:5432/vetsready
+export DATABASE_URL=postgres://user:pass@prod-db:5432/rallyforge
 
 # Start backend
 cd backend
@@ -368,11 +368,11 @@ Error: relation "users" does not exist
 **Solution:**
 ```bash
 # Recreate database
-dropdb vetsready_dev
-createdb vetsready_dev
+dropdb rallyforge_dev
+createdb rallyforge_dev
 
 # Re-run migration
-psql -U vetsready_user -d vetsready_dev -f ../data/schema.sql
+psql -U rallyforge_user -d rallyforge_dev -f ../data/schema.sql
 ```
 
 #### 4. Frontend Can't Connect to Backend
@@ -482,13 +482,13 @@ clinic doctor -- node backend/server.ts
 
 ## Support & Contributing
 
-- **Issues**: Report bugs on [GitHub Issues](https://github.com/fletcherusa30-jpg/Vets_Ready/issues)
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/fletcherusa30-jpg/rally_forge/issues)
 - **Contributing**: See [CONTRIBUTING.md](./CONTRIBUTING.md)
 - **Code of Conduct**: See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
 
 ## License
 
-VetsReady is licensed under the [MIT License](./LICENSE)
+rallyforge is licensed under the [MIT License](./LICENSE)
 
 ## Acknowledgments
 
@@ -498,3 +498,5 @@ Built with ❤️ for our veterans.
 
 **Last Updated**: January 2024
 **Version**: 1.0.0
+
+

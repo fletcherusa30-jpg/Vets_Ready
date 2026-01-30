@@ -163,7 +163,7 @@ config/
 
 ---
 
-## Integration with VetsReady Systems
+## Integration with rallyforge Systems
 
 ### Scanner Engine Uses:
 - `data/STR/reference/` - Validates extracted data
@@ -347,4 +347,5 @@ export UPLOAD_SCAN_ON_UPLOAD=true
 **Next Action**: Proceed to **Phase 2: Database Integration** or **Frontend Development**
 
 *Generated: January 28, 2026*
-*VetsReady Data & Upload Infrastructure Setup*
+*rallyforge Data & Upload Infrastructure Setup*
+

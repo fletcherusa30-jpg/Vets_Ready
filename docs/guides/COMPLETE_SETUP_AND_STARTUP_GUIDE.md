@@ -1,4 +1,4 @@
-# VETSREADY SCANNER SYSTEM - COMPLETE SETUP & STARTUP GUIDE
+# rallyforge SCANNER SYSTEM - COMPLETE SETUP & STARTUP GUIDE
 
 **Status**: ✅ Code Complete - Ready for Testing
 **Date**: January 25, 2026
@@ -40,14 +40,14 @@ python --version
 ### Step 2: Install Backend Dependencies (1 minute)
 
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 pip install -r requirements.txt
 ```
 
 ### Step 3: Start Backend API (30 seconds)
 
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
@@ -70,7 +70,7 @@ curl http://localhost:8000/api/scanners/health
   "status": "healthy",
   "service": "scanners",
   "timestamp": "2026-01-25T...",
-  "project_root": "C:\\Dev\\Vets Ready",
+  "project_root": "C:\\Dev\\Rally Forge",
   "project_root_exists": true,
   "active_jobs": 0,
   "total_jobs": 0
@@ -80,7 +80,7 @@ curl http://localhost:8000/api/scanners/health
 ### Step 5: Run Full Diagnostics (1 minute)
 
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\Run-ScannerDiagnostics.ps1
 ```
 
@@ -127,7 +127,7 @@ pip --version
 ### Install Backend Dependencies
 
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 
 # Create virtual environment (optional but recommended)
 python -m venv venv
@@ -149,7 +149,7 @@ pip install -r requirements.txt
 ### Install Frontend Dependencies (Already Done)
 
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 npm install
 ```
 
@@ -161,34 +161,34 @@ npm install
 
 **Terminal 1 - Backend**:
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
 **Terminal 2 - Frontend**:
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 ```
 
 **Terminal 3 - Testing**:
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 # Run diagnostics, tests, etc.
 ```
 
 ### Method 2: PowerShell Script (Quick Start)
 
-Create `Start-VetsReadyScanner.ps1`:
+Create `Start-rallyforgeScanner.ps1`:
 ```powershell
 param(
     [switch]$BackendOnly
 )
 
 $ErrorActionPreference = "Stop"
-$ProjectRoot = "C:\Dev\Vets Ready"
+$ProjectRoot = "C:\Dev\Rally Forge"
 
-Write-Host "=== VETSREADY SCANNER STARTUP ===" -ForegroundColor Cyan
+Write-Host "=== rallyforge SCANNER STARTUP ===" -ForegroundColor Cyan
 Write-Host ""
 
 # Start Backend
@@ -196,7 +196,7 @@ Write-Host "[1/2] Starting Backend API..." -ForegroundColor Yellow
 Start-Process powershell -ArgumentList `
     "-NoExit", `
     "-Command", `
-    "cd '$ProjectRoot\vets-ready-backend'; python -m uvicorn app.main:app --reload --port 8000"
+    "cd '$ProjectRoot\rally-forge-backend'; python -m uvicorn app.main:app --reload --port 8000"
 
 if (-not $BackendOnly) {
     # Start Frontend
@@ -205,7 +205,7 @@ if (-not $BackendOnly) {
     Start-Process powershell -ArgumentList `
         "-NoExit", `
         "-Command", `
-        "cd '$ProjectRoot\vets-ready-frontend'; npm run dev"
+        "cd '$ProjectRoot\rally-forge-frontend'; npm run dev"
 }
 
 Write-Host ""
@@ -223,10 +223,10 @@ Write-Host "Press Ctrl+C to stop services" -ForegroundColor Gray
 **Usage**:
 ```powershell
 # Start both services
-.\Start-VetsReadyScanner.ps1
+.\Start-rallyforgeScanner.ps1
 
 # Start backend only
-.\Start-VetsReadyScanner.ps1 -BackendOnly
+.\Start-rallyforgeScanner.ps1 -BackendOnly
 ```
 
 ---
@@ -299,7 +299,7 @@ curl -X POST http://localhost:8000/api/scanners/project/scan
 ### Test 7: Full Diagnostic Script
 
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\Run-ScannerDiagnostics.ps1
 ```
 
@@ -318,7 +318,7 @@ cd "C:\Dev\Vets Ready"
 ### ✅ Completed Implementation
 
 **Backend Files**:
-- ✓ `vets-ready-backend/app/routers/scanners.py` (600 lines)
+- ✓ `rally-forge-backend/app/routers/scanners.py` (600 lines)
   - 10 REST API endpoints
   - Job tracking system
   - Background task processing
@@ -326,19 +326,19 @@ cd "C:\Dev\Vets Ready"
   - Health monitoring
 
 **Frontend Files**:
-- ✓ `vets-ready-frontend/src/services/scannerAPI.ts` (300 lines)
+- ✓ `rally-forge-frontend/src/services/scannerAPI.ts` (300 lines)
   - Complete API client
   - File upload with progress
   - Status polling
   - Error handling
 
-- ✓ `vets-ready-frontend/src/pages/ScannerDiagnosticsPage.tsx` (350 lines)
+- ✓ `rally-forge-frontend/src/pages/ScannerDiagnosticsPage.tsx` (350 lines)
   - Health dashboard
   - Manual scanner controls
   - Job list with status
   - Error display
 
-- ✓ `vets-ready-frontend/src/components/shared/STRUpload.tsx` (MODIFIED)
+- ✓ `rally-forge-frontend/src/components/shared/STRUpload.tsx` (MODIFIED)
   - Backend integration
   - Progress tracking
   - Status updates
@@ -428,7 +428,7 @@ ModuleNotFoundError: No module named 'fastapi'
 
 **Solution**:
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 pip install fastapi uvicorn python-multipart
 ```
 
@@ -445,7 +445,7 @@ curl: Failed to connect to localhost port 8000
 Get-Process | Where-Object {$_.ProcessName -like "*uvicorn*"}
 
 # 2. If not running, start it
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 
 # 3. Check for port conflicts
@@ -466,10 +466,10 @@ Stop-Process -Id {PID} -Force
 ```powershell
 # 1. Check backend logs for error details
 # 2. Verify upload folder exists and is writable
-Test-Path "C:\Dev\Vets Ready\uploads\str"
+Test-Path "C:\Dev\Rally Forge\uploads\str"
 
 # 3. Check file permissions
-icacls "C:\Dev\Vets Ready\uploads"
+icacls "C:\Dev\Rally Forge\uploads"
 
 # 4. Verify file type is allowed (PDF, TIFF, JPG, PNG, HEIC)
 ```
@@ -617,7 +617,7 @@ curl http://localhost:8000/api/scanners/jobs
 ```powershell
 # Restart backend
 Get-Process | Where-Object {$_.ProcessName -like "*python*"} | Stop-Process
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 
 # Clear all jobs (restart backend)
@@ -635,3 +635,5 @@ Get-Content "logs\scanners\*" | Select-Object -Last 50
 **END OF SETUP GUIDE**
 
 **Summary**: All code is complete. Install Python, start backend, run tests. System is ready for production use.
+
+

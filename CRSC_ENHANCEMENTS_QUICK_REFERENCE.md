@@ -22,12 +22,12 @@
 
 | File | Lines | Change |
 |------|-------|--------|
-| [CRSCQualificationWizard.tsx](vets-ready-frontend/src/components/CRSCQualificationWizard.tsx#L412) | 412-424 | ✅ Step 3: Added detailed hazardous duty list with parachuting, flight ops, diving, EOD, special ops |
-| [Retirement.tsx](vets-ready-frontend/src/pages/Retirement.tsx#L625) | 625-650 | ✅ Disability description: Added specific examples (parachuting, airborne, diving, flight ops, EOD) |
-| [OnboardingWizard.tsx](vets-ready-frontend/src/pages/OnboardingWizard.tsx#L1843) | 1843-1847 | ✅ Combat training Q: Clarified field exercises, war games, live-fire drills all count |
-| [OnboardingWizard.tsx](vets-ready-frontend/src/pages/OnboardingWizard.tsx#L1872) | 1872-1876 | ✅ Hazardous duty Q: Added flight crew, EOD, training jumps, flight exercises all qualify |
-| [StepRetirementCrsc.tsx](vets-ready-frontend/src/components/wizard/steps/StepRetirementCrsc.tsx#L96) | 96-102 | ✅ All 7 indicators: Expanded descriptions with specific examples |
-| [benefitsEligibility.ts](vets-ready-frontend/src/utils/benefitsEligibility.ts#L290) | 290-296 | ✅ Requirements: Added explicit hazardous duty list (parachuting, diving, flight ops, EOD) |
+| [CRSCQualificationWizard.tsx](rally-forge-frontend/src/components/CRSCQualificationWizard.tsx#L412) | 412-424 | ✅ Step 3: Added detailed hazardous duty list with parachuting, flight ops, diving, EOD, special ops |
+| [Retirement.tsx](rally-forge-frontend/src/pages/Retirement.tsx#L625) | 625-650 | ✅ Disability description: Added specific examples (parachuting, airborne, diving, flight ops, EOD) |
+| [OnboardingWizard.tsx](rally-forge-frontend/src/pages/OnboardingWizard.tsx#L1843) | 1843-1847 | ✅ Combat training Q: Clarified field exercises, war games, live-fire drills all count |
+| [OnboardingWizard.tsx](rally-forge-frontend/src/pages/OnboardingWizard.tsx#L1872) | 1872-1876 | ✅ Hazardous duty Q: Added flight crew, EOD, training jumps, flight exercises all qualify |
+| [StepRetirementCrsc.tsx](rally-forge-frontend/src/components/wizard/steps/StepRetirementCrsc.tsx#L96) | 96-102 | ✅ All 7 indicators: Expanded descriptions with specific examples |
+| [benefitsEligibility.ts](rally-forge-frontend/src/utils/benefitsEligibility.ts#L290) | 290-296 | ✅ Requirements: Added explicit hazardous duty list (parachuting, diving, flight ops, EOD) |
 
 ---
 
@@ -180,3 +180,4 @@ To verify the enhancements work:
 
 **Status:** ✅ COMPLETE & VERIFIED
 **All 6 files modified and tested for consistency**
+

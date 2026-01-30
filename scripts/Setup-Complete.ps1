@@ -1,9 +1,9 @@
 # ================================================
-# VETS READY - COMPLETE SETUP SCRIPT
+# Rally Forge - COMPLETE SETUP SCRIPT
 # ================================================
 # Run this ONCE to set up the entire application
 
-Write-Host "`n🇺🇸 VETS READY - COMPLETE SETUP 🇺🇸`n" -ForegroundColor Blue
+Write-Host "`n🇺🇸 Rally Forge - COMPLETE SETUP 🇺🇸`n" -ForegroundColor Blue
 
 $ErrorActionPreference = "Continue"
 
@@ -15,7 +15,7 @@ Write-Host "━━━━━━━━━━━━━━━━━━━━━━�
 Write-Host "  STEP 1: Backend Setup" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor Cyan
 
-cd "vets-ready-backend"
+cd "rally-forge-backend"
 
 # Check Python
 Write-Host "Checking Python installation..." -ForegroundColor Yellow
@@ -42,11 +42,11 @@ Write-Host "✓ Python dependencies installed" -ForegroundColor Green
 if (-not (Test-Path ".env")) {
     Write-Host "`nCreating backend .env file..." -ForegroundColor Yellow
     @"
-# Vets Ready Backend Environment Variables
+# Rally Forge Backend Environment Variables
 ENVIRONMENT=development
 DEBUG=true
 DATABASE_URL=sqlite:///./instance/dev.db
-JWT_SECRET=vets-ready-super-secret-jwt-key-change-in-production-minimum-32-characters
+JWT_SECRET=rally-forge-super-secret-jwt-key-change-in-production-minimum-32-characters
 JWT_ALGORITHM=HS256
 JWT_EXPIRATION_HOURS=24
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost:3001,http://127.0.0.1:5173
@@ -78,7 +78,7 @@ Write-Host "`n━━━━━━━━━━━━━━━━━━━━━━
 Write-Host "  STEP 2: Frontend Setup" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor Cyan
 
-cd "vets-ready-frontend"
+cd "rally-forge-frontend"
 
 # Check Node.js
 Write-Host "Checking Node.js installation..." -ForegroundColor Yellow
@@ -122,8 +122,8 @@ Write-Host "1️⃣  Start all services:" -ForegroundColor Cyan
 Write-Host "   .\Start-All-Services.ps1`n" -ForegroundColor White
 
 Write-Host "2️⃣  Or start manually:" -ForegroundColor Cyan
-Write-Host "   Backend:  cd vets-ready-backend; .\.venv\Scripts\Activate.ps1; uvicorn app.main:app --reload" -ForegroundColor White
-Write-Host "   Frontend: cd vets-ready-frontend; npm run dev`n" -ForegroundColor White
+Write-Host "   Backend:  cd rally-forge-backend; .\.venv\Scripts\Activate.ps1; uvicorn app.main:app --reload" -ForegroundColor White
+Write-Host "   Frontend: cd rally-forge-frontend; npm run dev`n" -ForegroundColor White
 
 Write-Host "3️⃣  Open your browser:" -ForegroundColor Cyan
 Write-Host "   Frontend:  http://localhost:5173" -ForegroundColor White
@@ -138,3 +138,4 @@ Write-Host "  Password: " -NoNewline
 Write-Host "password123`n" -ForegroundColor Green
 
 Write-Host "🎖️  Serving Those Who Served 🇺🇸`n" -ForegroundColor Yellow
+

@@ -1,4 +1,4 @@
-# 🎯 VETSREADY - STRATEGIC COMPETITIVE ANALYSIS & RECOMMENDATIONS
+# 🎯 rallyforge - STRATEGIC COMPETITIVE ANALYSIS & RECOMMENDATIONS
 
 **Date**: January 26, 2026
 **Purpose**: Comprehensive strategy to compete with attorneys, VSOs, and claim services while maintaining legal compliance
@@ -8,7 +8,7 @@
 
 ## 📊 EXECUTIVE SUMMARY
 
-VetsReady is **uniquely positioned** to revolutionize veteran assistance by combining:
+rallyforge is **uniquely positioned** to revolutionize veteran assistance by combining:
 - ✅ **Educational Tools** (legally compliant, no VA accreditation needed)
 - ✅ **AI-Powered Intelligence** (faster than human research)
 - ✅ **Transparent Pricing** ($50/year vs $3,000-$10,000 attorney fees)
@@ -106,7 +106,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 **Their Weaknesses**:
 - ❌ Expensive ($500-$5,000 upfront or monthly)
 - ❌ Cannot file claims or represent veterans
-- ❌ Same legal restrictions as VetsReady
+- ❌ Same legal restrictions as rallyforge
 - ❌ No AI-powered automation
 - ❌ Limited tool ecosystem
 
@@ -166,7 +166,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - ❌ No structured process
 
 **Our Strategy**:
-✅ **Community Integration** - Create VetsReady community forum
+✅ **Community Integration** - Create rallyforge community forum
 ✅ **AI Fact-Checking** - Verify advice against 38 CFR
 ✅ **Structured + Social** - Combine wizard with community Q&A
 ✅ **Brand Presence** - Active in Reddit/Facebook with helpful resources
@@ -182,7 +182,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - Claim Services: $500-$5,000 upfront
 - VSOs: Free but 3-6 month wait
 
-**VetsReady**:
+**rallyforge**:
 - **Free Tier**: Core claim prep tools ($0)
 - **Premium**: $50/year or $5/month
 - **No Hidden Fees**: Everything upfront
@@ -200,7 +200,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - Attorney consultation: 1-4 weeks wait
 - Claim services: 3-7 days for intake
 
-**VetsReady**:
+**rallyforge**:
 - **Instant Access**: Sign up and start in 5 minutes
 - **24/7 Availability**: No appointments needed
 - **AI Responses**: Answers in seconds, not days
@@ -216,7 +216,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - One service: Claims only
 - Multiple vendors needed: Claims + benefits + education + housing
 
-**VetsReady**:
+**rallyforge**:
 - **18+ Tools** in one platform:
   - Claims Wizard
   - Benefits Matrix
@@ -240,7 +240,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - Generic advice
 - Limited secondary condition suggestions
 
-**VetsReady**:
+**rallyforge**:
 - **AI Theory Generator**: Cites 38 CFR and M21-1 automatically
 - **Secondary Condition Finder**: Discovers 10-15 linked conditions
 - **Evidence Analyzer**: Scans medical records for key phrases
@@ -257,7 +257,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 - "Trust us, we'll handle it" (black box)
 - Limited veteran control
 
-**VetsReady**:
+**rallyforge**:
 - **Full Transparency**: Veterans see every step
 - **Educational Focus**: Learn WHY, not just WHAT
 - **Retain Control**: Veterans file their own claims (or choose to work with VSO)
@@ -279,7 +279,7 @@ VetsReady is **uniquely positioned** to revolutionize veteran assistance by comb
 **Action**:
 Create comparison table on homepage:
 
-| Feature | VetsReady | Attorneys | VSOs | Claim Services |
+| Feature | rallyforge | Attorneys | VSOs | Claim Services |
 |---------|-----------|-----------|------|----------------|
 | **Cost** | $50/year | $3,000-$10,000 | Free | $500-$5,000 |
 | **Wait Time** | Instant | 1-4 weeks | 2-6 weeks | 3-7 days |
@@ -290,7 +290,7 @@ Create comparison table on homepage:
 | **Secondary Conditions** | ✅ AI-powered | ⚠️ Manual | ⚠️ Manual | ⚠️ Manual |
 | **All Benefits Tools** | ✅ 18+ tools | ❌ No | ⚠️ Limited | ❌ No |
 
-**Message**: "Try VetsReady first for $50/year. If your case needs an attorney, we'll refer you to one we trust."
+**Message**: "Try rallyforge first for $50/year. If your case needs an attorney, we'll refer you to one we trust."
 
 ---
 
@@ -304,18 +304,18 @@ Create comparison table on homepage:
 
 ```
 START → Is this your first VA claim?
-  ├─ YES → Use VetsReady Free Tools (DIY possible)
+  ├─ YES → Use rallyforge Free Tools (DIY possible)
   └─ NO → Was your claim denied?
-       ├─ NO → Use VetsReady (claim in progress)
+       ├─ NO → Use rallyforge (claim in progress)
        └─ YES → How long ago?
-            ├─ < 1 year → Supplemental claim (VetsReady can help)
+            ├─ < 1 year → Supplemental claim (rallyforge can help)
             └─ > 1 year → BVA Appeal → Consult attorney
                                       ├─ Complex legal issue? → Attorney
-                                      └─ New evidence? → VSO or VetsReady
+                                      └─ New evidence? → VSO or rallyforge
 ```
 
 **Output**:
-- "You can likely DIY with VetsReady" → Show free tier
+- "You can likely DIY with rallyforge" → Show free tier
 - "Consider a VSO (free)" → Show VSO locator
 - "You may benefit from an attorney" → Show partner attorney directory
 
@@ -330,9 +330,9 @@ START → Is this your first VA claim?
 **Content** (4-6 anonymized case studies):
 
 **Example 1**:
-> "Marine Corps Veteran - Used VetsReady to identify 8 secondary conditions"
+> "Marine Corps Veteran - Used rallyforge to identify 8 secondary conditions"
 > - Original claim: 30% for knee injury
-> - After VetsReady: Added sleep apnea (secondary), migraines (secondary), back pain (secondary)
+> - After rallyforge: Added sleep apnea (secondary), migraines (secondary), back pain (secondary)
 > - New rating: 70%
 > - Back pay: $28,000
 > - Cost: $50/year subscription
@@ -357,7 +357,7 @@ START → Is this your first VA claim?
 **Content**:
 - **Headline**: "Serve 10X More Veterans With AI-Powered Tools"
 - **Problem**: Your reps are drowning in 500+ member caseloads
-- **Solution**: VetsReady handles claim prep, you handle filing
+- **Solution**: rallyforge handles claim prep, you handle filing
 - **Pricing**: FREE for core tools, $15/month for premium features per rep
 - **CTA**: "Schedule 30-minute demo"
 
@@ -375,19 +375,19 @@ START → Is this your first VA claim?
 **Honest Answer**:
 > **VSOs are excellent—and FREE. We recommend using them!**
 >
-> Here's how VetsReady complements VSOs:
+> Here's how rallyforge complements VSOs:
 >
-> 1. **While You Wait**: VSO appointments take 2-6 weeks. Start your claim prep TODAY with VetsReady, then bring your completed evidence packet to your VSO.
+> 1. **While You Wait**: VSO appointments take 2-6 weeks. Start your claim prep TODAY with rallyforge, then bring your completed evidence packet to your VSO.
 >
 > 2. **Better Prepared = Faster Service**: VSOs appreciate when veterans arrive organized. You'll spend 30 minutes with your rep instead of 3 hours.
 >
 > 3. **Find What VSOs Miss**: Our AI scans for secondary conditions. Even experienced reps can overlook 3-5 linked conditions. Find them BEFORE your appointment.
 >
-> 4. **24/7 Access**: VSOs have office hours. VetsReady works at 2 AM when you can't sleep and want to research.
+> 4. **24/7 Access**: VSOs have office hours. rallyforge works at 2 AM when you can't sleep and want to research.
 >
 > 5. **Lifetime Learning**: Even after your claim is filed, you keep the knowledge and tools forever.
 >
-> **VetsReady + VSO = Best Outcome**
+> **rallyforge + VSO = Best Outcome**
 
 **Value**: Shows we're not anti-VSO, we're pro-veteran. Builds trust.
 
@@ -606,7 +606,7 @@ Analyzing your knee condition claim...
 - "I Found $50,000 in Missed Benefits"
 
 **Pillar 4: Tool Demos**
-- "VetsReady Claims Wizard Walkthrough"
+- "rallyforge Claims Wizard Walkthrough"
 - "Using the Benefits Matrix to Find Hidden Benefits"
 - "DD-214 Scanner Demo"
 
@@ -652,16 +652,16 @@ Analyzing your knee condition claim...
 
 ---
 
-#### 15. **Create "VetsReady Certified" Badge for VSOs**
+#### 15. **Create "rallyforge Certified" Badge for VSOs**
 
 **Purpose**: Brand partnership with VSOs
 
 **How It Works**:
 1. VSO signs up for free tier
 2. VSO reps complete 2-hour training on our platform
-3. VSO receives "VetsReady Certified" badge for website
+3. VSO receives "rallyforge Certified" badge for website
 4. Veterans see badge, trust VSO more
-5. VSO directs veterans to VetsReady for prep work
+5. VSO directs veterans to rallyforge for prep work
 
 **Value Exchange**:
 - VSO gets: Free tools, professional training, marketing badge
@@ -812,7 +812,7 @@ Specific details = credibility. Vague answers get denied.
    - Success rate (if available)
    - Reviews from other veterans
 4. Book appointment through platform
-5. VetsReady gets 10-15% referral fee
+5. rallyforge gets 10-15% referral fee
 
 **Doctor Categories**:
 - PTSD/Mental Health Specialists
@@ -855,7 +855,7 @@ Specific details = credibility. Vague answers get denied.
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║  [Logo] VetsReady                    [Login] [Try Free] ║
+║  [Logo] rallyforge                    [Login] [Try Free] ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
 ║         Save $3,000-$10,000 on Your VA Claim            ║
@@ -904,7 +904,7 @@ Specific details = credibility. Vague answers get denied.
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║         VetsReady: Your AI-Powered Claim Coach          ║
+║         rallyforge: Your AI-Powered Claim Coach          ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
 ║  [Graphic: 6-Step Claim Wizard]                         ║
@@ -931,7 +931,7 @@ Specific details = credibility. Vague answers get denied.
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║          How VetsReady Compares                          ║
+║          How rallyforge Compares                          ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
 ║  [Full comparison table from earlier in this document]  ║
@@ -1013,7 +1013,7 @@ Specific details = credibility. Vague answers get denied.
 ║  [Carousel of 6 success story cards]                    ║
 ║                                                          ║
 ║  Card 1:                                                 ║
-║  "VetsReady found 8 secondary conditions I had no idea  ║
+║  "rallyforge found 8 secondary conditions I had no idea  ║
 ║   were service-connected. Went from 30% to 90% and got  ║
 ║   $42,000 in back pay."                                  ║
 ║   - Marine Corps Veteran, California                     ║
@@ -1036,9 +1036,9 @@ Specific details = credibility. Vague answers get denied.
 ║  [Accordion of 10 FAQs]                                 ║
 ║                                                          ║
 ║  ▼ Do I still need a VSO or attorney?                   ║
-║    No, but you can use both! VetsReady helps you        ║
+║    No, but you can use both! rallyforge helps you        ║
 ║    prepare your claim. VSOs/attorneys file it. Many     ║
-║    veterans use VetsReady first, then bring their       ║
+║    veterans use rallyforge first, then bring their       ║
 ║    completed evidence packet to a VSO. Saves everyone   ║
 ║    time and money.                                       ║
 ║                                                          ║
@@ -1072,7 +1072,7 @@ Specific details = credibility. Vague answers get denied.
 ║         [Start Free 7-Day Trial →]                      ║
 ║         No credit card required                          ║
 ║                                                          ║
-║         Questions? Call/text: 1-800-VETS-READY          ║
+║         Questions? Call/text: 1-800-rally-forge          ║
 ║         Or chat with us now [Chat Icon]                 ║
 ╚══════════════════════════════════════════════════════════╝
 ```
@@ -1087,7 +1087,7 @@ Specific details = credibility. Vague answers get denied.
 
 ```
 ╔══════════════════════════════════════════════════════════╗
-║  [VetsReady Logo]              [Profile] [Notifications]║
+║  [rallyforge Logo]              [Profile] [Notifications]║
 ╠════════╦═════════════════════════════════════════════════╣
 ║        ║                                                 ║
 ║  MENU  ║           Dashboard: Welcome back, John!       ║
@@ -1190,7 +1190,7 @@ Specific details = credibility. Vague answers get denied.
 ```
 ⚠️ IMPORTANT LEGAL NOTICE
 
-VetsReady is an EDUCATIONAL platform. We do NOT:
+rallyforge is an EDUCATIONAL platform. We do NOT:
 • File VA claims on your behalf
 • Represent you before the VA
 • Provide legal or medical advice
@@ -1206,11 +1206,11 @@ We ARE:
 For claim filing or legal representation, work with:
 • VA-accredited VSO (free): https://www.va.gov/ogc/apps/accreditation/
 • VA-accredited attorney: https://www.va.gov/ogc/accreditation.asp
-• VetsReady can refer you to trusted partners
+• rallyforge can refer you to trusted partners
 
 By using this platform, you acknowledge:
 1. You are solely responsible for your claim accuracy
-2. VetsReady provides educational content only
+2. rallyforge provides educational content only
 3. AI-generated content must be verified with official VA sources
 4. We are not affiliated with the U.S. Department of Veterans Affairs
 
@@ -1228,7 +1228,7 @@ By using this platform, you acknowledge:
 
 ## 🏁 CONCLUSION
 
-VetsReady has the potential to **revolutionize veteran assistance** by:
+rallyforge has the potential to **revolutionize veteran assistance** by:
 
 1. **Democratizing Access**: $50/year vs $3,000-$10,000
 2. **Eliminating Wait Times**: Instant access vs 2-6 weeks
@@ -1262,3 +1262,5 @@ VetsReady has the potential to **revolutionize veteran assistance** by:
 5. **Start building** - Let's ship Phase 1 in 7 days
 
 **Questions? Ready to execute?** Let me know which recommendations to implement first and I'll start coding immediately.
+
+

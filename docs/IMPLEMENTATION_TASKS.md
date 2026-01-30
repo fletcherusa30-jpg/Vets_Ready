@@ -1,7 +1,7 @@
-# VetsReady Implementation Tasks
+# rallyforge Implementation Tasks
 
-**Project Root:** `C:\Dev\Vets Ready`
-**Master Spec:** `docs/VETSREADY_MASTER_SPEC.md`
+**Project Root:** `C:\Dev\Rally Forge`
+**Master Spec:** `docs/rallyforge_MASTER_SPEC.md`
 **Last Updated:** January 24, 2026
 
 ---
@@ -46,7 +46,7 @@
   - EvidenceDocument, Claim types
 
 #### Backend - Infrastructure
-- ✅ **FastAPI Setup** - `vets-ready-backend/app/main.py`
+- ✅ **FastAPI Setup** - `rally-forge-backend/app/main.py`
 - ✅ **Database Connection** - `database.py`
 - ✅ **Existing Routers** (need alignment with spec):
   - `claims.py`, `conditions.py`, `retirement.py`
@@ -56,8 +56,8 @@
   - `retirement_service.py`, `legal_reference_service.py`
 
 #### Documentation
-- ✅ **Wizard README** - `vets-ready-frontend/WIZARD_README.md`
-- ✅ **Master Specification** - `docs/VETSREADY_MASTER_SPEC.md`
+- ✅ **Wizard README** - `rally-forge-frontend/WIZARD_README.md`
+- ✅ **Master Specification** - `docs/rallyforge_MASTER_SPEC.md`
 
 ---
 
@@ -101,11 +101,11 @@
   - [ ] Implement all AMA scenarios (ITF, supplemental, increased, etc.)
 
 **Files to Create/Modify**:
-- `vets-ready-backend/app/routers/ai.py` (NEW)
-- `vets-ready-backend/app/routers/disabilities.py` (NEW or align with conditions.py)
-- `vets-ready-backend/app/routers/evidence.py` (NEW)
-- `vets-ready-backend/app/routers/claims.py` (ENHANCE existing)
-- `vets-ready-backend/app/routers/effective_dates.py` (NEW)
+- `rally-forge-backend/app/routers/ai.py` (NEW)
+- `rally-forge-backend/app/routers/disabilities.py` (NEW or align with conditions.py)
+- `rally-forge-backend/app/routers/evidence.py` (NEW)
+- `rally-forge-backend/app/routers/claims.py` (ENHANCE existing)
+- `rally-forge-backend/app/routers/effective_dates.py` (NEW)
 
 ---
 
@@ -150,11 +150,11 @@
   - [ ] Strength assessment rules
 
 **Files to Create/Modify**:
-- `vets-ready-backend/app/services/ai_service.py` (NEW)
-- `vets-ready-backend/app/services/ocr_service.py` (NEW)
-- `vets-ready-backend/app/services/effective_date_service.py` (NEW)
-- `vets-ready-backend/app/services/evidence_service.py` (NEW)
-- `vets-ready-backend/app/services/theory_service.py` (NEW)
+- `rally-forge-backend/app/services/ai_service.py` (NEW)
+- `rally-forge-backend/app/services/ocr_service.py` (NEW)
+- `rally-forge-backend/app/services/effective_date_service.py` (NEW)
+- `rally-forge-backend/app/services/evidence_service.py` (NEW)
+- `rally-forge-backend/app/services/theory_service.py` (NEW)
 
 ---
 
@@ -182,14 +182,14 @@
   - [ ] Run migrations to update database schema
 
 **Files to Create/Modify**:
-- `vets-ready-backend/app/models/disability.py` (NEW or align with condition.py)
-- `vets-ready-backend/app/models/evidence.py` (NEW)
-- `vets-ready-backend/app/models/claim.py` (ENHANCE existing)
-- `vets-ready-backend/app/schemas/disability_schemas.py` (NEW)
-- `vets-ready-backend/app/schemas/ai_schemas.py` (NEW)
-- `vets-ready-backend/app/schemas/evidence_schemas.py` (NEW)
-- `vets-ready-backend/app/schemas/claim_schemas.py` (NEW)
-- `vets-ready-backend/app/schemas/effective_date_schemas.py` (NEW)
+- `rally-forge-backend/app/models/disability.py` (NEW or align with condition.py)
+- `rally-forge-backend/app/models/evidence.py` (NEW)
+- `rally-forge-backend/app/models/claim.py` (ENHANCE existing)
+- `rally-forge-backend/app/schemas/disability_schemas.py` (NEW)
+- `rally-forge-backend/app/schemas/ai_schemas.py` (NEW)
+- `rally-forge-backend/app/schemas/evidence_schemas.py` (NEW)
+- `rally-forge-backend/app/schemas/claim_schemas.py` (NEW)
+- `rally-forge-backend/app/schemas/effective_date_schemas.py` (NEW)
 
 ---
 
@@ -223,10 +223,10 @@
   - [ ] Request/response interceptors
 
 **Files to Modify**:
-- `vets-ready-frontend/src/services/aiService.ts`
-- `vets-ready-frontend/src/components/EvidenceOrganizer.tsx`
-- `vets-ready-frontend/src/components/ClaimTracker.tsx`
-- `vets-ready-frontend/src/services/apiClient.ts` (NEW)
+- `rally-forge-frontend/src/services/aiService.ts`
+- `rally-forge-frontend/src/components/EvidenceOrganizer.tsx`
+- `rally-forge-frontend/src/components/ClaimTracker.tsx`
+- `rally-forge-frontend/src/services/apiClient.ts` (NEW)
 
 ---
 
@@ -258,9 +258,9 @@
   - [ ] Validate CFR citations are correct
 
 **Files to Create**:
-- `vets-ready-backend/app/prompts/theory_generation.py` (NEW)
-- `vets-ready-backend/app/prompts/secondary_suggestions.py` (NEW)
-- `vets-ready-backend/app/prompts/chat_assistant.py` (NEW)
+- `rally-forge-backend/app/prompts/theory_generation.py` (NEW)
+- `rally-forge-backend/app/prompts/secondary_suggestions.py` (NEW)
+- `rally-forge-backend/app/prompts/chat_assistant.py` (NEW)
 
 ---
 
@@ -286,9 +286,9 @@
   - [ ] Handle errors
 
 **Files to Modify**:
-- `vets-ready-frontend/package.json` (add jsPDF)
-- `vets-ready-frontend/src/services/exportService.ts`
-- `vets-ready-frontend/src/components/wizard/StepReview.tsx`
+- `rally-forge-frontend/package.json` (add jsPDF)
+- `rally-forge-frontend/src/services/exportService.ts`
+- `rally-forge-frontend/src/components/wizard/StepReview.tsx`
 
 ---
 
@@ -313,7 +313,7 @@
   - [ ] Show estimated effective dates for each condition
 
 **Files to Create**:
-- `vets-ready-frontend/src/pages/EffectiveDateCalculator.tsx` (NEW)
+- `rally-forge-frontend/src/pages/EffectiveDateCalculator.tsx` (NEW)
 
 ---
 
@@ -347,12 +347,12 @@
   - [ ] VA rate table data (2026 rates)
 
 **Files to Create**:
-- `vets-ready-frontend/src/components/FinancialTools.tsx` (NEW)
-- `vets-ready-frontend/src/components/CompensationEstimator.tsx` (NEW)
-- `vets-ready-frontend/src/components/COLACalculator.tsx` (NEW)
-- `vets-ready-frontend/src/components/RetirementPlanner.tsx` (NEW)
-- `vets-ready-backend/app/routers/financial.py` (ENHANCE or NEW)
-- `vets-ready-backend/app/services/financial_service.py` (NEW)
+- `rally-forge-frontend/src/components/FinancialTools.tsx` (NEW)
+- `rally-forge-frontend/src/components/CompensationEstimator.tsx` (NEW)
+- `rally-forge-frontend/src/components/COLACalculator.tsx` (NEW)
+- `rally-forge-frontend/src/components/RetirementPlanner.tsx` (NEW)
+- `rally-forge-backend/app/routers/financial.py` (ENHANCE or NEW)
+- `rally-forge-backend/app/services/financial_service.py` (NEW)
 
 ---
 
@@ -382,8 +382,8 @@
   - [ ] Response streaming
 
 **Files to Create**:
-- `vets-ready-frontend/src/components/AIBattleBuddy.tsx` (NEW)
-- `vets-ready-frontend/src/pages/AIBattleBuddy.tsx` (NEW)
+- `rally-forge-frontend/src/components/AIBattleBuddy.tsx` (NEW)
+- `rally-forge-frontend/src/pages/AIBattleBuddy.tsx` (NEW)
 - Update `app/routers/ai.py` (add chat endpoint)
 - Update `app/services/ai_service.py` (add chat method)
 
@@ -415,11 +415,11 @@
   - [ ] Database migration for VSO table
 
 **Files to Create**:
-- `vets-ready-frontend/src/components/VSOLocator.tsx` (NEW)
-- `vets-ready-frontend/src/pages/VSOLocator.tsx` (NEW)
-- `vets-ready-backend/app/routers/vso.py` (NEW)
-- `vets-ready-backend/app/services/vso_service.py` (NEW)
-- `vets-ready-backend/app/models/vso.py` (NEW)
+- `rally-forge-frontend/src/components/VSOLocator.tsx` (NEW)
+- `rally-forge-frontend/src/pages/VSOLocator.tsx` (NEW)
+- `rally-forge-backend/app/routers/vso.py` (NEW)
+- `rally-forge-backend/app/services/vso_service.py` (NEW)
+- `rally-forge-backend/app/models/vso.py` (NEW)
 - `data/seed_vso.json` (NEW)
 
 ---
@@ -461,9 +461,9 @@
   - [ ] `POST /api/events` - Create event (admin only)
 
 **Files to Create**:
-- `vets-ready-frontend/src/components/EventsCalendar.tsx` (NEW)
-- `vets-ready-backend/app/routers/events.py` (NEW)
-- `vets-ready-backend/app/models/event.py` (NEW)
+- `rally-forge-frontend/src/components/EventsCalendar.tsx` (NEW)
+- `rally-forge-backend/app/routers/events.py` (NEW)
+- `rally-forge-backend/app/models/event.py` (NEW)
 
 ---
 
@@ -520,9 +520,9 @@
   - [ ] localStorage sync when online
 
 **Files to Modify**:
-- `vets-ready-mobile/capacitor.config.ts`
-- `vets-ready-mobile/ios/` (build files)
-- `vets-ready-mobile/android/` (build files)
+- `rally-forge-mobile/capacitor.config.ts`
+- `rally-forge-mobile/ios/` (build files)
+- `rally-forge-mobile/android/` (build files)
 
 ---
 
@@ -546,8 +546,8 @@
   - [ ] Sync status display
 
 **Files to Create**:
-- `vets-ready-frontend/public/sw.js` (NEW)
-- `vets-ready-frontend/public/manifest.json` (NEW)
+- `rally-forge-frontend/public/sw.js` (NEW)
+- `rally-forge-frontend/public/manifest.json` (NEW)
 
 ---
 
@@ -625,10 +625,10 @@
 
 **Tasks**:
 - [ ] **PowerShell Scripts** (`scripts/`)
-  - [ ] `Start-VetsReady.ps1` - One-click dev startup (exists, needs update)
-  - [ ] `Build-VetsReady.ps1` - Build all services
-  - [ ] `Test-VetsReady.ps1` - Run all tests
-  - [ ] `Deploy-VetsReady.ps1` - Deploy to AWS
+  - [ ] `Start-rallyforge.ps1` - One-click dev startup (exists, needs update)
+  - [ ] `Build-rallyforge.ps1` - Build all services
+  - [ ] `Test-rallyforge.ps1` - Run all tests
+  - [ ] `Deploy-rallyforge.ps1` - Deploy to AWS
 
 - [ ] **Docker Compose**
   - [ ] Update `docker-compose.yml` for all services
@@ -640,10 +640,10 @@
   - [ ] Document each variable in README
 
 **Files to Create/Modify**:
-- `scripts/Start-VetsReady.ps1` (UPDATE)
-- `scripts/Build-VetsReady.ps1` (NEW)
-- `scripts/Test-VetsReady.ps1` (NEW)
-- `scripts/Deploy-VetsReady.ps1` (NEW)
+- `scripts/Start-rallyforge.ps1` (UPDATE)
+- `scripts/Build-rallyforge.ps1` (NEW)
+- `scripts/Test-rallyforge.ps1` (NEW)
+- `scripts/Deploy-rallyforge.ps1` (NEW)
 - `docker-compose.yml` (UPDATE)
 - `.env.example` (NEW)
 
@@ -680,12 +680,12 @@
 **Status**: Partial - some tests exist
 
 **Tasks**:
-- [ ] **Frontend Tests** (`vets-ready-frontend/tests/`)
+- [ ] **Frontend Tests** (`rally-forge-frontend/tests/`)
   - [ ] Wizard component tests (Jest + React Testing Library)
   - [ ] Service tests (aiService, exportService)
   - [ ] Integration tests (full wizard flow)
 
-- [ ] **Backend Tests** (`vets-ready-backend/app/tests/`)
+- [ ] **Backend Tests** (`rally-forge-backend/app/tests/`)
   - [ ] Unit tests for services (pytest)
   - [ ] API endpoint tests (pytest + TestClient)
   - [ ] Effective date calculation tests (critical!)
@@ -696,10 +696,10 @@
   - [ ] Claim tracker flow
 
 **Files to Create**:
-- `vets-ready-frontend/tests/wizard.test.tsx` (NEW)
-- `vets-ready-frontend/tests/services.test.ts` (NEW)
-- `vets-ready-backend/app/tests/test_ai_service.py` (NEW)
-- `vets-ready-backend/app/tests/test_effective_date.py` (NEW)
+- `rally-forge-frontend/tests/wizard.test.tsx` (NEW)
+- `rally-forge-frontend/tests/services.test.ts` (NEW)
+- `rally-forge-backend/app/tests/test_ai_service.py` (NEW)
+- `rally-forge-backend/app/tests/test_effective_date.py` (NEW)
 - `e2e/wizard.spec.ts` (NEW)
 
 ---
@@ -913,3 +913,5 @@
 ---
 
 **END OF IMPLEMENTATION TASKS**
+
+

@@ -1,4 +1,4 @@
-# 🚀 VETS READY - IMPLEMENTATION ROADMAP
+# 🚀 Rally Forge - IMPLEMENTATION ROADMAP
 ## Document Scanning → Strategy Generation Pipeline
 
 **Created:** January 26, 2026
@@ -12,7 +12,7 @@
 
 ### Day 1-2: Fix DD-214 Auto-Population
 
-**File:** `vets-ready-frontend/src/pages/VeteranProfile.tsx`
+**File:** `rally-forge-frontend/src/pages/VeteranProfile.tsx`
 
 **Changes Needed:**
 1. After DD-214 extraction completes, show confirmation modal with extracted data
@@ -46,7 +46,7 @@ const handleDD214Confirmation = (extractedData: DD214ExtractedData) => {
 
 ### Day 3-5: Build VA Rating Decision Scanner
 
-**Backend:** `vets-ready-backend/app/routers/rating_decision.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/routers/rating_decision.py` (NEW FILE)
 
 **Features:**
 - Copy structure from dd214.py
@@ -57,7 +57,7 @@ const handleDD214Confirmation = (extractedData: DD214ExtractedData) => {
   - Effective dates for each rating
   - SMC (Special Monthly Compensation) if applicable
 
-**Frontend:** `vets-ready-frontend/src/services/RatingDecisionScanner.ts`
+**Frontend:** `rally-forge-frontend/src/services/RatingDecisionScanner.ts`
 
 **Interface:**
 ```typescript
@@ -91,7 +91,7 @@ export interface RatingDecisionExtractedData {
 
 ### Day 1-3: Create Unified Document Center
 
-**New Page:** `vets-ready-frontend/src/pages/DocumentCenter.tsx`
+**New Page:** `rally-forge-frontend/src/pages/DocumentCenter.tsx`
 
 **Structure:**
 ```typescript
@@ -170,7 +170,7 @@ const DocumentCenter = () => {
 
 ### Day 4-5: Build STR Scanner (Basic)
 
-**Backend:** `vets-ready-backend/app/routers/str_scanner.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/routers/str_scanner.py` (NEW FILE)
 
 **Extract:**
 - Visit dates
@@ -189,7 +189,7 @@ const DocumentCenter = () => {
 
 ### Day 1-2: Build PMR Scanner
 
-**Backend:** `vets-ready-backend/app/routers/pmr_scanner.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/routers/pmr_scanner.py` (NEW FILE)
 
 **Extract:**
 - Current diagnoses
@@ -204,7 +204,7 @@ const DocumentCenter = () => {
 
 ### Day 3-4: Build Nexus Letter Scanner
 
-**Backend:** `vets-ready-backend/app/routers/nexus_scanner.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/routers/nexus_scanner.py` (NEW FILE)
 
 **Extract:**
 - Doctor's name and credentials
@@ -219,7 +219,7 @@ const DocumentCenter = () => {
 
 ### Day 5: Connect WalletPage to Uploads
 
-**File:** `vets-ready-frontend/src/pages/WalletPage.tsx`
+**File:** `rally-forge-frontend/src/pages/WalletPage.tsx`
 
 **Changes:**
 - Remove mock data
@@ -235,7 +235,7 @@ const DocumentCenter = () => {
 
 ### Day 1-2: Build Document Analysis Service
 
-**Backend:** `vets-ready-backend/app/services/strategy_generator.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/services/strategy_generator.py` (NEW FILE)
 
 **Class:** `StrategyGeneratorService`
 
@@ -471,7 +471,7 @@ def generate_action_plan(
 
 ### Day 5: Create Strategy API Endpoint
 
-**Backend:** `vets-ready-backend/app/routers/strategy.py` (NEW FILE)
+**Backend:** `rally-forge-backend/app/routers/strategy.py` (NEW FILE)
 
 ```python
 @router.post("/api/strategy/generate")
@@ -507,7 +507,7 @@ async def generate_strategy(
 
 ### Day 1-2: Build Strategy Display Component
 
-**Frontend:** `vets-ready-frontend/src/components/StrategyDisplay.tsx`
+**Frontend:** `rally-forge-frontend/src/components/StrategyDisplay.tsx`
 
 **Sections:**
 1. Veteran Summary
@@ -670,3 +670,4 @@ async def generate_strategy(
 *Created: January 26, 2026*
 *Estimated Total Effort: 240 hours (6 weeks @ 40 hrs/week)*
 *Next Review: Weekly progress check-ins*
+

@@ -1,4 +1,4 @@
-name: Vets Ready CI/CD Pipeline
+name: Rally Forge CI/CD Pipeline
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
     branches: [main]
 
 env:
-  DOCKER_USERNAME: vetsready
+  DOCKER_USERNAME: rallyforge
   REGISTRY: docker.io
 
 jobs:
@@ -59,28 +59,28 @@ jobs:
           cache: 'pip'
 
       - name: Install dependencies
-        working-directory: vets-ready-backend
+        working-directory: rally-forge-backend
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-cov flake8 black
 
       - name: Lint with flake8
-        working-directory: vets-ready-backend
+        working-directory: rally-forge-backend
         run: flake8 app --max-line-length=120 --ignore=E501,W503
 
       - name: Format check with black
-        working-directory: vets-ready-backend
+        working-directory: rally-forge-backend
         run: black --check app || true
 
       - name: Run tests
-        working-directory: vets-ready-backend
+        working-directory: rally-forge-backend
         run: pytest tests/ --cov=app --cov-report=xml --cov-report=term
 
       - name: Upload coverage
         uses: codecov/codecov-action@v4
         with:
-          files: vets-ready-backend/coverage.xml
+          files: rally-forge-backend/coverage.xml
           flags: backend
 
   # ==================================================
@@ -99,28 +99,28 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: vets-ready-frontend/package-lock.json
+          cache-dependency-path: rally-forge-frontend/package-lock.json
 
       - name: Install dependencies
-        working-directory: vets-ready-frontend
+        working-directory: rally-forge-frontend
         run: npm ci
 
       - name: Lint
-        working-directory: vets-ready-frontend
+        working-directory: rally-forge-frontend
         run: npm run lint || true
 
       - name: Type check
-        working-directory: vets-ready-frontend
+        working-directory: rally-forge-frontend
         run: npm run type-check || true
 
       - name: Run tests
-        working-directory: vets-ready-frontend
+        working-directory: rally-forge-frontend
         run: npm test || true
 
       - name: Build
-        working-directory: vets-ready-frontend
+        working-directory: rally-forge-frontend
         env:
-          VITE_API_URL: https://api.vetsready.com
+          VITE_API_URL: https://api.rallyforge.com
         run: npm run build
 
   # ==================================================
@@ -140,26 +140,26 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Check vetsready-platform
-        working-directory: vetsready-platform
+      - name: Check rallyforge-platform
+        working-directory: rallyforge-platform
         run: |
           if [ -f "package.json" ]; then
             npm install
             npm run build 2>&1 || echo "Build completed with warnings"
-            echo "✓ VetsReady Platform validated"
+            echo "✓ rallyforge Platform validated"
           else
-            echo "⚠ vetsready-platform package.json not found"
+            echo "⚠ rallyforge-platform package.json not found"
           fi
 
-      - name: Check vets-ready-frontend
-        working-directory: vets-ready-frontend
+      - name: Check rally-forge-frontend
+        working-directory: rally-forge-frontend
         run: |
           if [ -f "package.json" ]; then
             npm ci || npm install
             npm run lint 2>&1 || true
             echo "✓ Frontend validated"
           else
-            echo "⚠ vets-ready-frontend package.json not found"
+            echo "⚠ rally-forge-frontend package.json not found"
           fi
 
       - name: Check employment-system
@@ -244,21 +244,21 @@ jobs:
       - name: Build and push backend
         uses: docker/build-push-action@v5
         with:
-          context: ./vets-ready-backend
-          file: ./vets-ready-backend/Dockerfile
+          context: ./rally-forge-backend
+          file: ./rally-forge-backend/Dockerfile
           push: false
           tags: |
-            ${{ env.DOCKER_USERNAME }}/vets-ready-backend:${{ steps.version.outputs.VERSION }}
+            ${{ env.DOCKER_USERNAME }}/rally-forge-backend:${{ steps.version.outputs.VERSION }}
         continue-on-error: true
 
       - name: Build and push frontend
         uses: docker/build-push-action@v5
         with:
-          context: ./vets-ready-frontend
-          file: ./vets-ready-frontend/Dockerfile
+          context: ./rally-forge-frontend
+          file: ./rally-forge-frontend/Dockerfile
           push: false
           tags: |
-            ${{ env.DOCKER_USERNAME }}/vets-ready-frontend:${{ steps.version.outputs.VERSION }}
+            ${{ env.DOCKER_USERNAME }}/rally-forge-frontend:${{ steps.version.outputs.VERSION }}
         continue-on-error: true
 
       - name: Build status
@@ -289,7 +289,7 @@ jobs:
 
     environment:
       name: production
-      url: https://vetsready.com
+      url: https://rallyforge.com
 
     steps:
       - uses: actions/checkout@v4
@@ -302,3 +302,5 @@ jobs:
       - name: Notify deployment
         run: echo "✓ Deployment notification sent"
         continue-on-error: true
+
+

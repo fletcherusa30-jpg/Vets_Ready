@@ -325,14 +325,14 @@ if existing:
 
 **Development (SQLite):**
 ```python
-# Automatic - uses sqlite:///vetsready.db
-DATABASE_URL="sqlite:///vetsready.db"
+# Automatic - uses sqlite:///rallyforge.db
+DATABASE_URL="sqlite:///rallyforge.db"
 ```
 
 **Production (PostgreSQL):**
 ```python
 # Configure in .env
-DATABASE_URL="postgresql://user:pass@localhost:5432/vetsready"
+DATABASE_URL="postgresql://user:pass@localhost:5432/rallyforge"
 ```
 
 **Connection Pooling:**
@@ -406,3 +406,4 @@ Reference the example endpoint file for specific patterns:
 - Relationship traversal: `get_job_matches()` → accessing related job/employer
 
 All patterns shown in production-ready code.
+

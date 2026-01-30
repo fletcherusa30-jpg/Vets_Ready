@@ -95,7 +95,7 @@
 
 1. **Start Dev Server**:
    ```powershell
-   cd "c:\Dev\Vets Ready\vets-ready-frontend"
+   cd "c:\Dev\Rally Forge\rally-forge-frontend"
    npm run dev
    ```
 
@@ -141,7 +141,7 @@
 
 ### New Files Created
 ```
-vets-ready-frontend/
+rally-forge-frontend/
 ├── src/
 │   ├── components/
 │   │   └── BenefitsDashboard.tsx           # ✅ Created
@@ -158,7 +158,7 @@ docs/
 
 ### Modified Files
 ```
-vets-ready-frontend/
+rally-forge-frontend/
 ├── src/
 │   ├── contexts/
 │   │   └── VeteranProfileContext.tsx       # ✅ Modified (added 11 fields)
@@ -264,3 +264,4 @@ When fully deployed, measure:
 **Status**: ✅ IMPLEMENTATION COMPLETE
 **Ready for**: Runtime testing, user acceptance testing
 **Next**: Start dev server and test `/benefits-matrix` route
+

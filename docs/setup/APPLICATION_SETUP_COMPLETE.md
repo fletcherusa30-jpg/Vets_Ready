@@ -1,30 +1,30 @@
-# Vets Ready - Application Setup Complete! 🎉
+# Rally Forge - Application Setup Complete! 🎉
 
 ## Setup Summary
 
-Your **Vets Ready** application has been fully configured and is ready to run!
+Your **Rally Forge** application has been fully configured and is ready to run!
 
 ### ✅ What Was Created/Configured
 
-#### Frontend (vets-ready-frontend/)
+#### Frontend (rally-forge-frontend/)
 - ✅ **package.json** - All dependencies configured (React, Vite, TypeScript, Tailwind)
 - ✅ **tsconfig.json** - TypeScript configuration with path aliases
 - ✅ **tsconfig.node.json** - Node/Vite TypeScript settings
-- ✅ **tailwind.config.js** - Custom theme with Vets Ready branding colors
+- ✅ **tailwind.config.js** - Custom theme with Rally Forge branding colors
 - ✅ **postcss.config.js** - PostCSS with Tailwind and Autoprefixer
 - ✅ **index.html** - Application entry point with PWA manifest
 - ✅ **src/main.tsx** - React application bootstrap
 - ✅ **src/index.css** - Global styles with Tailwind directives
 - ✅ **.env** - Environment variables (API URL configuration)
 
-#### Backend (vets-ready-backend/)
+#### Backend (rally-forge-backend/)
 - ✅ **Existing FastAPI application** at `app/main.py`
 - ✅ **requirements.txt** - 65 lines, 37+ Python packages
 - ✅ **Database migrations** with Alembic
 - ✅ **Virtual environment** ready (.venv/)
 
 #### Startup Infrastructure
-- ✅ **scripts/Start-VetsReady.ps1** - Comprehensive one-click startup script (400+ lines)
+- ✅ **scripts/Start-rallyforge.ps1** - Comprehensive one-click startup script (400+ lines)
 - ✅ **STARTUP_GUIDE.md** - Detailed setup and troubleshooting guide
 - ✅ **QUICK_REFERENCE_STARTUP.md** - Quick command reference
 
@@ -35,7 +35,7 @@ Your **Vets Ready** application has been fully configured and is ready to run!
 ### Option 1: One-Click Startup (Recommended)
 
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 This single command will:
@@ -51,7 +51,7 @@ This single command will:
 ### Option 2: Docker (Production-like Environment)
 
 ```powershell
-.\scripts\Start-VetsReady.ps1 -Mode docker
+.\scripts\Start-rallyforge.ps1 -Mode docker
 ```
 
 Uses docker-compose.prod.yml to start:
@@ -67,7 +67,7 @@ Access at: http://localhost
 
 ## 📋 Prerequisites Checklist
 
-Before running `scripts/Start-VetsReady.ps1`, ensure you have:
+Before running `scripts/Start-rallyforge.ps1`, ensure you have:
 
 - [ ] **Node.js 20+** installed (https://nodejs.org/)
 - [ ] **Python 3.11+** installed (https://www.python.org/)
@@ -107,11 +107,11 @@ Once started, your application will be available at:
 ## 📁 Project Architecture
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
-├── 🎯 Start-VetsReady.ps1          ← ONE-CLICK STARTUP SCRIPT
+├── 🎯 Start-rallyforge.ps1          ← ONE-CLICK STARTUP SCRIPT
 │
-├── 📱 vets-ready-frontend/          ← React + Vite + TypeScript
+├── 📱 rally-forge-frontend/          ← React + Vite + TypeScript
 │   ├── src/
 │   │   ├── App.tsx                  ← Main application component
 │   │   ├── main.tsx                 ← React bootstrap
@@ -129,7 +129,7 @@ C:\Dev\Vets Ready\
 │   ├── index.html                   ← Entry HTML file
 │   └── .env                         ← Frontend environment vars
 │
-├── 🔧 vets-ready-backend/           ← FastAPI + Python
+├── 🔧 rally-forge-backend/           ← FastAPI + Python
 │   ├── app/
 │   │   ├── main.py                  ← FastAPI application entry
 │   │   ├── routers/                 ← API route handlers
@@ -200,7 +200,7 @@ C:\Dev\Vets Ready\
 ### Frontend Features
 - ⚡ **Lightning-fast HMR** - Vite's instant hot module replacement
 - 📱 **PWA Support** - Offline capabilities and app-like experience
-- 🎨 **Custom Branding** - Vets Ready blue/gold color scheme
+- 🎨 **Custom Branding** - Rally Forge blue/gold color scheme
 - 🔄 **Smart Caching** - React Query for optimal data fetching
 - 📐 **Type Safety** - Full TypeScript coverage
 - 🧪 **Testing Ready** - Vitest configured and ready
@@ -221,7 +221,7 @@ C:\Dev\Vets Ready\
 
 ### 1. Start the Application
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 ### 2. Verify Everything Works
@@ -232,7 +232,7 @@ C:\Dev\Vets Ready\
 
 ### 3. Configure Environment Variables
 
-**Backend (.env in vets-ready-backend/):**
+**Backend (.env in rally-forge-backend/):**
 ```env
 # Update with your production values
 STRIPE_SECRET_KEY=sk_live_your_production_key
@@ -250,7 +250,7 @@ python -c "import secrets; print(secrets.token_urlsafe(32))"
 The script automatically runs migrations, but you can also:
 
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 
 # View migration history
@@ -270,21 +270,21 @@ alembic downgrade -1
 
 ```powershell
 # If seed-data.sql exists
-psql -U vetsready -d vetsready_db -f seed-data.sql
+psql -U rallyforge -d rallyforge_db -f seed-data.sql
 ```
 
 ### 6. Run Tests
 
 **Frontend:**
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test
 npm run test:coverage
 ```
 
 **Backend:**
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pytest
 pytest --cov=app tests/
@@ -292,7 +292,7 @@ pytest --cov=app tests/
 
 ### 7. Development Workflow
 
-1. **Start**: `.\Start-VetsReady.ps1 -SkipDeps` (faster subsequent runs)
+1. **Start**: `.\Start-rallyforge.ps1 -SkipDeps` (faster subsequent runs)
 2. **Code**: Make changes (auto-reload enabled)
 3. **Test**: Verify at http://localhost:5173
 4. **Commit**: Save your work
@@ -343,9 +343,9 @@ psql -U postgres -c "SELECT version();"
 
 # Create database if missing
 psql -U postgres
-CREATE DATABASE vetsready_db;
-CREATE USER vetsready WITH PASSWORD 'vetsready123';
-GRANT ALL PRIVILEGES ON DATABASE vetsready_db TO vetsready;
+CREATE DATABASE rallyforge_db;
+CREATE USER rallyforge WITH PASSWORD 'rallyforge123';
+GRANT ALL PRIVILEGES ON DATABASE rallyforge_db TO rallyforge;
 ```
 
 ### Redis Connection Issues?
@@ -384,23 +384,23 @@ redis-cli ping
 
 ```powershell
 # Start everything (first time)
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 
 # Start everything (faster, skip deps)
-.\Start-VetsReady.ps1 -SkipDeps
+.\Start-rallyforge.ps1 -SkipDeps
 
 # Fresh installation
-.\Start-VetsReady.ps1 -Fresh
+.\Start-rallyforge.ps1 -Fresh
 
 # Docker mode
-.\Start-VetsReady.ps1 -Mode docker
+.\Start-rallyforge.ps1 -Mode docker
 
 # Frontend only
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 
 # Backend only
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 python -m uvicorn app.main:app --reload
 
@@ -420,7 +420,7 @@ alembic revision --autogenerate # Create
 Everything is configured and ready to go. Just run:
 
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 And start building amazing features for veterans! 🇺🇸
@@ -442,7 +442,7 @@ And start building amazing features for veterans! 🇺🇸
 
 ## Script Capabilities
 
-The `scripts/Start-VetsReady.ps1` script includes:
+The `scripts/Start-rallyforge.ps1` script includes:
 
 - ✅ **Prerequisite checking** - Validates all required software
 - ✅ **Dependency installation** - Automated npm/pip install
@@ -458,5 +458,7 @@ The `scripts/Start-VetsReady.ps1` script includes:
 ---
 
 **Last Updated**: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-**Project**: Vets Ready - Veteran Benefits Platform
+**Project**: Rally Forge - Veteran Benefits Platform
 **Version**: 1.0.0
+
+

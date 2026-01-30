@@ -1,7 +1,7 @@
-# VetsReady Module Map
+# rallyforge Module Map
 
 **Last Updated:** January 25, 2026
-**Purpose:** Comprehensive map of all VetsReady modules, file structure, and system boundaries.
+**Purpose:** Comprehensive map of all rallyforge modules, file structure, and system boundaries.
 
 ---
 
@@ -17,7 +17,7 @@
 
 ## Core Routes
 
-VetsReady supports 16 primary routes, each representing a major system:
+rallyforge supports 16 primary routes, each representing a major system:
 
 | Route | Purpose | Key Features |
 |-------|---------|--------------|
@@ -586,3 +586,4 @@ All catalogs stored in `MatrixEngine/catalogs/`:
 ---
 
 **End of Module Map**
+

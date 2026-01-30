@@ -10,11 +10,11 @@
 
 ```powershell
 # 1. Run Diagnostics (verifies everything)
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\Run-ScannerDiagnostics.ps1
 
 # 2. Start Backend API
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 
 # 3. Test Health
@@ -49,7 +49,7 @@ curl http://localhost:8000/api/scanners/status/{job_id}
 
 ### 📁 Folders Created Automatically
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 ├── logs\scanners\           ✅ Created
 ├── reports\scanners\        ✅ Created
 ├── uploads\str\             ✅ Created
@@ -102,7 +102,7 @@ Base URL: `http://localhost:8000/api/scanners`
   "status": "healthy",
   "service": "scanners",
   "timestamp": "2026-01-25T21:10:27",
-  "project_root": "C:\\Dev\\Vets Ready",
+  "project_root": "C:\\Dev\\Rally Forge",
   "project_root_exists": true,
   "active_jobs": 2,
   "total_jobs": 15
@@ -116,8 +116,8 @@ Base URL: `http://localhost:8000/api/scanners`
 ```json
 {
   "scanner_type": "infrastructure",
-  "current_directory": "C:\\Dev\\Vets Ready\\vets-ready-backend",
-  "project_root": "C:\\Dev\\Vets Ready",
+  "current_directory": "C:\\Dev\\Rally Forge\\rally-forge-backend",
+  "project_root": "C:\\Dev\\Rally Forge",
   "folders_checked": ["PROJECT_ROOT", "uploads\\str", "scripts", ...],
   "folders_exist": {
     "PROJECT_ROOT": true,
@@ -361,7 +361,7 @@ Features:
 
 **Direct Execution**:
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\BOM-Defense.ps1
 Start-BOMScan
 ```
@@ -369,7 +369,7 @@ Start-BOMScan
 **Output**:
 ```
 === BOM DEFENSE SYSTEM ===
-Project Root: C:\Dev\Vets Ready
+Project Root: C:\Dev\Rally Forge
 
 Found 1,247 files to scan
 Processing 1,247 files...
@@ -386,17 +386,17 @@ BOMs Removed: 3
 
 **Direct Execution**:
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\Integrity-Scanner.ps1
 ```
 
 **Output**:
 ```
 === INTEGRITY SCANNER ===
-Project Root: C:\Dev\Vets Ready
+Project Root: C:\Dev\Rally Forge
 
-[SUCCESS] Found directory: vets-ready-frontend
-[SUCCESS] Found config: vets-ready-frontend\package.json
+[SUCCESS] Found directory: rally-forge-frontend
+[SUCCESS] Found config: rally-forge-frontend\package.json
 [SUCCESS] Found 347 files matching *.ts
 
 ✅ Integrity Scan Complete
@@ -410,7 +410,7 @@ Project Root: C:\Dev\Vets Ready
 
 **Direct Execution**:
 ```powershell
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 .\scripts\Run-ScannerDiagnostics.ps1
 ```
 
@@ -488,7 +488,7 @@ curl -X POST http://localhost:8000/api/scanners/forensic/scan
 
 ### Issue: "Backend not running"
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
@@ -565,11 +565,11 @@ gie.analyzeSTRCoverage({
 ### Start Services
 ```powershell
 # Backend
-cd vets-ready-backend
+cd rally-forge-backend
 python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 # Frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 ```
 
@@ -609,7 +609,7 @@ Run this checklist to verify everything works:
 .\scripts\Run-ScannerDiagnostics.ps1
 
 # 2. Start backend
-cd vets-ready-backend
+cd rally-forge-backend
 python -m uvicorn app.main:app --reload --port 8000
 
 # 3. Test health
@@ -633,3 +633,4 @@ curl http://localhost:8000/api/scanners/jobs
 ---
 
 **END OF API DOCUMENTATION**
+

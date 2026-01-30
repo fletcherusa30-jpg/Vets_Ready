@@ -1,4 +1,4 @@
-# Vets Ready - Attorney Partnership Program
+# Rally Forge - Attorney Partnership Program
 
 **Partnership Program for VA-Accredited Attorneys & Law Firms**
 
@@ -6,7 +6,7 @@
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready connects veterans with qualified legal representation while providing attorneys with a streamlined client acquisition and case management platform.
+Rally Forge connects veterans with qualified legal representation while providing attorneys with a streamlined client acquisition and case management platform.
 
 **What You Get:**
 - ✅ Qualified veteran client leads
@@ -36,7 +36,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 5. **Competition** - Difficult to stand out in crowded market
 6. **Trust building** - Veterans skeptical of attorneys
 
-### What Vets Ready Solves:
+### What Rally Forge Solves:
 - Pre-qualified leads (veterans ready for legal help)
 - Organized case information (claims already analyzed)
 - Trusted platform (veteran-first company)
@@ -50,7 +50,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 1: Lead Generation (Performance-Based)**
 
 **How It Works:**
-1. Veteran uses Vets Ready to analyze their claim
+1. Veteran uses Rally Forge to analyze their claim
 2. Platform identifies cases needing legal representation
 3. Veteran opts in to attorney matching
 4. We send qualified lead to partner attorneys
@@ -82,7 +82,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 2: Attorney Directory Listing (Subscription)**
 
 **How It Works:**
-1. Attorney profile in Vets Ready directory
+1. Attorney profile in Rally Forge directory
 2. Veterans search and contact you directly
 3. You control your profile, practice areas, availability
 4. Unlimited veteran inquiries
@@ -119,7 +119,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 ### **Model 3: Case Management Platform (SaaS)**
 
 **How It Works:**
-1. Access to Vets Ready case management system
+1. Access to Rally Forge case management system
 2. Track all your VA cases in one platform
 3. Integrated with veteran-facing tools
 4. Client portal included
@@ -426,7 +426,7 @@ Vets Ready connects veterans with qualified legal representation while providing
 - Timely service delivery
 - Professional conduct
 
-### **Vets Ready Protections:**
+### **Rally Forge Protections:**
 - Attorney vetting process
 - Veteran feedback system
 - Complaint resolution
@@ -519,29 +519,29 @@ A: Yes. 30-day trial with discounted leads or free directory trial.
 ### **Ready to Partner?**
 
 **Option 1: Apply Now**
-- Website: vetsready.com/attorneys/apply
+- Website: rallyforge.com/attorneys/apply
 - Online application (10 minutes)
 - Response within 48 hours
 
 **Option 2: Schedule a Demo**
-- Calendar: calendly.com/vetsready/attorney-demo
+- Calendar: calendly.com/rallyforge/attorney-demo
 - 30-minute platform walkthrough
 - Q&A with partnership team
 - Custom proposal
 
 **Option 3: Request Information**
-- Email: attorneys@vetsready.com
+- Email: attorneys@rallyforge.com
 - Phone: 1-800-VETS-LAW
 - Detailed information packet sent
 
 **Contact Us:**
-- Partnership Team: partnerships@vetsready.com
-- Support: support@vetsready.com
+- Partnership Team: partnerships@rallyforge.com
+- Support: support@rallyforge.com
 - Phone: 1-800-VETS-RDY
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Trusted Platform:**
 - Veteran-founded company
@@ -577,4 +577,6 @@ A: Yes. 30-day trial with discounted leads or free directory trial.
 
 **Together, we can help veterans get the legal representation they deserve.**
 
-*Vets Ready - Connecting veterans with qualified legal advocates.*
+*Rally Forge - Connecting veterans with qualified legal advocates.*
+
+

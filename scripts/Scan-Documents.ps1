@@ -23,7 +23,7 @@ Write-Header "🔍 DOCUMENT SCANNER"
 Write-Header "=" * 60
 
 # Set location
-$baseDir = "C:\Dev\Vets Ready"
+$baseDir = "C:\Dev\Rally Forge"
 Set-Location $baseDir
 
 # Check Python environment
@@ -55,7 +55,7 @@ if ($result -match "OK") {
 # Find the Word document
 Write-Info "`nSearching for Word documents..."
 
-$docPath = "C:\Dev\Vets Ready\Transition_Readiness_Guide_All_Branches.docx"
+$docPath = "C:\Dev\Rally Forge\Transition_Readiness_Guide_All_Branches.docx"
 
 if (Test-Path $docPath) {
     $fileSize = [math]::Round((Get-Item $docPath).Length / 1KB, 2)
@@ -68,7 +68,7 @@ if (Test-Path $docPath) {
 # Process the document
 Write-Header "`n📄 PROCESSING DOCUMENT"
 
-$scriptPath = ".\vets-ready-backend\scripts\process_word_docs.py"
+$scriptPath = ".\rally-forge-backend\scripts\process_word_docs.py"
 
 if (-not (Test-Path $scriptPath)) {
     Write-Fail "Processing script not found: $scriptPath"
@@ -106,3 +106,4 @@ Write-Header "`n✅ SCAN COMPLETE"
 Write-Info "Check the data/extracted folder for results"
 
 Write-Host ""
+

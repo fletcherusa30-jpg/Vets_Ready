@@ -2,7 +2,7 @@
 
 ## 📚 Documentation Overview
 
-This directory contains comprehensive documentation for the VetsReady Employment System.
+This directory contains comprehensive documentation for the rallyforge Employment System.
 
 ### Core Documentation
 
@@ -114,3 +114,4 @@ If you can't find what you need in the documentation:
 
 **Last Updated**: 2024
 **Version**: 1.0.0
+

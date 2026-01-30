@@ -4,8 +4,8 @@
 
 ### ✅ CRSC Qualification Wizard (COMPLETE)
 **Files Created/Modified:**
-1. `vets-ready-frontend/src/components/CRSCQualificationWizard.tsx` (NEW - 1,100+ lines)
-2. `vets-ready-frontend/src/pages/Retirement.tsx` (MODIFIED - Added wizard integration)
+1. `rally-forge-frontend/src/components/CRSCQualificationWizard.tsx` (NEW - 1,100+ lines)
+2. `rally-forge-frontend/src/pages/Retirement.tsx` (MODIFIED - Added wizard integration)
 
 **Features:**
 - 6-step interactive wizard replacing simple checkbox
@@ -241,9 +241,9 @@
 - `VBMS_SCANNER_ENHANCEMENTS.md` - Scanner implementation guide
 
 **Key Files:**
-- `vets-ready-frontend/src/components/CRSCQualificationWizard.tsx` - Wizard component
-- `vets-ready-frontend/src/pages/Retirement.tsx` - Integration code
-- `vets-ready-backend/app/routers/dd214.py` - Current scanner (to be enhanced)
+- `rally-forge-frontend/src/components/CRSCQualificationWizard.tsx` - Wizard component
+- `rally-forge-frontend/src/pages/Retirement.tsx` - Integration code
+- `rally-forge-backend/app/routers/dd214.py` - Current scanner (to be enhanced)
 
 **Questions/Issues:**
 - Check testing guide for common issues
@@ -273,3 +273,4 @@
 ---
 
 *From confusion to confidence - elite tools for veterans!* ⚔️
+

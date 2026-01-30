@@ -1,6 +1,6 @@
-# Vets Ready - Project Structure Verification
+# Rally Forge - Project Structure Verification
 
-**Project Root:** `C:\Dev\Vets Ready`
+**Project Root:** `C:\Dev\Rally Forge`
 **Status:** ✅ Verified January 24, 2026
 
 ---
@@ -8,20 +8,20 @@
 ## ✅ Official Project Structure
 
 ```
-C:\Dev\Vets Ready\                    ← AUTHORITATIVE PROJECT ROOT
-├── vets-ready-backend\               ← Backend API (FastAPI, Python)
-├── vets-ready-frontend\              ← Frontend SPA (React, TypeScript, Vite)
-├── vets-ready-mobile\                ← Mobile app (Capacitor, iOS/Android)
-├── vets-ready-shared\                ← Shared code/types
+C:\Dev\Rally Forge\                    ← AUTHORITATIVE PROJECT ROOT
+├── rally-forge-backend\               ← Backend API (FastAPI, Python)
+├── rally-forge-frontend\              ← Frontend SPA (React, TypeScript, Vite)
+├── rally-forge-mobile\                ← Mobile app (Capacitor, iOS/Android)
+├── rally-forge-shared\                ← Shared code/types
 ├── android\                          ← Android native project
 ├── ios\                              ← iOS native project (if exists)
 ├── desktop\                          ← Electron desktop app
 ├── scripts\                          ← Build & deployment automation
-│   ├── Deploy-Docker.ps1             ✅ Uses vets-ready-* paths
-│   ├── Build-Android.ps1             ✅ Uses vets-ready-* paths
-│   ├── Build-iOS.sh                  ✅ Uses vets-ready-* paths
-│   ├── Build-Desktop.ps1             ✅ Uses vets-ready-* paths
-│   ├── Validate-Deployment.ps1       ✅ Uses vets-ready-* paths
+│   ├── Deploy-Docker.ps1             ✅ Uses rally-forge-* paths
+│   ├── Build-Android.ps1             ✅ Uses rally-forge-* paths
+│   ├── Build-iOS.sh                  ✅ Uses rally-forge-* paths
+│   ├── Build-Desktop.ps1             ✅ Uses rally-forge-* paths
+│   ├── Validate-Deployment.ps1       ✅ Uses rally-forge-* paths
 │   └── Rebuild-CleanRepo.ps1
 ├── docs\                             ← All documentation
 │   ├── API.md
@@ -45,7 +45,7 @@ C:\Dev\Vets Ready\                    ← AUTHORITATIVE PROJECT ROOT
 ├── _archive\                         ← Historical backups (gitignored)
 ├── .github\                          ← CI/CD workflows
 │   └── workflows\
-│       └── ci-cd.yml                 ✅ Uses vets-ready-* paths
+│       └── ci-cd.yml                 ✅ Uses rally-forge-* paths
 ├── docker-compose.prod.yml           ✅ Production orchestration
 ├── .env.production.example           ✅ Environment template
 ├── .gitignore                        ✅ Comprehensive exclusions
@@ -63,9 +63,9 @@ C:\Dev\Vets Ready\                    ← AUTHORITATIVE PROJECT ROOT
 ## ⚠️ Deprecated Paths - DO NOT USE
 
 - ❌ `C:\VeteranApp` - **DEPRECATED**
-- ❌ `frontend\` (root-level) - Use `vets-ready-frontend\`
-- ❌ `backend\` (root-level) - Use `vets-ready-backend\`
-- ❌ `mobile\` (root-level) - Use `vets-ready-mobile\`
+- ❌ `frontend\` (root-level) - Use `rally-forge-frontend\`
+- ❌ `backend\` (root-level) - Use `rally-forge-backend\`
+- ❌ `mobile\` (root-level) - Use `rally-forge-mobile\`
 
 ---
 
@@ -76,11 +76,11 @@ All build and deployment scripts use the correct structure:
 ### Deploy-Docker.ps1
 ```powershell
 # ✅ Correct paths
-Push-Location vets-ready-backend
+Push-Location rally-forge-backend
 python -m pytest tests/ -v
 Pop-Location
 
-Push-Location vets-ready-frontend
+Push-Location rally-forge-frontend
 npm test -- --run
 Pop-Location
 ```
@@ -88,12 +88,12 @@ Pop-Location
 ### Build-Android.ps1
 ```powershell
 # ✅ Correct paths
-Push-Location vets-ready-frontend
+Push-Location rally-forge-frontend
 npm install
 npm run build
 Pop-Location
 
-Push-Location vets-ready-mobile
+Push-Location rally-forge-mobile
 npx cap sync android
 Pop-Location
 
@@ -105,12 +105,12 @@ Pop-Location
 ### Build-iOS.sh
 ```bash
 # ✅ Correct paths
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm install
 npm run build
 cd ..
 
-cd vets-ready-mobile
+cd rally-forge-mobile
 npx cap sync ios
 cd ..
 
@@ -122,12 +122,12 @@ xcodebuild archive ...
 ### Build-Desktop.ps1
 ```powershell
 # ✅ Correct paths
-Push-Location vets-ready-frontend
+Push-Location rally-forge-frontend
 npm install
 npm run build
 Pop-Location
 
-Copy-Item "vets-ready-frontend\dist" "desktop\dist" -Recurse
+Copy-Item "rally-forge-frontend\dist" "desktop\dist" -Recurse
 
 Push-Location desktop
 npm install
@@ -144,25 +144,25 @@ All environment configurations reference correct structure:
 ### .env.production.example
 ```bash
 # Database
-DATABASE_URL=postgresql://vetsready:PASS@postgres:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:PASS@postgres:5432/rallyforge_db
 
 # API URLs
-API_BASE_URL=https://api.vetsready.com
-FRONTEND_URL=https://vetsready.com
+API_BASE_URL=https://api.rallyforge.com
+FRONTEND_URL=https://rallyforge.com
 ```
 
 ### Frontend (.env for Vite)
 ```bash
-# vets-ready-frontend/.env.production
-VITE_API_URL=https://api.vetsready.com
+# rally-forge-frontend/.env.production
+VITE_API_URL=https://api.rallyforge.com
 VITE_STRIPE_PUBLISHABLE_KEY=pk_live_***
 ```
 
 ### Backend (.env)
 ```bash
-# vets-ready-backend/.env
-DATABASE_URL=postgresql://vetsready:PASS@localhost:5432/vetsready_db
-CORS_ORIGINS=https://vetsready.com,https://app.vetsready.com
+# rally-forge-backend/.env
+DATABASE_URL=postgresql://rallyforge:PASS@localhost:5432/rallyforge_db
+CORS_ORIGINS=https://rallyforge.com,https://app.rallyforge.com
 ```
 
 ---
@@ -174,15 +174,15 @@ CORS_ORIGINS=https://vetsready.com,https://app.vetsready.com
 services:
   backend:
     build:
-      context: ./vets-ready-backend          # ✅ Correct path
+      context: ./rally-forge-backend          # ✅ Correct path
       dockerfile: Dockerfile
-    container_name: vetsready-backend
+    container_name: rallyforge-backend
 
   frontend:
     build:
-      context: ./vets-ready-frontend         # ✅ Correct path
+      context: ./rally-forge-frontend         # ✅ Correct path
       dockerfile: Dockerfile
-    container_name: vetsready-frontend
+    container_name: rallyforge-frontend
 
   postgres:
     container_name: postgres
@@ -194,9 +194,9 @@ services:
 ```
 
 ### Dockerfiles
-- ✅ `vets-ready-backend/Dockerfile` - Exists and correct
-- ✅ `vets-ready-frontend/Dockerfile` - Exists and correct
-- ✅ `vets-ready-frontend/nginx.conf` - Exists and correct
+- ✅ `rally-forge-backend/Dockerfile` - Exists and correct
+- ✅ `rally-forge-frontend/Dockerfile` - Exists and correct
+- ✅ `rally-forge-frontend/nginx.conf` - Exists and correct
 
 ---
 
@@ -206,27 +206,27 @@ services:
 ```yaml
 jobs:
   validate-repo:
-    # ✅ Scans entire C:\Dev\Vets Ready structure
+    # ✅ Scans entire C:\Dev\Rally Forge structure
 
   backend-tests:
-    # ✅ Uses vets-ready-backend/
+    # ✅ Uses rally-forge-backend/
     - name: Run backend tests
-      working-directory: vets-ready-backend
+      working-directory: rally-forge-backend
       run: pytest tests/
 
   frontend-tests:
-    # ✅ Uses vets-ready-frontend/
+    # ✅ Uses rally-forge-frontend/
     - name: Run frontend tests
-      working-directory: vets-ready-frontend
+      working-directory: rally-forge-frontend
       run: npm test
 
   docker-build:
     # ✅ Builds from correct paths
     - name: Build backend image
-      run: docker build -t vetsready/vets-ready-backend:latest ./vets-ready-backend
+      run: docker build -t rallyforge/rally-forge-backend:latest ./rally-forge-backend
 
     - name: Build frontend image
-      run: docker build -t vetsready/vets-ready-frontend:latest ./vets-ready-frontend
+      run: docker build -t rallyforge/rally-forge-frontend:latest ./rally-forge-frontend
 ```
 
 ---
@@ -235,10 +235,10 @@ jobs:
 
 | Component | Correct Path | Status |
 |-----------|--------------|--------|
-| Backend API | `vets-ready-backend/` | ✅ Verified |
-| Frontend SPA | `vets-ready-frontend/` | ✅ Verified |
-| Mobile App | `vets-ready-mobile/` | ✅ Verified |
-| Shared Code | `vets-ready-shared/` | ✅ Verified |
+| Backend API | `rally-forge-backend/` | ✅ Verified |
+| Frontend SPA | `rally-forge-frontend/` | ✅ Verified |
+| Mobile App | `rally-forge-mobile/` | ✅ Verified |
+| Shared Code | `rally-forge-shared/` | ✅ Verified |
 | Android Native | `android/` | ✅ Verified |
 | Desktop App | `desktop/` | ✅ Verified |
 | Scripts | `scripts/` | ✅ Verified |
@@ -250,17 +250,17 @@ jobs:
 
 ## 🚀 Quick Validation Commands
 
-Run these from `C:\Dev\Vets Ready\`:
+Run these from `C:\Dev\Rally Forge\`:
 
 ```powershell
 # Verify project root
 Get-Location
-# Should output: C:\Dev\Vets Ready
+# Should output: C:\Dev\Rally Forge
 
 # Verify subdirectories exist
-Test-Path vets-ready-backend
-Test-Path vets-ready-frontend
-Test-Path vets-ready-mobile
+Test-Path rally-forge-backend
+Test-Path rally-forge-frontend
+Test-Path rally-forge-mobile
 Test-Path scripts
 Test-Path docs
 # All should return: True
@@ -273,7 +273,7 @@ Test-Path docs
 
 # Verify Docker Compose
 docker-compose -f docker-compose.prod.yml config
-# Should show vetsready-backend, vetsready-frontend, postgres, redis
+# Should show rallyforge-backend, rallyforge-frontend, postgres, redis
 ```
 
 ---
@@ -284,13 +284,13 @@ docker-compose -f docker-compose.prod.yml config
 
 1. **Always run scripts from project root:**
    ```powershell
-   cd "C:\Dev\Vets Ready"
+   cd "C:\Dev\Rally Forge"
    .\scripts\Deploy-Docker.ps1
    ```
 
 2. **Use relative paths in scripts:**
    ```powershell
-   Push-Location vets-ready-backend
+   Push-Location rally-forge-backend
    # ... commands ...
    Pop-Location
    ```
@@ -306,10 +306,10 @@ docker-compose -f docker-compose.prod.yml config
 1. **Don't use absolute paths in scripts:**
    ```powershell
    # ❌ BAD
-   cd "C:\Dev\Vets Ready\vets-ready-backend"
+   cd "C:\Dev\Rally Forge\rally-forge-backend"
 
    # ✅ GOOD
-   Push-Location vets-ready-backend
+   Push-Location rally-forge-backend
    ```
 
 2. **Don't reference deprecated paths:**
@@ -326,7 +326,7 @@ docker-compose -f docker-compose.prod.yml config
    DATABASE_URL=postgresql://localhost/veteranapp
 
    # ✅ GOOD
-   DATABASE_URL=postgresql://localhost/vetsready_db
+   DATABASE_URL=postgresql://localhost/rallyforge_db
    ```
 
 ---
@@ -345,7 +345,7 @@ The following are **gitignored** and never committed:
 
 ## ✅ Verification Complete
 
-**Project Root Confirmed:** `C:\Dev\Vets Ready`
+**Project Root Confirmed:** `C:\Dev\Rally Forge`
 
 All scripts, documentation, and configurations verified to use correct paths.
 No references to deprecated `C:\VeteranApp` or incorrect directory names.
@@ -358,5 +358,7 @@ No references to deprecated `C:\VeteranApp` or incorrect directory names.
 
 **When in doubt, remember:**
 ```
-C:\Dev\Vets Ready  ← This is the only truth
+C:\Dev\Rally Forge  ← This is the only truth
 ```
+
+

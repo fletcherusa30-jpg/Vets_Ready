@@ -5,7 +5,7 @@
 ### ✅ Test 1: Valid PDF Upload
 **Expected:** File accepted, scan extracts disabilities
 
-1. Start app: `npm run dev` in vets-ready-frontend
+1. Start app: `npm run dev` in rally-forge-frontend
 2. Navigate to http://localhost:5173/start
 3. Complete Step 1 (Profile) and Step 2 (Retirement)
 4. In Step 3, click "📁 Choose File"
@@ -286,3 +286,4 @@ All tests pass if:
 **Testing Date:** January 24, 2026
 **Tester:** [Your Name]
 **Status:** Ready for QA
+

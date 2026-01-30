@@ -1,8 +1,8 @@
-# VetsReady Compliance & Privacy Guidelines
+# rallyforge Compliance & Privacy Guidelines
 
 **Last Updated:** January 24, 2026
 **Version:** 1.0
-**Document Owner:** VetsReady Development Team
+**Document Owner:** rallyforge Development Team
 
 ---
 
@@ -23,7 +23,7 @@
 
 ## Overview
 
-VetsReady is committed to providing compliant, ethical, and veteran-centric assistance for VA disability claims. This document outlines our legal boundaries, data handling practices, and privacy commitments.
+rallyforge is committed to providing compliant, ethical, and veteran-centric assistance for VA disability claims. This document outlines our legal boundaries, data handling practices, and privacy commitments.
 
 ### Core Principles
 
@@ -37,7 +37,7 @@ VetsReady is committed to providing compliant, ethical, and veteran-centric assi
 
 ## Legal Boundaries
 
-### ✅ What VetsReady DOES
+### ✅ What rallyforge DOES
 
 - **Provides educational guidance** on the VA disability claims process
 - **Generates AI-powered theories** of entitlement labeled as "educational only"
@@ -48,7 +48,7 @@ VetsReady is committed to providing compliant, ethical, and veteran-centric assi
 - **Connects veterans** with accredited VSOs and VA-accredited attorneys
 - **Shares educational content** about 38 CFR, M21-1, and VA processes
 
-### ❌ What VetsReady DOES NOT DO
+### ❌ What rallyforge DOES NOT DO
 
 - **NO VA.gov/eBenefits scraping** - We never scrape, crawl, or automated extract data from VA websites
 - **NO credential storage** - We never store VA usernames, passwords, or login credentials
@@ -74,9 +74,9 @@ VetsReady is committed to providing compliant, ethical, and veteran-centric assi
 
 ### Disclaimer (Required on Every Page)
 
-> **VetsReady is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA).**
+> **rallyforge is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA).**
 >
-> All information and AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. VetsReady does not guarantee claim approval or specific outcomes.
+> All information and AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. rallyforge does not guarantee claim approval or specific outcomes.
 >
 > For personalized assistance with your VA disability claim, consult with an accredited Veterans Service Officer (VSO) or VA-accredited attorney. Find accredited representatives at:
 > - **VA VSO Locator**: https://www.va.gov/ogc/apps/accreditation/
@@ -124,7 +124,7 @@ VetsReady is committed to providing compliant, ethical, and veteran-centric assi
 - ❌ Social Security Numbers (SSNs)
 - ❌ VA file numbers
 - ❌ Actual medical records (we store metadata only, not documents)
-- ❌ Browsing history outside VetsReady
+- ❌ Browsing history outside rallyforge
 - ❌ Location data (except for VSO locator with consent)
 
 ### Data Categories & Classification
@@ -213,7 +213,7 @@ We follow the principle of **data minimization**:
 
 ### 4. Purpose Limitation
 
-- **Use Only for Stated Purpose**: Data used only for providing VetsReady features
+- **Use Only for Stated Purpose**: Data used only for providing rallyforge features
 - **No Third-Party Sales**: We never sell user data
 - **Minimal Sharing**: Share only with service providers (OpenAI, AWS) as needed
 
@@ -248,7 +248,7 @@ We follow the principle of **data minimization**:
 ### How to Exercise Rights
 
 - **Account Settings**: Edit profile, export data, delete account
-- **Email Request**: privacy@vetsready.com (respond within 30 days)
+- **Email Request**: privacy@rallyforge.com (respond within 30 days)
 - **Automated Tools**: Self-service data export and deletion
 
 ---
@@ -329,7 +329,7 @@ We follow the principle of **data minimization**:
 
 ### HIPAA (Health Insurance Portability and Accountability Act)
 
-**Status**: VetsReady is **NOT** a HIPAA-covered entity because:
+**Status**: rallyforge is **NOT** a HIPAA-covered entity because:
 - We are not a healthcare provider, health plan, or healthcare clearinghouse
 - We do not create, receive, or transmit PHI (Protected Health Information) on behalf of covered entities
 - Veterans voluntarily enter their own data (not transmitted from healthcare providers)
@@ -359,16 +359,16 @@ We follow the principle of **data minimization**:
 ## Contact
 
 ### Data Privacy Inquiries
-- **Email**: privacy@vetsready.com
+- **Email**: privacy@rallyforge.com
 - **Response Time**: Within 30 days (GDPR/CCPA requirement)
 
 ### Security Issues
-- **Email**: security@vetsready.com
+- **Email**: security@rallyforge.com
 - **PGP Key**: [Coming Soon]
 - **Responsible Disclosure**: We welcome security researchers
 
 ### General Support
-- **Email**: support@vetsready.com
+- **Email**: support@rallyforge.com
 - **Response Time**: Within 48 hours
 
 ---
@@ -401,3 +401,4 @@ We follow the principle of **data minimization**:
 ---
 
 **END OF COMPLIANCE & PRIVACY GUIDELINES**
+

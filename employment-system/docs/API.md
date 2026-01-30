@@ -1,6 +1,6 @@
 # Employment System API Reference
 
-Complete API documentation for the VetsReady Employment System.
+Complete API documentation for the rallyforge Employment System.
 
 ## Core Matching Engine
 
@@ -421,7 +421,8 @@ import {
 Future versions will require API key authentication:
 
 ```typescript
-const client = new VetsReadyEmploymentClient({
-  apiKey: process.env.VETSREADY_API_KEY
+const client = new rallyforgeEmploymentClient({
+  apiKey: process.env.rallyforge_API_KEY
 });
 ```
+

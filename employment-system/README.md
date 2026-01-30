@@ -1,10 +1,10 @@
-# VetsReady Employment System
+# rallyforge Employment System
 
 A comprehensive employment platform that translates military experience into civilian career success.
 
 ## Overview
 
-The VetsReady Employment System is an enterprise-grade career management platform designed specifically for military veterans. It provides end-to-end support for:
+The rallyforge Employment System is an enterprise-grade career management platform designed specifically for military veterans. It provides end-to-end support for:
 
 - **Military-to-Civilian Translation**: Automatically converts military experience (MOS/AFSC/Rating) into civilian-relevant skills
 - **Intelligent Job Matching**: AI-powered matching that understands veteran profiles and finds optimal opportunities
@@ -258,8 +258,9 @@ This is an enterprise-grade system built to production standards. All contributi
 
 ## License
 
-Proprietary - VetsReady Platform
+Proprietary - rallyforge Platform
 
 ## Support
 
-For questions or support, contact the VetsReady development team.
+For questions or support, contact the rallyforge development team.
+

@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Vets Ready - Comprehensive Compliance Validator
+    Rally Forge - Comprehensive Compliance Validator
     Validates entire codebase against all authoritative documents
 
 .DESCRIPTION
@@ -53,20 +53,20 @@ $ValidationResults = @{
 }
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║    VETS READY - COMPREHENSIVE COMPLIANCE VALIDATOR        ║" -ForegroundColor Cyan
+Write-Host "║    Rally Forge - COMPREHENSIVE COMPLIANCE VALIDATOR        ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
 # Required folder structure per ARCHITECTURE.md
 $RequiredFolders = @(
-    'vets-ready-frontend',
-    'vets-ready-backend',
-    'vets-ready-backend\app',
-    'vets-ready-backend\app\routers',
-    'vets-ready-backend\app\models',
-    'vets-ready-backend\app\services',
-    'vets-ready-backend\app\schemas',
-    'vets-ready-mobile',
+    'rally-forge-frontend',
+    'rally-forge-backend',
+    'rally-forge-backend\app',
+    'rally-forge-backend\app\routers',
+    'rally-forge-backend\app\models',
+    'rally-forge-backend\app\services',
+    'rally-forge-backend\app\schemas',
+    'rally-forge-mobile',
     'ai-engine',
     'data',
     'scripts',
@@ -82,27 +82,27 @@ $RequiredFolders = @(
 
 # Required backend files per Technical Specification
 $RequiredBackendFiles = @(
-    'vets-ready-backend\app\main.py',
-    'vets-ready-backend\app\database.py',
-    'vets-ready-backend\app\config.py',
-    'vets-ready-backend\app\__init__.py',
-    'vets-ready-backend\app\routers\__init__.py',
-    'vets-ready-backend\app\routers\auth.py',
-    'vets-ready-backend\app\routers\claims.py',
-    'vets-ready-backend\app\routers\conditions.py',
-    'vets-ready-backend\app\routers\retirement.py',
-    'vets-ready-backend\app\routers\business.py',
-    'vets-ready-backend\app\routers\legal.py',
-    'vets-ready-backend\app\routers\subscriptions.py',
-    'vets-ready-backend\app\routers\employers.py',
-    'vets-ready-backend\app\routers\business_directory.py',
-    'vets-ready-backend\app\models\__init__.py',
-    'vets-ready-backend\app\models\user.py',
-    'vets-ready-backend\app\models\claim.py',
-    'vets-ready-backend\app\models\condition.py',
-    'vets-ready-backend\app\models\subscription.py',
-    'vets-ready-backend\app\schemas\subscription.py',
-    'vets-ready-backend\requirements.txt'
+    'rally-forge-backend\app\main.py',
+    'rally-forge-backend\app\database.py',
+    'rally-forge-backend\app\config.py',
+    'rally-forge-backend\app\__init__.py',
+    'rally-forge-backend\app\routers\__init__.py',
+    'rally-forge-backend\app\routers\auth.py',
+    'rally-forge-backend\app\routers\claims.py',
+    'rally-forge-backend\app\routers\conditions.py',
+    'rally-forge-backend\app\routers\retirement.py',
+    'rally-forge-backend\app\routers\business.py',
+    'rally-forge-backend\app\routers\legal.py',
+    'rally-forge-backend\app\routers\subscriptions.py',
+    'rally-forge-backend\app\routers\employers.py',
+    'rally-forge-backend\app\routers\business_directory.py',
+    'rally-forge-backend\app\models\__init__.py',
+    'rally-forge-backend\app\models\user.py',
+    'rally-forge-backend\app\models\claim.py',
+    'rally-forge-backend\app\models\condition.py',
+    'rally-forge-backend\app\models\subscription.py',
+    'rally-forge-backend\app\schemas\subscription.py',
+    'rally-forge-backend\requirements.txt'
 )
 
 # Required AI Engine files
@@ -215,7 +215,7 @@ foreach ($file in $RequiredAIFiles) {
         $fileName = Split-Path -Leaf $file
         $placeholder = @"
 '''
-Vets Ready - AI Engine Component: $fileName
+Rally Forge - AI Engine Component: $fileName
 TODO: Implement AI logic per Master System Blueprint
 '''
 
@@ -261,8 +261,8 @@ Write-Host "──────────────────────�
 
 # Check for calculators
 $calculatorChecks = @(
-    @{ Name = 'Disability Rating Calculator'; File = 'vets-ready-backend\app\routers\claims.py' },
-    @{ Name = 'Retirement Calculator'; File = 'vets-ready-backend\app\routers\retirement.py' },
+    @{ Name = 'Disability Rating Calculator'; File = 'rally-forge-backend\app\routers\claims.py' },
+    @{ Name = 'Retirement Calculator'; File = 'rally-forge-backend\app\routers\retirement.py' },
     @{ Name = 'Claims Strategy Engine'; File = 'ai-engine\claimstrategyengine.py' },
     @{ Name = 'CFR Interpreter'; File = 'ai-engine\cfr_interpreter.py' }
 )
@@ -285,12 +285,12 @@ Write-Host "──────────────────────�
 
 # Check for pricing tiers implementation
 $pricingChecks = @(
-    @{ Name = 'Veteran Subscription Models'; File = 'vets-ready-backend\app\models\subscription.py'; Pattern = 'VeteranSubscription' },
-    @{ Name = 'Employer Account Models'; File = 'vets-ready-backend\app\models\subscription.py'; Pattern = 'EmployerAccount' },
-    @{ Name = 'Business Listing Models'; File = 'vets-ready-backend\app\models\subscription.py'; Pattern = 'BusinessListing' },
-    @{ Name = 'Subscription API Endpoints'; File = 'vets-ready-backend\app\routers\subscriptions.py'; Pattern = '/api/subscriptions' },
-    @{ Name = 'Employer API Endpoints'; File = 'vets-ready-backend\app\routers\employers.py'; Pattern = '/api/employers' },
-    @{ Name = 'Business Directory API'; File = 'vets-ready-backend\app\routers\business_directory.py'; Pattern = '/api/business-directory' }
+    @{ Name = 'Veteran Subscription Models'; File = 'rally-forge-backend\app\models\subscription.py'; Pattern = 'VeteranSubscription' },
+    @{ Name = 'Employer Account Models'; File = 'rally-forge-backend\app\models\subscription.py'; Pattern = 'EmployerAccount' },
+    @{ Name = 'Business Listing Models'; File = 'rally-forge-backend\app\models\subscription.py'; Pattern = 'BusinessListing' },
+    @{ Name = 'Subscription API Endpoints'; File = 'rally-forge-backend\app\routers\subscriptions.py'; Pattern = '/api/subscriptions' },
+    @{ Name = 'Employer API Endpoints'; File = 'rally-forge-backend\app\routers\employers.py'; Pattern = '/api/employers' },
+    @{ Name = 'Business Directory API'; File = 'rally-forge-backend\app\routers\business_directory.py'; Pattern = '/api/business-directory' }
 )
 
 foreach ($check in $pricingChecks) {
@@ -317,10 +317,10 @@ Write-Host "🔍 VALIDATION 9: Security Framework" -ForegroundColor Cyan
 Write-Host "─────────────────────────────────────────────────────────" -ForegroundColor Gray
 
 $securityChecks = @(
-    @{ Name = 'JWT Authentication'; File = 'vets-ready-backend\app\routers\auth.py'; Pattern = 'jwt|JWT' },
-    @{ Name = 'CORS Middleware'; File = 'vets-ready-backend\app\main.py'; Pattern = 'CORSMiddleware' },
-    @{ Name = 'Password Hashing'; File = 'vets-ready-backend\app\routers\auth.py'; Pattern = 'bcrypt|hash' },
-    @{ Name = 'Input Validation'; File = 'vets-ready-backend\app\schemas\subscription.py'; Pattern = 'BaseModel' }
+    @{ Name = 'JWT Authentication'; File = 'rally-forge-backend\app\routers\auth.py'; Pattern = 'jwt|JWT' },
+    @{ Name = 'CORS Middleware'; File = 'rally-forge-backend\app\main.py'; Pattern = 'CORSMiddleware' },
+    @{ Name = 'Password Hashing'; File = 'rally-forge-backend\app\routers\auth.py'; Pattern = 'bcrypt|hash' },
+    @{ Name = 'Input Validation'; File = 'rally-forge-backend\app\schemas\subscription.py'; Pattern = 'BaseModel' }
 )
 
 foreach ($check in $securityChecks) {
@@ -386,7 +386,7 @@ if ($GenerateReport) {
     }
 
     $report = @"
-# Vets Ready - Compliance Validation Report
+# Rally Forge - Compliance Validation Report
 
 **Generated:** $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
 **Compliance Score:** $complianceScore%
@@ -454,3 +454,4 @@ Write-Host ""
 
 # Return validation results
 return $ValidationResults
+

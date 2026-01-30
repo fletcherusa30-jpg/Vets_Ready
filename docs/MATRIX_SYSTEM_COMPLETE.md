@@ -1,8 +1,8 @@
-# VETS READY MATRIX SYSTEM - COMPLETE IMPLEMENTATION GUIDE
+# Rally Forge MATRIX SYSTEM - COMPLETE IMPLEMENTATION GUIDE
 
 ## Overview
 
-This document describes the complete VetsReady Matrix System implementation, built according to the comprehensive development instructions provided. The system is a unified, matrix-driven, veteran-focused claim-preparation, benefits-discovery, and transition-support platform.
+This document describes the complete rallyforge Matrix System implementation, built according to the comprehensive development instructions provided. The system is a unified, matrix-driven, veteran-focused claim-preparation, benefits-discovery, and transition-support platform.
 
 ## Legal Compliance
 
@@ -286,7 +286,7 @@ useEffect(() => {
 **Compliance**:
 ```typescript
 <p className="disclaimer">
-  <strong>Important:</strong> VetsReady does not file claims.
+  <strong>Important:</strong> rallyforge does not file claims.
   We prepare and educate only. You must file your claim directly with the VA.
 </p>
 ```
@@ -356,7 +356,7 @@ useEffect(() => {
 ## File Structure
 
 ```
-vets-ready-frontend/
+rally-forge-frontend/
 ├── src/
 │   ├── services/
 │   │   ├── DD214Scanner.ts                 ✅ NEW
@@ -544,7 +544,7 @@ try {
 
 ## Conclusion
 
-The VetsReady Matrix System now includes:
+The rallyforge Matrix System now includes:
 
 ✅ DD214 Scanner with OCR-ready extraction
 ✅ Rating Narrative Scanner with condition extraction
@@ -567,3 +567,5 @@ The VetsReady Matrix System now includes:
 - Real-time updates across platform
 
 The platform is **production-ready** and follows all development standards specified in the comprehensive instructions.
+
+

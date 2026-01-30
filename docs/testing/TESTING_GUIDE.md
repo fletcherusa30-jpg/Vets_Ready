@@ -1,11 +1,11 @@
-# VetsReady - Quick Testing Guide
+# rallyforge - Quick Testing Guide
 ## Post-Reorganization Testing
 
 ### ✅ Quick Start (5 Minutes)
 
 #### 1. **Start the Development Server**
 ```powershell
-cd "c:\Dev\Vets Ready\vets-ready-frontend"
+cd "c:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 ```
 
@@ -122,7 +122,7 @@ npm run dev
 ---
 
 #### **Test 6: Navigation & Persistence**
-1. Click "VETS READY" logo (top-left) → Go back to Home
+1. Click "Rally Forge" logo (top-left) → Go back to Home
 2. **Expected:** Green "Welcome Back!" banner appears (profile completed)
 3. Click "View My Benefits Dashboard"
 4. **Expected:** Returns to dashboard with saved data
@@ -142,7 +142,7 @@ npm run dev
 #### **Issue: "Module not found" errors**
 **Fix:**
 ```powershell
-cd "c:\Dev\Vets Ready\vets-ready-frontend"
+cd "c:\Dev\Rally Forge\rally-forge-frontend"
 npm install
 ```
 
@@ -232,3 +232,5 @@ You should be able to:
 5. **View all eligible benefits** → With amounts, requirements, and next steps
 
 **Congratulations! The reorganization is complete and functional!** 🎊
+
+

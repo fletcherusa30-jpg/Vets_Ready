@@ -169,7 +169,7 @@ const Settings = () => {
                 <div className="setting-item">
                   <label>Marketing Emails</label>
                   <input type="checkbox" aria-label="Marketing Emails" />
-                  <span className="setting-description">Receive news and updates from VetsReady</span>
+                  <span className="setting-description">Receive news and updates from rallyforge</span>
                 </div>
               </div>
 
@@ -184,7 +184,7 @@ const Settings = () => {
                 <div className="setting-item">
                   <label>Analytics</label>
                   <input type="checkbox" defaultChecked aria-label="Analytics" />
-                  <span className="setting-description">Help us improve VetsReady with usage analytics</span>
+                  <span className="setting-description">Help us improve rallyforge with usage analytics</span>
                 </div>
               </div>
 
@@ -202,3 +202,4 @@ const Settings = () => {
 };
 
 export default Settings;
+

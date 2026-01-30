@@ -1,19 +1,19 @@
 # Tools Folder - Development Resources
 
 ## Overview
-Reference folder for development tools and utilities. The primary scripts location is `C:\Dev\Vets Ready\scripts\`.
+Reference folder for development tools and utilities. The primary scripts location is `C:\Dev\Rally Forge\scripts\`.
 
 ## Primary Scripts Location
 **`../scripts/`** - All development scripts (100+ files)
 - Build scripts (Build-Frontend.ps1, Build-Android.ps1, etc.)
-- Deployment scripts (Deploy-VetsReady.ps1, Deploy-Docker.ps1)
+- Deployment scripts (Deploy-RallyForge.ps1, Deploy-Docker.ps1)
 - Utilities (Cleanup-Workspace.ps1, Integrity-Scanner.ps1)
 - Database management (Seed-Database.ps1)
 - Service management (Start-All-Services.ps1, Run-Backend.ps1)
 
 ## Custom Project Tools (To Create As Needed)
 
-For VetsReady-specific utilities, create in the main project:
+For RallyForge-specific utilities, create in the main project:
 - **Backend Scripts:** `backend/bin/` directory
   - `init_database.py` ✅ Already created
   - Add more Python utilities here
@@ -46,3 +46,5 @@ Prerequisites: `pip install python-dotenv pydantic sqlalchemy pandas`
 ## See Also
 - [Backend Documentation](../docs/ARCHITECTURE.md)
 - [Database Guide](../docs/DATABASE_INTEGRATION_SETUP.md)
+
+

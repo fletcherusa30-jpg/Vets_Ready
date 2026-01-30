@@ -1,6 +1,6 @@
 # Employment System Data Models
 
-Complete reference for all data structures in the VetsReady Employment System.
+Complete reference for all data structures in the rallyforge Employment System.
 
 ## Core Models
 
@@ -408,3 +408,4 @@ type JobType = 'full-time' | 'part-time' | 'contract' | 'temporary';
 ## Sample Data
 
 See `/data/seed/` directory for sample veteran profiles, job postings, and test data.
+

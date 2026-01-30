@@ -26,8 +26,8 @@
 ### 1. Fixed CRSC Qualification Logic
 
 #### Files Modified:
-- `vets-ready-frontend/src/utils/benefitsEligibility.ts`
-- `vets-ready-frontend/src/components/CRSCQualificationWizard.tsx`
+- `rally-forge-frontend/src/utils/benefitsEligibility.ts`
+- `rally-forge-frontend/src/components/CRSCQualificationWizard.tsx`
 
 #### BEFORE (Incorrect):
 ```typescript
@@ -128,7 +128,7 @@ else SHOW_NOT_ELIGIBLE_MESSAGE
 
 ### 3. Created VA Jobs & Resources Widget
 
-#### File: `vets-ready-frontend/src/components/VAJobsWidget.tsx`
+#### File: `rally-forge-frontend/src/components/VAJobsWidget.tsx`
 
 **Features**:
 - **Two Tabs**: Job Openings | Resources
@@ -442,12 +442,12 @@ import VAJobsWidget from '../components/VAJobsWidget';
 ## 📁 Files Modified
 
 ### Core Changes:
-1. `vets-ready-frontend/src/utils/benefitsEligibility.ts` - Eligibility logic
-2. `vets-ready-frontend/src/components/CRSCQualificationWizard.tsx` - Wizard qualification
-3. `vets-ready-frontend/src/pages/VeteranProfile.tsx` - Profile setup integration
+1. `rally-forge-frontend/src/utils/benefitsEligibility.ts` - Eligibility logic
+2. `rally-forge-frontend/src/components/CRSCQualificationWizard.tsx` - Wizard qualification
+3. `rally-forge-frontend/src/pages/VeteranProfile.tsx` - Profile setup integration
 
 ### New Files:
-4. `vets-ready-frontend/src/components/VAJobsWidget.tsx` - VA Jobs widget
+4. `rally-forge-frontend/src/components/VAJobsWidget.tsx` - VA Jobs widget
 
 ### Build Status:
 - ✅ TypeScript compilation: SUCCESS
@@ -500,7 +500,7 @@ Example:
 
 ### How to Apply:
 
-1. ✅ Complete your VetsReady profile (includes Step 4: CRSC)
+1. ✅ Complete your rallyforge profile (includes Step 4: CRSC)
 2. ✅ Download DD Form 2860 (pre-filled from profile)
 3. ✅ Gather evidence (DD-214, VA decision, medical records, deployment orders)
 4. ✅ Submit to your branch's CRSC office:
@@ -545,3 +545,5 @@ Example:
 ---
 
 **All changes tested, built, and ready for deployment.** 🚀
+
+

@@ -1,9 +1,9 @@
-# Vets Ready - Quick Reference
+# Rally Forge - Quick Reference
 
 ## 🚀 One Command to Rule Them All
 
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 That's it! Everything else is handled automatically.
@@ -15,13 +15,13 @@ That's it! Everything else is handled automatically.
 ### Development
 ```powershell
 # Start everything (first time)
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 
 # Start everything (subsequent runs, faster)
-.\Start-VetsReady.ps1 -SkipDeps
+.\Start-rallyforge.ps1 -SkipDeps
 
 # Fresh installation (clean slate)
-.\Start-VetsReady.ps1 -Fresh
+.\Start-rallyforge.ps1 -Fresh
 
 # Stop servers
 # Press Ctrl+C in the terminal
@@ -30,7 +30,7 @@ That's it! Everything else is handled automatically.
 ### Docker
 ```powershell
 # Start with Docker (production-like)
-.\Start-VetsReady.ps1 -Mode docker
+.\Start-rallyforge.ps1 -Mode docker
 
 # View Docker logs
 docker-compose -f docker-compose.prod.yml logs -f
@@ -55,18 +55,18 @@ docker-compose -f docker-compose.prod.yml down
 ## 📁 Project Structure (Key Files)
 
 ```
-vets-ready-frontend/
+rally-forge-frontend/
   ├── src/main.tsx           ← App entry point
   ├── App.tsx                ← Main React component
   ├── package.json           ← Dependencies
   └── .env                   ← Frontend config
 
-vets-ready-backend/
+rally-forge-backend/
   ├── app/main.py            ← API entry point
   ├── requirements.txt       ← Python dependencies
   └── .env                   ← Backend config
 
-Start-VetsReady.ps1          ← One-click startup
+Start-rallyforge.ps1          ← One-click startup
 docker-compose.prod.yml      ← Docker orchestration
 ```
 
@@ -76,7 +76,7 @@ docker-compose.prod.yml      ← Docker orchestration
 
 ### Frontend won't start?
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 Remove-Item -Recurse -Force node_modules
 npm install
 npm run dev
@@ -84,7 +84,7 @@ npm run dev
 
 ### Backend won't start?
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 python -m uvicorn app.main:app --reload
@@ -92,7 +92,7 @@ python -m uvicorn app.main:app --reload
 
 ### Database issues?
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 alembic upgrade head
 ```
@@ -115,11 +115,11 @@ taskkill /PID <PID> /F
 
 ```powershell
 # Frontend tests
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test
 
 # Backend tests
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pytest
 ```
@@ -158,7 +158,7 @@ VITE_API_URL=http://localhost:8000
 
 ### Backend (.env)
 ```env
-DATABASE_URL=postgresql://vetsready:vetsready123@localhost:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:rallyforge123@localhost:5432/rallyforge_db
 JWT_SECRET=your-secret-key-here
 REDIS_URL=redis://localhost:6379/0
 ```
@@ -188,7 +188,7 @@ REDIS_URL=redis://localhost:6379/0
 
 ## 🎯 Development Workflow
 
-1. **Start**: `.\Start-VetsReady.ps1`
+1. **Start**: `.\Start-rallyforge.ps1`
 2. **Code**: Edit files (auto-reload enabled)
 3. **Test**: Visit http://localhost:5173
 4. **Commit**: Save your changes
@@ -201,13 +201,13 @@ REDIS_URL=redis://localhost:6379/0
 ### Background Execution
 ```powershell
 # Run in background (keep terminal free)
-Start-Process powershell -ArgumentList "-File Start-VetsReady.ps1"
+Start-Process powershell -ArgumentList "-File Start-rallyforge.ps1"
 ```
 
 ### Quick Restart
 ```powershell
 # After first run, always use -SkipDeps for 10x faster startup
-.\Start-VetsReady.ps1 -SkipDeps
+.\Start-rallyforge.ps1 -SkipDeps
 ```
 
 ### View Logs
@@ -219,13 +219,13 @@ Get-Content (Get-ChildItem logs\startup-*.log | Sort-Object LastWriteTime -Desce
 ### Database Quick Commands
 ```powershell
 # Connect to database
-psql -U vetsready -d vetsready_db
+psql -U rallyforge -d rallyforge_db
 
 # Backup database
-pg_dump -U vetsready vetsready_db > backup.sql
+pg_dump -U rallyforge rallyforge_db > backup.sql
 
 # Restore database
-psql -U vetsready -d vetsready_db < backup.sql
+psql -U rallyforge -d rallyforge_db < backup.sql
 ```
 
 ---
@@ -233,9 +233,9 @@ psql -U vetsready -d vetsready_db < backup.sql
 ## 🔐 Default Credentials (Development Only)
 
 **PostgreSQL:**
-- Username: `vetsready`
-- Password: `vetsready123`
-- Database: `vetsready_db`
+- Username: `rallyforge`
+- Password: `rallyforge123`
+- Database: `rallyforge_db`
 
 **Application:**
 - Test users created by seed data (if loaded)
@@ -253,3 +253,5 @@ psql -U vetsready -d vetsready_db < backup.sql
 ---
 
 **Pro Tip**: Bookmark this file for quick reference! 📌
+
+

@@ -1,7 +1,7 @@
 # Retirement Tool - Copilot Instruction Block
 
 ## Mission
-Rebuild the VetsReady Retirement Planning Tool into a comprehensive, veteran-centric retirement calculator featuring accurate VA pension calculations, retirement income projections, survivor benefits analysis, and long-term financial planning with world-class UX.
+Rebuild the rallyforge Retirement Planning Tool into a comprehensive, veteran-centric retirement calculator featuring accurate VA pension calculations, retirement income projections, survivor benefits analysis, and long-term financial planning with world-class UX.
 
 ## Core Requirements
 
@@ -608,3 +608,4 @@ Estimate: Use 2024 federal tax brackets + state taxes
 **Status**: Ready for implementation
 **Pattern**: Following Disability Calculator architecture (proven, tested, documented)
 **Quality**: Same standards as Disability Tool (40+ tests, accessibility, professional UX)
+

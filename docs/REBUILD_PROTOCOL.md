@@ -1,4 +1,4 @@
-# Vets Ready Platform - Complete Rebuild Protocol
+# Rally Forge Platform - Complete Rebuild Protocol
 
 **Version:** 1.0
 **Date:** January 26, 2026
@@ -8,7 +8,7 @@
 
 ## 🎯 Overview
 
-This protocol enables complete reconstruction of the Vets Ready platform from scratch. Follow these steps in order to rebuild the entire system with full functionality.
+This protocol enables complete reconstruction of the Rally Forge platform from scratch. Follow these steps in order to rebuild the entire system with full functionality.
 
 ---
 
@@ -36,14 +36,14 @@ This protocol enables complete reconstruction of the Vets Ready platform from sc
 #### Step 1.1: Create Project Root
 ```powershell
 # Create main project directory
-New-Item -Path "c:\Dev\Vets Ready" -ItemType Directory -Force
-Set-Location "c:\Dev\Vets Ready"
+New-Item -Path "c:\Dev\Rally Forge" -ItemType Directory -Force
+Set-Location "c:\Dev\Rally Forge"
 ```
 
 #### Step 1.2: Initialize Git Repository
 ```powershell
 git init
-git remote add origin https://github.com/your-org/vets-ready.git
+git remote add origin https://github.com/your-org/rally-forge.git
 ```
 
 #### Step 1.3: Validate Environment
@@ -60,17 +60,17 @@ git remote add origin https://github.com/your-org/vets-ready.git
 #### Step 2.1: Create Backend Structure
 ```powershell
 # Create backend folders
-New-Item -Path "vets-ready-backend\app\routers" -ItemType Directory -Force
-New-Item -Path "vets-ready-backend\app\services" -ItemType Directory -Force
-New-Item -Path "vets-ready-backend\app\models" -ItemType Directory -Force
-New-Item -Path "vets-ready-backend\app\schemas" -ItemType Directory -Force
-New-Item -Path "vets-ready-backend\ai-engine" -ItemType Directory -Force
-New-Item -Path "vets-ready-backend\tests" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\app\routers" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\app\services" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\app\models" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\app\schemas" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\ai-engine" -ItemType Directory -Force
+New-Item -Path "rally-forge-backend\tests" -ItemType Directory -Force
 ```
 
 #### Step 2.2: Create Python Virtual Environment
 ```powershell
-Set-Location vets-ready-backend
+Set-Location rally-forge-backend
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
@@ -120,7 +120,7 @@ app/routers/
 Copy-Item .env.example .env
 
 # Edit .env with your settings
-DATABASE_URL=postgresql://postgres:password@localhost:5432/vetsready
+DATABASE_URL=postgresql://postgres:password@localhost:5432/rallyforge
 OPENAI_API_KEY=sk-your-key-here
 STRIPE_SECRET_KEY=sk_test_your-key-here
 ```
@@ -128,7 +128,7 @@ STRIPE_SECRET_KEY=sk_test_your-key-here
 #### Step 2.7: Initialize Database
 ```powershell
 # Create database
-psql -U postgres -c "CREATE DATABASE vetsready;"
+psql -U postgres -c "CREATE DATABASE rallyforge;"
 
 # Run migrations
 alembic init alembic
@@ -145,11 +145,11 @@ python -m app.scripts.seed_database
 
 #### Step 3.1: Create Frontend Structure
 ```powershell
-Set-Location "c:\Dev\Vets Ready"
+Set-Location "c:\Dev\Rally Forge"
 
 # Create React app with Vite
-npm create vite@latest vets-ready-frontend -- --template react-ts
-Set-Location vets-ready-frontend
+npm create vite@latest rally-forge-frontend -- --template react-ts
+Set-Location rally-forge-frontend
 ```
 
 #### Step 3.2: Install Dependencies
@@ -192,9 +192,9 @@ src/pages/
 #### Step 3.6: Create Layout Components
 ```
 src/components/layout/
-├── VetsReadyLayout.tsx
-├── VetsReadyNav.tsx
-└── VetsReadyFooter.tsx
+├── rallyforgeLayout.tsx
+├── rallyforgeNav.tsx
+└── rallyforgeFooter.tsx
 ```
 
 #### Step 3.7: Configure Environment
@@ -212,13 +212,13 @@ VITE_USE_MOCK_AI=true
 
 #### Step 4.1: Initialize Capacitor
 ```powershell
-Set-Location "c:\Dev\Vets Ready"
-New-Item -Path "vets-ready-mobile" -ItemType Directory -Force
-Set-Location vets-ready-mobile
+Set-Location "c:\Dev\Rally Forge"
+New-Item -Path "rally-forge-mobile" -ItemType Directory -Force
+Set-Location rally-forge-mobile
 
 npm init -y
 npm install @capacitor/core @capacitor/cli
-npx cap init "Vets Ready" "com.vetsready.app"
+npx cap init "Rally Forge" "com.rallyforge.app"
 ```
 
 #### Step 4.2: Add Platforms
@@ -233,9 +233,9 @@ Edit `capacitor.config.ts`:
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.vetsready.app',
-  appName: 'Vets Ready',
-  webDir: '../vets-ready-frontend/dist',
+  appId: 'com.rallyforge.app',
+  appName: 'Rally Forge',
+  webDir: '../rally-forge-frontend/dist',
   server: {
     androidScheme: 'https'
   }
@@ -258,7 +258,7 @@ All scripts should be in `scripts/` directory:
 - **Validate-Structure.ps1** ✅ - Structure integrity check
 
 #### Step 5.2: Create Startup Scripts
-- **Start-VetsReady.ps1** - Unified startup
+- **Start-rallyforge.ps1** - Unified startup
 - **Start-All-Services.ps1** - All services launcher
 
 ---
@@ -326,7 +326,7 @@ Invoke-WebRequest http://localhost:8000/docs
 ```powershell
 .\scripts\Build-Frontend.ps1 -Mode development
 
-Set-Location vets-ready-frontend
+Set-Location rally-forge-frontend
 npm run dev
 ```
 
@@ -347,14 +347,14 @@ npm run dev
 
 **Frontend:**
 ```powershell
-Set-Location vets-ready-frontend
+Set-Location rally-forge-frontend
 Remove-Item -Recurse -Force node_modules
 npm install
 ```
 
 **Backend:**
 ```powershell
-Set-Location vets-ready-backend
+Set-Location rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -365,11 +365,11 @@ pip install -r requirements.txt
 Restart-Service postgresql-x64-15
 
 # Recreate database
-psql -U postgres -c "DROP DATABASE IF EXISTS vetsready;"
-psql -U postgres -c "CREATE DATABASE vetsready;"
+psql -U postgres -c "DROP DATABASE IF EXISTS rallyforge;"
+psql -U postgres -c "CREATE DATABASE rallyforge;"
 
 # Run migrations
-Set-Location vets-ready-backend
+Set-Location rally-forge-backend
 alembic upgrade head
 ```
 
@@ -430,7 +430,7 @@ git push origin v1.0-rebuild
 
 ### Step 9.3: Generate Deployment Package
 ```powershell
-.\scripts\Deploy-VetsReady.ps1 -Environment production
+.\scripts\Deploy-rallyforge.ps1 -Environment production
 ```
 
 ---
@@ -439,9 +439,9 @@ git push origin v1.0-rebuild
 
 ### Documentation References
 - Technical Specification: `App/VeteranApp — Full Technical Specification.md`
-- Master Design: `App/VetsReady – Master Design.md`
+- Master Design: `App/rallyforge – Master Design.md`
 - Professional Blueprint: `App/Professional Master Blueprint.md`
-- Pricing Guide: `App/Vets Ready Pricing Guide.md`
+- Pricing Guide: `App/Rally Forge Pricing Guide.md`
 
 ### Automation Scripts
 - Bootstrap: `scripts/Bootstrap-All.ps1`
@@ -470,3 +470,5 @@ With this protocol:
 **Document Status:** ✅ Complete
 **Last Validated:** January 26, 2026
 **Next Review:** June 26, 2026
+
+

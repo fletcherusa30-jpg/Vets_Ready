@@ -4,7 +4,7 @@
 
 ### Overview
 
-The Automatic Revenue Design Engine (ARDE) is a sophisticated background system that continuously identifies, evaluates, and activates revenue opportunities across the VetsReady platform **without requiring manual setup**. It operates ethically, never interferes with claims/benefits/evidence tools, and is fully privacy-compliant.
+The Automatic Revenue Design Engine (ARDE) is a sophisticated background system that continuously identifies, evaluates, and activates revenue opportunities across the rallyforge platform **without requiring manual setup**. It operates ethically, never interferes with claims/benefits/evidence tools, and is fully privacy-compliant.
 
 ---
 
@@ -657,7 +657,7 @@ For questions or issues:
 
 ## Conclusion
 
-The Automatic Revenue Design Engine (ARDE) is a **fully autonomous, ethical, and privacy-compliant** revenue generation system that operates in the background of the VetsReady platform. It continuously discovers, validates, activates, and optimizes revenue opportunities across 9 categories without manual intervention, while never interfering with veteran-critical tools like claims, benefits, or evidence systems.
+The Automatic Revenue Design Engine (ARDE) is a **fully autonomous, ethical, and privacy-compliant** revenue generation system that operates in the background of the rallyforge platform. It continuously discovers, validates, activates, and optimizes revenue opportunities across 9 categories without manual intervention, while never interfering with veteran-critical tools like claims, benefits, or evidence systems.
 
 **Key Benefits**:
 - ✅ Zero manual setup required
@@ -667,3 +667,4 @@ The Automatic Revenue Design Engine (ARDE) is a **fully autonomous, ethical, and
 - ✅ Projected $25,000-$83,500/month revenue potential
 
 ARDE is production-ready and can be deployed immediately.
+

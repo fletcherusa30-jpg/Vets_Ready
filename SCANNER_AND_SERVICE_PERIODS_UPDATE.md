@@ -2,8 +2,8 @@
 
 **Date**: January 28, 2026
 **Files Modified**:
-- `vets-ready-frontend/src/contexts/VeteranProfileContext.tsx`
-- `vets-ready-frontend/src/pages/VeteranProfile.tsx`
+- `rally-forge-frontend/src/contexts/VeteranProfileContext.tsx`
+- `rally-forge-frontend/src/pages/VeteranProfile.tsx`
 
 ---
 
@@ -160,8 +160,8 @@ User drops file → inline handler → handleRatingNarrativeUpload() → FileRea
 ### Test 1: DD-214 Upload (Backend Integration)
 
 **Prerequisites**:
-- Backend running: `cd vets-ready-backend && python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`
-- Frontend running: `cd vets-ready-frontend && npm run dev`
+- Backend running: `cd rally-forge-backend && python -m uvicorn app.main:app --host 127.0.0.1 --port 8000`
+- Frontend running: `cd rally-forge-frontend && npm run dev`
 
 **Steps**:
 1. Navigate to `http://localhost:5175`
@@ -183,7 +183,7 @@ User drops file → inline handler → handleRatingNarrativeUpload() → FileRea
 - Verify backend is running (`curl http://localhost:8000/health`)
 - Check file size < 10MB
 - Verify file type (PDF, JPG, PNG only)
-- Check backend logs: `c:\Dev\Vets Ready\logs\dd214\`
+- Check backend logs: `c:\Dev\Rally Forge\logs\dd214\`
 
 ---
 
@@ -253,14 +253,14 @@ User drops file → inline handler → handleRatingNarrativeUpload() → FileRea
 1. **Backend Not Running**
    - Solution: Start backend
    ```powershell
-   cd "c:\Dev\Vets Ready\vets-ready-backend"
+   cd "c:\Dev\Rally Forge\rally-forge-backend"
    python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
    ```
 
 2. **CORS Blocked**
    - Check browser console for CORS errors
    - Verify `settings.cors_origins` includes `http://localhost:5175`
-   - Check `vets-ready-backend/app/config/settings.py`
+   - Check `rally-forge-backend/app/config/settings.py`
 
 3. **File Too Large**
    - Max size: 10MB
@@ -314,11 +314,11 @@ User drops file → inline handler → handleRatingNarrativeUpload() → FileRea
 ## 🎯 Quick Reference
 
 ### File Locations:
-- **DD-214 Backend**: `vets-ready-backend/app/routers/dd214.py`
-- **DD-214 Frontend**: `vets-ready-frontend/src/services/DD214Scanner.ts`
-- **Profile Context**: `vets-ready-frontend/src/contexts/VeteranProfileContext.tsx`
-- **Main Form**: `vets-ready-frontend/src/pages/VeteranProfile.tsx`
-- **Upload Logs**: `c:\Dev\Vets Ready\logs\dd214\`
+- **DD-214 Backend**: `rally-forge-backend/app/routers/dd214.py`
+- **DD-214 Frontend**: `rally-forge-frontend/src/services/DD214Scanner.ts`
+- **Profile Context**: `rally-forge-frontend/src/contexts/VeteranProfileContext.tsx`
+- **Main Form**: `rally-forge-frontend/src/pages/VeteranProfile.tsx`
+- **Upload Logs**: `c:\Dev\Rally Forge\logs\dd214\`
 
 ### API Endpoints:
 - Health: `GET http://localhost:8000/health`
@@ -402,7 +402,7 @@ User drops file → inline handler → handleRatingNarrativeUpload() → FileRea
 If uploads still fail after troubleshooting:
 
 1. **Check backend logs**:
-   - `c:\Dev\Vets Ready\logs\dd214\dd214_extraction_YYYYMMDD.log`
+   - `c:\Dev\Rally Forge\logs\dd214\dd214_extraction_YYYYMMDD.log`
 
 2. **Browser console**:
    - F12 → Console tab
@@ -424,3 +424,4 @@ If uploads still fail after troubleshooting:
 ---
 
 **All features implemented and tested. Build successful. Ready for use!** 🎉
+

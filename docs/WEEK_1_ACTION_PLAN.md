@@ -17,7 +17,7 @@
 
 **1A. Enable strict mode globally (30 minutes)**
 ```bash
-# cd vets-ready-frontend/
+# cd rally-forge-frontend/
 
 # Backup current config
 cp tsconfig.json tsconfig.json.backup
@@ -77,7 +77,7 @@ npm run build
 
 **2A. Check git history (10 minutes)**
 ```bash
-cd vets-ready-frontend
+cd rally-forge-frontend
 git log --oneline src/services/AutomaticRevenueDesignEngine.ts | head -20
 ```
 
@@ -159,7 +159,7 @@ git commit -m "feat: restore rating narrative scanner with type safety"
 # Data Flow Architecture
 
 ## Overview
-This document describes how data flows through VetsReady from user action to database and back.
+This document describes how data flows through rallyforge from user action to database and back.
 
 ## Diagram
 \`\`\`
@@ -342,4 +342,6 @@ git checkout [COMMIT_HASH] -- src/services/ARDE.ts
 ---
 
 *Created: January 26, 2026*
-*For: VetsReady Platform Excellence Initiative*
+*For: rallyforge Platform Excellence Initiative*
+
+

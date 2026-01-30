@@ -1,4 +1,4 @@
-# ⚡ VETS READY - QUICK START GUIDE
+# ⚡ Rally Forge - QUICK START GUIDE
 ## Immediate Actions to Enable Document Scanning → Strategy Generation
 
 **Date:** January 26, 2026
@@ -27,7 +27,7 @@
 
 ### The Fix
 
-**File:** `vets-ready-frontend/src/pages/VeteranProfile.tsx`
+**File:** `rally-forge-frontend/src/pages/VeteranProfile.tsx`
 
 **Step 1:** Add confirmation modal after extraction completes
 
@@ -132,7 +132,7 @@ const handleApplyDD214Data = () => {
 
 ### The Build
 
-**Backend File:** `vets-ready-backend/app/routers/rating_decision.py` (CREATE NEW)
+**Backend File:** `rally-forge-backend/app/routers/rating_decision.py` (CREATE NEW)
 
 **Copy structure from:** `dd214.py` (it's already perfect!)
 
@@ -231,7 +231,7 @@ def parse_rating_decision(text: str) -> RatingDecisionExtractedData:
     return data
 ```
 
-**Frontend File:** `vets-ready-frontend/src/services/RatingDecisionScanner.ts` (CREATE NEW)
+**Frontend File:** `rally-forge-frontend/src/services/RatingDecisionScanner.ts` (CREATE NEW)
 
 **Copy structure from:** `DD214Scanner.ts`
 
@@ -355,7 +355,7 @@ const handleRatingDecisionUpload = async (event: React.ChangeEvent<HTMLInputElem
 
 ### The Build (MVP Version)
 
-**Backend File:** `vets-ready-backend/app/routers/strategy.py` (CREATE NEW)
+**Backend File:** `rally-forge-backend/app/routers/strategy.py` (CREATE NEW)
 
 ```python
 """
@@ -484,7 +484,7 @@ async def generate_strategy(
     )
 ```
 
-**Frontend Component:** `vets-ready-frontend/src/components/StrategyDisplay.tsx` (CREATE NEW)
+**Frontend Component:** `rally-forge-frontend/src/components/StrategyDisplay.tsx` (CREATE NEW)
 
 ```typescript
 interface Strategy {
@@ -738,3 +738,4 @@ But don't wait! **Start with the MVP and get something working TODAY.**
 **LET'S GO! 🚀**
 
 *Remember: Done is better than perfect. Get Phase 1 working first, then move to Phase 2.*
+

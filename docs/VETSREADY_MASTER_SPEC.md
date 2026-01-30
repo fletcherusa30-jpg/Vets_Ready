@@ -1,6 +1,6 @@
-# VetsReady Master Specification v1.0
+# rallyforge Master Specification v1.0
 
-**Project Root:** `C:\Dev\Vets Ready`
+**Project Root:** `C:\Dev\Rally Forge`
 **Last Updated:** January 24, 2026
 **Status:** Active Development
 
@@ -24,7 +24,7 @@
 
 ## Executive Summary
 
-**VetsReady** is a comprehensive veteran assistance platform designed to empower veterans through their VA disability claims journey and beyond. The platform combines AI-powered legal theory generation, evidence organization, financial planning tools, and community resources—all while maintaining strict compliance with VA policies and veteran privacy.
+**rallyforge** is a comprehensive veteran assistance platform designed to empower veterans through their VA disability claims journey and beyond. The platform combines AI-powered legal theory generation, evidence organization, financial planning tools, and community resources—all while maintaining strict compliance with VA policies and veteran privacy.
 
 ### Mission
 Enable every veteran to understand, prepare, and optimize their VA disability claims with confidence, clarity, and dignity—without requiring legal expertise or scraping VA systems.
@@ -105,7 +105,7 @@ Enable every veteran to understand, prepare, and optimize their VA disability cl
 ### Project Structure
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
 ├── README.md                          # Project overview
 ├── LICENSE                            # License information
@@ -115,7 +115,7 @@ C:\Dev\Vets Ready\
 ├── package.json                       # Root package (optional workspace)
 │
 ├── docs/                              # All documentation
-│   ├── VETSREADY_MASTER_SPEC.md      # This file
+│   ├── rallyforge_MASTER_SPEC.md      # This file
 │   ├── IMPLEMENTATION_TASKS.md       # Task list & progress
 │   ├── DEVELOPER_ONBOARDING.md       # Setup guide for devs
 │   ├── TECHNICAL_GUIDE.md            # API docs, data models
@@ -124,13 +124,13 @@ C:\Dev\Vets Ready\
 │   └── architecture/                 # Architecture diagrams
 │
 ├── scripts/                           # Automation scripts
-│   ├── scripts/Start-VetsReady.ps1   # One-click dev startup (PowerShell)
-│   ├── Build-VetsReady.ps1           # Build all services
-│   ├── Test-VetsReady.ps1            # Run all tests
-│   ├── Deploy-VetsReady.ps1          # Deploy to AWS
+│   ├── scripts/Start-rallyforge.ps1   # One-click dev startup (PowerShell)
+│   ├── Build-rallyforge.ps1           # Build all services
+│   ├── Test-rallyforge.ps1            # Run all tests
+│   ├── Deploy-rallyforge.ps1          # Deploy to AWS
 │   └── seed-data.sql                 # Database seed data
 │
-├── vets-ready-frontend/              # React frontend
+├── rally-forge-frontend/              # React frontend
 │   ├── src/
 │   │   ├── main.tsx                  # App entry point
 │   │   ├── App.tsx                   # Root component with routing
@@ -146,7 +146,7 @@ C:\Dev\Vets Ready\
 │   ├── vite.config.ts                # Vite configuration
 │   └── tsconfig.json                 # TypeScript config
 │
-├── vets-ready-backend/               # FastAPI backend
+├── rally-forge-backend/               # FastAPI backend
 │   ├── app/
 │   │   ├── main.py                   # FastAPI app entry
 │   │   ├── config.py                 # Configuration & env vars
@@ -174,7 +174,7 @@ C:\Dev\Vets Ready\
 │   ├── requirements.txt              # Python dependencies
 │   └── Dockerfile                    # Backend container
 │
-├── vets-ready-mobile/                # Capacitor mobile app
+├── rally-forge-mobile/                # Capacitor mobile app
 │   ├── ios/                          # iOS-specific files
 │   ├── android/                      # Android-specific files
 │   └── capacitor.config.ts           # Capacitor configuration
@@ -213,9 +213,9 @@ C:\Dev\Vets Ready\
 **Status**: ✅ Fully implemented with mock AI data
 
 **Files**:
-- `vets-ready-frontend/src/components/wizard/DisabilityWizard.tsx`
-- `vets-ready-frontend/src/components/wizard/Step*.tsx` (5 steps)
-- `vets-ready-frontend/src/types/wizard.types.ts`
+- `rally-forge-frontend/src/components/wizard/DisabilityWizard.tsx`
+- `rally-forge-frontend/src/components/wizard/Step*.tsx` (5 steps)
+- `rally-forge-frontend/src/types/wizard.types.ts`
 
 ### 2. Service Connection Theory Engine ✅ **(Implemented)**
 
@@ -237,8 +237,8 @@ C:\Dev\Vets Ready\
 **Status**: ✅ Mock implementation ready; backend API needed
 
 **Files**:
-- `vets-ready-frontend/src/services/aiService.ts` (frontend)
-- `vets-ready-backend/app/services/ai_service.py` (backend - TODO)
+- `rally-forge-frontend/src/services/aiService.ts` (frontend)
+- `rally-forge-backend/app/services/ai_service.py` (backend - TODO)
 
 ### 3. Secondary Condition Discovery Engine ✅ **(Implemented)**
 
@@ -289,8 +289,8 @@ C:\Dev\Vets Ready\
 **Status**: ⏳ Exists but needs AMA rule updates
 
 **Files**:
-- `vets-ready-frontend/src/pages/EffectiveDateCalculator.tsx` (frontend)
-- `vets-ready-backend/app/services/effective_date_service.py` (backend - TODO)
+- `rally-forge-frontend/src/pages/EffectiveDateCalculator.tsx` (frontend)
+- `rally-forge-backend/app/services/effective_date_service.py` (backend - TODO)
 
 ### 6. Claim Tracker ✅ **(Implemented)**
 
@@ -307,7 +307,7 @@ C:\Dev\Vets Ready\
 **Status**: ✅ Fully implemented (frontend only; backend sync optional)
 
 **Files**:
-- `vets-ready-frontend/src/components/ClaimTracker.tsx`
+- `rally-forge-frontend/src/components/ClaimTracker.tsx`
 
 ### 7. Evidence Organizer + OCR ✅ **(Partial)**
 
@@ -324,8 +324,8 @@ C:\Dev\Vets Ready\
 **Status**: ✅ UI complete; OCR/AI backend needed
 
 **Files**:
-- `vets-ready-frontend/src/components/EvidenceOrganizer.tsx`
-- `vets-ready-backend/app/services/ocr_service.py` (TODO)
+- `rally-forge-frontend/src/components/EvidenceOrganizer.tsx`
+- `rally-forge-backend/app/services/ocr_service.py` (TODO)
 
 ### 8. Export Engine ✅ **(Markdown Done, PDF Pending)**
 
@@ -348,7 +348,7 @@ C:\Dev\Vets Ready\
 **Status**: ✅ Markdown functional; PDF needs library
 
 **Files**:
-- `vets-ready-frontend/src/services/exportService.ts`
+- `rally-forge-frontend/src/services/exportService.ts`
 
 ### 9. Financial Tools ⏳ **(Not Started)**
 
@@ -382,8 +382,8 @@ C:\Dev\Vets Ready\
 **Status**: ⏳ Not started
 
 **Files** (TODO):
-- `vets-ready-frontend/src/components/FinancialTools.tsx`
-- `vets-ready-backend/app/routers/financial.py`
+- `rally-forge-frontend/src/components/FinancialTools.tsx`
+- `rally-forge-backend/app/routers/financial.py`
 
 ### 10. VSO Locator ⏳ **(Not Started)**
 
@@ -402,8 +402,8 @@ C:\Dev\Vets Ready\
 **Status**: ⏳ Not started
 
 **Files** (TODO):
-- `vets-ready-frontend/src/components/VSOLocator.tsx`
-- `vets-ready-backend/app/routers/vso.py`
+- `rally-forge-frontend/src/components/VSOLocator.tsx`
+- `rally-forge-backend/app/routers/vso.py`
 
 ### 11. AI Battle Buddy (Chat Interface) ⏳ **(Not Started)**
 
@@ -426,8 +426,8 @@ C:\Dev\Vets Ready\
 **Status**: ⏳ Not started
 
 **Files** (TODO):
-- `vets-ready-frontend/src/components/AIBattleBuddy.tsx`
-- `vets-ready-backend/app/routers/ai.py` (chat endpoint)
+- `rally-forge-frontend/src/components/AIBattleBuddy.tsx`
+- `rally-forge-backend/app/routers/ai.py` (chat endpoint)
 
 ### 12. Business Directory ⏳ **(Not Started)**
 
@@ -468,7 +468,7 @@ C:\Dev\Vets Ready\
 **Status**: ⏳ Capacitor stub exists; needs configuration
 
 **Files**:
-- `vets-ready-mobile/` (basic structure)
+- `rally-forge-mobile/` (basic structure)
 - Needs: `capacitor.config.ts` updates, native builds
 
 ### 15. Additional Suites (Future Phases)
@@ -520,7 +520,7 @@ C:\Dev\Vets Ready\
 
 ## Compliance & Legal Boundaries
 
-### What VetsReady DOES:
+### What rallyforge DOES:
 
 ✅ **Educational guidance** on VA disability claims process
 ✅ **AI-generated theories** labeled as "educational only"
@@ -530,7 +530,7 @@ C:\Dev\Vets Ready\
 ✅ **VSO locator** using public VA directory data
 ✅ **Community resources** and educational content
 
-### What VetsReady DOES NOT DO:
+### What rallyforge DOES NOT DO:
 
 ❌ **NO VA.gov/eBenefits scraping** - Manual data entry only
 ❌ **NO credential storage** - Never store VA usernames/passwords
@@ -543,7 +543,7 @@ C:\Dev\Vets Ready\
 ### Disclaimers (Required on Every Page)
 
 **Primary Disclaimer**:
-> VetsReady is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA). All information and AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. Consult with an accredited Veterans Service Officer (VSO) or VA-accredited attorney for personalized assistance with your claim.
+> rallyforge is not affiliated with, endorsed by, or connected to the U.S. Department of Veterans Affairs (VA). All information and AI-generated content is for educational purposes only and does not constitute legal, medical, or financial advice. Consult with an accredited Veterans Service Officer (VSO) or VA-accredited attorney for personalized assistance with your claim.
 
 **AI Disclaimer** (on all AI features):
 > This content was generated by artificial intelligence and is provided for educational purposes only. It is based on publicly available VA regulations and medical literature, but may not be accurate, complete, or applicable to your specific situation. Always verify information with official VA sources and consult with a qualified professional.
@@ -747,7 +747,7 @@ interface Deployment {
 
 ### Base URL
 - **Development**: `http://localhost:8000/api`
-- **Production**: `https://api.vetsready.com/api`
+- **Production**: `https://api.rallyforge.com/api`
 
 ### Authentication
 - **Optional**: JWT tokens for backend sync
@@ -1261,40 +1261,40 @@ version: '3.8'
 services:
   frontend:
     build:
-      context: ./vets-ready-frontend
+      context: ./rally-forge-frontend
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
     environment:
       - VITE_API_URL=http://localhost:8000
     volumes:
-      - ./vets-ready-frontend:/app
+      - ./rally-forge-frontend:/app
       - /app/node_modules
     command: npm run dev
 
   backend:
     build:
-      context: ./vets-ready-backend
+      context: ./rally-forge-backend
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://vetsready:password@db:5432/vetsready
+      - DATABASE_URL=postgresql://rallyforge:password@db:5432/rallyforge
       - REDIS_URL=redis://redis:6379
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     depends_on:
       - db
       - redis
     volumes:
-      - ./vets-ready-backend:/app
+      - ./rally-forge-backend:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
   db:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_USER=vetsready
+      - POSTGRES_USER=rallyforge
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=vetsready
+      - POSTGRES_DB=rallyforge
     ports:
       - "5432:5432"
     volumes:
@@ -1317,7 +1317,7 @@ volumes:
 **.env.example**:
 ```bash
 # Backend
-DATABASE_URL=postgresql://vetsready:password@localhost:5432/vetsready
+DATABASE_URL=postgresql://rallyforge:password@localhost:5432/rallyforge
 REDIS_URL=redis://localhost:6379
 OPENAI_API_KEY=sk-...
 SECRET_KEY=your-secret-key-here
@@ -1359,7 +1359,7 @@ VITE_ENVIRONMENT=development
 
 **.github/workflows/deploy.yml**:
 ```yaml
-name: Deploy VetsReady
+name: Deploy rallyforge
 
 on:
   push:
@@ -1372,12 +1372,12 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run backend tests
         run: |
-          cd vets-ready-backend
+          cd rally-forge-backend
           pip install -r requirements.txt
           pytest
       - name: Run frontend tests
         run: |
-          cd vets-ready-frontend
+          cd rally-forge-frontend
           npm install
           npm run test
 
@@ -1388,8 +1388,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build and push Docker images
         run: |
-          docker build -t vetsready-frontend ./vets-ready-frontend
-          docker build -t vetsready-backend ./vets-ready-backend
+          docker build -t rallyforge-frontend ./rally-forge-frontend
+          docker build -t rallyforge-backend ./rally-forge-backend
           # Push to ECR or Docker Hub
 
   deploy:
@@ -1567,10 +1567,12 @@ jobs:
 
 ## Contact & Support
 
-**Project Lead**: VetsReady Development Team
+**Project Lead**: rallyforge Development Team
 **Repository**: [Internal]
-**Documentation**: `C:\Dev\Vets Ready\docs\`
+**Documentation**: `C:\Dev\Rally Forge\docs\`
 
 ---
 
 **END OF MASTER SPECIFICATION**
+
+

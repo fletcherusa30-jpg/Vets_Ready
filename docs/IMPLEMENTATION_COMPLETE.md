@@ -9,30 +9,30 @@
 - ✅ Account deletion - Right to be forgotten
 
 ### 2. **Security Enhancements** 🔒
-- ✅ **Rate Limiting** - [rate_limit.py](vets-ready-backend/app/middleware/rate_limit.py)
+- ✅ **Rate Limiting** - [rate_limit.py](rally-forge-backend/app/middleware/rate_limit.py)
   - Tier-based limits (10-120 requests/min)
   - Anonymous, Free, Pro, Premium tiers
   - Automatic cleanup to prevent memory leaks
 
-- ✅ **Two-Factor Authentication (2FA)** - [two_factor_service.py](vets-ready-backend/app/services/two_factor_service.py)
+- ✅ **Two-Factor Authentication (2FA)** - [two_factor_service.py](rally-forge-backend/app/services/two_factor_service.py)
   - TOTP-based (Google Authenticator, Authy compatible)
   - QR code generation
   - Backup codes for account recovery
   - Complete enable/disable flow
 
-- ✅ **Data Portability** - [user_data.py](vets-ready-backend/app/routers/user_data.py)
+- ✅ **Data Portability** - [user_data.py](rally-forge-backend/app/routers/user_data.py)
   - Export all user data (ZIP with JSON + README)
   - Delete account (soft delete with 30-day recovery)
   - Privacy settings management
 
 ### 3. **Monitoring & Analytics** 📊
-- ✅ **Sentry Integration** - [sentry.py](vets-ready-backend/app/core/sentry.py)
+- ✅ **Sentry Integration** - [sentry.py](rally-forge-backend/app/core/sentry.py)
   - Error tracking with sensitive data filtering
   - Performance monitoring
   - Release tracking
   - Custom context support
 
-- ✅ **PostHog Analytics** - [monitoring.ts](vets-ready-frontend/src/lib/monitoring.ts)
+- ✅ **PostHog Analytics** - [monitoring.ts](rally-forge-frontend/src/lib/monitoring.ts)
   - Privacy-focused (opt-in by default)
   - GDPR compliant
   - No PII tracking
@@ -40,18 +40,18 @@
   - Performance monitoring
   - Custom event tracking
 
-- ✅ **Cookie Consent** - [CookieConsent.tsx](vets-ready-frontend/src/components/CookieConsent.tsx)
+- ✅ **Cookie Consent** - [CookieConsent.tsx](rally-forge-frontend/src/components/CookieConsent.tsx)
   - Granular consent (Necessary, Analytics, Marketing)
   - Preference management
   - GDPR/CCPA compliant
 
 ### 4. **Referral System** 🎁
-- ✅ **Models** - [referral.py](vets-ready-backend/app/models/referral.py)
+- ✅ **Models** - [referral.py](rally-forge-backend/app/models/referral.py)
   - Referral tracking
   - Reward management
   - Stripe integration
 
-- ✅ **API Endpoints** - [referrals.py](vets-ready-backend/app/routers/referrals.py)
+- ✅ **API Endpoints** - [referrals.py](rally-forge-backend/app/routers/referrals.py)
   - Create referral code
   - Get referral stats
   - Claim rewards
@@ -64,7 +64,7 @@
   - VSOs: 3 months premium features
 
 ### 5. **PWA Features** 📱
-- ✅ **Progressive Web App** - [vite.config.ts](vets-ready-frontend/vite.config.ts)
+- ✅ **Progressive Web App** - [vite.config.ts](rally-forge-frontend/vite.config.ts)
   - Offline functionality
   - Add to home screen
   - App manifest with icons
@@ -73,7 +73,7 @@
   - Push notifications ready
 
 ### 6. **Veteran Support** 🎖️
-- ✅ **Crisis Support** - [CrisisSupport.tsx](vets-ready-frontend/src/components/CrisisSupport.tsx)
+- ✅ **Crisis Support** - [CrisisSupport.tsx](rally-forge-frontend/src/components/CrisisSupport.tsx)
   - Always-visible crisis button
   - Veterans Crisis Line (988)
   - Text support (838255)
@@ -82,22 +82,22 @@
   - One-click call/text
 
 ### 7. **Database Migrations** 🗄️
-- ✅ [002_user_enhancements.py](vets-ready-backend/alembic/versions/002_user_enhancements.py)
+- ✅ [002_user_enhancements.py](rally-forge-backend/alembic/versions/002_user_enhancements.py)
   - 2FA fields
   - Privacy settings
   - User type tracking
   - Soft delete support
   - Subscription fields
 
-- ✅ [003_referral_system.py](vets-ready-backend/alembic/versions/003_referral_system.py)
+- ✅ [003_referral_system.py](rally-forge-backend/alembic/versions/003_referral_system.py)
   - Referral tracking table
   - Reward history table
   - Indexes for performance
 
 ### 8. **Updated Core Files**
-- ✅ [user.py](vets-ready-backend/app/models/user.py) - Enhanced with 15+ new fields
-- ✅ [main.py](vets-ready-backend/app/main.py) - Need to add: Sentry, rate limiting, new routers (manual step)
-- ✅ [requirements-security.txt](vets-ready-backend/requirements-security.txt) - New dependencies
+- ✅ [user.py](rally-forge-backend/app/models/user.py) - Enhanced with 15+ new fields
+- ✅ [main.py](rally-forge-backend/app/main.py) - Need to add: Sentry, rate limiting, new routers (manual step)
+- ✅ [requirements-security.txt](rally-forge-backend/requirements-security.txt) - New dependencies
 
 ---
 
@@ -105,7 +105,7 @@
 
 ### Backend Dependencies:
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 pip install -r requirements-security.txt
 ```
 
@@ -117,7 +117,7 @@ pip install -r requirements-security.txt
 
 ### Frontend Dependencies:
 ```bash
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm install vite-plugin-pwa@^0.17.4
 npm install @sentry/react@^7.99.0
 npm install posthog-js@^1.100.0
@@ -127,7 +127,7 @@ npm install @types/dompurify@^3.0.5
 
 ### Run Migrations:
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 alembic upgrade head
 ```
 
@@ -171,7 +171,7 @@ Add to startup event:
 ```python
 @app.on_event("startup")
 async def startup_event():
-    logger.info("Starting Vets Ready backend v1.0.0")
+    logger.info("Starting Rally Forge backend v1.0.0")
     init_db()
     # Start rate limiter cleanup task
     import asyncio
@@ -218,7 +218,7 @@ VITE_POSTHOG_HOST=https://app.posthog.com
 
 ### For Referrer:
 1. Click "Get Referral Code" → `POST /api/referrals/create-code`
-2. Share link: `https://vetsready.com/signup?ref=VR8A3F2D1B`
+2. Share link: `https://rallyforge.com/signup?ref=VR8A3F2D1B`
 3. When friend signs up, both get rewards
 4. Claim reward → Stripe promo code created
 
@@ -297,3 +297,5 @@ All code is ready. Just need to:
 3. Run migrations
 4. Add monitoring keys
 5. Deploy!
+
+

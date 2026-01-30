@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Automated deployment script for Vets Ready
+    Automated deployment script for Rally Forge
 
 .DESCRIPTION
     Automates the deployment process including:
@@ -12,8 +12,8 @@
     - Health verification
 
 .EXAMPLE
-    .\Deploy-VetsReady.ps1
-    .\Deploy-VetsReady.ps1 -Environment Production
+    .\Deploy-RallyForge.ps1
+    .\Deploy-RallyForge.ps1 -Environment Production
 #>
 
 param(
@@ -32,8 +32,8 @@ $ErrorActionPreference = 'Stop'
 
 # Configuration
 $RootPath = Split-Path -Parent $PSScriptRoot
-$BackendPath = Join-Path $RootPath 'vets-ready-backend'
-$FrontendPath = Join-Path $RootPath 'vets-ready-frontend'
+$BackendPath = Join-Path $RootPath 'rally-forge-backend'
+$FrontendPath = Join-Path $RootPath 'rally-forge-frontend'
 $EnvFile = Join-Path $RootPath '.env'
 $LogFile = Join-Path $RootPath "logs\deployment_$(Get-Date -Format 'yyyyMMdd_HHmmss').log"
 
@@ -65,7 +65,7 @@ function Test-Prerequisite {
 }
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor $Info
-Write-Host "║         VETS READY - AUTOMATED DEPLOYMENT                 ║" -ForegroundColor $Info
+Write-Host "║         Rally Forge - AUTOMATED DEPLOYMENT                 ║" -ForegroundColor $Info
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor $Info
 Write-Host ""
 Write-Log "Starting deployment for environment: $Environment" $Info
@@ -287,3 +287,5 @@ Write-Host ""
 
 Write-Log "Deployment completed successfully!" $Success
 Write-Log "Log file: $LogFile" $Info
+
+

@@ -1,36 +1,36 @@
-# Vets Ready - Build & Setup Complete Summary
+# Rally Forge - Build & Setup Complete Summary
 
 **Date**: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
-**Project Root**: C:\Dev\Vets Ready
+**Project Root**: C:\Dev\Rally Forge
 **Status**: ✅ READY TO RUN
 
 ---
 
 ## 🎯 What Was Accomplished
 
-Your Vets Ready application has been fully prepared, configured, and is ready to start with a single command!
+Your Rally Forge application has been fully prepared, configured, and is ready to start with a single command!
 
 ### ✅ Files Created/Configured (16 files)
 
 #### Frontend Configuration (9 files)
-1. ✅ `vets-ready-frontend/package.json` - All dependencies (React, Vite, TypeScript, Tailwind, etc.)
-2. ✅ `vets-ready-frontend/tsconfig.json` - TypeScript configuration with path aliases
-3. ✅ `vets-ready-frontend/tsconfig.node.json` - Vite/Node TypeScript settings
-4. ✅ `vets-ready-frontend/tailwind.config.js` - Custom Vets Ready theme (blue/gold colors)
-5. ✅ `vets-ready-frontend/postcss.config.js` - PostCSS with Tailwind
-6. ✅ `vets-ready-frontend/index.html` - Application entry point with PWA
-7. ✅ `vets-ready-frontend/src/main.tsx` - React application bootstrap
-8. ✅ `vets-ready-frontend/src/index.css` - Global styles with Tailwind directives
-9. ✅ `vets-ready-frontend/.env` - Environment variables (API URL)
+1. ✅ `rally-forge-frontend/package.json` - All dependencies (React, Vite, TypeScript, Tailwind, etc.)
+2. ✅ `rally-forge-frontend/tsconfig.json` - TypeScript configuration with path aliases
+3. ✅ `rally-forge-frontend/tsconfig.node.json` - Vite/Node TypeScript settings
+4. ✅ `rally-forge-frontend/tailwind.config.js` - Custom Rally Forge theme (blue/gold colors)
+5. ✅ `rally-forge-frontend/postcss.config.js` - PostCSS with Tailwind
+6. ✅ `rally-forge-frontend/index.html` - Application entry point with PWA
+7. ✅ `rally-forge-frontend/src/main.tsx` - React application bootstrap
+8. ✅ `rally-forge-frontend/src/index.css` - Global styles with Tailwind directives
+9. ✅ `rally-forge-frontend/.env` - Environment variables (API URL)
 
 #### Startup Infrastructure (4 files)
-10. ✅ `Start-VetsReady.ps1` - 400+ line comprehensive startup script
+10. ✅ `Start-rallyforge.ps1` - 400+ line comprehensive startup script
 11. ✅ `STARTUP_GUIDE.md` - Detailed setup and troubleshooting (500+ lines)
 12. ✅ `QUICK_REFERENCE_STARTUP.md` - Quick command reference card
 13. ✅ `APPLICATION_SETUP_COMPLETE.md` - This summary document
 
 #### Existing Infrastructure (Verified)
-- ✅ Backend FastAPI application (`vets-ready-backend/app/main.py`)
+- ✅ Backend FastAPI application (`rally-forge-backend/app/main.py`)
 - ✅ Backend dependencies (`requirements.txt` - 65 lines, 37+ packages)
 - ✅ Docker configuration (`docker-compose.prod.yml`)
 - ✅ Database migrations (Alembic)
@@ -41,7 +41,7 @@ Your Vets Ready application has been fully prepared, configured, and is ready to
 ## 🚀 How to Start (One Command)
 
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 That's it! This single command will:
@@ -93,17 +93,17 @@ Once the application starts, access it at:
 ## 📁 Complete Project Structure
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
-├── 🎯 Start-VetsReady.ps1              ← ONE-CLICK STARTUP
+├── 🎯 Start-rallyforge.ps1              ← ONE-CLICK STARTUP
 │
-├── 📱 vets-ready-frontend/              ← React + Vite Frontend
+├── 📱 rally-forge-frontend/              ← React + Vite Frontend
 │   ├── src/
 │   │   ├── App.tsx                      ← Main component (routing)
 │   │   ├── main.tsx                     ← React bootstrap
 │   │   ├── index.css                    ← Global styles
 │   │   ├── components/                  ← UI components
-│   │   │   └── layout/VetsReadyLayout
+│   │   │   └── layout/rallyforgeLayout
 │   │   ├── pages/                       ← Route pages
 │   │   │   ├── HomePage
 │   │   │   ├── BenefitsPage
@@ -126,7 +126,7 @@ C:\Dev\Vets Ready\
 │   ├── nginx.conf                       ← Nginx config
 │   └── .env                             ← Environment vars
 │
-├── 🔧 vets-ready-backend/               ← FastAPI Backend
+├── 🔧 rally-forge-backend/               ← FastAPI Backend
 │   ├── app/
 │   │   ├── main.py                      ← FastAPI app entry
 │   │   ├── config.py                    ← Configuration
@@ -232,25 +232,25 @@ C:\Dev\Vets Ready\
 ### First Time Setup
 ```powershell
 # 1. Navigate to project
-cd "C:\Dev\Vets Ready"
+cd "C:\Dev\Rally Forge"
 
 # 2. Start everything
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 ### Subsequent Runs (Faster)
 ```powershell
-.\Start-VetsReady.ps1 -SkipDeps
+.\Start-rallyforge.ps1 -SkipDeps
 ```
 
 ### Fresh Installation
 ```powershell
-.\Start-VetsReady.ps1 -Fresh
+.\Start-rallyforge.ps1 -Fresh
 ```
 
 ### Docker Mode
 ```powershell
-.\Start-VetsReady.ps1 -Mode docker
+.\Start-rallyforge.ps1 -Mode docker
 ```
 
 ### Stop Services
@@ -264,7 +264,7 @@ Press Ctrl+C in the terminal running the script
 
 ### Frontend Tests
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test              # Run tests
 npm run test:ui           # Visual test UI
 npm run test:coverage     # Coverage report
@@ -272,7 +272,7 @@ npm run test:coverage     # Coverage report
 
 ### Backend Tests
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pytest                    # Run all tests
 pytest --cov=app tests/   # With coverage
@@ -303,14 +303,14 @@ redis-cli ping  # Should return PONG
 
 ### Issue: "Module not found" (Frontend)
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 Remove-Item -Recurse -Force node_modules
 npm install
 ```
 
 ### Issue: "Import error" (Backend)
 ```powershell
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -340,7 +340,7 @@ Get-Content (Get-ChildItem logs\startup-*.log | Sort-Object LastWriteTime -Desce
 
 ### 1. ✅ Start the Application
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 ### 2. ✅ Verify It Works
@@ -350,7 +350,7 @@ Get-Content (Get-ChildItem logs\startup-*.log | Sort-Object LastWriteTime -Desce
 
 ### 3. ✅ Configure Production Settings
 
-**Update Backend Environment** (`.env` in `vets-ready-backend/`):
+**Update Backend Environment** (`.env` in `rally-forge-backend/`):
 ```env
 # Generate secure JWT secret
 JWT_SECRET=$(python -c "import secrets; print(secrets.token_urlsafe(32))")
@@ -368,24 +368,24 @@ POSTHOG_API_KEY=your_posthog_key
 
 ### 4. ✅ Load Initial Data (Optional)
 ```powershell
-psql -U vetsready -d vetsready_db -f seed-data.sql
+psql -U rallyforge -d rallyforge_db -f seed-data.sql
 ```
 
 ### 5. ✅ Run Tests
 ```powershell
 # Frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run test
 
 # Backend
-cd vets-ready-backend
+cd rally-forge-backend
 .\.venv\Scripts\Activate.ps1
 pytest
 ```
 
 ### 6. ✅ Start Developing!
-- Frontend code in `vets-ready-frontend/src/`
-- Backend code in `vets-ready-backend/app/`
+- Frontend code in `rally-forge-frontend/src/`
+- Backend code in `rally-forge-backend/app/`
 - Both have hot-reload enabled
 - Changes appear instantly
 
@@ -393,7 +393,7 @@ pytest
 
 ## 📊 Script Capabilities
 
-The `Start-VetsReady.ps1` script provides:
+The `Start-rallyforge.ps1` script provides:
 
 | Feature | Description |
 |---------|-------------|
@@ -418,7 +418,7 @@ The following are **development-only** defaults and **must be changed** for prod
 ```env
 # Backend .env (CHANGE THESE!)
 JWT_SECRET=your-super-secret-key-change-in-production...
-DATABASE_URL=postgresql://vetsready:vetsready123@localhost:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:rallyforge123@localhost:5432/rallyforge_db
 STRIPE_SECRET_KEY=sk_test_your_key_here
 ```
 
@@ -437,7 +437,7 @@ python -c "import secrets; print(secrets.token_urlsafe(24))"
 
 Your setup is complete and working if:
 
-- ✅ `.\Start-VetsReady.ps1` runs without errors
+- ✅ `.\Start-rallyforge.ps1` runs without errors
 - ✅ Frontend loads at http://localhost:5173
 - ✅ Backend responds at http://localhost:8000
 - ✅ API docs display at http://localhost:8000/docs
@@ -452,7 +452,7 @@ Your setup is complete and working if:
 1. **Check prerequisites**: Run `node --version`, `python --version`, etc.
 2. **Review logs**: Open `logs/startup-*.log` for detailed errors
 3. **Verify services**: PostgreSQL and Redis must be running
-4. **Clean install**: Try `.\Start-VetsReady.ps1 -Fresh`
+4. **Clean install**: Try `.\Start-rallyforge.ps1 -Fresh`
 5. **Manual setup**: Follow step-by-step in STARTUP_GUIDE.md
 
 ### Documentation Resources
@@ -465,7 +465,7 @@ Your setup is complete and working if:
 
 ## 🏆 Summary
 
-You now have a **fully configured, production-ready** Vets Ready application that can be started with a single command!
+You now have a **fully configured, production-ready** Rally Forge application that can be started with a single command!
 
 ### What You Can Do Now:
 - ✅ Start the full stack with one command
@@ -492,14 +492,16 @@ You now have a **fully configured, production-ready** Vets Ready application tha
 
 Just run:
 ```powershell
-.\Start-VetsReady.ps1
+.\Start-rallyforge.ps1
 ```
 
 And start building amazing features for veterans! 🇺🇸
 
 ---
 
-**Project**: Vets Ready - Veteran Benefits Platform
+**Project**: Rally Forge - Veteran Benefits Platform
 **Version**: 1.0.0
 **Setup Date**: $(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 **Status**: ✅ READY FOR DEVELOPMENT
+
+

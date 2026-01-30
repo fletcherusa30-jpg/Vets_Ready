@@ -1,4 +1,4 @@
-# Vets Ready - Complete Deployment Checklist
+# Rally Forge - Complete Deployment Checklist
 
 ## ✅ Pre-Deployment Checklist
 
@@ -16,7 +16,7 @@
 - [ ] Set production API and frontend URLs
 
 ### 2. GitHub Configuration
-- [ ] Repository pushed to GitHub: `github.com/fletcherusa30-jpg/Vets_Ready`
+- [ ] Repository pushed to GitHub: `github.com/fletcherusa30-jpg/rally_forge`
 - [ ] Configure GitHub Secrets:
   - [ ] `DOCKER_USERNAME` - Docker Hub username
   - [ ] `DOCKER_PASSWORD` - Docker Hub password/token
@@ -25,7 +25,7 @@
 - [ ] Enable GitHub Actions workflows
 
 ### 3. Docker Hub Configuration
-- [ ] Docker Hub repository created: `vetsready/vets-ready`
+- [ ] Docker Hub repository created: `rallyforge/rally-forge`
 - [ ] Docker Hub authentication configured locally
 - [ ] Test Docker Hub push access
 
@@ -84,15 +84,15 @@
 
    # Create RDS PostgreSQL database
    aws rds create-db-instance \
-     --db-instance-identifier vetsready-db \
+     --db-instance-identifier rallyforge-db \
      --db-instance-class db.t3.small \
      --engine postgres \
-     --master-username vetsready \
+     --master-username rallyforge \
      --master-user-password YOUR_PASSWORD \
      --allocated-storage 20
 
    # Create Elastic Container Service cluster
-   aws ecs create-cluster --cluster-name vetsready-cluster
+   aws ecs create-cluster --cluster-name rallyforge-cluster
    ```
 
 2. **Deploy Backend to ECS**
@@ -102,9 +102,9 @@
 
    # Create service
    aws ecs create-service \
-     --cluster vetsready-cluster \
-     --service-name vetsready-backend \
-     --task-definition vetsready-backend \
+     --cluster rallyforge-cluster \
+     --service-name rallyforge-backend \
+     --task-definition rallyforge-backend \
      --desired-count 2 \
      --launch-type FARGATE
    ```
@@ -112,17 +112,17 @@
 3. **Deploy Frontend to S3 + CloudFront**
    ```bash
    # Build frontend
-   cd vets-ready-frontend
+   cd rally-forge-frontend
    npm run build
 
    # Create S3 bucket
-   aws s3 mb s3://vetsready-frontend
+   aws s3 mb s3://rallyforge-frontend
 
    # Upload build
-   aws s3 sync dist/ s3://vetsready-frontend --delete
+   aws s3 sync dist/ s3://rallyforge-frontend --delete
 
    # Create CloudFront distribution
-   aws cloudfront create-distribution --origin-domain-name vetsready-frontend.s3.amazonaws.com
+   aws cloudfront create-distribution --origin-domain-name rallyforge-frontend.s3.amazonaws.com
    ```
 
 ### Option C: Mobile App Deployment
@@ -171,7 +171,7 @@
 ### 1. Health Checks
 ```powershell
 # Run full validation
-.\scripts\Validate-Deployment.ps1 -Environment production -ApiUrl "https://api.vetsready.com"
+.\scripts\Validate-Deployment.ps1 -Environment production -ApiUrl "https://api.rallyforge.com"
 ```
 
 ### 2. Manual Testing
@@ -282,9 +282,9 @@ docker exec backend_container env | grep DATABASE
 **Issue: Mobile app crashes on startup**
 ```bash
 # View Android logs
-adb logcat | grep VetsReady
+adb logcat | grep rallyforge
 # View iOS logs
-xcrun simctl spawn booted log stream --predicate 'processImagePath contains "VetsReady"'
+xcrun simctl spawn booted log stream --predicate 'processImagePath contains "rallyforge"'
 ```
 
 ---
@@ -292,9 +292,9 @@ xcrun simctl spawn booted log stream --predicate 'processImagePath contains "Vet
 ## 📞 Support Resources
 
 - **Documentation**: See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-- **API Reference**: https://api.vetsready.com/docs
-- **GitHub Issues**: https://github.com/fletcherusa30-jpg/Vets_Ready/issues
-- **Docker Hub**: https://hub.docker.com/r/vetsready/vets-ready
+- **API Reference**: https://api.rallyforge.com/docs
+- **GitHub Issues**: https://github.com/fletcherusa30-jpg/rally_forge/issues
+- **Docker Hub**: https://hub.docker.com/r/rallyforge/rally-forge
 
 ---
 
@@ -343,4 +343,6 @@ docker-compose -f docker-compose.prod.yml up -d
 .\scripts\Build-Desktop.ps1 -Platform all
 ```
 
-**Your Vets Ready platform is now fully deployable across all platforms!** 🎉
+**Your Rally Forge platform is now fully deployable across all platforms!** 🎉
+
+

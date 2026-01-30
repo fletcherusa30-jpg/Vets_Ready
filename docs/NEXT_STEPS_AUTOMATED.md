@@ -2,7 +2,7 @@
 
 ## Current Status: Application Code Complete ✅
 
-The Vets Ready application is 100% code-complete with all features implemented. To launch, you need to install the required runtime tools and configure external services.
+The Rally Forge application is 100% code-complete with all features implemented. To launch, you need to install the required runtime tools and configure external services.
 
 ---
 
@@ -37,11 +37,11 @@ The Vets Ready application is 100% code-complete with all features implemented. 
 # Download from: https://www.docker.com/products/docker-desktop
 
 # 2. Configure Stripe
-cd "c:\Dev\Vets Ready"
+cd "c:\Dev\Rally Forge"
 .\scripts\Setup-Stripe.ps1
 
 # 3. Deploy application
-.\scripts\Deploy-VetsReady.ps1
+.\scripts\Deploy-rallyforge.ps1
 
 # 4. Seed test data
 .\scripts\Seed-Database.ps1
@@ -58,17 +58,17 @@ cd "c:\Dev\Vets Ready"
 # 1. Install Python & Node.js (if not installed)
 
 # 2. Backend Setup
-cd "c:\Dev\Vets Ready\vets-ready-backend"
+cd "c:\Dev\Rally Forge\rally-forge-backend"
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 # 3. Database Setup (SQLite for development)
-$env:DATABASE_URL = "sqlite:///./vetsready.db"
+$env:DATABASE_URL = "sqlite:///./rallyforge.db"
 alembic upgrade head
 
 # 4. Frontend Setup
-cd "..\vets-ready-frontend"
+cd "..\rally-forge-frontend"
 npm install
 
 # 5. Configure .env (copy from .env.example and update)
@@ -77,12 +77,12 @@ cp .env.example .env
 # Edit .env with your settings
 
 # 6. Start Backend
-cd "vets-ready-backend"
+cd "rally-forge-backend"
 .\venv\Scripts\Activate.ps1
 uvicorn app.main:app --reload
 
 # 7. Start Frontend (new terminal)
-cd "c:\Dev\Vets Ready\vets-ready-frontend"
+cd "c:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 
 # ✅ Access at http://localhost:5173 (frontend) & http://localhost:8000 (backend)
@@ -139,7 +139,7 @@ All scripts are ready to run once prerequisites are installed:
 | Script | Purpose | Time | Prerequisites |
 |--------|---------|------|---------------|
 | `Setup-Stripe.ps1` | Configure Stripe products & webhooks | 10 min | Stripe account |
-| `Deploy-VetsReady.ps1` | Full automated deployment | 5 min | Docker Desktop |
+| `Deploy-rallyforge.ps1` | Full automated deployment | 5 min | Docker Desktop |
 | `Seed-Database.ps1` | Load test data | 2 min | Running backend |
 | `Validate-PreLaunch.ps1` | Pre-launch health check | 1 min | Running services |
 
@@ -166,7 +166,7 @@ All scripts are ready to run once prerequisites are installed:
 
 [⏳] Deployment (0% - Ready to Execute)
     ⬜ Run Setup-Stripe.ps1
-    ⬜ Run Deploy-VetsReady.ps1
+    ⬜ Run Deploy-rallyforge.ps1
     ⬜ Run Seed-Database.ps1
     ⬜ Run Validate-PreLaunch.ps1
 
@@ -190,7 +190,7 @@ All scripts are ready to run once prerequisites are installed:
 - ✅ Validates .env file has all required Stripe keys
 - ✅ Provides test card info for testing
 
-### 2. Deploy-VetsReady.ps1
+### 2. Deploy-rallyforge.ps1
 - ✅ Checks prerequisites (Docker, Docker Compose, Git)
 - ✅ Validates .env file (DATABASE_URL, JWT_SECRET, Stripe keys)
 - ✅ Sets up Python venv and installs dependencies
@@ -250,7 +250,7 @@ All scripts are ready to run once prerequisites are installed:
 **INSTALL DOCKER DESKTOP** (Recommended)
 1. Download: https://www.docker.com/products/docker-desktop
 2. Install and restart computer
-3. Run: `.\scripts\Deploy-VetsReady.ps1`
+3. Run: `.\scripts\Deploy-rallyforge.ps1`
 
 **OR**
 
@@ -266,7 +266,7 @@ All scripts are ready to run once prerequisites are installed:
 - **Documentation**: See `QUICK_START_DEPLOYMENT.md` for detailed guides
 - **Architecture**: See `docs/ARCHITECTURE.md` for system overview
 - **API Reference**: See `docs/API.md` for endpoint details
-- **Master Design Book**: See `VETS_READY_MASTER_DESIGN_BOOK.docx` (0.35 MB)
+- **Master Design Book**: See `rally_forge_MASTER_DESIGN_BOOK.docx` (0.35 MB)
 
 ---
 
@@ -281,9 +281,11 @@ All scripts are ready to run once prerequisites are installed:
 ```powershell
 # After installing Docker Desktop:
 .\scripts\Setup-Stripe.ps1
-.\scripts\Deploy-VetsReady.ps1
+.\scripts\Deploy-rallyforge.ps1
 .\scripts\Seed-Database.ps1
 .\scripts\Validate-PreLaunch.ps1
 ```
 
 🚀 **All code is complete. Install Docker Desktop to launch!**
+
+

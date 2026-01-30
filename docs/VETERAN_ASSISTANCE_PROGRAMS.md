@@ -1,4 +1,4 @@
-# Vets Ready - Comprehensive Veteran Assistance Programs
+# Rally Forge - Comprehensive Veteran Assistance Programs
 
 ## Mission: **"Every veteran gets the help they've earned, regardless of ability to pay."**
 
@@ -47,7 +47,7 @@ For veterans who can't afford the $20/year Pro tier:
 #### **What We Provide VSOs at Zero Cost:**
 
 **Technology Suite:**
-- Branded platform (yourVSO.vetsready.com)
+- Branded platform (yourVSO.rallyforge.com)
 - Member management system
 - Claims tracking for their clients
 - Appointment scheduling
@@ -386,7 +386,7 @@ For veterans who can't afford the $20/year Pro tier:
 ## 🤝 PARTNERSHIP PROGRAMS (How We Fund This)
 
 ### **Corporate Sponsors Get:**
-- Logo on platform ("Proud Sponsor of Vets Ready")
+- Logo on platform ("Proud Sponsor of Rally Forge")
 - Recognition in veteran communications
 - Access to hire veteran talent
 - CSR (Corporate Social Responsibility) metrics
@@ -470,7 +470,7 @@ For veterans who can't afford the $20/year Pro tier:
 
 ## 🎯 OUR COMMITMENT
 
-### **The Vets Ready Promise:**
+### **The Rally Forge Promise:**
 
 ✅ **Veterans always come first** - profit is secondary to mission
 ✅ **No veteran turned away** - if you can't afford it, you get it free
@@ -587,3 +587,5 @@ For veterans who can't afford the $20/year Pro tier:
 ---
 
 **Bottom line:** We make money from businesses so veterans get world-class support for $20/year or free. VSOs get enterprise-level technology at no cost. Every veteran gets help, regardless of ability to pay.
+
+

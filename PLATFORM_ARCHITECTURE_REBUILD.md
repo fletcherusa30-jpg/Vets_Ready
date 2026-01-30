@@ -1,8 +1,8 @@
-# VetsReady Platform Architecture & Rebuild Specification
+# rallyforge Platform Architecture & Rebuild Specification
 
 ## Executive Summary
 
-This document outlines the complete architecture for rebuilding and integrating 38 tools across the VetsReady platform. The rebuild follows a modular, service-based architecture with:
+This document outlines the complete architecture for rebuilding and integrating 38 tools across the rallyforge platform. The rebuild follows a modular, service-based architecture with:
 
 - **Modular tool system** with plugin architecture
 - **Unified data flow** through Profile and DocumentVault
@@ -20,7 +20,7 @@ This document outlines the complete architecture for rebuilding and integrating 
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                  VetsReady Platform                 │
+│                  rallyforge Platform                 │
 ├─────────────────────────────────────────────────────┤
 │                    Frontend (React)                  │
 │  ┌──────────────────────────────────────────────┐   │
@@ -1232,3 +1232,4 @@ The rebuild follows a logical priority: Foundation → Disability/Claims (highes
 Total tools: 38
 Total implementation: ~150 files (code + tests + docs)
 Estimated timeline: 12 weeks with 1-2 developers
+

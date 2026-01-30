@@ -393,24 +393,24 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://vetsready:vetsready@db:5432/vetsready
+      - DATABASE_URL=postgresql://rallyforge:rallyforge@db:5432/rallyforge
       - LOG_LEVEL=INFO
     depends_on:
       - db
     networks:
-      - vetsready
+      - rallyforge
 
   db:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_USER=vetsready
-      - POSTGRES_PASSWORD=vetsready
-      - POSTGRES_DB=vetsready
+      - POSTGRES_USER=rallyforge
+      - POSTGRES_PASSWORD=rallyforge
+      - POSTGRES_DB=rallyforge
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./SQL/init_db.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
-      - vetsready
+      - rallyforge
 
   frontend:
     build:
@@ -423,13 +423,13 @@ services:
     depends_on:
       - backend
     networks:
-      - vetsready
+      - rallyforge
 
 volumes:
   db_data:
 
 networks:
-  vetsready:
+  rallyforge:
     driver: bridge
 ```
 
@@ -437,7 +437,7 @@ networks:
 
 **Create .github/workflows/deploy.yml:**
 ```yaml
-name: Deploy VetsReady
+name: Deploy rallyforge
 
 on:
   push:
@@ -489,13 +489,13 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build Docker image
-        run: docker build -t vetsready:latest .
+        run: docker build -t rallyforge:latest .
 
       - name: Push to registry
         run: |
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker tag vetsready:latest ${{ secrets.DOCKER_USERNAME }}/vetsready:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/vetsready:latest
+          docker tag rallyforge:latest ${{ secrets.DOCKER_USERNAME }}/rallyforge:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/rallyforge:latest
 
   deploy:
     needs: build
@@ -541,12 +541,12 @@ GET /api/v2/metrics         # Prometheus metrics
 **Phase 3.5: Environment Configuration (30 minutes)**
 ```bash
 # .env.production
-DATABASE_URL=postgresql://user:pass@host:5432/vetsready
+DATABASE_URL=postgresql://user:pass@host:5432/rallyforge
 LOG_LEVEL=WARNING
 ENVIRONMENT=production
 DEBUG=false
-ALLOWED_HOSTS=vetsready.com,www.vetsready.com
-CORS_ORIGINS=https://vetsready.com,https://www.vetsready.com
+ALLOWED_HOSTS=rallyforge.com,www.rallyforge.com
+CORS_ORIGINS=https://rallyforge.com,https://www.rallyforge.com
 ```
 
 ### Success Criteria
@@ -723,3 +723,4 @@ When all 4 paths are complete:
 **Approach:** Parallel teams recommended
 **Estimated Completion:** 14-20 hours
 **Generated:** 2026-01-28
+

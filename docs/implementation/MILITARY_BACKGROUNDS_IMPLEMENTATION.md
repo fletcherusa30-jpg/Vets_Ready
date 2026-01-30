@@ -1,12 +1,12 @@
 # Military Backgrounds Implementation - Complete
 
 ## Overview
-Successfully implemented realistic military backgrounds across the VetsReady platform to enhance immersion, professionalism, and branch identity while maintaining compliance with DoD regulations (no real photographs, personnel, or equipment).
+Successfully implemented realistic military backgrounds across the rallyforge platform to enhance immersion, professionalism, and branch identity while maintaining compliance with DoD regulations (no real photographs, personnel, or equipment).
 
 ## ✅ Completed Features
 
 ### 1. Military Background System
-**File:** `vets-ready-frontend/src/data/militaryBackgrounds.ts` (500+ lines)
+**File:** `rally-forge-frontend/src/data/militaryBackgrounds.ts` (500+ lines)
 
 #### Background Categories (25+ Total)
 
@@ -58,7 +58,7 @@ applyBackground(elementId: string, backgroundId: string): void
 ```
 
 ### 2. Settings Context Integration
-**File:** `vets-ready-frontend/src/contexts/SettingsContext.tsx`
+**File:** `rally-forge-frontend/src/contexts/SettingsContext.tsx`
 
 #### New Features Added
 - `selectedBackground: string` in AppSettings interface
@@ -85,7 +85,7 @@ if (settings.lowTextureMode) {
 ```
 
 ### 3. App.tsx Global Background Application
-**File:** `vets-ready-frontend/src/App.tsx`
+**File:** `rally-forge-frontend/src/App.tsx`
 
 #### Changes Made
 - Added `currentBackground` to useSettings() hook
@@ -102,7 +102,7 @@ if (settings.lowTextureMode) {
 4. **Content Layer:** UI components on top
 
 ### 4. Scanner Enhancement
-**File:** `vets-ready-frontend/src/components/onboarding/OnboardingWizard.tsx`
+**File:** `rally-forge-frontend/src/components/onboarding/OnboardingWizard.tsx`
 
 #### Scanner Debugging Features
 - Console logging throughout PDF extraction pipeline
@@ -132,7 +132,7 @@ Supports multiple formats:
 - No results warning
 
 ### 5. Dropdown Disability Selection
-**File:** `vets-ready-frontend/src/components/onboarding/OnboardingWizard.tsx`
+**File:** `rally-forge-frontend/src/components/onboarding/OnboardingWizard.tsx`
 
 #### Top 20 Common VA Disabilities
 1. PTSD (Post-Traumatic Stress Disorder)
@@ -261,7 +261,7 @@ All patterns use Base64 encoding for:
 ## 📱 Next Steps (Pending)
 
 ### [Priority 1] Update SettingsPanel UI
-**File:** `vets-ready-frontend/src/components/settings/SettingsPanel.tsx`
+**File:** `rally-forge-frontend/src/components/settings/SettingsPanel.tsx`
 
 Add background selection UI:
 ```tsx
@@ -422,5 +422,7 @@ No new environment variables required. Background system uses:
 ---
 
 **Implementation Date:** January 2025
-**Platform:** VetsReady - Veteran Assistance Platform
+**Platform:** rallyforge - Veteran Assistance Platform
 **Compliance:** DoD Approved (No real imagery, stylized only)
+
+

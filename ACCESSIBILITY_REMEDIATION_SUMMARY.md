@@ -1,7 +1,7 @@
 # 🎨 ACCESSIBILITY REMEDIATION SUMMARY
 
 **Date**: January 28, 2026
-**Scope**: VetsReady Platform - Color Contrast & WCAG AA Compliance
+**Scope**: rallyforge Platform - Color Contrast & WCAG AA Compliance
 **Status**: ✅ **Phase 1 & 2 Complete - Testing in Progress**
 
 ---
@@ -15,7 +15,7 @@
 - **Root cause**: Light text colors on light backgrounds (insufficient contrast)
 
 ### Phase 2: Theme Enhancement ✅
-Updated [tailwind.config.js](vets-ready-frontend/tailwind.config.js) with accessible color tokens:
+Updated [tailwind.config.js](rally-forge-frontend/tailwind.config.js) with accessible color tokens:
 ```javascript
 textColor: {
   'accessible-primary': '#111827',      // High contrast (9:1 on white)
@@ -29,19 +29,19 @@ textColor: {
 ### Phase 3: Component Fixes (In Progress) 🔧
 
 **✅ COMPLETED**:
-1. [CrscHubPage.tsx](vets-ready-frontend/src/pages/CrscHubPage.tsx) - 8 badges updated
+1. [CrscHubPage.tsx](rally-forge-frontend/src/pages/CrscHubPage.tsx) - 8 badges updated
    - `text-green-800` → `text-green-900`
    - `text-yellow-800` → `text-yellow-900`
    - `text-blue-800` → `text-blue-900`
    - `text-red-800` → `text-red-900`
    - Contrast ratios now: ~5.8:1 (from 2.5:1)
 
-2. [CrdpCrscOpenSeasonPanel.tsx](vets-ready-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx) - 2 export buttons fixed
+2. [CrdpCrscOpenSeasonPanel.tsx](rally-forge-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx) - 2 export buttons fixed
    - Red button: `text-red-700` → `text-red-900`
    - Green button: `text-green-700` → `text-green-900`
    - Contrast ratios now: ~5.2:1 (from 3.1:1)
 
-3. [tailwind.config.js](vets-ready-frontend/tailwind.config.js) - Added accessible color system
+3. [tailwind.config.js](rally-forge-frontend/tailwind.config.js) - Added accessible color system
 
 **🔄 READY FOR NEXT PHASE**:
 - ResourceMarketplacePage.tsx (3 badge variants)
@@ -76,9 +76,9 @@ textColor: {
 ## 🔍 FILES MODIFIED
 
 ### Direct Edits (3 files)
-1. ✅ `vets-ready-frontend/tailwind.config.js` - Added accessible color tokens
-2. ✅ `vets-ready-frontend/src/pages/CrscHubPage.tsx` - 6 color updates
-3. ✅ `vets-ready-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx` - 2 color updates
+1. ✅ `rally-forge-frontend/tailwind.config.js` - Added accessible color tokens
+2. ✅ `rally-forge-frontend/src/pages/CrscHubPage.tsx` - 6 color updates
+3. ✅ `rally-forge-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx` - 2 color updates
 
 ### Pending Updates (12+ files)
 - ResourceMarketplacePage.tsx (3 updates)
@@ -100,14 +100,14 @@ textColor: {
 
 ### Scan Results
 ✅ **No "Veterans1st" remnants** - All cleaned in previous session
-✅ **"VetsReady" consistently used** throughout codebase
+✅ **"rallyforge" consistently used** throughout codebase
 ✅ **"Veteran" references** appropriately used (domain-specific, not branding)
 
 ### Naming Convention Summary
 | Name | Type | Count | Status |
 |------|------|-------|--------|
-| VetsReady | Brand | All | ✅ Active |
-| VetsReadyPlatform | Full name | ~10 | ✅ Active |
+| rallyforge | Brand | All | ✅ Active |
+| rallyforgePlatform | Full name | ~10 | ✅ Active |
 | Veterans | Domain term | ~150+ | ✅ Correct usage |
 | Veteran | Domain term | ~500+ | ✅ Correct usage |
 | Veterans1st | Legacy | 0 | ✅ Removed |
@@ -118,20 +118,20 @@ textColor: {
 
 ### Repository Status
 - **Local branch**: main (up to date with origin/main)
-- **Remote URL**: https://github.com/fletcherusa30-jpg/Vets_Ready.git
+- **Remote URL**: https://github.com/fletcherusa30-jpg/rally_forge.git
 - **Last sync**: Just completed with final status report commit
 
 ### Commits Since Cleanup
 1. `484a046` - docs: Add final status report and update cleanup documentation
 2. `7e73d49` - docs: Add Veterans1st cleanup completion report
-3. `b6cc628` - refactor: Remove Veterans1st legacy references, consolidate on VetsReady branding
+3. `b6cc628` - refactor: Remove Veterans1st legacy references, consolidate on rallyforge branding
 
 ### Root Folder Structure Verification
 ✅ All key files present:
-- `vets-ready-backend/` - Backend FastAPI server
-- `vets-ready-frontend/` - Frontend React app
+- `rally-forge-backend/` - Backend FastAPI server
+- `rally-forge-frontend/` - Frontend React app
 - `package.json` - Root dependencies
-- `.vetsready_root` - Project marker file
+- `.rallyforge_root` - Project marker file
 - `README.md` - Main documentation
 
 ---
@@ -237,4 +237,6 @@ textColor: {
 
 **Estimated Time**: 30-45 minutes for all remaining fixes
 **Testing**: Automated + manual accessibility verification after all fixes complete
+
+
 

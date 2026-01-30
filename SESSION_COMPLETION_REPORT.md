@@ -120,7 +120,7 @@ python backend/bin/init_database.py reset --force  # Dev reset
 - ✅ Scripts folder description (health check, data export, etc.)
 - ✅ Utilities folder reference (logger, config, validators, etc.)
 - ✅ Quick commands for common tasks
-- ✅ Integration with VetsReady platform
+- ✅ Integration with rallyforge platform
 - ✅ Development tools setup instructions
 - ✅ Troubleshooting guide
 
@@ -395,3 +395,4 @@ You now have:
 **Generated:** 2026-01-26
 **Status:** Ready for Phase 3 (Frontend & Endpoint Migration)
 **Recommendation:** Start with endpoint migration (highest ROI) or parallel frontend (if team size allows)
+

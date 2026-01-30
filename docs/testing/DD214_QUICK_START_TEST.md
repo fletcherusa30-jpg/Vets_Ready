@@ -11,7 +11,7 @@
 
 ```powershell
 # Install Python packages
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 pip install PyPDF2 pytesseract pdf2image Pillow opencv-python
 
 # Install Tesseract OCR (Windows)
@@ -26,7 +26,7 @@ tesseract --version
 ### Step 2: Start Backend (30 sec)
 
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
@@ -199,7 +199,7 @@ curl -X POST http://localhost:8000/api/dd214/upload -F "file=@lorem.txt"
 
 ```powershell
 # Check files were saved
-Get-ChildItem "C:\Dev\Vets Ready\Data\Documents" -Recurse
+Get-ChildItem "C:\Dev\Rally Forge\Data\Documents" -Recurse
 
 # Should show structure like:
 # Documents\
@@ -214,10 +214,10 @@ Get-ChildItem "C:\Dev\Vets Ready\Data\Documents" -Recurse
 
 ```powershell
 # Check extraction logs
-Get-ChildItem "C:\Dev\Vets Ready\logs\dd214"
+Get-ChildItem "C:\Dev\Rally Forge\logs\dd214"
 
 # Read latest log
-Get-Content "C:\Dev\Vets Ready\logs\dd214\dd214_extraction_*.log" -Tail 20
+Get-Content "C:\Dev\Rally Forge\logs\dd214\dd214_extraction_*.log" -Tail 20
 ```
 
 **Should show entries like**:
@@ -293,7 +293,7 @@ Check backend logs for errors during processing:
 ```powershell
 # Backend console should show error
 # Or check logs:
-Get-Content "C:\Dev\Vets Ready\logs\dd214\*.log" -Tail 50
+Get-Content "C:\Dev\Rally Forge\logs\dd214\*.log" -Tail 50
 ```
 
 ---
@@ -316,12 +316,13 @@ Get-Content "C:\Dev\Vets Ready\logs\dd214\*.log" -Tail 50
 
 **Minimum Fields**: 1 recognizable DD-214 field
 
-**Storage Location**: `C:\Dev\Vets Ready\Data\Documents\{veteranId}\{timestamp}\`
+**Storage Location**: `C:\Dev\Rally Forge\Data\Documents\{veteranId}\{timestamp}\`
 
-**Logs Location**: `C:\Dev\Vets Ready\logs\dd214\dd214_extraction_YYYYMMDD.log`
+**Logs Location**: `C:\Dev\Rally Forge\logs\dd214\dd214_extraction_YYYYMMDD.log`
 
 ---
 
 **READY TO TEST!**
 
 Follow steps 1-6 above, then run validation tests. If all pass, DD-214 extraction is working correctly.
+

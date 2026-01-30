@@ -1,6 +1,6 @@
-# Vets Ready - Folder Structure Analysis Report
+# Rally Forge - Folder Structure Analysis Report
 **Date**: January 24, 2026
-**Project Root**: C:\Dev\Vets Ready
+**Project Root**: C:\Dev\Rally Forge
 **Analysis Phase**: PHASE 1 - COMPLETE
 
 ---
@@ -26,10 +26,10 @@
 #### Primary Subsystems
 | Folder | Status | Contents | Notes |
 |--------|--------|----------|-------|
-| `vets-ready-frontend/` | ✅ Correct | React + Vite app, 21 files/folders | Clean, well-organized |
-| `vets-ready-backend/` | ✅ Correct | FastAPI app, alembic, requirements.txt | Contains own tests/ folder |
-| `vets-ready-mobile/` | ✅ Correct | Capacitor config, android/, ios/ | Contains backup .bak files to clean |
-| `vets-ready-shared/` | ✅ Correct | Shared modules | Only README.md currently |
+| `rally-forge-frontend/` | ✅ Correct | React + Vite app, 21 files/folders | Clean, well-organized |
+| `rally-forge-backend/` | ✅ Correct | FastAPI app, alembic, requirements.txt | Contains own tests/ folder |
+| `rally-forge-mobile/` | ✅ Correct | Capacitor config, android/, ios/ | Contains backup .bak files to clean |
+| `rally-forge-shared/` | ✅ Correct | Shared modules | Only README.md currently |
 
 #### Support Folders
 | Folder | Status | Contents | Notes |
@@ -48,7 +48,7 @@
 - ✅ `README.md` - Main project README (keep in root)
 - ✅ `.gitignore` - Git ignore rules
 - ✅ `.env.example`, `.env.production.example`, `.env.monitoring` - Environment templates
-- ✅ `Start-VetsReady.ps1` - One-click startup script
+- ✅ `Start-rallyforge.ps1` - One-click startup script
 - ✅ `.github/` - GitHub workflows
 - ✅ `.vscode/` - VS Code settings
 - ✅ `.idea/` - JetBrains IDE settings
@@ -61,7 +61,7 @@
 #### 1. AI Engine (Backend Component)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `ai-engine/` | `C:\Dev\Vets Ready\ai-engine\` | `vets-ready-backend/ai-engine/` | Python module, backend logic |
+| `ai-engine/` | `C:\Dev\Rally Forge\ai-engine\` | `rally-forge-backend/ai-engine/` | Python module, backend logic |
 
 **Contents**:
 - Python files: cfr_interpreter.py, claimstrategyengine.py, engine.py, evidence_inference.py
@@ -73,7 +73,7 @@
 #### 2. Android Build Artifacts (Mobile Component)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `android/` | `C:\Dev\Vets Ready\android\` | **DUPLICATE** - Already in `vets-ready-mobile/android/` | Mobile platform code |
+| `android/` | `C:\Dev\Rally Forge\android\` | **DUPLICATE** - Already in `rally-forge-mobile/android/` | Mobile platform code |
 
 **Contents**:
 - Gradle build files, Android Studio config
@@ -83,7 +83,7 @@
 **Analysis Required**:
 ```
 Root android/ = 15 items (build.gradle, gradle.properties, app/, etc.)
-vets-ready-mobile/android/ = exists inside mobile subsystem
+rally-forge-mobile/android/ = exists inside mobile subsystem
 
 Question: Is root android/ a duplicate or does it contain unique build configs?
 ```
@@ -93,12 +93,12 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 3. Desktop App (Electron)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `desktop/` | `C:\Dev\Vets Ready\desktop\` | `vets-ready-desktop/` (new subsystem) | Separate platform |
+| `desktop/` | `C:\Dev\Rally Forge\desktop\` | `rally-forge-desktop/` (new subsystem) | Separate platform |
 
 **Contents**:
 - electron-builder.yml
 - node_modules/
-- **Action**: Create new subsystem OR move to vets-ready-mobile/ if integrated
+- **Action**: Create new subsystem OR move to rally-forge-mobile/ if integrated
 
 **Recommendation**: Since .gitignore excludes `desktop/`, this might be build output. **Verify if source code or build artifact**.
 
@@ -107,7 +107,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 4. Data Files (Backend or Config)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `data/` | `C:\Dev\Vets Ready\data\` | `SQL/` OR `vets-ready-backend/data/` | Database schemas and seeds |
+| `data/` | `C:\Dev\Rally Forge\data\` | `SQL/` OR `rally-forge-backend/data/` | Database schemas and seeds |
 
 **Contents**:
 - schema.sql
@@ -120,7 +120,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 5. Partnerships Documentation
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `partnerships/` | `C:\Dev\Vets Ready\partnerships\` | `docs/partnerships/` | Documentation |
+| `partnerships/` | `C:\Dev\Rally Forge\partnerships\` | `docs/partnerships/` | Documentation |
 
 **Contents**:
 - ATTORNEY_PARTNERSHIP_PROPOSAL.md
@@ -133,7 +133,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 6. Root-Level Tests
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `tests/` | `C:\Dev\Vets Ready\tests\` | Split between subsystems | Test files for specific components |
+| `tests/` | `C:\Dev\Rally Forge\tests\` | Split between subsystems | Test files for specific components |
 
 **Contents**:
 - conftest.py (backend)
@@ -141,8 +141,8 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 - test_subscriptions.py (backend)
 - test_frontend.txt (frontend)
 - **Action**:
-  - Move backend tests → `vets-ready-backend/tests/`
-  - Move frontend tests → `vets-ready-frontend/tests/` (if tests/ doesn't exist, create it)
+  - Move backend tests → `rally-forge-backend/tests/`
+  - Move frontend tests → `rally-forge-frontend/tests/` (if tests/ doesn't exist, create it)
 
 **Note**: Backend already has its own tests/ folder
 
@@ -151,7 +151,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 7. Backup Folder
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `Backups/` | `C:\Dev\Vets Ready\Backups\` | `_archive/` (create) or DELETE | Old build scripts |
+| `Backups/` | `C:\Dev\Rally Forge\Backups\` | `_archive/` (create) or DELETE | Old build scripts |
 
 **Contents**:
 - build-scripts/
@@ -162,7 +162,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 8. Root SQL File
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `seed-data.sql` | `C:\Dev\Vets Ready\seed-data.sql` | `SQL/seed-data.sql` | **DUPLICATE** already exists |
+| `seed-data.sql` | `C:\Dev\Rally Forge\seed-data.sql` | `SQL/seed-data.sql` | **DUPLICATE** already exists |
 
 **Action**: **Delete** root copy (duplicate already in SQL/)
 
@@ -171,7 +171,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 9. Root .venv (Build Artifact)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `.venv/` | `C:\Dev\Vets Ready\.venv\` | **DELETE** or confirm | Likely stale Python venv |
+| `.venv/` | `C:\Dev\Rally Forge\.venv\` | **DELETE** or confirm | Likely stale Python venv |
 
 **Action**: Backend has its own .venv/. Root-level venv should be removed unless used for root-level Python scripts.
 
@@ -180,7 +180,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 #### 10. Root node_modules (Build Artifact)
 | Item | Current Location | Target Location | Reason |
 |------|------------------|-----------------|--------|
-| `node_modules/` | `C:\Dev\Vets Ready\node_modules\` | Keep (root package.json) | Root workspace dependencies |
+| `node_modules/` | `C:\Dev\Rally Forge\node_modules\` | Keep (root package.json) | Root workspace dependencies |
 
 **Action**: **KEEP** - Root package.json exists, so node_modules is valid
 
@@ -210,7 +210,7 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 | QUICK_START_DEPLOYMENT.md | Root | `docs/deployment/` | Deployment guides |
 | STARTUP_GUIDE.md | Root | `docs/setup/` | Setup documentation |
 | STRATEGIC_RECOMMENDATIONS.md | Root | `docs/` | Project documentation |
-| VETS_READY_APPLICATION_COMPLETE.md | Root | `docs/` | Project documentation |
+| rally_forge_APPLICATION_COMPLETE.md | Root | `docs/` | Project documentation |
 | APP_OVERVIEW.html | Root | `docs/` | Project overview |
 
 **Action**: Move to `docs/` with subdirectories for organization:
@@ -226,13 +226,13 @@ Question: Is root android/ a duplicate or does it contain unique build configs?
 ### 🔍 ITEMS REQUIRING INVESTIGATION
 
 #### 1. android/ Folder (Root vs Mobile)
-**Question**: Is `C:\Dev\Vets Ready\android\` a duplicate of `vets-ready-mobile/android/`?
+**Question**: Is `C:\Dev\Rally Forge\android\` a duplicate of `rally-forge-mobile/android/`?
 
 **Investigation Needed**:
 ```powershell
 # Compare directories
-Compare-Object (Get-ChildItem "C:\Dev\Vets Ready\android" -Recurse) `
-               (Get-ChildItem "C:\Dev\Vets Ready\vets-ready-mobile\android" -Recurse)
+Compare-Object (Get-ChildItem "C:\Dev\Rally Forge\android" -Recurse) `
+               (Get-ChildItem "C:\Dev\Rally Forge\rally-forge-mobile\android" -Recurse)
 ```
 
 **Possible Outcomes**:
@@ -249,7 +249,7 @@ Compare-Object (Get-ChildItem "C:\Dev\Vets Ready\android" -Recurse) `
 
 **Investigation Needed**:
 - Check if desktop/ contains source files or just compiled binaries
-- If source: Create `vets-ready-desktop/` subsystem
+- If source: Create `rally-forge-desktop/` subsystem
 - If build output: Delete (regenerate from build scripts)
 
 ---
@@ -283,7 +283,7 @@ The following standard project items are **missing** or **should be created**:
 | Item | Purpose | Recommendation |
 |------|---------|----------------|
 | `_archive/` | Historical backups | Create for old Backups/ folder |
-| `vets-ready-desktop/` | Desktop app subsystem (if needed) | Create if desktop/ contains source code |
+| `rally-forge-desktop/` | Desktop app subsystem (if needed) | Create if desktop/ contains source code |
 | `docs/setup/` | Setup documentation subdirectory | Create to organize setup guides |
 | `docs/deployment/` | Deployment documentation subdirectory | Create to organize deployment guides |
 | `docs/compliance/` | Compliance documentation subdirectory | Create to organize compliance docs |
@@ -300,78 +300,78 @@ The following standard project items are **missing** or **should be created**:
 #### **PRIORITY 1: Move Misplaced Folders**
 ```powershell
 # Move AI Engine to backend
-Move-Item "C:\Dev\Vets Ready\ai-engine" "C:\Dev\Vets Ready\vets-ready-backend\ai-engine"
+Move-Item "C:\Dev\Rally Forge\ai-engine" "C:\Dev\Rally Forge\rally-forge-backend\ai-engine"
 
 # Move partnerships to docs
-New-Item -ItemType Directory "C:\Dev\Vets Ready\docs\partnerships"
-Move-Item "C:\Dev\Vets Ready\partnerships\*" "C:\Dev\Vets Ready\docs\partnerships\"
-Remove-Item "C:\Dev\Vets Ready\partnerships"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\docs\partnerships"
+Move-Item "C:\Dev\Rally Forge\partnerships\*" "C:\Dev\Rally Forge\docs\partnerships\"
+Remove-Item "C:\Dev\Rally Forge\partnerships"
 
 # Move data files
-Move-Item "C:\Dev\Vets Ready\data\schema.sql" "C:\Dev\Vets Ready\SQL\"
-New-Item -ItemType Directory "C:\Dev\Vets Ready\vets-ready-backend\data"
-Move-Item "C:\Dev\Vets Ready\data\*.json" "C:\Dev\Vets Ready\vets-ready-backend\data\"
-Remove-Item "C:\Dev\Vets Ready\data"
+Move-Item "C:\Dev\Rally Forge\data\schema.sql" "C:\Dev\Rally Forge\SQL\"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\rally-forge-backend\data"
+Move-Item "C:\Dev\Rally Forge\data\*.json" "C:\Dev\Rally Forge\rally-forge-backend\data\"
+Remove-Item "C:\Dev\Rally Forge\data"
 
 # Move root tests to backend (conftest.py, test_backend.py, test_subscriptions.py)
-Move-Item "C:\Dev\Vets Ready\tests\conftest.py" "C:\Dev\Vets Ready\vets-ready-backend\tests\"
-Move-Item "C:\Dev\Vets Ready\tests\test_backend.py" "C:\Dev\Vets Ready\vets-ready-backend\tests\"
-Move-Item "C:\Dev\Vets Ready\tests\test_subscriptions.py" "C:\Dev\Vets Ready\vets-ready-backend\tests\"
-Move-Item "C:\Dev\Vets Ready\tests\test_frontend.txt" "C:\Dev\Vets Ready\vets-ready-frontend\"
-Remove-Item "C:\Dev\Vets Ready\tests"
+Move-Item "C:\Dev\Rally Forge\tests\conftest.py" "C:\Dev\Rally Forge\rally-forge-backend\tests\"
+Move-Item "C:\Dev\Rally Forge\tests\test_backend.py" "C:\Dev\Rally Forge\rally-forge-backend\tests\"
+Move-Item "C:\Dev\Rally Forge\tests\test_subscriptions.py" "C:\Dev\Rally Forge\rally-forge-backend\tests\"
+Move-Item "C:\Dev\Rally Forge\tests\test_frontend.txt" "C:\Dev\Rally Forge\rally-forge-frontend\"
+Remove-Item "C:\Dev\Rally Forge\tests"
 ```
 
 #### **PRIORITY 2: Remove Duplicates**
 ```powershell
 # Delete duplicate seed-data.sql in root (already in SQL/)
-Remove-Item "C:\Dev\Vets Ready\seed-data.sql"
+Remove-Item "C:\Dev\Rally Forge\seed-data.sql"
 ```
 
 #### **PRIORITY 3: Organize Documentation**
 ```powershell
 # Create subdirectories in docs/
-New-Item -ItemType Directory "C:\Dev\Vets Ready\docs\setup"
-New-Item -ItemType Directory "C:\Dev\Vets Ready\docs\deployment"
-New-Item -ItemType Directory "C:\Dev\Vets Ready\docs\compliance"
-New-Item -ItemType Directory "C:\Dev\Vets Ready\docs\architecture"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\docs\setup"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\docs\deployment"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\docs\compliance"
+New-Item -ItemType Directory "C:\Dev\Rally Forge\docs\architecture"
 
 # Move setup documentation
-Move-Item "C:\Dev\Vets Ready\APPLICATION_SETUP_COMPLETE.md" "C:\Dev\Vets Ready\docs\setup\"
-Move-Item "C:\Dev\Vets Ready\BUILD_SETUP_SUMMARY.md" "C:\Dev\Vets Ready\docs\setup\"
-Move-Item "C:\Dev\Vets Ready\QUICK_REFERENCE_STARTUP.md" "C:\Dev\Vets Ready\docs\setup\"
-Move-Item "C:\Dev\Vets Ready\QUICK_START.md" "C:\Dev\Vets Ready\docs\setup\"
-Move-Item "C:\Dev\Vets Ready\STARTUP_GUIDE.md" "C:\Dev\Vets Ready\docs\setup\"
+Move-Item "C:\Dev\Rally Forge\APPLICATION_SETUP_COMPLETE.md" "C:\Dev\Rally Forge\docs\setup\"
+Move-Item "C:\Dev\Rally Forge\BUILD_SETUP_SUMMARY.md" "C:\Dev\Rally Forge\docs\setup\"
+Move-Item "C:\Dev\Rally Forge\QUICK_REFERENCE_STARTUP.md" "C:\Dev\Rally Forge\docs\setup\"
+Move-Item "C:\Dev\Rally Forge\QUICK_START.md" "C:\Dev\Rally Forge\docs\setup\"
+Move-Item "C:\Dev\Rally Forge\STARTUP_GUIDE.md" "C:\Dev\Rally Forge\docs\setup\"
 
 # Move deployment documentation
-Move-Item "C:\Dev\Vets Ready\DEPLOYMENT_CHECKLIST.md" "C:\Dev\Vets Ready\docs\deployment\"
-Move-Item "C:\Dev\Vets Ready\DEPLOYMENT_GUIDE.md" "C:\Dev\Vets Ready\docs\deployment\"
-Move-Item "C:\Dev\Vets Ready\QUICK_DEPLOY.md" "C:\Dev\Vets Ready\docs\deployment\"
-Move-Item "C:\Dev\Vets Ready\QUICK_START_DEPLOYMENT.md" "C:\Dev\Vets Ready\docs\deployment\"
+Move-Item "C:\Dev\Rally Forge\DEPLOYMENT_CHECKLIST.md" "C:\Dev\Rally Forge\docs\deployment\"
+Move-Item "C:\Dev\Rally Forge\DEPLOYMENT_GUIDE.md" "C:\Dev\Rally Forge\docs\deployment\"
+Move-Item "C:\Dev\Rally Forge\QUICK_DEPLOY.md" "C:\Dev\Rally Forge\docs\deployment\"
+Move-Item "C:\Dev\Rally Forge\QUICK_START_DEPLOYMENT.md" "C:\Dev\Rally Forge\docs\deployment\"
 
 # Move compliance documentation
-Move-Item "C:\Dev\Vets Ready\COMPLIANCE_AUDIT.md" "C:\Dev\Vets Ready\docs\compliance\"
-Move-Item "C:\Dev\Vets Ready\COMPLIANCE_IMPLEMENTATION_SUMMARY.md" "C:\Dev\Vets Ready\docs\compliance\"
-Move-Item "C:\Dev\Vets Ready\FULL_COMPLIANCE_VALIDATION_COMPLETE.md" "C:\Dev\Vets Ready\docs\compliance\"
-Move-Item "C:\Dev\Vets Ready\POST_COMPLIANCE_QUICK_REFERENCE.md" "C:\Dev\Vets Ready\docs\compliance\"
+Move-Item "C:\Dev\Rally Forge\COMPLIANCE_AUDIT.md" "C:\Dev\Rally Forge\docs\compliance\"
+Move-Item "C:\Dev\Rally Forge\COMPLIANCE_IMPLEMENTATION_SUMMARY.md" "C:\Dev\Rally Forge\docs\compliance\"
+Move-Item "C:\Dev\Rally Forge\FULL_COMPLIANCE_VALIDATION_COMPLETE.md" "C:\Dev\Rally Forge\docs\compliance\"
+Move-Item "C:\Dev\Rally Forge\POST_COMPLIANCE_QUICK_REFERENCE.md" "C:\Dev\Rally Forge\docs\compliance\"
 
 # Move architecture documentation
-Move-Item "C:\Dev\Vets Ready\PRODUCTION_ARCHITECTURE.md" "C:\Dev\Vets Ready\docs\architecture\"
+Move-Item "C:\Dev\Rally Forge\PRODUCTION_ARCHITECTURE.md" "C:\Dev\Rally Forge\docs\architecture\"
 
 # Move general project documentation
-Move-Item "C:\Dev\Vets Ready\APP_OVERVIEW.html" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\FILE_MANIFEST.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\IMPLEMENTATION_COMPLETE.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\NEXT_STEPS_AUTOMATED.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\PROJECT_CONFIRMATION.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\PROJECT_STRUCTURE.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\QUICK_REFERENCE.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\STRATEGIC_RECOMMENDATIONS.md" "C:\Dev\Vets Ready\docs\"
-Move-Item "C:\Dev\Vets Ready\VETS_READY_APPLICATION_COMPLETE.md" "C:\Dev\Vets Ready\docs\"
+Move-Item "C:\Dev\Rally Forge\APP_OVERVIEW.html" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\FILE_MANIFEST.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\IMPLEMENTATION_COMPLETE.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\NEXT_STEPS_AUTOMATED.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\PROJECT_CONFIRMATION.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\PROJECT_STRUCTURE.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\QUICK_REFERENCE.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\STRATEGIC_RECOMMENDATIONS.md" "C:\Dev\Rally Forge\docs\"
+Move-Item "C:\Dev\Rally Forge\rally_forge_APPLICATION_COMPLETE.md" "C:\Dev\Rally Forge\docs\"
 ```
 
 #### **PRIORITY 4: Investigate & Decide**
 ```powershell
-# android/ - Compare with vets-ready-mobile/android/, then decide
+# android/ - Compare with rally-forge-mobile/android/, then decide
 # desktop/ - Determine if source or build output, then move or delete
 # .venv/ - Confirm if needed, then delete if not
 # Backups/ - Archive or delete
@@ -384,22 +384,22 @@ Move-Item "C:\Dev\Vets Ready\VETS_READY_APPLICATION_COMPLETE.md" "C:\Dev\Vets Re
 After reorganization, the structure should be:
 
 ```
-C:\Dev\Vets Ready\
+C:\Dev\Rally Forge\
 │
-├── vets-ready-frontend/              ✅ React + Vite frontend
-├── vets-ready-backend/               ✅ FastAPI backend
+├── rally-forge-frontend/              ✅ React + Vite frontend
+├── rally-forge-backend/               ✅ FastAPI backend
 │   ├── ai-engine/                    🔄 MOVED FROM ROOT
 │   ├── data/                         🔄 MOVED FROM ROOT (JSON files)
 │   ├── app/
 │   ├── alembic/
 │   ├── tests/                        🔄 MERGED root tests/
 │   └── ...
-├── vets-ready-mobile/                ✅ Capacitor mobile app
+├── rally-forge-mobile/                ✅ Capacitor mobile app
 │   ├── android/                      🔍 VERIFY vs root android/
 │   ├── ios/
 │   └── mobile/
-├── vets-ready-shared/                ✅ Shared TypeScript modules
-├── vets-ready-desktop/               🆕 CREATE IF NEEDED (Electron app)
+├── rally-forge-shared/                ✅ Shared TypeScript modules
+├── rally-forge-desktop/               🆕 CREATE IF NEEDED (Electron app)
 │
 ├── config/                           ✅ Configuration files
 │   └── appsettings.json
@@ -432,7 +432,7 @@ C:\Dev\Vets Ready\
 ├── .gitignore                        ✅ Git ignore rules
 ├── package.json                      ✅ Root workspace config
 ├── package-lock.json                 ✅ Dependency lock
-├── Start-VetsReady.ps1               ✅ One-click startup
+├── Start-rallyforge.ps1               ✅ One-click startup
 └── README.md                         ✅ Main README (KEEP IN ROOT)
 ```
 
@@ -476,10 +476,10 @@ C:\Dev\Vets Ready\
 ## ✅ PHASE 1 COMPLETION CHECKLIST
 
 - [x] Scanned entire directory tree
-- [x] Identified all frontend code (vets-ready-frontend/)
-- [x] Identified all backend code (vets-ready-backend/)
-- [x] Identified all mobile code (vets-ready-mobile/)
-- [x] Identified shared modules (vets-ready-shared/)
+- [x] Identified all frontend code (rally-forge-frontend/)
+- [x] Identified all backend code (rally-forge-backend/)
+- [x] Identified all mobile code (rally-forge-mobile/)
+- [x] Identified shared modules (rally-forge-shared/)
 - [x] Identified documentation (docs/ + 24 root files)
 - [x] Identified scripts (scripts/ - 155 files)
 - [x] Identified diagnostics (diagnostics/)
@@ -524,3 +524,5 @@ C:\Dev\Vets Ready\
 ---
 
 *Analysis completed by GitHub Copilot - January 24, 2026*
+
+

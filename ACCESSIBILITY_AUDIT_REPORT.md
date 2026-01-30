@@ -2,7 +2,7 @@
 ## Color Contrast & WCAG AA Compliance
 
 **Date**: January 28, 2026
-**Audit Scope**: Full VetsReady Platform
+**Audit Scope**: Full rallyforge Platform
 **Standard**: WCAG AA (4.5:1 normal text, 3:1 large text)
 **Status**: 🔴 **IN PROGRESS** - Violations Identified, Fixes Pending
 
@@ -39,7 +39,7 @@
 ### CRITICAL VIOLATIONS (Must Fix Immediately)
 
 #### 1. CrscHubPage.tsx - Badge Color Combinations
-**File**: [vets-ready-frontend/src/pages/CrscHubPage.tsx](vets-ready-frontend/src/pages/CrscHubPage.tsx#L122-L125)
+**File**: [rally-forge-frontend/src/pages/CrscHubPage.tsx](rally-forge-frontend/src/pages/CrscHubPage.tsx#L122-L125)
 **Issue**: Green text on green background
 ```tsx
 // ❌ FAIL: text-green-800 on bg-green-100
@@ -66,7 +66,7 @@
 ```
 
 #### 2. CrdpCrscOpenSeasonPanel.tsx - Action Button Colors
-**File**: [vets-ready-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx](vets-ready-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx#L313-L323)
+**File**: [rally-forge-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx](rally-forge-frontend/src/components/crsc/CrdpCrscOpenSeasonPanel.tsx#L313-L323)
 **Issue**: Light text on light background
 ```tsx
 // ❌ FAIL: text-red-700 on bg-red-100
@@ -79,7 +79,7 @@ className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700..."
 ```
 
 #### 3. WalletPage.tsx - Inline Color Issues
-**File**: [vets-ready-frontend/src/pages/WalletPage.tsx](vets-ready-frontend/src/pages/WalletPage.tsx#L68)
+**File**: [rally-forge-frontend/src/pages/WalletPage.tsx](rally-forge-frontend/src/pages/WalletPage.tsx#L68)
 **Issue**: Hardcoded gray text on light backgrounds
 ```tsx
 // ❌ FAIL: #6B7280 (gray-500) text
@@ -89,7 +89,7 @@ className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700..."
 ```
 
 #### 4. OnboardingWizard.tsx - Terminal Output
-**File**: [vets-ready-frontend/src/pages/OnboardingWizard.tsx](vets-ready-frontend/src/pages/OnboardingWizard.tsx#L1665)
+**File**: [rally-forge-frontend/src/pages/OnboardingWizard.tsx](rally-forge-frontend/src/pages/OnboardingWizard.tsx#L1665)
 **Issue**: Green text on dark background (acceptable but could be better)
 ```tsx
 // ⚠️ MARGINAL: text-green-400 on bg-gray-900
@@ -98,7 +98,7 @@ className="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700..."
 ```
 
 #### 5. ScannerHealthDashboard.css - Dark Theme Issues
-**File**: [vets-ready-frontend/src/pages/ScannerHealthDashboard.css](vets-ready-frontend/src/pages/ScannerHealthDashboard.css#L5-L7)
+**File**: [rally-forge-frontend/src/pages/ScannerHealthDashboard.css](rally-forge-frontend/src/pages/ScannerHealthDashboard.css#L5-L7)
 **Issue**: Multiple color combinations in dark theme
 ```css
 /* ✅ PASS: White text on dark background */
@@ -116,7 +116,7 @@ color: #b8c5d6;
 ### MEDIUM PRIORITY VIOLATIONS
 
 #### 6. ResourceMarketplacePage.tsx - Partner Badge
-**File**: [vets-ready-frontend/src/pages/ResourceMarketplacePage.tsx](vets-ready-frontend/src/pages/ResourceMarketplacePage.tsx#L48-L51)
+**File**: [rally-forge-frontend/src/pages/ResourceMarketplacePage.tsx](rally-forge-frontend/src/pages/ResourceMarketplacePage.tsx#L48-L51)
 ```tsx
 // ⚠️ MARGINAL: text-purple-800 on bg-purple-100
 partnerBadgeColor = "bg-purple-100 text-purple-800"
@@ -124,14 +124,14 @@ partnerBadgeColor = "bg-purple-100 text-purple-800"
 ```
 
 #### 7. PartnerPortalPage.tsx - Category Badges
-**File**: [vets-ready-frontend/src/pages/PartnerPortalPage.tsx](vets-ready-frontend/src/pages/PartnerPortalPage.tsx#L196)
+**File**: [rally-forge-frontend/src/pages/PartnerPortalPage.tsx](rally-forge-frontend/src/pages/PartnerPortalPage.tsx#L196)
 ```tsx
 // ⚠️ MARGINAL: text-blue-800 on bg-blue-100
 <Badge key={cat} className="bg-blue-100 text-blue-800">
 ```
 
 #### 8. TransitionPage.tsx - Heading Colors
-**File**: [vets-ready-frontend/src/pages/TransitionPage.tsx](vets-ready-frontend/src/pages/TransitionPage.tsx#L141)
+**File**: [rally-forge-frontend/src/pages/TransitionPage.tsx](rally-forge-frontend/src/pages/TransitionPage.tsx#L141)
 ```tsx
 // ⚠️ MARGINAL: #2d3748 (gray-800) text
 <h3 style={{ color: '#2d3748', fontSize: '1.8rem' }}>
@@ -139,7 +139,7 @@ partnerBadgeColor = "bg-purple-100 text-purple-800"
 ```
 
 #### 9. MissionsPage.tsx - Status Text
-**File**: [vets-ready-frontend/src/pages/MissionsPage.tsx](vets-ready-frontend/src/pages/MissionsPage.tsx#L157)
+**File**: [rally-forge-frontend/src/pages/MissionsPage.tsx](rally-forge-frontend/src/pages/MissionsPage.tsx#L157)
 ```tsx
 // ⚠️ MARGINAL: #dc2626 (red-600) text
 <div style={{ fontWeight: '600', color: '#dc2626' }}>
@@ -149,7 +149,7 @@ partnerBadgeColor = "bg-purple-100 text-purple-800"
 ### LOW PRIORITY VIOLATIONS
 
 #### 10. VeteranProfile.tsx - Border Colors
-**File**: [vets-ready-frontend/src/pages/VeteranProfile.tsx](vets-ready-frontend/src/pages/VeteranProfile.tsx#L397)
+**File**: [rally-forge-frontend/src/pages/VeteranProfile.tsx](rally-forge-frontend/src/pages/VeteranProfile.tsx#L397)
 ```tsx
 // ⚠️ LOW: Light gray borders (acceptable)
 className="border-2 border-gray-300 rounded-lg cursor-pointer"
@@ -157,7 +157,7 @@ className="border-2 border-gray-300 rounded-lg cursor-pointer"
 ```
 
 #### 11. Retirement.tsx - Multiple Badge Issues
-**File**: [vets-ready-frontend/src/pages/Retirement.tsx](vets-ready-frontend/src/pages/Retirement.tsx#L1063)
+**File**: [rally-forge-frontend/src/pages/Retirement.tsx](rally-forge-frontend/src/pages/Retirement.tsx#L1063)
 ```tsx
 // ⚠️ LOW: text-red-800 on bg-red-50
 <div className="bg-red-50 border border-red-200 text-red-800...">
@@ -283,13 +283,13 @@ After fixes, run these:
 
 ```bash
 # Find remaining low-contrast text
-grep -r "text-\(gray\|slate\|stone\)" vets-ready-frontend/src --include="*.tsx" | grep -i "className"
+grep -r "text-\(gray\|slate\|stone\)" rally-forge-frontend/src --include="*.tsx" | grep -i "className"
 
 # Find hardcoded colors
-grep -r "color: '#\|backgroundColor: '#" vets-ready-frontend/src --include="*.tsx"
+grep -r "color: '#\|backgroundColor: '#" rally-forge-frontend/src --include="*.tsx"
 
 # Check Tailwind badge patterns
-grep -r "bg-\(red\|green\|blue\|yellow\|purple\)-\(50\|100\) text-" vets-ready-frontend/src --include="*.tsx"
+grep -r "bg-\(red\|green\|blue\|yellow\|purple\)-\(50\|100\) text-" rally-forge-frontend/src --include="*.tsx"
 ```
 
 ---
@@ -304,4 +304,6 @@ grep -r "bg-\(red\|green\|blue\|yellow\|purple\)-\(50\|100\) text-" vets-ready-f
 ---
 
 **Next Step**: Begin Phase 1 - Update tailwind.config.js with accessible color tokens
+
+
 

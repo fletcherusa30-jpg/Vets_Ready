@@ -129,7 +129,7 @@ The AI is trained on:
 ## 📋 Files Modified/Created
 
 ### New Files
-1. **vets-ready-frontend/src/pages/VAKnowledgeCenter.tsx** (720 lines)
+1. **rally-forge-frontend/src/pages/VAKnowledgeCenter.tsx** (720 lines)
    - Main VA Knowledge Center component
    - 12 categorized VA resources with direct links
    - AI search interface
@@ -138,17 +138,17 @@ The AI is trained on:
    - Branch theme integration
 
 ### Modified Files
-1. **vets-ready-frontend/src/App.tsx**
+1. **rally-forge-frontend/src/App.tsx**
    - Added import: `VAKnowledgeCenter`
    - Added navigation link: `📚 VA Resources`
    - Added route: `/va-knowledge`
 
-2. **vets-ready-frontend/src/pages/HomePage.tsx**
+2. **rally-forge-frontend/src/pages/HomePage.tsx**
    - Added large blue feature card (spans 2 columns)
    - Highlights VA Knowledge Center + AI Search
    - Positioned prominently with Benefits Center
 
-3. **vets-ready-frontend/src/pages/ClaimsHub.tsx**
+3. **rally-forge-frontend/src/pages/ClaimsHub.tsx**
    - Fixed quick access tools bug
    - Tools with `route` property now use `<Link>` (navigation)
    - Tools with `action` property use click handlers (modals)
@@ -411,3 +411,4 @@ Veterans now have:
 - Testing: **PASSED**
 
 Ready for veteran use! 🎖️
+

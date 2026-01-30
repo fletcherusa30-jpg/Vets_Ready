@@ -1,8 +1,8 @@
-# VetsReady Matrix Architecture - Complete Guide
+# rallyforge Matrix Architecture - Complete Guide
 
 ## Overview
 
-The VetsReady platform has evolved from standalone pages into a **unified matrix architecture** where all modules are interconnected views of the same veteran profile data. This creates a seamless, dynamic experience where updating your profile instantly updates all outputs across the entire platform.
+The rallyforge platform has evolved from standalone pages into a **unified matrix architecture** where all modules are interconnected views of the same veteran profile data. This creates a seamless, dynamic experience where updating your profile instantly updates all outputs across the entire platform.
 
 ---
 
@@ -415,7 +415,7 @@ All Components (Real-time Updates)
 
 ## Legal Compliance
 
-### What VetsReady Does:
+### What rallyforge Does:
 ✅ Educational and preparatory tool
 ✅ Organizes claim information
 ✅ Provides CFR criteria guidance
@@ -424,7 +424,7 @@ All Components (Real-time Updates)
 ✅ Suggests secondary conditions
 ✅ Exports claim preparation summary
 
-### What VetsReady Does NOT Do:
+### What rallyforge Does NOT Do:
 ❌ File VA claims
 ❌ Submit to VA systems
 ❌ Generate VA forms
@@ -435,7 +435,7 @@ All Components (Real-time Updates)
 
 ### Disclaimers:
 - All claim filing happens on VA.gov
-- VetsReady is not affiliated with the U.S. Department of Veterans Affairs
+- rallyforge is not affiliated with the U.S. Department of Veterans Affairs
 - Platform is educational only
 - Consult with VSO or attorney for legal advice
 - Consult with doctor for medical advice
@@ -623,7 +623,7 @@ All Components (Real-time Updates)
 
 ### For Developers:
 ```bash
-cd "c:\Dev\Vets Ready\vets-ready-frontend"
+cd "c:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 ```
 
@@ -635,4 +635,6 @@ Then visit:
 
 ---
 
-**VetsReady Matrix Architecture - Serving Those Who Served** 🎖️
+**rallyforge Matrix Architecture - Serving Those Who Served** 🎖️
+
+

@@ -217,7 +217,7 @@ const canChooseCRSC = isCRDPEligible && isCRSCEligible;
 
 ## Files Modified
 
-- `vets-ready-frontend/src/pages/Retirement.tsx` (1,404 lines)
+- `rally-forge-frontend/src/pages/Retirement.tsx` (1,404 lines)
   - Added optional military pension features
   - Implemented CRSC calculation logic
   - Enhanced UI with conditional panels
@@ -248,3 +248,4 @@ const canChooseCRSC = isCRDPEligible && isCRSCEligible;
 2. Verify calculations with real pay tables
 3. Get veteran feedback on UI/UX
 4. Consider adding more educational content about CRSC
+

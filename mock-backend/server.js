@@ -316,7 +316,7 @@ app.post('/api/retirement/enhanced', (req, res) => {
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({
-    message: 'Vets Ready Educational Backend API',
+    message: 'Rally Forge Educational Backend API',
     version: '1.0.0 (Educational/Advisory Only)',
     compliance: {
       purpose: 'Educational and advisory tool only',
@@ -341,7 +341,7 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log('');
   console.log('╔════════════════════════════════════════════════════════════╗');
-  console.log('║  🎖️  Vets Ready - Educational Backend Server              ║');
+  console.log('║  🎖️  Rally Forge - Educational Backend Server              ║');
   console.log('╠════════════════════════════════════════════════════════════╣');
   console.log(`║  Status: ✓ Running on http://localhost:${PORT}              ║`);
   console.log('║  Mode:   Educational/Advisory Only                        ║');
@@ -365,3 +365,4 @@ app.listen(PORT, () => {
   console.log('');
   console.log('✓ Ready to accept requests...\n');
 });
+

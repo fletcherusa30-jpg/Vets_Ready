@@ -1,7 +1,7 @@
 # SQL Folder - Database Schema & Migration Files
 
 ## Overview
-Contains all SQL schemas, migration scripts, and database initialization files for VetsReady platform.
+Contains all SQL schemas, migration scripts, and database initialization files for RallyForge platform.
 
 ## Core Files
 
@@ -38,8 +38,8 @@ alembic history           # View migration history
 ### Initialize Database
 ```bash
 # Fresh setup
-mysql vetsready < SQL/init_db.sql
-mysql vetsready < SQL/seed_data.sql
+mysql RallyForge < SQL/init_db.sql
+mysql RallyForge < SQL/seed_data.sql
 
 # Verify
 python backend/bin/init_database.py verify
@@ -48,10 +48,10 @@ python backend/bin/init_database.py verify
 ### Backup & Restore
 ```bash
 # Backup
-mysqldump vetsready > backup_$(date +%Y%m%d).sql
+mysqldump RallyForge > backup_$(date +%Y%m%d).sql
 
 # Restore
-mysql vetsready < backup_20260125.sql
+mysql RallyForge < backup_20260125.sql
 ```
 
 ### Manage Migrations
@@ -80,3 +80,4 @@ alembic upgrade head
 - [ORM Models](../backend/app/models/database.py)
 - [Database Integration](../docs/DATABASE_INTEGRATION_SETUP.md)
 - [Architecture](../docs/ARCHITECTURE.md)
+

@@ -1,5 +1,5 @@
 /**
- * VetsReady Employment System
+ * rallyforge Employment System
  * Main entry point
  */
 
@@ -27,3 +27,4 @@ export * from './src/integrations/external_jobs/index.js';
 
 // Data model exports
 export * from './data/models/index.js';
+

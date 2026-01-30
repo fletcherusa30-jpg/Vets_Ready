@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Deploy Vets Ready to Docker Hub
+    Deploy Rally Forge to Docker Hub
 .DESCRIPTION
     Builds all Docker images, tags them appropriately, and pushes to Docker Hub
 .PARAMETER Version
@@ -34,7 +34,7 @@ function Write-Error { param([string]$Message); Write-Host "✗ $Message" -Foreg
 function Write-Warning { param([string]$Message); Write-Host "⚠ $Message" -ForegroundColor $WarningColor }
 
 Write-Host "`n=====================================================" -ForegroundColor $InfoColor
-Write-Host "     Vets Ready Docker Deployment" -ForegroundColor $InfoColor
+Write-Host "     Rally Forge Docker Deployment" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
 Write-Host "Version: $Version" -ForegroundColor $InfoColor
 Write-Host "Environment: $Environment" -ForegroundColor $InfoColor
@@ -70,7 +70,7 @@ if (-not $SkipTests) {
 
     # Backend tests
     Write-Host "Testing backend..." -ForegroundColor $WarningColor
-    Push-Location vets-ready-backend
+    Push-Location rally-forge-backend
     python -m pytest tests/ -v
     if ($LASTEXITCODE -ne 0) {
         Pop-Location
@@ -82,7 +82,7 @@ if (-not $SkipTests) {
 
     # Frontend tests
     Write-Host "Testing frontend..." -ForegroundColor $WarningColor
-    Push-Location vets-ready-frontend
+    Push-Location rally-forge-frontend
     npm test -- --run
     if ($LASTEXITCODE -ne 0) {
         Pop-Location
@@ -95,9 +95,9 @@ if (-not $SkipTests) {
 
 # Build backend image
 Write-Step "Building backend Docker image..."
-docker build -t vetsready/vets-ready-backend:$Version `
-             -t vetsready/vets-ready-backend:latest `
-             ./vets-ready-backend
+docker build -t RallyForge/rally-forge-backend:$Version `
+             -t RallyForge/rally-forge-backend:latest `
+             ./rally-forge-backend
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Backend build failed"
@@ -109,14 +109,14 @@ Write-Success "Backend image built successfully"
 Write-Step "Building frontend Docker image..."
 $apiUrl = switch ($Environment) {
     "development" { "http://localhost:8000" }
-    "staging" { "https://api-staging.vetsready.com" }
-    "production" { "https://api.vetsready.com" }
+    "staging" { "https://api-staging.RallyForge.com" }
+    "production" { "https://api.RallyForge.com" }
 }
 
-docker build -t vetsready/vets-ready-frontend:$Version `
-             -t vetsready/vets-ready-frontend:latest `
+docker build -t RallyForge/rally-forge-frontend:$Version `
+             -t RallyForge/rally-forge-frontend:latest `
              --build-arg VITE_API_URL=$apiUrl `
-             ./vets-ready-frontend
+             ./rally-forge-frontend
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Frontend build failed"
@@ -126,8 +126,8 @@ Write-Success "Frontend image built successfully"
 
 # Verify images
 Write-Step "Verifying built images..."
-$backendImage = docker images vetsready/vets-ready-backend:$Version --format "{{.Repository}}:{{.Tag}}"
-$frontendImage = docker images vetsready/vets-ready-frontend:$Version --format "{{.Repository}}:{{.Tag}}"
+$backendImage = docker images RallyForge/rally-forge-backend:$Version --format "{{.Repository}}:{{.Tag}}"
+$frontendImage = docker images RallyForge/rally-forge-frontend:$Version --format "{{.Repository}}:{{.Tag}}"
 
 if (-not $backendImage -or -not $frontendImage) {
     Write-Error "Images not found after build"
@@ -141,14 +141,14 @@ if (-not $SkipPush) {
 
     # Push backend
     Write-Host "Pushing backend..." -ForegroundColor $WarningColor
-    docker push vetsready/vets-ready-backend:$Version
+    docker push RallyForge/rally-forge-backend:$Version
     if ($LASTEXITCODE -ne 0) {
         Write-Error "Failed to push backend:$Version"
         exit 1
     }
 
     if ($Version -ne "latest") {
-        docker push vetsready/vets-ready-backend:latest
+        docker push RallyForge/rally-forge-backend:latest
         if ($LASTEXITCODE -ne 0) {
             Write-Warning "Failed to push backend:latest (continuing)"
         }
@@ -157,14 +157,14 @@ if (-not $SkipPush) {
 
     # Push frontend
     Write-Host "Pushing frontend..." -ForegroundColor $WarningColor
-    docker push vetsready/vets-ready-frontend:$Version
+    docker push RallyForge/rally-forge-frontend:$Version
     if ($LASTEXITCODE -ne 0) {
         Write-Error "Failed to push frontend:$Version"
         exit 1
     }
 
     if ($Version -ne "latest") {
-        docker push vetsready/vets-ready-frontend:latest
+        docker push RallyForge/rally-forge-frontend:latest
         if ($LASTEXITCODE -ne 0) {
             Write-Warning "Failed to push frontend:latest (continuing)"
         }
@@ -176,13 +176,13 @@ if (-not $SkipPush) {
 Write-Host "`n=====================================================" -ForegroundColor $SuccessColor
 Write-Host "     Deployment Complete!" -ForegroundColor $SuccessColor
 Write-Host "=====================================================" -ForegroundColor $SuccessColor
-Write-Host "Backend: vetsready/vets-ready-backend:$Version" -ForegroundColor $InfoColor
-Write-Host "Frontend: vetsready/vets-ready-frontend:$Version" -ForegroundColor $InfoColor
+Write-Host "Backend: RallyForge/rally-forge-backend:$Version" -ForegroundColor $InfoColor
+Write-Host "Frontend: RallyForge/rally-forge-frontend:$Version" -ForegroundColor $InfoColor
 
 if (-not $SkipPush) {
     Write-Host "`nImages available on Docker Hub:" -ForegroundColor $InfoColor
-    Write-Host "  https://hub.docker.com/r/vetsready/vets-ready-backend" -ForegroundColor $WarningColor
-    Write-Host "  https://hub.docker.com/r/vetsready/vets-ready-frontend" -ForegroundColor $WarningColor
+    Write-Host "  https://hub.docker.com/r/RallyForge/rally-forge-backend" -ForegroundColor $WarningColor
+    Write-Host "  https://hub.docker.com/r/RallyForge/rally-forge-frontend" -ForegroundColor $WarningColor
 }
 
 Write-Host "`nNext steps:" -ForegroundColor $InfoColor
@@ -190,3 +190,5 @@ Write-Host "  1. Verify images on Docker Hub" -ForegroundColor $WarningColor
 Write-Host "  2. Deploy with docker-compose:" -ForegroundColor $WarningColor
 Write-Host "     docker-compose -f docker-compose.prod.yml up -d" -ForegroundColor $WarningColor
 Write-Host "  3. Monitor deployment health checks" -ForegroundColor $WarningColor
+
+

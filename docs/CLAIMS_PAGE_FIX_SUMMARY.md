@@ -9,7 +9,7 @@ The /claims page has been **completely overhauled** with full claims management 
 ## ✅ Issues Fixed
 
 ### 1. Backend Router Misconfiguration ❌ → ✅
-**File**: `vets-ready-backend/app/routers/claims.py`
+**File**: `rally-forge-backend/app/routers/claims.py`
 
 **Before**:
 ```python
@@ -29,7 +29,7 @@ router = APIRouter(prefix="/api/claims", tags=["claims"])
 ---
 
 ### 2. Missing Claims Management UI ❌ → ✅
-**File Created**: `vets-ready-frontend/src/components/ClaimsList.tsx` (700+ lines)
+**File Created**: `rally-forge-frontend/src/components/ClaimsList.tsx` (700+ lines)
 
 **Features Implemented**:
 - ✅ View all user claims in a grid layout
@@ -52,7 +52,7 @@ POST /api/claims/analyze  → Submit new claim for analysis
 ---
 
 ### 3. Frontend Page Structure ❌ → ✅
-**File**: `vets-ready-frontend/src/pages/Claims.tsx`
+**File**: `rally-forge-frontend/src/pages/Claims.tsx`
 
 **Changes**:
 - Added import for new `ClaimsList` component
@@ -84,11 +84,11 @@ POST /api/claims/analyze  → Submit new claim for analysis
 ### Prerequisites
 ```bash
 # Terminal 1: Start Backend
-cd vets-ready-backend
+cd rally-forge-backend
 uvicorn app.main:app --reload
 
 # Terminal 2: Start Frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 ```
 
@@ -321,7 +321,7 @@ Phase 4:
 ### "Failed to fetch claims"
 **Solution**: Start backend server
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 uvicorn app.main:app --reload
 ```
 
@@ -343,7 +343,7 @@ Log in again
 - G89.29 - Pain
 
 ### CORS Errors
-**Solution**: Verify config in `vets-ready-backend/app/config.py`:
+**Solution**: Verify config in `rally-forge-backend/app/config.py`:
 ```python
 cors_origins: List[str] = [
     "http://localhost:5173",  # Must match frontend port
@@ -353,7 +353,7 @@ cors_origins: List[str] = [
 ### 500 Internal Server Error
 **Solution**: Check backend logs, likely database issue
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 python -m alembic upgrade head  # Run migrations
 ```
 
@@ -362,16 +362,16 @@ python -m alembic upgrade head  # Run migrations
 ## 📁 Files Changed
 
 ### Created
-- ✅ `vets-ready-frontend/src/components/ClaimsList.tsx` (700+ lines)
+- ✅ `rally-forge-frontend/src/components/ClaimsList.tsx` (700+ lines)
 - ✅ `docs/CLAIMS_PAGE_VERIFICATION.md` (comprehensive test guide)
 - ✅ `docs/CLAIMS_PAGE_FIX_SUMMARY.md` (this file)
 
 ### Modified
-- ✅ `vets-ready-backend/app/routers/claims.py` (added prefix and tags)
-- ✅ `vets-ready-frontend/src/pages/Claims.tsx` (imported ClaimsList, added My Claims tab)
-- ✅ `vets-ready-frontend/src/components/CookieConsent.tsx` (fixed Python docstring)
-- ✅ `vets-ready-frontend/src/components/CrisisSupport.tsx` (fixed Python docstring)
-- ✅ `vets-ready-frontend/src/lib/monitoring.ts` (fixed typo)
+- ✅ `rally-forge-backend/app/routers/claims.py` (added prefix and tags)
+- ✅ `rally-forge-frontend/src/pages/Claims.tsx` (imported ClaimsList, added My Claims tab)
+- ✅ `rally-forge-frontend/src/components/CookieConsent.tsx` (fixed Python docstring)
+- ✅ `rally-forge-frontend/src/components/CrisisSupport.tsx` (fixed Python docstring)
+- ✅ `rally-forge-frontend/src/lib/monitoring.ts` (fixed typo)
 
 ---
 
@@ -438,3 +438,4 @@ To verify the page is working:
 **Status**: ✅ Ready for Testing
 **Last Updated**: January 24, 2026
 **Version**: 1.0.0
+

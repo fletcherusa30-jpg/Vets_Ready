@@ -8,7 +8,7 @@
     reports file counts plus any issues that need attention.
 
 .PARAMETER ImagesRoot
-    Root directory that should contain branch-specific folders (e.g. C:\Dev\Vets Ready\App\Images).
+    Root directory that should contain branch-specific folders (e.g. C:\Dev\Rally Forge\App\Images).
 
 .PARAMETER CreateMissing
     When specified, missing branch/custom folders will be created automatically instead of just warning.
@@ -99,3 +99,4 @@ Write-Host "\n✅ Validation complete. Total supported images: $totalImages" -Fo
 if (-not $CreateMissing) {
     Write-Host "Use -CreateMissing to automatically scaffold branches or the Custom folder." -ForegroundColor DarkGray
 }
+

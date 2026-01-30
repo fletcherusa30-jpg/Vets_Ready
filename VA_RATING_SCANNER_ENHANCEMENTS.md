@@ -5,7 +5,7 @@ Successfully implemented comprehensive enhancements to the VA Rating Narrative S
 
 **Status:** ✅ **COMPLETE & PRODUCTION-READY**
 **Build Status:** ✅ Successful (built in 5.79s)
-**File:** `vets-ready-frontend/src/pages/VeteranProfile.tsx`
+**File:** `rally-forge-frontend/src/pages/VeteranProfile.tsx`
 
 ---
 
@@ -397,3 +397,4 @@ The VA Rating Narrative Scanner now features:
 **Status:** ✅ Complete & Tested
 **Build:** ✅ Successful
 **Ready for:** Production Deployment (with OCR service integration)
+

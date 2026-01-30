@@ -234,4 +234,5 @@ docs/
 
 **Status: ✅ Production Ready**
 
-The VA Disability Rating Calculator is fully implemented, tested, and ready for immediate use in VetsReady!
+The VA Disability Rating Calculator is fully implemented, tested, and ready for immediate use in rallyforge!
+

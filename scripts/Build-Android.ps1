@@ -1,9 +1,9 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Build Vets Ready Android Application
+    Build Rally Forge Android Application
 .DESCRIPTION
-    Builds Android APK and/or AAB bundle for Vets Ready mobile app
+    Builds Android APK and/or AAB bundle for Rally Forge mobile app
 .PARAMETER BuildType
     Type of build: debug, release, or both
 .PARAMETER OutputFormat
@@ -33,7 +33,7 @@ function Write-Error { param([string]$Message); Write-Host "✗ $Message" -Foreg
 function Write-Warning { param([string]$Message); Write-Host "⚠ $Message" -ForegroundColor $WarningColor }
 
 Write-Host "`n=====================================================" -ForegroundColor $InfoColor
-Write-Host "     Vets Ready Android Build" -ForegroundColor $InfoColor
+Write-Host "     Rally Forge Android Build" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
 Write-Host "Build Type: $BuildType" -ForegroundColor $InfoColor
 Write-Host "Output Format: $OutputFormat" -ForegroundColor $InfoColor
@@ -70,7 +70,7 @@ Write-Success "Android SDK found at $env:ANDROID_HOME"
 
 # Install frontend dependencies
 Write-Step "Installing frontend dependencies..."
-Push-Location vets-ready-frontend
+Push-Location rally-forge-frontend
 npm install
 if ($LASTEXITCODE -ne 0) {
     Pop-Location
@@ -82,8 +82,8 @@ Write-Success "Frontend dependencies installed"
 
 # Build frontend
 Write-Step "Building frontend for production..."
-Push-Location vets-ready-frontend
-$env:VITE_API_URL = "https://api.vetsready.com"
+Push-Location rally-forge-frontend
+$env:VITE_API_URL = "https://api.RallyForge.com"
 npm run build
 if ($LASTEXITCODE -ne 0) {
     Pop-Location
@@ -96,7 +96,7 @@ Write-Success "Frontend built successfully"
 # Sync Capacitor (unless skipped)
 if (-not $SkipSync) {
     Write-Step "Syncing Capacitor with Android..."
-    Push-Location vets-ready-mobile
+    Push-Location rally-forge-mobile
     npx cap sync android
     if ($LASTEXITCODE -ne 0) {
         Pop-Location
@@ -200,3 +200,5 @@ Write-Host "  1. Test APK on physical device:" -ForegroundColor $WarningColor
 Write-Host "     adb install android\app\build\outputs\apk\debug\app-debug.apk" -ForegroundColor $WarningColor
 Write-Host "  2. Upload AAB to Google Play Console" -ForegroundColor $WarningColor
 Write-Host "  3. Configure app signing in Play Console" -ForegroundColor $WarningColor
+
+

@@ -160,7 +160,7 @@
 - **Status:** ✅ Complete
 
 ### Your Documents
-- **Total:** 6 PDFs in C:\Dev\Vets Ready\App
+- **Total:** 6 PDFs in C:\Dev\Rally Forge\App
 - **DD-214s:** 2 files (70-80% expected accuracy)
 - **Medical:** 3 files (40-60% expected accuracy)
 - **Claim:** 1 file (30-50% expected accuracy)
@@ -297,7 +297,7 @@ cd frontend && npm run dev
 ### 3. Test Upload (1 min)
 ```bash
 Navigate to: http://localhost:5176/scanner
-Upload: DD214 98-03.pdf from C:\Dev\Vets Ready\App
+Upload: DD214 98-03.pdf from C:\Dev\Rally Forge\App
 Verify: "Document uploaded successfully" appears
 ```
 
@@ -422,3 +422,4 @@ Ready to use immediately.
 **Next Step:** Read SCANNER_QUICK_START.md (5 minutes)
 
 👉 **[CLICK HERE TO GET STARTED →](./SCANNER_QUICK_START.md)**
+

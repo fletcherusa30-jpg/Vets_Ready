@@ -41,7 +41,7 @@ $ErrorActionPreference = 'Stop'
 $RootPath = Split-Path -Parent $PSScriptRoot
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║           VETS READY - DATABASE SEEDER                    ║" -ForegroundColor Cyan
+Write-Host "║           Rally Forge - DATABASE SEEDER                    ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
@@ -73,7 +73,7 @@ if (-not $SkipUsers) {
 
     $users = @(
         @{
-            email = "admin@vetsready.com"
+            email = "admin@RallyForge.com"
             password = "Admin123!"
             first_name = "System"
             last_name = "Administrator"
@@ -175,7 +175,7 @@ if (-not $SkipOrganizations) {
         try {
             # Get admin user token
             $loginBody = @{
-                email = "admin@vetsready.com"
+                email = "admin@RallyForge.com"
                 password = "Admin123!"
             } | ConvertTo-Json
 
@@ -245,7 +245,7 @@ try {
     # Get admin token if not already available
     if (-not $adminToken) {
         $loginBody = @{
-            email = "admin@vetsready.com"
+            email = "admin@RallyForge.com"
             password = "Admin123!"
         } | ConvertTo-Json
 
@@ -282,7 +282,7 @@ Write-Host "                   SEEDING COMPLETE                          " -Fore
 Write-Host "════════════════════════════════════════════════════════════" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "📝 Test Accounts Created:" -ForegroundColor Cyan
-Write-Host "   Admin:    admin@vetsready.com    / Admin123!" -ForegroundColor White
+Write-Host "   Admin:    admin@RallyForge.com    / Admin123!" -ForegroundColor White
 Write-Host "   Veteran:  veteran@test.com       / Veteran123!" -ForegroundColor White
 Write-Host "   Employer: employer@test.com      / Employer123!" -ForegroundColor White
 Write-Host ""
@@ -293,3 +293,5 @@ Write-Host "   API Docs: http://localhost:8000/docs" -ForegroundColor White
 Write-Host ""
 Write-Host "✅ Database seeded successfully!" -ForegroundColor Green
 Write-Host ""
+
+

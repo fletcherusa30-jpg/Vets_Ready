@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Build Vets Ready iOS Application
+# Build Rally Forge iOS Application
 # Requires macOS with Xcode installed
 #
 
@@ -24,7 +24,7 @@ SKIP_SYNC="${SKIP_SYNC:-false}"
 SKIP_PODS="${SKIP_PODS:-false}"
 
 echo -e "\n${INFO}====================================================="
-echo "     Vets Ready iOS Build"
+echo "     Rally Forge iOS Build"
 echo "====================================================="
 echo "Build Configuration: $BUILD_CONFIG"
 echo "=====================================================${NC}\n"
@@ -61,13 +61,13 @@ success "CocoaPods $POD_VERSION installed"
 
 # Install frontend dependencies
 step "Installing frontend dependencies..."
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm install
 success "Frontend dependencies installed"
 
 # Build frontend
 step "Building frontend for production..."
-export VITE_API_URL="https://api.vetsready.com"
+export VITE_API_URL="https://api.RallyForge.com"
 npm run build
 success "Frontend built successfully"
 cd ..
@@ -75,7 +75,7 @@ cd ..
 # Sync Capacitor (unless skipped)
 if [ "$SKIP_SYNC" != "true" ]; then
     step "Syncing Capacitor with iOS..."
-    cd vets-ready-mobile
+    cd rally-forge-mobile
     npx cap sync ios
     success "Capacitor synced"
     cd ..
@@ -105,7 +105,7 @@ xcodebuild archive \
     -workspace App.xcworkspace \
     -scheme App \
     -configuration $BUILD_CONFIG \
-    -archivePath ./build/VetsReady.xcarchive \
+    -archivePath ./build/RallyForge.xcarchive \
     CODE_SIGN_STYLE=Automatic \
     -allowProvisioningUpdates
 
@@ -143,7 +143,7 @@ cat > ExportOptions.plist <<EOF
 EOF
 
 xcodebuild -exportArchive \
-    -archivePath ./build/VetsReady.xcarchive \
+    -archivePath ./build/RallyForge.xcarchive \
     -exportPath ./build \
     -exportOptionsPlist ExportOptions.plist
 
@@ -168,7 +168,7 @@ echo "     Build Complete!"
 echo "=====================================================${NC}\n"
 
 echo -e "${INFO}Output locations:${NC}"
-echo -e "${WARNING}  Archive: ios/App/build/VetsReady.xcarchive${NC}"
+echo -e "${WARNING}  Archive: ios/App/build/RallyForge.xcarchive${NC}"
 echo -e "${WARNING}  IPA: ios/App/build/App.ipa${NC}"
 
 echo -e "\n${INFO}Next steps:${NC}"
@@ -177,3 +177,5 @@ echo -e "${WARNING}     cd ios/App && xcodebuild test -workspace App.xcworkspace
 echo -e "${WARNING}  2. Upload to App Store Connect:${NC}"
 echo -e "${WARNING}     xcrun altool --upload-app --type ios --file ios/App/build/App.ipa --username YOUR_APPLE_ID --password YOUR_APP_SPECIFIC_PASSWORD${NC}"
 echo -e "${WARNING}  3. Configure code signing and provisioning profiles${NC}"
+
+

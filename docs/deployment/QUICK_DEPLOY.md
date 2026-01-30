@@ -1,6 +1,6 @@
-# Vets Ready - Quick Deploy Guide
+# Rally Forge - Quick Deploy Guide
 
-**Get your complete Vets Ready platform deployed in 30 minutes.**
+**Get your complete Rally Forge platform deployed in 30 minutes.**
 
 ---
 
@@ -44,7 +44,7 @@ docker-compose -f docker-compose.prod.yml up -d
 aws configure
 
 # 3. Deploy using Docker images
-aws ecs create-cluster --cluster-name vetsready
+aws ecs create-cluster --cluster-name rallyforge
 
 # See DEPLOYMENT_GUIDE.md for full AWS instructions
 ```
@@ -59,9 +59,9 @@ aws ecs create-cluster --cluster-name vetsready
 az login
 
 # 3. Create container instances
-az container create --resource-group VetsReady \
-  --name vetsready-backend \
-  --image vetsready/vets-ready-backend:latest
+az container create --resource-group rallyforge \
+  --name rallyforge-backend \
+  --image rallyforge/rally-forge-backend:latest
 
 # See DEPLOYMENT_GUIDE.md for full Azure instructions
 ```
@@ -125,7 +125,7 @@ Installers in: `desktop/build/`
 
 ```bash
 # Database
-DATABASE_URL=postgresql://vetsready:YOUR_DB_PASSWORD@postgres:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:YOUR_DB_PASSWORD@postgres:5432/rallyforge_db
 DB_PASSWORD=YOUR_DB_PASSWORD
 
 # Security
@@ -210,6 +210,8 @@ GitHub Actions will:
 
 ---
 
-**You now have a complete, production-ready Vets Ready deployment!** 🎉
+**You now have a complete, production-ready Rally Forge deployment!** 🎉
 
-**Star the repo:** https://github.com/fletcherusa30-jpg/Vets_Ready
+**Star the repo:** https://github.com/fletcherusa30-jpg/rally_forge
+
+

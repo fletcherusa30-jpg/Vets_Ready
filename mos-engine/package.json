@@ -1,7 +1,7 @@
 {
-  "name": "vetsready-mos-engine",
+  "name": "rallyforge-mos-engine",
   "version": "1.0.0",
-  "description": "Military Job Intelligence & Resume Generation Engine for VetsReady",
+  "description": "Military Job Intelligence & Resume Generation Engine for rallyforge",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
@@ -36,7 +36,7 @@
     "career",
     "transition"
   ],
-  "author": "VetsReady",
+  "author": "rallyforge",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.7",
@@ -58,3 +58,4 @@
     "typescript": "^5.3.3"
   }
 }
+

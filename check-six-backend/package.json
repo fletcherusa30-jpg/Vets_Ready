@@ -1,0 +1,45 @@
+{
+  "name": "rally-forge-backend",
+  "version": "1.0.0",
+  "description": "Rally Forge Backend API",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node --loader ts-node/esm --watch src/server.ts",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext ts --report-unused-disable-directives",
+    "format": "prettier --write 'src/**/*.ts'",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "db:migrate": "node --loader ts-node/esm scripts/migrate.ts",
+    "db:seed": "node --loader ts-node/esm scripts/seed.ts"
+  },
+  "dependencies": {
+    "fastify": "^4.24.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/helmet": "^11.1.0",
+    "zod": "^3.22.0",
+    "pg": "^8.11.0",
+    "dotenv": "^16.3.0",
+    "pino": "^8.16.0",
+    "pino-pretty": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.2.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
+

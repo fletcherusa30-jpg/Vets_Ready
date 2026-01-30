@@ -1,4 +1,4 @@
-# Vets Ready Architecture
+# Rally Forge Architecture
 
 **Version:** 2.0 | **Date:** January 23, 2026
 **Status:** Production Ready
@@ -197,3 +197,4 @@ PhoneApp/
 - [38 CFR Part 4](https://www.ecfr.gov/current/title-38/part-4)
 - [Capacitor Docs](https://capacitorjs.com)
 - [FastAPI Docs](https://fastapi.tiangolo.com)
+

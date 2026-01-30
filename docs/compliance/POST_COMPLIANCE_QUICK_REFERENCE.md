@@ -1,4 +1,4 @@
-# ⚡ Vets Ready - Post-Compliance Quick Reference
+# ⚡ Rally Forge - Post-Compliance Quick Reference
 
 **Last Updated:** January 24, 2026
 **Status:** ✅ Compliance Complete
@@ -94,7 +94,7 @@ GET    /api/business-directory/categories
 
 ### Backend
 ```
-vets-ready-backend/app/
+rally-forge-backend/app/
 ├── models/
 │   └── subscription.py          ← NEW (7 models)
 ├── schemas/
@@ -123,7 +123,7 @@ COMPLIANCE_IMPLEMENTATION_SUMMARY.md  ← NEW (summary)
 
 ### Immediate (This Week)
 1. **Test New APIs**
-   - Start backend: `cd vets-ready-backend && python -m uvicorn app.main:app --reload`
+   - Start backend: `cd rally-forge-backend && python -m uvicorn app.main:app --reload`
    - Open Swagger: http://localhost:8000/docs
    - Test subscription endpoints
    - Test employer endpoints
@@ -169,7 +169,7 @@ COMPLIANCE_IMPLEMENTATION_SUMMARY.md  ← NEW (summary)
 .\scripts\Control-Panel.ps1 -Action Repair
 
 # Manual fix
-cd vets-ready-backend
+cd rally-forge-backend
 pip install -r requirements.txt
 python -m uvicorn app.main:app --reload
 ```
@@ -177,7 +177,7 @@ python -m uvicorn app.main:app --reload
 ### Import Errors
 ```python
 # If you get "No module named app.models.subscription"
-# Ensure you're in vets-ready-backend directory
+# Ensure you're in rally-forge-backend directory
 # And that app/models/__init__.py exports the models
 ```
 
@@ -187,13 +187,13 @@ python -m uvicorn app.main:app --reload
 cat data\schema.sql
 
 # Will need to add new tables for:
-# - vetsready_veteran_subscriptions
-# - vetsready_employer_accounts
-# - vetsready_business_listings
-# - vetsready_job_posts
-# - vetsready_leads
-# - vetsready_invoices
-# - vetsready_vso_partners
+# - rallyforge_veteran_subscriptions
+# - rallyforge_employer_accounts
+# - rallyforge_business_listings
+# - rallyforge_job_posts
+# - rallyforge_leads
+# - rallyforge_invoices
+# - rallyforge_vso_partners
 ```
 
 ---
@@ -236,7 +236,7 @@ cat data\schema.sql
 
 **🎉 COMPLIANCE MISSION ACCOMPLISHED!**
 
-The Vets Ready platform now fully implements:
+The Rally Forge platform now fully implements:
 - ✅ The Master System Blueprint (ARCHITECTURE.md)
 - ✅ The Pricing Guide (PRICING_STRATEGY.md)
 - ✅ All B2B revenue streams
@@ -244,3 +244,5 @@ The Vets Ready platform now fully implements:
 - ✅ Clean, professional structure
 
 **Next:** Frontend tier gating and payment integration!
+
+

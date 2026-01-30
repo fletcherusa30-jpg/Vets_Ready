@@ -186,8 +186,8 @@ All CRSC screening answers are stored in the VeteranProfile context and persiste
 ✅ No vague "I believe" phrasing used
 
 ## Files Modified
-1. `vets-ready-frontend/src/contexts/VeteranProfileContext.tsx` - Added 6 CRSC fields
-2. `vets-ready-frontend/src/pages/OnboardingWizard.tsx` - Added Step 2 retirement/CRSC screening
+1. `rally-forge-frontend/src/contexts/VeteranProfileContext.tsx` - Added 6 CRSC fields
+2. `rally-forge-frontend/src/pages/OnboardingWizard.tsx` - Added Step 2 retirement/CRSC screening
 3. `CRSC_IMPLEMENTATION_SUMMARY.md` - This documentation file
 
 ---
@@ -195,3 +195,4 @@ All CRSC screening answers are stored in the VeteranProfile context and persiste
 **Implementation Date:** January 24, 2026
 **Status:** ✅ Complete and Ready for Testing
 **Next Steps:** Run dev server and test all scenarios above
+

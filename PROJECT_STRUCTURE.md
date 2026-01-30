@@ -1,18 +1,18 @@
-# VetsReady - Unified Project Structure
+# rallyforge - Unified Project Structure
 
 **Last Updated:** January 28, 2026
 
 ## 🎯 Overview
 
-VetsReady is now a **unified, single-application platform** that combines all veteran support features into one coherent structure.
+rallyforge is now a **unified, single-application platform** that combines all veteran support features into one coherent structure.
 
 ---
 
 ## 📁 Primary Application Structure
 
 ```
-vetsready/
-├── vets-ready-frontend/          # Main React Frontend Application
+rallyforge/
+├── rally-forge-frontend/          # Main React Frontend Application
 │   ├── src/
 │   │   ├── components/           # Reusable React components
 │   │   │   ├── auth/            # Authentication components
@@ -32,7 +32,7 @@ vetsready/
 │   │   └── App.tsx              # Main app component
 │   └── package.json
 │
-├── vets-ready-backend/           # Python FastAPI Backend
+├── rally-forge-backend/           # Python FastAPI Backend
 │   ├── app/
 │   │   ├── main.py              # FastAPI application entry
 │   │   ├── routers/             # API route handlers
@@ -132,7 +132,7 @@ The following directories have been archived to `_archive/` to maintain a clean 
 
 - `_archive/frontend-duplicate-YYYYMMDD/` - Older Capacitor-based mobile structure
 - `_archive/backend-duplicate-YYYYMMDD/` - Duplicate backend implementation
-- `_archive/vetsready-platform-reference-YYYYMMDD/` - TypeScript domain architecture reference
+- `_archive/rallyforge-platform-reference-YYYYMMDD/` - TypeScript domain architecture reference
 
 These are kept for reference but are no longer part of the active codebase.
 
@@ -146,7 +146,7 @@ Located in `design_system/` with Figma exports and design tokens.
 
 ## 🗄️ Database
 
-- **Development:** SQLite (`vetsready.db`)
+- **Development:** SQLite (`rallyforge.db`)
 - **Production:** PostgreSQL (configured via environment variables)
 
 ---
@@ -157,7 +157,7 @@ Create a `.env` file in the root:
 
 ```env
 # Backend
-DATABASE_URL=sqlite:///./vetsready.db
+DATABASE_URL=sqlite:///./rallyforge.db
 OPENAI_API_KEY=your-key-here
 USE_MOCK_AI=true
 
@@ -209,7 +209,7 @@ docker-compose up --build
 
 ## 🤝 Contributing
 
-1. Work from the unified structure (`vets-ready-frontend` + `vets-ready-backend`)
+1. Work from the unified structure (`rally-forge-frontend` + `rally-forge-backend`)
 2. Follow the established patterns and conventions
 3. Update documentation as needed
 4. Test thoroughly before committing
@@ -228,4 +228,6 @@ docker-compose up --build
 
 ---
 
-**VetsReady: Supporting Veterans on Every Path Forward** 🇺🇸
+**rallyforge: Supporting Veterans on Every Path Forward** 🇺🇸
+
+

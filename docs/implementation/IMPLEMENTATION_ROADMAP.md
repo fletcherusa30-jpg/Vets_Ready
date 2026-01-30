@@ -1,7 +1,7 @@
-# VetsReady Implementation Roadmap
+# rallyforge Implementation Roadmap
 
 **Last Updated:** January 25, 2026
-**Purpose:** Phased development plan for completing the VetsReady Veteran Operating System.
+**Purpose:** Phased development plan for completing the rallyforge Veteran Operating System.
 
 ---
 
@@ -83,7 +83,7 @@
 
 ## Phase 2 — Wallet, Life Map, Opportunity Radar
 
-**Goal:** Implement next-generation features that differentiate VetsReady from competitors.
+**Goal:** Implement next-generation features that differentiate rallyforge from competitors.
 
 **Duration:** 3 weeks
 
@@ -678,7 +678,7 @@
    - [ ] Update all README files
    - [ ] Create developer onboarding guide
    - [ ] Create user guide (PDF or in-app)
-   - [ ] Create VSO guide (how to use VetsReady to help veterans)
+   - [ ] Create VSO guide (how to use rallyforge to help veterans)
 
 4. **Advanced Features (If Time)**
    - [ ] Expiration Tracker dashboard widget
@@ -773,3 +773,4 @@
 ---
 
 **End of Implementation Roadmap**
+

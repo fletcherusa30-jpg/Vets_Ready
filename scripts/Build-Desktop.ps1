@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Build Vets Ready Desktop Application (Electron)
+    Build Rally Forge Desktop Application (Electron)
 .DESCRIPTION
     Builds desktop applications for Windows, macOS, and Linux using Electron
 .PARAMETER Platform
@@ -32,7 +32,7 @@ function Write-Error { param([string]$Message); Write-Host "✗ $Message" -Foreg
 function Write-Warning { param([string]$Message); Write-Host "⚠ $Message" -ForegroundColor $WarningColor }
 
 Write-Host "`n=====================================================" -ForegroundColor $InfoColor
-Write-Host "     Vets Ready Desktop Build (Electron)" -ForegroundColor $InfoColor
+Write-Host "     Rally Forge Desktop Build (Electron)" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
 Write-Host "Platform: $Platform" -ForegroundColor $InfoColor
 Write-Host "Architecture: $Architecture" -ForegroundColor $InfoColor
@@ -56,7 +56,7 @@ if (-not (Test-Path "desktop")) {
 
 # Install frontend dependencies
 Write-Step "Installing frontend dependencies..."
-Push-Location vets-ready-frontend
+Push-Location rally-forge-frontend
 npm install
 if ($LASTEXITCODE -ne 0) {
     Pop-Location
@@ -69,8 +69,8 @@ Write-Success "Frontend dependencies installed"
 # Build frontend (unless skipped)
 if (-not $SkipBuild) {
     Write-Step "Building frontend for production..."
-    Push-Location vets-ready-frontend
-    $env:VITE_API_URL = "https://api.vetsready.com"
+    Push-Location rally-forge-frontend
+    $env:VITE_API_URL = "https://api.RallyForge.com"
     npm run build
     if ($LASTEXITCODE -ne 0) {
         Pop-Location
@@ -86,7 +86,7 @@ Write-Step "Preparing desktop application files..."
 if (Test-Path "desktop\dist") {
     Remove-Item "desktop\dist" -Recurse -Force
 }
-Copy-Item "vets-ready-frontend\dist" "desktop\dist" -Recurse
+Copy-Item "rally-forge-frontend\dist" "desktop\dist" -Recurse
 Write-Success "Frontend copied to desktop"
 
 # Create Electron main file if not exists
@@ -175,10 +175,10 @@ function createMenu() {
             label: 'Help',
             submenu: [
                 {
-                    label: 'Vets Ready Documentation',
+                    label: 'Rally Forge Documentation',
                     click: async () => {
                         const { shell } = require('electron');
-                        await shell.openExternal('https://vetsready.com/docs');
+                        await shell.openExternal('https://RallyForge.com/docs');
                     }
                 }
             ]
@@ -224,11 +224,11 @@ if (-not (Test-Path "desktop\package.json")) {
     Write-Step "Creating desktop package.json..."
     @"
 {
-  "name": "vets-ready-desktop",
+  "name": "rally-forge-desktop",
   "version": "1.0.0",
-  "description": "Vets Ready Desktop Application",
+  "description": "Rally Forge Desktop Application",
   "main": "main.js",
-  "author": "Vets Ready",
+  "author": "Rally Forge",
   "license": "MIT",
   "scripts": {
     "start": "electron .",
@@ -247,8 +247,8 @@ if (-not (Test-Path "desktop\package.json")) {
     "electron-builder": "^24.9.1"
   },
   "build": {
-    "appId": "com.vetsready.app",
-    "productName": "Vets Ready",
+    "appId": "com.RallyForge.app",
+    "productName": "Rally Forge",
     "directories": {
       "output": "build"
     },
@@ -362,3 +362,5 @@ Write-Host "`nNext steps:" -ForegroundColor $InfoColor
 Write-Host "  1. Test installers on target platforms" -ForegroundColor $WarningColor
 Write-Host "  2. Configure code signing certificates" -ForegroundColor $WarningColor
 Write-Host "  3. Distribute via website or app stores" -ForegroundColor $WarningColor
+
+

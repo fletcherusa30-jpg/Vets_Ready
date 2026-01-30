@@ -1,5 +1,5 @@
 /**
- * TypeScript Models for VetsReady Platform
+ * TypeScript Models for rallyforge Platform
  * Matches backend SQLAlchemy ORM models
  * Phase 3 - Frontend Development
  */
@@ -550,3 +550,4 @@ export type JobListingSummary = Pick<JobListing, 'id' | 'title' | 'company' | 'l
 export type BudgetSummary = Pick<Budget, 'id' | 'month' | 'year' | 'status'> & {
   net: number;
 };
+

@@ -1,4 +1,4 @@
-# 🇺🇸 Vets Ready - Complete Platform Guide
+# 🇺🇸 Rally Forge - Complete Platform Guide
 
 **The Ultimate Veteran-First Platform for Benefits, Claims, Transition, and Life Planning**
 
@@ -6,12 +6,12 @@
 
 **Version:** 1.0
 **Date:** January 26, 2026
-**Website:** www.vetsready.com (coming soon)
-**Support:** support@vetsready.com
+**Website:** www.rallyforge.com (coming soon)
+**Support:** support@rallyforge.com
 
 ---
 
-![Vets Ready Logo](placeholder-for-logo)
+![Rally Forge Logo](placeholder-for-logo)
 
 **Mission:** Empower every veteran to understand, prepare, and optimize their VA disability claims with confidence, clarity, and dignity.
 
@@ -20,7 +20,7 @@
 ## 📚 Table of Contents
 
 1. [Introduction](#introduction)
-2. [What is Vets Ready?](#what-is-vets-ready)
+2. [What is Rally Forge?](#what-is-rally-forge)
 3. [Core Features & Capabilities](#core-features--capabilities)
 4. [Benefits Module](#benefits-module)
 5. [Claims Readiness Module](#claims-readiness-module)
@@ -41,9 +41,9 @@
 
 ## 1. Introduction
 
-### Welcome to Vets Ready
+### Welcome to Rally Forge
 
-Vets Ready is a comprehensive veteran assistance platform designed to simplify the complex world of VA benefits, claims preparation, military transition, and life planning. Whether you're a transitioning service member, a veteran seeking disability compensation, or looking to plan your financial future, Vets Ready provides the tools, education, and guidance you need.
+Rally Forge is a comprehensive veteran assistance platform designed to simplify the complex world of VA benefits, claims preparation, military transition, and life planning. Whether you're a transitioning service member, a veteran seeking disability compensation, or looking to plan your financial future, Rally Forge provides the tools, education, and guidance you need.
 
 ### Who We Serve
 
@@ -66,11 +66,11 @@ Vets Ready is a comprehensive veteran assistance platform designed to simplify t
 
 ---
 
-## 2. What is Vets Ready?
+## 2. What is Rally Forge?
 
 ### Platform Overview
 
-Vets Ready is a multi-component software ecosystem consisting of:
+Rally Forge is a multi-component software ecosystem consisting of:
 
 #### **Web Application** (Desktop & Mobile)
 - Responsive design works on any device
@@ -1209,7 +1209,7 @@ Check your status at VA.gov or call 1-800-827-1000"
 
 ### Veteran Pricing (Affordable for All)
 
-#### Free Tier: "Vets Ready Basic" - $0/forever
+#### Free Tier: "Rally Forge Basic" - $0/forever
 
 **What's Included:**
 - ✅ Federal VBA benefits guide
@@ -1229,7 +1229,7 @@ Check your status at VA.gov or call 1-800-827-1000"
 
 ---
 
-#### Pro Tier: "Vets Ready Pro" - $4.99/month or $39/year
+#### Pro Tier: "Rally Forge Pro" - $4.99/month or $39/year
 
 **Everything in Free, PLUS:**
 - ✅ **Claim Readiness Engine** - Full claims analysis
@@ -1342,7 +1342,7 @@ Check your status at VA.gov or call 1-800-827-1000"
 ### Step 1: Create Your Account
 
 **Sign Up (Free):**
-1. Visit www.vetsready.com
+1. Visit www.rallyforge.com
 2. Click "Sign Up"
 3. Enter email and password
 4. Verify email address
@@ -1428,7 +1428,7 @@ Check your status at VA.gov or call 1-800-827-1000"
 - Success stories
 
 **Email Support (Pro members):**
-- support@vetsready.com
+- support@rallyforge.com
 - Response within 24-48 hours
 - Detailed troubleshooting
 
@@ -1443,10 +1443,10 @@ Check your status at VA.gov or call 1-800-827-1000"
 
 ### General Questions
 
-**Q: Is Vets Ready affiliated with the VA?**
+**Q: Is Rally Forge affiliated with the VA?**
 A: No, we are an independent platform. We provide education and tools but are not affiliated with the Department of Veterans Affairs.
 
-**Q: Can Vets Ready file my claim for me?**
+**Q: Can Rally Forge file my claim for me?**
 A: No. We provide education and preparation tools. Only you, a VSO, or an accredited attorney/agent can file claims with the VA.
 
 **Q: Is my data secure?**
@@ -1481,13 +1481,13 @@ A: Yes, full refund within 30 days, no questions asked.
 
 ### Claims Questions
 
-**Q: Will using Vets Ready guarantee my claim approval?**
+**Q: Will using Rally Forge guarantee my claim approval?**
 A: No tool can guarantee VA claim approval. We provide education and organization to help you prepare the best possible claim.
 
-**Q: Should I use Vets Ready or a VSO?**
-A: Both! Use Vets Ready to prepare and educate yourself, then work with a VSO for representation and filing.
+**Q: Should I use Rally Forge or a VSO?**
+A: Both! Use Rally Forge to prepare and educate yourself, then work with a VSO for representation and filing.
 
-**Q: Can Vets Ready replace a lawyer?**
+**Q: Can Rally Forge replace a lawyer?**
 A: No. We don't provide legal advice. For complex cases or appeals, consult an accredited attorney.
 
 **Q: How current is the legal information?**
@@ -1497,7 +1497,7 @@ A: We update regulations quarterly and monitor VA policy changes. Last update: J
 
 ### Technical Questions
 
-**Q: What devices does Vets Ready work on?**
+**Q: What devices does Rally Forge work on?**
 A: Any device with a web browser (desktop, laptop, tablet, phone). We also have iOS and Android apps.
 
 **Q: Do I need internet access?**
@@ -1657,7 +1657,7 @@ A: Free tier has some limits. Pro tier is unlimited.
 - Opt out of marketing
 - Request data correction
 
-**Full Privacy Policy:** www.vetsready.com/privacy
+**Full Privacy Policy:** www.rallyforge.com/privacy
 
 ---
 
@@ -1702,7 +1702,7 @@ A: Free tier has some limits. Pro tier is unlimited.
 - Best practices
 
 **Email Support (Pro Members):**
-- support@vetsready.com
+- support@rallyforge.com
 - Response within 24-48 hours
 - Detailed troubleshooting
 - Feature requests
@@ -1718,7 +1718,7 @@ A: Free tier has some limits. Pro tier is unlimited.
 ### Feature Requests & Feedback
 
 We're constantly improving! Submit ideas at:
-- feedback@vetsready.com
+- feedback@rallyforge.com
 - In-app feedback form
 - Community suggestion board
 - Annual user survey
@@ -1734,15 +1734,15 @@ We're constantly improving! Submit ideas at:
 
 ### Stay Connected
 
-**Website:** www.vetsready.com
-**Email:** info@vetsready.com
-**Support:** support@vetsready.com
+**Website:** www.rallyforge.com
+**Email:** info@rallyforge.com
+**Support:** support@rallyforge.com
 
 **Social Media:**
-- Facebook: @VetsReadyOfficial
-- Twitter: @VetsReady
-- LinkedIn: Vets Ready
-- YouTube: Vets Ready Channel
+- Facebook: @rallyforgeOfficial
+- Twitter: @rallyforge
+- LinkedIn: Rally Forge
+- YouTube: Rally Forge Channel
 
 **Newsletter:**
 Subscribe for:
@@ -1805,10 +1805,10 @@ Subscribe for:
 
 ---
 
-### About Vets Ready
+### About Rally Forge
 
 **Our Story:**
-Vets Ready was founded by veterans who experienced firsthand the challenges of navigating VA benefits and transitioning to civilian life. We built the platform we wished existed when we were going through the process.
+Rally Forge was founded by veterans who experienced firsthand the challenges of navigating VA benefits and transitioning to civilian life. We built the platform we wished existed when we were going through the process.
 
 **Our Mission:**
 Empower every veteran with the knowledge, tools, and support needed to successfully claim their earned benefits and thrive in civilian life.
@@ -1844,7 +1844,7 @@ Thank you for your service to our nation. We're honored to serve you as you navi
 
 ---
 
-**Vets Ready**
+**Rally Forge**
 *By Veterans, For Veterans*
 
 ---
@@ -1856,8 +1856,10 @@ Thank you for your service to our nation. We're honored to serve you as you navi
 **Pages:** 65
 **Format:** PDF
 
-**Copyright © 2026 Vets Ready LLC. All rights reserved.**
+**Copyright © 2026 Rally Forge LLC. All rights reserved.**
 
 ---
 
-*This document contains comprehensive information about the Vets Ready platform as of January 26, 2026. Features, pricing, and specifications are subject to change. Please visit www.vetsready.com for the most current information.*
+*This document contains comprehensive information about the Rally Forge platform as of January 26, 2026. Features, pricing, and specifications are subject to change. Please visit www.rallyforge.com for the most current information.*
+
+

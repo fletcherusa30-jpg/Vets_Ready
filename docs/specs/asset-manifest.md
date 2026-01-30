@@ -1,6 +1,6 @@
-# VetsReady Asset Manifest
+# rallyforge Asset Manifest
 
-This manifest lists all required images, icons, and visual assets for the VetsReady application. Each entry includes a description, purpose, recommended dimensions, file format, and vector/raster guidance. This manifest covers all modules, screens, states, and branding elements.
+This manifest lists all required images, icons, and visual assets for the rallyforge application. Each entry includes a description, purpose, recommended dimensions, file format, and vector/raster guidance. This manifest covers all modules, screens, states, and branding elements.
 
 ---
 
@@ -167,8 +167,8 @@ This manifest lists all required images, icons, and visual assets for the VetsRe
   - Format: SVG (vector)
 
 ## 12. Branding Elements
-- **VetsReady Logo**
-  - Description: Official VetsReady logo
+- **rallyforge Logo**
+  - Description: Official rallyforge logo
   - Purpose: App header, login, splash
   - Dimensions: 256x64px
   - Format: SVG (vector)
@@ -192,9 +192,9 @@ This manifest lists all required images, icons, and visual assets for the VetsRe
 ## 14. Scan for Missing/Outdated Images
 - Existing branch logos found in:
   - App/Images/Logos/*.png
-  - vets-ready-frontend/public/assets/branch-logos/*.jpg
+  - rally-forge-frontend/public/assets/branch-logos/*.jpg
 - Existing background image found in:
-  - vets-ready-frontend/public/assets/background.jpg
+  - rally-forge-frontend/public/assets/background.jpg
 - No SVG icons or illustrations found; all must be generated.
 - No placeholder images found; must be generated.
 - No employer portal visuals found; must be generated.
@@ -203,4 +203,6 @@ This manifest lists all required images, icons, and visual assets for the VetsRe
 
 ---
 
-**This manifest is complete and covers all modules, screens, states, icons, illustrations, and branding elements for VetsReady.**
+**This manifest is complete and covers all modules, screens, states, icons, illustrations, and branding elements for rallyforge.**
+
+

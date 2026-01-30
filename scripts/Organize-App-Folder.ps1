@@ -15,7 +15,7 @@ function Write-Info { param([string]$Message) Write-Host "ℹ️  $Message" -For
 Write-Host "`n📁 ORGANIZING APP FOLDER" -ForegroundColor Magenta
 Write-Host "=" * 80 -ForegroundColor Magenta
 
-$appDir = "C:\Dev\Vets Ready\App"
+$appDir = "C:\Dev\Rally Forge\App"
 Set-Location $appDir
 
 # Create organized folders
@@ -85,3 +85,4 @@ Write-Host "  ├── Images/ - existing image folder" -ForegroundColor White
 Write-Host "  └── Seperation/ - existing folder" -ForegroundColor White
 
 Write-Host "`n✅ App folder organized!`n" -ForegroundColor Green
+

@@ -1,5 +1,5 @@
 {
-  "name": "vetsready-employment-system",
+  "name": "rallyforge-employment-system",
   "version": "1.0.0",
   "description": "AI-Driven Employment & Career System for U.S. Military Veterans",
   "main": "dist/index.js",
@@ -35,7 +35,7 @@
     "resume-builder",
     "ai-coaching"
   ],
-  "author": "VetsReady",
+  "author": "rallyforge",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.6.7",
@@ -62,3 +62,4 @@
     "typescript": "^5.3.3"
   }
 }
+

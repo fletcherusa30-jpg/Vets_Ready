@@ -1,4 +1,4 @@
-# 🎯 STRATEGIC RECOMMENDATIONS FOR VETS READY
+# 🎯 STRATEGIC RECOMMENDATIONS FOR Rally Forge
 
 **Comprehensive Enhancement Roadmap**
 
@@ -103,7 +103,7 @@ Better Stack (Logtail) - 1GB/month free
 
 #### **Implementation:**
 ```typescript
-// Frontend: vets-ready-frontend/src/main.tsx
+// Frontend: rally-forge-frontend/src/main.tsx
 import * as Sentry from "@sentry/react";
 import posthog from 'posthog-js';
 
@@ -154,7 +154,7 @@ sentry_sdk.init(
 
 #### **Quick Wins:**
 ```python
-# Add to vets-ready-backend/app/services/stripe_service.py
+# Add to rally-forge-backend/app/services/stripe_service.py
 def create_discount_code(self, code: str, percent_off: int, duration: str = "once"):
     """Create promotional code for veteran discounts"""
     coupon = stripe.Coupon.create(
@@ -203,10 +203,10 @@ interface ReferralStats {
 }
 
 // Backend: New table
-CREATE TABLE vetsready_referrals (
+CREATE TABLE rallyforge_referrals (
   id UUID PRIMARY KEY,
-  referrer_user_id UUID REFERENCES vetsready_users(id),
-  referred_user_id UUID REFERENCES vetsready_users(id),
+  referrer_user_id UUID REFERENCES rallyforge_users(id),
+  referred_user_id UUID REFERENCES rallyforge_users(id),
   referral_code VARCHAR(20) UNIQUE,
   reward_type VARCHAR(50),
   reward_claimed BOOLEAN DEFAULT FALSE,
@@ -235,7 +235,7 @@ CREATE TABLE vetsready_referrals (
 
 #### **Implementation:**
 ```typescript
-// vets-ready-frontend/vite.config.ts
+// rally-forge-frontend/vite.config.ts
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -243,8 +243,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Vets Ready',
-        short_name: 'VetsReady',
+        name: 'Rally Forge',
+        short_name: 'rallyforge',
         description: 'VA Claims & Benefits for Veterans',
         theme_color: '#1e3a8a',
         icons: [
@@ -263,7 +263,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/api\.vetsready\.com\/.*/,
+            urlPattern: /^https:\/\/api\.rallyforge\.com\/.*/,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
@@ -397,8 +397,8 @@ Quarterly Resources:
 #### **Implementation:**
 ```bash
 # Add blog to frontend
-vets-ready-frontend/src/pages/Blog.tsx
-vets-ready-frontend/src/pages/BlogPost.tsx
+rally-forge-frontend/src/pages/Blog.tsx
+rally-forge-frontend/src/pages/BlogPost.tsx
 
 # Use headless CMS
 Strapi (free, self-hosted) or Contentful ($300/month)
@@ -470,7 +470,7 @@ interface WhiteLabelConfig {
     favicon: File;
   };
   domain: {
-    subdomain: string; // amlegion.vetsready.com
+    subdomain: string; // amlegion.rallyforge.com
     customDomain?: string; // benefits.legion.org
   };
   features: {
@@ -518,7 +518,7 @@ async def export_user_data(user: User = Depends(get_current_user)):
     return StreamingResponse(
         zip_buffer,
         media_type="application/zip",
-        headers={"Content-Disposition": "attachment; filename=vetsready_data_export.zip"}
+        headers={"Content-Disposition": "attachment; filename=rallyforge_data_export.zip"}
     )
 
 @router.delete("/delete-account")
@@ -702,7 +702,7 @@ artillery quick --count 100 --num 10 http://localhost:8000/api/health
 
 **Tier 3: Direct Support**
 ```
-- Email: support@vetsready.com (Free tier: 48hr response)
+- Email: support@rallyforge.com (Free tier: 48hr response)
 - Chat: Intercom or Crisp (Paid tier: same-day response)
 - Phone: Toll-free number (Premium tier only)
 - Screen sharing: Zoom for complex issues
@@ -935,3 +935,5 @@ Net: +$140,000 (profitable)
 ---
 
 Need help implementing any of these? Let me know which to prioritize!
+
+

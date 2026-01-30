@@ -1,9 +1,9 @@
-# Vets Ready Platform - Quick Start Guide
+# Rally Forge Platform - Quick Start Guide
 
 This file was moved from the repository root to improve organization. The content below remains unchanged.
 
 
-# Vets Ready Platform - Quick Start Guide
+# Rally Forge Platform - Quick Start Guide
 
 ## 🚀 Getting Started
 
@@ -30,12 +30,12 @@ npm install
 
 **Create PostgreSQL database:**
 ```bash
-createdb vetsready_platform
+createdb rallyforge_platform
 ```
 
 **Run schema:**
 ```bash
-psql vetsready_platform < "c:/Dev/Vets Ready/data/schema.sql"
+psql rallyforge_platform < "c:/Dev/Rally Forge/data/schema.sql"
 ```
 
 ### 3. Configure Environment
@@ -46,7 +46,7 @@ cd c:/Dev/PhoneApp/backend
 cat > .env << EOF
 PORT=4000
 HOST=0.0.0.0
-DATABASE_URL=postgresql://user:password@localhost:5432/vetsready_platform
+DATABASE_URL=postgresql://user:password@localhost:5432/rallyforge_platform
 NODE_ENV=development
 EOF
 ```
@@ -107,7 +107,7 @@ Database (PostgreSQL)
 
 ## 🔌 API Endpoints
 
-All endpoints prefixed with `/api/vetsready/`
+All endpoints prefixed with `/api/rallyforge/`
 
 ### Benefits
 - `GET /benefits/federal` - Federal VA benefits
@@ -143,7 +143,7 @@ All endpoints prefixed with `/api/vetsready/`
 
 ### Test Benefits Endpoint
 ```bash
-curl http://localhost:4000/api/vetsready/benefits/federal
+curl http://localhost:4000/api/rallyforge/benefits/federal
 ```
 
 ### Test Frontend Integration
@@ -229,7 +229,7 @@ Set in production hosting:
 
 ## 📖 Documentation
 
-See [VETS_READY_COMPLETE.md](VETS_READY_COMPLETE.md) for full project status.
+See [rally_forge_COMPLETE.md](rally_forge_COMPLETE.md) for full project status.
 
 ---
 
@@ -277,3 +277,5 @@ Next: Data seeding → Authentication → Deployment
 ---
 
 Built with ❤️ for veterans.
+
+

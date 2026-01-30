@@ -1,4 +1,4 @@
-# VetsReady MOS Engine
+# rallyforge MOS Engine
 
 ## Military Job Intelligence & Resume Generation System
 
@@ -48,7 +48,7 @@ Raw Data → Ingestion → Normalization → Enhancement → Output
 1. **Ingestion**: Collect job data from official sources (CSV, JSON, web scraping)
 2. **Normalization**: Merge all branches into unified `MilitaryJob` schema
 3. **Enhancement**: Add skills, resume bullets, civilian matches, certifications
-4. **Output**: Generate JSON for VetsReady platform consumption
+4. **Output**: Generate JSON for rallyforge platform consumption
 
 ### Core Modules
 
@@ -173,3 +173,4 @@ mos-engine/
 ## License
 
 MIT
+

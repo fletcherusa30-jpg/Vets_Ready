@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-    VetsReady Integrity Scanner - Code integrity validation
+    RallyForge Integrity Scanner - Code integrity validation
 .DESCRIPTION
-    Scans VetsReady project for:
+    Scans RallyForge project for:
     - File structure integrity
     - Missing or corrupted files
     - Configuration issues
@@ -53,8 +53,8 @@ function Test-ProjectStructure {
     Write-Log "Testing project structure..." "INFO"
 
     $RequiredDirs = @(
-        "vets-ready-frontend",
-        "vets-ready-backend",
+        "rally-forge-frontend",
+        "rally-forge-backend",
         "scripts",
         "docs",
         "config"
@@ -83,8 +83,8 @@ function Test-ConfigFiles {
     Write-Log "Testing configuration files..." "INFO"
 
     $ConfigFiles = @(
-        "vets-ready-frontend\package.json",
-        "vets-ready-backend\requirements.txt",
+        "rally-forge-frontend\package.json",
+        "rally-forge-backend\requirements.txt",
         "config\appsettings.json"
     )
 
@@ -160,6 +160,8 @@ function Start-IntegrityScan {
 if ($MyInvocation.InvocationName -ne '.') {
     Start-IntegrityScan
 }
+
+
 
 
 

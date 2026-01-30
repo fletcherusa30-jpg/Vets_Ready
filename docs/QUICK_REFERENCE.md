@@ -1,10 +1,10 @@
-# Vets Ready - Developer Quick Reference
+# Rally Forge - Developer Quick Reference
 
 ## 🚀 Quick Start (30 seconds)
 
 ```bash
 # 1. Clone & install
-git clone <repo> && cd "Vets Ready"
+git clone <repo> && cd "Rally Forge"
 npm install && cd backend && npm install && cd ..
 
 # 2. Setup database
@@ -228,7 +228,7 @@ VITE_DEBUG=1 npm run dev
 curl -X GET http://localhost:4000/api/outreach/stats
 
 # Query database
-psql -d vetsready_dev -c "SELECT COUNT(*) FROM vetsready_users;"
+psql -d rallyforge_dev -c "SELECT COUNT(*) FROM rallyforge_users;"
 ```
 
 ### React Debugging
@@ -315,9 +315,9 @@ cd backend && npm run dev
 
 **Database corrupted?**
 ```bash
-dropdb vetsready_dev
-createdb vetsready_dev
-psql -U postgres -d vetsready_dev -f data/schema.sql
+dropdb rallyforge_dev
+createdb rallyforge_dev
+psql -U postgres -d rallyforge_dev -f data/schema.sql
 ```
 
 **Port conflict?**
@@ -376,3 +376,5 @@ PORT=4001 npm run dev (backend)
 **Happy Coding! 🎖️**
 
 For detailed help, see [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md)
+
+

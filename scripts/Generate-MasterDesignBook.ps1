@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Vets Ready - Master Design Book Generator
+    Rally Forge - Master Design Book Generator
     Creates comprehensive PDF documentation of the entire platform
 
 .DESCRIPTION
@@ -21,7 +21,7 @@
 
 .EXAMPLE
     .\Generate-MasterDesignBook.ps1
-    .\Generate-MasterDesignBook.ps1 -OutputPath "C:\Docs\VetsReady_MasterDesign.pdf"
+    .\Generate-MasterDesignBook.ps1 -OutputPath "C:\Docs\RallyForge_MasterDesign.pdf"
     .\Generate-MasterDesignBook.ps1 -IncludeCode
     .\Generate-MasterDesignBook.ps1 -Format Word
     .\Generate-MasterDesignBook.ps1 -Format Word -OpenAfterGeneration
@@ -53,7 +53,7 @@ $Timestamp = Get-Date -Format 'yyyyMMdd_HHmmss'
 
 if (-not $OutputPath) {
     $extension = if ($Format -eq 'Word') { '.docx' } else { '.pdf' }
-    $OutputPath = Join-Path $OutputDir "VetsReady_MasterDesignBook_$Timestamp$extension"
+    $OutputPath = Join-Path $OutputDir "RallyForge_MasterDesignBook_$Timestamp$extension"
 }
 
 $WordOutputPath = $OutputPath -replace '\.pdf$', '.docx'
@@ -68,7 +68,7 @@ $TempMarkdownPath = Join-Path $OutputDir "MasterDesignBook_$Timestamp.md"
 $TempHtmlPath = Join-Path $OutputDir "MasterDesignBook_$Timestamp.html"
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║    VETS READY - MASTER DESIGN BOOK GENERATOR              ║" -ForegroundColor Cyan
+Write-Host "║    Rally Forge - MASTER DESIGN BOOK GENERATOR              ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 
@@ -127,7 +127,7 @@ function New-TableOfContents {
 25. Diagnostics & Repair Engines
 
 ## Part VII: Compliance & Roadmap
-26. VetsReady Platform (CRSC + Resource Ecosystem)
+26. RallyForge Platform (CRSC + Resource Ecosystem)
 27. Implementation Summary
 28. Phase 1 Completion
 29. Compliance Audit Report
@@ -142,7 +142,7 @@ function New-TableOfContents {
 function New-CoverPage {
     return @"
 <div style="text-align: center; margin-top: 200px;">
-<h1 style="font-size: 48px; color: #1E3A8A;">VETS READY</h1>
+<h1 style="font-size: 48px; color: #1E3A8A;">Rally Forge</h1>
 <h2 style="font-size: 32px; color: #3B82F6;">Master Design Book</h2>
 <h3 style="font-size: 24px; color: #60A5FA;">The Ultimate Veteran-First Platform</h3>
 
@@ -267,7 +267,7 @@ Write-Host "  ✓ Adding Part VII: Compliance & Roadmap" -ForegroundColor Green
 # Part VII: Compliance & Roadmap
 [void]$masterContent.Append("<div style='page-break-after: always;'></div>`n`n")
 [void]$masterContent.Append("# PART VII: COMPLIANCE & ROADMAP`n`n")
-[void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $RootPath 'CRSC_RESOURCE_ECOSYSTEM_COMPLETE.md') '26. VetsReady Platform Architecture'))
+[void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $RootPath 'CRSC_RESOURCE_ECOSYSTEM_COMPLETE.md') '26. RallyForge Platform Architecture'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $DocsPath 'IMPLEMENTATION_SUMMARY.md') '27. Implementation Summary'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $DocsPath 'PHASE_1_COMPLETION.md') '28. Phase 1 Completion'))
 [void]$masterContent.Append((Get-FormattedMarkdown (Join-Path $RootPath 'COMPLIANCE_AUDIT.md') '29. Compliance Audit Report'))
@@ -280,7 +280,7 @@ if ($IncludeCode) {
     [void]$masterContent.Append("# APPENDIX: CODE SAMPLES`n`n")
 
     # Add key backend files
-    $backendMain = Join-Path $RootPath 'vets-ready-backend\app\main.py'
+    $backendMain = Join-Path $RootPath 'rally-forge-backend\app\main.py'
     if (Test-Path $backendMain) {
         $code = Get-Content -Path $backendMain -Raw
         [void]$masterContent.Append("## Backend Main Application`n````python`n$code`n`````n`n")
@@ -366,7 +366,7 @@ if ($Format -eq 'PDF' -or $Format -eq 'Both') {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Vets Ready - Master Design Book</title>
+    <title>Rally Forge - Master Design Book</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; }
         h1 { color: #1E3A8A; border-bottom: 3px solid #3B82F6; padding-bottom: 10px; }
@@ -463,3 +463,5 @@ else {
     return $PdfOutputPath
 }
 return $OutputPath
+
+

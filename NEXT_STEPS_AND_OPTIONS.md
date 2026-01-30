@@ -1,4 +1,4 @@
-# VetsReady Platform - Next Steps & Options
+# rallyforge Platform - Next Steps & Options
 
 **Current Status:** Phase 2 Database Integration COMPLETE
 **Last Updated:** 2026-01-26
@@ -412,3 +412,4 @@ Ready to:
 2. [Build Frontend UI?](#option-2-start-frontend-development-)
 3. [Deploy Application?](#option-3-deploy--test-)
 4. [Do Everything?](#option-4-complete-integration-path-)
+

@@ -1,10 +1,10 @@
-# App Folder - VetsReady Staging Area
+# App Folder - rallyforge Staging Area
 
 This folder has been archived. All contents have been moved to `_archive/App_Original/`.
 
 ## What Was Here
 
-The `/App` directory was used as a staging area to scan and evaluate VetsReady components:
+The `/App` directory was used as a staging area to scan and evaluate rallyforge components:
 - Document processing utilities
 - Image resizing scripts
 - Consolidation tools
@@ -19,7 +19,7 @@ The `/App` directory was used as a staging area to scan and evaluate VetsReady c
 
 ## Folder Structure
 
-For the complete VetsReady implementation, see:
+For the complete rallyforge implementation, see:
 - `backend/app/scanner/` - Document processing pipeline
 - `backend/app/resume_builder/` - Resume generation
 - `backend/app/job_recruiting/` - Job matching platform
@@ -28,3 +28,4 @@ For the complete VetsReady implementation, see:
 ## Archive Location
 
 Original contents: `_archive/App_Original/`
+

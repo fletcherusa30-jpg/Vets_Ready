@@ -217,7 +217,7 @@ function createActionForDimension(dimension: ReadinessDimension): ReadinessActio
       dimension: 'Resume/Cover Letter',
       action: 'Create ATS-optimized resume with quantified achievements',
       resources: [
-        'VetsReady Resume Builder',
+        'rallyforge Resume Builder',
         'Resume review services (Hire Heroes USA)',
         'ATS optimization tools'
       ],
@@ -228,7 +228,7 @@ function createActionForDimension(dimension: ReadinessDimension): ReadinessActio
       dimension: 'Interview Skills',
       action: 'Practice STAR method responses and veteran-specific questions',
       resources: [
-        'Mock interview practice (VetsReady)',
+        'Mock interview practice (rallyforge)',
         'Interview coaching services',
         'YouTube interview prep videos'
       ],
@@ -354,3 +354,4 @@ interface CultureDifference {
 interface CultureTip {
   // Future expansion
 }
+

@@ -463,7 +463,7 @@ const handleAddCondition = () => {
 
 ### 1. Start the Application
 ```bash
-cd "c:\Dev\Vets Ready\vets-ready-frontend"
+cd "c:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 ```
 **Server:** http://localhost:5175
@@ -604,3 +604,4 @@ The code is 100% complete with:
 **Dev Server:** ✅ Running
 **Build Status:** ✅ Successful
 **Implementation:** ✅ 100% Complete
+

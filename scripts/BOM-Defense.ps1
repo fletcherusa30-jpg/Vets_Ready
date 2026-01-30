@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Ultimate BOM Defense System for VetsReady project.
+    Ultimate BOM Defense System for RallyForge project.
 .DESCRIPTION
     - Deep BOM scanner and cleaner
     - Real-time BOM watchdog
@@ -226,3 +226,4 @@ Write-Host "Test-AndroidStudioConfig  -> Validate IDE settings"
 Write-Host "Test-EnvironmentHardening -> Validate system security"
 Write-Host "Get-BOMReport             -> Generate BOM report"
 Write-Host "`nExample: Start-BOMScan"
+

@@ -1,10 +1,10 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-    Verify Vets Ready Project Structure and Paths
+    Verify Rally Forge Project Structure and Paths
 .DESCRIPTION
     Validates that all project paths, scripts, and configurations reference
-    the correct project structure at C:\Dev\Vets Ready
+    the correct project structure at C:\Dev\Rally Forge
 .EXAMPLE
     .\Verify-ProjectStructure.ps1
 #>
@@ -27,28 +27,28 @@ $results = @{
 }
 
 Write-Host "`n=====================================================" -ForegroundColor $InfoColor
-Write-Host "     Vets Ready Project Structure Verification" -ForegroundColor $InfoColor
+Write-Host "     Rally Forge Project Structure Verification" -ForegroundColor $InfoColor
 Write-Host "=====================================================" -ForegroundColor $InfoColor
 
 # Verify we're in the correct directory
 Write-Step "Verifying project root location..."
 $currentPath = Get-Location
-if ($currentPath.Path -like "*Vets Ready*") {
+if ($currentPath.Path -like "*Rally Forge*") {
     Write-Success "Running from correct project root: $currentPath"
     $results.passed++
 } else {
-    Write-Error "Not in Vets Ready directory. Current: $currentPath"
-    Write-Host "Expected: C:\Dev\Vets Ready" -ForegroundColor $WarningColor
+    Write-Error "Not in Rally Forge directory. Current: $currentPath"
+    Write-Host "Expected: C:\Dev\Rally Forge" -ForegroundColor $WarningColor
     $results.failed++
 }
 
 # Verify critical directories exist
 Write-Step "Verifying project structure..."
 $requiredDirs = @(
-    "vets-ready-backend",
-    "vets-ready-frontend",
-    "vets-ready-mobile",
-    "vets-ready-shared",
+    "rally-forge-backend",
+    "rally-forge-frontend",
+    "rally-forge-mobile",
+    "rally-forge-shared",
     "scripts",
     "docs",
     "config",
@@ -145,23 +145,23 @@ Write-Step "Verifying Docker Compose configuration..."
 if (Test-Path "docker-compose.prod.yml") {
     $composeContent = Get-Content "docker-compose.prod.yml" -Raw
 
-    if ($composeContent -match "vets-ready-backend") {
+    if ($composeContent -match "rally-forge-backend") {
         Write-Success "Docker Compose uses correct backend path"
         $results.passed++
     } else {
-        Write-Error "Docker Compose missing vets-ready-backend reference"
+        Write-Error "Docker Compose missing rally-forge-backend reference"
         $results.failed++
     }
 
-    if ($composeContent -match "vets-ready-frontend") {
+    if ($composeContent -match "rally-forge-frontend") {
         Write-Success "Docker Compose uses correct frontend path"
         $results.passed++
     } else {
-        Write-Error "Docker Compose missing vets-ready-frontend reference"
+        Write-Error "Docker Compose missing rally-forge-frontend reference"
         $results.failed++
     }
 
-    if ($composeContent -match "vetsready") {
+    if ($composeContent -match "RallyForge") {
         Write-Success "Docker Compose uses correct naming convention"
         $results.passed++
     } else {
@@ -173,8 +173,8 @@ if (Test-Path "docker-compose.prod.yml") {
 # Verify Dockerfiles exist
 Write-Step "Verifying Dockerfiles..."
 $dockerfiles = @(
-    "vets-ready-backend\Dockerfile",
-    "vets-ready-frontend\Dockerfile"
+    "rally-forge-backend\Dockerfile",
+    "rally-forge-frontend\Dockerfile"
 )
 
 foreach ($dockerfile in $dockerfiles) {
@@ -191,7 +191,7 @@ foreach ($dockerfile in $dockerfiles) {
 Write-Step "Verifying package.json configuration..."
 if (Test-Path "package.json") {
     $packageJson = Get-Content "package.json" -Raw | ConvertFrom-Json
-    if ($packageJson.name -match "vets-ready" -or $packageJson.name -match "vetsready") {
+    if ($packageJson.name -match "rally-forge" -or $packageJson.name -match "RallyForge") {
         Write-Success "package.json uses correct project name"
         $results.passed++
     } else {
@@ -205,7 +205,7 @@ Write-Step "Verifying environment template..."
 if (Test-Path ".env.production.example") {
     $envContent = Get-Content ".env.production.example" -Raw
 
-    if ($envContent -match "vetsready") {
+    if ($envContent -match "RallyForge") {
         Write-Success "Environment template uses correct naming"
         $results.passed++
     } else {
@@ -213,7 +213,7 @@ if (Test-Path ".env.production.example") {
         $results.warnings++
     }
 
-    if ($envContent -match "DATABASE_URL.*vetsready") {
+    if ($envContent -match "DATABASE_URL.*RallyForge") {
         Write-Success "Database name configured correctly"
         $results.passed++
     } else {
@@ -255,7 +255,7 @@ Write-Host "`nPass Rate: $passRate%" -ForegroundColor $InfoColor
 if ($results.failed -eq 0 -and $results.warnings -le 5) {
     Write-Host "`n✓ Project structure verification PASSED" -ForegroundColor $SuccessColor
     Write-Host "All critical paths and configurations are correct." -ForegroundColor $SuccessColor
-    Write-Host "`nProject Root: C:\Dev\Vets Ready ✓" -ForegroundColor $SuccessColor
+    Write-Host "`nProject Root: C:\Dev\Rally Forge ✓" -ForegroundColor $SuccessColor
     exit 0
 } elseif ($results.failed -eq 0) {
     Write-Host "`n⚠ Project structure verification passed with warnings" -ForegroundColor $WarningColor
@@ -266,3 +266,5 @@ if ($results.failed -eq 0 -and $results.warnings -le 5) {
     Write-Host "Fix the errors above before proceeding." -ForegroundColor $ErrorColor
     exit 1
 }
+
+

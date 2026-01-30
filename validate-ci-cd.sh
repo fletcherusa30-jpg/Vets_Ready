@@ -51,20 +51,20 @@ for job in "${required_jobs[@]}"; do
     fi
 done
 
-# Check 4: vetsready-platform configuration
+# Check 4: rallyforge-platform configuration
 echo ""
-echo "⚙️  Check 4: VetsReady Platform Configuration"
+echo "⚙️  Check 4: rallyforge Platform Configuration"
 
-if [ -f "vetsready-platform/tsconfig.json" ]; then
+if [ -f "rallyforge-platform/tsconfig.json" ]; then
     # Check for src directory reference
-    if grep -q '"rootDir": "./"' vetsready-platform/tsconfig.json; then
+    if grep -q '"rootDir": "./"' rallyforge-platform/tsconfig.json; then
         echo -e "${GREEN}✓ tsconfig.json rootDir is set to './'${NC}"
     else
         echo -e "${YELLOW}⚠ tsconfig.json rootDir may not be configured correctly${NC}"
     fi
 
     # Check for path aliases
-    if grep -q '"@/\*"' vetsready-platform/tsconfig.json; then
+    if grep -q '"@/\*"' rallyforge-platform/tsconfig.json; then
         echo -e "${GREEN}✓ Path aliases configured${NC}"
     else
         echo -e "${YELLOW}⚠ Path aliases may not be configured${NC}"
@@ -76,7 +76,7 @@ fi
 # Check 5: ESLint configuration
 echo ""
 echo "🔍 Check 5: ESLint Configuration"
-if [ -f "vetsready-platform/.eslintrc.json" ]; then
+if [ -f "rallyforge-platform/.eslintrc.json" ]; then
     echo -e "${GREEN}✓ .eslintrc.json exists${NC}"
 else
     echo -e "${RED}✗ .eslintrc.json NOT FOUND${NC}"
@@ -85,7 +85,7 @@ fi
 # Check 6: Jest configuration
 echo ""
 echo "🧪 Check 6: Jest Configuration"
-if [ -f "vetsready-platform/jest.config.js" ]; then
+if [ -f "rallyforge-platform/jest.config.js" ]; then
     echo -e "${GREEN}✓ jest.config.js exists${NC}"
 else
     echo -e "${RED}✗ jest.config.js NOT FOUND${NC}"
@@ -94,14 +94,14 @@ fi
 # Check 7: Package.json scripts
 echo ""
 echo "📦 Check 7: Package.json Scripts"
-if [ -f "vetsready-platform/package.json" ]; then
-    if grep -q '"lint":' vetsready-platform/package.json; then
+if [ -f "rallyforge-platform/package.json" ]; then
+    if grep -q '"lint":' rallyforge-platform/package.json; then
         echo -e "${GREEN}✓ 'lint' script defined${NC}"
     fi
-    if grep -q '"build":' vetsready-platform/package.json; then
+    if grep -q '"build":' rallyforge-platform/package.json; then
         echo -e "${GREEN}✓ 'build' script defined${NC}"
     fi
-    if grep -q '"test":' vetsready-platform/package.json; then
+    if grep -q '"test":' rallyforge-platform/package.json; then
         echo -e "${GREEN}✓ 'test' script defined${NC}"
     fi
 else
@@ -128,3 +128,4 @@ echo "  - Configuration files in place"
 echo "  - Job dependencies properly configured"
 echo ""
 echo "🚀 Ready for CI/CD pipeline execution!"
+

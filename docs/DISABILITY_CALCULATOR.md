@@ -1,6 +1,6 @@
 # VA Disability Rating Calculator
 
-A professional, accurate Quick Disability Rating Calculator for the VetsReady platform that implements VA combined rating mathematics with bilateral factor support.
+A professional, accurate Quick Disability Rating Calculator for the rallyforge platform that implements VA combined rating mathematics with bilateral factor support.
 
 ## Features
 
@@ -321,3 +321,4 @@ For issues or questions:
 2. Review calculation steps in results
 3. Verify condition data matches VA standards
 4. Consult VA.gov for official ratings
+

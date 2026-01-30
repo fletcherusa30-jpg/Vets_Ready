@@ -1,5 +1,5 @@
 # 💎 ELITE CODE QUALITY RECOMMENDATIONS
-## VetsReady Platform - Specific Implementation Guidelines
+## rallyforge Platform - Specific Implementation Guidelines
 
 ---
 
@@ -20,7 +20,7 @@ function processMOS(response: APIResponse) {
 // ✅ CORRECT - explicit null safety
 function processMOS(response: APIResponse<MOSData>): string[] {
   if (!response.data) {
-    throw new VetsReadyError('MISSING_DATA', 400, 'No MOS data returned');
+    throw new rallyforgeError('MISSING_DATA', 400, 'No MOS data returned');
   }
 
   return response.data.careers?.map(c => c.title) ?? [];
@@ -251,7 +251,7 @@ function EmploymentPage() {
 ### Pattern 3A: Unified Error Types
 ```typescript
 // ✅ CORRECT - consistent error handling
-export class VetsReadyError extends Error {
+export class rallyforgeError extends Error {
   constructor(
     public code: string,
     public statusCode: number,
@@ -260,23 +260,23 @@ export class VetsReadyError extends Error {
     public details?: Record<string, any>
   ) {
     super(userMessage);
-    this.name = 'VetsReadyError';
+    this.name = 'rallyforgeError';
   }
 }
 
-export class ValidationError extends VetsReadyError {
+export class ValidationError extends rallyforgeError {
   constructor(public field: string, message: string) {
     super('VALIDATION_ERROR', 400, message);
   }
 }
 
-export class NotFoundError extends VetsReadyError {
+export class NotFoundError extends rallyforgeError {
   constructor(resource: string, id: string) {
     super('NOT_FOUND', 404, `${resource} with ID ${id} not found`);
   }
 }
 
-export class UnauthorizedError extends VetsReadyError {
+export class UnauthorizedError extends rallyforgeError {
   constructor() {
     super('UNAUTHORIZED', 401, 'Authentication required');
   }
@@ -681,4 +681,5 @@ function EmploymentPage() {
 ---
 
 *Created: January 26, 2026*
-*For: VetsReady Elite Code Standards*
+*For: rallyforge Elite Code Standards*
+

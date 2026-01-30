@@ -166,11 +166,11 @@ export MISSION43_PHONE=+1-208-xxx-xxxx
 # ... etc for all organizations
 
 # 3. Start backend
-cd vets-ready-backend
+cd rally-forge-backend
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 # 4. Start frontend
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run build
 npm run preview
 
@@ -306,7 +306,7 @@ curl http://localhost:5173/crsc/hub
 
 **Objectives Achieved**: 100% ✅
 
-This session successfully delivered a **complete, enterprise-grade CRSC ecosystem** and **Resource Engine** for VetsReady. The implementation is:
+This session successfully delivered a **complete, enterprise-grade CRSC ecosystem** and **Resource Engine** for rallyforge. The implementation is:
 
 - **Modular**: Each service is independent and reusable
 - **Testable**: Comprehensive test coverage with all tests passing
@@ -331,3 +331,5 @@ The system enables veterans to make informed CRSC decisions while providing orga
 *Generated: January 28, 2026*
 *Implementation: Complete CRSC & Resource Ecosystem*
 *All 14 tasks completed. System fully functional.*
+
+

@@ -4,11 +4,11 @@
 
 ## 1. Acceptance of Terms
 
-By accessing or using Vets Ready ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+By accessing or using Rally Forge ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
 
 ## 2. Description of Service
 
-Vets Ready provides VA claims assistance, benefits navigation, and veteran support tools. The Service includes:
+Rally Forge provides VA claims assistance, benefits navigation, and veteran support tools. The Service includes:
 - VA disability claims analyzer
 - Benefits information and eligibility screening
 - Document management
@@ -67,7 +67,7 @@ You agree NOT to:
 
 ## 7. Disclaimer of Medical/Legal Advice
 
-**IMPORTANT**: Vets Ready is NOT a substitute for:
+**IMPORTANT**: Rally Forge is NOT a substitute for:
 - Professional medical advice, diagnosis, or treatment
 - Legal representation or advice
 - Official VA determinations or decisions
@@ -85,7 +85,7 @@ We provide tools and information to assist with VA claims, but we:
 ## 9. Intellectual Property
 
 ### 9.1 Our Rights
-All content, features, and functionality are owned by Vets Ready and protected by copyright, trademark, and other intellectual property laws.
+All content, features, and functionality are owned by Rally Forge and protected by copyright, trademark, and other intellectual property laws.
 
 ### 9.2 Your Rights
 You retain all rights to your personal data and uploaded documents. You grant us a license to use your data to provide the Service.
@@ -151,7 +151,7 @@ THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIN
 
 ## 16. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY LAW, VETS READY SHALL NOT BE LIABLE FOR:
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, Rally Forge SHALL NOT BE LIABLE FOR:
 - Indirect, incidental, special, consequential, or punitive damages
 - Loss of profits, data, or use
 - VA claim denials or unfavorable decisions
@@ -159,7 +159,7 @@ TO THE MAXIMUM EXTENT PERMITTED BY LAW, VETS READY SHALL NOT BE LIABLE FOR:
 
 ## 17. Indemnification
 
-You agree to indemnify and hold harmless Vets Ready, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including attorney fees) arising from:
+You agree to indemnify and hold harmless Rally Forge, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including attorney fees) arising from:
 - Your use of the Service
 - Your violation of these Terms
 - Your violation of any rights of another party
@@ -196,7 +196,7 @@ Continued use of the Service after changes constitute acceptance of the new Term
 
 ## 21. Entire Agreement
 
-These Terms, along with our Privacy Policy, constitute the entire agreement between you and Vets Ready.
+These Terms, along with our Privacy Policy, constitute the entire agreement between you and Rally Forge.
 
 ## 22. Severability
 
@@ -210,11 +210,13 @@ Our failure to enforce any right or provision does not constitute a waiver of th
 
 For questions about these Terms, contact us at:
 
-**Vets Ready**
-Email: legal@vetsready.com
+**Rally Forge**
+Email: legal@rallyforge.com
 Address: [Your Business Address]
 Phone: 1-800-VETS-RDY
 
 ---
 
-**By using Vets Ready, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.**
+**By using Rally Forge, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.**
+
+

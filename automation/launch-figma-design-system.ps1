@@ -1,9 +1,9 @@
-# VetsReady Figma Design System Auto-Launch Script
-# This script opens Figma, creates a new file, and names it "VetsReady Design System"
+# rallyforge Figma Design System Auto-Launch Script
+# This script opens Figma, creates a new file, and names it "rallyforge Design System"
 # You can run this in PowerShell on Windows
 
 $figmaPath = "C:\Users\$env:USERNAME\AppData\Local\Figma\Figma.exe"
-$designSystemName = "VetsReady Design System"
+$designSystemName = "rallyforge Design System"
 
 if (-not (Test-Path $figmaPath)) {
     Write-Host "Figma is not installed at $figmaPath. Please install Figma Desktop first." -ForegroundColor Red
@@ -21,3 +21,4 @@ Start-Sleep -Seconds 1
 [System.Windows.Forms.SendKeys]::SendWait("$designSystemName{ENTER}")
 
 Write-Host "Figma launched and new design system file created: $designSystemName" -ForegroundColor Green
+

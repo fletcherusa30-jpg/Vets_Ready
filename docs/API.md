@@ -1,4 +1,4 @@
-# Vets Ready API Documentation
+# Rally Forge API Documentation
 
 ## Base URL
 `http://localhost:4000/api` (Development)
@@ -818,3 +818,4 @@ Future versions will be available at `/api/v2`, `/api/v3`, etc.
 
 **Last Updated**: January 2024
 **Version**: 1.0.0
+

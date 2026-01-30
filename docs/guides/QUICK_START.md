@@ -1,4 +1,4 @@
-# 🎖️ Vets Ready - Quick Start Guide
+# 🎖️ Rally Forge - Quick Start Guide
 
 ## ✅ Your App is Running!
 
@@ -51,7 +51,7 @@ Submit: Click "Submit Claim Analysis"
 ### Current Setup
 Since Python isn't installed on your system, I created a **temporary Node.js mock backend** that mimics the FastAPI server.
 
-**Location**: `C:\Dev\Vets Ready\mock-backend\`
+**Location**: `C:\Dev\Rally Forge\mock-backend\`
 
 **Features**:
 - ✓ Calculates VA disability ratings using same formula
@@ -89,7 +89,7 @@ Example:
 ### Stop Servers
 ```powershell
 # Stop frontend
-Get-Process -Name node | Where-Object {$_.Path -like "*vets-ready-frontend*"} | Stop-Process
+Get-Process -Name node | Where-Object {$_.Path -like "*rally-forge-frontend*"} | Stop-Process
 
 # Stop backend
 Get-Process -Name node | Where-Object {$_.Path -like "*mock-backend*"} | Stop-Process
@@ -98,11 +98,11 @@ Get-Process -Name node | Where-Object {$_.Path -like "*mock-backend*"} | Stop-Pr
 ### Restart Servers
 ```powershell
 # Terminal 1: Frontend
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 
 # Terminal 2: Backend (Mock)
-cd "C:\Dev\Vets Ready\mock-backend"
+cd "C:\Dev\Rally Forge\mock-backend"
 node server.js
 ```
 
@@ -160,7 +160,7 @@ Visit: https://www.python.org/downloads/
 
 ### 2. Create Virtual Environment
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-backend"
+cd "C:\Dev\Rally Forge\rally-forge-backend"
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
@@ -226,7 +226,7 @@ The /claims page has **8 tabs**:
 ### "Failed to fetch claims"
 **Solution**: Backend isn't running. Restart:
 ```powershell
-cd "C:\Dev\Vets Ready\mock-backend"
+cd "C:\Dev\Rally Forge\mock-backend"
 node server.js
 ```
 
@@ -239,7 +239,7 @@ curl http://localhost:8000/health
 ### Frontend won't load
 **Restart Vite**:
 ```powershell
-cd "C:\Dev\Vets Ready\vets-ready-frontend"
+cd "C:\Dev\Rally Forge\rally-forge-frontend"
 npm run dev
 ```
 
@@ -269,7 +269,7 @@ npm run dev
 
 ## 🎉 Success!
 
-Your Vets Ready app is now fully functional for testing the /claims page!
+Your Rally Forge app is now fully functional for testing the /claims page!
 
 **Current Status**:
 - ✓ Frontend running on http://localhost:5173
@@ -290,3 +290,4 @@ Your Vets Ready app is now fully functional for testing the /claims page!
 **Last Updated**: January 24, 2026
 **Status**: ✅ Running
 **Mode**: Development (Mock Backend)
+

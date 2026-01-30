@@ -385,7 +385,7 @@ const getCurrentCombinedRating = (): { rating: number; hasBilateral: boolean } =
 ## 🔧 Technical Details
 
 ### Files Modified:
-- `vets-ready-frontend/src/pages/OnboardingWizard.tsx` (1,210 lines)
+- `rally-forge-frontend/src/pages/OnboardingWizard.tsx` (1,210 lines)
 
 ### Lines of Code Changes:
 - Added: ~150 lines (new functions, UI fields, bilateral logic)
@@ -498,5 +498,7 @@ const getCurrentCombinedRating = (): { rating: number; hasBilateral: boolean } =
 ---
 
 **Implementation Date:** January 24, 2026
-**Platform:** VetsReady - Veteran Assistance Platform
+**Platform:** rallyforge - Veteran Assistance Platform
 **Status:** ✅ Production Ready
+
+

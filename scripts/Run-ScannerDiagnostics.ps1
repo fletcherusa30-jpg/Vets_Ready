@@ -1,19 +1,19 @@
 <#
 .SYNOPSIS
-    Complete Scanner Diagnostics for VetsReady Platform
+    Complete Scanner Diagnostics for RallyForge Platform
 .DESCRIPTION
     Tests all scanners, paths, permissions, and dependencies.
     Generates comprehensive diagnostic report.
 
 .PARAMETER ProjectRoot
-    Root path of the VetsReady project
+    Root path of the RallyForge project
 
 .PARAMETER LogFolder
     Folder to store diagnostic logs
 
 .EXAMPLE
     .\Run-ScannerDiagnostics.ps1
-    .\Run-ScannerDiagnostics.ps1 -ProjectRoot "C:\Dev\Vets Ready"
+    .\Run-ScannerDiagnostics.ps1 -ProjectRoot "C:\Dev\Rally Forge"
 #>
 
 param(
@@ -27,7 +27,7 @@ if ([string]::IsNullOrEmpty($ProjectRoot)) {
     $ProjectRoot = Split-Path -Parent $ScriptDir
 }
 
-Write-Host "=== VETSREADY SCANNER DIAGNOSTICS ===" -ForegroundColor Cyan
+Write-Host "=== RallyForge SCANNER DIAGNOSTICS ===" -ForegroundColor Cyan
 Write-Host "Project Root: $ProjectRoot" -ForegroundColor Yellow
 Write-Host ""
 
@@ -113,8 +113,8 @@ $foldersToCheck = @(
     "Data",
     "Data\STR",
     "Data\Documents",
-    "vets-ready-backend",
-    "vets-ready-frontend",
+    "rally-forge-backend",
+    "rally-forge-frontend",
     "scripts",
     "config"
 )
@@ -249,7 +249,7 @@ $results.Tests["Scanners"] = $scannerResults
 # =====================================================================
 Write-Log "TEST 6: Checking backend dependencies..." "INFO"
 
-$backendPath = Join-Path $ProjectRoot "vets-ready-backend"
+$backendPath = Join-Path $ProjectRoot "rally-forge-backend"
 $backendTests = @{}
 
 if (Test-Path $backendPath) {
@@ -296,7 +296,7 @@ $results.Tests["Backend"] = $backendTests
 # =====================================================================
 Write-Log "TEST 7: Checking frontend dependencies..." "INFO"
 
-$frontendPath = Join-Path $ProjectRoot "vets-ready-frontend"
+$frontendPath = Join-Path $ProjectRoot "rally-forge-frontend"
 $frontendTests = @{}
 
 if (Test-Path $frontendPath) {
@@ -386,7 +386,7 @@ try {
     $results.Successes += "Backend API is running"
 } catch {
     Write-Log "WARN: Backend API not available at http://localhost:8000" "WARN"
-    Write-Log "  Start backend: cd vets-ready-backend; python -m uvicorn app.main:app --reload" "WARN"
+    Write-Log "  Start backend: cd rally-forge-backend; python -m uvicorn app.main:app --reload" "WARN"
     $results.Tests["BackendAPI"] = "NOT_RUNNING"
     $results.Warnings += "Backend API not running"
 }
@@ -473,3 +473,5 @@ if ($results.Errors.Count -gt 0) {
     Write-Host "🟢 OVERALL STATUS: PASS" -ForegroundColor Green
     exit 0
 }
+
+

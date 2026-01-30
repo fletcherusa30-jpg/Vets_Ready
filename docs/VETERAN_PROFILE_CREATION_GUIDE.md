@@ -2,9 +2,9 @@
 
 ## Overview
 
-VetsReady has two separate user management systems:
+rallyforge has two separate user management systems:
 
-1. **Authentication User** (`vets-ready-backend`) - Core authentication, subscriptions, badges
+1. **Authentication User** (`rally-forge-backend`) - Core authentication, subscriptions, badges
 2. **Veteran Profile** (`backend`) - Service details, disability ratings, benefits tracking
 
 This guide explains how veterans create and manage their profiles.
@@ -13,8 +13,8 @@ This guide explains how veterans create and manage their profiles.
 
 ## Current State
 
-### 1. Authentication System (vets-ready-backend)
-Located in: `vets-ready-backend/app/models/user.py`
+### 1. Authentication System (rally-forge-backend)
+Located in: `rally-forge-backend/app/models/user.py`
 
 **Current Fields**:
 - `id`: UUID
@@ -500,7 +500,7 @@ After profile creation, redirect to Dashboard showing:
 
 ## Database Schema
 
-### Users Table (vets-ready-backend)
+### Users Table (rally-forge-backend)
 ```sql
 CREATE TABLE users (
   id UUID PRIMARY KEY,
@@ -641,3 +641,5 @@ Response: 204 No Content
 
 **Status**: Documentation complete for implementation
 **Next Steps**: Implement profile creation form + Settings page + fix blank Settings page
+
+

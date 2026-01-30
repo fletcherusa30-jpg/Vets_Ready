@@ -476,13 +476,13 @@ const injectedJobs = await ARDEIntegrations.employment
 
 1. **Start Backend**:
    ```bash
-   cd vets-ready-backend
+   cd rally-forge-backend
    uvicorn app.main:app --reload
    ```
 
 2. **Start Frontend**:
    ```bash
-   cd vets-ready-frontend
+   cd rally-forge-frontend
    npm run dev
    ```
 
@@ -530,3 +530,4 @@ The Automatic Revenue Design Engine (ARDE) is **fully implemented and production
 **Total Implementation**: ~4,500 lines of production code across 7 files.
 
 ARDE can be deployed immediately and will begin discovering and activating revenue opportunities autonomously within 5 minutes of starting.
+

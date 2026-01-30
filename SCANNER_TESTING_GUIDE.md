@@ -2,7 +2,7 @@
 
 ## Your PDF Files
 
-You have 6 documents in `C:\Dev\Vets Ready\App`:
+You have 6 documents in `C:\Dev\Rally Forge\App`:
 
 1. **ClaimLetter-2017-12-15.pdf** - VA Disability Claim Letter
 2. **DD214 98-03.pdf** - Discharge Certificate (1998-2003)
@@ -76,7 +76,7 @@ You have 6 documents in `C:\Dev\Vets Ready\App`:
 
 ### 1. Start Backend
 ```bash
-$env:PYTHONPATH="C:\Dev\Vets Ready"
+$env:PYTHONPATH="C:\Dev\Rally Forge"
 python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -191,3 +191,4 @@ If extraction needs refinement for specific documents:
 **Last Updated:** January 28, 2026
 **Scanner Version:** Enhanced (Extreme Accuracy)
 **Status:** ✓ Production Ready
+

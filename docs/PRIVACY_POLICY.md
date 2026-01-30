@@ -4,9 +4,9 @@
 
 ## Introduction
 
-Vets Ready ("we," "our," "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.
+Rally Forge ("we," "our," "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.
 
-**By using Vets Ready, you consent to the data practices described in this policy.**
+**By using Rally Forge, you consent to the data practices described in this policy.**
 
 ---
 
@@ -165,7 +165,7 @@ All service providers are contractually obligated to protect your data and use i
 
 ### 3.3 VSO Partners
 
-If you use Vets Ready through a VSO partnership:
+If you use Rally Forge through a VSO partnership:
 - Your VSO can see your membership status and engagement metrics
 - Your VSO cannot see your personal medical or claims information without your explicit consent
 - You control what information is shared with your VSO
@@ -181,7 +181,7 @@ We may disclose information if required by law:
 
 ### 3.5 Business Transfers
 
-If Vets Ready is acquired or merged, your information may be transferred to the new entity. We will notify you of any such change.
+If Rally Forge is acquired or merged, your information may be transferred to the new entity. We will notify you of any such change.
 
 ---
 
@@ -268,7 +268,7 @@ You can export your data in standard formats (JSON, CSV, PDF) at any time.
 
 ### 5.6 Object to Processing
 
-You can object to certain data processing activities. Contact privacy@vetsready.com.
+You can object to certain data processing activities. Contact privacy@rallyforge.com.
 
 ---
 
@@ -298,7 +298,7 @@ We do NOT store full credit card numbers or CVV codes. Stripe handles all paymen
 
 ## 7. Children's Privacy
 
-Vets Ready is not intended for users under 18. We do not knowingly collect information from children. If we discover we have collected information from a child, we will delete it immediately.
+Rally Forge is not intended for users under 18. We do not knowingly collect information from children. If we discover we have collected information from a child, we will delete it immediately.
 
 ---
 
@@ -359,7 +359,7 @@ If you are in the European Union, you have additional rights under GDPR:
 - Right to object
 - Right to withdraw consent
 
-Contact privacy@vetsready.com to exercise these rights.
+Contact privacy@rallyforge.com to exercise these rights.
 
 ### 10.3 Data Transfer
 
@@ -377,7 +377,7 @@ If you are a California resident, you have the right to:
 - Opt out of sale (we don't sell data)
 - Non-discrimination for exercising your rights
 
-**To exercise these rights, contact privacy@vetsready.com or call 1-800-VETS-RDY**
+**To exercise these rights, contact privacy@rallyforge.com or call 1-800-VETS-RDY**
 
 ---
 
@@ -416,22 +416,22 @@ Continued use of the Service after changes constitutes acceptance of the new pol
 ### 14.1 Privacy Questions
 
 For privacy-related questions or concerns:
-- **Email:** privacy@vetsready.com
+- **Email:** privacy@rallyforge.com
 - **Phone:** 1-800-VETS-RDY
 - **Mail:** [Your Business Address]
 
 ### 14.2 Data Requests
 
 To exercise your privacy rights:
-- **Email:** datarequests@vetsready.com
-- **Portal:** vetsready.com/privacy/requests
+- **Email:** datarequests@rallyforge.com
+- **Portal:** rallyforge.com/privacy/requests
 
 We will respond to all requests within 30 days.
 
 ### 14.3 Data Protection Officer
 
 For EU users, contact our Data Protection Officer:
-- **Email:** dpo@vetsready.com
+- **Email:** dpo@rallyforge.com
 
 ---
 
@@ -448,4 +448,6 @@ We recognize that veterans entrust us with highly sensitive information. We are 
 
 ---
 
-**By using Vets Ready, you acknowledge that you have read and understood this Privacy Policy.**
+**By using Rally Forge, you acknowledge that you have read and understood this Privacy Policy.**
+
+

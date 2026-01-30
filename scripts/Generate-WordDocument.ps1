@@ -47,11 +47,11 @@ if (-not (Test-Path $InputMarkdown)) {
 }
 
 if (-not $OutputPath) {
-    $OutputPath = Join-Path $DocsPath "VetsReady_MasterDesignBook_$Timestamp.docx"
+    $OutputPath = Join-Path $DocsPath "RallyForge_MasterDesignBook_$Timestamp.docx"
 }
 
 Write-Host "╔════════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
-Write-Host "║    VETS READY - WORD DOCUMENT GENERATOR                   ║" -ForegroundColor Cyan
+Write-Host "║    Rally Forge - WORD DOCUMENT GENERATOR                   ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "📄 Input:  $InputMarkdown" -ForegroundColor Gray
@@ -86,10 +86,10 @@ try {
     $doc = $word.Documents.Add()
 
     # Set up document properties
-    $doc.BuiltInDocumentProperties("Title") = "Vets Ready - Master Design Book"
+    $doc.BuiltInDocumentProperties("Title") = "Rally Forge - Master Design Book"
     $doc.BuiltInDocumentProperties("Subject") = "Complete Platform Documentation"
-    $doc.BuiltInDocumentProperties("Author") = "Vets Ready Team"
-    $doc.BuiltInDocumentProperties("Keywords") = "Veterans, VetsReady, Documentation, Architecture, API"
+    $doc.BuiltInDocumentProperties("Author") = "Rally Forge Team"
+    $doc.BuiltInDocumentProperties("Keywords") = "Veterans, RallyForge, Documentation, Architecture, API"
 
     # Process markdown content line by line
     $lines = $markdownContent -split "`n"
@@ -239,3 +239,5 @@ catch {
 
     exit 1
 }
+
+

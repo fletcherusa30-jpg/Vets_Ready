@@ -1,4 +1,4 @@
-# Docker Compose for Vets Ready Production Deployment
+# Docker Compose for Rally Forge Production Deployment
 
 version: '3.8'
 
@@ -6,10 +6,10 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:15-alpine
-    container_name: vetsready_postgres
+    container_name: rallyforge_postgres
     environment:
-      POSTGRES_DB: vetsready_db
-      POSTGRES_USER: vetsready
+      POSTGRES_DB: rallyforge_db
+      POSTGRES_USER: rallyforge
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -17,10 +17,10 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - vetsready_network
+      - rallyforge_network
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U vetsready"]
+      test: ["CMD-SHELL", "pg_isready -U rallyforge"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -28,11 +28,11 @@ services:
   # Redis Cache (optional)
   redis:
     image: redis:7-alpine
-    container_name: vetsready_redis
+    container_name: rallyforge_redis
     ports:
       - "6379:6379"
     networks:
-      - vetsready_network
+      - rallyforge_network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -43,11 +43,11 @@ services:
   # Backend API
   backend:
     build:
-      context: ./vets-ready-backend
+      context: ./rally-forge-backend
       dockerfile: Dockerfile
-    container_name: vetsready_backend
+    container_name: rallyforge_backend
     environment:
-      DATABASE_URL: postgresql://vetsready:${DB_PASSWORD}@postgres:5432/vetsready_db
+      DATABASE_URL: postgresql://rallyforge:${DB_PASSWORD}@postgres:5432/rallyforge_db
       JWT_SECRET: ${JWT_SECRET}
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
       STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
@@ -62,7 +62,7 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - vetsready_network
+      - rallyforge_network
     restart: unless-stopped
     volumes:
       - ./logs:/app/logs
@@ -76,16 +76,16 @@ services:
   # Frontend
   frontend:
     build:
-      context: ./vets-ready-frontend
+      context: ./rally-forge-frontend
       dockerfile: Dockerfile
       args:
         VITE_API_URL: ${API_BASE_URL}
         VITE_STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
-    container_name: vetsready_frontend
+    container_name: rallyforge_frontend
     ports:
       - "3000:80"
     networks:
-      - vetsready_network
+      - rallyforge_network
     restart: unless-stopped
     depends_on:
       - backend
@@ -93,7 +93,7 @@ services:
   # Nginx Reverse Proxy
   nginx:
     image: nginx:alpine
-    container_name: vetsready_nginx
+    container_name: rallyforge_nginx
     ports:
       - "80:80"
       - "443:443"
@@ -102,16 +102,18 @@ services:
       - ./nginx/ssl:/etc/nginx/ssl:ro
       - ./logs/nginx:/var/log/nginx
     networks:
-      - vetsready_network
+      - rallyforge_network
     depends_on:
       - backend
       - frontend
     restart: unless-stopped
 
 networks:
-  vetsready_network:
+  rallyforge_network:
     driver: bridge
 
 volumes:
   postgres_data:
     driver: local
+
+

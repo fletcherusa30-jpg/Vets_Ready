@@ -13,19 +13,19 @@
 - Identified API endpoint references
 - Found script inclusion references
 
-### 2. ✅ Replaced with VetsReady
+### 2. ✅ Replaced with rallyforge
 **Documentation Updated**:
-- `docs/API_QUICK_REFERENCE.md` - API domain updated to vetsready.app
+- `docs/API_QUICK_REFERENCE.md` - API domain updated to rallyforge.app
 - `docs/SETUP_GUIDE.md` - Database references updated (4 locations)
-- `docs/SETUP_GUIDE.md` - GitHub URLs corrected to /fletcherusa30-jpg/Vets_Ready
+- `docs/SETUP_GUIDE.md` - GitHub URLs corrected to /fletcherusa30-jpg/rally_forge
 
 **Scripts Updated**:
 - `scripts/Generate-MasterDesignBook.ps1` - Section references updated
 - `scripts/Validate-FullCompliance.ps1` - Document references updated
 
 **Configuration**:
-- Database user: `veterans1st_user` → `vetsready_user`
-- Database name: `veterans1st_dev` → `vetsready_dev`
+- Database user: `veterans1st_user` → `rallyforge_user`
+- Database name: `veterans1st_dev` → `rallyforge_dev`
 
 ### 3. ✅ Preserved Legacy Data
 - Archived `docs/VETERANS1ST_ECOSYSTEM.md` → `_archive/VETERANS1ST_ECOSYSTEM_LEGACY.md`
@@ -40,10 +40,10 @@
 | Item | Before | After |
 |------|--------|-------|
 | Brand References | 20+ Veterans1st | 0 Veterans1st |
-| DB User | veterans1st_user | vetsready_user |
-| DB Name | veterans1st_dev | vetsready_dev |
-| API Domain | api.veterans1st.app | api.vetsready.app |
-| GitHub Repo | yourusername/Veterans1st | fletcherusa30-jpg/Vets_Ready |
+| DB User | veterans1st_user | rallyforge_user |
+| DB Name | veterans1st_dev | rallyforge_dev |
+| API Domain | api.veterans1st.app | api.rallyforge.app |
+| GitHub Repo | yourusername/Veterans1st | fletcherusa30-jpg/rally_forge |
 | Git Commits | 1 (CRSC implementation) | 2 (+ cleanup) |
 
 ---
@@ -58,7 +58,7 @@ git grep "veterans1st_user" || echo "✅ None found"
 git grep "veterans1st.app" || echo "✅ None found"
 
 # Verify branding is consistent
-grep -r "VetsReady" docs/ && echo "✅ New branding in place"
+grep -r "rallyforge" docs/ && echo "✅ New branding in place"
 
 # Check git log
 git log --oneline -2
@@ -88,8 +88,8 @@ git log --oneline -2
 ## Next Steps
 
 1. **Deploy with confidence** - Documentation is now clean and accurate
-2. **Use new database credentials** - Update env configs to use `vetsready_user`
-3. **Reference new API domain** - Point to `api.vetsready.app` in production
+2. **Use new database credentials** - Update env configs to use `rallyforge_user`
+3. **Reference new API domain** - Point to `api.rallyforge.app` in production
 4. **Archive complete** - Legacy files preserved in `_archive/` if ever needed
 
 ---
@@ -106,8 +106,10 @@ git log --oneline -2
 ---
 
 **Commit Hash**: b6cc628
-**Commit Message**: `refactor: Remove Veterans1st legacy references, consolidate on VetsReady branding`
+**Commit Message**: `refactor: Remove Veterans1st legacy references, consolidate on rallyforge branding`
 
 ---
 
-✅ **VETSREADY PLATFORM - NOW CLEAR AND READY FOR PRODUCTION DEPLOYMENT**
+✅ **rallyforge PLATFORM - NOW CLEAR AND READY FOR PRODUCTION DEPLOYMENT**
+
+

@@ -17,8 +17,9 @@ The following files will be moved after verification (content and links):
 - OPERATIONAL_AUDIT.md
 - PROJECT_SUMMARY.md
 - QUICK_REFERENCE.md
-- VETS_READY_COMPLETE.md
-- VETS_READY_REBRAND_REPORT.md
-- VETS_READY_REBRAND.md
+- rally_forge_COMPLETE.md
+- rally_forge_REBRAND_REPORT.md
+- rally_forge_REBRAND.md
 
 If any downstream tooling references the old paths, please update those references to point to `docs/root/`.
+

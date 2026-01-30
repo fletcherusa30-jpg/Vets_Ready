@@ -2,7 +2,7 @@
 
 /**
  * Employment System Demo
- * Demonstrates key features of the VetsReady Employment System
+ * Demonstrates key features of the rallyforge Employment System
  */
 
 import {
@@ -114,7 +114,7 @@ const sampleJobs: JobPosting[] = [
 
 async function runDemo() {
   console.log('='.repeat(80));
-  console.log('VETSREADY EMPLOYMENT SYSTEM DEMO');
+  console.log('rallyforge EMPLOYMENT SYSTEM DEMO');
   console.log('='.repeat(80));
   console.log();
 
@@ -221,3 +221,4 @@ async function runDemo() {
 
 // Run demo
 runDemo().catch(console.error);
+

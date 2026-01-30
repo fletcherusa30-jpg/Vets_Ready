@@ -464,7 +464,7 @@ pip install pillow                 # Image support
 ### Configuration
 ```python
 # .env or environment
-PROJECT_ROOT=/path/to/vets-ready
+PROJECT_ROOT=/path/to/rally-forge
 UPLOADS_DIR=uploads/raw
 MAX_UPLOAD_SIZE=10485760  # 10MB in bytes
 ```
@@ -612,3 +612,4 @@ The Upload-Only Scanner Flow delivers:
 **Test Coverage:** 40+ unit tests, 15+ integration tests
 **Performance:** <2 seconds for typical documents
 **Reliability:** Graceful error handling, 99.9% uptime target
+

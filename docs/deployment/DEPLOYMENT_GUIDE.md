@@ -1,5 +1,5 @@
 # ====================================================
-# VETS READY - COMPLETE DEPLOYMENT GUIDE
+# Rally Forge - COMPLETE DEPLOYMENT GUIDE
 # ====================================================
 
 ## 🎯 QUICK START - LOCAL TESTING
@@ -7,13 +7,13 @@
 ### 1. Build Docker Images Locally
 ```powershell
 # Backend
-docker build -t vetsready/vets-ready-backend:latest ./vets-ready-backend
+docker build -t rallyforge/rally-forge-backend:latest ./rally-forge-backend
 
 # Frontend
-docker build -t vetsready/vets-ready-frontend:latest ./vets-ready-frontend --build-arg VITE_API_URL=http://localhost:8000
+docker build -t rallyforge/rally-forge-frontend:latest ./rally-forge-frontend --build-arg VITE_API_URL=http://localhost:8000
 
 # Verify images
-docker images | Select-String "vetsready"
+docker images | Select-String "rallyforge"
 ```
 
 ### 2. Run with Docker Compose
@@ -50,32 +50,32 @@ docker-compose -f docker-compose.prod.yml down -v
 ### Step 1: Login to Docker Hub
 ```powershell
 docker login
-# Username: vetsready
+# Username: rallyforge
 # Password: [your Docker Hub password]
 ```
 
 ### Step 2: Build and Tag Images
 ```powershell
 # Backend
-docker build -t vetsready/vets-ready-backend:latest -t vetsready/vets-ready-backend:1.0.0 ./vets-ready-backend
+docker build -t rallyforge/rally-forge-backend:latest -t rallyforge/rally-forge-backend:1.0.0 ./rally-forge-backend
 
 # Frontend
-docker build -t vetsready/vets-ready-frontend:latest -t vetsready/vets-ready-frontend:1.0.0 ./vets-ready-frontend --build-arg VITE_API_URL=https://api.vetsready.com
+docker build -t rallyforge/rally-forge-frontend:latest -t rallyforge/rally-forge-frontend:1.0.0 ./rally-forge-frontend --build-arg VITE_API_URL=https://api.rallyforge.com
 ```
 
 ### Step 3: Push to Docker Hub
 ```powershell
 # Push backend
-docker push vetsready/vets-ready-backend:latest
-docker push vetsready/vets-ready-backend:1.0.0
+docker push rallyforge/rally-forge-backend:latest
+docker push rallyforge/rally-forge-backend:1.0.0
 
 # Push frontend
-docker push vetsready/vets-ready-frontend:latest
-docker push vetsready/vets-ready-frontend:1.0.0
+docker push rallyforge/rally-forge-frontend:latest
+docker push rallyforge/rally-forge-frontend:1.0.0
 ```
 
 ### Step 4: Verify on Docker Hub
-Visit: https://hub.docker.com/r/vetsready/vets-ready-backend
+Visit: https://hub.docker.com/r/rallyforge/rally-forge-backend
 
 ---
 
@@ -92,7 +92,7 @@ Visit: https://hub.docker.com/r/vetsready/vets-ready-backend
 
 #### Build Commands
 ```powershell
-cd vets-ready-mobile
+cd rally-forge-mobile
 
 # Install dependencies
 npm install
@@ -131,7 +131,7 @@ sudo gem install cocoapods
 
 #### Build Commands
 ```bash
-cd vets-ready-mobile
+cd rally-forge-mobile
 
 # Sync Capacitor
 npx cap sync ios
@@ -167,19 +167,19 @@ npm install
 #### Build Windows Installer
 ```powershell
 npm run build:win
-# Output: desktop/dist/Vets Ready Setup 1.0.0.exe
+# Output: desktop/dist/Rally Forge Setup 1.0.0.exe
 ```
 
 #### Build macOS Installer
 ```bash
 npm run build:mac
-# Output: desktop/dist/Vets Ready-1.0.0.dmg
+# Output: desktop/dist/Rally Forge-1.0.0.dmg
 ```
 
 #### Build Linux AppImage
 ```bash
 npm run build:linux
-# Output: desktop/dist/Vets Ready-1.0.0.AppImage
+# Output: desktop/dist/Rally Forge-1.0.0.AppImage
 ```
 
 #### Distribution
@@ -203,8 +203,8 @@ sudo apt update
 sudo apt install docker.io docker-compose -y
 
 # Clone repository
-git clone https://github.com/fletcherusa30-jpg/Vets_Ready.git
-cd Vets_Ready
+git clone https://github.com/fletcherusa30-jpg/rally_forge.git
+cd rally_forge
 
 # Set environment variables
 nano .env
@@ -219,32 +219,32 @@ docker-compose -f docker-compose.prod.yml up -d
 az login
 
 # Create resource group
-az group create --name VetsReadyRG --location eastus
+az group create --name rallyforgeRG --location eastus
 
 # Deploy backend
 az container create `
-  --resource-group VetsReadyRG `
-  --name vetsready-backend `
-  --image vetsready/vets-ready-backend:latest `
-  --dns-name-label vetsready-api `
+  --resource-group rallyforgeRG `
+  --name rallyforge-backend `
+  --image rallyforge/rally-forge-backend:latest `
+  --dns-name-label rallyforge-api `
   --ports 8000
 
 # Deploy frontend
 az container create `
-  --resource-group VetsReadyRG `
-  --name vetsready-frontend `
-  --image vetsready/vets-ready-frontend:latest `
-  --dns-name-label vetsready-app `
+  --resource-group rallyforgeRG `
+  --name rallyforge-frontend `
+  --image rallyforge/rally-forge-frontend:latest `
+  --dns-name-label rallyforge-app `
   --ports 80
 ```
 
 #### Option 3: DigitalOcean App Platform
 1. Go to https://cloud.digitalocean.com/apps
 2. Click "Create App"
-3. Connect GitHub repository: fletcherusa30-jpg/Vets_Ready
+3. Connect GitHub repository: fletcherusa30-jpg/rally_forge
 4. Select components:
-   - **Backend**: vets-ready-backend (Python)
-   - **Frontend**: vets-ready-frontend (Node.js)
+   - **Backend**: rally-forge-backend (Python)
+   - **Frontend**: rally-forge-frontend (Node.js)
    - **Database**: PostgreSQL managed database
 5. Set environment variables
 6. Deploy
@@ -256,17 +256,17 @@ az container create `
 heroku login
 
 # Create apps
-heroku create vetsready-api
-heroku create vetsready-app
+heroku create rallyforge-api
+heroku create rallyforge-app
 
 # Add PostgreSQL
-heroku addons:create heroku-postgresql:hobby-dev -a vetsready-api
+heroku addons:create heroku-postgresql:hobby-dev -a rallyforge-api
 
 # Deploy backend
-git subtree push --prefix vets-ready-backend heroku main
+git subtree push --prefix rally-forge-backend heroku main
 
 # Set environment variables
-heroku config:set JWT_SECRET=your-secret -a vetsready-api
+heroku config:set JWT_SECRET=your-secret -a rallyforge-api
 ```
 
 ---
@@ -280,7 +280,7 @@ ENVIRONMENT=production
 DEBUG=False
 
 # Database (PostgreSQL)
-DATABASE_URL=postgresql://vetsready:CHANGE_ME@postgres:5432/vetsready_db
+DATABASE_URL=postgresql://rallyforge:CHANGE_ME@postgres:5432/rallyforge_db
 DB_PASSWORD=CHANGE_THIS_PASSWORD
 
 # Security (GENERATE NEW SECRETS!)
@@ -290,8 +290,8 @@ STRIPE_PUBLISHABLE_KEY=pk_live_YOUR_KEY_HERE
 STRIPE_WEBHOOK_SECRET=whsec_YOUR_WEBHOOK_SECRET
 
 # API URLs
-API_BASE_URL=https://api.vetsready.com
-FRONTEND_URL=https://vetsready.com
+API_BASE_URL=https://api.rallyforge.com
+FRONTEND_URL=https://rallyforge.com
 
 # Redis (optional)
 REDIS_URL=redis://redis:6379
@@ -321,14 +321,14 @@ curl http://localhost:8000/health
 
 ### Frontend Build Test
 ```powershell
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run build
 # Should complete without errors
 ```
 
 ### Database Connection Test
 ```powershell
-docker exec -it vetsready_postgres psql -U vetsready -d vetsready_db -c "SELECT version();"
+docker exec -it rallyforge_postgres psql -U rallyforge -d rallyforge_db -c "SELECT version();"
 ```
 
 ### Full Stack Integration Test
@@ -366,8 +366,8 @@ docker-compose -f docker-compose.prod.yml logs backend
 ### Docker Hub
 - [ ] Images built successfully
 - [ ] Images tagged with version numbers
-- [ ] Images pushed to vetsready/vets-ready-backend
-- [ ] Images pushed to vetsready/vets-ready-frontend
+- [ ] Images pushed to rallyforge/rally-forge-backend
+- [ ] Images pushed to rallyforge/rally-forge-frontend
 - [ ] Repository visibility set (public/private)
 
 ### GitHub Actions
@@ -422,7 +422,7 @@ docker-compose -f docker-compose.prod.yml logs backend
 docker builder prune -a
 
 # Rebuild with no cache
-docker build --no-cache -t vetsready/vets-ready-backend:latest ./vets-ready-backend
+docker build --no-cache -t rallyforge/rally-forge-backend:latest ./rally-forge-backend
 ```
 
 ### Database Connection Fails
@@ -434,7 +434,7 @@ docker-compose -f docker-compose.prod.yml ps postgres
 docker-compose -f docker-compose.prod.yml logs postgres
 
 # Verify connection string
-docker exec -it vetsready_backend env | Select-String DATABASE_URL
+docker exec -it rallyforge_backend env | Select-String DATABASE_URL
 ```
 
 ### Port Already in Use
@@ -449,23 +449,23 @@ Stop-Process -Id <PID> -Force
 ### Container Won't Start
 ```powershell
 # Check container logs
-docker logs vetsready_backend
+docker logs rallyforge_backend
 
 # Check container status
-docker inspect vetsready_backend
+docker inspect rallyforge_backend
 
 # Restart container
-docker restart vetsready_backend
+docker restart rallyforge_backend
 ```
 
 ---
 
 ## 📞 SUPPORT & RESOURCES
 
-- **Documentation**: https://github.com/fletcherusa30-jpg/Vets_Ready/tree/main/docs
+- **Documentation**: https://github.com/fletcherusa30-jpg/rally_forge/tree/main/docs
 - **API Docs**: http://localhost:8000/docs (when running)
-- **Docker Hub**: https://hub.docker.com/u/vetsready
-- **Issues**: https://github.com/fletcherusa30-jpg/Vets_Ready/issues
+- **Docker Hub**: https://hub.docker.com/u/rallyforge
+- **Issues**: https://github.com/fletcherusa30-jpg/rally_forge/issues
 
 ---
 
@@ -483,4 +483,6 @@ Your deployment is successful when:
 9. ✅ No errors in logs
 10. ✅ Monitoring dashboards show data
 
-**Congratulations! Your Vets Ready platform is fully deployed! 🚀**
+**Congratulations! Your Rally Forge platform is fully deployed! 🚀**
+
+

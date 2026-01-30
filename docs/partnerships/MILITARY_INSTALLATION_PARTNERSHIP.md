@@ -1,4 +1,4 @@
-# Vets Ready - Military Installation Partnership Program
+# Rally Forge - Military Installation Partnership Program
 
 **Partnership Program for SFL-TAP, Transition Assistance Programs, and Military Base Services**
 
@@ -6,7 +6,7 @@
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready provides **FREE transition and career tools** to military installations, helping service members successfully transition from military to civilian life.
+Rally Forge provides **FREE transition and career tools** to military installations, helping service members successfully transition from military to civilian life.
 
 **What You Get:**
 - ✅ **100% FREE** transition platform for your installation
@@ -39,7 +39,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 5. **Personalization** - One-size-fits-all doesn't work
 6. **Engagement** - Service members need ongoing support, not one workshop
 
-### What Vets Ready Solves:
+### What Rally Forge Solves:
 - Modern, mobile-first platform service members actually use
 - MOS-specific job matching and career pathways
 - Ongoing support beyond TAP graduation
@@ -177,7 +177,7 @@ Every year, **200,000+ service members** transition from military to civilian li
    - Service members get jobs
    - Installations improve transition outcomes
    - Employers find qualified veteran talent
-   - Vets Ready sustains platform
+   - Rally Forge sustains platform
 
 **Employer Revenue Streams:**
 - Job posting fees: $299-$999 per post
@@ -370,7 +370,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 
 ## 🎯 INSTALLATION ROLES & RESPONSIBILITIES
 
-### **Vets Ready Provides:**
+### **Rally Forge Provides:**
 - Platform development and maintenance
 - Employer recruitment and vetting
 - Customer support (service members and staff)
@@ -394,7 +394,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 ## 🚀 SPECIAL PROGRAMS
 
 ### **1. On-Base Employer Hiring Events**
-- Vets Ready coordinates with employers
+- Rally Forge coordinates with employers
 - On-base or virtual career fairs
 - Pre-screened candidates matched to employers
 - Free for installations and service members
@@ -442,7 +442,7 @@ Every year, **200,000+ service members** transition from military to civilian li
 ## ❓ FREQUENTLY ASKED QUESTIONS
 
 **Q: Does this replace our existing TAP program?**
-A: No, it enhances it. Vets Ready provides tools service members use independently, freeing TAP staff to focus on counseling and workshops.
+A: No, it enhances it. Rally Forge provides tools service members use independently, freeing TAP staff to focus on counseling and workshops.
 
 **Q: Is this really free for our installation?**
 A: Yes, 100% free. Employers fund the platform to access veteran talent.
@@ -478,31 +478,31 @@ A: No problem. Service members can use multiple resources. We integrate where po
 ### **Ready to Partner?**
 
 **Option 1: Schedule Installation Demo**
-- Calendar: calendly.com/vetsready/installation-demo
+- Calendar: calendly.com/rallyforge/installation-demo
 - 45-minute platform walkthrough
 - Q&A with partnership team
 - Custom proposal for your installation
 
 **Option 2: Request Information Packet**
-- Email: installations@vetsready.com
+- Email: installations@rallyforge.com
 - Detailed PDF sent within 24 hours
 - Case studies and success metrics
 - Sample partnership agreement
 
 **Option 3: Pilot Program Application**
-- Website: vetsready.com/installations/apply
+- Website: rallyforge.com/installations/apply
 - Simple online form (10 minutes)
 - Priority review for first 10 installations
 - Response within 48 hours
 
 **Contact Us:**
-- **Installation Partnerships:** installations@vetsready.com
-- **General Inquiries:** support@vetsready.com
+- **Installation Partnerships:** installations@rallyforge.com
+- **General Inquiries:** support@rallyforge.com
 - **Phone:** 1-800-VETS-RDY (1-800-838-7739)
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Mission-Driven:**
 - Veteran-founded company
@@ -538,7 +538,7 @@ A: No problem. Service members can use multiple resources. We integrate where po
 
 **Together, we can ensure every service member transitions to a fulfilling civilian career.**
 
-*Vets Ready - Honoring Service Through Successful Transitions*
+*Rally Forge - Honoring Service Through Successful Transitions*
 
 ---
 
@@ -574,3 +574,5 @@ A: No problem. Service members can use multiple resources. We integrate where po
 - 85%+ employment rate within 90 days
 - 4.5/5+ user satisfaction rating
 - TAP staff report reduced workload and improved outcomes
+
+

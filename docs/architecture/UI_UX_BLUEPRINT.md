@@ -1,7 +1,7 @@
-# VetsReady UI/UX Blueprint
+# rallyforge UI/UX Blueprint
 
 **Last Updated:** January 25, 2026
-**Purpose:** Design system, layout patterns, and accessibility standards for all VetsReady components.
+**Purpose:** Design system, layout patterns, and accessibility standards for all rallyforge components.
 
 ---
 
@@ -545,7 +545,7 @@ Used in: Life Map, Appeals history
 
 ## Accessibility Standards
 
-VetsReady must meet **WCAG 2.1 AA** standards at minimum.
+rallyforge must meet **WCAG 2.1 AA** standards at minimum.
 
 ### Keyboard Navigation
 
@@ -802,3 +802,4 @@ VetsReady must meet **WCAG 2.1 AA** standards at minimum.
 ---
 
 **End of UI/UX Blueprint**
+

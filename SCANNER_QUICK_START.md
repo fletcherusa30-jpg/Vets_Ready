@@ -15,7 +15,7 @@
 ```bash
 # Terminal 1 - Backend
 cd c:\Dev\Vets\ Ready
-$env:PYTHONPATH="C:\Dev\Vets Ready"
+$env:PYTHONPATH="C:\Dev\Rally Forge"
 python -m uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
 
 # Terminal 2 - Frontend
@@ -25,7 +25,7 @@ npm run dev
 
 ### Step 2: Upload Document
 1. Open http://localhost:5176/scanner
-2. Drag & drop **DD214 98-03.pdf** from C:\Dev\Vets Ready\App
+2. Drag & drop **DD214 98-03.pdf** from C:\Dev\Rally Forge\App
 3. Should see: "Document uploaded successfully"
 4. NO ERROR MESSAGE = ✅ FIXED
 
@@ -52,7 +52,7 @@ npm run dev
 ## 🎯 Your 6 PDFs Ready for Testing
 
 ```
-C:\Dev\Vets Ready\App\
+C:\Dev\Rally Forge\App\
 ├── ClaimLetter-2017-12-15.pdf
 ├── DD214 98-03.pdf ← Start here
 ├── DD214- 09-17.pdf
@@ -172,3 +172,4 @@ See detailed docs:
 **Last Updated:** January 28, 2026
 
 🎉 Your scanner is now fixed and ready to use!
+

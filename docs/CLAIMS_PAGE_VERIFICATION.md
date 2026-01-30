@@ -55,7 +55,7 @@ The /claims page now has **8 tabs**:
 
 ### Frontend: ClaimsList Component
 
-**Location**: `vets-ready-frontend/src/components/ClaimsList.tsx`
+**Location**: `rally-forge-frontend/src/components/ClaimsList.tsx`
 
 **Features**:
 - Full TypeScript type safety
@@ -90,9 +90,9 @@ Body: {
 
 ### Backend: Claims API
 
-**Router**: `vets-ready-backend/app/routers/claims.py`
-**Service**: `vets-ready-backend/app/services/claims_service.py`
-**Schemas**: `vets-ready-backend/app/schemas/claim.py`
+**Router**: `rally-forge-backend/app/routers/claims.py`
+**Service**: `rally-forge-backend/app/services/claims_service.py`
+**Schemas**: `rally-forge-backend/app/schemas/claim.py`
 
 **Endpoints**:
 1. `POST /api/claims/analyze` - Analyze claim and calculate ratings
@@ -204,7 +204,7 @@ Body: {
 **Cause**: Backend not running or CORS issue
 **Solution**:
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 uvicorn app.main:app --reload
 ```
 
@@ -226,7 +226,7 @@ uvicorn app.main:app --reload
 
 ### Issue: CORS errors in console
 **Cause**: Frontend/backend port mismatch
-**Solution**: Verify CORS settings in `vets-ready-backend/app/config.py`:
+**Solution**: Verify CORS settings in `rally-forge-backend/app/config.py`:
 ```python
 cors_origins: List[str] = [
     "http://localhost:5173",  # Must match frontend port
@@ -237,7 +237,7 @@ cors_origins: List[str] = [
 **Cause**: Database not initialized
 **Solution**:
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 alembic upgrade head
 ```
 
@@ -343,7 +343,7 @@ The /claims page is considered **fully functional** when:
 
 If issues persist after following this guide:
 
-1. Check backend logs: `vets-ready-backend/logs/`
+1. Check backend logs: `rally-forge-backend/logs/`
 2. Check browser console for errors
 3. Verify backend running: `curl http://localhost:8000/health`
 4. Verify frontend running: Open http://localhost:5173
@@ -355,3 +355,4 @@ If issues persist after following this guide:
 **Last Updated**: January 24, 2026
 **Version**: 1.0.0
 **Status**: Ready for Testing
+

@@ -214,13 +214,13 @@ import { Users } from "lucide-react"
 
 ### Run CRSC Tests
 ```bash
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm test -- --run src/services/crsc/__tests__/
 ```
 
 ### Run Resource Tests
 ```bash
-cd vets-ready-backend
+cd rally-forge-backend
 pytest tests/test_resource_engine.py -v
 ```
 
@@ -258,11 +258,11 @@ ENTERPRISE_API_KEYS=key1,key2,key3
 ### Start Services
 ```bash
 # Backend
-cd vets-ready-backend
+cd rally-forge-backend
 python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 # Frontend (dev)
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm run dev
 
 # Frontend (prod)
@@ -350,3 +350,4 @@ npm run preview
 **Last Updated**: January 28, 2026
 **Version**: 1.0
 **Status**: Production Ready ✅
+

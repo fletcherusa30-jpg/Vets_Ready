@@ -1,8 +1,8 @@
-# 🎉 GitHub Push Complete - VetsReady Platform
+# 🎉 GitHub Push Complete - rallyforge Platform
 
 ## ✅ Successfully Pushed to GitHub
 
-**Repository**: https://github.com/fletcherusa30-jpg/Vets_Ready.git
+**Repository**: https://github.com/fletcherusa30-jpg/rally_forge.git
 **Branch**: main
 **Commit**: 3ddfb3c
 
@@ -40,7 +40,7 @@ frontend/ (New React app with Vite)
 ├── Complete component library
 └── Capacitor config for mobile
 
-vets-ready-frontend/ (Main production frontend)
+rally-forge-frontend/ (Main production frontend)
 ├── Complete Claims Wizard
 ├── Benefits Matrix Dashboard
 ├── DD-214 Scanner
@@ -53,7 +53,7 @@ vets-ready-frontend/ (Main production frontend)
 
 ### 3. **Backend Services**
 ```
-vets-ready-backend/
+rally-forge-backend/
 ├── FastAPI application
 ├── AI Engine (CFR interpreter, claim strategy, evidence inference)
 ├── Scanner orchestration (DD-214, STR, medical records)
@@ -196,18 +196,18 @@ git push origin main
 
 ```bash
 # Clone the repository
-git clone https://github.com/fletcherusa30-jpg/Vets_Ready.git
-cd Vets_Ready
+git clone https://github.com/fletcherusa30-jpg/rally_forge.git
+cd rally_forge
 
 # Backend setup
-cd vets-ready-backend
+cd rally-forge-backend
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 
 # Frontend setup (in new terminal)
-cd vets-ready-frontend
+cd rally-forge-frontend
 npm install
 npm run dev
 
@@ -219,7 +219,7 @@ npm run demo
 
 ### View on GitHub
 Your complete platform is now live at:
-**https://github.com/fletcherusa30-jpg/Vets_Ready**
+**https://github.com/fletcherusa30-jpg/rally_forge**
 
 ---
 
@@ -301,7 +301,7 @@ Major platform update: Complete Employment System, Enhanced Frontend, and Full D
 
 ## 🏆 Platform Status
 
-**VetsReady is now fully backed up and available on GitHub!**
+**rallyforge is now fully backed up and available on GitHub!**
 
 - ✅ Complete codebase committed
 - ✅ All documentation included
@@ -310,10 +310,12 @@ Major platform update: Complete Employment System, Enhanced Frontend, and Full D
 - ✅ Ready for collaboration
 - ✅ Ready for deployment
 
-**Repository**: https://github.com/fletcherusa30-jpg/Vets_Ready
+**Repository**: https://github.com/fletcherusa30-jpg/rally_forge
 **Status**: Public ✅
 **Last Updated**: January 27, 2026
 
 ---
 
 **Everything is now safely on GitHub! 🎉**
+
+

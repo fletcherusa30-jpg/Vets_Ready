@@ -1,4 +1,4 @@
-# Vets Ready - VSO Partnership Proposal
+# Rally Forge - VSO Partnership Proposal
 
 **Partnership Program for Veteran Service Organizations**
 
@@ -6,7 +6,7 @@
 
 ## 📋 EXECUTIVE SUMMARY
 
-Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **free claims and benefits tools** that empower your organization to serve more veterans more effectively.
+Rally Forge is partnering with Veteran Service Organizations (VSOs) to provide **free claims and benefits tools** that empower your organization to serve more veterans more effectively.
 
 **What You Get:**
 - ✅ **FREE access** to VA claims analyzer and benefits navigation tools
@@ -39,7 +39,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 ---
 
-## ✅ THE VETS READY SOLUTION
+## ✅ THE Rally Forge SOLUTION
 
 ### FREE TIER - Core Claims & Benefits Platform
 
@@ -85,7 +85,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 - Quarterly webinars
 - User documentation
 
-**Branding:** Co-branded with VSO logo and Vets Ready
+**Branding:** Co-branded with VSO logo and Rally Forge
 
 **Access:** Web app + mobile apps (iOS & Android)
 
@@ -125,7 +125,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 ### **Full White-Label Platform** - $699/month
 **Complete branded solution:**
-- Custom domain (yourvso.vetsready.com)
+- Custom domain (yourvso.rallyforge.com)
 - Full UI customization (colors, logos, branding)
 - All modules included (claims, retirement, jobs, resources)
 - Advanced member management
@@ -200,7 +200,7 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 5. **More resources** - All-in-one platform
 6. **Privacy** - Secure, encrypted data storage
 
-### **For Vets Ready:**
+### **For Rally Forge:**
 1. **Mission alignment** - Help VSOs help more veterans
 2. **Network growth** - Access to VSO membership base
 3. **Credibility** - Association with trusted organizations
@@ -242,14 +242,14 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 
 **Scenario: Free Tier Only**
 
-**Before Vets Ready:**
+**Before Rally Forge:**
 - Manual claims tracking (Excel/paper)
 - Limited member engagement data
 - 200 claims assisted per year
 - Average 6 months per claim
 - 2 full-time VSO reps
 
-**After Vets Ready (Year 1):**
+**After Rally Forge (Year 1):**
 - Digital claims platform
 - Real-time member analytics
 - 500 claims assisted per year (+150%)
@@ -339,14 +339,14 @@ Vets Ready is partnering with Veteran Service Organizations (VSOs) to provide **
 5. Launch to members
 
 **Option 2: Schedule a Demo**
-1. Request demo (calendly.com/vetsready/demo)
+1. Request demo (calendly.com/rallyforge/demo)
 2. 30-minute live walkthrough
 3. Q&A with our team
 4. Customized proposal
 5. Decision within your timeline
 
 **Option 3: Talk to Existing Partners**
-We'll connect you with VSOs already using Vets Ready:
+We'll connect you with VSOs already using Rally Forge:
 - Success stories
 - Lessons learned
 - Real-world feedback
@@ -357,10 +357,10 @@ We'll connect you with VSOs already using Vets Ready:
 ## 📧 CONTACT INFORMATION
 
 **Partnership Team:**
-- Email: partnerships@vetsready.com
+- Email: partnerships@rallyforge.com
 - Phone: 1-800-VETS-RDY
-- Website: vetsready.com/vso-partners
-- Schedule Demo: calendly.com/vetsready/vso-demo
+- Website: rallyforge.com/vso-partners
+- Schedule Demo: calendly.com/rallyforge/vso-demo
 
 **Your Dedicated Account Manager:**
 - Assigned upon partnership approval
@@ -404,7 +404,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 ---
 
-## 🏆 WHY PARTNER WITH VETS READY?
+## 🏆 WHY PARTNER WITH Rally Forge?
 
 **Mission-Driven Company:**
 - Veteran-founded and veteran-led
@@ -436,7 +436,7 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 **Ready to partner with us?**
 
-**Apply online:** vetsready.com/apply/vso
+**Apply online:** rallyforge.com/apply/vso
 
 **Or email us with:**
 1. VSO name and location
@@ -451,4 +451,6 @@ A: Yes! Free tier serves posts of any size. Paid modules scale to your budget.
 
 **Together, we can serve more veterans, more effectively.**
 
-*Vets Ready - Technology that serves those who served.*
+*Rally Forge - Technology that serves those who served.*
+
+

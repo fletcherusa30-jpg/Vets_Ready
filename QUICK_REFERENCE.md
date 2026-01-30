@@ -1,4 +1,4 @@
-# VetsReady Implementation Quick Reference
+# rallyforge Implementation Quick Reference
 
 ## 📋 Quick Navigation
 
@@ -237,3 +237,4 @@ backend/app/
 ---
 
 Generated: January 28, 2026
+

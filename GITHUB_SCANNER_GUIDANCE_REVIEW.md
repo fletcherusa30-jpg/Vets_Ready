@@ -108,7 +108,7 @@
 - Combine 2-3 OCR engines
 - Use ensemble voting for accuracy
 - Fallback mechanism if one engine fails
-- **Example**: VetsReady already implements this with Tesseract + PaddleOCR + EasyOCR
+- **Example**: rallyforge already implements this with Tesseract + PaddleOCR + EasyOCR
 
 ### Confidence Scoring
 **Critical for trust and validation**:
@@ -134,9 +134,9 @@
 
 ---
 
-## 📋 VetsReady Scanner Alignment Check
+## 📋 rallyforge Scanner Alignment Check
 
-### What VetsReady Already Has (From Your Documentation)
+### What rallyforge Already Has (From Your Documentation)
 
 ✅ **Phase 1: Advanced OCR & Preprocessing** - DOCUMENTED
 - 7-stage image enhancement pipeline
@@ -202,9 +202,9 @@
 ## 🔧 Technical Recommendations from GitHub Community
 
 ### Technology Stack
-**Aligns with VetsReady + GitHub recommendations**:
+**Aligns with rallyforge + GitHub recommendations**:
 
-| Component | VetsReady | GitHub Best | Status |
+| Component | rallyforge | GitHub Best | Status |
 |-----------|-----------|-------------|--------|
 | OCR Engines | Tesseract + PaddleOCR + EasyOCR | ✅ Tesseract + PaddleOCR + one more | Match |
 | Image Processing | OpenCV | ✅ OpenCV (industry standard) | ✅ |
@@ -215,7 +215,7 @@
 
 ### Performance Benchmarks (from GitHub projects)
 
-| Metric | Current | GitHub Target | VetsReady Target |
+| Metric | Current | GitHub Target | rallyforge Target |
 |--------|---------|----------------|-----------------|
 | OCR Accuracy | 75-85% | 92-96% | 95-98% |
 | Field Extraction | 80% | 90%+ | 95%+ |
@@ -254,7 +254,7 @@
 
 ---
 
-## 🚀 VetsReady Scanner Optimization Roadmap
+## 🚀 rallyforge Scanner Optimization Roadmap
 
 ### Immediate (Next Sprint)
 1. ✅ Implement engine agreement detection
@@ -298,9 +298,9 @@ This repository lists:
 
 ---
 
-## 💡 VetsReady Competitive Advantages
+## 💡 rallyforge Competitive Advantages
 
-### What Makes VetsReady Stand Out
+### What Makes rallyforge Stand Out
 1. **Military/Veteran-Specific**: Tailored patterns for DD-214, service records
 2. **Multi-Document Support**: Not just OCR, but full document type handling
 3. **Confidence Transparency**: Veterans see confidence scores
@@ -314,7 +314,7 @@ This repository lists:
 - **jscanify**: Browser-based only (limited)
 - **OSS-DocumentScanner**: Mobile scanning app (different UX)
 
-**VetsReady's Niche**: Veteran-focused document intelligence + strategy guidance
+**rallyforge's Niche**: Veteran-focused document intelligence + strategy guidance
 
 ---
 
@@ -334,7 +334,7 @@ This repository lists:
 
 ---
 
-## ✅ Recommendations for VetsReady
+## ✅ Recommendations for rallyforge
 
 1. **Increase Engine Diversity**
    - Keep current 3 engines (good balance)
@@ -370,7 +370,7 @@ This repository lists:
 
 ## 🏆 Final Assessment
 
-**VetsReady's Scanner Implementation**:
+**rallyforge's Scanner Implementation**:
 - ✅ Aligns with GitHub best practices
 - ✅ Uses proven technology stack
 - ✅ Implements advanced features (confidence scoring, fuzzy matching)
@@ -391,3 +391,4 @@ This repository lists:
 **GitHub Resources Reviewed**: 25+ projects, 7,200+ OCR repos
 **Quality**: Enterprise-grade recommendations
 **Status**: Ready for implementation
+

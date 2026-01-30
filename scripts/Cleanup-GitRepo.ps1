@@ -20,7 +20,7 @@
 
 param(
     [string]$RemoteUrl = "",
-    [string[]]$FoldersToRemove = @("desktop", "logs", "android", "vets-ready-backend", "vets-ready-mobile")
+    [string[]]$FoldersToRemove = @("desktop", "logs", "android", "rally-forge-backend", "rally-forge-mobile")
 )
 
 # Colors for output
@@ -88,17 +88,17 @@ mobile/android/
 mobile/ios/
 
 # Backend artifacts
-vets-ready-backend/dist/
-vets-ready-backend/build/
-vets-ready-backend/__pycache__/
-vets-ready-backend/.pytest_cache/
-vets-ready-backend/htmlcov/
-vets-ready-backend/.coverage
+rally-forge-backend/dist/
+rally-forge-backend/build/
+rally-forge-backend/__pycache__/
+rally-forge-backend/.pytest_cache/
+rally-forge-backend/htmlcov/
+rally-forge-backend/.coverage
 
 # Mobile artifacts
-vets-ready-mobile/dist/
-vets-ready-mobile/build/
-vets-ready-mobile/node_modules/
+rally-forge-mobile/dist/
+rally-forge-mobile/build/
+rally-forge-mobile/node_modules/
 
 # Dependencies
 node_modules/
@@ -286,5 +286,7 @@ Write-Host "=====================================================" -ForegroundCo
 Write-Host "Removed folders: $($removedFolders -join ', ')" -ForegroundColor $InfoColor
 Write-Host "Repository optimized and pushed to GitHub" -ForegroundColor $InfoColor
 Write-Host "`nNext steps:" -ForegroundColor $InfoColor
-Write-Host "  1. Connect Docker Hub to GitHub at https://app.docker.com/accounts/vetsready" -ForegroundColor $WarningColor
+Write-Host "  1. Connect Docker Hub to GitHub at https://app.docker.com/accounts/RallyForge" -ForegroundColor $WarningColor
 Write-Host "  2. Enable automated builds (optional)" -ForegroundColor $WarningColor
+
+

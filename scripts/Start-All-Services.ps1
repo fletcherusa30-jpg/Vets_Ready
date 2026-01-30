@@ -1,18 +1,18 @@
 # ================================================
-# VETS READY - START ALL SERVICES
+# Rally Forge - START ALL SERVICES
 # ================================================
 # This script starts both backend and frontend
 
-Write-Host "`n🇺🇸 VETS READY - STARTING ALL SERVICES 🇺🇸`n" -ForegroundColor Blue
+Write-Host "`n🇺🇸 Rally Forge - STARTING ALL SERVICES 🇺🇸`n" -ForegroundColor Blue
 
 # Check if backend .env exists
-if (-not (Test-Path "vets-ready-backend\.env")) {
+if (-not (Test-Path "rally-forge-backend\.env")) {
     Write-Host "⚠ Creating backend .env file..." -ForegroundColor Yellow
-    Copy-Item "vets-ready-backend\.env.example" "vets-ready-backend\.env"
+    Copy-Item "rally-forge-backend\.env.example" "rally-forge-backend\.env"
 }
 
 # Check if frontend .env exists
-if (-not (Test-Path "vets-ready-frontend\.env")) {
+if (-not (Test-Path "rally-forge-frontend\.env")) {
     Write-Host "✓ Frontend .env file already exists" -ForegroundColor Green
 }
 
@@ -21,7 +21,7 @@ Write-Host "  STEP 1: Starting Backend Server (Port 8000)" -ForegroundColor Cyan
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor Cyan
 
 # Start backend in new terminal
-$backendPath = Join-Path $PSScriptRoot "vets-ready-backend"
+$backendPath = Join-Path $PSScriptRoot "rally-forge-backend"
 Start-Process pwsh -ArgumentList "-NoExit", "-Command", "cd '$backendPath'; Write-Host '🚀 Starting Backend Server...' -ForegroundColor Green; .\.venv\Scripts\Activate.ps1; uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
 
 Write-Host "✓ Backend terminal opened`n" -ForegroundColor Green
@@ -33,7 +33,7 @@ Write-Host "  STEP 2: Starting Frontend Server (Port 5173)" -ForegroundColor Cya
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor Cyan
 
 # Start frontend in new terminal
-$frontendPath = Join-Path $PSScriptRoot "vets-ready-frontend"
+$frontendPath = Join-Path $PSScriptRoot "rally-forge-frontend"
 Start-Process pwsh -ArgumentList "-NoExit", "-Command", "cd '$frontendPath'; Write-Host '⚡ Starting Frontend Server...' -ForegroundColor Green; npm run dev"
 
 Write-Host "✓ Frontend terminal opened`n" -ForegroundColor Green
@@ -41,7 +41,7 @@ Write-Host "✓ Frontend terminal opened`n" -ForegroundColor Green
 Start-Sleep -Seconds 2
 
 Write-Host "`n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" -ForegroundColor Green
-Write-Host "  ✅ VETS READY IS STARTING!" -ForegroundColor Green
+Write-Host "  ✅ Rally Forge IS STARTING!" -ForegroundColor Green
 Write-Host "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`n" -ForegroundColor Green
 
 Write-Host "🌐 Frontend: " -NoNewline -ForegroundColor Yellow
@@ -69,3 +69,4 @@ Write-Host "`nPress Ctrl+C to stop this script (servers will continue running in
 while ($true) {
     Start-Sleep -Seconds 60
 }
+
